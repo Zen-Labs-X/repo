@@ -43,8 +43,4 @@ All files are served as static content — no server-side logic required. ZenPM 
 
 ## Contributing
 
-To add a package, submit a PR with:
 
-1. A new `packages/<id>/` directory containing `manifest.json` and `scripts/`
-
-Package scripts must be portable `/bin/sh` scripts that exit 0 on success."
