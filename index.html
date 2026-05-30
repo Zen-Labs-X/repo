@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZenPM Default Repository</title>
+<title>ZenPM Repository</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -82,7 +82,7 @@
 <body>
 <div class="card">
   <img src="favicon.svg" class="logo" alt="ZenPM logo">
-  <h1>ZenPM Default Repository</h1>
+  <h1>ZenPM Repository</h1>
   <p class="subtitle">
     The official package repository for Zen Package Manager.
     Browse and install packages for jailbroken Kindle and Kobo devices.
@@ -119,7 +119,7 @@ async function addToZenPM() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name: 'ZenPM-default',
-        url: 'https://zen-labs-x.github.io/ZenPM-Repository/',
+        url: 'https://zen-labs-x.github.io/repo/',
         priority: 50
       })
     });
