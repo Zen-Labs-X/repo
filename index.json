@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
   "repo": {
-    "id": "ZenPM-default",
-    "name": "Zen PM Default Repository",
+    "id": "ZenPM",
+    "name": "ZenPM Repository",
     "url": "https://zen-labs-x.github.io/repo/"
   },
   "packages": [
@@ -116,6 +116,21 @@
           "location": "main"
         }
       },
+      "sha256": "",
+      "size": "0"
+    },
+    {
+      "id": "zen-mtp",
+      "name": "ZenMTP",
+      "version": "0.1.0",
+      "description": "MTP (Media Transfer Protocol) support for Kobo devices.",
+      "author": "Zen Labs",
+      "platforms": [
+        "kindle"
+      ],
+      "dependencies": [],
+      "install_url": "packages/zen-mtp/scripts/install.sh",
+      "uninstall_url": "packages/zen-mtp/scripts/uninstall.sh",
       "sha256": "",
       "size": "0"
     }

@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-rm -f /mnt/us/documents/koreader.sh
-rm -rf /mnt/us/koreader
+rm -f /mnt/us/documents/ZenReader.sh
 
-echo "KOReader Kindle placeholder uninstall complete"
+echo "ZenReader uninstall complete"
+exit 0
