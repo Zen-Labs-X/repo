@@ -1,0 +1,123 @@
+{
+  "schema_version": "1",
+  "repo": {
+    "id": "ZenPM-default",
+    "name": "Zen PM Default Repository",
+    "url": "https://zen-labs-x.github.io/"
+  },
+  "packages": [
+    {
+      "id": "kual",
+      "name": "KUAL",
+      "version": "2.7.37",
+      "description": "Install KUAL launcher support on Kindle.",
+      "author": "NiLuJe",
+      "platforms": [
+        "kindle"
+      ],
+      "dependencies": [],
+      "install_url": "packages/kual/scripts/install.sh",
+      "uninstall_url": "packages/kual/scripts/uninstall.sh",
+      "launcher": {
+        "kindle": {
+          "type": "kual",
+          "entry_name": "KUAL"
+        }
+      },
+      "sha256": "",
+      "size": "0"
+    },
+    {
+      "id": "zen-reader",
+      "name": "Zen Reader",
+      "version": "1.0.0",
+      "description": "Install KOReader and a Kindle launch scriptlet.",
+      "author": "Zen Labs",
+      "platforms": [
+        "kindle"
+      ],
+      "dependencies": [
+        "kual"
+      ],
+      "install_url": "packages/zen-reader/scripts/install.sh",
+      "uninstall_url": "packages/zen-reader/scripts/uninstall.sh",
+      "constraints": {
+        "abi": [
+          "hf",
+          "sf"
+        ]
+      },
+      "sha256": "",
+      "size": "0"
+    },
+    {
+      "id": "nickelmenu",
+      "name": "NickelMenu",
+      "version": "0.6.0",
+      "description": "Install NickelMenu bootstrap files on Kobo.",
+      "author": "pgaskin",
+      "platforms": [
+        "kobo"
+      ],
+      "dependencies": [],
+      "install_url": "packages/nickelmenu/scripts/install.sh",
+      "uninstall_url": "packages/nickelmenu/scripts/uninstall.sh",
+      "launcher": {
+        "kobo": {
+          "type": "nickelmenu",
+          "entry_name": "NickelMenu"
+        }
+      },
+      "sha256": "",
+      "size": "0"
+    },
+    {
+      "id": "ZenPM-kobo",
+      "name": "Zen Package Manager (Kobo Launcher)",
+      "version": "0.1.0",
+      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts.",
+      "author": "Zen Labs",
+      "platforms": [
+        "kobo"
+      ],
+      "dependencies": [
+        "nickelmenu"
+      ],
+      "install_url": "packages/ZenPM-kobo/scripts/install.sh",
+      "uninstall_url": "packages/ZenPM-kobo/scripts/uninstall.sh",
+      "launcher": {
+        "kobo": {
+          "type": "nickelmenu",
+          "entry_name": "Zen Package Manager",
+          "location": "main"
+        }
+      },
+      "sha256": "",
+      "size": "0"
+    },
+    {
+      "id": "koreader-kobo",
+      "name": "KOReader (Kobo)",
+      "version": "2026.03.0",
+      "description": "Install KOReader and NickelMenu launch entry on Kobo.",
+      "author": "KOReader Community",
+      "platforms": [
+        "kobo"
+      ],
+      "dependencies": [
+        "ZenPM-kobo"
+      ],
+      "install_url": "packages/koreader-kobo/scripts/install.sh",
+      "uninstall_url": "packages/koreader-kobo/scripts/uninstall.sh",
+      "launcher": {
+        "kobo": {
+          "type": "nickelmenu",
+          "entry_name": "KOReader",
+          "location": "main"
+        }
+      },
+      "sha256": "",
+      "size": "0"
+    }
+  ]
+}

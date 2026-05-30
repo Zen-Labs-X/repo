@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZenPM Default Repository</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: #f6f8fa;
+    color: #1f2328;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 12px;
+    padding: 48px 40px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(31,35,40,0.08);
+  }
+  .logo {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 24px;
+    display: block;
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2328;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    font-size: 0.875rem;
+    color: #656d76;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #1f883d;
+    color: #fff;
+    border: 1px solid #1a7a35;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .btn:hover { background: #1a7a35; }
+  .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+  .btn.error { background: #cf222e; border-color: #a40e26; }
+  .btn.success { background: #1f883d; border-color: #1a7a35; }
+  .status {
+    margin-top: 16px;
+    font-size: 0.8125rem;
+    min-height: 20px;
+  }
+  .status.error { color: #cf222e; }
+  .status.success { color: #1a7a35; }
+  .status.info { color: #656d76; }
+  .footer {
+    margin-top: 32px;
+    font-size: 0.75rem;
+    color: #8b949e;
+  }
+  .footer a { color: #656d76; text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="card">
+  <img src="favicon.svg" class="logo" alt="ZenPM logo">
+  <h1>ZenPM Default Repository</h1>
+  <p class="subtitle">
+    The official package repository for Zen Package Manager.
+    Browse and install packages for jailbroken Kindle and Kobo devices.
+  </p>
+  <button class="btn" id="addBtn" onclick="addToZenPM()">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path d="M9 3v12M3 9h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+    Add to ZenPM
+  </button>
+  <div class="status" id="status"></div>
+  <div class="footer">
+    <a href="https://github.com/Zen-Labs-X/ZenPM" target="_blank">Zen Package Manager</a>
+    &nbsp;·&nbsp;
+    <a href="index.json">index.json</a>
+  </div>
+</div>
+
+<script>
+async function addToZenPM() {
+  const btn = document.getElementById('addBtn');
+  const status = document.getElementById('status');
+  const ZENPM = 'http://127.0.0.1:8080';
+
+  btn.disabled = true;
+  btn.classList.remove('error', 'success');
+  status.className = 'status info';
+  status.textContent = 'Connecting to ZenPM daemon\u2026';
+
+  try {
+    // Add the repo
+    let res = await fetch(ZENPM + '/repos', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name: 'ZenPM-default',
+        url: 'https://zen-labs-x.github.io/ZenPM-Repository/',
+        priority: 50
+      })
+    });
+
+    let data = await res.json();
+
+    if (!data.ok) {
+      // 409 conflict is OK — repo already added
+      if (res.status === 409) {
+        status.textContent = 'Repo already registered. Refreshing\u2026';
+      } else {
+        throw new Error(data.error || 'Failed to add repo');
+      }
+    }
+
+    // Refresh catalog
+    res = await fetch(ZENPM + '/repo/refresh', { method: 'POST' });
+    data = await res.json();
+
+    if (data.ok) {
+      status.className = 'status success';
+      status.textContent = 'Repo added and catalog refreshed.';
+      btn.classList.add('success');
+    } else {
+      throw new Error(data.error || 'Refresh failed');
+    }
+  } catch (err) {
+    status.className = 'status error';
+    btn.classList.add('error');
+    if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
+      status.textContent = 'ZenPM daemon not reachable. Is it running on this device?';
+    } else {
+      status.textContent = err.message;
+    }
+  } finally {
+    btn.disabled = false;
+    setTimeout(() => {
+      btn.classList.remove('error', 'success');
+      if (status.classList.contains('success')) {
+        status.className = 'status';
+        status.textContent = '';
+      }
+    }, 5000);
+  }
+}
+</script>
+</body>
+</html>
