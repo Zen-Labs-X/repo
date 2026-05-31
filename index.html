@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZenPM Repository</title>
+<title>ZenLabs Repo</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    background: #f6f8fa;
+    background: #fff;
     color: #1f2328;
     min-height: 100vh;
     display: flex;
@@ -82,7 +82,7 @@
 <body>
 <div class="card">
   <img src="favicon.svg" class="logo" alt="ZenPM logo">
-  <h1>ZenPM Repository</h1>
+  <h1>ZenLabs Repository</h1>
   <p class="subtitle">
     The official package repository for Zen Package Manager.
     Browse and install packages for jailbroken Kindle and Kobo devices.
@@ -102,68 +102,18 @@
 </div>
 
 <script>
-async function addToZenPM() {
-  const btn = document.getElementById('addBtn');
-  const status = document.getElementById('status');
-  const ZENPM = 'http://127.0.0.1:8080';
-
-  btn.disabled = true;
-  btn.classList.remove('error', 'success');
-  status.className = 'status info';
-  status.textContent = 'Connecting to ZenPM daemon\u2026';
-
-  try {
-    // Add the repo
-    let res = await fetch(ZENPM + '/repos', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: 'ZenPM-default',
-        url: 'https://zen-labs-x.github.io/repo/',
-        priority: 50
-      })
-    });
-
-    let data = await res.json();
-
-    if (!data.ok) {
-      // 409 conflict is OK — repo already added
-      if (res.status === 409) {
-        status.textContent = 'Repo already registered. Refreshing\u2026';
-      } else {
-        throw new Error(data.error || 'Failed to add repo');
-      }
-    }
-
-    // Refresh catalog
-    res = await fetch(ZENPM + '/repo/refresh', { method: 'POST' });
-    data = await res.json();
-
-    if (data.ok) {
-      status.className = 'status success';
-      status.textContent = 'Repo added and catalog refreshed.';
-      btn.classList.add('success');
-    } else {
-      throw new Error(data.error || 'Refresh failed');
-    }
-  } catch (err) {
-    status.className = 'status error';
-    btn.classList.add('error');
-    if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
-      status.textContent = 'ZenPM daemon not reachable. Is it running on this device?';
-    } else {
-      status.textContent = err.message;
-    }
-  } finally {
-    btn.disabled = false;
-    setTimeout(() => {
-      btn.classList.remove('error', 'success');
-      if (status.classList.contains('success')) {
-        status.className = 'status';
-        status.textContent = '';
-      }
-    }, 5000);
-  }
+function addToZenPM() {
+  var btn = document.getElementById('addBtn');
+  var status = document.getElementById('status');
+  btn.classList.add('success');
+  status.className = 'status success';
+  status.textContent = 'Opening ZenPM\u2026';
+  window.location.href = 'zenpm://add-repo?name=ZenLabs&url=https://zen-labs-x.github.io/repo/';
+  setTimeout(function() {
+    btn.classList.remove('success');
+    status.className = 'status';
+    status.textContent = '';
+  }, 5000);
 }
 </script>
 </body>

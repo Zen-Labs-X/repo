@@ -1,5 +1,28 @@
 # ZenPM Default Package Repository
 
+[Add to ZenPM](zenpm://add-repo?name=ZenLabs&url=https://zen-labs-x.github.io/repo/)
+
+## Signature Verification
+
+All package indexes in this repository are signed with an ed25519 key. Verify `index.json` with the public key below:
+
+```
+-----BEGIN PUBLIC KEY-----
+MCowBQYDK2VwAyEAsWdhAiVzFSIr8yYgFRHWWwAp2NAh/WKXMqaOkYXVN3k=
+-----END PUBLIC KEY-----
+```
+
+**Verification command:**
+```sh
+openssl pkeyutl -verify -pubin -inkey zenpm-key.pub -in index.json -rawin -sigfile index.json.sig
+```
+
+**Files:**
+- `index.json` — package index
+- `index.json.sig` — ed25519 signature of the index
+- `zenpm-key.pub` — public key distributed with ZenPM
+
+
 Default package repository for [Zen Package Manager](https://github.com/Zen-Labs-X/ZenPM) — the package manager for jailbroken Kindle and Kobo devices.
 
 ## How to use

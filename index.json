@@ -133,6 +133,21 @@
       "uninstall_url": "packages/zen-mtp/scripts/uninstall.sh",
       "sha256": "",
       "size": "0"
+    },
+    {
+      "id": "kindle-browser",
+      "name": "Kindle Browser",
+      "version": "0.1.0",
+      "description": "Scriptlet to launch the Kindle web browser.",
+      "author": "Zen Labs",
+      "platforms": [
+        "kindle"
+      ],
+      "dependencies": [],
+      "install_url": "packages/kindle-browser/scripts/install.sh",
+      "uninstall_url": "packages/kindle-browser/scripts/uninstall.sh",
+      "sha256": "",
+      "size": "0"
     }
   ]
 }
