@@ -29,7 +29,7 @@
     },
     {
       "id": "zen-reader",
-      "name": "Zen Reader",
+      "name": "ZenReader",
       "version": "1.0.0",
       "description": "Zen KOReader launcher for Kindle",
       "author": "ZenLabs",
@@ -122,7 +122,7 @@
     {
       "id": "zen-mtp",
       "name": "ZenMTP",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "description": "Launch MTP (Media Transfer Protocol) programmatically.",
       "author": "ZenLabs",
       "platforms": [
@@ -137,7 +137,7 @@
     {
       "id": "kindle-browser",
       "name": "Kindle Web Browser",
-      "version": "0.1.0",
+      "version": "1.0.0",
       "description": "Launch the Kindle web browser.",
       "author": "ZenLabs",
       "platforms": [
