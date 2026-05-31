@@ -32,7 +32,7 @@
       "name": "Zen Reader",
       "version": "1.0.0",
       "description": "Install KOReader and a Kindle launch scriptlet.",
-      "author": "Zen Labs",
+      "author": "ZenLabs",
       "platforms": [
         "kindle"
       ],
@@ -76,7 +76,7 @@
       "name": "Zen Package Manager (Kobo Launcher)",
       "version": "0.1.0",
       "description": "Install Zen PM NickelMenu entry and Kobo helper scripts.",
-      "author": "Zen Labs",
+      "author": "ZenLabs",
       "platforms": [
         "kobo"
       ],
@@ -124,7 +124,7 @@
       "name": "ZenMTP",
       "version": "0.1.0",
       "description": "MTP (Media Transfer Protocol) support for Kobo devices.",
-      "author": "Zen Labs",
+      "author": "ZenLabs",
       "platforms": [
         "kindle"
       ],
@@ -136,10 +136,10 @@
     },
     {
       "id": "kindle-browser",
-      "name": "Kindle Browser",
+      "name": "Kindle Web Browser",
       "version": "0.1.0",
       "description": "Scriptlet to launch the Kindle web browser.",
-      "author": "Zen Labs",
+      "author": "ZenLabs",
       "platforms": [
         "kindle"
       ],
