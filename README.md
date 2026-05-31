@@ -17,6 +17,16 @@ MCowBQYDK2VwAyEAsWdhAiVzFSIr8yYgFRHWWwAp2NAh/WKXMqaOkYXVN3k=
 openssl pkeyutl -verify -pubin -inkey zenpm-key.pub -in index.json -rawin -sigfile index.json.sig
 ```
 
+**Re-signing after updates:**
+
+Whenever `index.json` changes (new packages, version bumps, etc.), re-sign it:
+
+```sh
+openssl pkeyutl -sign -inkey zenpm-key -in index.json -rawin -out index.json.sig
+```
+
+Then commit both `index.json` and `index.json.sig` together. Do not commit `zenpm-key` (the private key) — it is listed in `.gitignore`.
+
 **Files:**
 - `index.json` — package index
 - `index.json.sig` — ed25519 signature of the index
