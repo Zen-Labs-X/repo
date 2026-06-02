@@ -10,7 +10,7 @@
       "id": "kual",
       "name": "KUAL",
       "version": "2.7.37",
-      "description": "Install KUAL launcher support on Kindle.",
+      "description": "Install KUAL launcher support on Kindle",
       "author": "NiLuJe",
       "platforms": [
         "kindle"
@@ -48,7 +48,8 @@
         ]
       },
       "icon_url": "packages/zen-reader/assets/zen-reader.svg",
-      "featured_image": "packages/zen-reader/assets/zen-reader-cover.png",
+      "featured_image": "packages/zen-reader/assets/zen-reader-featured.png",
+      "featured": true,
       "sha256": "",
       "size": "0"
     },
@@ -56,7 +57,7 @@
       "id": "nickelmenu",
       "name": "NickelMenu",
       "version": "0.6.0",
-      "description": "Install NickelMenu bootstrap files on Kobo.",
+      "description": "Install NickelMenu bootstrap files on Kobo",
       "author": "pgaskin",
       "platforms": [
         "kobo"
@@ -77,7 +78,7 @@
       "id": "ZenPM-kobo",
       "name": "Zen Package Manager (Kobo Launcher)",
       "version": "0.1.0",
-      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts.",
+      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts",
       "author": "ZenLabs",
       "platforms": [
         "kobo"
@@ -101,7 +102,7 @@
       "id": "koreader-kobo",
       "name": "KOReader (Kobo)",
       "version": "2026.03.0",
-      "description": "Install KOReader and NickelMenu launch entry on Kobo.",
+      "description": "Install KOReader and NickelMenu launch entry on Kobo",
       "author": "KOReader Community",
       "platforms": [
         "kobo"
@@ -125,7 +126,7 @@
       "id": "zen-mtp",
       "name": "ZenMTP",
       "version": "1.0.0",
-      "description": "Launch MTP (Media Transfer Protocol) programmatically.",
+      "description": "Launch MTP (Media Transfer Protocol) programmatically",
       "author": "ZenLabs",
       "platforms": [
         "kindle"
@@ -134,15 +135,16 @@
       "install_url": "packages/zen-mtp/scripts/install.sh",
       "uninstall_url": "packages/zen-mtp/scripts/uninstall.sh",
       "icon_url": "packages/zen-mtp/assets/zenmtp.svg",
-      "featured_image": "packages/zen-mtp/assets/zenmtp-cover.png",
+      "featured_image": "packages/zen-mtp/assets/zenmtp-featured.png",
+      "featured": true,
       "sha256": "",
       "size": "0"
     },
     {
       "id": "kindle-browser",
-      "name": "Kindle Web Browser",
+      "name": "WebBrowser",
       "version": "1.0.0",
-      "description": "Launch the Kindle web browser.",
+      "description": "Launch the Kindle web browser",
       "author": "ZenLabs",
       "platforms": [
         "kindle"
@@ -151,7 +153,8 @@
       "install_url": "packages/kindle-browser/scripts/install.sh",
       "uninstall_url": "packages/kindle-browser/scripts/uninstall.sh",
       "icon_url": "packages/kindle-browser/assets/browser.svg",
-      "featured_image": "packages/kindle-browser/assets/browser-cover.png",
+      "featured_image": "packages/kindle-browser/assets/browser-featured.png",
+      "featured": true,
       "sha256": "",
       "size": "0"
     }
