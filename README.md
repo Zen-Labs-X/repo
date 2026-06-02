@@ -1,6 +1,6 @@
 # ZenPM Default Package Repository
 
-[Add to ZenPM](zenpm://add-repo?name=ZenLabs&url=https://zen-labs-x.github.io/repo/)
+[Add to ZenPM](zenpm://add-repo?name=ZenLabs&url=https://xzenlabs.github.io/repo/)
 
 ## Key Generation
 
@@ -56,11 +56,11 @@ Default package repository for [Zen Package Manager](https://github.com/Zen-Labs
 Add this repo to your ZenPM instance:
 
 ```sh
-zenpm repo add default https://zen-labs-x.github.io/repo/
+zenpm repo add default https://xzenlabs.github.io/repo/
 zenpm repo refresh
 ```
 
-Or via the ZenPM Sources page: enter the URL `https://zen-labs-x.github.io/repo/`.
+Or via the ZenPM Sources page: enter the URL `https://xzenlabs.github.io/repo/`.
 
 ## Packages
 
@@ -97,7 +97,7 @@ These fields are optional. Omit them if no assets are available.
 This repository is hosted via **GitHub Pages** at:
 
 ```
-https://zen-labs-x.github.io/repo/
+https://xzenlabs.github.io/repo/
 ```
 
 All files are served as static content — no server-side logic required. ZenPM clients fetch `index.json` and resolve package scripts relative to this base URL.
