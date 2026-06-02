@@ -2,6 +2,26 @@
 
 [Add to ZenPM](zenpm://add-repo?name=ZenLabs&url=https://zen-labs-x.github.io/repo/)
 
+## Key Generation
+
+Generate an ed25519 key pair:
+
+```sh
+openssl genpkey -algorithm ed25519 -out zenpm-key
+openssl pkey -in zenpm-key -pubout -out zenpm-key.pub
+```
+
+- `zenpm-key` — private key (keep secret, add to `.gitignore`)
+- `zenpm-key.pub` — public key (commit to repo, distributed with ZenPM)
+
+Add the private key as a GitHub Actions secret named `ZENPM_PRIVATE_KEY` so the deploy workflow can sign `index.json` automatically:
+
+```sh
+gh secret set ZENPM_PRIVATE_KEY --body "$(cat zenpm-key)"
+```
+
+The signing is handled automatically on every push to `main` — no manual re-signing needed.
+
 ## Signature Verification
 
 All package indexes in this repository are signed with an ed25519 key. Verify `index.json` with the public key below:
@@ -17,15 +37,11 @@ MCowBQYDK2VwAyEAsWdhAiVzFSIr8yYgFRHWWwAp2NAh/WKXMqaOkYXVN3k=
 openssl pkeyutl -verify -pubin -inkey zenpm-key.pub -in index.json -rawin -sigfile index.json.sig
 ```
 
-**Re-signing after updates:**
-
-Whenever `index.json` changes (new packages, version bumps, etc.), re-sign it:
+**Manual re-signing (if needed):**
 
 ```sh
 openssl pkeyutl -sign -inkey zenpm-key -in index.json -rawin -out index.json.sig
 ```
-
-Then commit both `index.json` and `index.json.sig` together. Do not commit `zenpm-key` (the private key) — it is listed in `.gitignore`.
 
 **Files:**
 - `index.json` — package index
@@ -63,6 +79,18 @@ This repo follows the [ZenPM repository format](https://github.com/Zen-Labs-X/Ze
 - `index.json` — package catalog with all metadata (machine-readable)
 - `packages/<id>/scripts/install.sh` — install script
 - `packages/<id>/scripts/uninstall.sh` — uninstall script
+- `packages/<id>/assets/` — optional icon (`icon.png`) and featured image (`featured.png`)
+
+### Optional package fields
+
+Each package in `index.json` may include:
+
+| Field | Type | Description |
+|---|---|---|
+| `icon_url` | string | Path to package icon (e.g. `packages/<id>/assets/icon.png`) |
+| `featured_image` | string | Path to a larger preview/featured image (e.g. `packages/<id>/assets/featured.png`) |
+
+These fields are optional. Omit them if no assets are available.
 
 ## Hosting
 

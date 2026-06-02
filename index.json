@@ -47,6 +47,8 @@
           "sf"
         ]
       },
+      "icon_url": "packages/zen-reader/assets/zen-reader.svg",
+      "featured_image": "packages/zen-reader/assets/zen-reader-cover.png",
       "sha256": "",
       "size": "0"
     },
@@ -131,6 +133,8 @@
       "dependencies": [],
       "install_url": "packages/zen-mtp/scripts/install.sh",
       "uninstall_url": "packages/zen-mtp/scripts/uninstall.sh",
+      "icon_url": "packages/zen-mtp/assets/zenmtp.svg",
+      "featured_image": "packages/zen-mtp/assets/zenmtp-cover.png",
       "sha256": "",
       "size": "0"
     },
@@ -146,6 +150,8 @@
       "dependencies": [],
       "install_url": "packages/kindle-browser/scripts/install.sh",
       "uninstall_url": "packages/kindle-browser/scripts/uninstall.sh",
+      "icon_url": "packages/kindle-browser/assets/browser.svg",
+      "featured_image": "packages/kindle-browser/assets/browser-cover.png",
       "sha256": "",
       "size": "0"
     }

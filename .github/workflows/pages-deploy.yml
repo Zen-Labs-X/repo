@@ -23,6 +23,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Sign index.json
+        env:
+          ZENPM_PRIVATE_KEY: ${{ secrets.ZENPM_PRIVATE_KEY }}
+        run: |
+          echo "$ZENPM_PRIVATE_KEY" > zenpm-key
+          openssl pkeyutl -sign -inkey zenpm-key -in index.json -rawin -out index.json.sig
+          rm zenpm-key
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
