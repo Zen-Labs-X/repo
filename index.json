@@ -1,8 +1,8 @@
 {
   "schema_version": "1",
   "repo": {
-    "id": "ZenPM",
-    "name": "ZenPM Repository",
+    "id": "ZenLabs",
+    "name": "ZenLabs",
     "url": "https://zen-labs-x.github.io/repo/"
   },
   "packages": [
