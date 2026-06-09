@@ -1,0 +1,13 @@
+id=koreader-kobo
+name=KOReader (Kobo)
+version=2026.03.0
+description=Install KOReader and NickelMenu launch entry on Kobo
+author=KOReader Community
+platforms=kobo
+dependencies=ZenPM-kobo
+install_url=packages/kobo/koreader/scripts/install.sh
+uninstall_url=packages/kobo/koreader/scripts/uninstall.sh
+launcher.kobo.type=nickelmenu
+launcher.kobo.entry_name=KOReader
+launcher.kobo.location=main
+size=0

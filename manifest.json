@@ -1,0 +1,129 @@
+{
+  "schema_version": "1",
+  "repo": {
+    "id": "ZenLabs",
+    "name": "ZenLabs",
+    "url": "https://xzenlabs.github.io/repo/"
+  },
+  "packages": [
+    {
+      "id": "kindle-browser",
+      "name": "WebBrowser",
+      "version": "1.0.0",
+      "description": "Launch the Kindle web browser",
+      "author": "ZenLabs",
+      "platforms": ["kindle"],
+      "dependencies": [],
+      "install_url": "packages/kindle/browser/scripts/install.sh",
+      "uninstall_url": "packages/kindle/browser/scripts/uninstall.sh",
+      "icon_url": "packages/kindle/browser/assets/browser.svg",
+      "featured_image": "packages/kindle/browser/assets/browser-featured.png",
+      "featured": true,
+      "size": "0"
+    },
+    {
+      "id": "zen-mtp",
+      "name": "ZenMTP",
+      "version": "1.0.0",
+      "description": "Launch MTP (Media Transfer Protocol) programmatically",
+      "author": "ZenLabs",
+      "platforms": ["kindle"],
+      "dependencies": [],
+      "install_url": "packages/kindle/zen-mtp/scripts/install.sh",
+      "uninstall_url": "packages/kindle/zen-mtp/scripts/uninstall.sh",
+      "icon_url": "packages/kindle/zen-mtp/assets/zenmtp.svg",
+      "featured_image": "packages/kindle/zen-mtp/assets/zenmtp-featured.png",
+      "featured": true,
+      "size": "0"
+    },
+    {
+      "id": "zen-reader",
+      "name": "ZenReader",
+      "version": "1.0.0",
+      "description": "Zen KOReader launcher for Kindle",
+      "author": "ZenLabs",
+      "platforms": ["kindle"],
+      "dependencies": ["kual"],
+      "install_url": "packages/kindle/zen-reader/scripts/install.sh",
+      "uninstall_url": "packages/kindle/zen-reader/scripts/uninstall.sh",
+      "icon_url": "packages/kindle/zen-reader/assets/zen-reader.svg",
+      "featured_image": "packages/kindle/zen-reader/assets/zen-reader-featured.png",
+      "featured": true,
+      "size": "0",
+      "constraints": {
+        "abi": ["hf", "sf"]
+      }
+    },
+    {
+      "id": "koreader-kobo",
+      "name": "KOReader (Kobo)",
+      "version": "2026.03.0",
+      "description": "Install KOReader and NickelMenu launch entry on Kobo",
+      "author": "KOReader Community",
+      "platforms": ["kobo"],
+      "dependencies": ["ZenPM-kobo"],
+      "install_url": "packages/kobo/koreader/scripts/install.sh",
+      "uninstall_url": "packages/kobo/koreader/scripts/uninstall.sh",
+      "size": "0",
+      "launcher": {
+        "kobo": {
+          "entry_name": "KOReader",
+          "location": "main",
+          "type": "nickelmenu"
+        }
+      }
+    },
+    {
+      "id": "nickelmenu",
+      "name": "NickelMenu",
+      "version": "0.6.0",
+      "description": "Install NickelMenu bootstrap files on Kobo",
+      "author": "pgaskin",
+      "platforms": ["kobo"],
+      "dependencies": [],
+      "install_url": "packages/kobo/nickelmenu/scripts/install.sh",
+      "uninstall_url": "packages/kobo/nickelmenu/scripts/uninstall.sh",
+      "size": "0",
+      "launcher": {
+        "kobo": {
+          "entry_name": "NickelMenu",
+          "type": "nickelmenu"
+        }
+      }
+    },
+    {
+      "id": "ZenPM-kobo",
+      "name": "Zen Package Manager (Kobo Launcher)",
+      "version": "0.1.0",
+      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts",
+      "author": "ZenLabs",
+      "platforms": ["kobo"],
+      "dependencies": ["nickelmenu"],
+      "install_url": "packages/kobo/ZenPM/scripts/install.sh",
+      "uninstall_url": "packages/kobo/ZenPM/scripts/uninstall.sh",
+      "size": "0",
+      "launcher": {
+        "kobo": {
+          "entry_name": "Zen Package Manager",
+          "location": "main",
+          "type": "nickelmenu"
+        }
+      }
+    },
+    {
+      "id": "sudoku-koplugin",
+      "name": "Sudoku",
+      "version": "1.2.1",
+      "description": "Sudoku game plugin for KOReader",
+      "author": "Omer Faruq",
+      "platforms": ["koreader"],
+      "dependencies": ["koreader"],
+      "install_url": "packages/koreader/install-plugin.sh",
+      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
+      "featured": true,
+      "size": "20102",
+      "source": "omer-faruq/sudoku.koplugin",
+      "source_asset": "sudoku.koplugin.zip"
+    }
+  ]
+}

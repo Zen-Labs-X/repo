@@ -14,7 +14,7 @@ openssl pkey -in zenpm-key -pubout -out zenpm-key.pub
 - `zenpm-key` — private key (keep secret, add to `.gitignore`)
 - `zenpm-key.pub` — public key (commit to repo, distributed with ZenPM)
 
-Add the private key as a GitHub Actions secret named `ZENPM_PRIVATE_KEY` so the deploy workflow can sign `index.json` automatically:
+Add the private key as a GitHub Actions secret named `ZENPM_PRIVATE_KEY` so the deploy workflow can sign `manifest.json` automatically:
 
 ```sh
 gh secret set ZENPM_PRIVATE_KEY --body "$(cat zenpm-key)"
@@ -24,7 +24,7 @@ The signing is handled automatically on every push to `main` — no manual re-si
 
 ## Signature Verification
 
-All package indexes in this repository are signed with an ed25519 key. Verify `index.json` with the public key below:
+All package manifests in this repository are signed with an ed25519 key. Verify `manifest.json` with the public key below:
 
 ```
 -----BEGIN PUBLIC KEY-----
@@ -34,18 +34,18 @@ MCowBQYDK2VwAyEAsWdhAiVzFSIr8yYgFRHWWwAp2NAh/WKXMqaOkYXVN3k=
 
 **Verification command:**
 ```sh
-openssl pkeyutl -verify -pubin -inkey zenpm-key.pub -in index.json -rawin -sigfile index.json.sig
+openssl pkeyutl -verify -pubin -inkey zenpm-key.pub -in manifest.json -rawin -sigfile manifest.json.sig
 ```
 
 **Manual re-signing (if needed):**
 
 ```sh
-openssl pkeyutl -sign -inkey zenpm-key -in index.json -rawin -out index.json.sig
+openssl pkeyutl -sign -inkey zenpm-key -in manifest.json -rawin -out manifest.json.sig
 ```
 
 **Files:**
-- `index.json` — package index
-- `index.json.sig` — ed25519 signature of the index
+- `manifest.json` — package manifest
+- `manifest.json.sig` — ed25519 signature of the manifest
 - `zenpm-key.pub` — public key distributed with ZenPM
 
 
@@ -76,14 +76,14 @@ Or via the ZenPM Sources page: enter the URL `https://xzenlabs.github.io/repo/`.
 
 This repo follows the [ZenPM repository format](https://github.com/Zen-Labs-X/ZenPM#repository-format) (schema v1).
 
-- `index.json` — package catalog with all metadata (machine-readable)
-- `packages/<id>/scripts/install.sh` — install script
-- `packages/<id>/scripts/uninstall.sh` — uninstall script
-- `packages/<id>/assets/` — optional icon (`icon.png`) and featured image (`featured.png`)
+- `manifest.json` — package catalog with all metadata (machine-readable)
+- `packages/<platform>/<id>/scripts/install.sh` — install script
+- `packages/<platform>/<id>/scripts/uninstall.sh` — uninstall script
+- `packages/<platform>/<id>/assets/` — optional icon (`icon.png`) and featured image (`featured.png`)
 
 ### Optional package fields
 
-Each package in `index.json` may include:
+Each package in `manifest.json` may include:
 
 | Field | Type | Description |
 |---|---|---|
@@ -100,7 +100,7 @@ This repository is hosted via **GitHub Pages** at:
 https://xzenlabs.github.io/repo/
 ```
 
-All files are served as static content — no server-side logic required. ZenPM clients fetch `index.json` and resolve package scripts relative to this base URL.
+All files are served as static content — no server-side logic required. ZenPM clients fetch `manifest.json` and resolve package scripts relative to this base URL.
 
 ## Contributing
 

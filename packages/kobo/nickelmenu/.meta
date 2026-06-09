@@ -1,0 +1,12 @@
+id=nickelmenu
+name=NickelMenu
+version=0.6.0
+description=Install NickelMenu bootstrap files on Kobo
+author=pgaskin
+platforms=kobo
+dependencies=
+install_url=packages/kobo/nickelmenu/scripts/install.sh
+uninstall_url=packages/kobo/nickelmenu/scripts/uninstall.sh
+launcher.kobo.type=nickelmenu
+launcher.kobo.entry_name=NickelMenu
+size=0
