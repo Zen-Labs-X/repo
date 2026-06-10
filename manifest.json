@@ -3,7 +3,8 @@
   "repo": {
     "id": "ZenLabs",
     "name": "ZenLabs",
-    "url": "https://xzenlabs.github.io/repo/"
+    "url": "https://xzenlabs.github.io/repo/",
+    "icon": "favicon.svg"
   },
   "packages": [
     {
