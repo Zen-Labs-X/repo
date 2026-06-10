@@ -4,7 +4,7 @@
     "id": "ZenLabs",
     "name": "ZenLabs",
     "url": "https://xzenlabs.github.io/repo/",
-    "icon": "favicon.svg"
+    "icon_url": "https://xzenlabs.github.io/repo/favicon.svg"
   },
   "packages": [
     {

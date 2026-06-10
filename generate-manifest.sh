@@ -44,7 +44,7 @@ json_escape() {
     printf '    "id": "ZenLabs",\n'
     printf '    "name": "ZenLabs",\n'
     printf '    "url": "https://xzenlabs.github.io/repo/",\n'
-    printf '    "icon": "favicon.svg"\n'
+    printf '    "icon_url": "https://xzenlabs.github.io/repo/favicon.svg"\n'
     printf '  },\n'
     printf '  "packages": [\n'
 } > "$OUTPUT"
