@@ -3,6 +3,7 @@ name=ZenReader
 version=1.0.0
 description=Zen KOReader launcher for Kindle
 author=ZenLabs
+category=media
 platforms=kindle
 dependencies=kual
 install_url=packages/kindle/zen-reader/scripts/install.sh

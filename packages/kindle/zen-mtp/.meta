@@ -3,6 +3,7 @@ name=ZenMTP
 version=1.0.0
 description=Launch MTP (Media Transfer Protocol) programmatically
 author=ZenLabs
+category=utility
 platforms=kindle
 dependencies=
 install_url=packages/kindle/zen-mtp/scripts/install.sh

@@ -3,6 +3,7 @@ name=Zen Package Manager (Kobo Launcher)
 version=0.1.0
 description=Install Zen PM NickelMenu entry and Kobo helper scripts
 author=ZenLabs
+category=utility
 platforms=kobo
 dependencies=nickelmenu
 install_url=packages/kobo/ZenPM/scripts/install.sh

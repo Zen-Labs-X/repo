@@ -23,6 +23,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Generate manifest.json
+        run: sh generate-manifest.sh
+
       - name: Sign manifest.json
         env:
           ZENPM_PRIVATE_KEY: ${{ secrets.ZENPM_PRIVATE_KEY }}

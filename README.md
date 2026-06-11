@@ -81,6 +81,15 @@ This repo follows the [ZenPM repository format](https://github.com/Zen-Labs-X/Ze
 - `packages/<platform>/<id>/scripts/uninstall.sh` — uninstall script
 - `packages/<platform>/<id>/assets/` — optional icon (`icon.png`) and featured image (`featured.png`)
 
+### Package fields
+
+Each package metadata file must include a `category` set to one of:
+
+- `utility`
+- `games`
+- `productivity`
+- `media`
+
 ### Optional package fields
 
 Each package in `manifest.json` may include:
@@ -103,5 +112,4 @@ https://xzenlabs.github.io/repo/
 All files are served as static content — no server-side logic required. ZenPM clients fetch `manifest.json` and resolve package scripts relative to this base URL.
 
 ## Contributing
-
 

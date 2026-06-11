@@ -3,6 +3,7 @@ name=WebBrowser
 version=1.0.0
 description=Launch the Kindle web browser
 author=ZenLabs
+category=utility
 platforms=kindle
 dependencies=
 install_url=packages/kindle/browser/scripts/install.sh

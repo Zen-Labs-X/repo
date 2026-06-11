@@ -3,6 +3,7 @@ name=KOReader (Kobo)
 version=2026.03.0
 description=Install KOReader and NickelMenu launch entry on Kobo
 author=KOReader Community
+category=media
 platforms=kobo
 dependencies=ZenPM-kobo
 install_url=packages/kobo/koreader/scripts/install.sh

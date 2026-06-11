@@ -74,6 +74,7 @@ for meta_file in $meta_files; do
     version=$(grep '^version=' "$tmp" 2>/dev/null | sed 's/^version=//' | head -1)
     description=$(grep '^description=' "$tmp" 2>/dev/null | sed 's/^description=//' | head -1)
     author=$(grep '^author=' "$tmp" 2>/dev/null | sed 's/^author=//' | head -1)
+    category=$(grep '^category=' "$tmp" 2>/dev/null | sed 's/^category=//' | head -1)
     platforms=$(grep '^platforms=' "$tmp" 2>/dev/null | sed 's/^platforms=//' | head -1)
     dependencies=$(grep '^dependencies=' "$tmp" 2>/dev/null | sed 's/^dependencies=//' | head -1)
     install_url=$(grep '^install_url=' "$tmp" 2>/dev/null | sed 's/^install_url=//' | head -1)
@@ -85,6 +86,15 @@ for meta_file in $meta_files; do
     source=$(grep '^source=' "$tmp" 2>/dev/null | sed 's/^source=//' | head -1)
     source_asset=$(grep '^source_asset=' "$tmp" 2>/dev/null | sed 's/^source_asset=//' | head -1)
 
+    case "$category" in
+        utility|games|productivity|media) ;;
+        *)
+            echo "Invalid or missing category in $meta_file: $category" >&2
+            rm -f "$tmp"
+            exit 1
+            ;;
+    esac
+
     # Build package JSON
     {
         printf '    {\n'
@@ -93,6 +103,7 @@ for meta_file in $meta_files; do
         printf '      "version": "%s",\n' "$(json_escape "$version")"
         printf '      "description": "%s",\n' "$(json_escape "$description")"
         printf '      "author": "%s",\n' "$(json_escape "$author")"
+        printf '      "category": "%s",\n' "$(json_escape "$category")"
         printf '      "platforms": %s,\n' "$(csv_to_json_array "$platforms")"
         printf '      "dependencies": %s' "$(csv_to_json_array "$dependencies")"
     } >> "$OUTPUT"
