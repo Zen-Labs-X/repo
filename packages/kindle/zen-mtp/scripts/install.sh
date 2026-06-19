@@ -11,8 +11,7 @@ curl -fSL --progress-bar -o "$TMPDIR/zenmtp.zip" \
 unzip -oq "$TMPDIR/zenmtp.zip" -d "$TMPDIR"
 
 # Copy contents
-mkdir -p /mnt/us/documents/zenmtp
-cp -r "$TMPDIR"/* /mnt/us/documents/zenmtp/
+cp -r "$TMPDIR"/* /mnt/us/
 
 # Cleanup
 rm -rf "$TMPDIR"

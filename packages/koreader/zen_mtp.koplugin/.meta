@@ -1,0 +1,16 @@
+# ZenMTP plugin for KOReader
+# https://github.com/xZenLabs/ZenMTP
+id=zen-mtp-koplugin
+name=ZenMTP
+version=1.7
+description=Trigger MTP file-transfer mode from Kindle home or KOReader
+author=ZenLabs
+category=utility
+platforms=koreader,kindle
+dependencies=
+source=https://github.com/xZenLabs/ZenMTP
+source_asset=zen_mtp.koplugin.zip
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+featured=true
+size=20102
