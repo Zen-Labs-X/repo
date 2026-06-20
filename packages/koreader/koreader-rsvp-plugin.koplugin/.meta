@@ -1,0 +1,17 @@
+# Koreader Rsvp Plugin plugin for KOReader
+# https://github.com/karpushchenko/koreader-rsvp-plugin
+# zenpm:auto-scraped
+id=koreader-rsvp-plugin
+name=Koreader Rsvp Plugin
+version=0.0.0-source
+description=An RSVP (Rapid Serial Visual Presentation) plugin that enables speed reading with advanced features for KOReader.
+author=karpushchenko
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/karpushchenko/koreader-rsvp-plugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=31
+source_type=source
+source_url=https://codeload.github.com/karpushchenko/koreader-rsvp-plugin/zip/refs/heads/main

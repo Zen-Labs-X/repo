@@ -1,0 +1,18 @@
+# Wordsearch plugin for KOReader
+# https://github.com/omer-faruq/wordsearch.koplugin
+# zenpm:auto-scraped
+id=wordsearch
+name=Wordsearch
+version=1.0.1
+description=Word Search Puzzle Plugin for KOReader
+author=omer-faruq
+category=games
+platforms=koreader
+dependencies=
+source=https://github.com/omer-faruq/wordsearch.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=19
+source_type=release
+source_asset=wordsearch.koplugin.zip
+size=45366

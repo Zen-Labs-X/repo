@@ -1,0 +1,17 @@
+# Connections plugin for KOReader
+# https://github.com/odrling/connections.koplugin
+# zenpm:auto-scraped
+id=connections
+name=Connections
+version=0.0.0-source
+description=NYT Connections for KOReader
+author=odrling
+category=games
+platforms=koreader
+dependencies=
+source=https://github.com/odrling/connections.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=16
+source_type=source
+source_url=https://codeload.github.com/odrling/connections.koplugin/zip/refs/heads/main

@@ -1,0 +1,17 @@
+# Dictionarymode plugin for KOReader
+# https://github.com/ckilb/dictionarymode.koplugin
+# zenpm:auto-scraped
+id=dictionarymode
+name=Dictionarymode
+version=0.0.0-source
+description=Enables dictionary mode (one tap dictionary lookups) in KOReader
+author=ckilb
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/ckilb/dictionarymode.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=31
+source_type=source
+source_url=https://codeload.github.com/ckilb/dictionarymode.koplugin/zip/refs/heads/main

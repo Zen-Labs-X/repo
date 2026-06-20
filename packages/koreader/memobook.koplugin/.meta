@@ -1,0 +1,18 @@
+# Memobook plugin for KOReader
+# https://github.com/omer-faruq/memobook.koplugin
+# zenpm:auto-scraped
+id=memobook
+name=Memobook
+version=1.1.0
+description=Your personal in-book memo and self-dictionary for KOReader
+author=omer-faruq
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/omer-faruq/memobook.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=23
+source_type=release
+source_asset=memobook.koplugin.zip
+size=31507

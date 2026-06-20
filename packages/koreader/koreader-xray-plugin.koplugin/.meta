@@ -1,0 +1,18 @@
+# Koreader Xray Plugin plugin for KOReader
+# https://github.com/ultimatejimmy/koreader-xray-plugin
+# zenpm:auto-scraped
+id=koreader-xray-plugin
+name=Koreader Xray Plugin
+version=26.6.19
+description=AI-powered character tracking, timeline, and historical context etc.
+author=ultimatejimmy
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/ultimatejimmy/koreader-xray-plugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=93
+source_type=release
+source_asset=xray.koplugin.zip
+size=269347

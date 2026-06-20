@@ -1,0 +1,18 @@
+# Applauncher plugin for KOReader
+# https://github.com/omer-faruq/applauncher.koplugin
+# zenpm:auto-scraped
+id=applauncher
+name=Applauncher
+version=1.1.0
+description=Quick launcher to organize installed KOReader plugins into categories and open them via a gesture.
+author=omer-faruq
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/omer-faruq/applauncher.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=23
+source_type=release
+source_asset=applauncher.koplugin.zip
+size=19471

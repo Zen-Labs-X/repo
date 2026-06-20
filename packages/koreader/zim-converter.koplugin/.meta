@@ -1,0 +1,17 @@
+# Zim Converter plugin for KOReader
+# https://github.com/Bartvelp/zim-converter
+# zenpm:auto-scraped
+id=zim-converter
+name=Zim Converter
+version=0.0.0-source
+description=convert ZIM files, as found in the Kiwix WikiPedia library, to a SQLite database that is read by the WikiReader plugin of KOReader
+author=Bartvelp
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/Bartvelp/zim-converter
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=30
+source_type=source
+source_url=https://codeload.github.com/Bartvelp/zim-converter/zip/refs/heads/master

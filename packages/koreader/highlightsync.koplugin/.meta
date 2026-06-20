@@ -1,0 +1,17 @@
+# Highlightsync plugin for KOReader
+# https://github.com/gitalexcampos/highlightsync.koplugin
+# zenpm:auto-scraped
+id=highlightsync
+name=Highlightsync
+version=0.7.2
+description=A KOReader plugin to sync highlights, notes, and bookmarks across multiple devices using cloud storage like WebDAV or Dropbox.
+author=gitalexcampos
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/gitalexcampos/highlightsync.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=205
+source_type=source
+source_url=https://codeload.github.com/gitalexcampos/highlightsync.koplugin/zip/refs/heads/master

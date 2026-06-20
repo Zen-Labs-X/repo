@@ -1,0 +1,18 @@
+# Kamare plugin for KOReader
+# https://github.com/fpammer/kamare.koplugin
+# zenpm:auto-scraped
+id=kamare
+name=Kamare
+version=0.9.19
+description=A manga reader plugin for KOReader that connects to Kavita self-hosted digital library.
+author=fpammer
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/fpammer/kamare.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=40
+source_type=release
+source_asset=kamare.koplugin.zip
+size=60169

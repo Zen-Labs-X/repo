@@ -1,0 +1,17 @@
+# Crashlog plugin for KOReader
+# https://github.com/Billiam/crashlog.koplugin
+# zenpm:auto-scraped
+id=crashlog
+name=Crashlog
+version=0.0.0-source
+description=Crash log viewer for koreader
+author=Billiam
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/Billiam/crashlog.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=21
+source_type=source
+source_url=https://codeload.github.com/Billiam/crashlog.koplugin/zip/refs/heads/main

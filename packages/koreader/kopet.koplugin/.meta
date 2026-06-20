@@ -1,0 +1,18 @@
+# Kopet plugin for KOReader
+# https://github.com/PedroMachado1/kopet.koplugin
+# zenpm:auto-scraped
+id=kopet
+name=Kopet
+version=2.0
+description=
+author=PedroMachado1
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/PedroMachado1/kopet.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=26
+source_type=release
+source_asset=kopet.koplugin.zip
+size=29861

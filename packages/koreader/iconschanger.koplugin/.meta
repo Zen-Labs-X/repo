@@ -1,0 +1,17 @@
+# Iconschanger plugin for KOReader
+# https://github.com/ebanDev/iconschanger.koplugin
+# zenpm:auto-scraped
+id=iconschanger
+name=Iconschanger
+version=0.0.0-source
+description=
+author=ebanDev
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/ebanDev/iconschanger.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=62
+source_type=source
+source_url=https://codeload.github.com/ebanDev/iconschanger.koplugin/zip/refs/heads/main

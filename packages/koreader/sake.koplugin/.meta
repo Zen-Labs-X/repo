@@ -1,0 +1,17 @@
+# Sake plugin for KOReader
+# https://github.com/Sudashiii/Sake
+# zenpm:auto-scraped
+id=sake
+name=Sake
+version=webapp/v2026.04.04.4
+description=Svelte and KOReader Ecosystem
+author=Sudashiii
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/Sudashiii/Sake
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=75
+source_type=source
+source_url=https://codeload.github.com/Sudashiii/Sake/zip/refs/heads/master

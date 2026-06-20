@@ -1,0 +1,18 @@
+# Simpleui plugin for KOReader
+# https://github.com/doctorhetfield-cmd/simpleui.koplugin
+# zenpm:auto-scraped
+id=simpleui
+name=Simpleui
+version=2.0.1
+description=A highly customizable UI plugin for KOReader that features a home screen, bottom navigation bar, top bar and desktop modules/widgets.
+author=doctorhetfield-cmd
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/doctorhetfield-cmd/simpleui.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=943
+source_type=release
+source_asset=simpleui.koplugin.zip
+size=893532

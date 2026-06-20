@@ -1,0 +1,17 @@
+# Notes plugin for KOReader
+# https://github.com/prasy-loyola/notes.koplugin
+# zenpm:auto-scraped
+id=notes
+name=Notes
+version=0.0.0-source
+description=
+author=prasy-loyola
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/prasy-loyola/notes.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=52
+source_type=source
+source_url=https://codeload.github.com/prasy-loyola/notes.koplugin/zip/refs/heads/main

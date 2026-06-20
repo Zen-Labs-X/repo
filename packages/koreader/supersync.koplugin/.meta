@@ -1,0 +1,17 @@
+# Supersync plugin for KOReader
+# https://github.com/BrendanL79/supersync.koplugin
+# zenpm:auto-scraped
+id=supersync
+name=Supersync
+version=0.0.0-source
+description=Full metadata sync for KOreader via user's own cloud storage
+author=BrendanL79
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/BrendanL79/supersync.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=39
+source_type=source
+source_url=https://codeload.github.com/BrendanL79/supersync.koplugin/zip/refs/heads/main

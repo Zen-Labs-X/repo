@@ -1,0 +1,17 @@
+# Pocketbooktools plugin for KOReader
+# https://github.com/reuerendo/pocketbooktools.koplugin
+# zenpm:auto-scraped
+id=pocketbooktools
+name=Pocketbooktools
+version=0.0.0-source
+description=Plugin for KOReader and PocketBook Integration
+author=reuerendo
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/reuerendo/pocketbooktools.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=15
+source_type=source
+source_url=https://codeload.github.com/reuerendo/pocketbooktools.koplugin/zip/refs/heads/main

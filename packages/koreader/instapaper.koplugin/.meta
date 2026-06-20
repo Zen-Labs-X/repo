@@ -1,0 +1,18 @@
+# Instapaper plugin for KOReader
+# https://github.com/omer-faruq/instapaper.koplugin
+# zenpm:auto-scraped
+id=instapaper
+name=Instapaper
+version=1.3.2
+description=Download and read articles from your Instapaper account directly in KOReader
+author=omer-faruq
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/omer-faruq/instapaper.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=28
+source_type=release
+source_asset=instapaper.koplugin.zip
+size=34083

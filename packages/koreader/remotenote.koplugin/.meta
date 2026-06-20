@@ -1,0 +1,32 @@
+# Remotenote plugin for KOReader
+# https://github.com/j-v/remotenote.koplugin
+# zenpm:auto-scraped
+id=remotenote
+name=Remotenote
+version=0.4.1
+description=Take notes in KOReader on a remote device
+author=j-v
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/j-v/remotenote.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=16
+source_type=release
+assets.0.arch=arm
+assets.0.asset=remotenote.koplugin-arm-legacy.zip
+assets.0.url=https://github.com/j-v/remotenote.koplugin/releases/download/v0.4.1/remotenote.koplugin-arm-legacy.zip
+assets.0.size=1374400
+assets.1.arch=arm64
+assets.1.asset=remotenote.koplugin-arm64.zip
+assets.1.url=https://github.com/j-v/remotenote.koplugin/releases/download/v0.4.1/remotenote.koplugin-arm64.zip
+assets.1.size=1241472
+assets.2.arch=armv7
+assets.2.asset=remotenote.koplugin-armv7.zip
+assets.2.url=https://github.com/j-v/remotenote.koplugin/releases/download/v0.4.1/remotenote.koplugin-armv7.zip
+assets.2.size=1362869
+assets.3.arch=x86_64
+assets.3.asset=remotenote.koplugin-x86_64.zip
+assets.3.url=https://github.com/j-v/remotenote.koplugin/releases/download/v0.4.1/remotenote.koplugin-x86_64.zip
+assets.3.size=1351264

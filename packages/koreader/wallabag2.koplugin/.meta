@@ -1,0 +1,17 @@
+# Wallabag2 plugin for KOReader
+# https://github.com/clach04/wallabag2.koplugin
+# zenpm:auto-scraped
+id=wallabag2
+name=Wallabag2
+version=0.0.0-source
+description=KoReader plugin for Wallabag (version 2) servers
+author=clach04
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/clach04/wallabag2.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=20
+source_type=source
+source_url=https://codeload.github.com/clach04/wallabag2.koplugin/zip/refs/heads/master

@@ -1,0 +1,17 @@
+# Koreader Multiuser plugin for KOReader
+# https://github.com/artemartemenko/KOReader_MultiUser.koplugin
+# zenpm:auto-scraped
+id=koreader-multiuser
+name=Koreader Multiuser
+version=0.0.0-source
+description=KOReader plugin and patch for isolated user profiles — separate settings, history, and reading statistic per user
+author=artemartemenko
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/artemartemenko/KOReader_MultiUser.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=33
+source_type=source
+source_url=https://codeload.github.com/artemartemenko/KOReader_MultiUser.koplugin/zip/refs/heads/main

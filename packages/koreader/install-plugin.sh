@@ -231,41 +231,73 @@ extract_asset_digest() {
 
 echo "KOReader root: $KO_ROOT"
 
-API_URL=$(resolve_api_url "$REPO_REF")
-echo "Resolving release: $API_URL"
+# Architecture supplied by the ZenPM client to pick a matching release asset.
+TARGET_ARCH="${ZENPM_PACKAGE_ARCH:-${ZENPM_ARCH:-}}"
 
-RELEASE_JSON=$(fetch_json "$API_URL")
+RELEASE_JSON=""
+ASSET_URL=""
+ASSET_DIGEST=""
 
-# Extract asset download URL matching the pattern
-if [ -n "$ASSET_PATTERN" ]; then
-    ASSET_URL=$(printf '%s\n' "$RELEASE_JSON" \
-        | grep -oE '"browser_download_url":\s*"[^"]*"' \
-        | cut -d'"' -f4 \
-        | grep -iF "$ASSET_PATTERN" \
-        | head -n 1 || true)
-else
-    ASSET_URL=$(printf '%s\n' "$RELEASE_JSON" \
-        | grep -oE '"browser_download_url":\s*"[^"]*"' \
-        | cut -d'"' -f4 \
-        | grep -iE '\.zip$' \
-        | head -n 1 || true)
-fi
+case "$REPO_REF" in
+    # Direct zip URL (e.g. codeload source archive or a specific release asset).
+    # Skip the release API entirely and download it as-is.
+    *.zip|https://codeload.github.com/*|http://codeload.github.com/*)
+        ASSET_URL="$REPO_REF"
+        echo "Direct archive: $ASSET_URL"
+        ;;
+    *)
+        API_URL=$(resolve_api_url "$REPO_REF")
+        echo "Resolving release: $API_URL"
+        RELEASE_JSON=$(fetch_json "$API_URL")
 
-if [ -z "$ASSET_URL" ]; then
-    echo "No matching asset found in release"
-    if [ -n "$ASSET_PATTERN" ]; then
-        echo "  pattern: $ASSET_PATTERN"
-    fi
-    exit 1
-fi
+        # Build the candidate asset list once (all .zip browser_download_urls).
+        ASSET_LIST=$(printf '%s\n' "$RELEASE_JSON" \
+            | grep -oE '"browser_download_url":\s*"[^"]*"' \
+            | cut -d'"' -f4 \
+            | grep -iE '\.zip$' || true)
+
+        if [ -n "$ASSET_PATTERN" ]; then
+            ASSET_URL=$(printf '%s\n' "$ASSET_LIST" | grep -iF "$ASSET_PATTERN" | head -n 1 || true)
+        fi
+
+        # No explicit pattern match yet: try the client arch token.
+        if [ -z "$ASSET_URL" ] && [ -n "$TARGET_ARCH" ]; then
+            ASSET_URL=$(printf '%s\n' "$ASSET_LIST" | grep -iF "$TARGET_ARCH" | head -n 1 || true)
+            [ -n "$ASSET_URL" ] && echo "Selected asset for arch '$TARGET_ARCH'"
+        fi
+
+        # Fall back to the first zip asset.
+        if [ -z "$ASSET_URL" ]; then
+            ASSET_URL=$(printf '%s\n' "$ASSET_LIST" | head -n 1 || true)
+        fi
+
+        if [ -z "$ASSET_URL" ]; then
+            echo "No matching asset found in release"
+            [ -n "$ASSET_PATTERN" ] && echo "  pattern: $ASSET_PATTERN"
+            exit 1
+        fi
+        ;;
+esac
 
 ASSET_FILENAME=$(printf '%s\n' "$ASSET_URL" | sed 's|.*/||')
 echo "Found asset: $ASSET_FILENAME"
-ASSET_DIGEST=$(extract_asset_digest "$RELEASE_JSON" "$ASSET_FILENAME")
+if [ -n "$RELEASE_JSON" ]; then
+    ASSET_DIGEST=$(extract_asset_digest "$RELEASE_JSON" "$ASSET_FILENAME")
+fi
 
 # Derive display name
 if [ -z "$DISPLAY_NAME" ]; then
-    DISPLAY_NAME=$(derive_name_from_asset "$ASSET_FILENAME" || derive_name "$REPO_REF")
+    case "$REPO_REF" in
+        https://codeload.github.com/*|http://codeload.github.com/*)
+            # codeload.github.com/<owner>/<repo>/zip/... -> repo name
+            DISPLAY_NAME=$(printf '%s\n' "$REPO_REF" \
+                | sed 's|^https://codeload\.github\.com/||;s|^http://codeload\.github\.com/||' \
+                | cut -d/ -f2)
+            ;;
+        *)
+            DISPLAY_NAME=$(derive_name_from_asset "$ASSET_FILENAME" || derive_name "$REPO_REF")
+            ;;
+    esac
 fi
 [ -z "$DISPLAY_NAME" ] && DISPLAY_NAME="${ZENPM_PACKAGE_ID:-${PACKAGE_ID:-}}"
 PLUGIN_DIR="$KO_PLUGINS_DIR/$DISPLAY_NAME"

@@ -85,9 +85,12 @@ for meta_file in $meta_files; do
     featured_image=$(grep '^featured_image=' "$tmp" 2>/dev/null | sed 's/^featured_image=//' | head -1)
     source=$(grep '^source=' "$tmp" 2>/dev/null | sed 's/^source=//' | head -1)
     source_asset=$(grep '^source_asset=' "$tmp" 2>/dev/null | sed 's/^source_asset=//' | head -1)
+    source_type=$(grep '^source_type=' "$tmp" 2>/dev/null | sed 's/^source_type=//' | head -1)
+    source_url=$(grep '^source_url=' "$tmp" 2>/dev/null | sed 's/^source_url=//' | head -1)
+    stars=$(grep '^stars=' "$tmp" 2>/dev/null | sed 's/^stars=//' | head -1)
 
     case "$category" in
-        utility|games|productivity|media) ;;
+        utility|games|productivity|media|theme) ;;
         *)
             echo "Invalid or missing category in $meta_file: $category" >&2
             rm -f "$tmp"
@@ -125,6 +128,33 @@ for meta_file in $meta_files; do
     # Source fields
     [ -n "$source" ]       && printf ',\n      "source": "%s"' "$(json_escape "$source")" >> "$OUTPUT"
     [ -n "$source_asset" ] && printf ',\n      "source_asset": "%s"' "$(json_escape "$source_asset")" >> "$OUTPUT"
+    [ -n "$source_type" ]  && printf ',\n      "source_type": "%s"' "$(json_escape "$source_type")" >> "$OUTPUT"
+    [ -n "$source_url" ]   && printf ',\n      "source_url": "%s"' "$(json_escape "$source_url")" >> "$OUTPUT"
+    [ -n "$stars" ]        && printf ',\n      "stars": "%s"' "$stars" >> "$OUTPUT"
+
+    # Assets array (dot notation: assets.N.key)
+    asset_indices=$(grep '^assets\.' "$tmp" 2>/dev/null \
+        | sed 's/^assets\.\([0-9][0-9]*\)\..*/\1/' \
+        | sort -n | uniq || true)
+    if [ -n "$asset_indices" ]; then
+        printf ',\n      "assets": [' >> "$OUTPUT"
+        af_first=true
+        for idx in $asset_indices; do
+            a_arch=$(grep "^assets\.$idx\.arch=" "$tmp" 2>/dev/null | sed "s/^assets\.$idx\.arch=//" | head -1)
+            a_asset=$(grep "^assets\.$idx\.asset=" "$tmp" 2>/dev/null | sed "s/^assets\.$idx\.asset=//" | head -1)
+            a_url=$(grep "^assets\.$idx\.url=" "$tmp" 2>/dev/null | sed "s/^assets\.$idx\.url=//" | head -1)
+            a_size=$(grep "^assets\.$idx\.size=" "$tmp" 2>/dev/null | sed "s/^assets\.$idx\.size=//" | head -1)
+
+            if $af_first; then af_first=false; else printf ',' >> "$OUTPUT"; fi
+            printf '\n        {\n' >> "$OUTPUT"
+            printf '          "arch": "%s",\n' "$(json_escape "$a_arch")" >> "$OUTPUT"
+            printf '          "asset": "%s",\n' "$(json_escape "$a_asset")" >> "$OUTPUT"
+            printf '          "url": "%s"' "$(json_escape "$a_url")" >> "$OUTPUT"
+            [ -n "$a_size" ] && printf ',\n          "size": "%s"' "$a_size" >> "$OUTPUT"
+            printf '\n        }' >> "$OUTPUT"
+        done
+        printf '\n      ]' >> "$OUTPUT"
+    fi
 
     # Constraints (dot notation: constraints.abi)
     constraint_abis=$(grep '^constraints\.abi=' "$tmp" 2>/dev/null | sed 's/^constraints\.abi=//' | head -1 || true)

@@ -1,0 +1,18 @@
+# Kodashboard plugin for KOReader
+# https://github.com/Yuchen971/Kodashboard
+# zenpm:auto-scraped
+id=kodashboard
+name=Kodashboard
+version=1.2.5
+description=A KOReader plugin that serves a local web dashboard for browsing your library, reading stats, calendar activity, and highlights/notes on any device in your local network.
+author=Yuchen971
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/Yuchen971/Kodashboard
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=89
+source_type=release
+source_asset=kodashboard-v1.2.5-minimal.zip
+size=57934

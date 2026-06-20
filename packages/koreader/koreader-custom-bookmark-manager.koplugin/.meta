@@ -1,0 +1,18 @@
+# Koreader Custom Bookmark Manager plugin for KOReader
+# https://github.com/sadke8465/Koreader-Custom-Bookmark-Manager
+# zenpm:auto-scraped
+id=koreader-custom-bookmark-manager
+name=Koreader Custom Bookmark Manager
+version=1.0.0
+description=
+author=sadke8465
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/sadke8465/Koreader-Custom-Bookmark-Manager
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=19
+source_type=release
+source_asset=dogearmanager-V1.0.0.zip
+size=14212

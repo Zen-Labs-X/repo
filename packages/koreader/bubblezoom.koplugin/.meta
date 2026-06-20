@@ -1,0 +1,18 @@
+# Bubblezoom plugin for KOReader
+# https://github.com/anezih/bubblezoom.koplugin
+# zenpm:auto-scraped
+id=bubblezoom
+name=Bubblezoom
+version=1.2.0
+description=KOReader plugin that enables magnifying speech bubbles in comics/manga.
+author=anezih
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/anezih/bubblezoom.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=17
+source_type=release
+source_asset=bubblezoom.koplugin_1.2.0.zip
+size=17926

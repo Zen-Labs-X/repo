@@ -1,0 +1,18 @@
+# Bookshelf plugin for KOReader
+# https://github.com/AndyHazz/bookshelf.koplugin
+# zenpm:auto-scraped
+id=bookshelf
+name=Bookshelf
+version=3.5.0
+description=A nice looking home screen for KOReader. Lets you pick a book from your shelf and read it, with some customisation around the book preview info that's shown.
+author=AndyHazz
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/AndyHazz/bookshelf.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=228
+source_type=release
+source_asset=bookshelf.koplugin.zip
+size=1961236

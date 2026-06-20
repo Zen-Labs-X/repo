@@ -1,0 +1,17 @@
+# Pencil plugin for KOReader
+# https://github.com/mysticknits/pencil.koplugin
+# zenpm:auto-scraped
+id=pencil
+name=Pencil
+version=0.5.0
+description=Koreader plugin that allows Kobo Libra Color users to use a stylus to take notes in Epubs.
+author=mysticknits
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/mysticknits/pencil.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=97
+source_type=source
+source_url=https://codeload.github.com/mysticknits/pencil.koplugin/zip/refs/heads/main

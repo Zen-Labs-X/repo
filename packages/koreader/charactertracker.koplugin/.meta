@@ -1,0 +1,17 @@
+# Charactertracker plugin for KOReader
+# https://github.com/Shac0x/charactertracker.koplugin
+# zenpm:auto-scraped
+id=charactertracker
+name=Charactertracker
+version=0.0.0-source
+description=KOReader character tracker for tracking reading progress and stats.
+author=Shac0x
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/Shac0x/charactertracker.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=31
+source_type=source
+source_url=https://codeload.github.com/Shac0x/charactertracker.koplugin/zip/refs/heads/main

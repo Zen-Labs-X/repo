@@ -1,0 +1,17 @@
+# Tts plugin for KOReader
+# https://github.com/norude/TTS.koplugin
+# zenpm:auto-scraped
+id=tts
+name=Tts
+version=0.0.0-source
+description=A text-to-speech plugin for KOreader
+author=norude
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/norude/TTS.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=30
+source_type=source
+source_url=https://codeload.github.com/norude/TTS.koplugin/zip/refs/heads/main

@@ -1,0 +1,18 @@
+# Koreader Menu Customizer plugin for KOReader
+# https://github.com/JoeBumm/Koreader-Menu-customizer
+# zenpm:auto-scraped
+id=koreader-menu-customizer
+name=Koreader Menu Customizer
+version=2.0.2
+description=Simplify KOReader. Hide menus. Hide plugins. Focus on reading.
+author=JoeBumm
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/JoeBumm/Koreader-Menu-customizer
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=108
+source_type=release
+source_asset=menu_customizer.koplugin.zip
+size=27676

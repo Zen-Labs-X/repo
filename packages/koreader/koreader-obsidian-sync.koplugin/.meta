@@ -1,0 +1,17 @@
+# Koreader Obsidian Sync plugin for KOReader
+# https://github.com/MySTerY1747/KOReader-Obsidian-Sync
+# zenpm:auto-scraped
+id=koreader-obsidian-sync
+name=Koreader Obsidian Sync
+version=0.0.0-source
+description=A JS script and set of utilities to import and organize KOReader highlights into Obsidian
+author=MySTerY1747
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/MySTerY1747/KOReader-Obsidian-Sync
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=22
+source_type=source
+source_url=https://codeload.github.com/MySTerY1747/KOReader-Obsidian-Sync/zip/refs/heads/main

@@ -1,0 +1,18 @@
+# Illustrations plugin for KOReader
+# https://github.com/agaragou/illustrations.koplugin
+# zenpm:auto-scraped
+id=illustrations
+name=Illustrations
+version=0.5.2
+description=A plugin for [KOReader](https://github.com/koreader/koreader) that allows you to browse, preview, and navigate through all illustrations contained in an EPUB book.
+author=agaragou
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/agaragou/illustrations.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=28
+source_type=release
+source_asset=illustrations.koplugin.zip
+size=11409

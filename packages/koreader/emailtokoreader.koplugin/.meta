@@ -1,0 +1,18 @@
+# Emailtokoreader plugin for KOReader
+# https://github.com/marinov752/emailtokoreader.koplugin
+# zenpm:auto-scraped
+id=emailtokoreader
+name=Emailtokoreader
+version=1.1.1
+description=Automatically download EPUB files from your email directly to your KOReader device.
+author=marinov752
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/marinov752/emailtokoreader.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=33
+source_type=release
+source_asset=Email.to.KOReader.v1.1.1.zip
+size=11903

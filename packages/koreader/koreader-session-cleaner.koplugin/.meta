@@ -1,0 +1,18 @@
+# Koreader Session Cleaner plugin for KOReader
+# https://github.com/graphirus-prog/koreader-session-cleaner
+# zenpm:auto-scraped
+id=koreader-session-cleaner
+name=Koreader Session Cleaner
+version=1.10.1
+description=KOReader plugin to inspect, filter, and safely delete suspicious reconstructed reading sessions from statistics.sqlite3.
+author=graphirus-prog
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/graphirus-prog/koreader-session-cleaner
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=15
+source_type=release
+source_asset=Session.Cleaner.v1.10.1.zip
+size=22695

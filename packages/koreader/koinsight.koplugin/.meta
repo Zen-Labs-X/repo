@@ -1,0 +1,17 @@
+# Koinsight plugin for KOReader
+# https://github.com/GeorgeSG/KoInsight
+# zenpm:auto-scraped
+id=koinsight
+name=Koinsight
+version=0.2.2
+description=📚 KoInsight brings your KoReader reading stats to life with a clean, web-based dashboard.
+author=GeorgeSG
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/GeorgeSG/KoInsight
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=552
+source_type=source
+source_url=https://codeload.github.com/GeorgeSG/KoInsight/zip/refs/heads/master

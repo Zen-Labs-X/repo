@@ -1,0 +1,18 @@
+# Appearance plugin for KOReader
+# https://github.com/Euphoriyy/appearance.koplugin
+# zenpm:auto-scraped
+id=appearance
+name=Appearance
+version=1.5.1
+description=A plugin that allows you to customize KOReader's look and color scheme. It adds color options for the interface and books, plus progress bar and highlights. It also adds themes, fonts, and backgrou...
+author=Euphoriyy
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/Euphoriyy/appearance.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=86
+source_type=release
+source_asset=appearance.koplugin.zip
+size=101433

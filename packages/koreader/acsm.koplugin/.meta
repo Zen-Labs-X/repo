@@ -1,0 +1,18 @@
+# Acsm plugin for KOReader
+# https://github.com/kaikozlov/acsm.koplugin
+# zenpm:auto-scraped
+id=acsm
+name=Acsm
+version=0.0.9
+description=ACSM plugin for KOReader — read library loans from Libby and OverDrive on your e-reader
+author=kaikozlov
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/kaikozlov/acsm.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=34
+source_type=release
+source_asset=acsm.koplugin-v0.0.9.zip
+size=77027

@@ -1,0 +1,18 @@
+# Storygraph plugin for KOReader
+# https://github.com/burneracc0112/storygraph.koplugin
+# zenpm:auto-scraped
+id=storygraph
+name=Storygraph
+version=0.2.2
+description=storygraph status updating from KOReader
+author=burneracc0112
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/burneracc0112/storygraph.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=23
+source_type=release
+source_asset=storygraph.koplugin.zip
+size=70941

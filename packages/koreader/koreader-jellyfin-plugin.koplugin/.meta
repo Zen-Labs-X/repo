@@ -1,0 +1,18 @@
+# Koreader Jellyfin Plugin plugin for KOReader
+# https://github.com/DeclanChidlow/KOReader-Jellyfin-Plugin
+# zenpm:auto-scraped
+id=koreader-jellyfin-plugin
+name=Koreader Jellyfin Plugin
+version=1.1.0
+description=A plugin for KOReader that allows downloading books from a Jellyfin instance.
+author=DeclanChidlow
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/DeclanChidlow/KOReader-Jellyfin-Plugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=20
+source_type=release
+source_asset=jellyfin.koplugin.zip
+size=20657

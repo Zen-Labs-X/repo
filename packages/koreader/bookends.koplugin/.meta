@@ -1,0 +1,18 @@
+# Bookends plugin for KOReader
+# https://github.com/AndyHazz/bookends.koplugin
+# zenpm:auto-scraped
+id=bookends
+name=Bookends
+version=5.17.0
+description=KOReader plugin for configurable text overlays — tokens, icons, per-line styling, presets
+author=AndyHazz
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/AndyHazz/bookends.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=199
+source_type=release
+source_asset=bookends.koplugin-v5.17.0.zip
+size=372485

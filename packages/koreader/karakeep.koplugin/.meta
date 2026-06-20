@@ -1,0 +1,18 @@
+# Karakeep plugin for KOReader
+# https://github.com/AlgusDark/karakeep.koplugin
+# zenpm:auto-scraped
+id=karakeep
+name=Karakeep
+version=0.0.3
+description=
+author=AlgusDark
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/AlgusDark/karakeep.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=24
+source_type=release
+source_asset=karakeep.koplugin.zip
+size=22396

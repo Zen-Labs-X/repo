@@ -1,0 +1,18 @@
+# Koreader Dynamic Panelzoom plugin for KOReader
+# https://github.com/JorgeTheFox/koreader-dynamic-panelzoom
+# zenpm:auto-scraped
+id=koreader-dynamic-panelzoom
+name=Koreader Dynamic Panelzoom
+version=1.7.0
+description=A KOReader plugin for dynamic panel-by-panel zooming in comics and manga.
+author=JorgeTheFox
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/JorgeTheFox/koreader-dynamic-panelzoom
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=20
+source_type=release
+source_asset=dynamic_panelzoom.koplugin.zip
+size=20675

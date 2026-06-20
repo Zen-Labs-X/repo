@@ -1,0 +1,17 @@
+# Ao3Updater plugin for KOReader
+# https://github.com/ProfBlack/ao3updater.koplugin
+# zenpm:auto-scraped
+id=ao3updater
+name=Ao3Updater
+version=0.0.0-source
+description=Updates Archive of Our Own EPUBs automatically.
+author=ProfBlack
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/ProfBlack/ao3updater.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=25
+source_type=source
+source_url=https://codeload.github.com/ProfBlack/ao3updater.koplugin/zip/refs/heads/main

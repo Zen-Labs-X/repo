@@ -1,0 +1,28 @@
+# Localsend plugin for KOReader
+# https://github.com/kaikozlov/localsend.koplugin
+# zenpm:auto-scraped
+id=localsend
+name=Localsend
+version=1.3.0
+description=LocalSend plugin for KOReader - send and receive files wirelessly on your e-reader
+author=kaikozlov
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/kaikozlov/localsend.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=191
+source_type=release
+assets.0.arch=arm
+assets.0.asset=localsend-koplugin-arm-legacy.zip
+assets.0.url=https://github.com/kaikozlov/localsend.koplugin/releases/download/v1.3.0/localsend-koplugin-arm-legacy.zip
+assets.0.size=5820927
+assets.1.arch=arm64
+assets.1.asset=localsend-koplugin-arm64.zip
+assets.1.url=https://github.com/kaikozlov/localsend.koplugin/releases/download/v1.3.0/localsend-koplugin-arm64.zip
+assets.1.size=5788333
+assets.2.arch=armv7
+assets.2.asset=localsend-koplugin-armv7.zip
+assets.2.url=https://github.com/kaikozlov/localsend.koplugin/releases/download/v1.3.0/localsend-koplugin-armv7.zip
+assets.2.size=5795199

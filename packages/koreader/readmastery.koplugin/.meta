@@ -1,0 +1,18 @@
+# Readmastery plugin for KOReader
+# https://github.com/Lalocaballero/readmastery.koplugin
+# zenpm:auto-scraped
+id=readmastery
+name=Readmastery
+version=1.3.1
+description=ReadMastery is a KOReader plugin that transforms your reading experience into an RPG-style adventure. Earn XP, level up, maintain streaks, and unlock achievements as you read!
+author=Lalocaballero
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/Lalocaballero/readmastery.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=67
+source_type=release
+source_asset=ReadMastery.koplugin.zip
+size=48351
