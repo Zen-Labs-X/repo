@@ -322,11 +322,29 @@ extract_zip "$ARCHIVE_PATH" "$EXTRACT_DIR"
 # Determine the plugin root inside the extracted contents.
 # If there's a single top-level directory, use its contents as the plugin.
 CONTENTS=$(ls -A "$EXTRACT_DIR")
-if [ "$(printf '%s\n' "$CONTENTS" | wc -l)" = "1" ] && [ -d "$EXTRACT_DIR/$CONTENTS" ]; then
+ENTRY_COUNT=$(printf '%s\n' "$CONTENTS" | wc -l | tr -d ' ')
+if [ "$ENTRY_COUNT" = "1" ] && [ -d "$EXTRACT_DIR/$CONTENTS" ]; then
     SRC_DIR="$EXTRACT_DIR/$CONTENTS"
+    # If the single top-level dir is already a .koplugin bundle, preserve its
+    # name as the install dir. KOReader only loads dirs ending in .koplugin.
+    case "$CONTENTS" in
+        *.koplugin)
+            DISPLAY_NAME="$CONTENTS"
+            PLUGIN_DIR="$KO_PLUGINS_DIR/$DISPLAY_NAME"
+            ;;
+    esac
 else
     SRC_DIR="$EXTRACT_DIR"
 fi
+
+# Ensure the install dir ends in .koplugin so KOReader will load it.
+case "$PLUGIN_DIR" in
+    *.koplugin) ;;
+    *)
+        DISPLAY_NAME="$DISPLAY_NAME.koplugin"
+        PLUGIN_DIR="$KO_PLUGINS_DIR/$DISPLAY_NAME"
+        ;;
+esac
 
 # Install
 echo "Installing to $PLUGIN_DIR ..."

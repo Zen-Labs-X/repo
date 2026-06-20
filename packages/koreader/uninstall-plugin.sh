@@ -75,6 +75,20 @@ TRACKING_DIR="$KO_ROOT/.zenpm-plugins"
 
 TRACKING_FILE="$TRACKING_DIR/$DISPLAY_NAME"
 
+# Installer appends .koplugin to the tracking name when the source ref lacks it.
+# If the bare name has no tracking file, fall back to the .koplugin variant.
+if [ ! -f "$TRACKING_FILE" ]; then
+    case "$DISPLAY_NAME" in
+        *.koplugin) ;;
+        *)
+            if [ -f "$TRACKING_DIR/$DISPLAY_NAME.koplugin" ]; then
+                DISPLAY_NAME="$DISPLAY_NAME.koplugin"
+                TRACKING_FILE="$TRACKING_DIR/$DISPLAY_NAME"
+            fi
+            ;;
+    esac
+fi
+
 if [ ! -f "$TRACKING_FILE" ]; then
     echo "Tracking file not found: $TRACKING_FILE"
     echo "Plugin may have been manually removed or never installed."
