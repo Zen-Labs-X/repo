@@ -130,12 +130,12 @@ resolve_api_url() {
     ref="$1"
     case "$ref" in
         https://github.com/*/releases/tag/*|http://github.com/*/releases/tag/*)
-            repo=$(printf '%s\n' "$ref" | sed 's|https\?://github\.com/||;s|/releases/tag/.*$||')
+            repo=$(printf '%s\n' "$ref" | sed 's|^https://github\.com/||;s|^http://github\.com/||;s|/releases/tag/.*$||')
             tag="${ref##*/releases/tag/}"
             printf 'https://api.github.com/repos/%s/releases/tags/%s\n' "$repo" "$tag"
             ;;
         https://github.com/*|http://github.com/*)
-            repo=$(printf '%s\n' "$ref" | sed 's|https\?://github\.com/||;s|/$||')
+            repo=$(printf '%s\n' "$ref" | sed 's|^https://github\.com/||;s|^http://github\.com/||;s|/$||')
             printf 'https://api.github.com/repos/%s/releases/latest\n' "$repo"
             ;;
         https://api.github.com/*|http://api.github.com/*)
@@ -155,7 +155,7 @@ resolve_api_url() {
 # --- derive display name from repo ref ---
 derive_name() {
     ref="$1"
-    clean=$(printf '%s\n' "$ref" | sed 's|https\?://api\.github\.com/repos/||;s|https\?://github\.com/||')
+    clean=$(printf '%s\n' "$ref" | sed 's|^https://api\.github\.com/repos/||;s|^http://api\.github\.com/repos/||;s|^https://github\.com/||;s|^http://github\.com/||')
     clean="${clean%@*}"
     printf '%s\n' "${clean##*/}"
 }
@@ -177,6 +177,7 @@ validate_sha() {
     archive_path="$1"
     release_body="$2"
     asset_filename="$3"
+    asset_digest="$4"
 
     if ! command -v sha256sum >/dev/null 2>&1; then
         echo "(no sha256sum command — skipping verification)"
@@ -192,8 +193,12 @@ validate_sha() {
         | grep -oE '[a-fA-F0-9]{64}' \
         | head -n 1)
 
+    if [ -z "$expected" ] && [ -n "$asset_digest" ]; then
+        expected="$asset_digest"
+    fi
+
     if [ -z "$expected" ]; then
-        echo "(no SHA256 found in release body for $asset_filename — skipping verification)"
+        echo "(no SHA256 found in release body or asset digest for $asset_filename — skipping verification)"
         return 0
     fi
 
@@ -206,6 +211,20 @@ validate_sha() {
         echo "  got:      $computed"
         return 1
     fi
+}
+
+extract_asset_digest() {
+    release_json="$1"
+    asset_filename="$2"
+
+    printf '%s\n' "$release_json" \
+        | awk -v name="$asset_filename" '
+            index($0, "\"name\"") && index($0, "\"" name "\"") { found=1 }
+            found && index($0, "\"digest\"") { print; exit }
+        ' \
+        | grep -oE 'sha256:[a-fA-F0-9]{64}' \
+        | head -n 1 \
+        | sed 's/^sha256://'
 }
 
 # --- main ---
@@ -242,6 +261,7 @@ fi
 
 ASSET_FILENAME=$(printf '%s\n' "$ASSET_URL" | sed 's|.*/||')
 echo "Found asset: $ASSET_FILENAME"
+ASSET_DIGEST=$(extract_asset_digest "$RELEASE_JSON" "$ASSET_FILENAME")
 
 # Derive display name
 if [ -z "$DISPLAY_NAME" ]; then
@@ -256,10 +276,10 @@ echo "Downloading $ASSET_URL ..."
 download_file "$ASSET_URL" "$ARCHIVE_PATH"
 
 # Validate SHA from release body
-RELEASE_BODY=$(printf '%s\n' "$RELEASE_JSON" | grep -oE '"body":\s*"[^"]*"' | head -n 1 | sed 's/^"body":\s*"//;s/"$//')
+RELEASE_BODY=$(printf '%s\n' "$RELEASE_JSON" | grep -oE '"body":\s*"[^"]*"' | head -n 1 | sed 's/^"body":\s*"//;s/"$//' || true)
 # Unescape JSON: \n, \r, \t, \", \\
 RELEASE_BODY=$(printf '%s\n' "$RELEASE_BODY" | sed 's/\\n/\n/g; s/\\r/\r/g; s/\\t/\t/g; s/\\"/"/g; s/\\\\/\\/g')
-validate_sha "$ARCHIVE_PATH" "$RELEASE_BODY" "$ASSET_FILENAME"
+validate_sha "$ARCHIVE_PATH" "$RELEASE_BODY" "$ASSET_FILENAME" "$ASSET_DIGEST"
 
 # Extract
 echo "Extracting..."

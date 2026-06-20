@@ -19,7 +19,7 @@ fi
 if [ -z "$DISPLAY_NAME" ]; then
     SOURCE_REF="${ZENPM_PACKAGE_SOURCE:-${ZENPM_SOURCE:-${PACKAGE_SOURCE:-}}}"
     if [ -n "$SOURCE_REF" ]; then
-        clean=$(printf '%s\n' "$SOURCE_REF" | sed 's|https\?://api\.github\.com/repos/||;s|https\?://github\.com/||')
+        clean=$(printf '%s\n' "$SOURCE_REF" | sed 's|^https://api\.github\.com/repos/||;s|^http://api\.github\.com/repos/||;s|^https://github\.com/||;s|^http://github\.com/||')
         clean="${clean%@*}"
         DISPLAY_NAME="${clean##*/}"
     fi
