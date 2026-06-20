@@ -132,6 +132,22 @@
       "size": "20102",
       "source": "https://github.com/omer-faruq/sudoku.koplugin",
       "source_asset": "sudoku.koplugin.zip"
+    },
+    {
+      "id": "zen-mtp-koplugin",
+      "name": "ZenMTP",
+      "version": "1.7",
+      "description": "Trigger MTP file-transfer mode from Kindle home or KOReader",
+      "author": "ZenLabs",
+      "category": "utility",
+      "platforms": ["koreader", "kindle"],
+      "dependencies": [],
+      "install_url": "packages/koreader/install-plugin.sh",
+      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
+      "featured": true,
+      "size": "20102",
+      "source": "https://github.com/xZenLabs/ZenMTP",
+      "source_asset": "zen_mtp.koplugin.zip"
     }
   ]
 }

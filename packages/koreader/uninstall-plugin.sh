@@ -5,11 +5,34 @@ set -eu
 # Usage: uninstall-plugin.sh DISPLAY_NAME
 #   DISPLAY_NAME - name used during install (matches tracking file)
 
-DISPLAY_NAME="${1:-}"
+DISPLAY_NAME="${1:-${ZENPM_PLUGIN_NAME:-${ZENPM_PACKAGE_DISPLAY_NAME:-}}}"
+
+if [ -z "$DISPLAY_NAME" ]; then
+    SOURCE_ASSET="${ZENPM_PACKAGE_SOURCE_ASSET:-${ZENPM_SOURCE_ASSET:-${PACKAGE_SOURCE_ASSET:-}}}"
+    case "$SOURCE_ASSET" in
+        *.koplugin.zip)
+            DISPLAY_NAME="${SOURCE_ASSET%.zip}"
+            ;;
+    esac
+fi
+
+if [ -z "$DISPLAY_NAME" ]; then
+    SOURCE_REF="${ZENPM_PACKAGE_SOURCE:-${ZENPM_SOURCE:-${PACKAGE_SOURCE:-}}}"
+    if [ -n "$SOURCE_REF" ]; then
+        clean=$(printf '%s\n' "$SOURCE_REF" | sed 's|https\?://api\.github\.com/repos/||;s|https\?://github\.com/||')
+        clean="${clean%@*}"
+        DISPLAY_NAME="${clean##*/}"
+    fi
+fi
+
+if [ -z "$DISPLAY_NAME" ]; then
+    DISPLAY_NAME="${ZENPM_PACKAGE_ID:-${PACKAGE_ID:-}}"
+fi
 
 if [ -z "$DISPLAY_NAME" ]; then
     echo "Usage: uninstall-plugin.sh DISPLAY_NAME"
     echo "  DISPLAY_NAME - name used when the plugin was installed"
+    echo "Or set ZENPM_PACKAGE_SOURCE_ASSET, ZENPM_PACKAGE_SOURCE, or ZENPM_PACKAGE_ID."
     exit 1
 fi
 

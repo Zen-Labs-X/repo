@@ -8,15 +8,16 @@ set -eu
 #   DISPLAY_NAME  - name for tracking file (default: derived from repo name)
 
 # --- arg parsing ---
-REPO_REF="${1:-}"
-ASSET_PATTERN="${2:-}"
-DISPLAY_NAME="${3:-}"
+REPO_REF="${1:-${ZENPM_PACKAGE_SOURCE:-${ZENPM_SOURCE:-${PACKAGE_SOURCE:-}}}}"
+ASSET_PATTERN="${2:-${ZENPM_PACKAGE_SOURCE_ASSET:-${ZENPM_SOURCE_ASSET:-${PACKAGE_SOURCE_ASSET:-}}}}"
+DISPLAY_NAME="${3:-${ZENPM_PLUGIN_NAME:-${ZENPM_PACKAGE_DISPLAY_NAME:-}}}"
 
 if [ -z "$REPO_REF" ]; then
     echo "Usage: install-plugin.sh REPO [ASSET_PATTERN] [DISPLAY_NAME]"
     echo "  REPO          - 'owner/repo' or 'owner/repo@tag' or full API URL"
     echo "  ASSET_PATTERN - substring to match asset name (default: first .zip)"
     echo "  DISPLAY_NAME  - name for tracking (default: repo name)"
+    echo "Or set ZENPM_PACKAGE_SOURCE and optional ZENPM_PACKAGE_SOURCE_ASSET."
     exit 1
 fi
 
@@ -128,7 +129,16 @@ fetch_json() {
 resolve_api_url() {
     ref="$1"
     case "$ref" in
-        http*)
+        https://github.com/*/releases/tag/*|http://github.com/*/releases/tag/*)
+            repo=$(printf '%s\n' "$ref" | sed 's|https\?://github\.com/||;s|/releases/tag/.*$||')
+            tag="${ref##*/releases/tag/}"
+            printf 'https://api.github.com/repos/%s/releases/tags/%s\n' "$repo" "$tag"
+            ;;
+        https://github.com/*|http://github.com/*)
+            repo=$(printf '%s\n' "$ref" | sed 's|https\?://github\.com/||;s|/$||')
+            printf 'https://api.github.com/repos/%s/releases/latest\n' "$repo"
+            ;;
+        https://api.github.com/*|http://api.github.com/*)
             printf '%s\n' "$ref"
             ;;
         *@*)
@@ -145,9 +155,21 @@ resolve_api_url() {
 # --- derive display name from repo ref ---
 derive_name() {
     ref="$1"
-    clean=$(printf '%s\n' "$ref" | sed 's|https\?://api\.github\.com/repos/||')
+    clean=$(printf '%s\n' "$ref" | sed 's|https\?://api\.github\.com/repos/||;s|https\?://github\.com/||')
     clean="${clean%@*}"
     printf '%s\n' "${clean##*/}"
+}
+
+derive_name_from_asset() {
+    asset_filename="$1"
+    case "$asset_filename" in
+        *.koplugin.zip)
+            printf '%s\n' "${asset_filename%.zip}"
+            ;;
+        *)
+            return 1
+            ;;
+    esac
 }
 
 # --- validate sha256 from release body ---
@@ -222,7 +244,10 @@ ASSET_FILENAME=$(printf '%s\n' "$ASSET_URL" | sed 's|.*/||')
 echo "Found asset: $ASSET_FILENAME"
 
 # Derive display name
-[ -z "$DISPLAY_NAME" ] && DISPLAY_NAME=$(derive_name "$REPO_REF")
+if [ -z "$DISPLAY_NAME" ]; then
+    DISPLAY_NAME=$(derive_name_from_asset "$ASSET_FILENAME" || derive_name "$REPO_REF")
+fi
+[ -z "$DISPLAY_NAME" ] && DISPLAY_NAME="${ZENPM_PACKAGE_ID:-${PACKAGE_ID:-}}"
 PLUGIN_DIR="$KO_PLUGINS_DIR/$DISPLAY_NAME"
 
 # Download
