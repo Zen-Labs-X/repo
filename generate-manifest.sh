@@ -42,7 +42,7 @@ json_escape() {
     printf '  "schema_version": "1",\n'
     printf '  "repo": {\n'
     printf '    "id": "ZenLabs",\n'
-    printf '    "name": "ZenLabs",\n'
+    printf '    "name": "ZenLabs Repo",\n'
     printf '    "url": "https://xzenlabs.github.io/repo/",\n'
     printf '    "icon_url": "https://xzenlabs.github.io/repo/favicon.svg"\n'
     printf '  },\n'

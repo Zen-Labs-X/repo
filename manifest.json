@@ -2,7 +2,7 @@
   "schema_version": "1",
   "repo": {
     "id": "ZenLabs",
-    "name": "ZenLabs",
+    "name": "ZenLabs Repo",
     "url": "https://xzenlabs.github.io/repo/",
     "icon_url": "https://xzenlabs.github.io/repo/favicon.svg"
   },
@@ -14,7 +14,9 @@
       "description": "Launch the Kindle web browser",
       "author": "ZenLabs",
       "category": "utility",
-      "platforms": ["kindle"],
+      "platforms": [
+        "kindle"
+      ],
       "dependencies": [],
       "install_url": "packages/kindle/browser/scripts/install.sh",
       "uninstall_url": "packages/kindle/browser/scripts/uninstall.sh",
@@ -30,7 +32,9 @@
       "description": "Launch MTP (Media Transfer Protocol) programmatically",
       "author": "ZenLabs",
       "category": "utility",
-      "platforms": ["kindle"],
+      "platforms": [
+        "kindle"
+      ],
       "dependencies": [],
       "install_url": "packages/kindle/zen-mtp/scripts/install.sh",
       "uninstall_url": "packages/kindle/zen-mtp/scripts/uninstall.sh",
@@ -46,8 +50,12 @@
       "description": "Zen KOReader launcher for Kindle",
       "author": "ZenLabs",
       "category": "media",
-      "platforms": ["kindle"],
-      "dependencies": ["kual"],
+      "platforms": [
+        "kindle"
+      ],
+      "dependencies": [
+        "kual"
+      ],
       "install_url": "packages/kindle/zen-reader/scripts/install.sh",
       "uninstall_url": "packages/kindle/zen-reader/scripts/uninstall.sh",
       "icon_url": "packages/kindle/zen-reader/assets/zen-reader.svg",
@@ -55,7 +63,10 @@
       "featured": true,
       "size": "0",
       "constraints": {
-        "abi": ["hf", "sf"]
+        "abi": [
+          "hf",
+          "sf"
+        ]
       }
     },
     {
@@ -65,8 +76,12 @@
       "description": "Install KOReader and NickelMenu launch entry on Kobo",
       "author": "KOReader Community",
       "category": "media",
-      "platforms": ["kobo"],
-      "dependencies": ["ZenPM-kobo"],
+      "platforms": [
+        "kobo"
+      ],
+      "dependencies": [
+        "ZenPM-kobo"
+      ],
       "install_url": "packages/kobo/koreader/scripts/install.sh",
       "uninstall_url": "packages/kobo/koreader/scripts/uninstall.sh",
       "size": "0",
@@ -85,7 +100,9 @@
       "description": "Install NickelMenu bootstrap files on Kobo",
       "author": "pgaskin",
       "category": "utility",
-      "platforms": ["kobo"],
+      "platforms": [
+        "kobo"
+      ],
       "dependencies": [],
       "install_url": "packages/kobo/nickelmenu/scripts/install.sh",
       "uninstall_url": "packages/kobo/nickelmenu/scripts/uninstall.sh",
@@ -104,8 +121,12 @@
       "description": "Install Zen PM NickelMenu entry and Kobo helper scripts",
       "author": "ZenLabs",
       "category": "utility",
-      "platforms": ["kobo"],
-      "dependencies": ["nickelmenu"],
+      "platforms": [
+        "kobo"
+      ],
+      "dependencies": [
+        "nickelmenu"
+      ],
       "install_url": "packages/kobo/ZenPM/scripts/install.sh",
       "uninstall_url": "packages/kobo/ZenPM/scripts/uninstall.sh",
       "size": "0",
@@ -124,7 +145,9 @@
       "description": "ACSM plugin for KOReader — read library loans from Libby and OverDrive on your e-reader",
       "author": "kaikozlov",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -141,7 +164,9 @@
       "description": "AirPlane mode plugin for KOReader",
       "author": "kodermike",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -158,7 +183,9 @@
       "description": "KOReader plugin enabling Anki card generations for words looked up in the internal dictionary.",
       "author": "Ajatt-Tools",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -174,7 +201,9 @@
       "description": "Study Anki flashcards in KOReader using locally imported .apkg decks",
       "author": "omer-faruq",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -191,7 +220,9 @@
       "description": "Annas KOReader plugin! Search and download documents from Anna's Archive directly to your KOReader (tested on Kindle 11th gen).",
       "author": "fischer-hub",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -208,7 +239,9 @@
       "description": "",
       "author": "xblain",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -225,7 +258,9 @@
       "description": "Seamless background sync for KOReader highlights, notes, bookmarks and precise reading progress across devices.",
       "author": "dani84bs",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -242,7 +277,9 @@
       "description": "",
       "author": "IntrovertedMage",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -259,7 +296,9 @@
       "description": "Updates Archive of Our Own EPUBs automatically.",
       "author": "ProfBlack",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -275,7 +314,9 @@
       "description": "A plugin that allows you to customize KOReader's look and color scheme. It adds color options for the interface and books, plus progress bar and highlights. It also adds themes, fonts, and backgrou...",
       "author": "Euphoriyy",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -292,7 +333,9 @@
       "description": "Quick launcher to organize installed KOReader plugins into categories and open them via a gesture.",
       "author": "omer-faruq",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -309,7 +352,9 @@
       "description": "Discover, install, and update community-created KOReader plugins and user patches without leaving your device.",
       "author": "omer-faruq",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -326,7 +371,9 @@
       "description": "Assistant: AI Helper Plugin for KOReader : lets you interact with AI language models (Claude, GPT-4, Gemini, DeepSeek, Ollama etc.) while reading",
       "author": "omer-faruq",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -343,7 +390,9 @@
       "description": "A plugin to give TTS-capabilities, includes bluetooth controllers.",
       "author": "stradichenko",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -360,7 +409,9 @@
       "description": "",
       "author": "naleo",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -377,7 +428,9 @@
       "description": "A plugin to easily turn bluetooth on and off in KOReader for Kobo Devices.",
       "author": "onatbas",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -393,7 +446,9 @@
       "description": "KOReader plugin for configurable text overlays — tokens, icons, per-line styling, presets",
       "author": "AndyHazz",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -410,7 +465,9 @@
       "description": "Cozy bookmark ribbon and dog-ear charms for KOReader.",
       "author": "KitanaCode",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -427,7 +484,9 @@
       "description": "A nice looking home screen for KOReader. Lets you pick a book from your shelf and read it, with some customisation around the book preview info that's shown.",
       "author": "AndyHazz",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -444,7 +503,9 @@
       "description": "KOReader plugin that enables magnifying speech bubbles in comics/manga.",
       "author": "anezih",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -461,7 +522,9 @@
       "description": "Casual Chess & Board Games KOReader Plugin",
       "author": "MJCopper",
       "category": "games",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -478,7 +541,9 @@
       "description": "KOReader character tracker for tracking reading progress and stats.",
       "author": "Shac0x",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -494,7 +559,9 @@
       "description": "Plugin for KOReader to extract metadata from .cbz files as Custom Metadata",
       "author": "KORComic",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -511,7 +578,9 @@
       "description": "A plugin to enhance your comic (or any paged document) reading experience on KOReader.",
       "author": "KORComic",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -528,7 +597,9 @@
       "description": "NYT Connections for KOReader",
       "author": "odrling",
       "category": "games",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -544,7 +615,9 @@
       "description": "Crash log viewer for koreader",
       "author": "Billiam",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -560,7 +633,9 @@
       "description": "KOReader plugin that displays reading stats and book info on your sleep screen, with extensive customisation options and save/load preset configurations.",
       "author": "pxlflux",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -577,7 +652,9 @@
       "description": "Enables dictionary mode (one tap dictionary lookups) in KOReader",
       "author": "ckilb",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -593,7 +670,9 @@
       "description": "A digital clock for koreader, display time, date and an image",
       "author": "DucNg",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -609,7 +688,9 @@
       "description": "A Koreader plugin to display the time and day in a fullscreen widget. Contributions welcome!",
       "author": "kktse",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -625,7 +706,9 @@
       "description": "Automatically download EPUB files from your email directly to your KOReader device.",
       "author": "marinov752",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -642,7 +725,9 @@
       "description": "Run Filebrowser from within KOReader",
       "author": "b-",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -658,7 +743,9 @@
       "description": "This KOReader plugins enables the user to run Filebrowser from koreader. Inspired by filebrowser.koplugin, expanded to add more conviniences.",
       "author": "patelneeraj",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -675,7 +762,9 @@
       "description": "Wireless file manager plugin for KOReader",
       "author": "abrahamnm",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -692,7 +781,9 @@
       "description": "",
       "author": "grimmory-tools",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -709,7 +800,9 @@
       "description": "Hardcover.app status updating from KOReader",
       "author": "Billiam",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -726,7 +819,9 @@
       "description": "A KOReader plugin to sync highlights, notes, and bookmarks across multiple devices using cloud storage like WebDAV or Dropbox.",
       "author": "gitalexcampos",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -742,7 +837,9 @@
       "description": "This KOReader plugin lets you control Home Assistant entities without leaving your current book!",
       "author": "moritz-john",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -759,7 +856,9 @@
       "description": "Home Page plugin for KOreader",
       "author": "reuerendo",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -775,7 +874,9 @@
       "description": "",
       "author": "ebanDev",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -791,7 +892,9 @@
       "description": "A plugin for [KOReader](https://github.com/koreader/koreader) that allows you to browse, preview, and navigate through all illustrations contained in an EPUB book.",
       "author": "agaragou",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -808,7 +911,9 @@
       "description": "Download and read articles from your Instapaper account directly in KOReader",
       "author": "omer-faruq",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -825,7 +930,9 @@
       "description": "A manga reader plugin for KOReader that connects to Kavita self-hosted digital library.",
       "author": "fpammer",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -842,7 +949,9 @@
       "description": "",
       "author": "AlgusDark",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -859,7 +968,9 @@
       "description": "A KOReader plugin that enables Bluetooth game controllers / remote controllers to control your Kindle — page turning, brightness adjustment, chapter navigation, and more.",
       "author": "QiuYukang",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -876,7 +987,9 @@
       "description": "A powerful AI assistant integrated into KOReader.",
       "author": "zeeyado",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -893,7 +1006,9 @@
       "description": "A KoReader plugin that enhances your kobo experience",
       "author": "OGKevin",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -922,7 +1037,9 @@
       "description": "A KOReader plugin that serves a local web dashboard for browsing your library, reading stats, calendar activity, and highlights/notes on any device in your local network.",
       "author": "Yuchen971",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -939,7 +1056,9 @@
       "description": "📚 KoInsight brings your KoReader reading stats to life with a clean, web-based dashboard.",
       "author": "GeorgeSG",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -955,7 +1074,9 @@
       "description": "",
       "author": "PedroMachado1",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -972,7 +1093,9 @@
       "description": "",
       "author": "sadke8465",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -989,7 +1112,9 @@
       "description": "A KOReader plugin for dynamic panel-by-panel zooming in comics and manga.",
       "author": "JorgeTheFox",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1006,7 +1131,9 @@
       "description": "A plugin for KOReader that allows downloading books from a Jellyfin instance.",
       "author": "DeclanChidlow",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1023,7 +1150,9 @@
       "description": "A bullet journal-style life planner plugin for KOReader. Track quests, habits, mood, and reading stats on your e-reader (Kindle, Kobo, PocketBook).",
       "author": "uttam-salamander",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1040,7 +1169,9 @@
       "description": "Simplify KOReader. Hide menus. Hide plugins. Focus on reading.",
       "author": "JoeBumm",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1057,7 +1188,9 @@
       "description": "KOReader plugin and patch for isolated user profiles — separate settings, history, and reading statistic per user",
       "author": "artemartemenko",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1073,7 +1206,9 @@
       "description": "A JS script and set of utilities to import and organize KOReader highlights into Obsidian",
       "author": "MySTerY1747",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1089,7 +1224,9 @@
       "description": "An RSVP (Rapid Serial Visual Presentation) plugin that enables speed reading with advanced features for KOReader.",
       "author": "karpushchenko",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1105,7 +1242,9 @@
       "description": "Protect your KOReader with a PIN",
       "author": "oleasteo",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1122,7 +1261,9 @@
       "description": "KOReader plugin to inspect, filter, and safely delete suspicious reconstructed reading sessions from statistics.sqlite3.",
       "author": "graphirus-prog",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1139,7 +1280,9 @@
       "description": "AI-powered character tracking, timeline, and historical context etc.",
       "author": "ultimatejimmy",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1156,7 +1299,9 @@
       "description": "Sync books, annotations, and reading progress across your e-readers — privately, without any cloud. KOSyncthing+ embeds a fully managed Syncthing daemon inside KOReader, with a polished menu, autom...",
       "author": "d0nizam",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1173,7 +1318,9 @@
       "description": "一个在 KOReader 中阅读 Legado 开源阅读书库的网文阅读插件",
       "author": "pengcw",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1190,7 +1337,9 @@
       "description": "LocalSend plugin for KOReader - send and receive files wirelessly on your e-reader",
       "author": "kaikozlov",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1225,7 +1374,9 @@
       "description": "A KOReader plugin that improves zooming while reading manga.",
       "author": "Shac0x",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1241,7 +1392,9 @@
       "description": "Your personal in-book memo and self-dictionary for KOReader",
       "author": "omer-faruq",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1258,7 +1411,9 @@
       "description": "KOReader plugin to access a Miniflux instance to read your RSS feed entries with offline capabilities.",
       "author": "AlgusDark",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1275,7 +1430,9 @@
       "description": "A KOReader plugin for interactive manga reading with mokuro OCR integration",
       "author": "Magyarapointe",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1292,7 +1449,9 @@
       "description": "Solve picture cross puzzles on KOReader with tap-friendly controls, hints, and automatic progress saving.",
       "author": "omer-faruq",
       "category": "games",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1309,7 +1468,9 @@
       "description": "",
       "author": "prasy-loyola",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1325,7 +1486,9 @@
       "description": "Allow to sync koreader and onyx book",
       "author": "Tukks",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1342,7 +1505,9 @@
       "description": "Enhanced OPDS catalog browser for KOReader with visual cover display, grid/list views, and extensive customization options",
       "author": "greywolf1499",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1359,7 +1524,9 @@
       "description": "Koreader panel-to-panel navigation plugin",
       "author": "Kaito0",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1375,7 +1542,9 @@
       "description": "Koreader plugin that allows Kobo Libra Color users to use a stylus to take notes in Epubs.",
       "author": "mysticknits",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1391,7 +1560,9 @@
       "description": "在koreader拼音输入法上方显示候选词栏，点击即可输入汉字。支持词频排序、首字母拼音、扩展码表。",
       "author": "gytwo",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1408,7 +1579,9 @@
       "description": "Minimal home screen for KOReader",
       "author": "quanganhdo",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1425,7 +1598,9 @@
       "description": "Automatically updates the book cover which is displayed when the Pocketbook device is turned off.",
       "author": "ckilb",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1441,7 +1616,9 @@
       "description": "A Pocketbook app that sync the reading status between KOReader and Pocketbook's original software.",
       "author": "ckilb",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1458,7 +1635,9 @@
       "description": "Plugin for KOReader and PocketBook Integration",
       "author": "reuerendo",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1474,7 +1653,9 @@
       "description": "Export KOReader highlights to a WebDAV target",
       "author": "fairlygood",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1490,7 +1671,9 @@
       "description": "A fast, standalone and easy to use RSS reader for KOReader",
       "author": "qewer33",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1507,7 +1690,9 @@
       "description": "A manga reader plugin for KOReader. (This fork adds new features and backward compatibility)",
       "author": "tachibana-shin",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1560,7 +1745,9 @@
       "description": "A KOReader plugin to show a random quote from all the highlighted texts of the library.",
       "author": "DenisovichDev",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1577,7 +1764,9 @@
       "description": "KOReader plugin for Readeck servers",
       "author": "iceyear",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1594,7 +1783,9 @@
       "description": "An unofficial KOReader plugin to add integration with your Readeck instance.",
       "author": "flip-rossi",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1610,7 +1801,9 @@
       "description": "Readest is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience.",
       "author": "readest",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1627,7 +1820,9 @@
       "description": "Reading Ruler is a plugin that brings movable underlines to KOReader!",
       "author": "Syakhisk",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1644,7 +1839,9 @@
       "description": "KOReader plugin for tracking daily and weekly reading streaks",
       "author": "advokatb",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1661,7 +1858,9 @@
       "description": "ReadMastery is a KOReader plugin that transforms your reading experience into an RPG-style adventure. Earn XP, level up, maintain streaks, and unlock achievements as you read!",
       "author": "Lalocaballero",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1678,7 +1877,9 @@
       "description": "Take notes in KOReader on a remote device",
       "author": "j-v",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1719,7 +1920,9 @@
       "description": "A full-featured RSS reader for KOReader — supports accounts, local feeds, and offline reading",
       "author": "omer-faruq",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1736,7 +1939,9 @@
       "description": "Svelte and KOReader Ecosystem",
       "author": "Sudashiii",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1752,7 +1957,9 @@
       "description": "Shortcuts Toolbar for KOReader",
       "author": "xusoo",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1769,7 +1976,9 @@
       "description": "Extra homescreen modules and patches for SimpleUI on KOReader",
       "author": "omer-faruq",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1786,7 +1995,9 @@
       "description": "A highly customizable UI plugin for KOReader that features a home screen, bottom navigation bar, top bar and desktop modules/widgets.",
       "author": "doctorhetfield-cmd",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1803,7 +2014,9 @@
       "description": "",
       "author": "Lalocaballero",
       "category": "games",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1820,7 +2033,9 @@
       "description": "storygraph status updating from KOReader",
       "author": "burneracc0112",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1837,7 +2052,9 @@
       "description": "Sudoku game plugin for KOReader",
       "author": "Omer Faruq",
       "category": "games",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1853,7 +2070,9 @@
       "description": "Full metadata sync for KOreader via user's own cloud storage",
       "author": "BrendanL79",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1869,7 +2088,9 @@
       "description": "TBR Planner is a KOReader plugin to help you organize and schedule your To Be Read list.",
       "author": "omer-faruq",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1886,7 +2107,9 @@
       "description": "This plugin for KOReader allows you to send files to your e-reader using Telegram bot.",
       "author": "Evgeniy-94",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1903,7 +2126,9 @@
       "description": "Get nice image quotes from your kindle straight to your telegram through a bot @bookshotsbot",
       "author": "0xmiki",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1920,7 +2145,9 @@
       "description": "A text-to-speech plugin for KOreader",
       "author": "norude",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1936,7 +2163,9 @@
       "description": "Updates Manager is a plugin for KOReader that helps you manage updates for patches and plugins from multiple GitHub repositories",
       "author": "advokatb",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1953,7 +2182,9 @@
       "description": "KoReader plugin for Wallabag (version 2) servers",
       "author": "clach04",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1969,7 +2200,9 @@
       "description": "",
       "author": "roygbyte",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -1985,7 +2218,9 @@
       "description": "Weather Lockscreen plugin for KOReader",
       "author": "loeffner",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -2002,7 +2237,9 @@
       "description": "Text-Based Web Browser Plugin for KOReader",
       "author": "omer-faruq",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -2019,7 +2256,9 @@
       "description": "微信读书 koreader 插件，实现在 koreader 里面阅读微信读书里面的书籍，并做到进度、阅读时长同步，阅读时间上报。",
       "author": "QiuYukang",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -2035,7 +2274,9 @@
       "description": "Lookup highlighted words or phrases on WordReference directly from KOReader.",
       "author": "kristianpennacchia",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -2052,7 +2293,9 @@
       "description": "Word Search Puzzle Plugin for KOReader",
       "author": "omer-faruq",
       "category": "games",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -2069,7 +2312,10 @@
       "description": "Trigger MTP file-transfer mode from Kindle home or KOReader",
       "author": "ZenLabs",
       "category": "utility",
-      "platforms": ["koreader", "kindle"],
+      "platforms": [
+        "koreader",
+        "kindle"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -2085,7 +2331,9 @@
       "description": "A clean, minimal UI for KOReader",
       "author": "AnthonyGress",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -2102,7 +2350,9 @@
       "description": "convert ZIM files, as found in the Kiwix WikiPedia library, to a SQLite database that is read by the WikiReader plugin of KOReader",
       "author": "Bartvelp",
       "category": "utility",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -2118,7 +2368,9 @@
       "description": "Home of the KOReader Zlibrary plugin",
       "author": "ZlibraryKO",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -2135,7 +2387,9 @@
       "description": "Z-Library client for KOReader!",
       "author": "OctoNezd",
       "category": "media",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -2152,7 +2406,9 @@
       "description": "Display Zotero collection on E-Readers with KOReader",
       "author": "stelzch",
       "category": "productivity",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",
@@ -2168,7 +2424,9 @@
       "description": "A redesign of the various reader menus in KOReader.",
       "author": "kristianpennacchia",
       "category": "theme",
-      "platforms": ["koreader"],
+      "platforms": [
+        "koreader"
+      ],
       "dependencies": [],
       "install_url": "packages/koreader/install-plugin.sh",
       "uninstall_url": "packages/koreader/uninstall-plugin.sh",

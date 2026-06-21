@@ -1,6 +1,6 @@
 # ZenPM Default Package Repository
 
-[Add to ZenPM](zenpm://add-repo?name=ZenLabs&url=https://xzenlabs.github.io/repo/)
+[Add to ZenPM](zenpm://add-repo?name=ZenLabs%20Repo&url=https://xzenlabs.github.io/repo/)
 
 ## Key Generation
 
