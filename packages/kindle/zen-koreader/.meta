@@ -1,0 +1,15 @@
+id=zen-koreader
+name=Zen + KOReader
+version=1.0.0
+description=Zen KOReader Installer for Kindle
+author=ZenLabs
+category=media
+platforms=kindle
+dependencies=kual
+install_url=packages/kindle/zen-reader/scripts/install.sh
+uninstall_url=packages/kindle/zen-reader/scripts/uninstall.sh
+constraints.abi=hf,sf
+icon_url=packages/kindle/zen-koreader/assets/zen-koreader.svg
+featured_image=packages/kindle/zen-koreader/assets/zen-koreader-featured.png
+featured=true
+size=0
