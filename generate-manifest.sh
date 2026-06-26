@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
-# Generate manifest.json from packages/*/.meta files
+# Generate manifest.json from all packages/**/.meta files
 # Usage: sh generate-manifest.sh
 #   Always overwrites manifest.json
 

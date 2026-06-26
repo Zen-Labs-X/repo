@@ -26,11 +26,18 @@ jobs:
       - name: Generate manifest.json
         run: sh generate-manifest.sh
 
+      - name: Validate generated manifest.json
+        run: |
+          jq empty manifest.json
+          meta_count="$(find packages -name '.meta' | wc -l | tr -d ' ')"
+          package_count="$(jq '.packages | length' manifest.json)"
+          test "$meta_count" = "$package_count"
+
       - name: Sign manifest.json
         env:
           ZENPM_PRIVATE_KEY: ${{ secrets.ZENPM_PRIVATE_KEY }}
         run: |
-          echo "$ZENPM_PRIVATE_KEY" > zenpm-key
+          printf '%s\n' "$ZENPM_PRIVATE_KEY" > zenpm-key
           openssl pkeyutl -sign -inkey zenpm-key -in manifest.json -rawin -out manifest.json.sig
           rm zenpm-key
 
