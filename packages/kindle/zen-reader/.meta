@@ -1,7 +1,7 @@
 id=zen-reader
 name=ZenReader
 version=1.0.0
-description=Zen KOReader launcher for Kindle
+description=KOReader no framework launcher for Kindle
 author=ZenLabs
 category=media
 platforms=kindle
