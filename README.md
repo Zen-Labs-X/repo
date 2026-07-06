@@ -89,6 +89,8 @@ Each package metadata file must include a `category` set to one of:
 - `games`
 - `productivity`
 - `media`
+- `theme`
+- `patches`
 
 ### Optional package fields
 

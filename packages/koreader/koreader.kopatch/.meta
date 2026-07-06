@@ -1,0 +1,44 @@
+# Koreader patch for KOReader
+# https://github.com/Djeymisson/KOReader.patches
+# zenpm:auto-scraped
+id=koreader
+name=Koreader
+version=0.0.0-source
+description=Assorted user patches for KOReader.
+author=Djeymisson
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/Djeymisson/KOReader.patches
+install_url=packages/koreader/install-patch.sh
+uninstall_url=packages/koreader/uninstall-patch.sh
+stars=15
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-bookloadcover-plus.lua
+assets.0.url=https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-bookloadcover-plus.lua
+assets.0.size=25795
+assets.1.arch=any
+assets.1.asset=2-browser-folder-cover.lua
+assets.1.url=https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-browser-folder-cover.lua
+assets.1.size=14130
+assets.2.arch=any
+assets.2.asset=2-finished-books-look.lua
+assets.2.url=https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-finished-books-look.lua
+assets.2.size=5751
+assets.3.arch=any
+assets.3.asset=2-progress-badge.lua
+assets.3.url=https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-progress-badge.lua
+assets.3.size=5706
+assets.4.arch=any
+assets.4.asset=2-reader-header-footer.lua
+assets.4.url=https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-reader-header-footer.lua
+assets.4.size=15951
+assets.5.arch=any
+assets.5.asset=2-screensaver-cover.lua
+assets.5.url=https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-screensaver-cover.lua
+assets.5.size=22650
+assets.6.arch=any
+assets.6.asset=2-sleep-overlay.lua
+assets.6.url=https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-sleep-overlay.lua
+assets.6.size=20284

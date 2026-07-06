@@ -1,0 +1,28 @@
+# Koreader patch for KOReader
+# https://github.com/chiahsien/KOReader.Patches
+# zenpm:auto-scraped
+id=koreader-6
+name=Koreader
+version=0.0.0-source
+description=A collection of KOReader user patches that add extra file browser sorting options, folder cover display, and automatic cleanup of orphaned SDR sidecar folders.
+author=chiahsien
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/chiahsien/KOReader.Patches
+install_url=packages/koreader/install-patch.sh
+uninstall_url=packages/koreader/uninstall-patch.sh
+stars=21
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-browser-folder-cover.lua
+assets.0.url=https://raw.githubusercontent.com/chiahsien/KOReader.Patches/main/2-browser-folder-cover/2-browser-folder-cover.lua
+assets.0.size=28825
+assets.1.arch=any
+assets.1.asset=2-clean-orphaned-sdr.lua
+assets.1.url=https://raw.githubusercontent.com/chiahsien/KOReader.Patches/main/2-clean-orphaned-sdr/2-clean-orphaned-sdr.lua
+assets.1.size=13659
+assets.2.arch=any
+assets.2.asset=2-sort-by-author-series.lua
+assets.2.url=https://raw.githubusercontent.com/chiahsien/KOReader.Patches/main/2-sort-by-author-series/2-sort-by-author-series.lua
+assets.2.size=8198

@@ -1,0 +1,44 @@
+# Koreader Frankenpatches Public patch for KOReader
+# https://github.com/zenixlabs/koreader-frankenpatches-public
+# zenpm:auto-scraped
+id=koreader-frankenpatches-public
+name=Koreader Frankenpatches Public
+version=0.0.0-source
+description=user patches for koreader.
+author=zenixlabs
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/zenixlabs/koreader-frankenpatches-public
+install_url=packages/koreader/install-patch.sh
+uninstall_url=packages/koreader/uninstall-patch.sh
+stars=117
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-cvs-receipt-frankenpatch.lua
+assets.0.url=https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-cvs-receipt-frankenpatch.lua
+assets.0.size=37473
+assets.1.arch=any
+assets.1.asset=2-kobo-style-sleepscreen-banner.lua
+assets.1.url=https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-kobo-style-sleepscreen-banner.lua
+assets.1.size=15769
+assets.2.arch=any
+assets.2.asset=2-mini-receipt-frankenpatch.lua
+assets.2.url=https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-mini-receipt-frankenpatch.lua
+assets.2.size=36174
+assets.3.arch=any
+assets.3.asset=2-mosaicmenu-hide-bookstatusicons.lua
+assets.3.url=https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-mosaicmenu-hide-bookstatusicons.lua
+assets.3.size=864
+assets.4.arch=any
+assets.4.asset=2-pageno-in-subtitle.lua
+assets.4.url=https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-pageno-in-subtitle.lua
+assets.4.size=4901
+assets.5.arch=any
+assets.5.asset=2-profile-update.lua
+assets.5.url=https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-profile-update.lua
+assets.5.size=3825
+assets.6.arch=any
+assets.6.asset=2-reading-insights-popup.lua
+assets.6.url=https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-reading-insights-popup.lua
+assets.6.size=68014

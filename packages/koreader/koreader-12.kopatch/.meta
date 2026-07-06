@@ -1,0 +1,28 @@
+# Koreader patch for KOReader
+# https://github.com/sparklerfish/KOReader.patches
+# zenpm:auto-scraped
+id=koreader-12
+name=Koreader
+version=0.0.0-source
+description=user patches for KOReader
+author=sparklerfish
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/sparklerfish/KOReader.patches
+install_url=packages/koreader/install-patch.sh
+uninstall_url=packages/koreader/uninstall-patch.sh
+stars=30
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-browser-double-tap.lua
+assets.0.url=https://raw.githubusercontent.com/sparklerfish/KOReader.patches/main/2-browser-double-tap.lua
+assets.0.size=6466
+assets.1.arch=any
+assets.1.asset=2-browser-frontlight-update.lua
+assets.1.url=https://raw.githubusercontent.com/sparklerfish/KOReader.patches/main/2-browser-frontlight-update.lua
+assets.1.size=1961
+assets.2.arch=any
+assets.2.asset=2-z-redacted-screensaver.lua
+assets.2.url=https://raw.githubusercontent.com/sparklerfish/KOReader.patches/main/2-z-redacted-screensaver.lua
+assets.2.size=20552

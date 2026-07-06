@@ -1,0 +1,28 @@
+# Koreader Patches patch for KOReader
+# https://github.com/reuerendo/koreader-patches
+# zenpm:auto-scraped
+id=koreader-patches-3
+name=Koreader Patches
+version=0.0.0-source
+description=
+author=reuerendo
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/reuerendo/koreader-patches
+install_url=packages/koreader/install-patch.sh
+uninstall_url=packages/koreader/uninstall-patch.sh
+stars=29
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-bookloadcover.lua
+assets.0.url=https://raw.githubusercontent.com/reuerendo/koreader-patches/main/2-bookloadcover.lua
+assets.0.size=10696
+assets.1.arch=any
+assets.1.asset=2-keep-previous-screen.lua
+assets.1.url=https://raw.githubusercontent.com/reuerendo/koreader-patches/main/2-keep-previous-screen.lua
+assets.1.size=2547
+assets.2.arch=any
+assets.2.asset=2-pb_native_dialogs.lua
+assets.2.url=https://raw.githubusercontent.com/reuerendo/koreader-patches/main/2-pb_native_dialogs.lua
+assets.2.size=12822

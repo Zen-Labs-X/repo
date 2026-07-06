@@ -3,20 +3,21 @@ set -eu
 # Generic KOReader patch installer for Zen Package Manager
 # Auto-detects KOReader installation across Kobo, Kindle, Android, Linux.
 # Usage: install-patch.sh REPO [ASSET_PATTERN] [DISPLAY_NAME]
-#   REPO          - "owner/repo" or "owner/repo@tag" or full API URL
+#   REPO          - "owner/repo", "owner/repo@tag", full API URL, or direct .lua/.zip URL
 #   ASSET_PATTERN - substring to match asset name (default: first .zip)
 #   DISPLAY_NAME  - name for tracking file (default: derived from repo name)
 
 # --- arg parsing ---
-REPO_REF="${1:-}"
-ASSET_PATTERN="${2:-}"
-DISPLAY_NAME="${3:-}"
+REPO_REF="${1:-${ZENPM_PACKAGE_SOURCE:-${ZENPM_SOURCE:-${PACKAGE_SOURCE:-}}}}"
+ASSET_PATTERN="${2:-${ZENPM_PACKAGE_SOURCE_ASSET:-${ZENPM_SOURCE_ASSET:-${PACKAGE_SOURCE_ASSET:-}}}}"
+DISPLAY_NAME="${3:-${ZENPM_PATCH_NAME:-${ZENPM_PACKAGE_DISPLAY_NAME:-}}}"
 
 if [ -z "$REPO_REF" ]; then
     echo "Usage: install-patch.sh REPO [ASSET_PATTERN] [DISPLAY_NAME]"
     echo "  REPO          - 'owner/repo' or 'owner/repo@tag' or full API URL"
     echo "  ASSET_PATTERN - substring to match asset name (default: first .zip)"
     echo "  DISPLAY_NAME  - name for tracking (default: repo name)"
+    echo "Or set ZENPM_PACKAGE_SOURCE and optional ZENPM_PACKAGE_SOURCE_ASSET."
     exit 1
 fi
 
@@ -127,6 +128,18 @@ fetch_json() {
 resolve_api_url() {
     ref="$1"
     case "$ref" in
+        https://github.com/*/releases/tag/*|http://github.com/*/releases/tag/*)
+            repo=$(printf '%s\n' "$ref" | sed 's|^https://github\.com/||;s|^http://github\.com/||;s|/releases/tag/.*$||')
+            tag="${ref##*/releases/tag/}"
+            printf 'https://api.github.com/repos/%s/releases/tags/%s\n' "$repo" "$tag"
+            ;;
+        https://github.com/*|http://github.com/*)
+            repo=$(printf '%s\n' "$ref" | sed 's|^https://github\.com/||;s|^http://github\.com/||;s|/$||')
+            printf 'https://api.github.com/repos/%s/releases/latest\n' "$repo"
+            ;;
+        https://api.github.com/*|http://api.github.com/*)
+            printf '%s\n' "$ref"
+            ;;
         http*)
             printf '%s\n' "$ref"
             ;;
@@ -144,7 +157,7 @@ resolve_api_url() {
 # --- derive display name from repo ref ---
 derive_name() {
     ref="$1"
-    clean=$(printf '%s\n' "$ref" | sed 's|https\?://api\.github\.com/repos/||')
+    clean=$(printf '%s\n' "$ref" | sed 's|^https://api\.github\.com/repos/||;s|^http://api\.github\.com/repos/||;s|^https://github\.com/||;s|^http://github\.com/||')
     clean="${clean%@*}"
     printf '%s\n' "${clean##*/}"
 }
@@ -187,56 +200,115 @@ validate_sha() {
 
 echo "KOReader root: $KO_ROOT"
 
-API_URL=$(resolve_api_url "$REPO_REF")
-echo "Resolving release: $API_URL"
+RELEASE_JSON=""
+ASSET_URL=""
 
-RELEASE_JSON=$(fetch_json "$API_URL")
+case "$ASSET_PATTERN" in
+    http://*.lua|https://*.lua|http://*.zip|https://*.zip)
+        ASSET_URL="$ASSET_PATTERN"
+        echo "Direct asset: $ASSET_URL"
+        ;;
+esac
 
-# Extract asset download URL matching the pattern
-if [ -n "$ASSET_PATTERN" ]; then
-    ASSET_URL=$(printf '%s\n' "$RELEASE_JSON" \
-        | grep -oE '"browser_download_url":\s*"[^"]*"' \
-        | cut -d'"' -f4 \
-        | grep -iF "$ASSET_PATTERN" \
-        | head -n 1 || true)
-else
-    ASSET_URL=$(printf '%s\n' "$RELEASE_JSON" \
-        | grep -oE '"browser_download_url":\s*"[^"]*"' \
-        | cut -d'"' -f4 \
-        | grep -iE '\.zip$' \
-        | head -n 1 || true)
-fi
+case "$REPO_REF" in
+    *.lua|*.zip|https://codeload.github.com/*|http://codeload.github.com/*)
+        ASSET_URL="$REPO_REF"
+        echo "Direct asset: $ASSET_URL"
+        ;;
+    *)
+        if [ -z "$ASSET_URL" ]; then
+            API_URL=$(resolve_api_url "$REPO_REF")
+            echo "Resolving release: $API_URL"
 
-if [ -z "$ASSET_URL" ]; then
-    echo "No matching asset found in release"
-    if [ -n "$ASSET_PATTERN" ]; then
-        echo "  pattern: $ASSET_PATTERN"
-    fi
-    exit 1
-fi
+            RELEASE_JSON=$(fetch_json "$API_URL")
+
+            ASSET_LIST=$(printf '%s\n' "$RELEASE_JSON" \
+                | grep -oE '"browser_download_url":\s*"[^"]*"' \
+                | cut -d'"' -f4 \
+                | grep -iE '\.zip$' || true)
+
+            if [ -n "$ASSET_PATTERN" ]; then
+                ASSET_URL=$(printf '%s\n' "$ASSET_LIST" | grep -iF "$ASSET_PATTERN" | head -n 1 || true)
+            fi
+
+            if [ -z "$ASSET_URL" ]; then
+                ASSET_URL=$(printf '%s\n' "$ASSET_LIST" | head -n 1 || true)
+            fi
+
+            if [ -z "$ASSET_URL" ]; then
+                echo "No matching asset found in release"
+                [ -n "$ASSET_PATTERN" ] && echo "  pattern: $ASSET_PATTERN"
+                exit 1
+            fi
+        fi
+        ;;
+esac
 
 ASSET_FILENAME=$(printf '%s\n' "$ASSET_URL" | sed 's|.*/||')
 echo "Found asset: $ASSET_FILENAME"
 
 # Derive display name
-[ -z "$DISPLAY_NAME" ] && DISPLAY_NAME=$(derive_name "$REPO_REF")
+if [ -z "$DISPLAY_NAME" ]; then
+    case "$REPO_REF" in
+        https://codeload.github.com/*|http://codeload.github.com/*)
+            DISPLAY_NAME=$(printf '%s\n' "$REPO_REF" \
+                | sed 's|^https://codeload\.github\.com/||;s|^http://codeload\.github\.com/||' \
+                | cut -d/ -f2)
+            ;;
+        *)
+            DISPLAY_NAME=$(derive_name "$REPO_REF")
+            ;;
+    esac
+fi
+[ -z "$DISPLAY_NAME" ] && DISPLAY_NAME="${ZENPM_PACKAGE_ID:-${PACKAGE_ID:-}}"
 PATCH_DIR="$KO_PATCHES_DIR/$DISPLAY_NAME"
 
 # Download
-ARCHIVE_PATH="$TMP_DIR/$ASSET_FILENAME"
+ASSET_PATH="$TMP_DIR/$ASSET_FILENAME"
 echo "Downloading $ASSET_URL ..."
-download_file "$ASSET_URL" "$ARCHIVE_PATH"
+download_file "$ASSET_URL" "$ASSET_PATH"
+
+case "$ASSET_FILENAME" in
+    *.lua)
+        if [ -z "$DISPLAY_NAME" ] || [ "$DISPLAY_NAME" = "${ZENPM_PACKAGE_DISPLAY_NAME:-}" ]; then
+            DISPLAY_NAME="$ASSET_FILENAME"
+        fi
+        PATCH_FILE="$KO_PATCHES_DIR/$DISPLAY_NAME"
+        case "$PATCH_FILE" in
+            *.lua) ;;
+            *) PATCH_FILE="$PATCH_FILE.lua" ;;
+        esac
+
+        echo "Installing to $PATCH_FILE ..."
+        cp "$ASSET_PATH" "$PATCH_FILE"
+
+        cat > "$TRACKING_DIR/$DISPLAY_NAME" <<EOF
+name=$DISPLAY_NAME
+patch_file=$PATCH_FILE
+asset_url=$ASSET_URL
+asset_filename=$ASSET_FILENAME
+repo_ref=$REPO_REF
+installed_at=$(date '+%Y-%m-%dT%H:%M:%S%z' 2>/dev/null || date)
+EOF
+
+        rm -rf "$TMP_DIR"
+        sync
+
+        echo "Patch '$DISPLAY_NAME' installed to $PATCH_FILE"
+        exit 0
+        ;;
+esac
 
 # Validate SHA from release body
-RELEASE_BODY=$(printf '%s\n' "$RELEASE_JSON" | grep -oE '"body":\s*"[^"]*"' | head -n 1 | sed 's/^"body":\s*"//;s/"$//')
+RELEASE_BODY=$(printf '%s\n' "$RELEASE_JSON" | grep -oE '"body":\s*"[^"]*"' | head -n 1 | sed 's/^"body":\s*"//;s/"$//' || true)
 RELEASE_BODY=$(printf '%s\n' "$RELEASE_BODY" | sed 's/\\n/\n/g; s/\\r/\r/g; s/\\t/\t/g; s/\\"/"/g; s/\\\\/\\/g')
-validate_sha "$ARCHIVE_PATH" "$RELEASE_BODY" "$ASSET_FILENAME"
+validate_sha "$ASSET_PATH" "$RELEASE_BODY" "$ASSET_FILENAME"
 
 # Extract
 echo "Extracting..."
 EXTRACT_DIR="$TMP_DIR/extracted"
 mkdir -p "$EXTRACT_DIR"
-extract_zip "$ARCHIVE_PATH" "$EXTRACT_DIR"
+extract_zip "$ASSET_PATH" "$EXTRACT_DIR"
 
 # Determine the patch root inside the extracted contents.
 CONTENTS=$(ls -A "$EXTRACT_DIR")

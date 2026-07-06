@@ -1,0 +1,44 @@
+# Koreader Patches patch for KOReader
+# https://github.com/Craftwork2720/koreader-patches
+# zenpm:auto-scraped
+id=koreader-patches
+name=Koreader Patches
+version=0.0.0-source
+description=KOReader User Patches
+author=Craftwork2720
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/Craftwork2720/koreader-patches
+install_url=packages/koreader/install-patch.sh
+uninstall_url=packages/koreader/uninstall-patch.sh
+stars=28
+source_type=source
+assets.0.arch=any
+assets.0.asset=1-gettext-translate.lua
+assets.0.url=https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/1-gettext-translate.lua
+assets.0.size=35264
+assets.1.arch=any
+assets.1.asset=2-exclude-folders.lua
+assets.1.url=https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-exclude-folders.lua
+assets.1.size=19118
+assets.2.arch=any
+assets.2.asset=2-filemanager-subtitle-margin.lua
+assets.2.url=https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-filemanager-subtitle-margin.lua
+assets.2.size=602
+assets.3.arch=any
+assets.3.asset=2-filemanager-title-hide.lua
+assets.3.url=https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-filemanager-title-hide.lua
+assets.3.size=871
+assets.4.arch=any
+assets.4.asset=2-hide-status-bar.lua
+assets.4.url=https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-hide-status-bar.lua
+assets.4.size=4176
+assets.5.arch=any
+assets.5.asset=2-incognito.lua
+assets.5.url=https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-incognito.lua
+assets.5.size=4566
+assets.6.arch=any
+assets.6.asset=2-physical-page-count.lua
+assets.6.url=https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-physical-page-count.lua
+assets.6.size=7369

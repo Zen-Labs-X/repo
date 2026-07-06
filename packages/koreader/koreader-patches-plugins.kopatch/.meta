@@ -1,0 +1,20 @@
+# Koreader Patches Plugins patch for KOReader
+# https://github.com/ameyrk99/koreader-patches-plugins
+# zenpm:auto-scraped
+id=koreader-patches-plugins
+name=Koreader Patches Plugins
+version=0.0.0-source
+description=My patches and plugins for Koreader
+author=ameyrk99
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/ameyrk99/koreader-patches-plugins
+install_url=packages/koreader/install-patch.sh
+uninstall_url=packages/koreader/uninstall-patch.sh
+stars=39
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-bookshelf-screensaver.lua
+assets.0.url=https://raw.githubusercontent.com/ameyrk99/koreader-patches-plugins/mainline/patches/2-bookshelf-screensaver.lua
+assets.0.size=50952

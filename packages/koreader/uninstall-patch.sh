@@ -65,14 +65,26 @@ if [ ! -f "$TRACKING_FILE" ]; then
     exit 0
 fi
 
-# Read patch dir from tracking file
-PATCH_DIR=$(grep -E '^patch_dir=' "$TRACKING_FILE" | cut -d= -f2-)
+# Read patch file or patch dir from tracking file.
+PATCH_FILE=$(grep -E '^patch_file=' "$TRACKING_FILE" | cut -d= -f2- || true)
+PATCH_DIR=$(grep -E '^patch_dir=' "$TRACKING_FILE" | cut -d= -f2- || true)
 
-if [ ! -d "$PATCH_DIR" ]; then
-    echo "Patch directory $PATCH_DIR not found (already removed)."
+if [ -n "$PATCH_FILE" ]; then
+    if [ ! -f "$PATCH_FILE" ]; then
+        echo "Patch file $PATCH_FILE not found (already removed)."
+    else
+        echo "Removing $PATCH_FILE ..."
+        rm -f "$PATCH_FILE"
+    fi
+elif [ -n "$PATCH_DIR" ]; then
+    if [ ! -d "$PATCH_DIR" ]; then
+        echo "Patch directory $PATCH_DIR not found (already removed)."
+    else
+        echo "Removing $PATCH_DIR ..."
+        rm -rf "$PATCH_DIR"
+    fi
 else
-    echo "Removing $PATCH_DIR ..."
-    rm -rf "$PATCH_DIR"
+    echo "Tracking file has no patch_file or patch_dir entry."
 fi
 
 rm -f "$TRACKING_FILE"

@@ -90,7 +90,7 @@ for meta_file in $meta_files; do
     stars=$(grep '^stars=' "$tmp" 2>/dev/null | sed 's/^stars=//' | head -1)
 
     case "$category" in
-        utility|games|productivity|media|theme) ;;
+        utility|games|productivity|media|theme|patches) ;;
         *)
             echo "Invalid or missing category in $meta_file: $category" >&2
             rm -f "$tmp"

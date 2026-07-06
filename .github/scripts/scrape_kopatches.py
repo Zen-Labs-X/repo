@@ -1,50 +1,67 @@
 #!/usr/bin/env python3
-"""Scrape GitHub for KOReader plugins and generate package .meta files."""
+"""Scrape GitHub for KOReader user patch repos and generate package .meta files."""
 
 import argparse
 import os
+import re
 import sys
+import urllib.parse
 
 from scrape_common import (
-    KIND_PLUGIN,
+    KIND_PATCH,
     KOREADER_DIR,
     MIN_STARS,
-    VALID_CATEGORIES,
+    PATCH_CATEGORY,
     build_meta,
-    classify_category,
     discover,
-    existing_meta_categories,
     existing_repo_refs,
     existing_scraped_meta,
-    fetch_release,
     fetch_repo,
+    fetch_tree,
     is_inactive,
-    load_category_cache,
     normalize_repo_ref,
     package_dir_name,
-    save_category_cache,
     token,
     write_results,
 )
 
-PLUGIN_QUERIES = (
-    f"topic:koplugin stars:>={MIN_STARS} fork:true",
-    f"topic:koreader-plugin stars:>={MIN_STARS} fork:true",
-    f"koplugin in:name stars:>={MIN_STARS} fork:true",
-    f"koreader-plugin in:name stars:>={MIN_STARS} fork:true",
+PATCH_QUERIES = (
+    f"topic:koreader-user-patch stars:>={MIN_STARS} fork:true",
+    f"KOReader.patches in:name stars:>={MIN_STARS} fork:true",
 )
 
 
-def is_koplugin(repo):
+def looks_like_koreader_patch_repo(repo):
     name = repo.get("name", "").lower()
     topics = [t.lower() for t in repo.get("topics", [])]
-    if name.endswith(".koplugin") or "koplugin" in name:
+    if "koreader-user-patch" in topics:
         return True
-    return "koplugin" in topics or "koreader-plugin" in topics
+    return name == "koreader.patches" or "koreader.patches" in name
+
+
+def patch_assets(repo):
+    branch = repo.get("default_branch") or "main"
+    branch_url = urllib.parse.quote(branch, safe="")
+    assets = []
+    for item in fetch_tree(repo["full_name"], branch):
+        if item.get("type") != "blob":
+            continue
+        path = item.get("path", "")
+        filename = path.rsplit("/", 1)[-1]
+        if not re.match(r"^[0-9].*\.lua$", filename):
+            continue
+        path_url = urllib.parse.quote(path, safe="/")
+        assets.append({
+            "name": filename,
+            "path": path,
+            "url": f"https://raw.githubusercontent.com/{repo['full_name']}/{branch_url}/{path_url}",
+            "size": item.get("size", 0),
+        })
+    return sorted(assets, key=lambda item: item["path"].lower())
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Scrape KOReader plugins.")
+    parser = argparse.ArgumentParser(description="Scrape KOReader patches.")
     parser.add_argument("--dry-run", action="store_true",
                         help="Print planned .meta files without writing.")
     parser.add_argument("--exclude-forks", action="store_true",
@@ -56,36 +73,27 @@ def main():
               file=sys.stderr)
 
     known_refs, known_ids = existing_repo_refs()
-    discovered = discover(PLUGIN_QUERIES)
-    print(f"Discovered {len(discovered)} candidate plugin repos.",
+    discovered = discover(PATCH_QUERIES)
+    print(f"Discovered {len(discovered)} candidate patch repos.",
           file=sys.stderr)
 
-    category_cache = load_category_cache()
-    category_cache.update(existing_meta_categories())
-
     updated = []
-    for record in existing_scraped_meta():
-        if record["category"] == "patches":
-            continue
+    for record in existing_scraped_meta(PATCH_CATEGORY):
         repo = fetch_repo(record["ref"])
         if not repo:
             print(f"Could not refresh {record['rel_path']}: repo not found",
                   file=sys.stderr)
             continue
 
-        repo_norm = normalize_repo_ref(repo.get("full_name", record["ref"]))
-        category = (
-            category_cache.get(record["ref"])
-            or category_cache.get(repo_norm)
-            or (record["category"] if record["category"] in VALID_CATEGORIES else "")
-            or classify_category(repo)
-        )
-        category_cache[repo_norm] = category
+        assets = patch_assets(repo)
+        if not assets:
+            print(f"Could not refresh {record['rel_path']}: no patch files",
+                  file=sys.stderr)
+            continue
 
-        release = fetch_release(repo.get("full_name", record["ref"]))
         _meta_id, meta_text, summary = build_meta(
-            repo, release, known_ids, category, meta_id=record["id"],
-            kind=KIND_PLUGIN, name_override=record["name"]
+            repo, None, known_ids, PATCH_CATEGORY, meta_id=record["id"],
+            kind=KIND_PATCH, name_override=record["name"], patch_assets=assets
         )
         summary["path"] = record["rel_path"]
 
@@ -117,21 +125,22 @@ def main():
             continue
 
         repo = fetch_repo(full_name) or item
-        if not is_koplugin(repo) and not is_koplugin(item):
+        if not looks_like_koreader_patch_repo(repo) and not looks_like_koreader_patch_repo(item):
             continue
         if repo.get("archived") or is_inactive(repo):
             continue
 
-        category = category_cache.get(norm) or classify_category(repo)
-        category_cache[norm] = category
+        assets = patch_assets(repo)
+        if not assets:
+            continue
 
-        release = fetch_release(full_name)
         meta_id, meta_text, summary = build_meta(
-            repo, release, known_ids, category, kind=KIND_PLUGIN
+            repo, None, known_ids, PATCH_CATEGORY, kind=KIND_PATCH,
+            patch_assets=assets
         )
         known_refs.add(norm)
 
-        dest_dir = os.path.join(KOREADER_DIR, package_dir_name(meta_id, KIND_PLUGIN))
+        dest_dir = os.path.join(KOREADER_DIR, package_dir_name(meta_id, KIND_PATCH))
         dest = os.path.join(dest_dir, ".meta")
 
         if args.dry_run:
@@ -145,11 +154,8 @@ def main():
 
         added.append(summary)
 
-    print(f"\n{len(updated)} refreshed plugin(s).", file=sys.stderr)
-    print(f"\n{len(added)} new plugin(s).", file=sys.stderr)
-
-    if not args.dry_run:
-        save_category_cache(category_cache)
+    print(f"\n{len(updated)} refreshed patch package(s).", file=sys.stderr)
+    print(f"\n{len(added)} new patch package(s).", file=sys.stderr)
 
     write_results(added, updated)
     return 0

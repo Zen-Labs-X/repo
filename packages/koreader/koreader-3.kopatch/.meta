@@ -1,0 +1,40 @@
+# Koreader patch for KOReader
+# https://github.com/ImSoRight/KOReader.patches
+# zenpm:auto-scraped
+id=koreader-3
+name=Koreader
+version=0.0.0-source
+description=A few KOReader userpatches I have created
+author=ImSoRight
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/ImSoRight/KOReader.patches
+install_url=packages/koreader/install-patch.sh
+uninstall_url=packages/koreader/uninstall-patch.sh
+stars=40
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-complete-status-icon.lua
+assets.0.url=https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-complete-status-icon.lua
+assets.0.size=2114
+assets.1.arch=any
+assets.1.asset=2-customize-highlight-colors.lua
+assets.1.url=https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-customize-highlight-colors.lua
+assets.1.size=1572
+assets.2.arch=any
+assets.2.asset=2-large-subtitles.lua
+assets.2.url=https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-large-subtitles.lua
+assets.2.size=188
+assets.3.arch=any
+assets.3.asset=2-modify-exit-sleep-screen-message.lua
+assets.3.url=https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-modify-exit-sleep-screen-message.lua
+assets.3.size=1136
+assets.4.arch=any
+assets.4.asset=2-shortcut-subtitles.lua
+assets.4.url=https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-shortcut-subtitles.lua
+assets.4.size=640
+assets.5.arch=any
+assets.5.asset=2-star-rating-overlay.lua
+assets.5.url=https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-star-rating-overlay.lua
+assets.5.size=4346

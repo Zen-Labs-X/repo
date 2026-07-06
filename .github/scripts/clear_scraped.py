@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Remove auto-scraped KOReader plugin folders.
 
-Deletes every `packages/koreader/<id>.koplugin/` whose `.meta` carries the
+Deletes every `packages/koreader/<id>.koplugin/` or `.kopatch/` whose `.meta` carries the
 `zenpm:auto-scraped` marker written by scrape_koplugins.py. Hand-added plugins
 (no marker) are left untouched.
 
