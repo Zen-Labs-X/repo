@@ -1,0 +1,17 @@
+# Quicksettings plugin for KOReader
+# https://github.com/renandeivison/quicksettings
+# zenpm:auto-scraped
+id=quicksettings
+name=Quicksettings
+version=1.2.0
+description=koreader-plugin
+author=renandeivison
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/renandeivison/quicksettings
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=16
+source_type=source
+source_url=https://codeload.github.com/renandeivison/quicksettings/zip/refs/heads/main

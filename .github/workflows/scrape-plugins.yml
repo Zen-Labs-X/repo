@@ -24,6 +24,31 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/scrape_koplugins.py
 
+      - name: Commit refreshed metadata
+        if: ${{ steps.scrape.outputs.updated_count != '0' }}
+        env:
+          UPDATED: ${{ steps.scrape.outputs.updated }}
+        run: |
+          set -eu
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          printf '%s' "$UPDATED" | python3 -c '
+          import json, sys
+          for p in json.load(sys.stdin):
+              print(p["path"])
+          ' > /tmp/updated-paths.txt
+
+          git add --pathspec-from-file=/tmp/updated-paths.txt
+          if git diff --cached --quiet; then
+              echo "No refreshed metadata changes to commit."
+              exit 0
+          fi
+
+          git commit -m "Refresh scraped KOReader plugin metadata"
+          git push origin HEAD:main
+          git fetch origin main
+
       - name: Open a PR for each new plugin
         if: ${{ steps.scrape.outputs.added_count != '0' }}
         env:
@@ -33,6 +58,9 @@ jobs:
           set -eu
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Keep new-plugin PR branches limited to package metadata.
+          git restore -- .github/scripts/plugin_categories.json
 
           # Each element of $ADDED is a plugin summary object. Emit TSV lines.
           printf '%s' "$ADDED" | python3 -c '

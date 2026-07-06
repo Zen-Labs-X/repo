@@ -1,0 +1,17 @@
+# Ai Dictionary Koreader plugin for KOReader
+# https://github.com/SahandMalaei/ai-dictionary-koreader
+# zenpm:auto-scraped
+id=ai-dictionary-koreader
+name=Ai Dictionary Koreader
+version=2.3
+description=Supercharged dictionary plugin for KOReader
+author=SahandMalaei
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/SahandMalaei/ai-dictionary-koreader
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=74
+source_type=source
+source_url=https://codeload.github.com/SahandMalaei/ai-dictionary-koreader/zip/refs/heads/main

@@ -1,0 +1,17 @@
+# Gota.Koplugin For Raindrop plugin for KOReader
+# https://github.com/cristenger/gota.koplugin-for-raindrop
+# zenpm:auto-scraped
+id=gota-koplugin-for-raindrop
+name=Gota.Koplugin For Raindrop
+version=0.0.0-source
+description=A KOReader plugin to access and read your Raindrop.io bookmarks directly on your e-reader.
+author=cristenger
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/cristenger/gota.koplugin-for-raindrop
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=17
+source_type=source
+source_url=https://codeload.github.com/cristenger/gota.koplugin-for-raindrop/zip/refs/heads/main

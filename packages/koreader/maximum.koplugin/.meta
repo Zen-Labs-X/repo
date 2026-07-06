@@ -12,6 +12,6 @@ dependencies=
 source=https://github.com/Shac0x/maximum.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-stars=40
+stars=43
 source_type=source
 source_url=https://codeload.github.com/Shac0x/maximum.koplugin/zip/refs/heads/main

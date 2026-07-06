@@ -12,6 +12,6 @@ dependencies=
 source=https://github.com/Ajatt-Tools/anki.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-stars=204
+stars=209
 source_type=source
 source_url=https://codeload.github.com/Ajatt-Tools/anki.koplugin/zip/refs/heads/master

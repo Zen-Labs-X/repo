@@ -2,8 +2,9 @@
 """Scrape GitHub for KOReader plugins and generate package .meta files.
 
 Discovers repos with >15 stars that either carry the `koplugin` topic or have
-`koplugin` in the name, then writes a fully-populated
-`packages/koreader/<id>.koplugin/.meta` for each one not already in the repo.
+`koplugin` in the name, refreshes existing auto-scraped package metadata, then
+writes a fully-populated `packages/koreader/<id>.koplugin/.meta` for each new
+repo not already in the repo.
 
 Stdlib only — runs in GitHub Actions with no pip install. Reads GITHUB_TOKEN
 from the environment for a 5000 req/hr rate limit (60/hr unauthenticated).
@@ -227,6 +228,50 @@ def existing_repo_refs():
     return known_refs, known_ids
 
 
+def parse_meta(meta_path):
+    """Parse a .meta file into fields and scraper marker status."""
+    fields = {}
+    scraped = False
+    try:
+        with open(meta_path, "r", encoding="utf-8") as fh:
+            content = fh.read()
+    except OSError:
+        return fields, scraped, ""
+
+    for line in content.splitlines():
+        stripped = line.strip()
+        if stripped == f"# {SCRAPED_MARKER}":
+            scraped = True
+            continue
+        if stripped.startswith("#") or "=" not in stripped:
+            continue
+        key, value = stripped.split("=", 1)
+        fields[key] = value
+    return fields, scraped, content
+
+
+def existing_scraped_meta():
+    """Return auto-scraped KOReader .meta records eligible for refresh."""
+    records = []
+    for dirpath, _dirs, files in os.walk(KOREADER_DIR):
+        if ".meta" not in files:
+            continue
+        meta_path = os.path.join(dirpath, ".meta")
+        fields, scraped, content = parse_meta(meta_path)
+        ref = normalize_repo_ref(fields.get("source", ""))
+        meta_id = fields.get("id", "").strip()
+        if scraped and ref and meta_id:
+            records.append({
+                "path": meta_path,
+                "rel_path": os.path.relpath(meta_path, REPO_ROOT),
+                "ref": ref,
+                "id": meta_id,
+                "category": fields.get("category", "").strip(),
+                "content": content,
+            })
+    return records
+
+
 # --------------------------------------------------------------------------
 # Field derivation
 # --------------------------------------------------------------------------
@@ -332,12 +377,13 @@ def save_category_cache(cache):
 # Meta building
 # --------------------------------------------------------------------------
 
-def build_meta(repo, release, existing_ids, category):
+def build_meta(repo, release, existing_ids, category, meta_id=None):
     """Return (meta_id, meta_text, summary_dict) for one repo."""
     owner = repo["owner"]["login"]
     repo_name = repo["name"]
     full_name = repo["full_name"]
-    meta_id = make_id(repo_name, existing_ids)
+    if meta_id is None:
+        meta_id = make_id(repo_name, existing_ids)
     existing_ids.add(meta_id)
 
     name = display_name(repo_name)
@@ -477,6 +523,42 @@ def main():
     category_cache = load_category_cache()
     category_cache.update(existing_meta_categories())
 
+    updated = []
+    for record in existing_scraped_meta():
+        repo = fetch_repo(record["ref"])
+        if not repo:
+            print(f"Could not refresh {record['rel_path']}: repo not found",
+                  file=sys.stderr)
+            continue
+
+        repo_norm = normalize_repo_ref(repo.get("full_name", record["ref"]))
+        category = (
+            category_cache.get(record["ref"])
+            or category_cache.get(repo_norm)
+            or (record["category"] if record["category"] in VALID_CATEGORIES else "")
+            or classify_category(repo)
+        )
+        category_cache[repo_norm] = category
+
+        release = fetch_release(repo.get("full_name", record["ref"]))
+        _meta_id, meta_text, summary = build_meta(
+            repo, release, known_ids, category, meta_id=record["id"]
+        )
+        summary["path"] = record["rel_path"]
+
+        if meta_text == record["content"]:
+            continue
+
+        if args.dry_run:
+            print(f"\n--- {record['path']} ---")
+            print(meta_text, end="")
+        else:
+            with open(record["path"], "w", encoding="utf-8") as fh:
+                fh.write(meta_text)
+            print(f"Updated {record['path']}", file=sys.stderr)
+
+        updated.append(summary)
+
     added = []
     for full_name, item in sorted(discovered.items()):
         norm = normalize_repo_ref(full_name)
@@ -523,6 +605,7 @@ def main():
 
         added.append(summary)
 
+    print(f"\n{len(updated)} refreshed plugin(s).", file=sys.stderr)
     print(f"\n{len(added)} new plugin(s).", file=sys.stderr)
 
     if not args.dry_run:
@@ -533,6 +616,8 @@ def main():
     payload = json.dumps(added)
     if gh_output:
         with open(gh_output, "a", encoding="utf-8") as fh:
+            fh.write(f"updated_count={len(updated)}\n")
+            fh.write(f"updated={json.dumps(updated)}\n")
             fh.write(f"added_count={len(added)}\n")
             fh.write(f"added={payload}\n")
     print(payload)

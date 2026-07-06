@@ -12,6 +12,6 @@ dependencies=
 source=https://github.com/ProfBlack/ao3updater.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-stars=25
+stars=27
 source_type=source
 source_url=https://codeload.github.com/ProfBlack/ao3updater.koplugin/zip/refs/heads/main

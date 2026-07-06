@@ -12,6 +12,6 @@ dependencies=
 source=https://github.com/stelzch/zotero.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-stars=146
+stars=148
 source_type=source
 source_url=https://codeload.github.com/stelzch/zotero.koplugin/zip/refs/heads/master

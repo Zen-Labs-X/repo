@@ -1,0 +1,18 @@
+# Koboard plugin for KOReader
+# https://github.com/titandrive/koboard
+# zenpm:auto-scraped
+id=koboard
+name=Koboard
+version=0.2.2
+description=koboard.koplugin - Use your android keyboard of choice with KoReader!
+author=titandrive
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/titandrive/koboard
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=16
+source_type=release
+source_asset=koboard.koplugin.zip
+size=7463

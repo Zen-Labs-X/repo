@@ -19,6 +19,7 @@ find_koreader_root() {
         /mnt/onboard/.adds/koreader
         /mnt/us/koreader
         /mnt/us/extensions/koreader
+        /mnt/us/kmc/kpm/packages/koreader/koreader
         /sdcard/koreader
         /mnt/sd/koreader
         $HOME/koreader
@@ -30,7 +31,7 @@ find_koreader_root() {
         fi
     done
 
-    kosh=$(find /mnt /sdcard "$HOME" -maxdepth 4 -name 'koreader.sh' -type f 2>/dev/null | head -n 1)
+    kosh=$(find /mnt /sdcard "$HOME" -maxdepth 7 -name 'koreader.sh' -type f 2>/dev/null | head -n 1)
     if [ -n "$kosh" ]; then
         dirname "$kosh"
         return 0
@@ -43,7 +44,7 @@ KO_ROOT=$(find_koreader_root)
 
 if [ -z "$KO_ROOT" ]; then
     echo "KOReader installation not found."
-    echo "Searched: /mnt/onboard/.adds/koreader, /mnt/us/koreader, /sdcard/koreader, ..."
+    echo "Searched: /mnt/onboard/.adds/koreader, /mnt/us/koreader, /mnt/us/kmc/kpm/packages/koreader/koreader, /sdcard/koreader, ..."
     exit 1
 fi
 
