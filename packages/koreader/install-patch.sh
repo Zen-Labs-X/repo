@@ -181,6 +181,19 @@ derive_name() {
     printf '%s\n' "${clean##*/}"
 }
 
+github_repo_from_ref() {
+    ref="$1"
+    clean=$(printf '%s\n' "$ref" | sed 's|^https://api\.github\.com/repos/||;s|^http://api\.github\.com/repos/||;s|^https://github\.com/||;s|^http://github\.com/||;s|/$||')
+    clean="${clean%@*}"
+    owner=$(printf '%s\n' "$clean" | cut -d/ -f1)
+    repo=$(printf '%s\n' "$clean" | cut -d/ -f2)
+    if [ -n "$owner" ] && [ -n "$repo" ] && [ "$owner" != "$repo" ]; then
+        printf '%s/%s\n' "$owner" "$repo"
+        return 0
+    fi
+    return 1
+}
+
 # --- validate sha256 from release body ---
 validate_sha() {
     archive_path="$1"
@@ -226,6 +239,12 @@ case "$ASSET_PATTERN" in
     http://*.lua|https://*.lua|http://*.zip|https://*.zip)
         ASSET_URL="$ASSET_PATTERN"
         echo "Direct asset: $ASSET_URL"
+        ;;
+    *.lua)
+        if repo_path=$(github_repo_from_ref "$REPO_REF"); then
+            ASSET_URL="https://raw.githubusercontent.com/$repo_path/HEAD/$ASSET_PATTERN"
+            echo "Source patch asset: $ASSET_URL"
+        fi
         ;;
 esac
 
@@ -289,7 +308,7 @@ download_file "$ASSET_URL" "$ASSET_PATH"
 
 case "$ASSET_FILENAME" in
     *.lua)
-        if [ -z "$DISPLAY_NAME" ] || [ "$DISPLAY_NAME" = "${ZENPM_PACKAGE_DISPLAY_NAME:-}" ]; then
+        if [ -z "${ZENPM_PATCH_NAME:-}" ]; then
             DISPLAY_NAME="$ASSET_FILENAME"
         fi
         PATCH_FILE="$KO_PATCHES_DIR/$DISPLAY_NAME"
