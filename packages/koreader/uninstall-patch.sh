@@ -5,11 +5,39 @@ set -eu
 # Usage: uninstall-patch.sh DISPLAY_NAME
 #   DISPLAY_NAME - name used during install (matches tracking file)
 
-DISPLAY_NAME="${1:-}"
+DISPLAY_NAME="${1:-${ZENPM_PATCH_NAME:-}}"
+SOURCE_ASSET="${ZENPM_PACKAGE_SOURCE_ASSET:-${ZENPM_SOURCE_ASSET:-${PACKAGE_SOURCE_ASSET:-}}}"
+SOURCE_ASSET_NAME="${SOURCE_ASSET##*/}"
+
+if [ -z "$DISPLAY_NAME" ]; then
+    case "$SOURCE_ASSET_NAME" in
+        *.lua)
+            DISPLAY_NAME="$SOURCE_ASSET_NAME"
+            ;;
+    esac
+fi
+
+if [ -z "$DISPLAY_NAME" ]; then
+    DISPLAY_NAME="${ZENPM_PACKAGE_DISPLAY_NAME:-}"
+fi
+
+if [ -z "$DISPLAY_NAME" ]; then
+    SOURCE_REF="${ZENPM_PACKAGE_SOURCE:-${ZENPM_SOURCE:-${PACKAGE_SOURCE:-}}}"
+    if [ -n "$SOURCE_REF" ]; then
+        clean=$(printf '%s\n' "$SOURCE_REF" | sed 's|^https://api\.github\.com/repos/||;s|^http://api\.github\.com/repos/||;s|^https://github\.com/||;s|^http://github\.com/||')
+        clean="${clean%@*}"
+        DISPLAY_NAME="${clean##*/}"
+    fi
+fi
+
+if [ -z "$DISPLAY_NAME" ]; then
+    DISPLAY_NAME="${ZENPM_PACKAGE_ID:-${PACKAGE_ID:-}}"
+fi
 
 if [ -z "$DISPLAY_NAME" ]; then
     echo "Usage: uninstall-patch.sh DISPLAY_NAME"
     echo "  DISPLAY_NAME - name used when the patch was installed"
+    echo "Or set ZENPM_PACKAGE_SOURCE_ASSET, ZENPM_PACKAGE_SOURCE, or ZENPM_PACKAGE_ID."
     exit 1
 fi
 
