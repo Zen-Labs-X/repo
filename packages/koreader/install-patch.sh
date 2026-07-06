@@ -81,9 +81,8 @@ TRACKING_DIR="$KO_ROOT/.zenpm-patches"
 TMP_DIR="/tmp/kopatch-install-$$"
 
 if [ ! -d "$KO_PATCHES_DIR" ]; then
-    echo "KOReader patches directory not found at $KO_PATCHES_DIR"
-    echo "KOReader found at $KO_ROOT but missing patches/ subdirectory."
-    exit 1
+    echo "Creating KOReader patches directory at $KO_PATCHES_DIR"
+    mkdir -p "$KO_PATCHES_DIR"
 fi
 
 mkdir -p "$TMP_DIR" "$TRACKING_DIR"
