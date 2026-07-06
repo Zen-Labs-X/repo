@@ -22,8 +22,33 @@ if [ -z "$REPO_REF" ]; then
 fi
 
 # --- find KOReader root directory ---
+is_koreader_root() {
+    [ -d "$1" ] && { [ -f "$1/koreader.sh" ] || [ -f "$1/reader.lua" ]; }
+}
+
 find_koreader_root() {
-    # Common KOReader install locations across devices
+    # 1. Explicit override from the ZenPM client.
+    if [ -n "${ZENPM_KOREADER_ROOT:-}" ] && is_koreader_root "$ZENPM_KOREADER_ROOT"; then
+        printf '%s\n' "$ZENPM_KOREADER_ROOT"
+        return 0
+    fi
+
+    # 2. Anchor to the running install: the client runs inside the active
+    # KOReader tree, so walk up from CWD and this script's dir.
+    script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" 2>/dev/null && pwd -P) || script_dir=""
+    for start in "$PWD" "$script_dir"; do
+        [ -n "$start" ] || continue
+        dir="$start"
+        while [ -n "$dir" ] && [ "$dir" != "/" ]; do
+            if is_koreader_root "$dir"; then
+                printf '%s\n' "$dir"
+                return 0
+            fi
+            dir=$(dirname "$dir")
+        done
+    done
+
+    # 3. Fall back to common install locations across devices.
     candidates="
         /mnt/onboard/.adds/koreader
         /mnt/us/koreader
@@ -34,18 +59,11 @@ find_koreader_root() {
         $HOME/koreader
     "
     for dir in $candidates; do
-        if [ -d "$dir" ] && [ -f "$dir/koreader.sh" ]; then
+        if is_koreader_root "$dir"; then
             printf '%s\n' "$dir"
             return 0
         fi
     done
-
-    # Fallback: search for koreader.sh
-    kosh=$(find /mnt /sdcard "$HOME" -maxdepth 7 -name 'koreader.sh' -type f 2>/dev/null | head -n 1)
-    if [ -n "$kosh" ]; then
-        dirname "$kosh"
-        return 0
-    fi
 
     return 1
 }
