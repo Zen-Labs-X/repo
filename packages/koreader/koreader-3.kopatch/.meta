@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-3
 name=Koreader
-version=0.0.0-source
+version=source
 description=A few KOReader userpatches I have created
 author=ImSoRight
 category=patches

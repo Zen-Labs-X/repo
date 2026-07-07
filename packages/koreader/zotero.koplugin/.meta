@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=zotero
 name=Zotero
-version=0.0.0-source
+version=source
 description=Display Zotero collection on E-Readers with KOReader
 author=stelzch
 category=productivity

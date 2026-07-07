@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=maximum
 name=Maximum
-version=0.0.0-source
+version=source
 description=A KOReader plugin that improves zooming while reading manga.
 author=Shac0x
 category=media

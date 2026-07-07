@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-patches-2
 name=Koreader Patches
-version=0.0.0-source
+version=source
 description=Backup of all the KOreader patches I use on my Kindle Paperwhite SE, featuring patches collected all over and modded to fill my wants.
 author=medinauta
 category=patches

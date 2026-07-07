@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-frankenpatches-public
 name=Koreader Frankenpatches Public
-version=0.0.0-source
+version=source
 description=user patches for koreader.
 author=zenixlabs
 category=patches

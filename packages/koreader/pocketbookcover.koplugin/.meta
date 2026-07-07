@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=pocketbookcover
 name=Pocketbookcover
-version=0.0.0-source
+version=source
 description=Automatically updates the book cover which is displayed when the Pocketbook device is turned off.
 author=ckilb
 category=utility

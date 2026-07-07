@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-10
 name=Koreader
-version=0.0.0-source
+version=source
 description=User patches for KOReader,  Project: Title & WeatherLockscreen
 author=loeffner
 category=patches

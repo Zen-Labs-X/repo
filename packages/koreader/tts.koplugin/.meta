@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=tts
 name=Tts
-version=0.0.0-source
+version=source
 description=A text-to-speech plugin for KOreader
 author=norude
 category=utility

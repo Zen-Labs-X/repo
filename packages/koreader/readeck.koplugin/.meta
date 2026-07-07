@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=readeck
 name=Readeck
-version=0.0.0-source
+version=source
 description=An unofficial KOReader plugin to add integration with your Readeck instance.
 author=flip-rossi
 category=productivity

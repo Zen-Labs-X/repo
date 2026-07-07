@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=supersync
 name=Supersync
-version=0.0.0-source
+version=source
 description=Full metadata sync for KOreader via user's own cloud storage
 author=BrendanL79
 category=productivity

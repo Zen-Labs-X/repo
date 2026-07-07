@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=swipe-animation
 name=Swipe Animation
-version=0.0.0-source
+version=source
 description=A software page-turn animation patch for KOReader that provides a smooth "wipe / erase and reveal" effect.
 author=koplugin-swipe-animation
 category=utility

@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=dictionarymode
 name=Dictionarymode
-version=0.0.0-source
+version=source
 description=Enables dictionary mode (one tap dictionary lookups) in KOReader
 author=ckilb
 category=productivity

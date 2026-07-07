@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=digitalclock
 name=Digitalclock
-version=0.0.0-source
+version=source
 description=A digital clock for koreader, display time, date and an image
 author=DucNg
 category=utility

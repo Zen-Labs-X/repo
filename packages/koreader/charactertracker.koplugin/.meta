@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=charactertracker
 name=Charactertracker
-version=0.0.0-source
+version=source
 description=KOReader character tracker for tracking reading progress and stats.
 author=Shac0x
 category=productivity

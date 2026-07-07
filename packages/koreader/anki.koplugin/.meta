@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=anki
 name=Anki
-version=0.0.0-source
+version=source
 description=KOReader plugin enabling Anki card generations for words looked up in the internal dictionary.
 author=Ajatt-Tools
 category=productivity

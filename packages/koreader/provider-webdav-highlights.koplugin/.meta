@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=provider-webdav-highlights
 name=Provider Webdav Highlights
-version=0.0.0-source
+version=source
 description=Export KOReader highlights to a WebDAV target
 author=fairlygood
 category=productivity

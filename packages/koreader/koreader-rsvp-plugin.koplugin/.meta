@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-rsvp-plugin
 name=Koreader Rsvp Plugin
-version=0.0.0-source
+version=source
 description=An RSVP (Rapid Serial Visual Presentation) plugin that enables speed reading with advanced features for KOReader.
 author=karpushchenko
 category=utility

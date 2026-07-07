@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=weather
 name=Weather
-version=0.0.0-source
+version=source
 description=
 author=roygbyte
 category=utility

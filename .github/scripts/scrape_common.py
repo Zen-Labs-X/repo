@@ -383,7 +383,7 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
     ]
 
     zip_assets = []
-    version = "0.0.0-source"
+    version = "source"
     if release and isinstance(release, dict) and release.get("assets") is not None:
         tag = (release.get("tag_name") or "").lstrip("vV")
         if tag:

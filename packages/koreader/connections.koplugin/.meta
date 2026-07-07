@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=connections
 name=Connections
-version=0.0.0-source
+version=source
 description=NYT Connections for KOReader
 author=odrling
 category=games

@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=gota-koplugin-for-raindrop
 name=Gota.Koplugin For Raindrop
-version=0.0.0-source
+version=source
 description=A KOReader plugin to access and read your Raindrop.io bookmarks directly on your e-reader.
 author=cristenger
 category=media

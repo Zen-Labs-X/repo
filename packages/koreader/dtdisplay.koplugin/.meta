@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=dtdisplay
 name=Dtdisplay
-version=0.0.0-source
+version=source
 description=A Koreader plugin to display the time and day in a fullscreen widget. Contributions welcome!
 author=kktse
 category=utility

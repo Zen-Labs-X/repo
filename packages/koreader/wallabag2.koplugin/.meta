@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=wallabag2
 name=Wallabag2
-version=0.0.0-source
+version=source
 description=KoReader plugin for Wallabag (version 2) servers
 author=clach04
 category=productivity

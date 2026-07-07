@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader
 name=Koreader
-version=0.0.0-source
+version=source
 description=Assorted user patches for KOReader.
 author=Djeymisson
 category=patches

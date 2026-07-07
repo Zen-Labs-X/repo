@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=ao3updater
 name=Ao3Updater
-version=0.0.0-source
+version=source
 description=Updates Archive of Our Own EPUBs automatically.
 author=ProfBlack
 category=media

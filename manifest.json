@@ -179,7 +179,7 @@
     {
       "id": "anki",
       "name": "Anki",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "KOReader plugin enabling Anki card generations for words looked up in the internal dictionary.",
       "author": "Ajatt-Tools",
       "category": "productivity",
@@ -292,7 +292,7 @@
     {
       "id": "ao3updater",
       "name": "Ao3Updater",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "Updates Archive of Our Own EPUBs automatically.",
       "author": "ProfBlack",
       "category": "media",
@@ -537,7 +537,7 @@
     {
       "id": "charactertracker",
       "name": "Charactertracker",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "KOReader character tracker for tracking reading progress and stats.",
       "author": "Shac0x",
       "category": "productivity",
@@ -593,7 +593,7 @@
     {
       "id": "connections",
       "name": "Connections",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "NYT Connections for KOReader",
       "author": "odrling",
       "category": "games",
@@ -611,7 +611,7 @@
     {
       "id": "crashlog",
       "name": "Crashlog",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "Crash log viewer for koreader",
       "author": "Billiam",
       "category": "utility",
@@ -648,7 +648,7 @@
     {
       "id": "dictionarymode",
       "name": "Dictionarymode",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "Enables dictionary mode (one tap dictionary lookups) in KOReader",
       "author": "ckilb",
       "category": "productivity",
@@ -666,7 +666,7 @@
     {
       "id": "digitalclock",
       "name": "Digitalclock",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "A digital clock for koreader, display time, date and an image",
       "author": "DucNg",
       "category": "utility",
@@ -684,7 +684,7 @@
     {
       "id": "dtdisplay",
       "name": "Dtdisplay",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "A Koreader plugin to display the time and day in a fullscreen widget. Contributions welcome!",
       "author": "kktse",
       "category": "utility",
@@ -852,7 +852,7 @@
     {
       "id": "homepage",
       "name": "Homepage",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "Home Page plugin for KOreader",
       "author": "reuerendo",
       "category": "theme",
@@ -870,7 +870,7 @@
     {
       "id": "iconschanger",
       "name": "Iconschanger",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "",
       "author": "ebanDev",
       "category": "theme",
@@ -1184,7 +1184,7 @@
     {
       "id": "koreader-multiuser",
       "name": "Koreader Multiuser",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "KOReader plugin and patch for isolated user profiles — separate settings, history, and reading statistic per user",
       "author": "artemartemenko",
       "category": "utility",
@@ -1202,7 +1202,7 @@
     {
       "id": "koreader-obsidian-sync",
       "name": "Koreader Obsidian Sync",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "A JS script and set of utilities to import and organize KOReader highlights into Obsidian",
       "author": "MySTerY1747",
       "category": "productivity",
@@ -1220,7 +1220,7 @@
     {
       "id": "koreader-rsvp-plugin",
       "name": "Koreader Rsvp Plugin",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "An RSVP (Rapid Serial Visual Presentation) plugin that enables speed reading with advanced features for KOReader.",
       "author": "karpushchenko",
       "category": "utility",
@@ -1370,7 +1370,7 @@
     {
       "id": "maximum",
       "name": "Maximum",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "A KOReader plugin that improves zooming while reading manga.",
       "author": "Shac0x",
       "category": "media",
@@ -1464,7 +1464,7 @@
     {
       "id": "notes",
       "name": "Notes",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "",
       "author": "prasy-loyola",
       "category": "productivity",
@@ -1594,7 +1594,7 @@
     {
       "id": "pocketbookcover",
       "name": "Pocketbookcover",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "Automatically updates the book cover which is displayed when the Pocketbook device is turned off.",
       "author": "ckilb",
       "category": "utility",
@@ -1631,7 +1631,7 @@
     {
       "id": "pocketbooktools",
       "name": "Pocketbooktools",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "Plugin for KOReader and PocketBook Integration",
       "author": "reuerendo",
       "category": "utility",
@@ -1649,7 +1649,7 @@
     {
       "id": "provider-webdav-highlights",
       "name": "Provider Webdav Highlights",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "Export KOReader highlights to a WebDAV target",
       "author": "fairlygood",
       "category": "productivity",
@@ -1779,7 +1779,7 @@
     {
       "id": "readeck",
       "name": "Readeck",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "An unofficial KOReader plugin to add integration with your Readeck instance.",
       "author": "flip-rossi",
       "category": "productivity",
@@ -2066,7 +2066,7 @@
     {
       "id": "supersync",
       "name": "Supersync",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "Full metadata sync for KOreader via user's own cloud storage",
       "author": "BrendanL79",
       "category": "productivity",
@@ -2141,7 +2141,7 @@
     {
       "id": "tts",
       "name": "Tts",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "A text-to-speech plugin for KOreader",
       "author": "norude",
       "category": "utility",
@@ -2178,7 +2178,7 @@
     {
       "id": "wallabag2",
       "name": "Wallabag2",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "KoReader plugin for Wallabag (version 2) servers",
       "author": "clach04",
       "category": "productivity",
@@ -2196,7 +2196,7 @@
     {
       "id": "weather",
       "name": "Weather",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "",
       "author": "roygbyte",
       "category": "utility",
@@ -2346,7 +2346,7 @@
     {
       "id": "zim-converter",
       "name": "Zim Converter",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "convert ZIM files, as found in the Kiwix WikiPedia library, to a SQLite database that is read by the WikiReader plugin of KOReader",
       "author": "Bartvelp",
       "category": "utility",
@@ -2402,7 +2402,7 @@
     {
       "id": "zotero",
       "name": "Zotero",
-      "version": "0.0.0-source",
+      "version": "source",
       "description": "Display Zotero collection on E-Readers with KOReader",
       "author": "stelzch",
       "category": "productivity",

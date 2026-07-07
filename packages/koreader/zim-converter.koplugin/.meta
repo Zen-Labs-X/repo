@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=zim-converter
 name=Zim Converter
-version=0.0.0-source
+version=source
 description=convert ZIM files, as found in the Kiwix WikiPedia library, to a SQLite database that is read by the WikiReader plugin of KOReader
 author=Bartvelp
 category=utility

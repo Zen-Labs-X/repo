@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-12
 name=Koreader
-version=0.0.0-source
+version=source
 description=user patches for KOReader
 author=sparklerfish
 category=patches

@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-multiuser
 name=Koreader Multiuser
-version=0.0.0-source
+version=source
 description=KOReader plugin and patch for isolated user profiles — separate settings, history, and reading statistic per user
 author=artemartemenko
 category=utility

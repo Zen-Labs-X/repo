@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-user-patches
 name=Koreader User Patches
-version=0.0.0-source
+version=source
 description=Various user patches for KOReader
 author=omer-faruq
 category=patches

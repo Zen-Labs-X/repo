@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=homepage
 name=Homepage
-version=0.0.0-source
+version=source
 description=Home Page plugin for KOreader
 author=reuerendo
 category=theme

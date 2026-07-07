@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-6
 name=Koreader
-version=0.0.0-source
+version=source
 description=A collection of KOReader user patches that add extra file browser sorting options, folder cover display, and automatic cleanup of orphaned SDR sidecar folders.
 author=chiahsien
 category=patches

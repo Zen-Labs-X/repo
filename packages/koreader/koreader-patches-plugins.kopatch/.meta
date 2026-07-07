@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-patches-plugins
 name=Koreader Patches Plugins
-version=0.0.0-source
+version=source
 description=My patches and plugins for Koreader
 author=ameyrk99
 category=patches

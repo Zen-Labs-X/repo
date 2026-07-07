@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=pocketbooktools
 name=Pocketbooktools
-version=0.0.0-source
+version=source
 description=Plugin for KOReader and PocketBook Integration
 author=reuerendo
 category=utility

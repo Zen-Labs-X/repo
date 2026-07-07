@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=crashlog
 name=Crashlog
-version=0.0.0-source
+version=source
 description=Crash log viewer for koreader
 author=Billiam
 category=utility

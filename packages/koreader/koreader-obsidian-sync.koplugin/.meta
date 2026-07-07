@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-obsidian-sync
 name=Koreader Obsidian Sync
-version=0.0.0-source
+version=source
 description=A JS script and set of utilities to import and organize KOReader highlights into Obsidian
 author=MySTerY1747
 category=productivity
