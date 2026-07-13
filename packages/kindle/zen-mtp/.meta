@@ -1,5 +1,5 @@
 id=zen-mtp
-name=ZenMTP
+name=ZenMTP Kindle Standalone
 version=1.0.0
 description=Launch MTP (Media Transfer Protocol) programmatically
 author=ZenLabs
@@ -10,5 +10,5 @@ install_url=packages/kindle/zen-mtp/scripts/install.sh
 uninstall_url=packages/kindle/zen-mtp/scripts/uninstall.sh
 icon_url=packages/kindle/zen-mtp/assets/zenmtp.svg
 featured_image=packages/kindle/zen-mtp/assets/zenmtp-featured.png
-featured=true
+featured=false
 size=0
