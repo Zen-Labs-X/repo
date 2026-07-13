@@ -1,0 +1,16 @@
+# PocketBook Bluetooth plugin for KOReader
+# https://github.com/sabrina553/bluetooth.koplugin
+id=pocketbook-bluetooth
+name=PocketBook Bluetooth
+version=0.0.3
+description=General-purpose Bluetooth management plugin for KOReader on PocketBook devices.
+author=sabrina553
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/sabrina553/bluetooth.koplugin
+source_asset=bluetooth.koplugin.zip
+source_type=release
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+size=37140
