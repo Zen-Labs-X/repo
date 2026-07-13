@@ -12,4 +12,5 @@ constraints.abi=hf,sf
 icon_url=packages/kindle/zen-reader/assets/zen-reader.svg
 featured_image=packages/kindle/zen-reader/assets/zen-reader-featured.png
 featured=true
+featured_order=50
 size=0

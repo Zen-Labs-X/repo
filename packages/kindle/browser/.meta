@@ -11,4 +11,5 @@ uninstall_url=packages/kindle/browser/scripts/uninstall.sh
 icon_url=packages/kindle/browser/assets/browser.svg
 featured_image=packages/kindle/browser/assets/browser-featured.png
 featured=true
+featured_order=30
 size=0

@@ -15,4 +15,5 @@ uninstall_url=packages/koreader/uninstall-plugin.sh
 icon_url=packages/koreader/zen_mtp.koplugin/assets/zenmtp.svg
 featured_image=packages/koreader/zen_mtp.koplugin/assets/zenmtp-featured.png
 featured=true
+featured_order=20
 size=49469

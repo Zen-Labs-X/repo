@@ -100,6 +100,8 @@ Each package in `manifest.json` may include:
 |---|---|---|
 | `icon_url` | string | Path to package icon (e.g. `packages/<id>/assets/icon.png`) |
 | `featured_image` | string | Path to a larger preview/featured image (e.g. `packages/<id>/assets/featured.png`) |
+| `featured` | boolean | Marks a package for the featured section. |
+| `featured_order` | non-negative integer | Display priority within featured packages; lower values appear first. Requires `featured=true`. |
 
 These fields are optional. Omit them if no assets are available.
 

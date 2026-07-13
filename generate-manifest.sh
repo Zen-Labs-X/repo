@@ -81,6 +81,7 @@ for meta_file in $meta_files; do
     uninstall_url=$(grep '^uninstall_url=' "$tmp" 2>/dev/null | sed 's/^uninstall_url=//' | head -1)
     size=$(grep '^size=' "$tmp" 2>/dev/null | sed 's/^size=//' | head -1)
     featured=$(grep '^featured=' "$tmp" 2>/dev/null | sed 's/^featured=//' | head -1)
+    featured_order=$(grep '^featured_order=' "$tmp" 2>/dev/null | sed 's/^featured_order=//' | head -1)
     icon_url=$(grep '^icon_url=' "$tmp" 2>/dev/null | sed 's/^icon_url=//' | head -1)
     featured_image=$(grep '^featured_image=' "$tmp" 2>/dev/null | sed 's/^featured_image=//' | head -1)
     source=$(grep '^source=' "$tmp" 2>/dev/null | sed 's/^source=//' | head -1)
@@ -97,6 +98,22 @@ for meta_file in $meta_files; do
             exit 1
             ;;
     esac
+
+    if [ -n "$featured_order" ]; then
+        case "$featured_order" in
+            *[!0-9]*)
+                echo "Invalid featured_order in $meta_file: $featured_order" >&2
+                rm -f "$tmp"
+                exit 1
+                ;;
+        esac
+        if [ "$featured" != "true" ]; then
+            echo "featured_order requires featured=true in $meta_file" >&2
+            rm -f "$tmp"
+            exit 1
+        fi
+        featured_order=$(printf '%s' "$featured_order" | sed 's/^0*//;s/^$/0/')
+    fi
 
     # Build package JSON
     {
@@ -121,6 +138,7 @@ for meta_file in $meta_files; do
     if [ "$featured" = "true" ]; then
         printf ',\n      "featured": true' >> "$OUTPUT"
     fi
+    [ -n "$featured_order" ] && printf ',\n      "featured_order": %s' "$featured_order" >> "$OUTPUT"
 
     # Size
     [ -n "$size" ] && printf ',\n      "size": "%s"' "$size" >> "$OUTPUT"
