@@ -35,7 +35,7 @@ find_koreader_root() {
 
     # 2. Anchor to the running install: the client runs inside the active
     # KOReader tree, so walk up from CWD and this script's dir.
-    script_dir=$(CDPATH= cd -- "$(dirname -- "$0")" 2>/dev/null && pwd -P) || script_dir=""
+    script_dir=$(CDPATH= cd "$(dirname "$0")" 2>/dev/null && pwd -P) || script_dir=""
     for start in "$PWD" "$script_dir"; do
         [ -n "$start" ] || continue
         dir="$start"
@@ -113,7 +113,7 @@ extract_zip() {
     destination="$2"
 
     if command -v unzip >/dev/null 2>&1; then
-        unzip -q "$archive" -d "$destination"
+        unzip "$archive" -d "$destination"
         return 0
     fi
 
