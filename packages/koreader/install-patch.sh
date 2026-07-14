@@ -93,16 +93,27 @@ download_file() {
     output="$2"
 
     if command -v curl >/dev/null 2>&1; then
-        curl -fsSL "$url" -o "$output"
-        return 0
+        if curl -fL "$url" -o "$output" 2>&1; then
+            return 0
+        fi
+        echo "curl failed; trying wget..."
     fi
 
     if command -v wget >/dev/null 2>&1; then
-        wget -qO "$output" "$url"
-        return 0
+        if wget -O "$output" "$url" 2>&1; then
+            return 0
+        fi
+        echo "wget failed"
     fi
 
-    echo "Neither curl nor wget is available"
+    if command -v busybox >/dev/null 2>&1; then
+        if busybox wget -O "$output" "$url" 2>&1; then
+            return 0
+        fi
+        echo "BusyBox wget failed"
+    fi
+
+    echo "Unable to download $url"
     return 1
 }
 
@@ -128,18 +139,30 @@ extract_zip() {
 # --- utility: fetch JSON from URL ---
 fetch_json() {
     url="$1"
+    output="$2"
 
     if command -v curl >/dev/null 2>&1; then
-        curl -fsSL "$url"
-        return 0
+        if curl -fL "$url" -o "$output" 2>&1; then
+            return 0
+        fi
+        echo "curl failed; trying wget..."
     fi
 
     if command -v wget >/dev/null 2>&1; then
-        wget -qO- "$url"
-        return 0
+        if wget -O "$output" "$url" 2>&1; then
+            return 0
+        fi
+        echo "wget failed"
     fi
 
-    echo "Neither curl nor wget is available"
+    if command -v busybox >/dev/null 2>&1; then
+        if busybox wget -O "$output" "$url" 2>&1; then
+            return 0
+        fi
+        echo "BusyBox wget failed"
+    fi
+
+    echo "Unable to fetch release metadata from $url"
     return 1
 }
 
@@ -258,7 +281,11 @@ case "$REPO_REF" in
             API_URL=$(resolve_api_url "$REPO_REF")
             echo "Resolving release: $API_URL"
 
-            RELEASE_JSON=$(fetch_json "$API_URL")
+            RELEASE_PATH="$TMP_DIR/release.json"
+            if ! fetch_json "$API_URL" "$RELEASE_PATH"; then
+                exit 1
+            fi
+            RELEASE_JSON=$(cat "$RELEASE_PATH")
 
             ASSET_LIST=$(printf '%s\n' "$RELEASE_JSON" \
                 | grep -oE '"browser_download_url":\s*"[^"]*"' \
