@@ -1,0 +1,17 @@
+# Board Games plugin for KOReader
+# https://github.com/KitanaCode/boardgames.koplugin
+id=boardgames
+name=Board Games
+version=1.0.1
+description=Six e-ink-friendly board and puzzle games for KOReader: Checkers, Chess, Connect 4, Tic Tac Toe, Minesweeper, and Battleship.
+author=KitanaCode
+category=games
+platforms=koreader
+dependencies=
+source=https://github.com/KitanaCode/boardgames.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=6
+source_type=release
+source_asset=Board.Games.V1.0.1.zip
+size=1096126

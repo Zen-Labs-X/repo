@@ -117,3 +117,25 @@ All files are served as static content — no server-side logic required. ZenPM 
 
 ## Contributing
 
+### KOReader plugins and patches
+
+KOReader packages are discovered automatically from GitHub on the 1st and 15th
+of each month. A newly discovered package is proposed in its own pull request.
+
+To be eligible, a repository must:
+
+- be hosted on GitHub and not already be represented by a package in this repo;
+- have at least 15 GitHub stars;
+- not be archived; and
+- have been pushed to within the last two years.
+
+In addition, plugins must have `koplugin` in their name or be tagged with the
+`koplugin` or `koreader-plugin` topic. Patches must be tagged with
+`koreader-user-patch` or have `KOReader.patches` in their name, and must contain
+at least one user-patch Lua file whose filename starts with a number (for
+example, `2-example.lua`).
+
+Forks are considered by default. Plugin packages use a release ZIP when one is
+available, otherwise the repository's default-branch source archive; patch
+packages install the matching Lua files directly. All generated packages use
+the shared KOReader install and uninstall scripts.
