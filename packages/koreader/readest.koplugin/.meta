@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=readest
 name=Readest
-version=0.11.17
+version=0.11.18
 description=Readest is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience.
 author=readest
 category=media
@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/readest/readest
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-stars=22098
+stars=22364
 source_type=release
-source_asset=Readest-0.11.17-1.koplugin.zip
-size=218985
+assets.0.arch=any
+assets.0.asset=Readest-0.11.18-1.koplugin.zip
+assets.0.url=https://github.com/readest/readest/releases/download/v0.11.18/Readest-0.11.18-1.koplugin.zip
+assets.0.size=224516
+assets.1.arch=any
+assets.1.asset=Readest-0.11.18.calibre-plugin.zip
+assets.1.url=https://github.com/readest/readest/releases/download/v0.11.18/Readest-0.11.18.calibre-plugin.zip
+assets.1.size=39700

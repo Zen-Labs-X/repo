@@ -1,17 +1,17 @@
 # Weread plugin for KOReader
-# https://github.com/QiuYukang/weread.koplugin
+# https://github.com/finlater/weread.koplugin
 # zenpm:auto-scraped
 id=weread
 name=Weread
-version=0.2.0
+version=0.2.1
 description=微信读书 koreader 插件，在 koreader 里阅读微信读书里的书籍、公众号文章，并做到进度、阅读时长同步，阅读时间上报。
-author=QiuYukang
+author=finlater
 category=media
 platforms=koreader
 dependencies=
-source=https://github.com/QiuYukang/weread.koplugin
+source=https://github.com/finlater/weread.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-stars=116
+stars=158
 source_type=source
-source_url=https://codeload.github.com/QiuYukang/weread.koplugin/zip/refs/heads/main
+source_url=https://codeload.github.com/finlater/weread.koplugin/zip/refs/heads/main

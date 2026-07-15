@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=zzz-readermenuredesign
 name=Zzz Readermenuredesign
-version=1.0.6
+version=1.0.7
 description=A redesign of the various reader menus in KOReader.
 author=kristianpennacchia
 category=theme
@@ -12,7 +12,7 @@ dependencies=
 source=https://github.com/kristianpennacchia/zzz-readermenuredesign.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-stars=90
+stars=91
 source_type=release
 source_asset=zzz-readermenuredesign.koplugin.zip
-size=45049
+size=51017

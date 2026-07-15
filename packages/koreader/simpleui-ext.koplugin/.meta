@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=simpleui-ext
 name=Simpleui Ext
-version=1.12.1
+version=1.12.3
 description=Extra homescreen modules and patches for SimpleUI on KOReader
 author=omer-faruq
 category=theme
@@ -12,7 +12,7 @@ dependencies=
 source=https://github.com/omer-faruq/simpleui_ext.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-stars=39
+stars=40
 source_type=release
 source_asset=simpleui_ext.koplugin.zip
-size=131120
+size=131484

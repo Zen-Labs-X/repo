@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=panelreader
 name=Panelreader
-version=1.0.51
+version=1.07
 description=Koreader panel-to-panel navigation plugin
 author=Kaito0
 category=media
@@ -12,6 +12,6 @@ dependencies=
 source=https://github.com/Kaito0/panelreader.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-stars=29
+stars=31
 source_type=source
 source_url=https://codeload.github.com/Kaito0/panelreader.koplugin/zip/refs/heads/main

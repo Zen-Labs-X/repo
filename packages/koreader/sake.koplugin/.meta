@@ -3,8 +3,8 @@
 # zenpm:auto-scraped
 id=sake
 name=Sake
-version=webapp/v2026.04.04.4
-description=Svelte and KOReader Ecosystem
+version=webapp/v2026.07.10.1
+description=Self-hosted ebook library with KOReader sync, progress and notes synchronization, OPDS, WebDAV, and automatic book delivery.
 author=Sudashiii
 category=utility
 platforms=koreader
