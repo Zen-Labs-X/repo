@@ -13,11 +13,8 @@ source=https://github.com/omer-faruq/rssreader.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=80
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/rssreader.koplugin/README.md
 readme_hash=4760bddeaac8e9237abe35cb0648ca5234836c25
->>>>>>> Stashed changes
 source_type=release
 source_asset=rssreader.koplugin.zip
 size=121306

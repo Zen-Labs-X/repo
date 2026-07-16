@@ -13,11 +13,8 @@ source=https://github.com/Tukks/onyxbooxsync.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=35
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/onyxbooxsync.koplugin/README.md
 readme_hash=f7339c5c51e088ca1a8a2e0fbd1948fb5d0f4800
->>>>>>> Stashed changes
 source_type=release
 source_asset=onyxbooxsync.koplugin.zip
 size=5377

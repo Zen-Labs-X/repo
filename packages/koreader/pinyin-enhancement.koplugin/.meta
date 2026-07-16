@@ -13,11 +13,8 @@ source=https://github.com/gytwo/pinyin_enhancement.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=40
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/pinyin-enhancement.koplugin/README.md
 readme_hash=f00060d0d1ee4ba65503414b43adc65b52dc6efd
->>>>>>> Stashed changes
 source_type=release
 source_asset=pinyin_enhancement.koplugin.zip
 size=989119

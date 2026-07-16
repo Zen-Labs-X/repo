@@ -13,10 +13,7 @@ source=https://github.com/mysticknits/pencil.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=109
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/pencil.koplugin/README.md
 readme_hash=cf2f62bcb22d8888d5de6f47af4f6b92155e3f4f
->>>>>>> Stashed changes
 source_type=source
 source_url=https://codeload.github.com/mysticknits/pencil.koplugin/zip/refs/heads/main

@@ -13,11 +13,8 @@ source=https://github.com/ImSoRight/KOReader.patches
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
 stars=41
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/koreader-3.kopatch/README.md
 readme_hash=333d39dbfe30ddc865d527b16ce636fb109b4afa
->>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2-complete-status-icon.lua

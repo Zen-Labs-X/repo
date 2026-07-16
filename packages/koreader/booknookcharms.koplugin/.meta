@@ -13,11 +13,8 @@ source=https://github.com/KitanaCode/booknookcharms.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=19
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/booknookcharms.koplugin/README.md
 readme_hash=f2d75f7dbef66f36a17f9f38cc7733845c73c91c
->>>>>>> Stashed changes
 source_type=release
 source_asset=Book.Nook.Charms.V1.1.1.zip
 size=865860

@@ -13,11 +13,8 @@ source=https://github.com/sparklerfish/KOReader.patches
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
 stars=31
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/koreader-12.kopatch/README.md
 readme_hash=803ed1bb24dc8b9393ed355fc67d1a770899ff9f
->>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2-browser-double-tap.lua

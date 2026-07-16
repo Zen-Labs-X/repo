@@ -13,10 +13,7 @@ source=https://github.com/ebanDev/iconschanger.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=71
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/iconschanger.koplugin/README.md
 readme_hash=55a3dbe3d77b54006d82de4c6bc42166bd13ecdf
->>>>>>> Stashed changes
 source_type=source
 source_url=https://codeload.github.com/ebanDev/iconschanger.koplugin/zip/refs/heads/main

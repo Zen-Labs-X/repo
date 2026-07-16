@@ -12,13 +12,9 @@ dependencies=
 source=https://github.com/joshuacant/KOReader.patches
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
-<<<<<<< Updated upstream
-stars=155
-=======
 stars=156
 readme_url=packages/koreader/koreader-9.kopatch/README.md
 readme_hash=0b1c81e696b21d56c76524e3e57e3ee6b49384f5
->>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2-disable-all-progressbars.lua

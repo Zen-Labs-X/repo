@@ -13,11 +13,8 @@ source=https://github.com/Djeymisson/KOReader.patches
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
 stars=23
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/koreader.kopatch/README.md
 readme_hash=1f429e1d7db34596afd39b00fc6e066e832d93e8
->>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2-bookloadcover-plus.lua

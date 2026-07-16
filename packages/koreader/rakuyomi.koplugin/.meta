@@ -3,11 +3,7 @@
 # zenpm:auto-scraped
 id=rakuyomi
 name=Rakuyomi
-<<<<<<< Updated upstream
-version=1.36.11
-=======
 version=1.38.0
->>>>>>> Stashed changes
 description=A manga reader plugin for KOReader. (This fork adds new features and backward compatibility)
 author=tachibana-shin
 category=media
@@ -17,33 +13,6 @@ source=https://github.com/tachibana-shin/rakuyomi
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=442
-<<<<<<< Updated upstream
-source_type=release
-assets.0.arch=arm64
-assets.0.asset=rakuyomi-aarch64.zip
-assets.0.url=https://github.com/tachibana-shin/rakuyomi/releases/download/v1.36.11/rakuyomi-aarch64.zip
-assets.0.size=12858542
-assets.1.arch=any
-assets.1.asset=rakuyomi-android.zip
-assets.1.url=https://github.com/tachibana-shin/rakuyomi/releases/download/v1.36.11/rakuyomi-android.zip
-assets.1.size=497190
-assets.2.arch=any
-assets.2.asset=rakuyomi-desktop.zip
-assets.2.url=https://github.com/tachibana-shin/rakuyomi/releases/download/v1.36.11/rakuyomi-desktop.zip
-assets.2.size=13689857
-assets.3.arch=kindle
-assets.3.asset=rakuyomi-kindle.zip
-assets.3.url=https://github.com/tachibana-shin/rakuyomi/releases/download/v1.36.11/rakuyomi-kindle.zip
-assets.3.size=13081981
-assets.4.arch=kindle
-assets.4.asset=rakuyomi-kindlea9.zip
-assets.4.url=https://github.com/tachibana-shin/rakuyomi/releases/download/v1.36.11/rakuyomi-kindlea9.zip
-assets.4.size=12950557
-assets.5.arch=kindle
-assets.5.asset=rakuyomi-kindlehf.zip
-assets.5.url=https://github.com/tachibana-shin/rakuyomi/releases/download/v1.36.11/rakuyomi-kindlehf.zip
-assets.5.size=13175215
-=======
 featured_image=packages/koreader/rakuyomi.koplugin/assets/featured.png
 icon_url=packages/koreader/rakuyomi.koplugin/assets/rakuyomi.svg
 featured_order=25
@@ -74,4 +43,3 @@ assets.5.arch=kindle
 assets.5.asset=rakuyomi-kindlehf.zip
 assets.5.url=https://github.com/tachibana-shin/rakuyomi/releases/download/v1.38.0/rakuyomi-kindlehf.zip
 assets.5.size=13225911
->>>>>>> Stashed changes

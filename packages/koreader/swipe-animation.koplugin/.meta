@@ -12,12 +12,8 @@ dependencies=
 source=https://github.com/koplugin-swipe-animation/Swipe_Animation.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-<<<<<<< Updated upstream
-stars=43
-=======
 stars=44
 readme_url=packages/koreader/swipe-animation.koplugin/README.md
 readme_hash=93a5d3fb646d177cabf511c3711bf2318a162862
->>>>>>> Stashed changes
 source_type=source
 source_url=https://codeload.github.com/koplugin-swipe-animation/Swipe_Animation.koplugin/zip/refs/heads/main

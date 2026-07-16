@@ -12,13 +12,9 @@ dependencies=
 source=https://github.com/OGKevin/kobo.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-<<<<<<< Updated upstream
-stars=144
-=======
 stars=145
 readme_url=packages/koreader/kobo.koplugin/README.md
 readme_hash=262fca4e0ff42c7056223a3387547d60881247db
->>>>>>> Stashed changes
 source_type=release
 assets.0.arch=kobo
 assets.0.asset=kobo-patches.zip

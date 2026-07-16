@@ -12,13 +12,9 @@ dependencies=
 source=https://github.com/kristianpennacchia/zzz-readermenuredesign.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-<<<<<<< Updated upstream
-stars=91
-=======
 stars=92
 readme_url=packages/koreader/zzz-readermenuredesign.koplugin/README.md
 readme_hash=df70c4cc7c7c75fac100d42b55a0fe4fc7a04c4a
->>>>>>> Stashed changes
 source_type=release
 source_asset=zzz-readermenuredesign.koplugin.zip
 size=51017

@@ -13,11 +13,8 @@ source=https://github.com/omer-faruq/webbrowser.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=86
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/webbrowser.koplugin/README.md
 readme_hash=8dc6263f5841c8c4c51dc91b345e550a9da99ead
->>>>>>> Stashed changes
 source_type=release
 source_asset=webbrowser.koplugin.zip
 size=87618

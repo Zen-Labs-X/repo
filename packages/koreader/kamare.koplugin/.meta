@@ -13,11 +13,8 @@ source=https://github.com/fpammer/kamare.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=43
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/kamare.koplugin/README.md
 readme_hash=50003662ff04f1f91fc0bdc3d482d650bc226a6d
->>>>>>> Stashed changes
 source_type=release
 source_asset=kamare.koplugin.zip
 size=60169

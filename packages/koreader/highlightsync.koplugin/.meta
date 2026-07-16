@@ -13,10 +13,7 @@ source=https://github.com/gitalexcampos/highlightsync.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=213
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/highlightsync.koplugin/README.md
 readme_hash=7154407acef77864a4a6ae2d9cf90547c4e101d1
->>>>>>> Stashed changes
 source_type=source
 source_url=https://codeload.github.com/gitalexcampos/highlightsync.koplugin/zip/refs/heads/master

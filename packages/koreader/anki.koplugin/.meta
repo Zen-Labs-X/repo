@@ -13,10 +13,7 @@ source=https://github.com/Ajatt-Tools/anki.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=211
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/anki.koplugin/README.md
 readme_hash=b6067eac25438e2316876b99e362d0679d93db98
->>>>>>> Stashed changes
 source_type=source
 source_url=https://codeload.github.com/Ajatt-Tools/anki.koplugin/zip/refs/heads/master

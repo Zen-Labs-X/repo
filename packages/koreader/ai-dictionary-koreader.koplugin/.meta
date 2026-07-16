@@ -13,10 +13,7 @@ source=https://github.com/SahandMalaei/ai-dictionary-koreader
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=76
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/ai-dictionary-koreader.koplugin/README.md
 readme_hash=1637624ab20e06b768b8c06788f103292763826c
->>>>>>> Stashed changes
 source_type=source
 source_url=https://codeload.github.com/SahandMalaei/ai-dictionary-koreader/zip/refs/heads/main

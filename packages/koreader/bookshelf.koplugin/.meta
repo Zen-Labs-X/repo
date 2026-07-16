@@ -12,13 +12,9 @@ dependencies=
 source=https://github.com/AndyHazz/bookshelf.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-<<<<<<< Updated upstream
-stars=387
-=======
 stars=390
 readme_url=packages/koreader/bookshelf.koplugin/README.md
 readme_hash=c281aa90d5069fd4d48fa902cf347a271f87c978
->>>>>>> Stashed changes
 source_type=release
 source_asset=bookshelf.koplugin.zip
 size=2411952

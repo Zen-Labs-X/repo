@@ -12,13 +12,9 @@ dependencies=
 source=https://github.com/grimmory-tools/grimmory.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
-<<<<<<< Updated upstream
-stars=43
-=======
 stars=44
 readme_url=packages/koreader/grimmory.koplugin/README.md
 readme_hash=fc1b0c9f0892c3968a43f87a3d0602eaa80db3e8
->>>>>>> Stashed changes
 source_type=release
 source_asset=grimmory.koplugin.zip
 size=65713

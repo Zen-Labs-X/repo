@@ -13,11 +13,8 @@ source=https://github.com/omer-faruq/instapaper.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=35
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/instapaper.koplugin/README.md
 readme_hash=ac2ec07ba3e11e24fd8ae5b8756d94f5f130b040
->>>>>>> Stashed changes
 source_type=release
 source_asset=instapaper.koplugin.zip
 size=34083

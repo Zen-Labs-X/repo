@@ -13,11 +13,8 @@ source=https://github.com/IntrovertedMage/AO3Downloader.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=86
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/ao3downloader.koplugin/README.md
 readme_hash=adbe6bc718ad97ba20bcb451b63629932da18cab
->>>>>>> Stashed changes
 source_type=release
 source_asset=AO3Downloader-v0.4.0.zip
 size=43724

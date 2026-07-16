@@ -13,11 +13,8 @@ source=https://github.com/artemartemenko/koreader-color-themes
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
 stars=30
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/koreader-color-themes.kopatch/README.md
 readme_hash=f8895d5c6bead3fb68c0e9541c8c6eda60a7fb66
->>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2-color-theme.lua

@@ -13,11 +13,8 @@ source=https://github.com/jmanteau/KOReader.patches
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
 stars=66
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/koreader-8.kopatch/README.md
 readme_hash=18d9cae7af982ee17b7ada05b482373c3fae3455
->>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2--disable-all-CB-widgets.lua

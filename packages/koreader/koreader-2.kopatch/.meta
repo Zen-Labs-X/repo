@@ -13,11 +13,8 @@ source=https://github.com/Euphoriyy/KOReader.patches
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
 stars=42
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/koreader-2.kopatch/README.md
 readme_hash=efd4123b32b32050315bb51b725188837d19bc7a
->>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2-correct-screen-borders.lua

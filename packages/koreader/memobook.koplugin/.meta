@@ -13,11 +13,8 @@ source=https://github.com/omer-faruq/memobook.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=27
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/memobook.koplugin/README.md
 readme_hash=f145308d2a58050cefbf96e4c9b8792e02e9562c
->>>>>>> Stashed changes
 source_type=release
 source_asset=memobook.koplugin.zip
 size=31507

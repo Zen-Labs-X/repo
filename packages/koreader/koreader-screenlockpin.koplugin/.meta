@@ -13,11 +13,8 @@ source=https://github.com/oleasteo/koreader-screenlockpin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=69
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/koreader-screenlockpin.koplugin/README.md
 readme_hash=c493621f0dd4c628c86833df09f9d6329250d199
->>>>>>> Stashed changes
 source_type=release
 source_asset=screenlockpin.koplugin--2026.05.zip
 size=50551

@@ -13,11 +13,8 @@ source=https://github.com/patelneeraj/filebrowserplus.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=225
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/filebrowserplus.koplugin/README.md
 readme_hash=dc13fcc83d7606c9e63d1e88c73abff95f3792d0
->>>>>>> Stashed changes
 source_type=release
 source_asset=filebrowserplus.koplugin-v1.1.0-linux-armv7.zip
 size=9383773

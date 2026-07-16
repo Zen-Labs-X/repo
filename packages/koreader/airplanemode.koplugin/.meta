@@ -13,11 +13,8 @@ source=https://github.com/kodermike/airplanemode.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=50
-<<<<<<< Updated upstream
-=======
 readme_url=packages/koreader/airplanemode.koplugin/README.md
 readme_hash=3a490a736265deeefa5cb570667459f40db2b129
->>>>>>> Stashed changes
 source_type=release
 source_asset=airplanemode.koplugin-v1.9.2.zip
 size=48795
