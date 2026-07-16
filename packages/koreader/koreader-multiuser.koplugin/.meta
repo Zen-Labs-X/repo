@@ -13,5 +13,10 @@ source=https://github.com/artemartemenko/KOReader_MultiUser.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=36
+<<<<<<< Updated upstream
+=======
+readme_url=packages/koreader/koreader-multiuser.koplugin/README.md
+readme_hash=f97ea3be863c20304345825022d42a1ac40920ef
+>>>>>>> Stashed changes
 source_type=source
 source_url=https://codeload.github.com/artemartemenko/KOReader_MultiUser.koplugin/zip/refs/heads/main

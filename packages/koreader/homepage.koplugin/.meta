@@ -13,5 +13,7 @@ source=https://github.com/reuerendo/homepage.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=24
+readme_url=packages/koreader/homepage.koplugin/README.md
+readme_hash=38bd11b7a47f13aedd1d8fed125036d590b6a561
 source_type=source
 source_url=https://codeload.github.com/reuerendo/homepage.koplugin/zip/refs/heads/main

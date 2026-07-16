@@ -13,5 +13,7 @@ source=https://github.com/prasy-loyola/notes.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=55
+readme_url=packages/koreader/notes.koplugin/README.md
+readme_hash=c4740941222fa89335d2520f79073faef3cf8381
 source_type=source
 source_url=https://codeload.github.com/prasy-loyola/notes.koplugin/zip/refs/heads/main

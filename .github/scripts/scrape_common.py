@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Shared helpers for GitHub-backed KOReader package scrapers."""
 
+import base64
+import binascii
 import datetime
 import json
 import os
@@ -27,6 +29,13 @@ PLUGIN_INSTALL_URL = "packages/koreader/install-plugin.sh"
 PLUGIN_UNINSTALL_URL = "packages/koreader/uninstall-plugin.sh"
 PATCH_INSTALL_URL = "packages/koreader/install-patch.sh"
 PATCH_UNINSTALL_URL = "packages/koreader/uninstall-patch.sh"
+
+PRESENTATION_FIELDS = (
+    "icon_url",
+    "featured_image",
+    "featured",
+    "featured_order",
+)
 
 VALID_CATEGORIES = ("utility", "games", "productivity", "media", "theme", "patches")
 DEFAULT_CATEGORY = "utility"
@@ -160,6 +169,52 @@ def fetch_release(full_name):
     return None
 
 
+def fetch_readme(full_name):
+    """Return a repository README and its Git blob SHA, if GitHub has one."""
+    status, data, _headers = http_json(f"{API}/repos/{full_name}/readme")
+    if status == 404:
+        return None, None, True
+    if status != 200 or not isinstance(data, dict):
+        return None, None, False
+
+    try:
+        content = base64.b64decode(data.get("content", "")).decode("utf-8")
+    except (binascii.Error, UnicodeDecodeError, ValueError):
+        print(f"Could not decode README for {full_name}", file=sys.stderr)
+        return None, None, False
+
+    readme_hash = data.get("sha", "").strip()
+    return content, readme_hash or None, True
+
+
+def cache_readme(full_name, package_dir, dry_run=False):
+    """Cache a GitHub README beside its package and return manifest fields."""
+    content, readme_hash, resolved = fetch_readme(full_name)
+    path = os.path.join(package_dir, "README.md")
+
+    if not resolved:
+        return None, None, False, False
+
+    if content is None:
+        changed = os.path.exists(path)
+        if changed and not dry_run:
+            os.remove(path)
+        return None, None, changed, True
+
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            changed = fh.read() != content
+    except OSError:
+        changed = True
+
+    if changed and not dry_run:
+        os.makedirs(package_dir, exist_ok=True)
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(content)
+
+    return os.path.relpath(path, REPO_ROOT), readme_hash, changed, True
+
+
 def fetch_tree(full_name, branch):
     branch_url = urllib.parse.quote(branch, safe="")
     status, data, _headers = http_json(
@@ -188,6 +243,16 @@ def normalize_repo_ref(ref):
     if len(parts) >= 2:
         return (parts[0] + "/" + parts[1]).lower()
     return ""
+
+
+def repository_identity(ref):
+    """Return a stable owner/package identity for duplicate detection."""
+    normalized = normalize_repo_ref(ref)
+    if not normalized:
+        return None
+    owner, repo = normalized.split("/", 1)
+    repo = re.sub(r"\.(koplugin|kopatch)$", "", repo)
+    return owner, re.sub(r"[^a-z0-9]", "", repo)
 
 
 def parse_meta(meta_path):
@@ -228,6 +293,19 @@ def existing_repo_refs():
     return known_refs, known_ids
 
 
+def existing_repository_identities():
+    identities = set()
+    pkg_root = os.path.join(REPO_ROOT, "packages")
+    for dirpath, _dirs, files in os.walk(pkg_root):
+        if ".meta" not in files:
+            continue
+        fields, _scraped, _content = parse_meta(os.path.join(dirpath, ".meta"))
+        identity = repository_identity(fields.get("source", ""))
+        if identity:
+            identities.add(identity)
+    return identities
+
+
 def existing_scraped_meta(category=None):
     records = []
     for dirpath, _dirs, files in os.walk(KOREADER_DIR):
@@ -248,6 +326,7 @@ def existing_scraped_meta(category=None):
                 "name": fields.get("name", "").strip(),
                 "category": fields.get("category", "").strip(),
                 "content": content,
+                "fields": fields,
             })
     return records
 
@@ -358,7 +437,8 @@ def is_inactive(repo):
 
 
 def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PLUGIN,
-               name_override=None, patch_assets=None):
+               name_override=None, patch_assets=None, readme_url=None,
+               readme_hash=None, preserved_fields=None):
     owner = repo["owner"]["login"]
     repo_name = repo["name"]
     full_name = repo["full_name"]
@@ -403,8 +483,20 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
         f"source={repo['html_url']}",
         f"install_url={install_url}",
         f"uninstall_url={uninstall_url}",
-        f"stars={stars}",
     ])
+
+    for field in PRESENTATION_FIELDS:
+        value = (preserved_fields or {}).get(field, "")
+        if value:
+            lines.append(f"{field}={value}")
+
+    lines.append(f"stars={stars}")
+
+    if readme_url and readme_hash:
+        lines.extend([
+            f"readme_url={readme_url}",
+            f"readme_hash={readme_hash}",
+        ])
 
     summary = {
         "id": meta_id,

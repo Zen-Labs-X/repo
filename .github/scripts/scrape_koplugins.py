@@ -11,17 +11,21 @@ from scrape_common import (
     MIN_STARS,
     VALID_CATEGORIES,
     build_meta,
+    cache_readme,
     classify_category,
     discover,
     existing_meta_categories,
+    existing_repository_identities,
     existing_repo_refs,
     existing_scraped_meta,
     fetch_release,
     fetch_repo,
     is_inactive,
     load_category_cache,
+    make_id,
     normalize_repo_ref,
     package_dir_name,
+    repository_identity,
     save_category_cache,
     token,
     write_results,
@@ -56,6 +60,7 @@ def main():
               file=sys.stderr)
 
     known_refs, known_ids = existing_repo_refs()
+    known_repository_identities = existing_repository_identities()
     discovered = discover(PLUGIN_QUERIES)
     print(f"Discovered {len(discovered)} candidate plugin repos.",
           file=sys.stderr)
@@ -83,22 +88,37 @@ def main():
         category_cache[repo_norm] = category
 
         release = fetch_release(repo.get("full_name", record["ref"]))
+        package_dir = os.path.dirname(record["path"])
+        readme_url, readme_hash, readme_changed, readme_resolved = cache_readme(
+            repo.get("full_name", record["ref"]), package_dir, args.dry_run
+        )
+        if not readme_resolved:
+            print(f"Could not refresh {record['rel_path']}: README unavailable",
+                  file=sys.stderr)
+            continue
         _meta_id, meta_text, summary = build_meta(
             repo, release, known_ids, category, meta_id=record["id"],
-            kind=KIND_PLUGIN, name_override=record["name"]
+            kind=KIND_PLUGIN, name_override=record["name"],
+            readme_url=readme_url, readme_hash=readme_hash,
+            preserved_fields=record["fields"],
         )
         summary["path"] = record["rel_path"]
 
-        if meta_text == record["content"]:
+        if meta_text == record["content"] and not readme_changed:
             continue
 
-        if args.dry_run:
+        if args.dry_run and meta_text != record["content"]:
             print(f"\n--- {record['path']} ---")
             print(meta_text, end="")
-        else:
+        elif not args.dry_run and meta_text != record["content"]:
             with open(record["path"], "w", encoding="utf-8") as fh:
                 fh.write(meta_text)
             print(f"Updated {record['path']}", file=sys.stderr)
+
+        if readme_changed:
+            summary["readme_path"] = os.path.join(
+                os.path.dirname(record["rel_path"]), "README.md"
+            )
 
         updated.append(summary)
 
@@ -122,6 +142,12 @@ def main():
         if repo.get("archived") or is_inactive(repo):
             continue
 
+        candidate_id = make_id(repo.get("name", ""), set())
+        candidate_identity = repository_identity(repo.get("full_name", full_name))
+        if candidate_id in known_ids or candidate_identity in known_repository_identities:
+            print(f"Skipping duplicate package {full_name}", file=sys.stderr)
+            continue
+
         category = category_cache.get(norm) or classify_category(repo)
         category_cache[norm] = category
 
@@ -130,9 +156,20 @@ def main():
             repo, release, known_ids, category, kind=KIND_PLUGIN
         )
         known_refs.add(norm)
+        if candidate_identity:
+            known_repository_identities.add(candidate_identity)
 
         dest_dir = os.path.join(KOREADER_DIR, package_dir_name(meta_id, KIND_PLUGIN))
         dest = os.path.join(dest_dir, ".meta")
+        readme_url, readme_hash, _readme_changed, _readme_resolved = cache_readme(
+            repo.get("full_name", full_name), dest_dir, args.dry_run
+        )
+        meta_id, meta_text, summary = build_meta(
+            repo, release, known_ids, category, meta_id=meta_id,
+            kind=KIND_PLUGIN, readme_url=readme_url, readme_hash=readme_hash,
+        )
+        if readme_url:
+            summary["readme_path"] = readme_url
 
         if args.dry_run:
             print(f"\n--- {dest} ---")

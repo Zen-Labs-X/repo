@@ -13,5 +13,7 @@ source=https://github.com/ckilb/dictionarymode.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=31
+readme_url=packages/koreader/dictionarymode.koplugin/README.md
+readme_hash=b74b4392a63e9a71e4249f3abe14dd1ed11958b2
 source_type=source
 source_url=https://codeload.github.com/ckilb/dictionarymode.koplugin/zip/refs/heads/main

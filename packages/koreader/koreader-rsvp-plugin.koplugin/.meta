@@ -13,5 +13,7 @@ source=https://github.com/karpushchenko/koreader-rsvp-plugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=32
+readme_url=packages/koreader/koreader-rsvp-plugin.koplugin/README.md
+readme_hash=0ed60a384e8fef5a3054c404687a472c8765cd44
 source_type=source
 source_url=https://codeload.github.com/karpushchenko/koreader-rsvp-plugin/zip/refs/heads/main

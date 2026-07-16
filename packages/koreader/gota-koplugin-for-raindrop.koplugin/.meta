@@ -13,5 +13,7 @@ source=https://github.com/cristenger/gota.koplugin-for-raindrop
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=17
+readme_url=packages/koreader/gota-koplugin-for-raindrop.koplugin/README.md
+readme_hash=05bf0d0182fa64fd2c5060271faf72dcd409e409
 source_type=source
 source_url=https://codeload.github.com/cristenger/gota.koplugin-for-raindrop/zip/refs/heads/main

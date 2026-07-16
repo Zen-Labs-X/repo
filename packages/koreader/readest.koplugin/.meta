@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/readest/readest
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
+<<<<<<< Updated upstream
 stars=22364
+=======
+stars=22392
+readme_url=packages/koreader/readest.koplugin/README.md
+readme_hash=f948406726e73cfce27f047018bb7f9af1d8ef36
+>>>>>>> Stashed changes
 source_type=release
 assets.0.arch=any
 assets.0.asset=Readest-0.11.18-1.koplugin.zip

@@ -13,5 +13,7 @@ source=https://github.com/roygbyte/weather.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=21
+readme_url=packages/koreader/weather.koplugin/README.md
+readme_hash=5511f68940a91f9d66a737824985fc64aaf1bca4
 source_type=source
 source_url=https://codeload.github.com/roygbyte/weather.koplugin/zip/refs/heads/master

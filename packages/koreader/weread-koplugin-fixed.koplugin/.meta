@@ -1,0 +1,26 @@
+# Weread.Koplugin Fixed plugin for KOReader
+# https://github.com/miumiupy98-art/weread.koplugin-fixed
+# zenpm:auto-scraped
+id=weread-koplugin-fixed
+name=Weread.Koplugin Fixed
+version=0.3.5
+description=WeRead KOReader 插件的非官方修改版 Fork，包含 bug 修复、划线/想法显示和评论版本下载相关功能调整。
+author=miumiupy98-art
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/miumiupy98-art/weread.koplugin-fixed
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=17
+readme_url=packages/koreader/weread-koplugin-fixed.koplugin/README.md
+readme_hash=a2eb1094f1d2a1e85884d56bc0b2542711a1bbdb
+source_type=release
+assets.0.arch=any
+assets.0.asset=weread-koplugin-v0.3.5-full-safe.zip
+assets.0.url=https://github.com/miumiupy98-art/weread.koplugin-fixed/releases/download/v0.3.5/weread-koplugin-v0.3.5-full-safe.zip
+assets.0.size=675865
+assets.1.arch=any
+assets.1.asset=weread-koplugin-v0.3.5-ota.zip
+assets.1.url=https://github.com/miumiupy98-art/weread.koplugin-fixed/releases/download/v0.3.5/weread-koplugin-v0.3.5-ota.zip
+assets.1.size=675865

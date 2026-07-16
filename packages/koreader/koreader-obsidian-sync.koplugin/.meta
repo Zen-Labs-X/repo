@@ -13,5 +13,7 @@ source=https://github.com/MySTerY1747/KOReader-Obsidian-Sync
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=22
+readme_url=packages/koreader/koreader-obsidian-sync.koplugin/README.md
+readme_hash=1708f724932933e912e76028550fcf2fd1d9b921
 source_type=source
 source_url=https://codeload.github.com/MySTerY1747/KOReader-Obsidian-Sync/zip/refs/heads/main

@@ -13,5 +13,7 @@ source=https://github.com/kktse/dtdisplay.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=25
+readme_url=packages/koreader/dtdisplay.koplugin/README.md
+readme_hash=50b9eb232e5918fdabffae12e9d13b68ff3bf454
 source_type=source
 source_url=https://codeload.github.com/kktse/dtdisplay.koplugin/zip/refs/heads/main

@@ -102,6 +102,8 @@ Each package in `manifest.json` may include:
 | `featured_image` | string | Path to a larger preview/featured image (e.g. `packages/<id>/assets/featured.png`) |
 | `featured` | boolean | Marks a package for the featured section. |
 | `featured_order` | non-negative integer | Display priority within featured packages; lower values appear first. Requires `featured=true`. |
+| `readme_url` | string | Path to the cached package README. |
+| `readme_hash` | string | Git blob SHA of the cached README; changes when its source README changes. |
 
 These fields are optional. Omit them if no assets are available.
 
@@ -138,4 +140,19 @@ example, `2-example.lua`).
 Forks are considered by default. Plugin packages use a release ZIP when one is
 available, otherwise the repository's default-branch source archive; patch
 packages install the matching Lua files directly. All generated packages use
-the shared KOReader install and uninstall scripts.
+the shared KOReader install and uninstall scripts. During each scan, the
+repository README is cached beside the package and its Git blob SHA is included
+in the manifest, allowing clients to refresh only when that hash changes.
+
+### Refreshing KOReader packages locally
+
+Run both scrapers with a GitHub token, then regenerate the manifest:
+
+```sh
+GITHUB_TOKEN=your_github_token python3 .github/scripts/scrape_koplugins.py
+GITHUB_TOKEN=your_github_token python3 .github/scripts/scrape_kopatches.py
+sh generate-manifest.sh
+```
+
+The token avoids GitHub's unauthenticated API limit and is required for a full
+README cache refresh. GitHub Pages signs the generated manifest during deploy.

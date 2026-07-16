@@ -4,7 +4,11 @@
 id=foot-cream
 name=Foot Cream
 version=1.6.0
+<<<<<<< Updated upstream
 description=Don't let Freedom Units distract you. A KOReader plugin that converts imperial measurements to metric as you read.
+=======
+description=Don't let foreign units distract you when reading. Footcream is a KOReader plugin that converts measurements to something you understand.
+>>>>>>> Stashed changes
 author=Fank1
 category=utility
 platforms=koreader
@@ -12,7 +16,13 @@ dependencies=
 source=https://github.com/Fank1/foot-cream
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
+<<<<<<< Updated upstream
 stars=56
+=======
+stars=58
+readme_url=packages/koreader/foot-cream.koplugin/README.md
+readme_hash=8e8fba7f3087faf7224c67bff3152311735d203c
+>>>>>>> Stashed changes
 source_type=release
 source_asset=foot-cream-v1.6.0.koplugin.zip
 size=170641

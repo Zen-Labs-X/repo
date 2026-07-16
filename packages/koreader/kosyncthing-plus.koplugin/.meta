@@ -13,6 +13,11 @@ source=https://github.com/d0nizam/kosyncthing_plus.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=24
+<<<<<<< Updated upstream
+=======
+readme_url=packages/koreader/kosyncthing-plus.koplugin/README.md
+readme_hash=36829b2dbd7c136edef4071b8086b4be86ce500c
+>>>>>>> Stashed changes
 source_type=release
 source_asset=kosyncthing_plus_koplugin.zip
 size=358151

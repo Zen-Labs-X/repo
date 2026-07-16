@@ -13,5 +13,7 @@ source=https://github.com/fairlygood/provider-webdav-highlights.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=28
+readme_url=packages/koreader/provider-webdav-highlights.koplugin/README.md
+readme_hash=f1d9609b4dff54ccdeb4751538225efca938b50c
 source_type=source
 source_url=https://codeload.github.com/fairlygood/provider-webdav-highlights.koplugin/zip/refs/heads/drafts

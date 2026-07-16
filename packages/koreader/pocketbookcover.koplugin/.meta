@@ -13,5 +13,7 @@ source=https://github.com/ckilb/pocketbookcover.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=22
+readme_url=packages/koreader/pocketbookcover.koplugin/README.md
+readme_hash=8e4c179eb21fb017b000fbcd387a6f26a42d5d64
 source_type=source
 source_url=https://codeload.github.com/ckilb/pocketbookcover.koplugin/zip/refs/heads/main

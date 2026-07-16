@@ -12,6 +12,12 @@ dependencies=
 source=https://github.com/renandeivison/quicksettings
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
+<<<<<<< Updated upstream
 stars=18
+=======
+stars=19
+readme_url=packages/koreader/quicksettings.koplugin/README.md
+readme_hash=9e25a8915f73fca0c3396bc6481f9bea347fde55
+>>>>>>> Stashed changes
 source_type=source
 source_url=https://codeload.github.com/renandeivison/quicksettings/zip/refs/heads/main

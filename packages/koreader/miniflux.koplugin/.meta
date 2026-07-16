@@ -13,6 +13,11 @@ source=https://github.com/AlgusDark/miniflux.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=91
+<<<<<<< Updated upstream
+=======
+readme_url=packages/koreader/miniflux.koplugin/README.md
+readme_hash=f7ea02bac25be1f335ead05823f3dacc0d902b5a
+>>>>>>> Stashed changes
 source_type=release
 source_asset=miniflux.koplugin.zip
 size=85207

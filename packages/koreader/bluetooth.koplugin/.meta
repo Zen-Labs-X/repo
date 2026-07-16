@@ -13,5 +13,10 @@ source=https://github.com/onatbas/bluetooth.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=74
+<<<<<<< Updated upstream
+=======
+readme_url=packages/koreader/bluetooth.koplugin/README.md
+readme_hash=d40f541f2a29ad477eb7c0867f44c216f46e3f53
+>>>>>>> Stashed changes
 source_type=source
 source_url=https://codeload.github.com/onatbas/bluetooth.koplugin/zip/refs/heads/main

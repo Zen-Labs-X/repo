@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/loeffner/WeatherLockscreen
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
+<<<<<<< Updated upstream
 stars=66
+=======
+stars=67
+readme_url=packages/koreader/weatherlockscreen.koplugin/README.md
+readme_hash=b3d535cfbde5cbd5b79ea073a030689352a07c9b
+>>>>>>> Stashed changes
 source_type=release
 source_asset=weatherlockscreen.koplugin-v0.9.7-beta.1.zip
 size=108655

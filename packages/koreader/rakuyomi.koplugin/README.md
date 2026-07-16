@@ -1,0 +1,96 @@
+# rakuyomi
+
+**rakuyomi** is a manga reader plugin for [KOReader](https://github.com/koreader/koreader).
+
+> [!IMPORTANT]
+>
+> The original author of the [@hanatsumi](https://github.com/hanatsumi) project no longer uses the e-link reader, so I am authorized to maintain this branch as the official branch.
+>
+> Thank [@hanatsumi](https://github.com/hanatsumi) for the great work!!
+> 
+> `rakuyomi` currently supports all [Aidoku](https://github.com/Aidoku) sources including sources written with legacy SDK or next SDK ([Aidoku Community Sources](https://github.com/Aidoku-Community/sources), [Tachibana Shin Sources](https://github.com/tachibana-shin/aidoku-community-sources)...)
+
+## Android Support
+
+rakuyomi runs on Android via the **Rakuyomi Bridge** companion app ([Rakuyomi Bridge](https://github.com/tachibana-shin/rakuyomi_bridge/)), which loads the Rust server via JNI and runs it as a foreground service.
+
+| Variant | Android Support |
+|---|---|
+| Rakuyomi Bridge (Compose) | Android 5.0+ (API 21+) |
+| Rakuyomi Bridge (Headless) | Android 4.3+ (API 18+) |
+
+Both are available on the [Releases](https://github.com/tachibana-shin/rakuyomi_bridge/releases) page.
+
+> [!TIP]
+> If you want to run Rakuyomi as soon as you open Koreader, use this plugin: https://github.com/mgrimace/startrakuyomi.koplugin
+
+This fork:
+- Added last read time for manga, chapter
+- Improved UI now you can see exactly which source manga belongs to
+- Added cancel download methods to avoid freezing
+- Fixed back button not working properly
+- Added processing menu in chapter list
+- Added "continue read"
+- Correct write processing to save RAM to avoid freezing KoReader
+- Added cleaner to free up memory
+- Improved SQLite query method to speed up all operations by `200 times` including: library access, search, chapter list (`x300 times`)
+- Details manga
+- Aidoku source new SDK (0.7) support
+
+<table>
+  <tr>
+    <td><img width="464" height="702" alt="image" src="https://github.com/user-attachments/assets/93edb17e-d690-40e5-843f-64dacc2d5deb" /></td>
+    <td><img width="464" height="702" alt="image" src="https://github.com/user-attachments/assets/98436b56-f703-40b1-b662-69a13106c185" /></td>
+    <td><img width="464" height="702" alt="image" src="https://github.com/user-attachments/assets/db0ad47b-6e19-4ce5-ba1a-f7a147777687" /></td>
+  </tr>
+  <tr>
+    <td><img width="200" alt="image" src="https://github.com/user-attachments/assets/cccf4076-79d3-4eb2-af80-62266b0e7ede" /></td>
+    <td><img src="https://github.com/user-attachments/assets/4edec936-8034-4467-bdce-5b060d799967" width="200" /></td>
+    <td><img src="https://github.com/user-attachments/assets/1c5d29fe-5a2f-4bf9-8437-bd1afe1b4e8b" width="200" /></td>
+  </tr>
+<tr>
+  <td><img src="https://github.com/user-attachments/assets/89397e28-65ae-46dc-b36f-dfc1d5e5b78c" width="200" /></td>
+  <td><img src="https://github.com/user-attachments/assets/e71a161f-ffa0-4109-b602-3c36d3fddc2f" width="200" /></td>
+  <td><img src="https://github.com/user-attachments/assets/36957374-89fb-490c-bea9-f52f750ca1d9" width="200" /></td>
+</tr>
+</table>
+<em>Open source for Every One</em>
+
+<p align="center">
+    <img src="docs/src/images/demo.gif" width="60%" />
+    <br/>
+    <em><small><a href="https://seotch.wordpress.com/ubunchu/">"Ubunchu!"</a> by Hiroshi Seo is licensed under <a href="https://creativecommons.org/licenses/by-nc/3.0/">CC BY-NC 3.0</a>.</small></em>
+</p>
+
+> [!TIP]
+>
+> This fork currently supports my Light Novel sources please check source this [vi.hakovn](https://github.com/tachibana-shin/aidoku-sources-next/tree/main/sources/vi.hakovn)
+>
+> Now support plugin image DRM
+
+## Installation & Usage
+
+For detailed installation and usage instructions, please check out the [Installation](https://tachibana-shin.github.io/rakuyomi/user-guide/installation/README.html) and [Quickstart](https://tachibana-shin.github.io/rakuyomi/user-guide/quickstart) sections on our user guide!
+
+## Cookie Sync Bot
+
+Rakuyomi includes a Telegram bot for syncing Cloudflare cookies from your Android browser to your e-reader.
+
+### Setup
+
+1. Open Telegram and start the bot: [t.me/rakuyomi_bot](https://t.me/rakuyomi_bot) (or your self-hosted instance)
+2. In KOReader, go to **Rakuyomi → Settings → Cookie Sync**
+3. Tap **Pair Device** → enter the bot URL → send `/link CODE NAME` to the bot
+4. Install [Get cookies.txt LOCALLY](https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc) in Kiwi Browser
+5. When a source returns 403, export cookies via the extension and paste the JSON array into the bot chat
+
+The Rust backend automatically syncs cookies on 403 and retries. If the retry also fails, the bot sends a notification so you know to refresh cookies.
+
+### Self-hosting
+
+See [telegram-cookie-bot/README.md](telegram-cookie-bot/README.md) for deployment instructions.
+
+## Contributing
+
+For information on how to contribute to rakuyomi, please check out the [Setting up the Environment](https://tachibana-shin.github.io/rakuyomi/contributing/setting-up-the-environment.html) section on our guide!
+

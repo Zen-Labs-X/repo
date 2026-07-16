@@ -12,6 +12,12 @@ dependencies=
 source=https://github.com/finlater/weread.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
+<<<<<<< Updated upstream
 stars=158
+=======
+stars=161
+readme_url=packages/koreader/weread.koplugin/README.md
+readme_hash=d54dc7a96317a8287b71d2a2d993fd0e6a6b6e9a
+>>>>>>> Stashed changes
 source_type=source
 source_url=https://codeload.github.com/finlater/weread.koplugin/zip/refs/heads/main

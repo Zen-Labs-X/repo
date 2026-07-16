@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/AndyHazz/bookends.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
+<<<<<<< Updated upstream
 stars=300
+=======
+stars=301
+readme_url=packages/koreader/bookends.koplugin/README.md
+readme_hash=1b3f7a2db5a887a4de1ddd6c181b83e7712be3ff
+>>>>>>> Stashed changes
 source_type=release
 source_asset=bookends.koplugin-v5.22.0.zip
 size=425421

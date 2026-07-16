@@ -1,0 +1,19 @@
+# Floating Dictionary plugin for KOReader
+# https://github.com/DisastrousPatience83/Floating-Dictionary.koplugin
+# zenpm:auto-scraped
+id=floating-dictionary
+name=Floating Dictionary
+version=source
+description=A lightweight, highly customizable floating dictionary for KOReader.  Instead of opening KOReader's full dictionary popup every time, Floating Dictionary displays a compact preview beside your sele...
+author=DisastrousPatience83
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/DisastrousPatience83/Floating-Dictionary.koplugin
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=19
+readme_url=packages/koreader/floating-dictionary.koplugin/README.md
+readme_hash=3f8ef2a4d3573591d107f69a798bd25a852518d2
+source_type=source
+source_url=https://codeload.github.com/DisastrousPatience83/Floating-Dictionary.koplugin/zip/refs/heads/main

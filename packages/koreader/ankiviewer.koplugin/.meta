@@ -13,6 +13,11 @@ source=https://github.com/omer-faruq/ankiviewer.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=26
+<<<<<<< Updated upstream
+=======
+readme_url=packages/koreader/ankiviewer.koplugin/README.md
+readme_hash=499ebf862677e5941b4e60d1e65c672b9a91906d
+>>>>>>> Stashed changes
 source_type=release
 source_asset=ankiviewer.koplugin.zip
 size=23514

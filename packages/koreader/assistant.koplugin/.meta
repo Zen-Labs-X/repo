@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/omer-faruq/assistant.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
+<<<<<<< Updated upstream
 stars=543
+=======
+stars=542
+readme_url=packages/koreader/assistant.koplugin/README.md
+readme_hash=94448ed8c33dee8a12041c02c7707213863d7c90
+>>>>>>> Stashed changes
 source_type=release
 source_asset=assistant.koplugin-v1.11.zip
 size=507252

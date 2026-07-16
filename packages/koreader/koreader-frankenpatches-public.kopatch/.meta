@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/zenixlabs/koreader-frankenpatches-public
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
+<<<<<<< Updated upstream
 stars=118
+=======
+stars=117
+readme_url=packages/koreader/koreader-frankenpatches-public.kopatch/README.md
+readme_hash=d14dfa533a2b901d684f8e64d3d1101e84f0b003
+>>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2-cvs-receipt-frankenpatch.lua

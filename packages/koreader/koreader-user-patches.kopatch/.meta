@@ -13,6 +13,11 @@ source=https://github.com/omer-faruq/koreader-user-patches
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
 stars=105
+<<<<<<< Updated upstream
+=======
+readme_url=packages/koreader/koreader-user-patches.kopatch/README.md
+readme_hash=8335787fccef644f1b1ed93834fd0f84200ca78b
+>>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2-book-receipt-shortcut-and-lockscreen.lua

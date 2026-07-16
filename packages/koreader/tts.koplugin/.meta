@@ -13,5 +13,7 @@ source=https://github.com/norude/TTS.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=31
+readme_url=packages/koreader/tts.koplugin/README.md
+readme_hash=25e74073d5c7ac1ed892febc17db0de1c649ed5d
 source_type=source
 source_url=https://codeload.github.com/norude/TTS.koplugin/zip/refs/heads/main

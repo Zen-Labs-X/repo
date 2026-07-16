@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/anezih/bubblezoom.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
+<<<<<<< Updated upstream
 stars=21
+=======
+stars=23
+readme_url=packages/koreader/bubblezoom.koplugin/README.md
+readme_hash=5dab0861333d68c36cdae73f5ded13e4938317d3
+>>>>>>> Stashed changes
 source_type=release
 source_asset=bubblezoom.koplugin_1.2.0.zip
 size=17926

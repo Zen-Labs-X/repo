@@ -13,5 +13,7 @@ source=https://github.com/brendanlefebvre/supersync.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=39
+readme_url=packages/koreader/supersync.koplugin/README.md
+readme_hash=1bd67b19630e009ad288a8cacc636dfb8db7325b
 source_type=source
 source_url=https://codeload.github.com/brendanlefebvre/supersync.koplugin/zip/refs/heads/main

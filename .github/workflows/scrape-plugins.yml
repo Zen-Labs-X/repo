@@ -41,7 +41,7 @@ jobs:
           set -eu
           python3 -c 'import json, os; loads=lambda n: json.loads(os.environ.get(n) or "[]"); added=loads("PLUGIN_ADDED")+loads("PATCH_ADDED"); updated=loads("PLUGIN_UPDATED")+loads("PATCH_UPDATED"); fh=open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8"); fh.write(f"added_count={len(added)}\nadded={json.dumps(added)}\nupdated_count={len(updated)}\nupdated={json.dumps(updated)}\n"); fh.close()'
 
-      - name: Commit refreshed metadata
+      - name: Commit refreshed metadata and READMEs
         if: ${{ steps.scrape.outputs.updated_count != '0' }}
         env:
           UPDATED: ${{ steps.scrape.outputs.updated }}
@@ -50,7 +50,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          printf '%s' "$UPDATED" | python3 -c 'import json, sys; [print(p["path"]) for p in json.load(sys.stdin)]' > /tmp/updated-paths.txt
+          printf '%s' "$UPDATED" | python3 -c 'import json, sys; [print(path) for package in json.load(sys.stdin) for path in (package["path"], package.get("readme_path")) if path]' > /tmp/updated-paths.txt
 
           git add --pathspec-from-file=/tmp/updated-paths.txt
           if git diff --cached --quiet; then
@@ -58,7 +58,7 @@ jobs:
               exit 0
           fi
 
-          git commit -m "Refresh scraped KOReader package metadata"
+          git commit -m "Refresh scraped KOReader package metadata and READMEs"
           git push origin HEAD:main
           git fetch origin main
 
@@ -76,15 +76,16 @@ jobs:
           git restore -- .github/scripts/plugin_categories.json
 
           # Each element of $ADDED is a package summary object. Emit TSV lines.
-          printf '%s' "$ADDED" | python3 -c 'import json, sys; [print("\t".join([p["id"], p["name"], p.get("kind", "plugin"), p["path"], p["repo"], p["url"], str(p["stars"]), p["version"], str(p.get("assets", 0))])) for p in json.load(sys.stdin)]' > /tmp/added.tsv
+          printf '%s' "$ADDED" | python3 -c 'import json, sys; [print("\t".join([p["id"], p["name"], p.get("kind", "plugin"), p["path"], p.get("readme_path", ""), p["repo"], p["url"], str(p["stars"]), p["version"], str(p.get("assets", 0))])) for p in json.load(sys.stdin)]' > /tmp/added.tsv
 
-          while IFS="$(printf '\t')" read -r id name kind meta repo url stars version assets; do
+          while IFS="$(printf '\t')" read -r id name kind meta readme repo url stars version assets; do
               [ -n "$id" ] || continue
               [ -f "$meta" ] || continue
               branch="scrape/${kind}/${id}"
 
               git checkout -B "$branch" origin/main
               git add "$meta"
+              [ -z "$readme" ] || git add "$readme"
               git commit -m "Add ${name} KOReader ${kind}"
               git push -f origin "$branch"
 

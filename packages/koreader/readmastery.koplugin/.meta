@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/Lalocaballero/readmastery.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
+<<<<<<< Updated upstream
 stars=70
+=======
+stars=69
+readme_url=packages/koreader/readmastery.koplugin/README.md
+readme_hash=2caa85a0caebec9e4c273b50d1e5d31af0f3a472
+>>>>>>> Stashed changes
 source_type=release
 source_asset=ReadMastery.koplugin.zip
 size=48351

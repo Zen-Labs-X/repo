@@ -13,6 +13,11 @@ source=https://github.com/reuerendo/koreader-patches
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
 stars=31
+<<<<<<< Updated upstream
+=======
+readme_url=packages/koreader/koreader-patches-3.kopatch/README.md
+readme_hash=6d74aef7641271f978bf8fa978a8ef67663a8b71
+>>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2-bookloadcover.lua

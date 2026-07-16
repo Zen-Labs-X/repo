@@ -13,6 +13,11 @@ source=https://github.com/ultimatejimmy/koreader-xray-plugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=119
+<<<<<<< Updated upstream
+=======
+readme_url=packages/koreader/koreader-xray-plugin.koplugin/README.md
+readme_hash=9c3ad6e14ab2694e4268ad580e3dd34c36d4bad3
+>>>>>>> Stashed changes
 source_type=release
 source_asset=xray.koplugin.zip
 size=420405

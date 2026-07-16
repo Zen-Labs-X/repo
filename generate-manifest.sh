@@ -89,6 +89,8 @@ for meta_file in $meta_files; do
     source_type=$(grep '^source_type=' "$tmp" 2>/dev/null | sed 's/^source_type=//' | head -1)
     source_url=$(grep '^source_url=' "$tmp" 2>/dev/null | sed 's/^source_url=//' | head -1)
     stars=$(grep '^stars=' "$tmp" 2>/dev/null | sed 's/^stars=//' | head -1)
+    readme_url=$(grep '^readme_url=' "$tmp" 2>/dev/null | sed 's/^readme_url=//' | head -1)
+    readme_hash=$(grep '^readme_hash=' "$tmp" 2>/dev/null | sed 's/^readme_hash=//' | head -1)
 
     case "$category" in
         utility|games|productivity|media|theme|patches) ;;
@@ -149,6 +151,8 @@ for meta_file in $meta_files; do
     [ -n "$source_type" ]  && printf ',\n      "source_type": "%s"' "$(json_escape "$source_type")" >> "$OUTPUT"
     [ -n "$source_url" ]   && printf ',\n      "source_url": "%s"' "$(json_escape "$source_url")" >> "$OUTPUT"
     [ -n "$stars" ]        && printf ',\n      "stars": "%s"' "$stars" >> "$OUTPUT"
+    [ -n "$readme_url" ]   && printf ',\n      "readme_url": "%s"' "$(json_escape "$readme_url")" >> "$OUTPUT"
+    [ -n "$readme_hash" ]  && printf ',\n      "readme_hash": "%s"' "$(json_escape "$readme_hash")" >> "$OUTPUT"
 
     # Assets array (dot notation: assets.N.key)
     asset_indices=$(grep '^assets\.' "$tmp" 2>/dev/null \

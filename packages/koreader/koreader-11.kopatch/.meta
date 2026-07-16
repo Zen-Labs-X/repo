@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/sebdelsol/KOReader.patches
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
+<<<<<<< Updated upstream
 stars=343
+=======
+stars=345
+readme_url=packages/koreader/koreader-11.kopatch/README.md
+readme_hash=e7886ad77b3b77e6fc17cd35ed50b900c3a81566
+>>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2--ui-font.lua

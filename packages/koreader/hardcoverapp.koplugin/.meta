@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/Billiam/hardcoverapp.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
+<<<<<<< Updated upstream
 stars=378
+=======
+stars=381
+readme_url=packages/koreader/hardcoverapp.koplugin/README.md
+readme_hash=980a5e50ba91f560b18c4ad0f802747dd6c7feee
+>>>>>>> Stashed changes
 source_type=release
 source_asset=hardcoverapp.koplugin.zip
 size=61899

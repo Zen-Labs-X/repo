@@ -1,0 +1,20 @@
+# Koreader Physical Page Sync plugin for KOReader
+# https://github.com/yanllsama/koreader-physical-page-sync
+# zenpm:auto-scraped
+id=koreader-physical-page-sync
+name=Koreader Physical Page Sync
+version=1.30
+description=!!!INSTALLATION FROM HERE IS NOT POSSIBLE due to being a system app!!! A custom modification for the official KOReader statistics.koplugin that synchronizes e-reader page turns with the actual phys...
+author=yanllsama
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/yanllsama/koreader-physical-page-sync
+install_url=packages/koreader/install-plugin.sh
+uninstall_url=packages/koreader/uninstall-plugin.sh
+stars=19
+readme_url=packages/koreader/koreader-physical-page-sync.koplugin/README.md
+readme_hash=0c4ce6a43ed9dbfd335ed2315b76d70a6b885c6f
+source_type=release
+source_asset=statistics.koplugin.zip
+size=49682

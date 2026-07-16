@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/SeriousHornet/KOReader.patches
 install_url=packages/koreader/install-patch.sh
 uninstall_url=packages/koreader/uninstall-patch.sh
+<<<<<<< Updated upstream
 stars=349
+=======
+stars=351
+readme_url=packages/koreader/koreader-5.kopatch/README.md
+readme_hash=c0ac502399b7ac5d552016ea350059fb0b121bb2
+>>>>>>> Stashed changes
 source_type=source
 assets.0.arch=any
 assets.0.asset=2---stretched-covers.lua

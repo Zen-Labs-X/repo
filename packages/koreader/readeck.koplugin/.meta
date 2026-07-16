@@ -13,5 +13,7 @@ source=https://github.com/flip-rossi/readeck.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
 stars=46
+readme_url=packages/koreader/readeck.koplugin/README.md
+readme_hash=97a00ea9b8cf6eb8af244a9cfee5816215113905
 source_type=source
 source_url=https://codeload.github.com/flip-rossi/readeck.koplugin/zip/refs/heads/master

@@ -12,7 +12,13 @@ dependencies=
 source=https://github.com/kaikozlov/localsend.koplugin
 install_url=packages/koreader/install-plugin.sh
 uninstall_url=packages/koreader/uninstall-plugin.sh
+<<<<<<< Updated upstream
 stars=215
+=======
+stars=217
+readme_url=packages/koreader/localsend.koplugin/README.md
+readme_hash=3369a85e0dd1473876d6e6005cf6de3c33fc1737
+>>>>>>> Stashed changes
 source_type=release
 assets.0.arch=arm
 assets.0.asset=localsend-koplugin-arm-legacy.zip
