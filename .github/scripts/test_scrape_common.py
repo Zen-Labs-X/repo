@@ -74,6 +74,7 @@ class ReadmeCacheTests(unittest.TestCase):
             "html_url": "https://github.com/owner/example.koplugin",
             "default_branch": "main",
             "stargazers_count": 20,
+            "updated_at": "2026-07-16T12:34:56Z",
             "description": "Example package",
         }
 
@@ -89,6 +90,7 @@ class ReadmeCacheTests(unittest.TestCase):
 
         self.assertIn("readme_url=packages/test/README.md\n", meta_text)
         self.assertIn("readme_hash=blob-sha\n", meta_text)
+        self.assertIn("updated_at=2026-07-16T12:34:56Z\n", meta_text)
         self.assertIn("icon_url=packages/test/assets/icon.svg\n", meta_text)
         self.assertIn("featured_image=packages/test/assets/featured.png\n", meta_text)
         self.assertIn("featured=true\n", meta_text)

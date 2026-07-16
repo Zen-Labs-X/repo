@@ -448,6 +448,7 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
 
     name = name_override or display_name(repo_name)
     stars = repo.get("stargazers_count", 0)
+    updated_at = repo.get("updated_at") or ""
     description = clean_description(repo.get("description"))
     default_branch = repo.get("default_branch", "main")
     install_url = PATCH_INSTALL_URL if kind == KIND_PATCH else PLUGIN_INSTALL_URL
@@ -491,6 +492,8 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
             lines.append(f"{field}={value}")
 
     lines.append(f"stars={stars}")
+    if updated_at:
+        lines.append(f"updated_at={updated_at}")
 
     if readme_url and readme_hash:
         lines.extend([

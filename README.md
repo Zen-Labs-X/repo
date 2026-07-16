@@ -102,6 +102,7 @@ Each package in `manifest.json` may include:
 | `featured_image` | string | Path to a larger preview/featured image (e.g. `packages/<id>/assets/featured.png`) |
 | `featured` | boolean | Marks a package for the featured section. |
 | `featured_order` | non-negative integer | Display priority within featured packages; lower values appear first. Requires `featured=true`. |
+| `updated_at` | string | Upstream package's last-updated timestamp from GitHub, in UTC ISO 8601 format. |
 | `readme_url` | string | Path to the cached package README. |
 | `readme_hash` | string | Git blob SHA of the cached README; changes when its source README changes. |
 
