@@ -76,6 +76,7 @@ for meta_file in $meta_files; do
     author=$(grep '^author=' "$tmp" 2>/dev/null | sed 's/^author=//' | head -1)
     category=$(grep '^category=' "$tmp" 2>/dev/null | sed 's/^category=//' | head -1)
     platforms=$(grep '^platforms=' "$tmp" 2>/dev/null | sed 's/^platforms=//' | head -1)
+    incompatible_platforms=$(grep '^incompatible_platforms=' "$tmp" 2>/dev/null | sed 's/^incompatible_platforms=//' | head -1)
     dependencies=$(grep '^dependencies=' "$tmp" 2>/dev/null | sed 's/^dependencies=//' | head -1)
     conflicts=$(grep '^conflicts=' "$tmp" 2>/dev/null | sed 's/^conflicts=//' | head -1)
     size=$(grep '^size=' "$tmp" 2>/dev/null | sed 's/^size=//' | head -1)
@@ -131,6 +132,7 @@ for meta_file in $meta_files; do
     } >> "$OUTPUT"
 
     [ -n "$conflicts" ] && printf ',\n      "conflicts": %s' "$(csv_to_json_array "$conflicts")" >> "$OUTPUT"
+    [ -n "$incompatible_platforms" ] && printf ',\n      "incompatible_platforms": %s' "$(csv_to_json_array "$incompatible_platforms")" >> "$OUTPUT"
 
     # Optional string fields
     [ -n "$icon_url" ]       && printf ',\n      "icon_url": "%s"' "$(json_escape "$icon_url")" >> "$OUTPUT"

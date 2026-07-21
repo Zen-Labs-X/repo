@@ -3,16 +3,17 @@
 # zenpm:auto-scraped
 id=telegramhighlights
 name=Telegramhighlights
-version=1.0.0
+version=1.1.0
 description=Get nice image quotes from your kindle straight to your telegram through a bot @bookshotsbot
 author=0xmiki
 category=productivity
-platforms=koreader,android,host
+platforms=koreader
 dependencies=
 source=https://github.com/0xmiki/telegramhighlights.koplugin
-stars=71
+stars=73
+updated_at=2026-07-19T02:13:34Z
 readme_url=packages/koreader/telegramhighlights.koplugin/README.md
 readme_hash=dd9270209ad8bc7db365593fde5e010bb2b17ae6
 source_type=release
 source_asset=telegramhighlights.koplugin.zip
-size=21105
+size=21127

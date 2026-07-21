@@ -1,0 +1,25 @@
+# Library Sync plugin for KOReader
+# https://github.com/komadorirobin/library-sync.koplugin
+# zenpm:auto-scraped
+id=library-sync
+name=Library Sync
+version=0.6.5
+description=KOReader plugin for syncing missing books from a Booklore/Grimmory OPDS server
+author=komadorirobin
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/komadorirobin/library-sync.koplugin
+stars=15
+updated_at=2026-07-19T16:58:54Z
+readme_url=packages/koreader/library-sync.koplugin/README.md
+readme_hash=bc530f901cfe0c39c4b5f44e5cde40122958c521
+source_type=release
+assets.0.arch=any
+assets.0.asset=grimmory-sync.koplugin.zip
+assets.0.url=https://github.com/komadorirobin/library-sync.koplugin/releases/download/v0.6.5/grimmory-sync.koplugin.zip
+assets.0.size=60314
+assets.1.arch=any
+assets.1.asset=library-sync.koplugin.zip
+assets.1.url=https://github.com/komadorirobin/library-sync.koplugin/releases/download/v0.6.5/library-sync.koplugin.zip
+assets.1.size=60280

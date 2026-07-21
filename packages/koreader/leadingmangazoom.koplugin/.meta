@@ -1,0 +1,19 @@
+# Leadingmangazoom plugin for KOReader
+# https://github.com/Auri3l/leadingmangazoom.koplugin
+# zenpm:auto-scraped
+id=leadingmangazoom
+name=Leadingmangazoom
+version=1.1.0
+description=KOReader manga/comic plugin - grid zoom, auto-rotate & page split. Forked from Maximum by @Shac0x
+author=Auri3l
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/Auri3l/leadingmangazoom.koplugin
+stars=16
+updated_at=2026-07-19T04:04:42Z
+readme_url=packages/koreader/leadingmangazoom.koplugin/README.md
+readme_hash=f540ad60fc589117a26881b15670919f729540f4
+source_type=release
+source_asset=leadingmangazoom.koplugin.zip
+size=7431

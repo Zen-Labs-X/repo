@@ -1,0 +1,18 @@
+# Quran Ebook plugin for KOReader
+# https://github.com/zeeyado/quran-ebook
+# zenpm:auto-scraped
+id=quran-ebook
+name=Quran Ebook
+version=0.10.0
+description=A configurable Quran ebook generator with correct Arabic rendering.
+author=zeeyado
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/zeeyado/quran-ebook
+stars=36
+updated_at=2026-07-21T12:02:40Z
+readme_url=packages/koreader/quran-ebook.koplugin/README.md
+readme_hash=f59706bb87bc8f9a4eb5fb982ffb263e29ab557a
+source_type=source
+source_url=https://codeload.github.com/zeeyado/quran-ebook/zip/refs/heads/main

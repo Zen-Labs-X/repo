@@ -3,16 +3,17 @@
 # zenpm:auto-scraped
 id=kindlefetch
 name=Kindlefetch
-version=0.2
+version=0.3
 description=Download books from Anna's Archive directly to your Kindle, entirely within the KOReader app.
 author=william-spongberg
 category=media
-platforms=koreader,android,host
+platforms=koreader
 dependencies=
 source=https://github.com/william-spongberg/KindleFetch.koplugin
-stars=19
+stars=23
+updated_at=2026-07-20T23:45:36Z
 readme_url=packages/koreader/kindlefetch.koplugin/README.md
-readme_hash=0c7772d696ce22627d24d4f47544e4b4d4f719d3
+readme_hash=2e1fff2d6e9dc998f51d1332851656c45e0e516a
 source_type=release
 source_asset=kindlefetch.koplugin.zip
-size=24355
+size=34706

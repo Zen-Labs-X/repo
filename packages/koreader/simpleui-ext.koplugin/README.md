@@ -491,8 +491,18 @@ Renders one of the three Reading Insights pages as a static snapshot on the slee
    └── simpleui_ext.koplugin/
        ├── _meta.lua
        ├── main.lua
+       ├── sui_ext_i18n.lua
        ├── utils/
        │   └── hotfix.lua
+       ├── locale/
+       │   ├── sui_ext.pot
+       │   ├── zh_CN.po
+       │   ├── tr.po
+       │   ├── de.po
+       │   ├── fr.po
+       │   ├── es.po
+       │   ├── pt_BR.po
+       │   └── ru.po
        ├── modules/
        │   ├── module_hero_currently.lua
        │   ├── module_recent_book_stats.lua
@@ -691,6 +701,26 @@ end
 
 ---
 
+## Localization
+
+All module names, descriptions, and on-screen text are translatable via a standalone i18n loader (`sui_ext_i18n.lua`) that ships with this plugin — it does **not** depend on SimpleUI's own translation system, so it works even if only this plugin is installed.
+
+**Currently translated:** English (default), 简体中文 (`zh_CN`), Türkçe (`tr`), Deutsch (`de`), Français (`fr`), Español (`es`), Português Brasileiro (`pt_BR`), Русский (`ru`).
+
+**How it works:**
+- The language is picked up automatically from KOReader's own **Settings → Language** — there's no separate setting for this plugin.
+- If your language has no translation file, or a string isn't translated yet, the plugin falls back to KOReader's own core translation catalog, then to English.
+- Translations are loaded once at startup, so **changing KOReader's language requires a restart** to take effect here, same as toggling modules/patches.
+
+**Contributing a translation:**
+1. Copy `locale/sui_ext.pot` to `locale/<lang>.po` (e.g. `locale/it.po` for Italian; use the same language codes KOReader itself uses).
+2. Fill in each `msgstr` (and `msgstr[0]`/`msgstr[1]`/… for plural entries) with your translation. Leave `msgid` untouched — it's the lookup key.
+3. Set the file's `Plural-Forms` header to match your language's plural rule (see the existing `.po` files for examples — two-form languages like French/German/Spanish/Portuguese/Turkish use `nplurals=2`, Russian uses the 3-form CLDR rule via `nplurals=3`).
+4. Restart KOReader and confirm the UI switches over correctly.
+5. Open a PR with the new `.po` file.
+
+---
+
 ## Credits
 
 - **[Bookshelf plugin](https://github.com/AndyHazz/bookshelf.koplugin)** — The hero card layout, cover proportions, progress bar style, and time-remaining calculation are all modelled after Bookshelf's hero card implementation.
@@ -699,5 +729,6 @@ end
 - **[zenixlabs/koreader-frankenpatches-public](https://github.com/zenixlabs/koreader-frankenpatches-public)** — `module_reading_streaks.lua` and `module_reading_insights.lua` are derived from `2-reading-insights-popup.lua` from this repository, adapted as SimpleUI homescreen modules.
 - **[yanllsama/koreader-enhanced-currently-reading](https://github.com/yanllsama/koreader-enhanced-currently-reading)** — `module_currently_yanllsama_v1.lua` is based on Yanllsama's enhanced Currently Reading module with dynamic grid system, customizable headers, and rich statistics.
 - **[@yefq](https://github.com/yefq)** — Contributed the hotfix utility (`utils/hotfix.lua`) and Chinese date format patch (`patch_clock_date_cn.lua`) in [PR #4](https://github.com/omer-faruq/simpleui_ext.koplugin/pull/4).
+- **[gsWang](https://github.com/gsWang)** — Contributed the standalone i18n subsystem (`sui_ext_i18n.lua`) and the Simplified Chinese translation in [PR #7](https://github.com/omer-faruq/simpleui_ext.koplugin/pull/7).
 - This plugin was created with the assistance of AI.
 

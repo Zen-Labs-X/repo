@@ -3,16 +3,17 @@
 # zenpm:auto-scraped
 id=audiobook
 name=Audiobook
-version=0.1.16.11
+version=0.1.17.1
 description=A plugin to give TTS-capabilities, includes bluetooth controllers.
 author=stradichenko
 category=media
-platforms=koreader,android,host
+platforms=koreader
 dependencies=
 source=https://github.com/stradichenko/audiobook.koplugin
-stars=89
+stars=91
+updated_at=2026-07-19T22:57:46Z
 readme_url=packages/koreader/audiobook.koplugin/README.md
 readme_hash=21248cc8af9d769806f245371a242c1ccd0a42ae
 source_type=release
-source_asset=audiobook-koplugin-v0.1.16.11.zip
-size=164374460
+source_asset=audiobook-koplugin-v0.1.17.1.zip
+size=164399285

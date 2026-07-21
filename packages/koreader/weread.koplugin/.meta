@@ -3,15 +3,16 @@
 # zenpm:auto-scraped
 id=weread
 name=Weread
-version=0.2.1
+version=0.4.0
 description=微信读书 koreader 插件，在 koreader 里阅读微信读书里的书籍、公众号文章，并做到进度、阅读时长同步，阅读时间上报。
 author=finlater
 category=media
-platforms=koreader,android,host
+platforms=koreader
 dependencies=
 source=https://github.com/finlater/weread.koplugin
-stars=161
+stars=225
+updated_at=2026-07-21T09:08:14Z
 readme_url=packages/koreader/weread.koplugin/README.md
-readme_hash=d54dc7a96317a8287b71d2a2d993fd0e6a6b6e9a
+readme_hash=b0d886d43ecee888dbb93f797f1191517bf18db5
 source_type=source
 source_url=https://codeload.github.com/finlater/weread.koplugin/zip/refs/heads/main

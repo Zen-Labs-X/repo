@@ -3,16 +3,17 @@
 # zenpm:auto-scraped
 id=zlibrary-2
 name=Zlibrary
-version=1.0.34-2dfaa2c9087f845f667cdbc32d9c1904072546c4
+version=1.0.40-b2a8f240d241a921907d16d8171ab136e17d264b
 description=Home of the KOReader Zlibrary plugin
 author=ZlibraryKO
 category=media
-platforms=koreader,android,host
+platforms=koreader
 dependencies=
 source=https://github.com/ZlibraryKO/zlibrary.koplugin
-stars=492
+stars=514
+updated_at=2026-07-21T13:21:02Z
 readme_url=packages/koreader/zlibrary-2.koplugin/README.md
 readme_hash=b9b2d465bfc3f33dccb17bf0aa75b97b25ca06f1
 source_type=release
-source_asset=zlibrary_plugin_v1.0.34.zip
-size=249649
+source_asset=zlibrary_plugin_v1.0.40.zip
+size=345827

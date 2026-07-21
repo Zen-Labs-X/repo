@@ -106,6 +106,7 @@ Each package in `manifest.json` may include:
 | `readme_url` | string | Path to the cached package README. |
 | `readme_hash` | string | Git blob SHA of the cached README; changes when its source README changes. |
 | `conflicts` | array of strings | Package IDs that must not be installed together. |
+| `incompatible_platforms` | array of strings | Platforms on which a package cannot be installed. |
 
 Install and uninstall behavior is handled by the client; packages do not declare script URLs.
 

@@ -25,7 +25,7 @@ MAX_INACTIVE_DAYS = 730
 KIND_PLUGIN = "plugin"
 KIND_PATCH = "patch"
 
-DEFAULT_PLUGIN_PLATFORMS = "koreader,android,host"
+DEFAULT_PLUGIN_PLATFORMS = "koreader"
 
 PRESENTATION_FIELDS = (
     "icon_url",
@@ -453,6 +453,7 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
         "platforms", DEFAULT_PLUGIN_PLATFORMS if kind == KIND_PLUGIN else "koreader"
     )
     conflicts = (preserved_fields or {}).get("conflicts", "")
+    incompatible_platforms = (preserved_fields or {}).get("incompatible_platforms", "")
 
     lines = [
         f"# {name} {package_label} for KOReader",
@@ -490,6 +491,8 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
 
     if conflicts:
         lines.append(f"conflicts={conflicts}")
+    if incompatible_platforms:
+        lines.append(f"incompatible_platforms={incompatible_platforms}")
 
     lines.append(f"stars={stars}")
     if updated_at:

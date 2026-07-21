@@ -33,7 +33,9 @@ A KOReader plugin that enables sending and receiving files between devices using
 1. Go to **Menu → Network → LocalSend**
 2. Tap **Send file...** or **Send current book**
 3. Select a target device from the discovered list
-4. Choose a file to send (if using "Send file...")
+4. Choose a file or folder to send (if using "Send file...")
+
+Or long-press a file or folder in File Manager (also History, Collections, or File Search) and tap **Send with LocalSend**, then choose a target device.
 
 ### Settings
 
@@ -66,11 +68,17 @@ For common symptoms and fixes (connection refused, device not discovered, HTTP 4
 
 When reporting a bug, include the generated support report. It snapshots LocalSend evidence before running lifecycle checks, includes the tail of KOReader's `crash.log`, and redacts Wi-Fi SSIDs, MAC addresses, and PIN values by default. Review device aliases, file names, routing paths, and private IP addresses before posting publicly.
 
+### Translations
+
+The plugin ships its own translations from `lua/locale/`, independent of KOReader's core language packs. The UI language follows KOReader's **Language** setting automatically.
+
+Want to help translate? Translations are contributed as `.po` files via pull requests — see the **[Translations guide](lua/locale/README.md)** for how to add a language, update strings, and validate your work.
+
 ### Compatibility
 
-> **Kindle users:** Works best with firmware 5.16.3+. Older versions may also work as of v1.0.7.
+> **Kindle users:** Works best with firmware 5.16.3+. As of v1.4.2, support for older devices has been expanded, including earlier firmware and the legacy 2.6 kernel (e.g. Kindle Paperwhite 1st Gen).
 
-Reported working on: Kindle Paperwhite 10-12th Gen, Kindle Basic 10-11th Gen, Kindle Oasis, Kindle Colorsoft, Kindle Scribe, Kobo Clara/Forma/Libra Colour, Kobo Aura N236.
+Reported working on: Kindle Paperwhite 1st Gen, Kindle Paperwhite 10-12th Gen, Kindle Basic 10-11th Gen, Kindle Oasis, Kindle Colorsoft, Kindle Scribe, Kobo Clara/Forma/Libra Colour, Kobo Aura N236.
 
 ### License
 

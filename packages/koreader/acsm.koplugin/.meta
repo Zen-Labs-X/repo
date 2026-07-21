@@ -3,16 +3,17 @@
 # zenpm:auto-scraped
 id=acsm
 name=Acsm
-version=0.0.9
+version=0.0.10
 description=ACSM plugin for KOReader — read library loans from Libby and OverDrive on your e-reader
 author=kaikozlov
 category=media
-platforms=koreader,android,host
+platforms=koreader
 dependencies=
 source=https://github.com/kaikozlov/acsm.koplugin
-stars=47
+stars=51
+updated_at=2026-07-20T22:17:28Z
 readme_url=packages/koreader/acsm.koplugin/README.md
-readme_hash=1ae4b5bbf9d3f8d0569a3f6e1659ff05e5e08984
+readme_hash=47e7f7a6c54b60fd475c4123a4b97f0c67cba14d
 source_type=release
-source_asset=acsm.koplugin-v0.0.9.zip
-size=77027
+source_asset=acsm-koplugin-v0.0.10.zip
+size=80047

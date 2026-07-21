@@ -1,0 +1,19 @@
+# Foldermemory plugin for KOReader
+# https://github.com/Craftwork2720/foldermemory.koplugin
+# zenpm:auto-scraped
+id=foldermemory
+name=Foldermemory
+version=1.0.0
+description=FolderMemory – KOReader plugin that remembers your folder preferences
+author=Craftwork2720
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/Craftwork2720/foldermemory.koplugin
+stars=15
+updated_at=2026-07-19T21:41:32Z
+readme_url=packages/koreader/foldermemory.koplugin/README.md
+readme_hash=c719a1bef45abebb0c568075a0cceefe0038d3fe
+source_type=release
+source_asset=foldermemory.koplugin.zip
+size=28463

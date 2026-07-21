@@ -3,15 +3,16 @@
 # zenpm:auto-scraped
 id=swipe-animation
 name=Swipe Animation
-version=3.5.2
+version=3.6
 description=A software page-turn animation patch for KOReader that provides a smooth "wipe / erase and reveal" effect.
 author=koplugin-swipe-animation
 category=utility
-platforms=koreader,android,host
+platforms=koreader
 dependencies=
 source=https://github.com/koplugin-swipe-animation/Swipe_Animation.koplugin
-stars=44
+stars=54
+updated_at=2026-07-20T17:10:25Z
 readme_url=packages/koreader/swipe-animation.koplugin/README.md
-readme_hash=93a5d3fb646d177cabf511c3711bf2318a162862
+readme_hash=68cef3682a736efdc5613d7e40a1cc59b5d534ad
 source_type=source
 source_url=https://codeload.github.com/koplugin-swipe-animation/Swipe_Animation.koplugin/zip/refs/heads/main

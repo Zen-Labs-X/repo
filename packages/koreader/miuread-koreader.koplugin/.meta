@@ -1,0 +1,19 @@
+# Miuread Koreader plugin for KOReader
+# https://github.com/miumiupy98-art/miuread-koreader
+# zenpm:auto-scraped
+id=miuread-koreader
+name=Miuread Koreader
+version=1.1.27
+description=觅阅 MiuRead：适用于 Kindle 的非官方 KOReader 微信读书（WeRead）插件，支持书架、下载、划线与想法、阅读时长和进度同步
+author=miumiupy98-art
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/miumiupy98-art/miuread-koreader
+stars=31
+updated_at=2026-07-21T13:18:28Z
+readme_url=packages/koreader/miuread-koreader.koplugin/README.md
+readme_hash=04d119bc25e096f9d43750c57b35e3367ba18b80
+source_type=release
+source_asset=miuread-v1.1.27-full.zip
+size=149244
