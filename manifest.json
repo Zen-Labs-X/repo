@@ -3,8 +3,8 @@
   "repo": {
     "id": "ZenLabs",
     "name": "ZenLabs Repo",
-    "url": "https://xzenlabs.github.io/repo/",
-    "icon_url": "https://xzenlabs.github.io/repo/favicon.svg"
+    "url": "https://repo.zen-labs.org/",
+    "icon_url": "https://repo.zen-labs.org/favicon.svg"
   },
   "packages": [
     {
@@ -14,57 +14,79 @@
       "description": "Launch the Kindle web browser",
       "author": "ZenLabs",
       "category": "utility",
-      "platforms": [
-        "kindle"
-      ],
+      "platforms": ["kindle"],
       "dependencies": [],
-      "install_url": "packages/kindle/browser/scripts/install.sh",
-      "uninstall_url": "packages/kindle/browser/scripts/uninstall.sh",
       "icon_url": "packages/kindle/browser/assets/browser.svg",
       "featured_image": "packages/kindle/browser/assets/browser-featured.png",
       "featured": true,
+      "featured_order": 30,
       "size": "0"
     },
     {
+      "id": "zen-koreader",
+      "name": "Zen + KOReader",
+      "version": "1.0.5",
+      "description": "Zen KOReader Installer + Launcher all-in-one for Kindle",
+      "author": "ZenLabs",
+      "category": "media",
+      "platforms": ["kindle"],
+      "dependencies": ["kual"],
+      "icon_url": "packages/kindle/zen-koreader/assets/zen-koreader.svg",
+      "featured_image": "packages/kindle/zen-koreader/assets/zen-koreader-featured.png",
+      "featured": true,
+      "featured_order": 40,
+      "size": "0",
+      "constraints": {
+        "abi": ["hf", "sf"]
+      }
+    },
+    {
       "id": "zen-mtp",
-      "name": "ZenMTP",
+      "name": "ZenMTP Kindle Standalone",
       "version": "1.0.0",
       "description": "Launch MTP (Media Transfer Protocol) programmatically",
       "author": "ZenLabs",
       "category": "utility",
-      "platforms": [
-        "kindle"
-      ],
+      "platforms": ["kindle"],
       "dependencies": [],
-      "install_url": "packages/kindle/zen-mtp/scripts/install.sh",
-      "uninstall_url": "packages/kindle/zen-mtp/scripts/uninstall.sh",
-      "featured": true,
+      "icon_url": "packages/kindle/zen-mtp/assets/zenmtp.svg",
+      "featured_image": "packages/kindle/zen-mtp/assets/zenmtp-featured.png",
       "size": "0"
     },
     {
       "id": "zen-reader",
       "name": "ZenReader",
       "version": "1.0.0",
-      "description": "Zen KOReader launcher for Kindle",
+      "description": "KOReader no framework launcher for Kindle",
       "author": "ZenLabs",
       "category": "media",
-      "platforms": [
-        "kindle"
-      ],
-      "dependencies": [
-        "kual"
-      ],
-      "install_url": "packages/kindle/zen-reader/scripts/install.sh",
-      "uninstall_url": "packages/kindle/zen-reader/scripts/uninstall.sh",
+      "platforms": ["kindle"],
+      "dependencies": ["kual"],
       "icon_url": "packages/kindle/zen-reader/assets/zen-reader.svg",
       "featured_image": "packages/kindle/zen-reader/assets/zen-reader-featured.png",
       "featured": true,
+      "featured_order": 50,
       "size": "0",
       "constraints": {
-        "abi": [
-          "hf",
-          "sf"
-        ]
+        "abi": ["hf", "sf"]
+      }
+    },
+    {
+      "id": "ZenPM-kobo",
+      "name": "Zen Package Manager (Kobo Launcher)",
+      "version": "0.1.0",
+      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts",
+      "author": "ZenLabs",
+      "category": "utility",
+      "platforms": ["kobo"],
+      "dependencies": ["nickelmenu"],
+      "size": "0",
+      "launcher": {
+        "kobo": {
+          "entry_name": "Zen Package Manager",
+          "location": "main",
+          "type": "nickelmenu"
+        }
       }
     },
     {
@@ -74,14 +96,8 @@
       "description": "Install KOReader and NickelMenu launch entry on Kobo",
       "author": "KOReader Community",
       "category": "media",
-      "platforms": [
-        "kobo"
-      ],
-      "dependencies": [
-        "ZenPM-kobo"
-      ],
-      "install_url": "packages/kobo/koreader/scripts/install.sh",
-      "uninstall_url": "packages/kobo/koreader/scripts/uninstall.sh",
+      "platforms": ["kobo"],
+      "dependencies": ["ZenPM-kobo"],
       "size": "0",
       "launcher": {
         "kobo": {
@@ -98,40 +114,12 @@
       "description": "Install NickelMenu bootstrap files on Kobo",
       "author": "pgaskin",
       "category": "utility",
-      "platforms": [
-        "kobo"
-      ],
+      "platforms": ["kobo"],
       "dependencies": [],
-      "install_url": "packages/kobo/nickelmenu/scripts/install.sh",
-      "uninstall_url": "packages/kobo/nickelmenu/scripts/uninstall.sh",
       "size": "0",
       "launcher": {
         "kobo": {
           "entry_name": "NickelMenu",
-          "type": "nickelmenu"
-        }
-      }
-    },
-    {
-      "id": "ZenPM-kobo",
-      "name": "Zen Package Manager (Kobo Launcher)",
-      "version": "0.1.0",
-      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts",
-      "author": "ZenLabs",
-      "category": "utility",
-      "platforms": [
-        "kobo"
-      ],
-      "dependencies": [
-        "nickelmenu"
-      ],
-      "install_url": "packages/kobo/ZenPM/scripts/install.sh",
-      "uninstall_url": "packages/kobo/ZenPM/scripts/uninstall.sh",
-      "size": "0",
-      "launcher": {
-        "kobo": {
-          "entry_name": "Zen Package Manager",
-          "location": "main",
           "type": "nickelmenu"
         }
       }
@@ -143,36 +131,48 @@
       "description": "ACSM plugin for KOReader — read library loans from Libby and OverDrive on your e-reader",
       "author": "kaikozlov",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "77027",
       "source": "https://github.com/kaikozlov/acsm.koplugin",
       "source_asset": "acsm.koplugin-v0.0.9.zip",
       "source_type": "release",
-      "stars": "34"
+      "stars": "47",
+      "readme_url": "packages/koreader/acsm.koplugin/README.md",
+      "readme_hash": "1ae4b5bbf9d3f8d0569a3f6e1659ff05e5e08984"
+    },
+    {
+      "id": "ai-dictionary-koreader",
+      "name": "Ai Dictionary Koreader",
+      "version": "2.6",
+      "description": "Supercharged dictionary plugin for KOReader",
+      "author": "SahandMalaei",
+      "category": "productivity",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "source": "https://github.com/SahandMalaei/ai-dictionary-koreader",
+      "source_type": "source",
+      "source_url": "https://codeload.github.com/SahandMalaei/ai-dictionary-koreader/zip/refs/heads/main",
+      "stars": "76",
+      "readme_url": "packages/koreader/ai-dictionary-koreader.koplugin/README.md",
+      "readme_hash": "1637624ab20e06b768b8c06788f103292763826c"
     },
     {
       "id": "airplanemode",
       "name": "Airplanemode",
-      "version": "1.2.2",
+      "version": "1.9.2",
       "description": "AirPlane mode plugin for KOReader",
       "author": "kodermike",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "24173",
+      "size": "48795",
       "source": "https://github.com/kodermike/airplanemode.koplugin",
-      "source_asset": "airplanemode.koplugin-v1.2.2.zip",
+      "source_asset": "airplanemode.koplugin-v1.9.2.zip",
       "source_type": "release",
-      "stars": "45"
+      "stars": "50",
+      "readme_url": "packages/koreader/airplanemode.koplugin/README.md",
+      "readme_hash": "3a490a736265deeefa5cb570667459f40db2b129"
     },
     {
       "id": "anki",
@@ -181,16 +181,14 @@
       "description": "KOReader plugin enabling Anki card generations for words looked up in the internal dictionary.",
       "author": "Ajatt-Tools",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/Ajatt-Tools/anki.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/Ajatt-Tools/anki.koplugin/zip/refs/heads/master",
-      "stars": "204"
+      "stars": "211",
+      "readme_url": "packages/koreader/anki.koplugin/README.md",
+      "readme_hash": "b6067eac25438e2316876b99e362d0679d93db98"
     },
     {
       "id": "ankiviewer",
@@ -199,17 +197,15 @@
       "description": "Study Anki flashcards in KOReader using locally imported .apkg decks",
       "author": "omer-faruq",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "23514",
       "source": "https://github.com/omer-faruq/ankiviewer.koplugin",
       "source_asset": "ankiviewer.koplugin.zip",
       "source_type": "release",
-      "stars": "25"
+      "stars": "26",
+      "readme_url": "packages/koreader/ankiviewer.koplugin/README.md",
+      "readme_hash": "499ebf862677e5941b4e60d1e65c672b9a91906d"
     },
     {
       "id": "annas",
@@ -218,17 +214,15 @@
       "description": "Annas KOReader plugin! Search and download documents from Anna's Archive directly to your KOReader (tested on Kindle 11th gen).",
       "author": "fischer-hub",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "3207278",
       "source": "https://github.com/fischer-hub/annas.koplugin",
       "source_asset": "annas.koplugin-v0.1.8.zip",
       "source_type": "release",
-      "stars": "61"
+      "stars": "66",
+      "readme_url": "packages/koreader/annas.koplugin/README.md",
+      "readme_hash": "5707b9e59a93e9a8d6206d2f1de53630edc5e6ac"
     },
     {
       "id": "annotationsviewer",
@@ -237,36 +231,32 @@
       "description": "",
       "author": "xblain",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "27483",
       "source": "https://github.com/xblain/annotationsviewer.koplugin",
       "source_asset": "annotationsviewer.koplugin.zip",
       "source_type": "release",
-      "stars": "42"
+      "stars": "48",
+      "readme_url": "packages/koreader/annotationsviewer.koplugin/README.md",
+      "readme_hash": "e179e6473ecc89d2bf572be34c03f2aaf991925f"
     },
     {
       "id": "annotationsync",
       "name": "Annotationsync",
-      "version": "1.9.9",
+      "version": "1.9.99",
       "description": "Seamless background sync for KOReader highlights, notes, bookmarks and precise reading progress across devices.",
       "author": "dani84bs",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "60425",
+      "size": "62260",
       "source": "https://github.com/dani84bs/AnnotationSync.koplugin",
       "source_asset": "AnnotationSync.koplugin.zip",
       "source_type": "release",
-      "stars": "117"
+      "stars": "131",
+      "readme_url": "packages/koreader/annotationsync.koplugin/README.md",
+      "readme_hash": "62b6874a34a5bcc1f0b5cd6d3ee4b077bd02c75a"
     },
     {
       "id": "ao3downloader",
@@ -275,17 +265,15 @@
       "description": "",
       "author": "IntrovertedMage",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "43724",
       "source": "https://github.com/IntrovertedMage/AO3Downloader.koplugin",
       "source_asset": "AO3Downloader-v0.4.0.zip",
       "source_type": "release",
-      "stars": "79"
+      "stars": "86",
+      "readme_url": "packages/koreader/ao3downloader.koplugin/README.md",
+      "readme_hash": "adbe6bc718ad97ba20bcb451b63629932da18cab"
     },
     {
       "id": "ao3updater",
@@ -294,16 +282,14 @@
       "description": "Updates Archive of Our Own EPUBs automatically.",
       "author": "ProfBlack",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/ProfBlack/ao3updater.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/ProfBlack/ao3updater.koplugin/zip/refs/heads/main",
-      "stars": "25"
+      "stars": "28",
+      "readme_url": "packages/koreader/ao3updater.koplugin/README.md",
+      "readme_hash": "7ee9eaaa6d994988dc0062330f424fbe0b6ee322"
     },
     {
       "id": "appearance",
@@ -312,17 +298,15 @@
       "description": "A plugin that allows you to customize KOReader's look and color scheme. It adds color options for the interface and books, plus progress bar and highlights. It also adds themes, fonts, and backgrou...",
       "author": "Euphoriyy",
       "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "101433",
       "source": "https://github.com/Euphoriyy/appearance.koplugin",
       "source_asset": "appearance.koplugin.zip",
       "source_type": "release",
-      "stars": "86"
+      "stars": "94",
+      "readme_url": "packages/koreader/appearance.koplugin/README.md",
+      "readme_hash": "ea8ba966419139dc3d56657609fd685bf65fbdbf"
     },
     {
       "id": "applauncher",
@@ -331,36 +315,32 @@
       "description": "Quick launcher to organize installed KOReader plugins into categories and open them via a gesture.",
       "author": "omer-faruq",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "19471",
       "source": "https://github.com/omer-faruq/applauncher.koplugin",
       "source_asset": "applauncher.koplugin.zip",
       "source_type": "release",
-      "stars": "23"
+      "stars": "23",
+      "readme_url": "packages/koreader/applauncher.koplugin/README.md",
+      "readme_hash": "a7670b18b89c80e38d536d563ce895f95037b1ce"
     },
     {
       "id": "appstore",
       "name": "Appstore",
-      "version": "1.9.1",
+      "version": "1.10.0",
       "description": "Discover, install, and update community-created KOReader plugins and user patches without leaving your device.",
       "author": "omer-faruq",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "87106",
+      "size": "99359",
       "source": "https://github.com/omer-faruq/appstore.koplugin",
       "source_asset": "appstore.koplugin.zip",
       "source_type": "release",
-      "stars": "276"
+      "stars": "327",
+      "readme_url": "packages/koreader/appstore.koplugin/README.md",
+      "readme_hash": "fe9ce2732f5c970b1846213835548d960226f759"
     },
     {
       "id": "assistant",
@@ -369,36 +349,32 @@
       "description": "Assistant: AI Helper Plugin for KOReader : lets you interact with AI language models (Claude, GPT-4, Gemini, DeepSeek, Ollama etc.) while reading",
       "author": "omer-faruq",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "507252",
       "source": "https://github.com/omer-faruq/assistant.koplugin",
       "source_asset": "assistant.koplugin-v1.11.zip",
       "source_type": "release",
-      "stars": "524"
+      "stars": "542",
+      "readme_url": "packages/koreader/assistant.koplugin/README.md",
+      "readme_hash": "94448ed8c33dee8a12041c02c7707213863d7c90"
     },
     {
       "id": "audiobook",
       "name": "Audiobook",
-      "version": "0.1.15.9",
+      "version": "0.1.16.11",
       "description": "A plugin to give TTS-capabilities, includes bluetooth controllers.",
       "author": "stradichenko",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "164353039",
+      "size": "164374460",
       "source": "https://github.com/stradichenko/audiobook.koplugin",
-      "source_asset": "audiobook-koplugin-v0.1.15.9.zip",
+      "source_asset": "audiobook-koplugin-v0.1.16.11.zip",
       "source_type": "release",
-      "stars": "79"
+      "stars": "89",
+      "readme_url": "packages/koreader/audiobook.koplugin/README.md",
+      "readme_hash": "21248cc8af9d769806f245371a242c1ccd0a42ae"
     },
     {
       "id": "audiobookshelf",
@@ -407,17 +383,15 @@
       "description": "",
       "author": "naleo",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "12885",
       "source": "https://github.com/naleo/audiobookshelf.koplugin",
       "source_asset": "audiobookshelf.koplugin.zip",
       "source_type": "release",
-      "stars": "81"
+      "stars": "85",
+      "readme_url": "packages/koreader/audiobookshelf.koplugin/README.md",
+      "readme_hash": "a851fc1134fd2fb001f74318bfa07c1f67e1dde6"
     },
     {
       "id": "bluetooth",
@@ -426,16 +400,14 @@
       "description": "A plugin to easily turn bluetooth on and off in KOReader for Kobo Devices.",
       "author": "onatbas",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/onatbas/bluetooth.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/onatbas/bluetooth.koplugin/zip/refs/heads/main",
-      "stars": "71"
+      "stars": "74",
+      "readme_url": "packages/koreader/bluetooth.koplugin/README.md",
+      "readme_hash": "d40f541f2a29ad477eb7c0867f44c216f46e3f53"
     },
     {
       "id": "boardgames",
@@ -444,12 +416,8 @@
       "description": "Six e-ink-friendly board and puzzle games for KOReader: Checkers, Chess, Connect 4, Tic Tac Toe, Minesweeper, and Battleship.",
       "author": "KitanaCode",
       "category": "games",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "1096126",
       "source": "https://github.com/KitanaCode/boardgames.koplugin",
       "source_asset": "Board.Games.V1.0.1.zip",
@@ -459,21 +427,19 @@
     {
       "id": "bookends",
       "name": "Bookends",
-      "version": "5.17.0",
+      "version": "5.22.0",
       "description": "KOReader plugin for configurable text overlays — tokens, icons, per-line styling, presets",
       "author": "AndyHazz",
       "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "372485",
+      "size": "425421",
       "source": "https://github.com/AndyHazz/bookends.koplugin",
-      "source_asset": "bookends.koplugin-v5.17.0.zip",
+      "source_asset": "bookends.koplugin-v5.22.0.zip",
       "source_type": "release",
-      "stars": "199"
+      "stars": "301",
+      "readme_url": "packages/koreader/bookends.koplugin/README.md",
+      "readme_hash": "1b3f7a2db5a887a4de1ddd6c181b83e7712be3ff"
     },
     {
       "id": "booknookcharms",
@@ -482,36 +448,32 @@
       "description": "Cozy bookmark ribbon and dog-ear charms for KOReader.",
       "author": "KitanaCode",
       "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "865860",
       "source": "https://github.com/KitanaCode/booknookcharms.koplugin",
       "source_asset": "Book.Nook.Charms.V1.1.1.zip",
       "source_type": "release",
-      "stars": "17"
+      "stars": "19",
+      "readme_url": "packages/koreader/booknookcharms.koplugin/README.md",
+      "readme_hash": "f2d75f7dbef66f36a17f9f38cc7733845c73c91c"
     },
     {
       "id": "bookshelf",
       "name": "Bookshelf",
-      "version": "3.5.0",
+      "version": "3.10.6",
       "description": "A nice looking home screen for KOReader. Lets you pick a book from your shelf and read it, with some customisation around the book preview info that's shown.",
       "author": "AndyHazz",
       "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "1961236",
+      "size": "2411952",
       "source": "https://github.com/AndyHazz/bookshelf.koplugin",
       "source_asset": "bookshelf.koplugin.zip",
       "source_type": "release",
-      "stars": "228"
+      "stars": "390",
+      "readme_url": "packages/koreader/bookshelf.koplugin/README.md",
+      "readme_hash": "c281aa90d5069fd4d48fa902cf347a271f87c978"
     },
     {
       "id": "bubblezoom",
@@ -520,17 +482,15 @@
       "description": "KOReader plugin that enables magnifying speech bubbles in comics/manga.",
       "author": "anezih",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "17926",
       "source": "https://github.com/anezih/bubblezoom.koplugin",
       "source_asset": "bubblezoom.koplugin_1.2.0.zip",
       "source_type": "release",
-      "stars": "17"
+      "stars": "23",
+      "readme_url": "packages/koreader/bubblezoom.koplugin/README.md",
+      "readme_hash": "5dab0861333d68c36cdae73f5ded13e4938317d3"
     },
     {
       "id": "casualkochess",
@@ -539,17 +499,15 @@
       "description": "Casual Chess & Board Games KOReader Plugin",
       "author": "MJCopper",
       "category": "games",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "872974",
       "source": "https://github.com/MJCopper/casualkochess.koplugin",
       "source_asset": "casualkochess.koplugin.v2.0.2.zip",
       "source_type": "release",
-      "stars": "20"
+      "stars": "26",
+      "readme_url": "packages/koreader/casualkochess.koplugin/README.md",
+      "readme_hash": "c7090fcfd55d31a47964c1423768e4b919eba8e6"
     },
     {
       "id": "charactertracker",
@@ -558,16 +516,14 @@
       "description": "KOReader character tracker for tracking reading progress and stats.",
       "author": "Shac0x",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/Shac0x/charactertracker.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/Shac0x/charactertracker.koplugin/zip/refs/heads/main",
-      "stars": "31"
+      "stars": "35",
+      "readme_url": "packages/koreader/charactertracker.koplugin/README.md",
+      "readme_hash": "a006fcd4f68972d229cdef24adf21336491aa624"
     },
     {
       "id": "comicmeta",
@@ -576,17 +532,15 @@
       "description": "Plugin for KOReader to extract metadata from .cbz files as Custom Metadata",
       "author": "KORComic",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "44197",
       "source": "https://github.com/KORComic/comicmeta.koplugin",
       "source_asset": "v2.0.zip",
       "source_type": "release",
-      "stars": "57"
+      "stars": "61",
+      "readme_url": "packages/koreader/comicmeta.koplugin/README.md",
+      "readme_hash": "438df8ce50603f034a2cd076d4a2325b39e5a8e1"
     },
     {
       "id": "comicreader",
@@ -595,17 +549,15 @@
       "description": "A plugin to enhance your comic (or any paged document) reading experience on KOReader.",
       "author": "KORComic",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "84446",
       "source": "https://github.com/KORComic/comicreader.koplugin",
       "source_asset": "comicreader.koplugin.zip",
       "source_type": "release",
-      "stars": "80"
+      "stars": "86",
+      "readme_url": "packages/koreader/comicreader.koplugin/README.md",
+      "readme_hash": "6d41ee9b220cfb85d334be59fc88231bbac48cb1"
     },
     {
       "id": "connections",
@@ -614,16 +566,14 @@
       "description": "NYT Connections for KOReader",
       "author": "odrling",
       "category": "games",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/odrling/connections.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/odrling/connections.koplugin/zip/refs/heads/main",
-      "stars": "16"
+      "stars": "17",
+      "readme_url": "packages/koreader/connections.koplugin/README.md",
+      "readme_hash": "5626b4760a1fbbdba9b3574cc961df9a78b772ec"
     },
     {
       "id": "crashlog",
@@ -632,16 +582,14 @@
       "description": "Crash log viewer for koreader",
       "author": "Billiam",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/Billiam/crashlog.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/Billiam/crashlog.koplugin/zip/refs/heads/main",
-      "stars": "21"
+      "stars": "21",
+      "readme_url": "packages/koreader/crashlog.koplugin/README.md",
+      "readme_hash": "c5521b130f4c4b5ded416a8d782be52dbae03e51"
     },
     {
       "id": "customisablesleepscreen",
@@ -650,17 +598,32 @@
       "description": "KOReader plugin that displays reading stats and book info on your sleep screen, with extensive customisation options and save/load preset configurations.",
       "author": "pxlflux",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "16195981",
       "source": "https://github.com/pxlflux/customisablesleepscreen.koplugin",
       "source_asset": "customisablesleepscreen_v2.2.0.zip",
       "source_type": "release",
-      "stars": "174"
+      "stars": "192",
+      "readme_url": "packages/koreader/customisablesleepscreen.koplugin/README.md",
+      "readme_hash": "466d84b72f0273a9066aaf9dc93021031425e33f"
+    },
+    {
+      "id": "derainbowify",
+      "name": "Derainbowify",
+      "version": "0.0.10",
+      "description": "A plugin for KOReader that removes the rainbow artifacts on Kaleido 3 color e-ink displays. (Kobo Libra Color / Kobo Clara Color / Kindle Colorsoft / PocketBook Inkpad Color 3 / PocketBook Era Colo...",
+      "author": "Euphoriyy",
+      "category": "utility",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "size": "223851",
+      "source": "https://github.com/Euphoriyy/derainbowify.koplugin",
+      "source_asset": "derainbowify.koplugin.zip",
+      "source_type": "release",
+      "stars": "18",
+      "readme_url": "packages/koreader/derainbowify.koplugin/README.md",
+      "readme_hash": "7c34aa4c33682eb78be5573e55456223aecf0e5c"
     },
     {
       "id": "dictionarymode",
@@ -669,16 +632,14 @@
       "description": "Enables dictionary mode (one tap dictionary lookups) in KOReader",
       "author": "ckilb",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/ckilb/dictionarymode.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/ckilb/dictionarymode.koplugin/zip/refs/heads/main",
-      "stars": "31"
+      "stars": "31",
+      "readme_url": "packages/koreader/dictionarymode.koplugin/README.md",
+      "readme_hash": "b74b4392a63e9a71e4249f3abe14dd1ed11958b2"
     },
     {
       "id": "digitalclock",
@@ -687,16 +648,14 @@
       "description": "A digital clock for koreader, display time, date and an image",
       "author": "DucNg",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/DucNg/digitalclock.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/DucNg/digitalclock.koplugin/zip/refs/heads/main",
-      "stars": "26"
+      "stars": "26",
+      "readme_url": "packages/koreader/digitalclock.koplugin/README.md",
+      "readme_hash": "60d295e97cc6d9063dd64b11d4bf422d380d860c"
     },
     {
       "id": "dtdisplay",
@@ -705,16 +664,14 @@
       "description": "A Koreader plugin to display the time and day in a fullscreen widget. Contributions welcome!",
       "author": "kktse",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/kktse/dtdisplay.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/kktse/dtdisplay.koplugin/zip/refs/heads/main",
-      "stars": "25"
+      "stars": "25",
+      "readme_url": "packages/koreader/dtdisplay.koplugin/README.md",
+      "readme_hash": "50b9eb232e5918fdabffae12e9d13b68ff3bf454"
     },
     {
       "id": "emailtokoreader",
@@ -723,17 +680,15 @@
       "description": "Automatically download EPUB files from your email directly to your KOReader device.",
       "author": "marinov752",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "11903",
       "source": "https://github.com/marinov752/emailtokoreader.koplugin",
       "source_asset": "Email.to.KOReader.v1.1.1.zip",
       "source_type": "release",
-      "stars": "33"
+      "stars": "38",
+      "readme_url": "packages/koreader/emailtokoreader.koplugin/README.md",
+      "readme_hash": "9210f2d869605c131f9ab2c547f7aef2784e7cf1"
     },
     {
       "id": "filebrowser",
@@ -742,16 +697,14 @@
       "description": "Run Filebrowser from within KOReader",
       "author": "b-",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/b-/filebrowser.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/b-/filebrowser.koplugin/zip/refs/heads/main",
-      "stars": "153"
+      "stars": "158",
+      "readme_url": "packages/koreader/filebrowser.koplugin/README.md",
+      "readme_hash": "f8c519aebcae96dbcc7629bf89bb3b8d2c92f9ef"
     },
     {
       "id": "filebrowserplus",
@@ -760,17 +713,15 @@
       "description": "This KOReader plugins enables the user to run Filebrowser from koreader. Inspired by filebrowser.koplugin, expanded to add more conviniences.",
       "author": "patelneeraj",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "9383773",
       "source": "https://github.com/patelneeraj/filebrowserplus.koplugin",
       "source_asset": "filebrowserplus.koplugin-v1.1.0-linux-armv7.zip",
       "source_type": "release",
-      "stars": "197"
+      "stars": "225",
+      "readme_url": "packages/koreader/filebrowserplus.koplugin/README.md",
+      "readme_hash": "dc13fcc83d7606c9e63d1e88c73abff95f3792d0"
     },
     {
       "id": "filesync",
@@ -779,36 +730,97 @@
       "description": "Wireless file manager plugin for KOReader",
       "author": "abrahamnm",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "101116",
       "source": "https://github.com/abrahamnm/filesync.koplugin",
       "source_asset": "filesync.koplugin.zip",
       "source_type": "release",
-      "stars": "24"
+      "stars": "24",
+      "readme_url": "packages/koreader/filesync.koplugin/README.md",
+      "readme_hash": "82a9eb027cd853c81126729a1f1f78ad3a54a368"
+    },
+    {
+      "id": "floating-dictionary",
+      "name": "Floating Dictionary",
+      "version": "source",
+      "description": "A lightweight, highly customizable floating dictionary for KOReader.  Instead of opening KOReader's full dictionary popup every time, Floating Dictionary displays a compact preview beside your sele...",
+      "author": "DisastrousPatience83",
+      "category": "productivity",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "source": "https://github.com/DisastrousPatience83/Floating-Dictionary.koplugin",
+      "source_type": "source",
+      "source_url": "https://codeload.github.com/DisastrousPatience83/Floating-Dictionary.koplugin/zip/refs/heads/main",
+      "stars": "19",
+      "readme_url": "packages/koreader/floating-dictionary.koplugin/README.md",
+      "readme_hash": "3f8ef2a4d3573591d107f69a798bd25a852518d2"
+    },
+    {
+      "id": "foot-cream",
+      "name": "Foot Cream",
+      "version": "1.6.0",
+      "description": "Don't let foreign units distract you when reading. Footcream is a KOReader plugin that converts measurements to something you understand.",
+      "author": "Fank1",
+      "category": "utility",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "size": "170641",
+      "source": "https://github.com/Fank1/foot-cream",
+      "source_asset": "foot-cream-v1.6.0.koplugin.zip",
+      "source_type": "release",
+      "stars": "58",
+      "readme_url": "packages/koreader/foot-cream.koplugin/README.md",
+      "readme_hash": "8e8fba7f3087faf7224c67bff3152311735d203c"
+    },
+    {
+      "id": "gota-koplugin-for-raindrop",
+      "name": "Gota.Koplugin For Raindrop",
+      "version": "source",
+      "description": "A KOReader plugin to access and read your Raindrop.io bookmarks directly on your e-reader.",
+      "author": "cristenger",
+      "category": "media",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "source": "https://github.com/cristenger/gota.koplugin-for-raindrop",
+      "source_type": "source",
+      "source_url": "https://codeload.github.com/cristenger/gota.koplugin-for-raindrop/zip/refs/heads/main",
+      "stars": "17",
+      "readme_url": "packages/koreader/gota-koplugin-for-raindrop.koplugin/README.md",
+      "readme_hash": "05bf0d0182fa64fd2c5060271faf72dcd409e409"
+    },
+    {
+      "id": "gotobed",
+      "name": "Gotobed",
+      "version": "source",
+      "description": "NO! GOTO BED!",
+      "author": "edoput",
+      "category": "utility",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "source": "https://github.com/edoput/gotobed.koplugin",
+      "source_type": "source",
+      "source_url": "https://codeload.github.com/edoput/gotobed.koplugin/zip/refs/heads/master",
+      "stars": "15",
+      "readme_url": "packages/koreader/gotobed.koplugin/README.md",
+      "readme_hash": "2e292343f367ef6f4999b774093d67af8dfb6de7"
     },
     {
       "id": "grimmory",
       "name": "Grimmory",
-      "version": "0.0.25",
+      "version": "0.0.30",
       "description": "",
       "author": "grimmory-tools",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "60079",
+      "size": "65713",
       "source": "https://github.com/grimmory-tools/grimmory.koplugin",
       "source_asset": "grimmory.koplugin.zip",
       "source_type": "release",
-      "stars": "27"
+      "stars": "44",
+      "readme_url": "packages/koreader/grimmory.koplugin/README.md",
+      "readme_hash": "fc1b0c9f0892c3968a43f87a3d0602eaa80db3e8"
     },
     {
       "id": "hardcoverapp",
@@ -817,17 +829,15 @@
       "description": "Hardcover.app status updating from KOReader",
       "author": "Billiam",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "61899",
       "source": "https://github.com/Billiam/hardcoverapp.koplugin",
       "source_asset": "hardcoverapp.koplugin.zip",
       "source_type": "release",
-      "stars": "347"
+      "stars": "381",
+      "readme_url": "packages/koreader/hardcoverapp.koplugin/README.md",
+      "readme_hash": "980a5e50ba91f560b18c4ad0f802747dd6c7feee"
     },
     {
       "id": "highlightsync",
@@ -836,16 +846,14 @@
       "description": "A KOReader plugin to sync highlights, notes, and bookmarks across multiple devices using cloud storage like WebDAV or Dropbox.",
       "author": "gitalexcampos",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/gitalexcampos/highlightsync.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/gitalexcampos/highlightsync.koplugin/zip/refs/heads/master",
-      "stars": "205"
+      "stars": "213",
+      "readme_url": "packages/koreader/highlightsync.koplugin/README.md",
+      "readme_hash": "7154407acef77864a4a6ae2d9cf90547c4e101d1"
     },
     {
       "id": "homeassistant",
@@ -854,17 +862,15 @@
       "description": "This KOReader plugin lets you control Home Assistant entities without leaving your current book!",
       "author": "moritz-john",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "5597",
       "source": "https://github.com/moritz-john/homeassistant.koplugin",
       "source_asset": "homeassistant.koplugin.zip",
       "source_type": "release",
-      "stars": "50"
+      "stars": "52",
+      "readme_url": "packages/koreader/homeassistant.koplugin/README.md",
+      "readme_hash": "5d82827fa3608ef17445a932548533c609e0ab3a"
     },
     {
       "id": "homepage",
@@ -873,16 +879,14 @@
       "description": "Home Page plugin for KOreader",
       "author": "reuerendo",
       "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/reuerendo/homepage.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/reuerendo/homepage.koplugin/zip/refs/heads/main",
-      "stars": "23"
+      "stars": "24",
+      "readme_url": "packages/koreader/homepage.koplugin/README.md",
+      "readme_hash": "38bd11b7a47f13aedd1d8fed125036d590b6a561"
     },
     {
       "id": "iconschanger",
@@ -891,16 +895,14 @@
       "description": "",
       "author": "ebanDev",
       "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/ebanDev/iconschanger.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/ebanDev/iconschanger.koplugin/zip/refs/heads/main",
-      "stars": "62"
+      "stars": "71",
+      "readme_url": "packages/koreader/iconschanger.koplugin/README.md",
+      "readme_hash": "55a3dbe3d77b54006d82de4c6bc42166bd13ecdf"
     },
     {
       "id": "illustrations",
@@ -909,17 +911,15 @@
       "description": "A plugin for [KOReader](https://github.com/koreader/koreader) that allows you to browse, preview, and navigate through all illustrations contained in an EPUB book.",
       "author": "agaragou",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "11409",
       "source": "https://github.com/agaragou/illustrations.koplugin",
       "source_asset": "illustrations.koplugin.zip",
       "source_type": "release",
-      "stars": "28"
+      "stars": "32",
+      "readme_url": "packages/koreader/illustrations.koplugin/README.md",
+      "readme_hash": "6d287b67a5212bc4a377d69549f0dab54cb50a40"
     },
     {
       "id": "instapaper",
@@ -928,17 +928,15 @@
       "description": "Download and read articles from your Instapaper account directly in KOReader",
       "author": "omer-faruq",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "34083",
       "source": "https://github.com/omer-faruq/instapaper.koplugin",
       "source_asset": "instapaper.koplugin.zip",
       "source_type": "release",
-      "stars": "28"
+      "stars": "35",
+      "readme_url": "packages/koreader/instapaper.koplugin/README.md",
+      "readme_hash": "ac2ec07ba3e11e24fd8ae5b8756d94f5f130b040"
     },
     {
       "id": "kamare",
@@ -947,17 +945,15 @@
       "description": "A manga reader plugin for KOReader that connects to Kavita self-hosted digital library.",
       "author": "fpammer",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "60169",
       "source": "https://github.com/fpammer/kamare.koplugin",
       "source_asset": "kamare.koplugin.zip",
       "source_type": "release",
-      "stars": "40"
+      "stars": "43",
+      "readme_url": "packages/koreader/kamare.koplugin/README.md",
+      "readme_hash": "50003662ff04f1f91fc0bdc3d482d650bc226a6d"
     },
     {
       "id": "karakeep",
@@ -966,55 +962,66 @@
       "description": "",
       "author": "AlgusDark",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "22396",
       "source": "https://github.com/AlgusDark/karakeep.koplugin",
       "source_asset": "karakeep.koplugin.zip",
       "source_type": "release",
-      "stars": "24"
+      "stars": "26",
+      "readme_url": "packages/koreader/karakeep.koplugin/README.md",
+      "readme_hash": "ac13f8018bcd044ebdb1e071ee0c24b8d078a5e7"
     },
     {
       "id": "kindlebtcontroller",
       "name": "Kindlebtcontroller",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "description": "A KOReader plugin that enables Bluetooth game controllers / remote controllers to control your Kindle — page turning, brightness adjustment, chapter navigation, and more.",
-      "author": "QiuYukang",
+      "author": "finlater",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "31958",
-      "source": "https://github.com/QiuYukang/kindlebtcontroller.koplugin",
+      "size": "31970",
+      "source": "https://github.com/finlater/kindlebtcontroller.koplugin",
       "source_asset": "kindlebtcontroller.koplugin.zip",
       "source_type": "release",
-      "stars": "44"
+      "stars": "54",
+      "readme_url": "packages/koreader/kindlebtcontroller.koplugin/README.md",
+      "readme_hash": "a22f065c9dd2f8f1a8cabec6eccaaada5f321d46"
+    },
+    {
+      "id": "kindlefetch",
+      "name": "Kindlefetch",
+      "version": "0.2",
+      "description": "Download books from Anna's Archive directly to your Kindle, entirely within the KOReader app.",
+      "author": "william-spongberg",
+      "category": "media",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "size": "24355",
+      "source": "https://github.com/william-spongberg/KindleFetch.koplugin",
+      "source_asset": "kindlefetch.koplugin.zip",
+      "source_type": "release",
+      "stars": "19",
+      "readme_url": "packages/koreader/kindlefetch.koplugin/README.md",
+      "readme_hash": "0c7772d696ce22627d24d4f47544e4b4d4f719d3"
     },
     {
       "id": "koassistant",
       "name": "Koassistant",
-      "version": "0.19.1",
+      "version": "0.20.0",
       "description": "A powerful AI assistant integrated into KOReader.",
       "author": "zeeyado",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "2224843",
+      "size": "2860751",
       "source": "https://github.com/zeeyado/koassistant.koplugin",
       "source_asset": "koassistant.koplugin.zip",
       "source_type": "release",
-      "stars": "135"
+      "stars": "152",
+      "readme_url": "packages/koreader/koassistant.koplugin/README.md",
+      "readme_hash": "d735e9406bec98b8d4e17d1705aeb9eed3144133"
     },
     {
       "id": "kobo",
@@ -1023,15 +1030,13 @@
       "description": "A KoReader plugin that enhances your kobo experience",
       "author": "OGKevin",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/OGKevin/kobo.koplugin",
       "source_type": "release",
-      "stars": "134",
+      "stars": "145",
+      "readme_url": "packages/koreader/kobo.koplugin/README.md",
+      "readme_hash": "262fca4e0ff42c7056223a3387547d60881247db",
       "assets": [
         {
           "arch": "kobo",
@@ -1048,23 +1053,38 @@
       ]
     },
     {
+      "id": "koboard",
+      "name": "Koboard",
+      "version": "0.6.0",
+      "description": "koboard.koplugin - Use your android keyboard of choice with KoReader!",
+      "author": "titandrive",
+      "category": "utility",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "size": "14469",
+      "source": "https://github.com/titandrive/koboard",
+      "source_asset": "koboard.koplugin.zip",
+      "source_type": "release",
+      "stars": "22",
+      "readme_url": "packages/koreader/koboard.koplugin/README.md",
+      "readme_hash": "b39781aa28a677dfcc3c90f57919ecd38544b0a3"
+    },
+    {
       "id": "kodashboard",
       "name": "Kodashboard",
       "version": "1.2.5",
       "description": "A KOReader plugin that serves a local web dashboard for browsing your library, reading stats, calendar activity, and highlights/notes on any device in your local network.",
       "author": "Yuchen971",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "57934",
       "source": "https://github.com/Yuchen971/Kodashboard",
       "source_asset": "kodashboard-v1.2.5-minimal.zip",
       "source_type": "release",
-      "stars": "89"
+      "stars": "89",
+      "readme_url": "packages/koreader/kodashboard.koplugin/README.md",
+      "readme_hash": "102bf8f863083f10545b235ff519b38a3ddf01b7"
     },
     {
       "id": "koinsight",
@@ -1073,16 +1093,14 @@
       "description": "📚 KoInsight brings your KoReader reading stats to life with a clean, web-based dashboard.",
       "author": "GeorgeSG",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/GeorgeSG/KoInsight",
       "source_type": "source",
       "source_url": "https://codeload.github.com/GeorgeSG/KoInsight/zip/refs/heads/master",
-      "stars": "552"
+      "stars": "571",
+      "readme_url": "packages/koreader/koinsight.koplugin/README.md",
+      "readme_hash": "9a2bb9154ea26b6233f3094f47153fc7998f78e6"
     },
     {
       "id": "kopet",
@@ -1091,17 +1109,836 @@
       "description": "",
       "author": "PedroMachado1",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "29861",
       "source": "https://github.com/PedroMachado1/kopet.koplugin",
       "source_asset": "kopet.koplugin.zip",
       "source_type": "release",
-      "stars": "26"
+      "stars": "27",
+      "readme_url": "packages/koreader/kopet.koplugin/README.md",
+      "readme_hash": "f34f90986263a8f673e1975fbc691a29764357eb"
+    },
+    {
+      "id": "koreader-10",
+      "name": "Koreader",
+      "version": "source",
+      "description": "User patches for KOReader,  Project: Title & WeatherLockscreen",
+      "author": "loeffner",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/loeffner/KOReader.patches",
+      "source_type": "source",
+      "stars": "35",
+      "readme_url": "packages/koreader/koreader-10.kopatch/README.md",
+      "readme_hash": "2b9a27fc75fc8652e732f47d844a4c683d071f24",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-pt-font-override.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/collection/2-pt-font-override.lua",
+          "size": "611"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-footer-widgets.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/collection/2-pt-footer-widgets.lua",
+          "size": "861"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-replace-favorites-with-search.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/collection/2-pt-replace-favorites-with-search.lua",
+          "size": "2825"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-disable-folder-image-search.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/project-title/2-pt-disable-folder-image-search.lua",
+          "size": "1449"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-disable-folder-nbitems-overlay.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/project-title/2-pt-disable-folder-nbitems-overlay.lua",
+          "size": "2797"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-disable-progress-string.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/project-title/2-pt-disable-progress-string.lua",
+          "size": "2341"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-limit-tags.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/project-title/2-pt-limit-tags.lua",
+          "size": "914"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-modify-font-sizes.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/project-title/2-pt-modify-font-sizes.lua",
+          "size": "3298"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-modify-item-limits.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/project-title/2-pt-modify-item-limits.lua",
+          "size": "1836"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-modify-progressbar-max-width.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/project-title/2-pt-modify-progressbar-max-width.lua",
+          "size": "2059"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-modify-series-format.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/project-title/2-pt-modify-series-format.lua",
+          "size": "2059"
+        },
+        {
+          "arch": "any",
+          "asset": "2-weather-today-tomorrow-view-hours.lua",
+          "url": "https://raw.githubusercontent.com/loeffner/KOReader.patches/main/weather-lockscreen/2-weather-today-tomorrow-view-hours.lua",
+          "size": "972"
+        }
+      ]
+    },
+    {
+      "id": "koreader-11",
+      "name": "Koreader",
+      "version": "source",
+      "description": "A collection of KOReader user patches that all work well together",
+      "author": "sebdelsol",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/sebdelsol/KOReader.patches",
+      "source_type": "source",
+      "stars": "345",
+      "readme_url": "packages/koreader/koreader-11.kopatch/README.md",
+      "readme_hash": "e7886ad77b3b77e6fc17cd35ed50b900c3a81566",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2--ui-font.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2--ui-font.lua",
+          "size": "4185"
+        },
+        {
+          "arch": "any",
+          "asset": "2-browser-folder-cover.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-browser-folder-cover.lua",
+          "size": "13972"
+        },
+        {
+          "arch": "any",
+          "asset": "2-browser-hide-underline.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-browser-hide-underline.lua",
+          "size": "3325"
+        },
+        {
+          "arch": "any",
+          "asset": "2-browser-up-folder.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-browser-up-folder.lua",
+          "size": "3452"
+        },
+        {
+          "arch": "any",
+          "asset": "2-change-status-bar-color.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-change-status-bar-color.lua",
+          "size": "6216"
+        },
+        {
+          "arch": "any",
+          "asset": "2-disable-top-menu-zones.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-disable-top-menu-zones.lua",
+          "size": "468"
+        },
+        {
+          "arch": "any",
+          "asset": "2-filemanager-titlebar.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-filemanager-titlebar.lua",
+          "size": "23011"
+        },
+        {
+          "arch": "any",
+          "asset": "2-menu-size.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-menu-size.lua",
+          "size": "475"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reference-page-count.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-reference-page-count.lua",
+          "size": "1620"
+        },
+        {
+          "arch": "any",
+          "asset": "2-screensaver-chapter.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-screensaver-chapter.lua",
+          "size": "2499"
+        },
+        {
+          "arch": "any",
+          "asset": "2-screensaver-cover.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-screensaver-cover.lua",
+          "size": "21853"
+        },
+        {
+          "arch": "any",
+          "asset": "2-statusbar-better-compact.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-statusbar-better-compact.lua",
+          "size": "2430"
+        },
+        {
+          "arch": "any",
+          "asset": "2-statusbar-cycle-presets.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-statusbar-cycle-presets.lua",
+          "size": "3737"
+        },
+        {
+          "arch": "any",
+          "asset": "2-statusbar-thin-chapter.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-statusbar-thin-chapter.lua",
+          "size": "9343"
+        },
+        {
+          "arch": "any",
+          "asset": "2-update-patches.lua",
+          "url": "https://raw.githubusercontent.com/sebdelsol/KOReader.patches/main/2-update-patches.lua",
+          "size": "12527"
+        }
+      ]
+    },
+    {
+      "id": "koreader-12",
+      "name": "Koreader",
+      "version": "source",
+      "description": "user patches for KOReader",
+      "author": "sparklerfish",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/sparklerfish/KOReader.patches",
+      "source_type": "source",
+      "stars": "31",
+      "readme_url": "packages/koreader/koreader-12.kopatch/README.md",
+      "readme_hash": "803ed1bb24dc8b9393ed355fc67d1a770899ff9f",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-browser-double-tap.lua",
+          "url": "https://raw.githubusercontent.com/sparklerfish/KOReader.patches/main/2-browser-double-tap.lua",
+          "size": "6466"
+        },
+        {
+          "arch": "any",
+          "asset": "2-browser-frontlight-update.lua",
+          "url": "https://raw.githubusercontent.com/sparklerfish/KOReader.patches/main/2-browser-frontlight-update.lua",
+          "size": "1961"
+        },
+        {
+          "arch": "any",
+          "asset": "2-z-redacted-screensaver.lua",
+          "url": "https://raw.githubusercontent.com/sparklerfish/KOReader.patches/main/2-z-redacted-screensaver.lua",
+          "size": "20552"
+        }
+      ]
+    },
+    {
+      "id": "koreader-13",
+      "name": "Koreader",
+      "version": "source",
+      "description": "",
+      "author": "xusoo",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/xusoo/KOReader.patches",
+      "source_type": "source",
+      "stars": "34",
+      "readme_url": "packages/koreader/koreader-13.kopatch/README.md",
+      "readme_hash": "ed3318a47157934c49f9c349364a9065c7d1abdf",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-automatic-book-series.lua",
+          "url": "https://raw.githubusercontent.com/xusoo/KOReader.patches/main/2-automatic-book-series.lua",
+          "size": "31401"
+        }
+      ]
+    },
+    {
+      "id": "koreader-2",
+      "name": "Koreader",
+      "version": "source",
+      "description": "My KOReader patches that are either created or edited by me.",
+      "author": "Euphoriyy",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/Euphoriyy/KOReader.patches",
+      "source_type": "source",
+      "stars": "42",
+      "readme_url": "packages/koreader/koreader-2.kopatch/README.md",
+      "readme_hash": "efd4123b32b32050315bb51b725188837d19bc7a",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-correct-screen-borders.lua",
+          "url": "https://raw.githubusercontent.com/Euphoriyy/KOReader.patches/master/2-correct-screen-borders.lua",
+          "size": "8195"
+        },
+        {
+          "arch": "any",
+          "asset": "2-custom-pan-rate.lua",
+          "url": "https://raw.githubusercontent.com/Euphoriyy/KOReader.patches/master/2-custom-pan-rate.lua",
+          "size": "3473"
+        },
+        {
+          "arch": "any",
+          "asset": "2-custom-widgets.lua",
+          "url": "https://raw.githubusercontent.com/Euphoriyy/KOReader.patches/master/2-custom-widgets.lua",
+          "size": "3625"
+        },
+        {
+          "arch": "any",
+          "asset": "2-dim-during-refresh.lua",
+          "url": "https://raw.githubusercontent.com/Euphoriyy/KOReader.patches/master/2-dim-during-refresh.lua",
+          "size": "13669"
+        },
+        {
+          "arch": "any",
+          "asset": "2-filemanager-next-prev-page-actions.lua",
+          "url": "https://raw.githubusercontent.com/Euphoriyy/KOReader.patches/master/2-filemanager-next-prev-page-actions.lua",
+          "size": "1434"
+        },
+        {
+          "arch": "any",
+          "asset": "2-invert-document.lua",
+          "url": "https://raw.githubusercontent.com/Euphoriyy/KOReader.patches/master/2-invert-document.lua",
+          "size": "3531"
+        },
+        {
+          "arch": "any",
+          "asset": "2-percent-badge.lua",
+          "url": "https://raw.githubusercontent.com/Euphoriyy/KOReader.patches/master/2-percent-badge.lua",
+          "size": "5775"
+        },
+        {
+          "arch": "any",
+          "asset": "2-rounded-covers-for-simpleui.lua",
+          "url": "https://raw.githubusercontent.com/Euphoriyy/KOReader.patches/master/2-rounded-covers-for-simpleui.lua",
+          "size": "4947"
+        },
+        {
+          "arch": "any",
+          "asset": "2-rounded-covers.lua",
+          "url": "https://raw.githubusercontent.com/Euphoriyy/KOReader.patches/master/2-rounded-covers.lua",
+          "size": "5221"
+        },
+        {
+          "arch": "any",
+          "asset": "2-rounded-folder-covers.lua",
+          "url": "https://raw.githubusercontent.com/Euphoriyy/KOReader.patches/master/2-rounded-folder-covers.lua",
+          "size": "20161"
+        },
+        {
+          "arch": "any",
+          "asset": "2-sw-page-turn-animation.lua",
+          "url": "https://raw.githubusercontent.com/Euphoriyy/KOReader.patches/master/2-sw-page-turn-animation.lua",
+          "size": "10252"
+        }
+      ]
+    },
+    {
+      "id": "koreader-3",
+      "name": "Koreader",
+      "version": "source",
+      "description": "A few KOReader userpatches I have created",
+      "author": "ImSoRight",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/ImSoRight/KOReader.patches",
+      "source_type": "source",
+      "stars": "41",
+      "readme_url": "packages/koreader/koreader-3.kopatch/README.md",
+      "readme_hash": "333d39dbfe30ddc865d527b16ce636fb109b4afa",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-complete-status-icon.lua",
+          "url": "https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-complete-status-icon.lua",
+          "size": "2114"
+        },
+        {
+          "arch": "any",
+          "asset": "2-customize-highlight-colors.lua",
+          "url": "https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-customize-highlight-colors.lua",
+          "size": "1572"
+        },
+        {
+          "arch": "any",
+          "asset": "2-large-subtitles.lua",
+          "url": "https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-large-subtitles.lua",
+          "size": "188"
+        },
+        {
+          "arch": "any",
+          "asset": "2-modify-exit-sleep-screen-message.lua",
+          "url": "https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-modify-exit-sleep-screen-message.lua",
+          "size": "1136"
+        },
+        {
+          "arch": "any",
+          "asset": "2-shortcut-subtitles.lua",
+          "url": "https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-shortcut-subtitles.lua",
+          "size": "640"
+        },
+        {
+          "arch": "any",
+          "asset": "2-star-rating-overlay.lua",
+          "url": "https://raw.githubusercontent.com/ImSoRight/KOReader.patches/main/2-star-rating-overlay.lua",
+          "size": "4346"
+        }
+      ]
+    },
+    {
+      "id": "koreader-4",
+      "name": "Koreader",
+      "version": "source",
+      "description": "",
+      "author": "PedroMachado1",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/PedroMachado1/Koreader.patches",
+      "source_type": "source",
+      "stars": "39",
+      "readme_url": "packages/koreader/koreader-4.kopatch/README.md",
+      "readme_hash": "df0c1308332543cdaedbb5dc3017ec8343da43d3",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-custom-navbar.lua",
+          "url": "https://raw.githubusercontent.com/PedroMachado1/Koreader.patches/main/2-custom-navbar.lua",
+          "size": "77898"
+        },
+        {
+          "arch": "any",
+          "asset": "2-kobo-style-screensaver.lua",
+          "url": "https://raw.githubusercontent.com/PedroMachado1/Koreader.patches/main/2-kobo-style-screensaver.lua",
+          "size": "54457"
+        }
+      ]
+    },
+    {
+      "id": "koreader-5",
+      "name": "Koreader",
+      "version": "source",
+      "description": "Some of the patches I created for KOReader.",
+      "author": "SeriousHornet",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/SeriousHornet/KOReader.patches",
+      "source_type": "source",
+      "stars": "351",
+      "readme_url": "packages/koreader/koreader-5.kopatch/README.md",
+      "readme_hash": "c0ac502399b7ac5d552016ea350059fb0b121bb2",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2---stretched-covers.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2---stretched-covers.lua",
+          "size": "3697"
+        },
+        {
+          "arch": "any",
+          "asset": "2--disable-all-CB-widgets.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2--disable-all-CB-widgets.lua",
+          "size": "2138"
+        },
+        {
+          "arch": "any",
+          "asset": "2--disable-all-PT-widgets.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2--disable-all-PT-widgets.lua",
+          "size": "4880"
+        },
+        {
+          "arch": "any",
+          "asset": "2--rounded-covers.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2--rounded-covers.lua",
+          "size": "4390"
+        },
+        {
+          "arch": "any",
+          "asset": "2--stretched-rounded-covers.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2--stretched-rounded-covers.lua",
+          "size": "8214"
+        },
+        {
+          "arch": "any",
+          "asset": "2-navbar-vos.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2-navbar-vos.lua",
+          "size": "115385"
+        },
+        {
+          "arch": "any",
+          "asset": "2-new-collections-star.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2-new-collections-star.lua",
+          "size": "2640"
+        },
+        {
+          "arch": "any",
+          "asset": "2-new-progress-bar-colored.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2-new-progress-bar-colored.lua",
+          "size": "4719"
+        },
+        {
+          "arch": "any",
+          "asset": "2-new-progress-bar.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2-new-progress-bar.lua",
+          "size": "4278"
+        },
+        {
+          "arch": "any",
+          "asset": "2-new-status-icons.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2-new-status-icons.lua",
+          "size": "4065"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pages-badge.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2-pages-badge.lua",
+          "size": "4846"
+        },
+        {
+          "arch": "any",
+          "asset": "2-percent-badge.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2-percent-badge.lua",
+          "size": "4636"
+        },
+        {
+          "arch": "any",
+          "asset": "2-rounded-folder-covers.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2-rounded-folder-covers.lua",
+          "size": "19322"
+        },
+        {
+          "arch": "any",
+          "asset": "2-series-badge-numbered.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2-series-badge-numbered.lua",
+          "size": "4653"
+        },
+        {
+          "arch": "any",
+          "asset": "2-series-indicator.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/2-series-indicator.lua",
+          "size": "3146"
+        },
+        {
+          "arch": "any",
+          "asset": "20-faded-finished-books.lua",
+          "url": "https://raw.githubusercontent.com/SeriousHornet/KOReader.patches/main/20-faded-finished-books.lua",
+          "size": "2128"
+        }
+      ]
+    },
+    {
+      "id": "koreader-6",
+      "name": "Koreader",
+      "version": "source",
+      "description": "A collection of KOReader user patches that add extra file browser sorting options, folder cover display, and automatic cleanup of orphaned SDR sidecar folders.",
+      "author": "chiahsien",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/chiahsien/KOReader.Patches",
+      "source_type": "source",
+      "stars": "21",
+      "readme_url": "packages/koreader/koreader-6.kopatch/README.md",
+      "readme_hash": "bf18f9f6edb75a6dbeeec158610f1a0e63e35311",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-browser-folder-cover.lua",
+          "url": "https://raw.githubusercontent.com/chiahsien/KOReader.Patches/main/2-browser-folder-cover/2-browser-folder-cover.lua",
+          "size": "28825"
+        },
+        {
+          "arch": "any",
+          "asset": "2-clean-orphaned-sdr.lua",
+          "url": "https://raw.githubusercontent.com/chiahsien/KOReader.Patches/main/2-clean-orphaned-sdr/2-clean-orphaned-sdr.lua",
+          "size": "13659"
+        },
+        {
+          "arch": "any",
+          "asset": "2-sort-by-author-series.lua",
+          "url": "https://raw.githubusercontent.com/chiahsien/KOReader.Patches/main/2-sort-by-author-series/2-sort-by-author-series.lua",
+          "size": "8198"
+        }
+      ]
+    },
+    {
+      "id": "koreader-7",
+      "name": "Koreader",
+      "version": "source",
+      "description": "A collection of personal patches for KOReader",
+      "author": "gennaro-tedesco",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/gennaro-tedesco/KOReader.patches",
+      "source_type": "source",
+      "stars": "21",
+      "readme_url": "packages/koreader/koreader-7.kopatch/README.md",
+      "readme_hash": "ba70a39a3c19768a6a4ae64852a39c1bcba5e23e",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-chapter-progress-custom-separator.lua",
+          "url": "https://raw.githubusercontent.com/gennaro-tedesco/KOReader.patches/master/patches/2-chapter-progress-custom-separator.lua",
+          "size": "626"
+        },
+        {
+          "arch": "any",
+          "asset": "2-custom-ui-fonts.lua",
+          "url": "https://raw.githubusercontent.com/gennaro-tedesco/KOReader.patches/master/patches/2-custom-ui-fonts.lua",
+          "size": "9949"
+        },
+        {
+          "arch": "any",
+          "asset": "2-delete-bookmarks.lua",
+          "url": "https://raw.githubusercontent.com/gennaro-tedesco/KOReader.patches/master/patches/2-delete-bookmarks.lua",
+          "size": "2422"
+        },
+        {
+          "arch": "any",
+          "asset": "2-distributed-progress-bar.lua",
+          "url": "https://raw.githubusercontent.com/gennaro-tedesco/KOReader.patches/master/patches/2-distributed-progress-bar.lua",
+          "size": "4032"
+        },
+        {
+          "arch": "any",
+          "asset": "2-filebrowser-metadata-tree.lua",
+          "url": "https://raw.githubusercontent.com/gennaro-tedesco/KOReader.patches/master/patches/2-filebrowser-metadata-tree.lua",
+          "size": "10838"
+        },
+        {
+          "arch": "any",
+          "asset": "2-footer-glyphs.lua",
+          "url": "https://raw.githubusercontent.com/gennaro-tedesco/KOReader.patches/master/patches/2-footer-glyphs.lua",
+          "size": "503"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reading-stats.lua",
+          "url": "https://raw.githubusercontent.com/gennaro-tedesco/KOReader.patches/master/patches/2-reading-stats.lua",
+          "size": "9757"
+        },
+        {
+          "arch": "any",
+          "asset": "2-stats.lua",
+          "url": "https://raw.githubusercontent.com/gennaro-tedesco/KOReader.patches/master/patches/2-stats.lua",
+          "size": "17079"
+        },
+        {
+          "arch": "any",
+          "asset": "2-tidy-dict.lua",
+          "url": "https://raw.githubusercontent.com/gennaro-tedesco/KOReader.patches/master/patches/2-tidy-dict.lua",
+          "size": "4080"
+        }
+      ]
+    },
+    {
+      "id": "koreader-8",
+      "name": "Koreader",
+      "version": "source",
+      "description": "",
+      "author": "jmanteau",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/jmanteau/KOReader.patches",
+      "source_type": "source",
+      "stars": "66",
+      "readme_url": "packages/koreader/koreader-8.kopatch/README.md",
+      "readme_hash": "18d9cae7af982ee17b7ada05b482373c3fae3455",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2--disable-all-CB-widgets.lua",
+          "url": "https://raw.githubusercontent.com/jmanteau/KOReader.patches/main/patches/2--disable-all-CB-widgets.lua",
+          "size": "2467"
+        },
+        {
+          "arch": "any",
+          "asset": "2--visual-overhaul.lua",
+          "url": "https://raw.githubusercontent.com/jmanteau/KOReader.patches/main/patches/2--visual-overhaul.lua",
+          "size": "82824"
+        },
+        {
+          "arch": "any",
+          "asset": "2-browser-double-tap.lua",
+          "url": "https://raw.githubusercontent.com/jmanteau/KOReader.patches/main/patches/2-browser-double-tap.lua",
+          "size": "6632"
+        }
+      ]
+    },
+    {
+      "id": "koreader-9",
+      "name": "Koreader",
+      "version": "source",
+      "description": "Assorted user patches for KOReader. Some require Project: Title, some don't.",
+      "author": "joshuacant",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/joshuacant/KOReader.patches",
+      "source_type": "source",
+      "stars": "156",
+      "readme_url": "packages/koreader/koreader-9.kopatch/README.md",
+      "readme_hash": "0b1c81e696b21d56c76524e3e57e3ee6b49384f5",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-disable-all-progressbars.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-disable-all-progressbars.lua",
+          "size": "1059"
+        },
+        {
+          "arch": "any",
+          "asset": "2-disable-fullyread-progressbars.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-disable-fullyread-progressbars.lua",
+          "size": "2613"
+        },
+        {
+          "arch": "any",
+          "asset": "2-disable-unread-progressbars.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-disable-unread-progressbars.lua",
+          "size": "736"
+        },
+        {
+          "arch": "any",
+          "asset": "2-font-override.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-font-override.lua",
+          "size": "513"
+        },
+        {
+          "arch": "any",
+          "asset": "2-menutext-overrides.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-menutext-overrides.lua",
+          "size": "1221"
+        },
+        {
+          "arch": "any",
+          "asset": "2-nontouch-add-buttons-fix.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-nontouch-add-buttons-fix.lua",
+          "size": "3090"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-footer-font-override.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-pt-footer-font-override.lua",
+          "size": "1603"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-footer-text-override.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-pt-footer-text-override.lua",
+          "size": "1458"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pt-grid-covers-ar.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-pt-grid-covers-ar.lua",
+          "size": "1708"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reader-footer-font-override.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-reader-footer-font-override.lua",
+          "size": "562"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reader-footer-widgets.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-reader-footer-widgets.lua",
+          "size": "759"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reader-header-centered.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-reader-header-centered.lua",
+          "size": "8573"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reader-header-cornered.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-reader-header-cornered.lua",
+          "size": "9182"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reader-header-print-edition.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-reader-header-print-edition.lua",
+          "size": "10834"
+        },
+        {
+          "arch": "any",
+          "asset": "2-series-no-zero-colon-split.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-series-no-zero-colon-split.lua",
+          "size": "1819"
+        },
+        {
+          "arch": "any",
+          "asset": "2-series-roman.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-series-roman.lua",
+          "size": "2066"
+        },
+        {
+          "arch": "any",
+          "asset": "2-toolbar-add-buttons.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-toolbar-add-buttons.lua",
+          "size": "5995"
+        },
+        {
+          "arch": "any",
+          "asset": "2-toolbar-replace-button.lua",
+          "url": "https://raw.githubusercontent.com/joshuacant/KOReader.patches/main/2-toolbar-replace-button.lua",
+          "size": "2882"
+        }
+      ]
+    },
+    {
+      "id": "koreader-color-themes",
+      "name": "Koreader Color Themes",
+      "version": "source",
+      "description": "KOReader patch for day/night reading themes with a curated and customizable color palette.",
+      "author": "artemartemenko",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/artemartemenko/koreader-color-themes",
+      "source_type": "source",
+      "stars": "30",
+      "readme_url": "packages/koreader/koreader-color-themes.kopatch/README.md",
+      "readme_hash": "f8895d5c6bead3fb68c0e9541c8c6eda60a7fb66",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-color-theme.lua",
+          "url": "https://raw.githubusercontent.com/artemartemenko/koreader-color-themes/main/2-color-theme.lua",
+          "size": "53464"
+        }
+      ]
     },
     {
       "id": "koreader-custom-bookmark-manager",
@@ -1110,17 +1947,15 @@
       "description": "",
       "author": "sadke8465",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "14212",
       "source": "https://github.com/sadke8465/Koreader-Custom-Bookmark-Manager",
       "source_asset": "dogearmanager-V1.0.0.zip",
       "source_type": "release",
-      "stars": "19"
+      "stars": "20",
+      "readme_url": "packages/koreader/koreader-custom-bookmark-manager.koplugin/README.md",
+      "readme_hash": "d70ff4535be387880c5bd06722fc7bcfd4b65956"
     },
     {
       "id": "koreader-dynamic-panelzoom",
@@ -1129,17 +1964,74 @@
       "description": "A KOReader plugin for dynamic panel-by-panel zooming in comics and manga.",
       "author": "JorgeTheFox",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "20675",
       "source": "https://github.com/JorgeTheFox/koreader-dynamic-panelzoom",
       "source_asset": "dynamic_panelzoom.koplugin.zip",
       "source_type": "release",
-      "stars": "20"
+      "stars": "32",
+      "readme_url": "packages/koreader/koreader-dynamic-panelzoom.koplugin/README.md",
+      "readme_hash": "9a9bedff423398f0a6b377dc2541e5f1c638089a"
+    },
+    {
+      "id": "koreader-frankenpatches-public",
+      "name": "Koreader Frankenpatches Public",
+      "version": "source",
+      "description": "user patches for koreader.",
+      "author": "zenixlabs",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/zenixlabs/koreader-frankenpatches-public",
+      "source_type": "source",
+      "stars": "117",
+      "readme_url": "packages/koreader/koreader-frankenpatches-public.kopatch/README.md",
+      "readme_hash": "d14dfa533a2b901d684f8e64d3d1101e84f0b003",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-cvs-receipt-frankenpatch.lua",
+          "url": "https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-cvs-receipt-frankenpatch.lua",
+          "size": "37473"
+        },
+        {
+          "arch": "any",
+          "asset": "2-kobo-style-sleepscreen-banner.lua",
+          "url": "https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-kobo-style-sleepscreen-banner.lua",
+          "size": "15769"
+        },
+        {
+          "arch": "any",
+          "asset": "2-mini-receipt-frankenpatch.lua",
+          "url": "https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-mini-receipt-frankenpatch.lua",
+          "size": "36174"
+        },
+        {
+          "arch": "any",
+          "asset": "2-mosaicmenu-hide-bookstatusicons.lua",
+          "url": "https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-mosaicmenu-hide-bookstatusicons.lua",
+          "size": "864"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pageno-in-subtitle.lua",
+          "url": "https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-pageno-in-subtitle.lua",
+          "size": "4901"
+        },
+        {
+          "arch": "any",
+          "asset": "2-profile-update.lua",
+          "url": "https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-profile-update.lua",
+          "size": "3825"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reading-insights-popup.lua",
+          "url": "https://raw.githubusercontent.com/zenixlabs/koreader-frankenpatches-public/main/2-reading-insights-popup.lua",
+          "size": "68014"
+        }
+      ]
     },
     {
       "id": "koreader-jellyfin-plugin",
@@ -1148,17 +2040,15 @@
       "description": "A plugin for KOReader that allows downloading books from a Jellyfin instance.",
       "author": "DeclanChidlow",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "20657",
       "source": "https://github.com/DeclanChidlow/KOReader-Jellyfin-Plugin",
       "source_asset": "jellyfin.koplugin.zip",
       "source_type": "release",
-      "stars": "20"
+      "stars": "21",
+      "readme_url": "packages/koreader/koreader-jellyfin-plugin.koplugin/README.md",
+      "readme_hash": "f776f132814488e970979d8bfa6c6cddcdec0c7b"
     },
     {
       "id": "koreader-life-tracker",
@@ -1167,17 +2057,15 @@
       "description": "A bullet journal-style life planner plugin for KOReader. Track quests, habits, mood, and reading stats on your e-reader (Kindle, Kobo, PocketBook).",
       "author": "uttam-salamander",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "2850050",
       "source": "https://github.com/uttam-salamander/koreader-life-tracker",
       "source_asset": "lifetracker.koplugin.zip",
       "source_type": "release",
-      "stars": "29"
+      "stars": "31",
+      "readme_url": "packages/koreader/koreader-life-tracker.koplugin/README.md",
+      "readme_hash": "1335dc2b07ac25be89d21df7a6faf2deec2a91fc"
     },
     {
       "id": "koreader-menu-customizer",
@@ -1186,17 +2074,15 @@
       "description": "Simplify KOReader. Hide menus. Hide plugins. Focus on reading.",
       "author": "JoeBumm",
       "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "27676",
       "source": "https://github.com/JoeBumm/Koreader-Menu-customizer",
       "source_asset": "menu_customizer.koplugin.zip",
       "source_type": "release",
-      "stars": "108"
+      "stars": "121",
+      "readme_url": "packages/koreader/koreader-menu-customizer.koplugin/README.md",
+      "readme_hash": "63940bd4cc7a826c7b9cfaf04ac1e46a740a0bff"
     },
     {
       "id": "koreader-multiuser",
@@ -1205,16 +2091,14 @@
       "description": "KOReader plugin and patch for isolated user profiles — separate settings, history, and reading statistic per user",
       "author": "artemartemenko",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/artemartemenko/KOReader_MultiUser.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/artemartemenko/KOReader_MultiUser.koplugin/zip/refs/heads/main",
-      "stars": "33"
+      "stars": "36",
+      "readme_url": "packages/koreader/koreader-multiuser.koplugin/README.md",
+      "readme_hash": "f97ea3be863c20304345825022d42a1ac40920ef"
     },
     {
       "id": "koreader-obsidian-sync",
@@ -1223,16 +2107,411 @@
       "description": "A JS script and set of utilities to import and organize KOReader highlights into Obsidian",
       "author": "MySTerY1747",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/MySTerY1747/KOReader-Obsidian-Sync",
       "source_type": "source",
       "source_url": "https://codeload.github.com/MySTerY1747/KOReader-Obsidian-Sync/zip/refs/heads/main",
-      "stars": "22"
+      "stars": "22",
+      "readme_url": "packages/koreader/koreader-obsidian-sync.koplugin/README.md",
+      "readme_hash": "1708f724932933e912e76028550fcf2fd1d9b921"
+    },
+    {
+      "id": "koreader-patches-2",
+      "name": "Koreader Patches",
+      "version": "source",
+      "description": "Backup of all the KOreader patches I use on my Kindle Paperwhite SE, featuring patches collected all over and modded to fill my wants.",
+      "author": "medinauta",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/medinauta/Koreader-Patches",
+      "source_type": "source",
+      "stars": "28",
+      "readme_url": "packages/koreader/koreader-patches-2.kopatch/README.md",
+      "readme_hash": "7b0b35a4870b4aeaf3b454c8c1d3c42089e22f0f",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2--custom-underlinecontainer.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2--custom-underlinecontainer.lua",
+          "size": "2138"
+        },
+        {
+          "arch": "any",
+          "asset": "2--reader-header-print-edition.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2--reader-header-print-edition.lua",
+          "size": "10843"
+        },
+        {
+          "arch": "any",
+          "asset": "2--ui-font.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2--ui-font.lua",
+          "size": "4184"
+        },
+        {
+          "arch": "any",
+          "asset": "2-Book-spine-effect.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-Book-spine-effect.lua",
+          "size": "3364"
+        },
+        {
+          "arch": "any",
+          "asset": "2-BrowseByMetadata.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-BrowseByMetadata.lua",
+          "size": "23412"
+        },
+        {
+          "arch": "any",
+          "asset": "2-browser-folder-cover.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-browser-folder-cover.lua",
+          "size": "17942"
+        },
+        {
+          "arch": "any",
+          "asset": "2-browser-up-folder.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-browser-up-folder.lua",
+          "size": "3885"
+        },
+        {
+          "arch": "any",
+          "asset": "2-confirm-first-open.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-confirm-first-open.lua",
+          "size": "2007"
+        },
+        {
+          "arch": "any",
+          "asset": "2-CoverBrowserMosaicStretched.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-CoverBrowserMosaicStretched.lua",
+          "size": "2664"
+        },
+        {
+          "arch": "any",
+          "asset": "2-custom-highligh-colors.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-custom-highligh-colors.lua",
+          "size": "1137"
+        },
+        {
+          "arch": "any",
+          "asset": "2-customise-progress-bar-colour-gui.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-customise-progress-bar-colour-gui.lua",
+          "size": "22133"
+        },
+        {
+          "arch": "any",
+          "asset": "2-disable-top-menu-zones.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-disable-top-menu-zones.lua",
+          "size": "467"
+        },
+        {
+          "arch": "any",
+          "asset": "2-dogear-customized.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-dogear-customized.lua",
+          "size": "5854"
+        },
+        {
+          "arch": "any",
+          "asset": "2-Double-progress-bar.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-Double-progress-bar.lua",
+          "size": "6161"
+        },
+        {
+          "arch": "any",
+          "asset": "2-dynamic-mosaic-layout.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-dynamic-mosaic-layout.lua",
+          "size": "2221"
+        },
+        {
+          "arch": "any",
+          "asset": "2-filemanager-titlebar.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-filemanager-titlebar.lua",
+          "size": "23011"
+        },
+        {
+          "arch": "any",
+          "asset": "2-fm-min-pagination.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-fm-min-pagination.lua",
+          "size": "5846"
+        },
+        {
+          "arch": "any",
+          "asset": "2-highlights-show-chapters.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-highlights-show-chapters.lua",
+          "size": "17613"
+        },
+        {
+          "arch": "any",
+          "asset": "2-kobo-style-sleepscreen-banner.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-kobo-style-sleepscreen-banner.lua",
+          "size": "11329"
+        },
+        {
+          "arch": "any",
+          "asset": "2-menu-size.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-menu-size.lua",
+          "size": "629"
+        },
+        {
+          "arch": "any",
+          "asset": "2-mini-receipt-frankenpatch.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-mini-receipt-frankenpatch.lua",
+          "size": "37573"
+        },
+        {
+          "arch": "any",
+          "asset": "2-MM--Book-spine-effect-2.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-MM--Book-spine-effect-2.lua",
+          "size": "5764"
+        },
+        {
+          "arch": "any",
+          "asset": "2-MM--Book-spine-effect.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-MM--Book-spine-effect.lua",
+          "size": "5418"
+        },
+        {
+          "arch": "any",
+          "asset": "2-MM--rounded-corners.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-MM--rounded-corners.lua",
+          "size": "3785"
+        },
+        {
+          "arch": "any",
+          "asset": "2-MM--rounded-covers.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-MM--rounded-covers.lua",
+          "size": "5890"
+        },
+        {
+          "arch": "any",
+          "asset": "2-MM-collections-star.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-MM-collections-star.lua",
+          "size": "3149"
+        },
+        {
+          "arch": "any",
+          "asset": "2-MM-faded-finished-books.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-MM-faded-finished-books.lua",
+          "size": "3714"
+        },
+        {
+          "arch": "any",
+          "asset": "2-MM-New-progress-bar.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-MM-New-progress-bar.lua",
+          "size": "6461"
+        },
+        {
+          "arch": "any",
+          "asset": "2-MM-New-status-icons.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-MM-New-status-icons.lua",
+          "size": "3655"
+        },
+        {
+          "arch": "any",
+          "asset": "2-MM-pages-badge.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-MM-pages-badge.lua",
+          "size": "5600"
+        },
+        {
+          "arch": "any",
+          "asset": "2-MM-progress-badge.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-MM-progress-badge.lua",
+          "size": "3984"
+        },
+        {
+          "arch": "any",
+          "asset": "2-MM-series-indicator.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-MM-series-indicator.lua",
+          "size": "2879"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reading-insights-popup.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-reading-insights-popup.lua",
+          "size": "64096"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reading-stats-popup.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-reading-stats-popup.lua",
+          "size": "24876"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reference-page-count.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-reference-page-count.lua",
+          "size": "1620"
+        },
+        {
+          "arch": "any",
+          "asset": "2-screensaver-utilities.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-screensaver-utilities.lua",
+          "size": "7376"
+        },
+        {
+          "arch": "any",
+          "asset": "2-set-translation-language-per-document.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-set-translation-language-per-document.lua",
+          "size": "7919"
+        },
+        {
+          "arch": "any",
+          "asset": "2-statusbar-better-compact.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-statusbar-better-compact.lua",
+          "size": "2489"
+        },
+        {
+          "arch": "any",
+          "asset": "2-statusbar-thin-chapter.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-statusbar-thin-chapter.lua",
+          "size": "9270"
+        },
+        {
+          "arch": "any",
+          "asset": "2-TOC-title-patch.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-TOC-title-patch.lua",
+          "size": "1414"
+        },
+        {
+          "arch": "any",
+          "asset": "2-vocabulary-builder-button.lua",
+          "url": "https://raw.githubusercontent.com/medinauta/Koreader-Patches/main/2-vocabulary-builder-button.lua",
+          "size": "2036"
+        }
+      ]
+    },
+    {
+      "id": "koreader-patches-3",
+      "name": "Koreader Patches",
+      "version": "source",
+      "description": "",
+      "author": "reuerendo",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/reuerendo/koreader-patches",
+      "source_type": "source",
+      "stars": "31",
+      "readme_url": "packages/koreader/koreader-patches-3.kopatch/README.md",
+      "readme_hash": "6d74aef7641271f978bf8fa978a8ef67663a8b71",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-bookloadcover.lua",
+          "url": "https://raw.githubusercontent.com/reuerendo/koreader-patches/main/2-bookloadcover.lua",
+          "size": "10696"
+        },
+        {
+          "arch": "any",
+          "asset": "2-keep-previous-screen.lua",
+          "url": "https://raw.githubusercontent.com/reuerendo/koreader-patches/main/2-keep-previous-screen.lua",
+          "size": "2547"
+        },
+        {
+          "arch": "any",
+          "asset": "2-pb_native_dialogs.lua",
+          "url": "https://raw.githubusercontent.com/reuerendo/koreader-patches/main/2-pb_native_dialogs.lua",
+          "size": "12822"
+        }
+      ]
+    },
+    {
+      "id": "koreader-patches-plugins",
+      "name": "Koreader Patches Plugins",
+      "version": "source",
+      "description": "My patches and plugins for Koreader",
+      "author": "ameyrk99",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/ameyrk99/koreader-patches-plugins",
+      "source_type": "source",
+      "stars": "39",
+      "readme_url": "packages/koreader/koreader-patches-plugins.kopatch/README.md",
+      "readme_hash": "15ea2ae4e25a37d010ab8ddec88ad8fe0e62e2dc",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-bookshelf-screensaver.lua",
+          "url": "https://raw.githubusercontent.com/ameyrk99/koreader-patches-plugins/mainline/patches/2-bookshelf-screensaver.lua",
+          "size": "50952"
+        }
+      ]
+    },
+    {
+      "id": "koreader-patches",
+      "name": "Koreader Patches",
+      "version": "source",
+      "description": "KOReader User Patches",
+      "author": "Craftwork2720",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/Craftwork2720/koreader-patches",
+      "source_type": "source",
+      "stars": "29",
+      "readme_url": "packages/koreader/koreader-patches.kopatch/README.md",
+      "readme_hash": "8b2d18468bb1b918a250ef80d149e6a374a6dc13",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "1-gettext-translate.lua",
+          "url": "https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/1-gettext-translate.lua",
+          "size": "35264"
+        },
+        {
+          "arch": "any",
+          "asset": "2-exclude-folders.lua",
+          "url": "https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-exclude-folders.lua",
+          "size": "19118"
+        },
+        {
+          "arch": "any",
+          "asset": "2-filemanager-subtitle-margin.lua",
+          "url": "https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-filemanager-subtitle-margin.lua",
+          "size": "602"
+        },
+        {
+          "arch": "any",
+          "asset": "2-filemanager-title-hide.lua",
+          "url": "https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-filemanager-title-hide.lua",
+          "size": "871"
+        },
+        {
+          "arch": "any",
+          "asset": "2-hide-status-bar.lua",
+          "url": "https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-hide-status-bar.lua",
+          "size": "4176"
+        },
+        {
+          "arch": "any",
+          "asset": "2-incognito.lua",
+          "url": "https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-incognito.lua",
+          "size": "4566"
+        },
+        {
+          "arch": "any",
+          "asset": "2-physical-page-count.lua",
+          "url": "https://raw.githubusercontent.com/Craftwork2720/koreader-patches/main/2-physical-page-count.lua",
+          "size": "7369"
+        }
+      ]
+    },
+    {
+      "id": "koreader-physical-page-sync",
+      "name": "Koreader Physical Page Sync",
+      "version": "1.30",
+      "description": "!!!INSTALLATION FROM HERE IS NOT POSSIBLE due to being a system app!!! A custom modification for the official KOReader statistics.koplugin that synchronizes e-reader page turns with the actual phys...",
+      "author": "yanllsama",
+      "category": "media",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "size": "49682",
+      "source": "https://github.com/yanllsama/koreader-physical-page-sync",
+      "source_asset": "statistics.koplugin.zip",
+      "source_type": "release",
+      "stars": "19",
+      "readme_url": "packages/koreader/koreader-physical-page-sync.koplugin/README.md",
+      "readme_hash": "0c4ce6a43ed9dbfd335ed2315b76d70a6b885c6f"
     },
     {
       "id": "koreader-rsvp-plugin",
@@ -1241,16 +2520,14 @@
       "description": "An RSVP (Rapid Serial Visual Presentation) plugin that enables speed reading with advanced features for KOReader.",
       "author": "karpushchenko",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/karpushchenko/koreader-rsvp-plugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/karpushchenko/koreader-rsvp-plugin/zip/refs/heads/main",
-      "stars": "31"
+      "stars": "32",
+      "readme_url": "packages/koreader/koreader-rsvp-plugin.koplugin/README.md",
+      "readme_hash": "0ed60a384e8fef5a3054c404687a472c8765cd44"
     },
     {
       "id": "koreader-screenlockpin",
@@ -1259,17 +2536,15 @@
       "description": "Protect your KOReader with a PIN",
       "author": "oleasteo",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "50551",
       "source": "https://github.com/oleasteo/koreader-screenlockpin",
       "source_asset": "screenlockpin.koplugin--2026.05.zip",
       "source_type": "release",
-      "stars": "62"
+      "stars": "69",
+      "readme_url": "packages/koreader/koreader-screenlockpin.koplugin/README.md",
+      "readme_hash": "c493621f0dd4c628c86833df09f9d6329250d199"
     },
     {
       "id": "koreader-session-cleaner",
@@ -1278,55 +2553,279 @@
       "description": "KOReader plugin to inspect, filter, and safely delete suspicious reconstructed reading sessions from statistics.sqlite3.",
       "author": "graphirus-prog",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "22695",
       "source": "https://github.com/graphirus-prog/koreader-session-cleaner",
       "source_asset": "Session.Cleaner.v1.10.1.zip",
       "source_type": "release",
-      "stars": "15"
+      "stars": "15",
+      "readme_url": "packages/koreader/koreader-session-cleaner.koplugin/README.md",
+      "readme_hash": "0609cc68d6d98f34d2eefca8e338f16e634ff708"
+    },
+    {
+      "id": "koreader-user-patches-2",
+      "name": "Koreader User Patches",
+      "version": "source",
+      "description": "",
+      "author": "peterboda236",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/peterboda236/koreader-user-patches",
+      "source_type": "source",
+      "stars": "20",
+      "readme_url": "packages/koreader/koreader-user-patches-2.kopatch/README.md",
+      "readme_hash": "9a8b2db4a57c6d01dbbb646433ec4c7d75a21fd7",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-frontlight-widget-nightmode.lua",
+          "url": "https://raw.githubusercontent.com/peterboda236/koreader-user-patches/main/2-frontlight-widget-nightmode.lua",
+          "size": "1985"
+        },
+        {
+          "arch": "any",
+          "asset": "2-frontlight-widget-profiles.lua",
+          "url": "https://raw.githubusercontent.com/peterboda236/koreader-user-patches/main/2-frontlight-widget-profiles.lua",
+          "size": "10508"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reading-insights-stats.lua",
+          "url": "https://raw.githubusercontent.com/peterboda236/koreader-user-patches/main/2-reading-insights-stats.lua",
+          "size": "85"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reading-stats-popup.lua",
+          "url": "https://raw.githubusercontent.com/peterboda236/koreader-user-patches/main/2-reading-stats-popup.lua",
+          "size": "43568"
+        },
+        {
+          "arch": "any",
+          "asset": "2-toc-reading-time.lua",
+          "url": "https://raw.githubusercontent.com/peterboda236/koreader-user-patches/main/2-toc-reading-time.lua",
+          "size": "4320"
+        }
+      ]
+    },
+    {
+      "id": "koreader-user-patches",
+      "name": "Koreader User Patches",
+      "version": "source",
+      "description": "Various user patches for KOReader",
+      "author": "omer-faruq",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/omer-faruq/koreader-user-patches",
+      "source_type": "source",
+      "stars": "105",
+      "readme_url": "packages/koreader/koreader-user-patches.kopatch/README.md",
+      "readme_hash": "8335787fccef644f1b1ed93834fd0f84200ca78b",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-book-receipt-shortcut-and-lockscreen.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-book-receipt-shortcut-and-lockscreen.lua",
+          "size": "40210"
+        },
+        {
+          "arch": "any",
+          "asset": "2-coverbrowser-list-stretched.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-coverbrowser-list-stretched.lua",
+          "size": "9045"
+        },
+        {
+          "arch": "any",
+          "asset": "2-dual-state-screensaver-mode.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-dual-state-screensaver-mode.lua",
+          "size": "15134"
+        },
+        {
+          "arch": "any",
+          "asset": "2-exclude-books-from-wallpaper-cover-mode.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-exclude-books-from-wallpaper-cover-mode.lua",
+          "size": "7961"
+        },
+        {
+          "arch": "any",
+          "asset": "2-fallbackcover.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-fallbackcover.lua",
+          "size": "20350"
+        },
+        {
+          "arch": "any",
+          "asset": "2-gesture-manager-top-bottom-edge-vertical-swipes.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-gesture-manager-top-bottom-edge-vertical-swipes.lua",
+          "size": "5517"
+        },
+        {
+          "arch": "any",
+          "asset": "2-menu-tap-swipe-zone-heights.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-menu-tap-swipe-zone-heights.lua",
+          "size": "13952"
+        },
+        {
+          "arch": "any",
+          "asset": "2-precise-line-word-navigation.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-precise-line-word-navigation.lua",
+          "size": "7500"
+        },
+        {
+          "arch": "any",
+          "asset": "2-random-book-cover-screensaver.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-random-book-cover-screensaver.lua",
+          "size": "18015"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reading-stats-current-book-days-percent.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-reading-stats-current-book-days-percent.lua",
+          "size": "3396"
+        },
+        {
+          "arch": "any",
+          "asset": "2-recursive-file-counts.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-recursive-file-counts.lua",
+          "size": "2807"
+        },
+        {
+          "arch": "any",
+          "asset": "2-screensaver-always-full-refresh.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-screensaver-always-full-refresh.lua",
+          "size": "6780"
+        },
+        {
+          "arch": "any",
+          "asset": "2-sleep-overlay.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-sleep-overlay.lua",
+          "size": "28329"
+        },
+        {
+          "arch": "any",
+          "asset": "2-toc-level-selector.lua",
+          "url": "https://raw.githubusercontent.com/omer-faruq/koreader-user-patches/main/2-toc-level-selector.lua",
+          "size": "10473"
+        }
+      ]
     },
     {
       "id": "koreader-xray-plugin",
       "name": "Koreader Xray Plugin",
-      "version": "26.6.19",
-      "description": "AI-powered character tracking, timeline, and historical context etc.",
+      "version": "26.7.14.1",
+      "description": "Character tracking, timeline, historical context, unit conversion, etc.",
       "author": "ultimatejimmy",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "269347",
+      "size": "420405",
       "source": "https://github.com/ultimatejimmy/koreader-xray-plugin",
       "source_asset": "xray.koplugin.zip",
       "source_type": "release",
-      "stars": "93"
+      "stars": "119",
+      "readme_url": "packages/koreader/koreader-xray-plugin.koplugin/README.md",
+      "readme_hash": "9c3ad6e14ab2694e4268ad580e3dd34c36d4bad3"
+    },
+    {
+      "id": "koreader",
+      "name": "Koreader",
+      "version": "source",
+      "description": "Assorted user patches for KOReader.",
+      "author": "Djeymisson",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/Djeymisson/KOReader.patches",
+      "source_type": "source",
+      "stars": "23",
+      "readme_url": "packages/koreader/koreader.kopatch/README.md",
+      "readme_hash": "1f429e1d7db34596afd39b00fc6e066e832d93e8",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-bookloadcover-plus.lua",
+          "url": "https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-bookloadcover-plus.lua",
+          "size": "30156"
+        },
+        {
+          "arch": "any",
+          "asset": "2-browser-folder-cover.lua",
+          "url": "https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-browser-folder-cover.lua",
+          "size": "14130"
+        },
+        {
+          "arch": "any",
+          "asset": "2-finished-books-look.lua",
+          "url": "https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-finished-books-look.lua",
+          "size": "5751"
+        },
+        {
+          "arch": "any",
+          "asset": "2-progress-badge.lua",
+          "url": "https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-progress-badge.lua",
+          "size": "5706"
+        },
+        {
+          "arch": "any",
+          "asset": "2-reader-header-footer.lua",
+          "url": "https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-reader-header-footer.lua",
+          "size": "15951"
+        },
+        {
+          "arch": "any",
+          "asset": "2-screensaver-cover.lua",
+          "url": "https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-screensaver-cover.lua",
+          "size": "22650"
+        },
+        {
+          "arch": "any",
+          "asset": "2-sleep-overlay.lua",
+          "url": "https://raw.githubusercontent.com/Djeymisson/KOReader.patches/main/2-sleep-overlay.lua",
+          "size": "20284"
+        }
+      ]
+    },
+    {
+      "id": "koreaderhighlights",
+      "name": "Koreaderhighlights",
+      "version": "source",
+      "description": "Adds 8 new highlight/underline styles to KOReader",
+      "author": "witnesscloser",
+      "category": "patches",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/witnesscloser/KoreaderHighlights",
+      "source_type": "source",
+      "stars": "17",
+      "readme_url": "packages/koreader/koreaderhighlights.kopatch/README.md",
+      "readme_hash": "b5eadc0b1ab7d4c5a5d138aac9819d11cbc6ad5c",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "2-fancy-highlight-styles.lua",
+          "url": "https://raw.githubusercontent.com/witnesscloser/KoreaderHighlights/main/2-fancy-highlight-styles.lua",
+          "size": "16298"
+        }
+      ]
     },
     {
       "id": "kosyncthing-plus",
       "name": "Kosyncthing Plus",
-      "version": "1.1.8",
-      "description": "Sync books, annotations, and reading progress across your e-readers — privately, without any cloud. KOSyncthing+ embeds a fully managed Syncthing daemon inside KOReader, with a polished menu, autom...",
+      "version": "1.1.9",
+      "description": "KOSyncthing+ embeds a fully managed Syncthing daemon inside KOReader, with a polished menu, automatic Wi‑Fi handling, conflict resolution, and a plugin API. Works on Kindle, should also work on Kob...",
       "author": "d0nizam",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "345808",
+      "size": "358151",
       "source": "https://github.com/d0nizam/kosyncthing_plus.koplugin",
-      "source_asset": "kosyncthing_plus.koplugin.zip",
+      "source_asset": "kosyncthing_plus_koplugin.zip",
       "source_type": "release",
-      "stars": "16"
+      "stars": "24",
+      "readme_url": "packages/koreader/kosyncthing-plus.koplugin/README.md",
+      "readme_hash": "36829b2dbd7c136edef4071b8086b4be86ce500c"
     },
     {
       "id": "legado",
@@ -1335,52 +2834,48 @@
       "description": "一个在 KOReader 中阅读 Legado 开源阅读书库的网文阅读插件",
       "author": "pengcw",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "138220",
       "source": "https://github.com/pengcw/legado.koplugin",
       "source_asset": "legado_plugin_update.zip",
       "source_type": "release",
-      "stars": "211"
+      "stars": "220",
+      "readme_url": "packages/koreader/legado.koplugin/README.md",
+      "readme_hash": "d57b2a034d81ea8993e4160fb865c03bc3f06420"
     },
     {
       "id": "localsend",
       "name": "Localsend",
-      "version": "1.3.0",
+      "version": "1.4.1",
       "description": "LocalSend plugin for KOReader - send and receive files wirelessly on your e-reader",
       "author": "kaikozlov",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/kaikozlov/localsend.koplugin",
       "source_type": "release",
-      "stars": "191",
+      "stars": "217",
+      "readme_url": "packages/koreader/localsend.koplugin/README.md",
+      "readme_hash": "3369a85e0dd1473876d6e6005cf6de3c33fc1737",
       "assets": [
         {
           "arch": "arm",
           "asset": "localsend-koplugin-arm-legacy.zip",
-          "url": "https://github.com/kaikozlov/localsend.koplugin/releases/download/v1.3.0/localsend-koplugin-arm-legacy.zip",
-          "size": "5820927"
+          "url": "https://github.com/kaikozlov/localsend.koplugin/releases/download/v1.4.1/localsend-koplugin-arm-legacy.zip",
+          "size": "7337049"
         },
         {
           "arch": "arm64",
           "asset": "localsend-koplugin-arm64.zip",
-          "url": "https://github.com/kaikozlov/localsend.koplugin/releases/download/v1.3.0/localsend-koplugin-arm64.zip",
-          "size": "5788333"
+          "url": "https://github.com/kaikozlov/localsend.koplugin/releases/download/v1.4.1/localsend-koplugin-arm64.zip",
+          "size": "7034731"
         },
         {
           "arch": "armv7",
           "asset": "localsend-koplugin-armv7.zip",
-          "url": "https://github.com/kaikozlov/localsend.koplugin/releases/download/v1.3.0/localsend-koplugin-armv7.zip",
-          "size": "5795199"
+          "url": "https://github.com/kaikozlov/localsend.koplugin/releases/download/v1.4.1/localsend-koplugin-armv7.zip",
+          "size": "7313008"
         }
       ]
     },
@@ -1391,16 +2886,14 @@
       "description": "A KOReader plugin that improves zooming while reading manga.",
       "author": "Shac0x",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/Shac0x/maximum.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/Shac0x/maximum.koplugin/zip/refs/heads/main",
-      "stars": "40"
+      "stars": "44",
+      "readme_url": "packages/koreader/maximum.koplugin/README.md",
+      "readme_hash": "6a0b5d735151bced5d84bfe7a4b5b948fe537590"
     },
     {
       "id": "memobook",
@@ -1409,17 +2902,15 @@
       "description": "Your personal in-book memo and self-dictionary for KOReader",
       "author": "omer-faruq",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "31507",
       "source": "https://github.com/omer-faruq/memobook.koplugin",
       "source_asset": "memobook.koplugin.zip",
       "source_type": "release",
-      "stars": "23"
+      "stars": "27",
+      "readme_url": "packages/koreader/memobook.koplugin/README.md",
+      "readme_hash": "f145308d2a58050cefbf96e4c9b8792e02e9562c"
     },
     {
       "id": "miniflux",
@@ -1428,17 +2919,15 @@
       "description": "KOReader plugin to access a Miniflux instance to read your RSS feed entries with offline capabilities.",
       "author": "AlgusDark",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "85207",
       "source": "https://github.com/AlgusDark/miniflux.koplugin",
       "source_asset": "miniflux.koplugin.zip",
       "source_type": "release",
-      "stars": "85"
+      "stars": "91",
+      "readme_url": "packages/koreader/miniflux.koplugin/README.md",
+      "readme_hash": "f7ea02bac25be1f335ead05823f3dacc0d902b5a"
     },
     {
       "id": "mokuroreader-koreader",
@@ -1447,17 +2936,15 @@
       "description": "A KOReader plugin for interactive manga reading with mokuro OCR integration",
       "author": "Magyarapointe",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "11712",
       "source": "https://github.com/Magyarapointe/mokuroreader-koreader",
       "source_asset": "mokuroreader-v2.1.0-standard.zip",
       "source_type": "release",
-      "stars": "17"
+      "stars": "20",
+      "readme_url": "packages/koreader/mokuroreader-koreader.koplugin/README.md",
+      "readme_hash": "d940d6d2d0480f01c88767e57bc41f9a1be9e029"
     },
     {
       "id": "nonogram",
@@ -1466,17 +2953,15 @@
       "description": "Solve picture cross puzzles on KOReader with tap-friendly controls, hints, and automatic progress saving.",
       "author": "omer-faruq",
       "category": "games",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "20732",
       "source": "https://github.com/omer-faruq/nonogram.koplugin",
       "source_asset": "nonogram.koplugin.zip",
       "source_type": "release",
-      "stars": "15"
+      "stars": "18",
+      "readme_url": "packages/koreader/nonogram.koplugin/README.md",
+      "readme_hash": "4b92f733ee267d5b6cf011e3a1e26f9195864ef0"
     },
     {
       "id": "notes",
@@ -1485,16 +2970,14 @@
       "description": "",
       "author": "prasy-loyola",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/prasy-loyola/notes.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/prasy-loyola/notes.koplugin/zip/refs/heads/main",
-      "stars": "52"
+      "stars": "55",
+      "readme_url": "packages/koreader/notes.koplugin/README.md",
+      "readme_hash": "c4740941222fa89335d2520f79073faef3cf8381"
     },
     {
       "id": "onyxbooxsync",
@@ -1503,17 +2986,15 @@
       "description": "Allow to sync koreader and onyx book",
       "author": "Tukks",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "5377",
       "source": "https://github.com/Tukks/onyxbooxsync.koplugin",
       "source_asset": "onyxbooxsync.koplugin.zip",
       "source_type": "release",
-      "stars": "29"
+      "stars": "35",
+      "readme_url": "packages/koreader/onyxbooxsync.koplugin/README.md",
+      "readme_hash": "f7339c5c51e088ca1a8a2e0fbd1948fb5d0f4800"
     },
     {
       "id": "opds-plus",
@@ -1522,35 +3003,31 @@
       "description": "Enhanced OPDS catalog browser for KOReader with visual cover display, grid/list views, and extensive customization options",
       "author": "greywolf1499",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "107464",
       "source": "https://github.com/greywolf1499/opds_plus.koplugin",
       "source_asset": "opds_plus.koplugin.zip",
       "source_type": "release",
-      "stars": "129"
+      "stars": "147",
+      "readme_url": "packages/koreader/opds-plus.koplugin/README.md",
+      "readme_hash": "2dc3435edf1cb73a61ba7f93cc8a483bc803fabd"
     },
     {
       "id": "panelreader",
       "name": "Panelreader",
-      "version": "1.0.51",
+      "version": "1.07",
       "description": "Koreader panel-to-panel navigation plugin",
       "author": "Kaito0",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/Kaito0/panelreader.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/Kaito0/panelreader.koplugin/zip/refs/heads/main",
-      "stars": "26"
+      "stars": "32",
+      "readme_url": "packages/koreader/panelreader.koplugin/README.md",
+      "readme_hash": "020f734623538db3fc3852e2f02055594bb9237a"
     },
     {
       "id": "pencil",
@@ -1559,16 +3036,14 @@
       "description": "Koreader plugin that allows Kobo Libra Color users to use a stylus to take notes in Epubs.",
       "author": "mysticknits",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/mysticknits/pencil.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/mysticknits/pencil.koplugin/zip/refs/heads/main",
-      "stars": "97"
+      "stars": "109",
+      "readme_url": "packages/koreader/pencil.koplugin/README.md",
+      "readme_hash": "cf2f62bcb22d8888d5de6f47af4f6b92155e3f4f"
     },
     {
       "id": "pinyin-enhancement",
@@ -1577,17 +3052,15 @@
       "description": "在koreader拼音输入法上方显示候选词栏，点击即可输入汉字。支持词频排序、首字母拼音、扩展码表。",
       "author": "gytwo",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "989404",
+      "size": "989119",
       "source": "https://github.com/gytwo/pinyin_enhancement.koplugin",
       "source_asset": "pinyin_enhancement.koplugin.zip",
       "source_type": "release",
-      "stars": "31"
+      "stars": "40",
+      "readme_url": "packages/koreader/pinyin-enhancement.koplugin/README.md",
+      "readme_hash": "f00060d0d1ee4ba65503414b43adc65b52dc6efd"
     },
     {
       "id": "plainui",
@@ -1596,17 +3069,30 @@
       "description": "Minimal home screen for KOReader",
       "author": "quanganhdo",
       "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "37095",
       "source": "https://github.com/quanganhdo/plainui.koplugin",
       "source_asset": "plainui.koplugin.zip",
       "source_type": "release",
-      "stars": "28"
+      "stars": "29",
+      "readme_url": "packages/koreader/plainui.koplugin/README.md",
+      "readme_hash": "c7fc1e3cecd83697b5c67a9ffdebc20e7d255592"
+    },
+    {
+      "id": "pocketbook-bluetooth",
+      "name": "PocketBook Bluetooth",
+      "version": "0.0.3",
+      "description": "General-purpose Bluetooth management plugin for KOReader on PocketBook devices.",
+      "author": "sabrina553",
+      "category": "utility",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "size": "37140",
+      "source": "https://github.com/sabrina553/bluetooth.koplugin",
+      "source_asset": "bluetooth.koplugin.zip",
+      "source_type": "release",
+      "stars": "1"
     },
     {
       "id": "pocketbookcover",
@@ -1615,16 +3101,14 @@
       "description": "Automatically updates the book cover which is displayed when the Pocketbook device is turned off.",
       "author": "ckilb",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/ckilb/pocketbookcover.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/ckilb/pocketbookcover.koplugin/zip/refs/heads/main",
-      "stars": "22"
+      "stars": "22",
+      "readme_url": "packages/koreader/pocketbookcover.koplugin/README.md",
+      "readme_hash": "8e4c179eb21fb017b000fbcd387a6f26a42d5d64"
     },
     {
       "id": "pocketbooksync",
@@ -1633,17 +3117,15 @@
       "description": "A Pocketbook app that sync the reading status between KOReader and Pocketbook's original software.",
       "author": "ckilb",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "3663",
       "source": "https://github.com/ckilb/pocketbooksync.koplugin",
       "source_asset": "pocketbooksync.koplugin-v1.0.2.zip",
       "source_type": "release",
-      "stars": "145"
+      "stars": "152",
+      "readme_url": "packages/koreader/pocketbooksync.koplugin/README.md",
+      "readme_hash": "b7b8fd423ef96381558fabf0fb4cc10ea4b4a0b2"
     },
     {
       "id": "pocketbooktools",
@@ -1652,16 +3134,31 @@
       "description": "Plugin for KOReader and PocketBook Integration",
       "author": "reuerendo",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/reuerendo/pocketbooktools.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/reuerendo/pocketbooktools.koplugin/zip/refs/heads/main",
-      "stars": "15"
+      "stars": "15",
+      "readme_url": "packages/koreader/pocketbooktools.koplugin/README.md",
+      "readme_hash": "bac06c6d7d623dc098781fbb6c8bef55ca0295e1"
+    },
+    {
+      "id": "projecttitle",
+      "name": "Project: Title",
+      "version": "2026.03-v3.7",
+      "description": "UI Plugin for KOReader by @elfbutt and @joshuacant",
+      "author": "joshuacant",
+      "category": "theme",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "conflicts": ["zen-ui"],
+      "size": "1248946",
+      "source": "https://github.com/joshuacant/ProjectTitle",
+      "source_asset": "ProjectTitle-2026-03-v3-7.zip",
+      "source_type": "release",
+      "stars": "1013",
+      "updated_at": "2026-07-21T05:52:58Z"
     },
     {
       "id": "provider-webdav-highlights",
@@ -1670,16 +3167,14 @@
       "description": "Export KOReader highlights to a WebDAV target",
       "author": "fairlygood",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/fairlygood/provider-webdav-highlights.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/fairlygood/provider-webdav-highlights.koplugin/zip/refs/heads/drafts",
-      "stars": "27"
+      "stars": "28",
+      "readme_url": "packages/koreader/provider-webdav-highlights.koplugin/README.md",
+      "readme_hash": "f1d9609b4dff54ccdeb4751538225efca938b50c"
     },
     {
       "id": "quickrss",
@@ -1688,70 +3183,86 @@
       "description": "A fast, standalone and easy to use RSS reader for KOReader",
       "author": "qewer33",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "50669",
       "source": "https://github.com/qewer33/quickrss.koplugin",
       "source_asset": "quickrss.koplugin.zip",
       "source_type": "release",
-      "stars": "56"
+      "stars": "61",
+      "readme_url": "packages/koreader/quickrss.koplugin/README.md",
+      "readme_hash": "49f013b30634999e957135012de20a07300bea71"
+    },
+    {
+      "id": "quicksettings",
+      "name": "Quicksettings",
+      "version": "1.2.0",
+      "description": "koreader-plugin",
+      "author": "renandeivison",
+      "category": "utility",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "source": "https://github.com/renandeivison/quicksettings",
+      "source_type": "source",
+      "source_url": "https://codeload.github.com/renandeivison/quicksettings/zip/refs/heads/main",
+      "stars": "19",
+      "readme_url": "packages/koreader/quicksettings.koplugin/README.md",
+      "readme_hash": "9e25a8915f73fca0c3396bc6481f9bea347fde55"
     },
     {
       "id": "rakuyomi",
       "name": "Rakuyomi",
-      "version": "1.35.0",
+      "version": "1.38.0",
       "description": "A manga reader plugin for KOReader. (This fork adds new features and backward compatibility)",
       "author": "tachibana-shin",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
+      "icon_url": "packages/koreader/rakuyomi.koplugin/assets/rakuyomi.svg",
+      "featured_image": "packages/koreader/rakuyomi.koplugin/assets/featured.png",
+      "featured": true,
+      "featured_order": 25,
       "source": "https://github.com/tachibana-shin/rakuyomi",
       "source_type": "release",
-      "stars": "394",
+      "stars": "442",
+      "readme_url": "packages/koreader/rakuyomi.koplugin/README.md",
+      "readme_hash": "5767c006c7405d9ab4324602afa3c1c20cf26f15",
       "assets": [
         {
           "arch": "arm64",
           "asset": "rakuyomi-aarch64.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.35.0/rakuyomi-aarch64.zip",
-          "size": "12645383"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.38.0/rakuyomi-aarch64.zip",
+          "size": "12930465"
         },
         {
           "arch": "any",
           "asset": "rakuyomi-android.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.35.0/rakuyomi-android.zip",
-          "size": "464537"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.38.0/rakuyomi-android.zip",
+          "size": "588473"
         },
         {
           "arch": "any",
           "asset": "rakuyomi-desktop.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.35.0/rakuyomi-desktop.zip",
-          "size": "13466862"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.38.0/rakuyomi-desktop.zip",
+          "size": "13756295"
         },
         {
           "arch": "kindle",
           "asset": "rakuyomi-kindle.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.35.0/rakuyomi-kindle.zip",
-          "size": "12854475"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.38.0/rakuyomi-kindle.zip",
+          "size": "13133881"
         },
         {
           "arch": "kindle",
           "asset": "rakuyomi-kindlea9.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.35.0/rakuyomi-kindlea9.zip",
-          "size": "12734509"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.38.0/rakuyomi-kindlea9.zip",
+          "size": "13001814"
         },
         {
           "arch": "kindle",
           "asset": "rakuyomi-kindlehf.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.35.0/rakuyomi-kindlehf.zip",
-          "size": "12949132"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.38.0/rakuyomi-kindlehf.zip",
+          "size": "13225911"
         }
       ]
     },
@@ -1762,17 +3273,15 @@
       "description": "A KOReader plugin to show a random quote from all the highlighted texts of the library.",
       "author": "DenisovichDev",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "9184",
       "source": "https://github.com/DenisovichDev/randomquote.koplugin",
       "source_asset": "randomquote.koplugin-v0.1.0.zip",
       "source_type": "release",
-      "stars": "16"
+      "stars": "16",
+      "readme_url": "packages/koreader/randomquote.koplugin/README.md",
+      "readme_hash": "a62d6cfa70163ed9e0fa6011225ecaffa4569f86"
     },
     {
       "id": "readeck-2",
@@ -1781,17 +3290,15 @@
       "description": "KOReader plugin for Readeck servers",
       "author": "iceyear",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "64106",
       "source": "https://github.com/iceyear/readeck.koplugin",
       "source_asset": "readeck.koplugin-v0.1.1.zip",
       "source_type": "release",
-      "stars": "91"
+      "stars": "98",
+      "readme_url": "packages/koreader/readeck-2.koplugin/README.md",
+      "readme_hash": "85468b1f41473f4237438209e1d02e42dccc123f"
     },
     {
       "id": "readeck",
@@ -1800,35 +3307,60 @@
       "description": "An unofficial KOReader plugin to add integration with your Readeck instance.",
       "author": "flip-rossi",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/flip-rossi/readeck.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/flip-rossi/readeck.koplugin/zip/refs/heads/master",
-      "stars": "46"
+      "stars": "46",
+      "readme_url": "packages/koreader/readeck.koplugin/README.md",
+      "readme_hash": "97a00ea9b8cf6eb8af244a9cfee5816215113905"
     },
     {
       "id": "readest",
       "name": "Readest",
-      "version": "0.11.12",
+      "version": "0.11.18",
       "description": "Readest is a modern, feature-rich ebook reader designed for avid readers offering seamless cross-platform access, powerful tools, and an intuitive interface to elevate your reading experience.",
       "author": "readest",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "213590",
       "source": "https://github.com/readest/readest",
-      "source_asset": "Readest-0.11.12-1.koplugin.zip",
       "source_type": "release",
-      "stars": "21621"
+      "stars": "22392",
+      "readme_url": "packages/koreader/readest.koplugin/README.md",
+      "readme_hash": "f948406726e73cfce27f047018bb7f9af1d8ef36",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "Readest-0.11.18-1.koplugin.zip",
+          "url": "https://github.com/readest/readest/releases/download/v0.11.18/Readest-0.11.18-1.koplugin.zip",
+          "size": "224516"
+        },
+        {
+          "arch": "any",
+          "asset": "Readest-0.11.18.calibre-plugin.zip",
+          "url": "https://github.com/readest/readest/releases/download/v0.11.18/Readest-0.11.18.calibre-plugin.zip",
+          "size": "39700"
+        }
+      ]
+    },
+    {
+      "id": "readinginsights",
+      "name": "Readinginsights",
+      "version": "3.5.6",
+      "description": "A full-screen overlay with a comprehensive overview of your reading history, powered by KOReader's statistics database.",
+      "author": "peterboda236",
+      "category": "utility",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "size": "147381",
+      "source": "https://github.com/peterboda236/readinginsights.koplugin",
+      "source_asset": "readinginsights.koplugin.zip",
+      "source_type": "release",
+      "stars": "35",
+      "readme_url": "packages/koreader/readinginsights.koplugin/README.md",
+      "readme_hash": "7a8c45fd69fbb84563d96336b27225bfdfa243bc"
     },
     {
       "id": "readingruler",
@@ -1837,17 +3369,15 @@
       "description": "Reading Ruler is a plugin that brings movable underlines to KOReader!",
       "author": "Syakhisk",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "13981",
       "source": "https://github.com/Syakhisk/readingruler.koplugin",
       "source_asset": "readingruler.koplugin.zip",
       "source_type": "release",
-      "stars": "49"
+      "stars": "50",
+      "readme_url": "packages/koreader/readingruler.koplugin/README.md",
+      "readme_hash": "3e83a96d3e2c1951398fa45256993b7c4945cf19"
     },
     {
       "id": "readingstreak",
@@ -1856,17 +3386,15 @@
       "description": "KOReader plugin for tracking daily and weekly reading streaks",
       "author": "advokatb",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "65924",
       "source": "https://github.com/advokatb/readingstreak.koplugin",
       "source_asset": "readingstreak.koplugin-v1.3.6.zip",
       "source_type": "release",
-      "stars": "49"
+      "stars": "49",
+      "readme_url": "packages/koreader/readingstreak.koplugin/README.md",
+      "readme_hash": "c7b73bc1aa2a8c1836eed5dfda299b6341f95376"
     },
     {
       "id": "readmastery",
@@ -1875,17 +3403,15 @@
       "description": "ReadMastery is a KOReader plugin that transforms your reading experience into an RPG-style adventure. Earn XP, level up, maintain streaks, and unlock achievements as you read!",
       "author": "Lalocaballero",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "48351",
       "source": "https://github.com/Lalocaballero/readmastery.koplugin",
       "source_asset": "ReadMastery.koplugin.zip",
       "source_type": "release",
-      "stars": "67"
+      "stars": "69",
+      "readme_url": "packages/koreader/readmastery.koplugin/README.md",
+      "readme_hash": "2caa85a0caebec9e4c273b50d1e5d31af0f3a472"
     },
     {
       "id": "remotenote",
@@ -1894,15 +3420,13 @@
       "description": "Take notes in KOReader on a remote device",
       "author": "j-v",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/j-v/remotenote.koplugin",
       "source_type": "release",
-      "stars": "16",
+      "stars": "18",
+      "readme_url": "packages/koreader/remotenote.koplugin/README.md",
+      "readme_hash": "14187afe9b3dbcc1b803bd0393ffca619cb08d90",
       "assets": [
         {
           "arch": "arm",
@@ -1933,39 +3457,35 @@
     {
       "id": "rssreader",
       "name": "Rssreader",
-      "version": "1.12.0",
+      "version": "1.14.0",
       "description": "A full-featured RSS reader for KOReader — supports accounts, local feeds, and offline reading",
       "author": "omer-faruq",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "114884",
+      "size": "121306",
       "source": "https://github.com/omer-faruq/rssreader.koplugin",
       "source_asset": "rssreader.koplugin.zip",
       "source_type": "release",
-      "stars": "75"
+      "stars": "80",
+      "readme_url": "packages/koreader/rssreader.koplugin/README.md",
+      "readme_hash": "4760bddeaac8e9237abe35cb0648ca5234836c25"
     },
     {
       "id": "sake",
       "name": "Sake",
-      "version": "webapp/v2026.04.04.4",
-      "description": "Svelte and KOReader Ecosystem",
+      "version": "webapp/v2026.07.10.1",
+      "description": "Self-hosted ebook library with KOReader sync, progress and notes synchronization, OPDS, WebDAV, and automatic book delivery.",
       "author": "Sudashiii",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/Sudashiii/Sake",
       "source_type": "source",
       "source_url": "https://codeload.github.com/Sudashiii/Sake/zip/refs/heads/master",
-      "stars": "75"
+      "stars": "79",
+      "readme_url": "packages/koreader/sake.koplugin/README.md",
+      "readme_hash": "a08f6aafe745ae55e6b9fa938b260d5ef0f401b9"
     },
     {
       "id": "shortcutstoolbar",
@@ -1974,55 +3494,50 @@
       "description": "Shortcuts Toolbar for KOReader",
       "author": "xusoo",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "176158",
       "source": "https://github.com/xusoo/shortcutstoolbar.koplugin",
       "source_asset": "shortcutstoolbar-v0.0.2.koplugin.zip",
       "source_type": "release",
-      "stars": "54"
+      "stars": "62",
+      "readme_url": "packages/koreader/shortcutstoolbar.koplugin/README.md",
+      "readme_hash": "c5fda6f7bfb4f32a953e8ac3cd9a1bd8dcddf1f0"
     },
     {
       "id": "simpleui-ext",
       "name": "Simpleui Ext",
-      "version": "1.12.1",
+      "version": "1.12.3",
       "description": "Extra homescreen modules and patches for SimpleUI on KOReader",
       "author": "omer-faruq",
       "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "131120",
+      "size": "131484",
       "source": "https://github.com/omer-faruq/simpleui_ext.koplugin",
       "source_asset": "simpleui_ext.koplugin.zip",
       "source_type": "release",
-      "stars": "32"
+      "stars": "41",
+      "readme_url": "packages/koreader/simpleui-ext.koplugin/README.md",
+      "readme_hash": "1a49d88fb2b1220a6385b74083a7530304d67e7a"
     },
     {
       "id": "simpleui",
       "name": "Simpleui",
-      "version": "2.0.1",
+      "version": "2.1",
       "description": "A highly customizable UI plugin for KOReader that features a home screen, bottom navigation bar, top bar and desktop modules/widgets.",
       "author": "doctorhetfield-cmd",
       "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "893532",
+      "conflicts": ["zen-ui"],
+      "size": "1055623",
       "source": "https://github.com/doctorhetfield-cmd/simpleui.koplugin",
       "source_asset": "simpleui.koplugin.zip",
       "source_type": "release",
-      "stars": "943"
+      "stars": "1089",
+      "readme_url": "packages/koreader/simpleui.koplugin/README.md",
+      "readme_hash": "ca610f2281ab0e8f386cb24615991a02fe9359e9"
     },
     {
       "id": "solitaire",
@@ -2031,17 +3546,15 @@
       "description": "",
       "author": "Lalocaballero",
       "category": "games",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "12869",
       "source": "https://github.com/Lalocaballero/solitaire.koplugin",
       "source_asset": "solitaire.koplugin.zip",
       "source_type": "release",
-      "stars": "22"
+      "stars": "23",
+      "readme_url": "packages/koreader/solitaire.koplugin/README.md",
+      "readme_hash": "3be9c191b27c8ed076b6831aebb27adb95ba3769"
     },
     {
       "id": "storygraph",
@@ -2050,53 +3563,64 @@
       "description": "storygraph status updating from KOReader",
       "author": "burneracc0112",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "70941",
       "source": "https://github.com/burneracc0112/storygraph.koplugin",
       "source_asset": "storygraph.koplugin.zip",
       "source_type": "release",
-      "stars": "23"
+      "stars": "34",
+      "readme_url": "packages/koreader/storygraph.koplugin/README.md",
+      "readme_hash": "b27ec1055f31c42c3cb32da02204434776913fe5"
     },
     {
-      "id": "sudoku-koplugin",
+      "id": "sudoku",
       "name": "Sudoku",
-      "version": "1.2.1",
-      "description": "Sudoku game plugin for KOReader",
-      "author": "Omer Faruq",
+      "version": "1.3.0",
+      "description": "Play touch-friendly Sudoku puzzles on KOReader, resume later",
+      "author": "omer-faruq",
       "category": "games",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "featured": true,
-      "size": "20102",
+      "size": "33341",
       "source": "https://github.com/omer-faruq/sudoku.koplugin",
-      "source_asset": "sudoku.koplugin.zip"
+      "source_asset": "sudoku.koplugin.zip",
+      "source_type": "release",
+      "stars": "38",
+      "readme_url": "packages/koreader/sudoku.koplugin/README.md",
+      "readme_hash": "c95f0f3f0b5f624f20ad16ffc2f1f9b44344ead1"
     },
     {
       "id": "supersync",
       "name": "Supersync",
       "version": "source",
       "description": "Full metadata sync for KOreader via user's own cloud storage",
-      "author": "BrendanL79",
+      "author": "brendanlefebvre",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "source": "https://github.com/BrendanL79/supersync.koplugin",
+      "source": "https://github.com/brendanlefebvre/supersync.koplugin",
       "source_type": "source",
-      "source_url": "https://codeload.github.com/BrendanL79/supersync.koplugin/zip/refs/heads/main",
-      "stars": "39"
+      "source_url": "https://codeload.github.com/brendanlefebvre/supersync.koplugin/zip/refs/heads/main",
+      "stars": "39",
+      "readme_url": "packages/koreader/supersync.koplugin/README.md",
+      "readme_hash": "1bd67b19630e009ad288a8cacc636dfb8db7325b"
+    },
+    {
+      "id": "swipe-animation",
+      "name": "Swipe Animation",
+      "version": "3.5.2",
+      "description": "A software page-turn animation patch for KOReader that provides a smooth \"wipe / erase and reveal\" effect.",
+      "author": "koplugin-swipe-animation",
+      "category": "utility",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "source": "https://github.com/koplugin-swipe-animation/Swipe_Animation.koplugin",
+      "source_type": "source",
+      "source_url": "https://codeload.github.com/koplugin-swipe-animation/Swipe_Animation.koplugin/zip/refs/heads/main",
+      "stars": "44",
+      "readme_url": "packages/koreader/swipe-animation.koplugin/README.md",
+      "readme_hash": "93a5d3fb646d177cabf511c3711bf2318a162862"
     },
     {
       "id": "tbrplanner",
@@ -2105,17 +3629,15 @@
       "description": "TBR Planner is a KOReader plugin to help you organize and schedule your To Be Read list.",
       "author": "omer-faruq",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "43249",
       "source": "https://github.com/omer-faruq/tbrplanner.koplugin",
       "source_asset": "tbrplanner.koplugin.zip",
       "source_type": "release",
-      "stars": "24"
+      "stars": "24",
+      "readme_url": "packages/koreader/tbrplanner.koplugin/README.md",
+      "readme_hash": "c8f553bf1daffb25301b1793a6ca82eb2a91d3b0"
     },
     {
       "id": "telegramdownloader",
@@ -2124,17 +3646,15 @@
       "description": "This plugin for KOReader allows you to send files to your e-reader using Telegram bot.",
       "author": "Evgeniy-94",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "2993",
       "source": "https://github.com/Evgeniy-94/TelegramDownloader.koplugin",
       "source_asset": "TelegramDownloader.koplugin-v1.0.4.zip",
       "source_type": "release",
-      "stars": "38"
+      "stars": "38",
+      "readme_url": "packages/koreader/telegramdownloader.koplugin/README.md",
+      "readme_hash": "f16eb667b74870e9a995180e90bbe72723ff0cc1"
     },
     {
       "id": "telegramhighlights",
@@ -2143,17 +3663,15 @@
       "description": "Get nice image quotes from your kindle straight to your telegram through a bot @bookshotsbot",
       "author": "0xmiki",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "21105",
       "source": "https://github.com/0xmiki/telegramhighlights.koplugin",
       "source_asset": "telegramhighlights.koplugin.zip",
       "source_type": "release",
-      "stars": "70"
+      "stars": "71",
+      "readme_url": "packages/koreader/telegramhighlights.koplugin/README.md",
+      "readme_hash": "dd9270209ad8bc7db365593fde5e010bb2b17ae6"
     },
     {
       "id": "tts",
@@ -2162,16 +3680,14 @@
       "description": "A text-to-speech plugin for KOreader",
       "author": "norude",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/norude/TTS.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/norude/TTS.koplugin/zip/refs/heads/main",
-      "stars": "30"
+      "stars": "31",
+      "readme_url": "packages/koreader/tts.koplugin/README.md",
+      "readme_hash": "25e74073d5c7ac1ed892febc17db0de1c649ed5d"
     },
     {
       "id": "updatesmanager",
@@ -2180,17 +3696,15 @@
       "description": "Updates Manager is a plugin for KOReader that helps you manage updates for patches and plugins from multiple GitHub repositories",
       "author": "advokatb",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "53078",
       "source": "https://github.com/advokatb/updatesmanager.koplugin",
       "source_asset": "updatesmanager.koplugin-v1.4.9.1.zip",
       "source_type": "release",
-      "stars": "92"
+      "stars": "100",
+      "readme_url": "packages/koreader/updatesmanager.koplugin/README.md",
+      "readme_hash": "25313d51e6a4924074f117e6e4e811f9f8454eb6"
     },
     {
       "id": "wallabag2",
@@ -2199,16 +3713,14 @@
       "description": "KoReader plugin for Wallabag (version 2) servers",
       "author": "clach04",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/clach04/wallabag2.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/clach04/wallabag2.koplugin/zip/refs/heads/master",
-      "stars": "20"
+      "stars": "21",
+      "readme_url": "packages/koreader/wallabag2.koplugin/README.md",
+      "readme_hash": "045b5dd3b000a36454ad1586c24591f93f630e58"
     },
     {
       "id": "weather",
@@ -2217,35 +3729,31 @@
       "description": "",
       "author": "roygbyte",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/roygbyte/weather.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/roygbyte/weather.koplugin/zip/refs/heads/master",
-      "stars": "21"
+      "stars": "21",
+      "readme_url": "packages/koreader/weather.koplugin/README.md",
+      "readme_hash": "5511f68940a91f9d66a737824985fc64aaf1bca4"
     },
     {
       "id": "weatherlockscreen",
       "name": "Weatherlockscreen",
-      "version": "0.9.6-beta.2",
+      "version": "0.9.7-beta.1",
       "description": "Weather Lockscreen plugin for KOReader",
       "author": "loeffner",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "100283",
+      "size": "108655",
       "source": "https://github.com/loeffner/WeatherLockscreen",
-      "source_asset": "weatherlockscreen.koplugin-v0.9.6-beta.2.zip",
+      "source_asset": "weatherlockscreen.koplugin-v0.9.7-beta.1.zip",
       "source_type": "release",
-      "stars": "63"
+      "stars": "67",
+      "readme_url": "packages/koreader/weatherlockscreen.koplugin/README.md",
+      "readme_hash": "b3d535cfbde5cbd5b79ea073a030689352a07c9b"
     },
     {
       "id": "webbrowser",
@@ -2254,115 +3762,133 @@
       "description": "Text-Based Web Browser Plugin for KOReader",
       "author": "omer-faruq",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "87618",
       "source": "https://github.com/omer-faruq/webbrowser.koplugin",
       "source_asset": "webbrowser.koplugin.zip",
       "source_type": "release",
-      "stars": "81"
+      "stars": "86",
+      "readme_url": "packages/koreader/webbrowser.koplugin/README.md",
+      "readme_hash": "8dc6263f5841c8c4c51dc91b345e550a9da99ead"
+    },
+    {
+      "id": "weread-koplugin-fixed",
+      "name": "Weread.Koplugin Fixed",
+      "version": "0.3.5",
+      "description": "WeRead KOReader 插件的非官方修改版 Fork，包含 bug 修复、划线/想法显示和评论版本下载相关功能调整。",
+      "author": "miumiupy98-art",
+      "category": "utility",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "source": "https://github.com/miumiupy98-art/weread.koplugin-fixed",
+      "source_type": "release",
+      "stars": "17",
+      "readme_url": "packages/koreader/weread-koplugin-fixed.koplugin/README.md",
+      "readme_hash": "a2eb1094f1d2a1e85884d56bc0b2542711a1bbdb",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "weread-koplugin-v0.3.5-full-safe.zip",
+          "url": "https://github.com/miumiupy98-art/weread.koplugin-fixed/releases/download/v0.3.5/weread-koplugin-v0.3.5-full-safe.zip",
+          "size": "675865"
+        },
+        {
+          "arch": "any",
+          "asset": "weread-koplugin-v0.3.5-ota.zip",
+          "url": "https://github.com/miumiupy98-art/weread.koplugin-fixed/releases/download/v0.3.5/weread-koplugin-v0.3.5-ota.zip",
+          "size": "675865"
+        }
+      ]
     },
     {
       "id": "weread",
       "name": "Weread",
-      "version": "0.1.0",
-      "description": "微信读书 koreader 插件，实现在 koreader 里面阅读微信读书里面的书籍，并做到进度、阅读时长同步，阅读时间上报。",
-      "author": "QiuYukang",
+      "version": "0.2.1",
+      "description": "微信读书 koreader 插件，在 koreader 里阅读微信读书里的书籍、公众号文章，并做到进度、阅读时长同步，阅读时间上报。",
+      "author": "finlater",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "source": "https://github.com/QiuYukang/weread.koplugin",
+      "source": "https://github.com/finlater/weread.koplugin",
       "source_type": "source",
-      "source_url": "https://codeload.github.com/QiuYukang/weread.koplugin/zip/refs/heads/main",
-      "stars": "19"
+      "source_url": "https://codeload.github.com/finlater/weread.koplugin/zip/refs/heads/main",
+      "stars": "161",
+      "readme_url": "packages/koreader/weread.koplugin/README.md",
+      "readme_hash": "d54dc7a96317a8287b71d2a2d993fd0e6a6b6e9a"
     },
     {
       "id": "wordreference",
       "name": "Wordreference",
-      "version": "1.4.2",
+      "version": "1.4.3",
       "description": "Lookup highlighted words or phrases on WordReference directly from KOReader.",
       "author": "kristianpennacchia",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "19616",
+      "size": "20160",
       "source": "https://github.com/kristianpennacchia/wordreference.koplugin",
       "source_asset": "wordreference.koplugin.zip",
       "source_type": "release",
-      "stars": "56"
+      "stars": "58",
+      "readme_url": "packages/koreader/wordreference.koplugin/README.md",
+      "readme_hash": "7f45818e55d1b29a2e7fbe7a563d6f3c7b2bf382"
     },
     {
       "id": "wordsearch",
       "name": "Wordsearch",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "description": "Word Search Puzzle Plugin for KOReader",
       "author": "omer-faruq",
       "category": "games",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "45366",
+      "size": "51533",
       "source": "https://github.com/omer-faruq/wordsearch.koplugin",
       "source_asset": "wordsearch.koplugin.zip",
       "source_type": "release",
-      "stars": "19"
+      "stars": "23",
+      "readme_url": "packages/koreader/wordsearch.koplugin/README.md",
+      "readme_hash": "a21623b51d3d63e5a5bfa7a25c13b5e67c06736f"
+    },
+    {
+      "id": "zen-ui",
+      "name": "Zen UI",
+      "version": "2.4.4",
+      "description": "A clean, minimal UI for KOReader",
+      "author": "AnthonyGress",
+      "category": "theme",
+      "platforms": ["koreader", "android", "host"],
+      "dependencies": [],
+      "conflicts": ["projecttitle", "simpleui"],
+      "icon_url": "packages/koreader/zen-ui.koplugin/assets/zen.svg",
+      "featured_image": "packages/koreader/zen-ui.koplugin/assets/featured.png",
+      "featured": true,
+      "featured_order": 10,
+      "size": "936602",
+      "source": "https://github.com/AnthonyGress/zen_ui.koplugin",
+      "source_asset": "zen_ui.koplugin.zip",
+      "source_type": "release",
+      "stars": "354",
+      "readme_url": "packages/koreader/zen-ui.koplugin/README.md",
+      "readme_hash": "ee5aae4eccec9d524e548ce0d9a7c76dc2cc45e1"
     },
     {
       "id": "zen-mtp-koplugin",
-      "name": "ZenMTP",
+      "name": "ZenMTP KOReader",
       "version": "1.7",
       "description": "Trigger MTP file-transfer mode from Kindle home or KOReader",
       "author": "ZenLabs",
       "category": "utility",
-      "platforms": [
-        "koreader",
-        "kindle"
-      ],
+      "platforms": ["koreader", "kindle", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "icon_url": "packages/koreader/zen_mtp.koplugin/assets/zenmtp.svg",
       "featured_image": "packages/koreader/zen_mtp.koplugin/assets/zenmtp-featured.png",
       "featured": true,
+      "featured_order": 25,
       "size": "49469",
       "source": "https://github.com/xZenLabs/ZenMTP",
       "source_asset": "zen_mtp.koplugin.zip"
-    },
-    {
-      "id": "zen-ui",
-      "name": "Zen Ui",
-      "version": "1.4.0",
-      "description": "A clean, minimal UI for KOReader",
-      "author": "AnthonyGress",
-      "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
-      "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "featured_image": "packages/koreader/zen-ui.koplugin/assets/featured.png",
-      "featured": true,
-      "size": "4401722",
-      "source": "https://github.com/AnthonyGress/zen_ui.koplugin",
-      "source_asset": "zen_ui.koplugin.zip",
-      "source_type": "release",
-      "stars": "264"
     },
     {
       "id": "zim-converter",
@@ -2371,35 +3897,31 @@
       "description": "convert ZIM files, as found in the Kiwix WikiPedia library, to a SQLite database that is read by the WikiReader plugin of KOReader",
       "author": "Bartvelp",
       "category": "utility",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/Bartvelp/zim-converter",
       "source_type": "source",
       "source_url": "https://codeload.github.com/Bartvelp/zim-converter/zip/refs/heads/master",
-      "stars": "30"
+      "stars": "31",
+      "readme_url": "packages/koreader/zim-converter.koplugin/README.md",
+      "readme_hash": "e4a828790152d7761cc90460b172a393cae09a3f"
     },
     {
       "id": "zlibrary-2",
       "name": "Zlibrary",
-      "version": "1.0.33-878893cfd4d84deeed802c9050d7d4b4098a4c29",
+      "version": "1.0.34-2dfaa2c9087f845f667cdbc32d9c1904072546c4",
       "description": "Home of the KOReader Zlibrary plugin",
       "author": "ZlibraryKO",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "247648",
+      "size": "249649",
       "source": "https://github.com/ZlibraryKO/zlibrary.koplugin",
-      "source_asset": "zlibrary_plugin_v1.0.33.zip",
+      "source_asset": "zlibrary_plugin_v1.0.34.zip",
       "source_type": "release",
-      "stars": "442"
+      "stars": "492",
+      "readme_url": "packages/koreader/zlibrary-2.koplugin/README.md",
+      "readme_hash": "b9b2d465bfc3f33dccb17bf0aa75b97b25ca06f1"
     },
     {
       "id": "zlibrary",
@@ -2408,17 +3930,15 @@
       "description": "Z-Library client for KOReader!",
       "author": "OctoNezd",
       "category": "media",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "size": "22916",
       "source": "https://github.com/OctoNezd/zlibrary.koplugin",
       "source_asset": "zlibrary.koplugin.zip",
       "source_type": "release",
-      "stars": "209"
+      "stars": "215",
+      "readme_url": "packages/koreader/zlibrary.koplugin/README.md",
+      "readme_hash": "ce3083e806c41642782581c52e356c0dd7bea4a9"
     },
     {
       "id": "zotero",
@@ -2427,35 +3947,31 @@
       "description": "Display Zotero collection on E-Readers with KOReader",
       "author": "stelzch",
       "category": "productivity",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
       "source": "https://github.com/stelzch/zotero.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/stelzch/zotero.koplugin/zip/refs/heads/master",
-      "stars": "146"
+      "stars": "149",
+      "readme_url": "packages/koreader/zotero.koplugin/README.md",
+      "readme_hash": "77d44a381b82e9c2472f4388e0055c9bf67fde9b"
     },
     {
       "id": "zzz-readermenuredesign",
       "name": "Zzz Readermenuredesign",
-      "version": "1.0.6",
+      "version": "1.0.7",
       "description": "A redesign of the various reader menus in KOReader.",
       "author": "kristianpennacchia",
       "category": "theme",
-      "platforms": [
-        "koreader"
-      ],
+      "platforms": ["koreader", "android", "host"],
       "dependencies": [],
-      "install_url": "packages/koreader/install-plugin.sh",
-      "uninstall_url": "packages/koreader/uninstall-plugin.sh",
-      "size": "45049",
+      "size": "51017",
       "source": "https://github.com/kristianpennacchia/zzz-readermenuredesign.koplugin",
       "source_asset": "zzz-readermenuredesign.koplugin.zip",
       "source_type": "release",
-      "stars": "85"
+      "stars": "92",
+      "readme_url": "packages/koreader/zzz-readermenuredesign.koplugin/README.md",
+      "readme_hash": "df70c4cc7c7c75fac100d42b55a0fe4fc7a04c4a"
     }
   ]
 }

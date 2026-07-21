@@ -85,6 +85,7 @@ class ReadmeCacheTests(unittest.TestCase):
                 "featured_image": "packages/test/assets/featured.png",
                 "featured": "true",
                 "featured_order": "10",
+                "conflicts": "other-package",
             },
         )
 
@@ -95,6 +96,10 @@ class ReadmeCacheTests(unittest.TestCase):
         self.assertIn("featured_image=packages/test/assets/featured.png\n", meta_text)
         self.assertIn("featured=true\n", meta_text)
         self.assertIn("featured_order=10\n", meta_text)
+        self.assertIn("platforms=koreader,android,host\n", meta_text)
+        self.assertIn("conflicts=other-package\n", meta_text)
+        self.assertNotIn("install_url=", meta_text)
+        self.assertNotIn("uninstall_url=", meta_text)
 
     def test_repository_identity_ignores_package_name_punctuation(self):
         self.assertEqual(

@@ -105,6 +105,9 @@ Each package in `manifest.json` may include:
 | `updated_at` | string | Upstream package's last-updated timestamp from GitHub, in UTC ISO 8601 format. |
 | `readme_url` | string | Path to the cached package README. |
 | `readme_hash` | string | Git blob SHA of the cached README; changes when its source README changes. |
+| `conflicts` | array of strings | Package IDs that must not be installed together. |
+
+Install and uninstall behavior is handled by the client; packages do not declare script URLs.
 
 These fields are optional. Omit them if no assets are available.
 

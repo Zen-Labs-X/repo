@@ -25,10 +25,7 @@ MAX_INACTIVE_DAYS = 730
 KIND_PLUGIN = "plugin"
 KIND_PATCH = "patch"
 
-PLUGIN_INSTALL_URL = "packages/koreader/install-plugin.sh"
-PLUGIN_UNINSTALL_URL = "packages/koreader/uninstall-plugin.sh"
-PATCH_INSTALL_URL = "packages/koreader/install-patch.sh"
-PATCH_UNINSTALL_URL = "packages/koreader/uninstall-patch.sh"
+DEFAULT_PLUGIN_PLATFORMS = "koreader,android,host"
 
 PRESENTATION_FIELDS = (
     "icon_url",
@@ -451,9 +448,11 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
     updated_at = repo.get("updated_at") or ""
     description = clean_description(repo.get("description"))
     default_branch = repo.get("default_branch", "main")
-    install_url = PATCH_INSTALL_URL if kind == KIND_PATCH else PLUGIN_INSTALL_URL
-    uninstall_url = PATCH_UNINSTALL_URL if kind == KIND_PATCH else PLUGIN_UNINSTALL_URL
     package_label = "patch" if kind == KIND_PATCH else "plugin"
+    platforms = (preserved_fields or {}).get(
+        "platforms", DEFAULT_PLUGIN_PLATFORMS if kind == KIND_PLUGIN else "koreader"
+    )
+    conflicts = (preserved_fields or {}).get("conflicts", "")
 
     lines = [
         f"# {name} {package_label} for KOReader",
@@ -479,17 +478,18 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
         f"description={description}",
         f"author={owner}",
         f"category={category}",
-        "platforms=koreader",
+        f"platforms={platforms}",
         "dependencies=",
         f"source={repo['html_url']}",
-        f"install_url={install_url}",
-        f"uninstall_url={uninstall_url}",
     ])
 
     for field in PRESENTATION_FIELDS:
         value = (preserved_fields or {}).get(field, "")
         if value:
             lines.append(f"{field}={value}")
+
+    if conflicts:
+        lines.append(f"conflicts={conflicts}")
 
     lines.append(f"stars={stars}")
     if updated_at:

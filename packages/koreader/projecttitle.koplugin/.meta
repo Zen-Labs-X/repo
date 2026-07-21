@@ -1,0 +1,17 @@
+# Project: Title plugin for KOReader
+# https://github.com/joshuacant/ProjectTitle
+id=projecttitle
+name=Project: Title
+version=2026.03-v3.7
+description=UI Plugin for KOReader by @elfbutt and @joshuacant
+author=joshuacant
+category=theme
+platforms=koreader,android,host
+dependencies=
+conflicts=zen-ui
+source=https://github.com/joshuacant/ProjectTitle
+stars=1013
+updated_at=2026-07-21T05:52:58Z
+source_type=release
+source_asset=ProjectTitle-2026-03-v3-7.zip
+size=1248946

@@ -43,8 +43,8 @@ json_escape() {
     printf '  "repo": {\n'
     printf '    "id": "ZenLabs",\n'
     printf '    "name": "ZenLabs Repo",\n'
-    printf '    "url": "https://xzenlabs.github.io/repo/",\n'
-    printf '    "icon_url": "https://xzenlabs.github.io/repo/favicon.svg"\n'
+    printf '    "url": "https://repo.zen-labs.org/",\n'
+    printf '    "icon_url": "https://repo.zen-labs.org/favicon.svg"\n'
     printf '  },\n'
     printf '  "packages": [\n'
 } > "$OUTPUT"
@@ -77,8 +77,7 @@ for meta_file in $meta_files; do
     category=$(grep '^category=' "$tmp" 2>/dev/null | sed 's/^category=//' | head -1)
     platforms=$(grep '^platforms=' "$tmp" 2>/dev/null | sed 's/^platforms=//' | head -1)
     dependencies=$(grep '^dependencies=' "$tmp" 2>/dev/null | sed 's/^dependencies=//' | head -1)
-    install_url=$(grep '^install_url=' "$tmp" 2>/dev/null | sed 's/^install_url=//' | head -1)
-    uninstall_url=$(grep '^uninstall_url=' "$tmp" 2>/dev/null | sed 's/^uninstall_url=//' | head -1)
+    conflicts=$(grep '^conflicts=' "$tmp" 2>/dev/null | sed 's/^conflicts=//' | head -1)
     size=$(grep '^size=' "$tmp" 2>/dev/null | sed 's/^size=//' | head -1)
     featured=$(grep '^featured=' "$tmp" 2>/dev/null | sed 's/^featured=//' | head -1)
     featured_order=$(grep '^featured_order=' "$tmp" 2>/dev/null | sed 's/^featured_order=//' | head -1)
@@ -131,9 +130,9 @@ for meta_file in $meta_files; do
         printf '      "dependencies": %s' "$(csv_to_json_array "$dependencies")"
     } >> "$OUTPUT"
 
+    [ -n "$conflicts" ] && printf ',\n      "conflicts": %s' "$(csv_to_json_array "$conflicts")" >> "$OUTPUT"
+
     # Optional string fields
-    [ -n "$install_url" ]    && printf ',\n      "install_url": "%s"' "$(json_escape "$install_url")" >> "$OUTPUT"
-    [ -n "$uninstall_url" ]  && printf ',\n      "uninstall_url": "%s"' "$(json_escape "$uninstall_url")" >> "$OUTPUT"
     [ -n "$icon_url" ]       && printf ',\n      "icon_url": "%s"' "$(json_escape "$icon_url")" >> "$OUTPUT"
     [ -n "$featured_image" ] && printf ',\n      "featured_image": "%s"' "$(json_escape "$featured_image")" >> "$OUTPUT"
 
