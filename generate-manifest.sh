@@ -79,6 +79,8 @@ for meta_file in $meta_files; do
     incompatible_platforms=$(grep '^incompatible_platforms=' "$tmp" 2>/dev/null | sed 's/^incompatible_platforms=//' | head -1)
     dependencies=$(grep '^dependencies=' "$tmp" 2>/dev/null | sed 's/^dependencies=//' | head -1)
     conflicts=$(grep '^conflicts=' "$tmp" 2>/dev/null | sed 's/^conflicts=//' | head -1)
+    install_url=$(grep '^install_url=' "$tmp" 2>/dev/null | sed 's/^install_url=//' | head -1)
+    uninstall_url=$(grep '^uninstall_url=' "$tmp" 2>/dev/null | sed 's/^uninstall_url=//' | head -1)
     size=$(grep '^size=' "$tmp" 2>/dev/null | sed 's/^size=//' | head -1)
     featured=$(grep '^featured=' "$tmp" 2>/dev/null | sed 's/^featured=//' | head -1)
     featured_order=$(grep '^featured_order=' "$tmp" 2>/dev/null | sed 's/^featured_order=//' | head -1)
@@ -135,6 +137,8 @@ for meta_file in $meta_files; do
     [ -n "$incompatible_platforms" ] && printf ',\n      "incompatible_platforms": %s' "$(csv_to_json_array "$incompatible_platforms")" >> "$OUTPUT"
 
     # Optional string fields
+    [ -n "$install_url" ] && printf ',\n      "install_url": "%s"' "$(json_escape "$install_url")" >> "$OUTPUT"
+    [ -n "$uninstall_url" ] && printf ',\n      "uninstall_url": "%s"' "$(json_escape "$uninstall_url")" >> "$OUTPUT"
     [ -n "$icon_url" ]       && printf ',\n      "icon_url": "%s"' "$(json_escape "$icon_url")" >> "$OUTPUT"
     [ -n "$featured_image" ] && printf ',\n      "featured_image": "%s"' "$(json_escape "$featured_image")" >> "$OUTPUT"
 

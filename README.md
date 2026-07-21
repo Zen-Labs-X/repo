@@ -108,7 +108,7 @@ Each package in `manifest.json` may include:
 | `conflicts` | array of strings | Package IDs that must not be installed together. |
 | `incompatible_platforms` | array of strings | Platforms on which a package cannot be installed. |
 
-Install and uninstall behavior is handled by the client; packages do not declare script URLs.
+Install and uninstall behavior is handled by the client unless a platform-specific package declares script URLs.
 
 These fields are optional. Omit them if no assets are available.
 
