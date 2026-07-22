@@ -11,6 +11,7 @@ platforms=koreader
 dependencies=
 source=https://github.com/ameyrk99/koreader-patches-plugins
 stars=39
+updated_at=2026-07-03T07:17:31Z
 readme_url=packages/koreader/koreader-patches-plugins.kopatch/README.md
 readme_hash=15ea2ae4e25a37d010ab8ddec88ad8fe0e62e2dc
 source_type=source
