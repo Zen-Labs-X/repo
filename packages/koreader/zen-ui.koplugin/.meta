@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=zen-ui
 name=Zen UI
-version=2.4.4
+version=2.5.2
 description=A clean, minimal UI for KOReader
 author=AnthonyGress
 category=theme
@@ -16,10 +16,10 @@ featured=true
 featured_order=10
 conflicts=projecttitle,simpleui
 stars=367
-updated_at=2026-07-22T02:54:41Z
-published_at=2026-07-14T15:22:00Z
+updated_at=2026-07-22T08:26:20Z
+published_at=2026-07-22T08:28:44Z
 readme_url=packages/koreader/zen-ui.koplugin/README.md
-readme_hash=ee5aae4eccec9d524e548ce0d9a7c76dc2cc45e1
+readme_hash=81ffd3f5986a8e75d98548df38eead61c75c0b96
 source_type=release
 source_asset=zen_ui.koplugin.zip
-size=936602
+size=1006767
