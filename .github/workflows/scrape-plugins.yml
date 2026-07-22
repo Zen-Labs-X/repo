@@ -7,6 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 
@@ -137,3 +138,9 @@ jobs:
 
           git commit -m "Regenerate package manifest"
           git push origin HEAD:main
+
+      - name: Dispatch GitHub Pages deployment
+        if: ${{ steps.scrape.outputs.updated_count != '0' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run pages-deploy.yml --ref main
