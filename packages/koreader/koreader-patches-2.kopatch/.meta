@@ -11,6 +11,7 @@ platforms=koreader
 dependencies=
 source=https://github.com/medinauta/Koreader-Patches
 stars=28
+updated_at=2026-06-29T20:30:18Z
 readme_url=packages/koreader/koreader-patches-2.kopatch/README.md
 readme_hash=7b0b35a4870b4aeaf3b454c8c1d3c42089e22f0f
 source_type=source

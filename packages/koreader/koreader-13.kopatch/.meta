@@ -11,6 +11,7 @@ platforms=koreader
 dependencies=
 source=https://github.com/xusoo/KOReader.patches
 stars=34
+updated_at=2026-07-02T17:03:01Z
 readme_url=packages/koreader/koreader-13.kopatch/README.md
 readme_hash=ed3318a47157934c49f9c349364a9065c7d1abdf
 source_type=source
