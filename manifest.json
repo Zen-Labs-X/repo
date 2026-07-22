@@ -80,24 +80,6 @@
       }
     },
     {
-      "id": "ZenPM-kobo",
-      "name": "Zen Package Manager (Kobo Launcher)",
-      "version": "0.1.0",
-      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts",
-      "author": "ZenLabs",
-      "category": "utility",
-      "platforms": ["kobo"],
-      "dependencies": ["nickelmenu"],
-      "size": "0",
-      "launcher": {
-        "kobo": {
-          "entry_name": "Zen Package Manager",
-          "location": "main",
-          "type": "nickelmenu"
-        }
-      }
-    },
-    {
       "id": "koreader-kobo",
       "name": "KOReader (Kobo)",
       "version": "2026.03.0",
@@ -128,6 +110,24 @@
       "launcher": {
         "kobo": {
           "entry_name": "NickelMenu",
+          "type": "nickelmenu"
+        }
+      }
+    },
+    {
+      "id": "ZenPM-kobo",
+      "name": "Zen Package Manager (Kobo Launcher)",
+      "version": "0.1.0",
+      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts",
+      "author": "ZenLabs",
+      "category": "utility",
+      "platforms": ["kobo"],
+      "dependencies": ["nickelmenu"],
+      "size": "0",
+      "launcher": {
+        "kobo": {
+          "entry_name": "Zen Package Manager",
+          "location": "main",
           "type": "nickelmenu"
         }
       }
@@ -4135,6 +4135,23 @@
       "readme_hash": "4d46b8861654f54ed9c646510a25a14aae32cace"
     },
     {
+      "id": "zen-mtp-koplugin",
+      "name": "ZenMTP KOReader",
+      "version": "1.7",
+      "description": "Trigger MTP file-transfer mode from Kindle home or KOReader",
+      "author": "ZenLabs",
+      "category": "utility",
+      "platforms": ["koreader", "kindle"],
+      "dependencies": [],
+      "icon_url": "packages/koreader/zen_mtp.koplugin/assets/zenmtp.svg",
+      "featured_image": "packages/koreader/zen_mtp.koplugin/assets/zenmtp-featured.png",
+      "featured": true,
+      "featured_order": 25,
+      "size": "49469",
+      "source": "https://github.com/xZenLabs/ZenMTP",
+      "source_asset": "zen_mtp.koplugin.zip"
+    },
+    {
       "id": "zen-ui",
       "name": "Zen UI",
       "version": "2.4.4",
@@ -4156,23 +4173,6 @@
       "updated_at": "2026-07-21T05:30:03Z",
       "readme_url": "packages/koreader/zen-ui.koplugin/README.md",
       "readme_hash": "ee5aae4eccec9d524e548ce0d9a7c76dc2cc45e1"
-    },
-    {
-      "id": "zen-mtp-koplugin",
-      "name": "ZenMTP KOReader",
-      "version": "1.7",
-      "description": "Trigger MTP file-transfer mode from Kindle home or KOReader",
-      "author": "ZenLabs",
-      "category": "utility",
-      "platforms": ["koreader", "kindle"],
-      "dependencies": [],
-      "icon_url": "packages/koreader/zen_mtp.koplugin/assets/zenmtp.svg",
-      "featured_image": "packages/koreader/zen_mtp.koplugin/assets/zenmtp-featured.png",
-      "featured": true,
-      "featured_order": 25,
-      "size": "49469",
-      "source": "https://github.com/xZenLabs/ZenMTP",
-      "source_asset": "zen_mtp.koplugin.zip"
     },
     {
       "id": "zim-converter",

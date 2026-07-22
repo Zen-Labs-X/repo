@@ -78,8 +78,9 @@ class ReadmeCacheTests(unittest.TestCase):
             "description": "Example package",
         }
 
+        release = {"published_at": "2026-07-20T01:02:03Z"}
         _package_id, meta_text, _summary = scrape_common.build_meta(
-            repo, None, set(), "utility", readme_url="packages/test/README.md",
+            repo, release, set(), "utility", readme_url="packages/test/README.md",
             readme_hash="blob-sha", preserved_fields={
                 "icon_url": "packages/test/assets/icon.svg",
                 "featured_image": "packages/test/assets/featured.png",
@@ -93,6 +94,7 @@ class ReadmeCacheTests(unittest.TestCase):
         self.assertIn("readme_url=packages/test/README.md\n", meta_text)
         self.assertIn("readme_hash=blob-sha\n", meta_text)
         self.assertIn("updated_at=2026-07-16T12:34:56Z\n", meta_text)
+        self.assertIn("published_at=2026-07-20T01:02:03Z\n", meta_text)
         self.assertIn("icon_url=packages/test/assets/icon.svg\n", meta_text)
         self.assertIn("featured_image=packages/test/assets/featured.png\n", meta_text)
         self.assertIn("featured=true\n", meta_text)

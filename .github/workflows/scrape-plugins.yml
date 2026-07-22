@@ -2,8 +2,8 @@ name: Scrape KOReader plugins and patches
 
 on:
   schedule:
-    # Bi-weekly: 1st and 15th of each month at 06:00 UTC.
-    - cron: '0 6 1,15 * *'
+    # Every six hours.
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 permissions:

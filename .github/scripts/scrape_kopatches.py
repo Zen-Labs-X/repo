@@ -18,6 +18,7 @@ from scrape_common import (
     existing_repo_refs,
     existing_repository_identities,
     existing_scraped_meta,
+    fetch_release,
     fetch_repo,
     fetch_tree,
     is_inactive,
@@ -95,6 +96,7 @@ def main():
             print(f"Could not refresh {record['rel_path']}: no patch files",
                   file=sys.stderr)
             continue
+        release = fetch_release(repo.get("full_name", record["ref"]))
 
         package_dir = os.path.dirname(record["path"])
         readme_url, readme_hash, readme_changed, readme_resolved = cache_readme(
@@ -105,7 +107,7 @@ def main():
                   file=sys.stderr)
             continue
         _meta_id, meta_text, summary = build_meta(
-            repo, None, known_ids, PATCH_CATEGORY, meta_id=record["id"],
+            repo, release, known_ids, PATCH_CATEGORY, meta_id=record["id"],
             kind=KIND_PATCH, name_override=record["name"], patch_assets=assets,
             readme_url=readme_url, readme_hash=readme_hash,
             preserved_fields=record["fields"],
@@ -159,9 +161,10 @@ def main():
         assets = patch_assets(repo)
         if not assets:
             continue
+        release = fetch_release(repo.get("full_name", full_name))
 
         meta_id, meta_text, summary = build_meta(
-            repo, None, known_ids, PATCH_CATEGORY, kind=KIND_PATCH,
+            repo, release, known_ids, PATCH_CATEGORY, kind=KIND_PATCH,
             patch_assets=assets
         )
         known_refs.add(norm)
@@ -174,7 +177,7 @@ def main():
             repo.get("full_name", full_name), dest_dir, args.dry_run
         )
         meta_id, meta_text, summary = build_meta(
-            repo, None, known_ids, PATCH_CATEGORY, meta_id=meta_id,
+            repo, release, known_ids, PATCH_CATEGORY, meta_id=meta_id,
             kind=KIND_PATCH, patch_assets=assets, readme_url=readme_url,
             readme_hash=readme_hash,
         )

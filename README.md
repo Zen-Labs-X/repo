@@ -103,6 +103,7 @@ Each package in `manifest.json` may include:
 | `featured` | boolean | Marks a package for the featured section. |
 | `featured_order` | non-negative integer | Display priority within featured packages; lower values appear first. Requires `featured=true`. |
 | `updated_at` | string | Upstream package's last-updated timestamp from GitHub, in UTC ISO 8601 format. |
+| `published_at` | string | Timestamp of the upstream package's most recent GitHub release, in UTC ISO 8601 format. |
 | `readme_url` | string | Path to the cached package README. |
 | `readme_hash` | string | Git blob SHA of the cached README; changes when its source README changes. |
 | `conflicts` | array of strings | Package IDs that must not be installed together. |

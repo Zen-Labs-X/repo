@@ -92,6 +92,7 @@ for meta_file in $meta_files; do
     source_url=$(grep '^source_url=' "$tmp" 2>/dev/null | sed 's/^source_url=//' | head -1)
     stars=$(grep '^stars=' "$tmp" 2>/dev/null | sed 's/^stars=//' | head -1)
     updated_at=$(grep '^updated_at=' "$tmp" 2>/dev/null | sed 's/^updated_at=//' | head -1)
+    published_at=$(grep '^published_at=' "$tmp" 2>/dev/null | sed 's/^published_at=//' | head -1)
     readme_url=$(grep '^readme_url=' "$tmp" 2>/dev/null | sed 's/^readme_url=//' | head -1)
     readme_hash=$(grep '^readme_hash=' "$tmp" 2>/dev/null | sed 's/^readme_hash=//' | head -1)
 
@@ -158,6 +159,7 @@ for meta_file in $meta_files; do
     [ -n "$source_url" ]   && printf ',\n      "source_url": "%s"' "$(json_escape "$source_url")" >> "$OUTPUT"
     [ -n "$stars" ]        && printf ',\n      "stars": "%s"' "$stars" >> "$OUTPUT"
     [ -n "$updated_at" ]   && printf ',\n      "updated_at": "%s"' "$(json_escape "$updated_at")" >> "$OUTPUT"
+    [ -n "$published_at" ] && printf ',\n      "published_at": "%s"' "$(json_escape "$published_at")" >> "$OUTPUT"
     [ -n "$readme_url" ]   && printf ',\n      "readme_url": "%s"' "$(json_escape "$readme_url")" >> "$OUTPUT"
     [ -n "$readme_hash" ]  && printf ',\n      "readme_hash": "%s"' "$(json_escape "$readme_hash")" >> "$OUTPUT"
 
