@@ -368,8 +368,8 @@
       "source": "https://github.com/omer-faruq/appstore.koplugin",
       "source_asset": "appstore.koplugin.zip",
       "source_type": "release",
-      "stars": "341",
-      "updated_at": "2026-07-22T05:46:48Z",
+      "stars": "342",
+      "updated_at": "2026-07-22T12:14:37Z",
       "published_at": "2026-07-05T11:26:25Z",
       "readme_url": "packages/koreader/appstore.koplugin/README.md",
       "readme_hash": "5b5b7b1be2615d0efc8b39ec581bb537e959b122"
@@ -515,8 +515,8 @@
       "source": "https://github.com/AndyHazz/bookshelf.koplugin",
       "source_asset": "bookshelf.koplugin.zip",
       "source_type": "release",
-      "stars": "415",
-      "updated_at": "2026-07-22T05:00:26Z",
+      "stars": "417",
+      "updated_at": "2026-07-22T12:29:11Z",
       "published_at": "2026-07-20T07:45:07Z",
       "readme_url": "packages/koreader/bookshelf.koplugin/README.md",
       "readme_hash": "c281aa90d5069fd4d48fa902cf347a271f87c978"
@@ -769,8 +769,8 @@
       "source": "https://github.com/hesan1232/fanqie.koplugin",
       "source_asset": "fanqie.koplugin.zip",
       "source_type": "release",
-      "stars": "21",
-      "updated_at": "2026-07-22T03:39:04Z",
+      "stars": "23",
+      "updated_at": "2026-07-22T13:05:32Z",
       "published_at": "2026-07-20T13:03:43Z",
       "readme_url": "packages/koreader/fanqie.koplugin/README.md",
       "readme_hash": "a8896a52c499f21de6dacdf1e11253ac0dff3cc4"
@@ -808,8 +808,8 @@
       "source": "https://github.com/patelneeraj/filebrowserplus.koplugin",
       "source_asset": "filebrowserplus.koplugin-v1.1.0-linux-armv7.zip",
       "source_type": "release",
-      "stars": "235",
-      "updated_at": "2026-07-22T04:13:02Z",
+      "stars": "236",
+      "updated_at": "2026-07-22T09:50:24Z",
       "published_at": "2025-11-18T09:07:46Z",
       "readme_url": "packages/koreader/filebrowserplus.koplugin/README.md",
       "readme_hash": "dc13fcc83d7606c9e63d1e88c73abff95f3792d0"
@@ -1158,8 +1158,8 @@
       "source": "https://github.com/zeeyado/koassistant.koplugin",
       "source_asset": "koassistant.koplugin.zip",
       "source_type": "release",
-      "stars": "159",
-      "updated_at": "2026-07-22T03:47:29Z",
+      "stars": "160",
+      "updated_at": "2026-07-22T09:44:00Z",
       "published_at": "2026-07-05T14:17:02Z",
       "readme_url": "packages/koreader/koassistant.koplugin/README.md",
       "readme_hash": "aa444c662d756f19938bf9166e63d2e231bd9c69"
@@ -3510,8 +3510,8 @@
       "source": "https://github.com/qewer33/quickrss.koplugin",
       "source_asset": "quickrss.koplugin.zip",
       "source_type": "release",
-      "stars": "63",
-      "updated_at": "2026-07-21T21:07:11Z",
+      "stars": "64",
+      "updated_at": "2026-07-22T13:47:53Z",
       "published_at": "2026-03-03T17:24:15Z",
       "readme_url": "packages/koreader/quickrss.koplugin/README.md",
       "readme_hash": "49f013b30634999e957135012de20a07300bea71"
@@ -3555,7 +3555,7 @@
     {
       "id": "rakuyomi",
       "name": "Rakuyomi",
-      "version": "1.39.3",
+      "version": "1.39.4",
       "description": "A manga reader plugin for KOReader. (This fork adds new features and backward compatibility)",
       "author": "tachibana-shin",
       "category": "media",
@@ -3567,47 +3567,53 @@
       "featured_order": 25,
       "source": "https://github.com/tachibana-shin/rakuyomi",
       "source_type": "release",
-      "stars": "454",
-      "updated_at": "2026-07-22T03:35:55Z",
-      "published_at": "2026-07-21T09:48:12Z",
+      "stars": "455",
+      "updated_at": "2026-07-22T13:50:55Z",
+      "published_at": "2026-07-22T13:45:56Z",
       "readme_url": "packages/koreader/rakuyomi.koplugin/README.md",
       "readme_hash": "5767c006c7405d9ab4324602afa3c1c20cf26f15",
       "assets": [
         {
           "arch": "arm64",
           "asset": "rakuyomi-aarch64.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.3/rakuyomi-aarch64.zip",
-          "size": "13252805"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.4/rakuyomi-aarch64.zip",
+          "size": "13252554"
         },
         {
           "arch": "any",
           "asset": "rakuyomi-android.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.3/rakuyomi-android.zip",
-          "size": "650118"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.4/rakuyomi-android.zip",
+          "size": "650159"
         },
         {
           "arch": "any",
           "asset": "rakuyomi-desktop.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.3/rakuyomi-desktop.zip",
-          "size": "14086924"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.4/rakuyomi-desktop.zip",
+          "size": "14086970"
         },
         {
           "arch": "kindle",
           "asset": "rakuyomi-kindle.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.3/rakuyomi-kindle.zip",
-          "size": "13459886"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.4/rakuyomi-kindle.zip",
+          "size": "13460297"
         },
         {
           "arch": "kindle",
           "asset": "rakuyomi-kindlea9.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.3/rakuyomi-kindlea9.zip",
-          "size": "13327874"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.4/rakuyomi-kindlea9.zip",
+          "size": "13327929"
         },
         {
           "arch": "kindle",
           "asset": "rakuyomi-kindlehf.zip",
-          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.3/rakuyomi-kindlehf.zip",
-          "size": "13555908"
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.4/rakuyomi-kindlehf.zip",
+          "size": "13555927"
+        },
+        {
+          "arch": "any",
+          "asset": "rakuyomi-macos.zip",
+          "url": "https://github.com/tachibana-shin/rakuyomi/releases/download/v1.39.4/rakuyomi-macos.zip",
+          "size": "11818786"
         }
       ]
     },
@@ -3677,8 +3683,8 @@
       "dependencies": [],
       "source": "https://github.com/readest/readest",
       "source_type": "release",
-      "stars": "22607",
-      "updated_at": "2026-07-22T08:19:27Z",
+      "stars": "22615",
+      "updated_at": "2026-07-22T13:44:41Z",
       "published_at": "2026-07-19T20:11:12Z",
       "readme_url": "packages/koreader/readest.koplugin/README.md",
       "readme_hash": "f948406726e73cfce27f047018bb7f9af1d8ef36",
@@ -3911,8 +3917,8 @@
       "source": "https://github.com/doctorhetfield-cmd/simpleui.koplugin",
       "source_asset": "simpleui.koplugin.zip",
       "source_type": "release",
-      "stars": "1117",
-      "updated_at": "2026-07-22T05:12:48Z",
+      "stars": "1120",
+      "updated_at": "2026-07-22T13:51:55Z",
       "published_at": "2026-07-16T09:01:44Z",
       "readme_url": "packages/koreader/simpleui.koplugin/README.md",
       "readme_hash": "ca610f2281ab0e8f386cb24615991a02fe9359e9"
@@ -3949,8 +3955,8 @@
       "source": "https://github.com/ultimatejimmy/storefront.koplugin",
       "source_asset": "storefront.koplugin.zip",
       "source_type": "release",
-      "stars": "46",
-      "updated_at": "2026-07-22T05:42:06Z",
+      "stars": "47",
+      "updated_at": "2026-07-22T09:36:55Z",
       "published_at": "2026-07-21T20:24:43Z",
       "readme_url": "packages/koreader/storefront.koplugin/README.md",
       "readme_hash": "ba037ffd9477e74898f9d22416a52443096e0fc6"
@@ -4207,7 +4213,7 @@
       "source_asset": "miuread-v0.9.9-legacy-ota.zip",
       "source_type": "release",
       "stars": "33",
-      "updated_at": "2026-07-21T18:29:30Z",
+      "updated_at": "2026-07-22T13:49:54Z",
       "published_at": "2026-07-18T17:49:10Z",
       "readme_url": "packages/koreader/weread-koplugin-fixed.koplugin/README.md",
       "readme_hash": "a2eb1094f1d2a1e85884d56bc0b2542711a1bbdb"
@@ -4224,8 +4230,8 @@
       "source": "https://github.com/finlater/weread.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/finlater/weread.koplugin/zip/refs/heads/main",
-      "stars": "235",
-      "updated_at": "2026-07-22T08:02:28Z",
+      "stars": "241",
+      "updated_at": "2026-07-22T13:27:20Z",
       "published_at": "2026-07-18T16:56:12Z",
       "readme_url": "packages/koreader/weread.koplugin/README.md",
       "readme_hash": "b0d886d43ecee888dbb93f797f1191517bf18db5"
@@ -4305,8 +4311,8 @@
       "source": "https://github.com/AnthonyGress/zen_ui.koplugin",
       "source_asset": "zen_ui.koplugin.zip",
       "source_type": "release",
-      "stars": "367",
-      "updated_at": "2026-07-22T08:26:20Z",
+      "stars": "368",
+      "updated_at": "2026-07-22T10:33:02Z",
       "published_at": "2026-07-22T08:28:44Z",
       "readme_url": "packages/koreader/zen-ui.koplugin/README.md",
       "readme_hash": "81ffd3f5986a8e75d98548df38eead61c75c0b96"
@@ -4358,8 +4364,8 @@
       "source": "https://github.com/ZlibraryKO/zlibrary.koplugin",
       "source_asset": "zlibrary_plugin_v1.0.41.zip",
       "source_type": "release",
-      "stars": "517",
-      "updated_at": "2026-07-22T00:55:35Z",
+      "stars": "519",
+      "updated_at": "2026-07-22T13:06:44Z",
       "published_at": "2026-07-21T16:53:26Z",
       "readme_url": "packages/koreader/zlibrary-2.koplugin/README.md",
       "readme_hash": "b9b2d465bfc3f33dccb17bf0aa75b97b25ca06f1"
