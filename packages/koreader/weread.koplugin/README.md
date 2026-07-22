@@ -120,8 +120,16 @@ koreader/plugins/weread.koplugin/
 └── 关于
 ```
 
-## 贡献 
+## 许可证
+
+本项目代码采用 [GNU Affero General Public License v3.0](LICENSE)，SPDX 标识为 `AGPL-3.0-only`，与 KOReader 使用的许可证保持一致。
+
+修改、整合或再分发本项目时，必须遵守 AGPL-3.0，保留版权和许可证声明，并按许可证要求将本项目代码或其衍生作品开源。
+
+`fonts/NotoEmoji-Regular.ttf` 是第三方字体，采用 [SIL Open Font License 1.1](fonts/LICENSE)，不适用本项目的 AGPL-3.0。
+
+Copyright © 2026 finlater and contributors.
+
+## 贡献
 
 欢迎提交 issue 和 PR。提交前请阅读 [CONTRIBUTING.md](CONTRIBUTING.md)。
-
-Bug 反馈请提供清晰的复现步骤或截图、KOReader 日志、插件版本和 KOReader 版本；PR 请说明解决的问题或新增的特性，并按模板填写测试方式和截图。
