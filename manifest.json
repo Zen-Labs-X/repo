@@ -577,6 +577,25 @@
       "readme_hash": "a006fcd4f68972d229cdef24adf21336491aa624"
     },
     {
+      "id": "cloudlibrary",
+      "name": "Cloudlibrary",
+      "version": "1.4.3",
+      "description": "Sync books and metadata (annotations, reading progress, etc.) between devices.",
+      "author": "gytwo",
+      "category": "productivity",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "size": "66099",
+      "source": "https://github.com/gytwo/cloudlibrary.koplugin",
+      "source_asset": "cloudlibrary.koplugin.zip",
+      "source_type": "release",
+      "stars": "15",
+      "updated_at": "2026-07-22T12:38:58Z",
+      "published_at": "2026-07-06T10:43:59Z",
+      "readme_url": "packages/koreader/cloudlibrary.koplugin/README.md",
+      "readme_hash": "7a48b6e388f2695dd976fa8e823945c9035d4be1"
+    },
+    {
       "id": "comicmeta",
       "name": "Comicmeta",
       "version": "2.0",
