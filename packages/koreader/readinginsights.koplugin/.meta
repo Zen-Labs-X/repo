@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=readinginsights
 name=Readinginsights
-version=4.2.0
+version=4.2.1
 description=A full-screen overlay with a comprehensive overview of your reading history, powered by KOReader's statistics database.
 author=peterboda236
 category=utility
@@ -11,10 +11,10 @@ platforms=koreader
 dependencies=
 source=https://github.com/peterboda236/readinginsights.koplugin
 stars=56
-updated_at=2026-07-21T19:39:49Z
-published_at=2026-07-21T08:47:39Z
+updated_at=2026-07-22T06:53:55Z
+published_at=2026-07-22T06:55:23Z
 readme_url=packages/koreader/readinginsights.koplugin/README.md
 readme_hash=3030bc8611bb8e79f0be2f2dfa6c8c49f4a98620
 source_type=release
 source_asset=readinginsights.koplugin.zip
-size=229753
+size=239064
