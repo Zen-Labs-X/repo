@@ -4054,6 +4054,25 @@
       "readme_hash": "68cef3682a736efdc5613d7e40a1cc59b5d534ad"
     },
     {
+      "id": "syncery",
+      "name": "Syncery",
+      "version": "1.2.1",
+      "description": "Cross-device reading progress, annotations, metadata and font & style sync for KOReader.",
+      "author": "d0nizam",
+      "category": "theme",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "size": "684425",
+      "source": "https://github.com/d0nizam/syncery.koplugin",
+      "source_asset": "syncery.koplugin.zip",
+      "source_type": "release",
+      "stars": "15",
+      "updated_at": "2026-07-22T06:51:16Z",
+      "published_at": "2026-07-21T11:44:01Z",
+      "readme_url": "packages/koreader/syncery.koplugin/README.md",
+      "readme_hash": "021c2cabaef8007659695c000afe16f94d4397e2"
+    },
+    {
       "id": "tbrplanner",
       "name": "Tbrplanner",
       "version": "1.1.0",
