@@ -1,0 +1,14 @@
+id=koreader
+name=KOReader Installer + Launcher
+version=1.0.0
+description=KOReader Installer + Launcher all-in-one for Kindle
+author=ZenLabs
+category=media
+platforms=kindle
+dependencies=
+install_url=packages/kindle/koreader/scripts/install.sh
+uninstall_url=packages/kindle/koreader/scripts/uninstall.sh
+constraints.abi=hf,sf
+featured=true
+featured_order=40
+size=0
