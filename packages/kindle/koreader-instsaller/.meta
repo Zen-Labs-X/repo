@@ -1,4 +1,4 @@
-id=koreader
+id=koreader-installer
 name=KOReader Installer + Launcher
 version=1.0.0
 description=KOReader Installer + Launcher all-in-one for Kindle
@@ -10,5 +10,7 @@ install_url=packages/kindle/koreader/scripts/install.sh
 uninstall_url=packages/kindle/koreader/scripts/uninstall.sh
 constraints.abi=hf,sf
 featured=true
-featured_order=40
+icon_url=packages/kindle/koreader-installer/assets/koreader.svg
+featured_image=packages/kindle/koreader-installer/assets/koreader-installer-featured.png
+featured_order=60
 size=0
