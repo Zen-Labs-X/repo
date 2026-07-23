@@ -1,0 +1,16 @@
+id=zen-ota-check
+name=Zen OTA Checker
+version=1.4.0
+description=Check OTA update status
+author=ZenLabs
+category=utility
+platforms=kindle
+dependencies=
+install_url=packages/kindle/zen-ota-check/scripts/install.sh
+uninstall_url=packages/kindle/zen-ota-check/scripts/uninstall.sh
+constraints.abi=hf,sf
+featured=true
+icon_url=packages/kindle/zen-ota-check/assets/ota-check.svg
+featured_image=packages/kindle/zen-ota-check/assets/zen-ota-check-featured.png
+featured_order=70
+size=0
