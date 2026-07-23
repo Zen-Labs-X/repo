@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-xray-plugin
 name=Koreader Xray Plugin
-version=26.7.22.1
+version=26.7.23
 description=Character tracking, timeline, historical context, unit conversion, etc.
 author=ultimatejimmy
 category=productivity
@@ -12,9 +12,9 @@ dependencies=
 source=https://github.com/ultimatejimmy/xray.koplugin
 stars=123
 updated_at=2026-07-23T13:51:54Z
-published_at=2026-07-22T21:20:50Z
+published_at=2026-07-23T16:14:49Z
 readme_url=packages/koreader/koreader-xray-plugin.koplugin/README.md
 readme_hash=4d46b8861654f54ed9c646510a25a14aae32cace
 source_type=release
 source_asset=xray.koplugin.zip
-size=567888
+size=568639
