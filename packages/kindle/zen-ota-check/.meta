@@ -1,7 +1,7 @@
 id=zen-ota-check
 name=Zen OTA Checker
 version=1.4.0
-description=Check OTA update status
+description=Check Amazon OTA update status
 author=ZenLabs
 category=utility
 platforms=kindle
