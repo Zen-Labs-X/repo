@@ -3,18 +3,18 @@
 # zenpm:auto-scraped
 id=kosyncthing-plus
 name=Kosyncthing Plus
-version=1.2.0
-description=KOSyncthing+ embeds a fully managed Syncthing daemon inside KOReader, with a polished menu, automatic Wi‑Fi handling, conflict resolution, and a plugin API. Works on Kindle, should also work on Kob...
+version=1.2.1
+description=KOSyncthing+ embeds a fully managed Syncthing daemon inside KOReader, with a polished menu, automatic Wi‑Fi handling, conflict resolution, and a plugin API. Works on Kindle, Kobo, Android and others.
 author=d0nizam
 category=productivity
 platforms=koreader
 dependencies=
 source=https://github.com/d0nizam/kosyncthing_plus.koplugin
 stars=26
-updated_at=2026-07-23T05:25:12Z
-published_at=2026-07-18T15:34:45Z
+updated_at=2026-07-23T13:26:21Z
+published_at=2026-07-23T09:53:21Z
 readme_url=packages/koreader/kosyncthing-plus.koplugin/README.md
-readme_hash=f81c52aeadd35516229ef926c6be746dbdd704d4
+readme_hash=807048667606930428c3333be2dc80b9fecc8e6e
 source_type=release
 source_asset=kosyncthing_plus.koplugin.zip
-size=352306
+size=361340
