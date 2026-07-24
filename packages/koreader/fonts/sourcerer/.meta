@@ -1,0 +1,20 @@
+# Sourcerer font family for KOReader
+# Cached from https://github.com/nicoverbruggen/ebook-fonts release v2026.07.21
+# zenpm:auto-scraped-font
+id=font-sourcerer
+name=Sourcerer
+version=4.1
+description=E-reader-optimized Sourcerer font family, including all available styles.
+author=nicoverbruggen
+category=fonts
+platforms=koreader
+dependencies=
+source=https://github.com/nicoverbruggen/ebook-fonts
+source_type=release
+updated_at=2026-07-21T13:18:47Z
+published_at=2026-07-21T13:18:47Z
+featured_image=packages/koreader/fonts/sourcerer/assets/featured.png
+assets.0.arch=any
+assets.0.asset=font-sourcerer.zip
+assets.0.url=packages/koreader/fonts/sourcerer/font-sourcerer.zip
+assets.0.size=519729

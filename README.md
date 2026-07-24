@@ -91,6 +91,7 @@ Each package metadata file must include a `category` set to one of:
 - `media`
 - `theme`
 - `patches`
+- `fonts`
 
 ### Optional package fields
 

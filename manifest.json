@@ -25,6 +25,26 @@
       "size": "0"
     },
     {
+      "id": "koreader-installer",
+      "name": "KOReader Installer + Launcher",
+      "version": "1.0.0",
+      "description": "KOReader Installer + Launcher all-in-one for Kindle",
+      "author": "ZenLabs",
+      "category": "media",
+      "platforms": ["kindle"],
+      "dependencies": [],
+      "install_url": "packages/kindle/koreader-installer/scripts/install.sh",
+      "uninstall_url": "packages/kindle/koreader-installer/scripts/uninstall.sh",
+      "icon_url": "packages/kindle/koreader-installer/assets/koreader.svg",
+      "featured_image": "packages/kindle/koreader-installer/assets/koreader-installer-featured.png",
+      "featured": true,
+      "featured_order": 60,
+      "size": "0",
+      "constraints": {
+        "abi": ["hf", "sf"]
+      }
+    },
+    {
       "id": "zen-koreader",
       "name": "Zen + KOReader",
       "version": "1.0.5",
@@ -58,6 +78,26 @@
       "icon_url": "packages/kindle/zen-mtp/assets/zenmtp.svg",
       "featured_image": "packages/kindle/zen-mtp/assets/zenmtp-featured.png",
       "size": "0"
+    },
+    {
+      "id": "zen-ota-check",
+      "name": "Zen OTA Checker",
+      "version": "1.4.0",
+      "description": "Check Amazon OTA update status",
+      "author": "neura & ZenLabs",
+      "category": "utility",
+      "platforms": ["kindle"],
+      "dependencies": [],
+      "install_url": "packages/kindle/zen-ota-check/scripts/install.sh",
+      "uninstall_url": "packages/kindle/zen-ota-check/scripts/uninstall.sh",
+      "icon_url": "packages/kindle/zen-ota-check/assets/ota-check.svg",
+      "featured_image": "packages/kindle/zen-ota-check/assets/zen-ota-check-featured.png",
+      "featured": true,
+      "featured_order": 70,
+      "size": "0",
+      "constraints": {
+        "abi": ["hf", "sf"]
+      }
     },
     {
       "id": "zen-reader",
@@ -887,6 +927,1018 @@
       "published_at": "2026-05-02T19:18:29Z",
       "readme_url": "packages/koreader/foldermemory.koplugin/README.md",
       "readme_hash": "c719a1bef45abebb0c568075a0cceefe0038d3fe"
+    },
+    {
+      "id": "font-cartisse",
+      "name": "Cartisse",
+      "version": "4.1",
+      "description": "E-reader-optimized Cartisse font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/cartisse/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-cartisse.zip",
+          "url": "packages/koreader/fonts/cartisse/font-cartisse.zip",
+          "size": "297897"
+        }
+      ]
+    },
+    {
+      "id": "font-libron",
+      "name": "Libron",
+      "version": "4.1",
+      "description": "E-reader-optimized Libron font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/libron/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-libron.zip",
+          "url": "packages/koreader/fonts/libron/font-libron.zip",
+          "size": "367182"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-adelph",
+      "name": "NV Adelph",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Adelph font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-adelph/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-adelph.zip",
+          "url": "packages/koreader/fonts/nv-adelph/font-nv-adelph.zip",
+          "size": "208222"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-alegreya",
+      "name": "NV Alegreya",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Alegreya font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-alegreya/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-alegreya.zip",
+          "url": "packages/koreader/fonts/nv-alegreya/font-nv-alegreya.zip",
+          "size": "649076"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-alizar",
+      "name": "NV Alizar",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Alizar font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-alizar/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-alizar.zip",
+          "url": "packages/koreader/fonts/nv-alizar/font-nv-alizar.zip",
+          "size": "203416"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-ancizar-sans",
+      "name": "NV Ancizar Sans",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Ancizar Sans font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-ancizar-sans/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-ancizar-sans.zip",
+          "url": "packages/koreader/fonts/nv-ancizar-sans/font-nv-ancizar-sans.zip",
+          "size": "277837"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-ancizar-serif",
+      "name": "NV Ancizar Serif",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Ancizar Serif font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-ancizar-serif/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-ancizar-serif.zip",
+          "url": "packages/koreader/fonts/nv-ancizar-serif/font-nv-ancizar-serif.zip",
+          "size": "263647"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-andada",
+      "name": "NV Andada",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Andada font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-andada/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-andada.zip",
+          "url": "packages/koreader/fonts/nv-andada/font-nv-andada.zip",
+          "size": "343457"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-basker",
+      "name": "NV Basker",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Basker font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-basker/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-basker.zip",
+          "url": "packages/koreader/fonts/nv-basker/font-nv-basker.zip",
+          "size": "221105"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-bitter",
+      "name": "NV Bitter",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Bitter font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-bitter/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-bitter.zip",
+          "url": "packages/koreader/fonts/nv-bitter/font-nv-bitter.zip",
+          "size": "367886"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-cardo",
+      "name": "NV Cardo",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Cardo font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-cardo/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-cardo.zip",
+          "url": "packages/koreader/fonts/nv-cardo/font-nv-cardo.zip",
+          "size": "558535"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-castoro",
+      "name": "NV Castoro",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Castoro font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-castoro/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-castoro.zip",
+          "url": "packages/koreader/fonts/nv-castoro/font-nv-castoro.zip",
+          "size": "280350"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-charis-literacy",
+      "name": "NV Charis Literacy",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Charis Literacy font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-charis-literacy/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-charis-literacy.zip",
+          "url": "packages/koreader/fonts/nv-charis-literacy/font-nv-charis-literacy.zip",
+          "size": "1717768"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-charis-old-style",
+      "name": "NV Charis Old Style",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Charis Old Style font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-charis-old-style/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-charis-old-style.zip",
+          "url": "packages/koreader/fonts/nv-charis-old-style/font-nv-charis-old-style.zip",
+          "size": "1717846"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-charis",
+      "name": "NV Charis",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Charis font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-charis/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-charis.zip",
+          "url": "packages/koreader/fonts/nv-charis/font-nv-charis.zip",
+          "size": "1755383"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-clara",
+      "name": "NV Clara",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Clara font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-clara/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-clara.zip",
+          "url": "packages/koreader/fonts/nv-clara/font-nv-clara.zip",
+          "size": "302001"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-disleksio",
+      "name": "NV Disleksio",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Disleksio font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-disleksio/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-disleksio.zip",
+          "url": "packages/koreader/fonts/nv-disleksio/font-nv-disleksio.zip",
+          "size": "745666"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-elstob",
+      "name": "NV Elstob",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Elstob font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-elstob/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-elstob.zip",
+          "url": "packages/koreader/fonts/nv-elstob/font-nv-elstob.zip",
+          "size": "694257"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-erewhon",
+      "name": "NV Erewhon",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Erewhon font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-erewhon/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-erewhon.zip",
+          "url": "packages/koreader/fonts/nv-erewhon/font-nv-erewhon.zip",
+          "size": "486758"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-garamond",
+      "name": "NV Garamond",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Garamond font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-garamond/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-garamond.zip",
+          "url": "packages/koreader/fonts/nv-garamond/font-nv-garamond.zip",
+          "size": "1285865"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-gentium",
+      "name": "NV Gentium",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Gentium font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-gentium/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-gentium.zip",
+          "url": "packages/koreader/fonts/nv-gentium/font-nv-gentium.zip",
+          "size": "2080504"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-georsio",
+      "name": "NV Georsio",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Georsio font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-georsio/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-georsio.zip",
+          "url": "packages/koreader/fonts/nv-georsio/font-nv-georsio.zip",
+          "size": "289040"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-halcyon",
+      "name": "NV Halcyon",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Halcyon font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-halcyon/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-halcyon.zip",
+          "url": "packages/koreader/fonts/nv-halcyon/font-nv-halcyon.zip",
+          "size": "325475"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-ibarra",
+      "name": "NV Ibarra",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Ibarra font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-ibarra/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-ibarra.zip",
+          "url": "packages/koreader/fonts/nv-ibarra/font-nv-ibarra.zip",
+          "size": "161234"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-jost",
+      "name": "NV Jost",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Jost font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-jost/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-jost.zip",
+          "url": "packages/koreader/fonts/nv-jost/font-nv-jost.zip",
+          "size": "122328"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-junius",
+      "name": "NV Junius",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Junius font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-junius/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-junius.zip",
+          "url": "packages/koreader/fonts/nv-junius/font-nv-junius.zip",
+          "size": "2301452"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-kierkegaard",
+      "name": "NV Kierkegaard",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Kierkegaard font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-kierkegaard/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-kierkegaard.zip",
+          "url": "packages/koreader/fonts/nv-kierkegaard/font-nv-kierkegaard.zip",
+          "size": "404711"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-legible-next",
+      "name": "NV Legible Next",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Legible Next font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-legible-next/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-legible-next.zip",
+          "url": "packages/koreader/fonts/nv-legible-next/font-nv-legible-next.zip",
+          "size": "130128"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-libertinus",
+      "name": "NV Libertinus",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Libertinus font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-libertinus/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-libertinus.zip",
+          "url": "packages/koreader/fonts/nv-libertinus/font-nv-libertinus.zip",
+          "size": "1085130"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-literata",
+      "name": "NV Literata",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Literata font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-literata/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-literata.zip",
+          "url": "packages/koreader/fonts/nv-literata/font-nv-literata.zip",
+          "size": "468135"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-membo",
+      "name": "NV Membo",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Membo font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-membo/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-membo.zip",
+          "url": "packages/koreader/fonts/nv-membo/font-nv-membo.zip",
+          "size": "346297"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-newsreader",
+      "name": "NV Newsreader",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Newsreader font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-newsreader/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-newsreader.zip",
+          "url": "packages/koreader/fonts/nv-newsreader/font-nv-newsreader.zip",
+          "size": "263764"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-ninepoint",
+      "name": "NV NinePoint",
+      "version": "4.1",
+      "description": "E-reader-optimized NV NinePoint font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-ninepoint/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-ninepoint.zip",
+          "url": "packages/koreader/fonts/nv-ninepoint/font-nv-ninepoint.zip",
+          "size": "265256"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-palatium",
+      "name": "NV Palatium",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Palatium font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-palatium/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-palatium.zip",
+          "url": "packages/koreader/fonts/nv-palatium/font-nv-palatium.zip",
+          "size": "293191"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-publica-wide",
+      "name": "NV Publica Wide",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Publica Wide font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-publica-wide/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-publica-wide.zip",
+          "url": "packages/koreader/fonts/nv-publica-wide/font-nv-publica-wide.zip",
+          "size": "370660"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-publica",
+      "name": "NV Publica",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Publica font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-publica/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-publica.zip",
+          "url": "packages/koreader/fonts/nv-publica/font-nv-publica.zip",
+          "size": "638053"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-sable",
+      "name": "NV Sable",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Sable font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-sable/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-sable.zip",
+          "url": "packages/koreader/fonts/nv-sable/font-nv-sable.zip",
+          "size": "276695"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-scarlet",
+      "name": "NV Scarlet",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Scarlet font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-scarlet/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-scarlet.zip",
+          "url": "packages/koreader/fonts/nv-scarlet/font-nv-scarlet.zip",
+          "size": "576148"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-tabula",
+      "name": "NV Tabula",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Tabula font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-tabula/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-tabula.zip",
+          "url": "packages/koreader/fonts/nv-tabula/font-nv-tabula.zip",
+          "size": "296862"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-technical",
+      "name": "NV Technical",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Technical font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-technical/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-technical.zip",
+          "url": "packages/koreader/fonts/nv-technical/font-nv-technical.zip",
+          "size": "758011"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-yrsa",
+      "name": "NV Yrsa",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Yrsa font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-yrsa/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-yrsa.zip",
+          "url": "packages/koreader/fonts/nv-yrsa/font-nv-yrsa.zip",
+          "size": "285045"
+        }
+      ]
+    },
+    {
+      "id": "font-nv-zilla-slab",
+      "name": "NV Zilla Slab",
+      "version": "4.1",
+      "description": "E-reader-optimized NV Zilla Slab font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/nv-zilla-slab/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-nv-zilla-slab.zip",
+          "url": "packages/koreader/fonts/nv-zilla-slab/font-nv-zilla-slab.zip",
+          "size": "263196"
+        }
+      ]
+    },
+    {
+      "id": "font-readerly",
+      "name": "Readerly",
+      "version": "4.1",
+      "description": "E-reader-optimized Readerly font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/readerly/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-readerly.zip",
+          "url": "packages/koreader/fonts/readerly/font-readerly.zip",
+          "size": "423180"
+        }
+      ]
+    },
+    {
+      "id": "font-sourcerer",
+      "name": "Sourcerer",
+      "version": "4.1",
+      "description": "E-reader-optimized Sourcerer font family, including all available styles.",
+      "author": "nicoverbruggen",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "featured_image": "packages/koreader/fonts/sourcerer/assets/featured.png",
+      "source": "https://github.com/nicoverbruggen/ebook-fonts",
+      "source_type": "release",
+      "updated_at": "2026-07-21T13:18:47Z",
+      "published_at": "2026-07-21T13:18:47Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-sourcerer.zip",
+          "url": "packages/koreader/fonts/sourcerer/font-sourcerer.zip",
+          "size": "519729"
+        }
+      ]
     },
     {
       "id": "foot-cream",

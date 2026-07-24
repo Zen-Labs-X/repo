@@ -97,7 +97,7 @@ for meta_file in $meta_files; do
     readme_hash=$(grep '^readme_hash=' "$tmp" 2>/dev/null | sed 's/^readme_hash=//' | head -1)
 
     case "$category" in
-        utility|games|productivity|media|theme|patches) ;;
+        utility|games|productivity|media|theme|patches|fonts) ;;
         *)
             echo "Invalid or missing category in $meta_file: $category" >&2
             rm -f "$tmp"

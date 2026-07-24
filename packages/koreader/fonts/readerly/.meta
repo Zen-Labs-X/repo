@@ -1,0 +1,20 @@
+# Readerly font family for KOReader
+# Cached from https://github.com/nicoverbruggen/ebook-fonts release v2026.07.21
+# zenpm:auto-scraped-font
+id=font-readerly
+name=Readerly
+version=4.1
+description=E-reader-optimized Readerly font family, including all available styles.
+author=nicoverbruggen
+category=fonts
+platforms=koreader
+dependencies=
+source=https://github.com/nicoverbruggen/ebook-fonts
+source_type=release
+updated_at=2026-07-21T13:18:47Z
+published_at=2026-07-21T13:18:47Z
+featured_image=packages/koreader/fonts/readerly/assets/featured.png
+assets.0.arch=any
+assets.0.asset=font-readerly.zip
+assets.0.url=packages/koreader/fonts/readerly/font-readerly.zip
+assets.0.size=423180

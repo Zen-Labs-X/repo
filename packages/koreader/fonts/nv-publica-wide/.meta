@@ -1,0 +1,20 @@
+# NV Publica Wide font family for KOReader
+# Cached from https://github.com/nicoverbruggen/ebook-fonts release v2026.07.21
+# zenpm:auto-scraped-font
+id=font-nv-publica-wide
+name=NV Publica Wide
+version=4.1
+description=E-reader-optimized NV Publica Wide font family, including all available styles.
+author=nicoverbruggen
+category=fonts
+platforms=koreader
+dependencies=
+source=https://github.com/nicoverbruggen/ebook-fonts
+source_type=release
+updated_at=2026-07-21T13:18:47Z
+published_at=2026-07-21T13:18:47Z
+featured_image=packages/koreader/fonts/nv-publica-wide/assets/featured.png
+assets.0.arch=any
+assets.0.asset=font-nv-publica-wide.zip
+assets.0.url=packages/koreader/fonts/nv-publica-wide/font-nv-publica-wide.zip
+assets.0.size=370660

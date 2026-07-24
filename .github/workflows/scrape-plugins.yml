@@ -1,4 +1,4 @@
-name: Scrape KOReader plugins and patches
+name: Scrape KOReader plugins, patches, and fonts
 
 on:
   schedule:
@@ -31,6 +31,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/scrape_kopatches.py
 
+      - name: Refresh cached font packages
+        id: scrape_fonts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/scrape_fonts.py
+
       - name: Merge scraper outputs
         id: scrape
         env:
@@ -38,9 +44,10 @@ jobs:
           PLUGIN_UPDATED: ${{ steps.scrape_plugins.outputs.updated }}
           PATCH_ADDED: ${{ steps.scrape_patches.outputs.added }}
           PATCH_UPDATED: ${{ steps.scrape_patches.outputs.updated }}
+          FONT_UPDATED: ${{ steps.scrape_fonts.outputs.updated }}
         run: |
           set -eu
-          python3 -c 'import json, os; loads=lambda n: json.loads(os.environ.get(n) or "[]"); added=loads("PLUGIN_ADDED")+loads("PATCH_ADDED"); updated=loads("PLUGIN_UPDATED")+loads("PATCH_UPDATED"); fh=open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8"); fh.write(f"added_count={len(added)}\nadded={json.dumps(added)}\nupdated_count={len(updated)}\nupdated={json.dumps(updated)}\n"); fh.close()'
+          python3 -c 'import json, os; loads=lambda n: json.loads(os.environ.get(n) or "[]"); added=loads("PLUGIN_ADDED")+loads("PATCH_ADDED"); updated=loads("PLUGIN_UPDATED")+loads("PATCH_UPDATED")+loads("FONT_UPDATED"); fh=open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8"); fh.write(f"added_count={len(added)}\nadded={json.dumps(added)}\nupdated_count={len(updated)}\nupdated={json.dumps(updated)}\n"); fh.close()'
 
       - name: Regenerate and validate manifest
         run: |

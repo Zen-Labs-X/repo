@@ -1,0 +1,20 @@
+# NV Ancizar Sans font family for KOReader
+# Cached from https://github.com/nicoverbruggen/ebook-fonts release v2026.07.21
+# zenpm:auto-scraped-font
+id=font-nv-ancizar-sans
+name=NV Ancizar Sans
+version=4.1
+description=E-reader-optimized NV Ancizar Sans font family, including all available styles.
+author=nicoverbruggen
+category=fonts
+platforms=koreader
+dependencies=
+source=https://github.com/nicoverbruggen/ebook-fonts
+source_type=release
+updated_at=2026-07-21T13:18:47Z
+published_at=2026-07-21T13:18:47Z
+featured_image=packages/koreader/fonts/nv-ancizar-sans/assets/featured.png
+assets.0.arch=any
+assets.0.asset=font-nv-ancizar-sans.zip
+assets.0.url=packages/koreader/fonts/nv-ancizar-sans/font-nv-ancizar-sans.zip
+assets.0.size=277837

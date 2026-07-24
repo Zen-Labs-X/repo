@@ -34,7 +34,7 @@ PRESENTATION_FIELDS = (
     "featured_order",
 )
 
-VALID_CATEGORIES = ("utility", "games", "productivity", "media", "theme", "patches")
+VALID_CATEGORIES = ("utility", "games", "productivity", "media", "theme", "patches", "fonts")
 DEFAULT_CATEGORY = "utility"
 PATCH_CATEGORY = "patches"
 
