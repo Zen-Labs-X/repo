@@ -52,6 +52,8 @@ json_escape() {
 # --- collect .meta files ---
 meta_files="$(find packages -name '.meta' | sort)"
 count=$(printf '%s\n' "$meta_files" | wc -l | tr -d ' ')
+seen_sources="$(mktemp)"
+trap 'rm -f "$seen_sources"' EXIT
 
 i=0
 for meta_file in $meta_files; do
@@ -104,6 +106,15 @@ for meta_file in $meta_files; do
             exit 1
             ;;
     esac
+
+    if [ "$category" != "fonts" ] && [ -n "$source" ]; then
+        if grep -Fqx -- "$source" "$seen_sources"; then
+            echo "Duplicate source in $meta_file: $source" >&2
+            rm -f "$tmp"
+            exit 1
+        fi
+        printf '%s\n' "$source" >> "$seen_sources"
+    fi
 
     if [ -n "$featured_order" ]; then
         case "$featured_order" in
