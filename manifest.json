@@ -947,7 +947,7 @@
           "arch": "any",
           "asset": "font-cartisse.zip",
           "url": "packages/koreader/fonts/cartisse/font-cartisse.zip",
-          "size": "297897"
+          "size": "297921"
         }
       ]
     },
@@ -970,7 +970,7 @@
           "arch": "any",
           "asset": "font-libron.zip",
           "url": "packages/koreader/fonts/libron/font-libron.zip",
-          "size": "367182"
+          "size": "367190"
         }
       ]
     },
@@ -993,7 +993,7 @@
           "arch": "any",
           "asset": "font-nv-adelph.zip",
           "url": "packages/koreader/fonts/nv-adelph/font-nv-adelph.zip",
-          "size": "208222"
+          "size": "208254"
         }
       ]
     },
@@ -1016,7 +1016,7 @@
           "arch": "any",
           "asset": "font-nv-alegreya.zip",
           "url": "packages/koreader/fonts/nv-alegreya/font-nv-alegreya.zip",
-          "size": "649076"
+          "size": "649124"
         }
       ]
     },
@@ -1039,7 +1039,7 @@
           "arch": "any",
           "asset": "font-nv-alizar.zip",
           "url": "packages/koreader/fonts/nv-alizar/font-nv-alizar.zip",
-          "size": "203416"
+          "size": "203448"
         }
       ]
     },
@@ -1062,7 +1062,7 @@
           "arch": "any",
           "asset": "font-nv-ancizar-sans.zip",
           "url": "packages/koreader/fonts/nv-ancizar-sans/font-nv-ancizar-sans.zip",
-          "size": "277837"
+          "size": "277917"
         }
       ]
     },
@@ -1085,7 +1085,7 @@
           "arch": "any",
           "asset": "font-nv-ancizar-serif.zip",
           "url": "packages/koreader/fonts/nv-ancizar-serif/font-nv-ancizar-serif.zip",
-          "size": "263647"
+          "size": "263735"
         }
       ]
     },
@@ -1108,7 +1108,7 @@
           "arch": "any",
           "asset": "font-nv-andada.zip",
           "url": "packages/koreader/fonts/nv-andada/font-nv-andada.zip",
-          "size": "343457"
+          "size": "343489"
         }
       ]
     },
@@ -1131,7 +1131,7 @@
           "arch": "any",
           "asset": "font-nv-basker.zip",
           "url": "packages/koreader/fonts/nv-basker/font-nv-basker.zip",
-          "size": "221105"
+          "size": "221137"
         }
       ]
     },
@@ -1154,7 +1154,7 @@
           "arch": "any",
           "asset": "font-nv-bitter.zip",
           "url": "packages/koreader/fonts/nv-bitter/font-nv-bitter.zip",
-          "size": "367886"
+          "size": "367918"
         }
       ]
     },
@@ -1177,7 +1177,7 @@
           "arch": "any",
           "asset": "font-nv-cardo.zip",
           "url": "packages/koreader/fonts/nv-cardo/font-nv-cardo.zip",
-          "size": "558535"
+          "size": "558553"
         }
       ]
     },
@@ -1200,7 +1200,7 @@
           "arch": "any",
           "asset": "font-nv-castoro.zip",
           "url": "packages/koreader/fonts/nv-castoro/font-nv-castoro.zip",
-          "size": "280350"
+          "size": "280390"
         }
       ]
     },
@@ -1223,7 +1223,7 @@
           "arch": "any",
           "asset": "font-nv-charis-literacy.zip",
           "url": "packages/koreader/fonts/nv-charis-literacy/font-nv-charis-literacy.zip",
-          "size": "1717768"
+          "size": "1717872"
         }
       ]
     },
@@ -1246,7 +1246,7 @@
           "arch": "any",
           "asset": "font-nv-charis-old-style.zip",
           "url": "packages/koreader/fonts/nv-charis-old-style/font-nv-charis-old-style.zip",
-          "size": "1717846"
+          "size": "1717958"
         }
       ]
     },
@@ -1269,7 +1269,7 @@
           "arch": "any",
           "asset": "font-nv-charis.zip",
           "url": "packages/koreader/fonts/nv-charis/font-nv-charis.zip",
-          "size": "1755383"
+          "size": "1755415"
         }
       ]
     },
@@ -1292,7 +1292,7 @@
           "arch": "any",
           "asset": "font-nv-clara.zip",
           "url": "packages/koreader/fonts/nv-clara/font-nv-clara.zip",
-          "size": "302001"
+          "size": "302025"
         }
       ]
     },
@@ -1315,7 +1315,7 @@
           "arch": "any",
           "asset": "font-nv-disleksio.zip",
           "url": "packages/koreader/fonts/nv-disleksio/font-nv-disleksio.zip",
-          "size": "745666"
+          "size": "745722"
         }
       ]
     },
@@ -1338,7 +1338,7 @@
           "arch": "any",
           "asset": "font-nv-elstob.zip",
           "url": "packages/koreader/fonts/nv-elstob/font-nv-elstob.zip",
-          "size": "694257"
+          "size": "694289"
         }
       ]
     },
@@ -1361,7 +1361,7 @@
           "arch": "any",
           "asset": "font-nv-erewhon.zip",
           "url": "packages/koreader/fonts/nv-erewhon/font-nv-erewhon.zip",
-          "size": "486758"
+          "size": "486798"
         }
       ]
     },
@@ -1384,7 +1384,7 @@
           "arch": "any",
           "asset": "font-nv-garamond.zip",
           "url": "packages/koreader/fonts/nv-garamond/font-nv-garamond.zip",
-          "size": "1285865"
+          "size": "1285913"
         }
       ]
     },
@@ -1407,7 +1407,7 @@
           "arch": "any",
           "asset": "font-nv-gentium.zip",
           "url": "packages/koreader/fonts/nv-gentium/font-nv-gentium.zip",
-          "size": "2080504"
+          "size": "2080544"
         }
       ]
     },
@@ -1430,7 +1430,7 @@
           "arch": "any",
           "asset": "font-nv-georsio.zip",
           "url": "packages/koreader/fonts/nv-georsio/font-nv-georsio.zip",
-          "size": "289040"
+          "size": "289080"
         }
       ]
     },
@@ -1453,7 +1453,7 @@
           "arch": "any",
           "asset": "font-nv-halcyon.zip",
           "url": "packages/koreader/fonts/nv-halcyon/font-nv-halcyon.zip",
-          "size": "325475"
+          "size": "325515"
         }
       ]
     },
@@ -1476,7 +1476,7 @@
           "arch": "any",
           "asset": "font-nv-ibarra.zip",
           "url": "packages/koreader/fonts/nv-ibarra/font-nv-ibarra.zip",
-          "size": "161234"
+          "size": "161266"
         }
       ]
     },
@@ -1499,7 +1499,7 @@
           "arch": "any",
           "asset": "font-nv-jost.zip",
           "url": "packages/koreader/fonts/nv-jost/font-nv-jost.zip",
-          "size": "122328"
+          "size": "122344"
         }
       ]
     },
@@ -1522,7 +1522,7 @@
           "arch": "any",
           "asset": "font-nv-junius.zip",
           "url": "packages/koreader/fonts/nv-junius/font-nv-junius.zip",
-          "size": "2301452"
+          "size": "2301484"
         }
       ]
     },
@@ -1545,7 +1545,7 @@
           "arch": "any",
           "asset": "font-nv-kierkegaard.zip",
           "url": "packages/koreader/fonts/nv-kierkegaard/font-nv-kierkegaard.zip",
-          "size": "404711"
+          "size": "404783"
         }
       ]
     },
@@ -1568,7 +1568,7 @@
           "arch": "any",
           "asset": "font-nv-legible-next.zip",
           "url": "packages/koreader/fonts/nv-legible-next/font-nv-legible-next.zip",
-          "size": "130128"
+          "size": "130208"
         }
       ]
     },
@@ -1591,7 +1591,7 @@
           "arch": "any",
           "asset": "font-nv-libertinus.zip",
           "url": "packages/koreader/fonts/nv-libertinus/font-nv-libertinus.zip",
-          "size": "1085130"
+          "size": "1085194"
         }
       ]
     },
@@ -1614,7 +1614,7 @@
           "arch": "any",
           "asset": "font-nv-literata.zip",
           "url": "packages/koreader/fonts/nv-literata/font-nv-literata.zip",
-          "size": "468135"
+          "size": "468183"
         }
       ]
     },
@@ -1637,7 +1637,7 @@
           "arch": "any",
           "asset": "font-nv-membo.zip",
           "url": "packages/koreader/fonts/nv-membo/font-nv-membo.zip",
-          "size": "346297"
+          "size": "346321"
         }
       ]
     },
@@ -1660,7 +1660,7 @@
           "arch": "any",
           "asset": "font-nv-newsreader.zip",
           "url": "packages/koreader/fonts/nv-newsreader/font-nv-newsreader.zip",
-          "size": "263764"
+          "size": "263828"
         }
       ]
     },
@@ -1683,7 +1683,7 @@
           "arch": "any",
           "asset": "font-nv-ninepoint.zip",
           "url": "packages/koreader/fonts/nv-ninepoint/font-nv-ninepoint.zip",
-          "size": "265256"
+          "size": "265312"
         }
       ]
     },
@@ -1706,7 +1706,7 @@
           "arch": "any",
           "asset": "font-nv-palatium.zip",
           "url": "packages/koreader/fonts/nv-palatium/font-nv-palatium.zip",
-          "size": "293191"
+          "size": "293239"
         }
       ]
     },
@@ -1729,7 +1729,7 @@
           "arch": "any",
           "asset": "font-nv-publica-wide.zip",
           "url": "packages/koreader/fonts/nv-publica-wide/font-nv-publica-wide.zip",
-          "size": "370660"
+          "size": "370700"
         }
       ]
     },
@@ -1752,7 +1752,7 @@
           "arch": "any",
           "asset": "font-nv-publica.zip",
           "url": "packages/koreader/fonts/nv-publica/font-nv-publica.zip",
-          "size": "638053"
+          "size": "638093"
         }
       ]
     },
@@ -1775,7 +1775,7 @@
           "arch": "any",
           "asset": "font-nv-sable.zip",
           "url": "packages/koreader/fonts/nv-sable/font-nv-sable.zip",
-          "size": "276695"
+          "size": "276719"
         }
       ]
     },
@@ -1798,7 +1798,7 @@
           "arch": "any",
           "asset": "font-nv-scarlet.zip",
           "url": "packages/koreader/fonts/nv-scarlet/font-nv-scarlet.zip",
-          "size": "576148"
+          "size": "576188"
         }
       ]
     },
@@ -1821,7 +1821,7 @@
           "arch": "any",
           "asset": "font-nv-tabula.zip",
           "url": "packages/koreader/fonts/nv-tabula/font-nv-tabula.zip",
-          "size": "296862"
+          "size": "296894"
         }
       ]
     },
@@ -1844,7 +1844,7 @@
           "arch": "any",
           "asset": "font-nv-technical.zip",
           "url": "packages/koreader/fonts/nv-technical/font-nv-technical.zip",
-          "size": "758011"
+          "size": "758067"
         }
       ]
     },
@@ -1867,7 +1867,7 @@
           "arch": "any",
           "asset": "font-nv-yrsa.zip",
           "url": "packages/koreader/fonts/nv-yrsa/font-nv-yrsa.zip",
-          "size": "285045"
+          "size": "285061"
         }
       ]
     },
@@ -1890,7 +1890,7 @@
           "arch": "any",
           "asset": "font-nv-zilla-slab.zip",
           "url": "packages/koreader/fonts/nv-zilla-slab/font-nv-zilla-slab.zip",
-          "size": "263196"
+          "size": "263260"
         }
       ]
     },
@@ -1913,7 +1913,7 @@
           "arch": "any",
           "asset": "font-readerly.zip",
           "url": "packages/koreader/fonts/readerly/font-readerly.zip",
-          "size": "423180"
+          "size": "423204"
         }
       ]
     },
@@ -1936,7 +1936,7 @@
           "arch": "any",
           "asset": "font-sourcerer.zip",
           "url": "packages/koreader/fonts/sourcerer/font-sourcerer.zip",
-          "size": "519729"
+          "size": "519761"
         }
       ]
     },

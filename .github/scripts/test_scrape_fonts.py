@@ -29,6 +29,12 @@ class FontScraperTests(unittest.TestCase):
                 ["fonts/Example-Bold.ttf", "fonts/Example-Regular.ttf"],
             )
 
+    def test_family_zip_can_group_files_under_its_family_name(self):
+        archive = scrape_fonts.family_zip({"NV_Bitter-Regular.ttf": b"regular"}, "nv-bitter")
+
+        with zipfile.ZipFile(io.BytesIO(archive)) as zip_file:
+            self.assertEqual(zip_file.namelist(), ["nv-bitter/NV_Bitter-Regular.ttf"])
+
     def test_package_meta_uses_a_cached_install_asset_and_font_category(self):
         meta = scrape_fonts.package_meta(
             "font-nv-bitter", "NV Bitter", "4.1", "v2026.07.21",

@@ -115,11 +115,11 @@ def write_if_changed(path, content):
     return True
 
 
-def family_zip(files):
+def family_zip(files, directory="fonts"):
     output = io.BytesIO()
     with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED) as archive:
         for filename, content in sorted(files.items()):
-            entry = zipfile.ZipInfo(f"fonts/{filename}", date_time=(1980, 1, 1, 0, 0, 0))
+            entry = zipfile.ZipInfo(f"{directory}/{filename}", date_time=(1980, 1, 1, 0, 0, 0))
             entry.compress_type = zipfile.ZIP_DEFLATED
             archive.writestr(entry, content)
     return output.getvalue()
@@ -176,7 +176,7 @@ def main():
                 existing = all_font_files.setdefault(filename, content)
                 if existing != content:
                     raise RuntimeError(f"Conflicting font file in release: {filename}")
-            archive = family_zip(font_files)
+            archive = family_zip(font_files, dirname)
             meta = package_meta(package_id, family, version, tag, published_at, len(archive)).encode()
             targets = {
                 os.path.join(package_dir, ".meta"): meta,
