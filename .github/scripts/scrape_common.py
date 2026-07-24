@@ -433,9 +433,14 @@ def is_inactive(repo):
     return age.days > MAX_INACTIVE_DAYS
 
 
+def scraper_timestamp():
+    """Return the current UTC time in the manifest timestamp format."""
+    return datetime.datetime.now(datetime.UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
 def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PLUGIN,
                name_override=None, patch_assets=None, readme_url=None,
-               readme_hash=None, preserved_fields=None):
+               readme_hash=None, preserved_fields=None, scraped_at=None):
     owner = repo["owner"]["login"]
     repo_name = repo["name"]
     full_name = repo["full_name"]
@@ -445,7 +450,7 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
 
     name = name_override or display_name(repo_name)
     stars = repo.get("stargazers_count", 0)
-    updated_at = repo.get("updated_at") or ""
+    updated_at = scraped_at or scraper_timestamp()
     published_at = release.get("published_at") if isinstance(release, dict) else ""
     description = clean_description(repo.get("description"))
     default_branch = repo.get("default_branch", "main")

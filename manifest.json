@@ -4535,23 +4535,6 @@
       "readme_hash": "bac06c6d7d623dc098781fbb6c8bef55ca0295e1"
     },
     {
-      "id": "projecttitle",
-      "name": "Project: Title",
-      "version": "2026.03-v3.7",
-      "description": "UI Plugin for KOReader by @elfbutt and @joshuacant",
-      "author": "joshuacant",
-      "category": "theme",
-      "platforms": ["koreader"],
-      "dependencies": [],
-      "conflicts": ["zen-ui"],
-      "size": "1248946",
-      "source": "https://github.com/joshuacant/ProjectTitle",
-      "source_asset": "ProjectTitle-2026-03-v3-7.zip",
-      "source_type": "release",
-      "stars": "1013",
-      "updated_at": "2026-07-21T05:52:58Z"
-    },
-    {
       "id": "provider-webdav-highlights",
       "name": "Provider Webdav Highlights",
       "version": "source",
@@ -4983,7 +4966,7 @@
       "category": "theme",
       "platforms": ["koreader"],
       "dependencies": [],
-      "conflicts": ["zen-ui"],
+      "conflicts": ["zen-ui", "projecttitle"],
       "size": "1070783",
       "source": "https://github.com/doctorhetfield-cmd/simpleui.koplugin",
       "source_asset": "simpleui.koplugin.zip",

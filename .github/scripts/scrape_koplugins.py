@@ -26,6 +26,7 @@ from scrape_common import (
     normalize_repo_ref,
     package_dir_name,
     repository_identity,
+    scraper_timestamp,
     save_category_cache,
     token,
     write_results,
@@ -54,6 +55,7 @@ def main():
     parser.add_argument("--exclude-forks", action="store_true",
                         help="Exclude forked repositories (default: include).")
     args = parser.parse_args()
+    scraped_at = scraper_timestamp()
 
     if not token():
         print("Warning: GITHUB_TOKEN not set — limited to 60 req/hr.",
@@ -100,7 +102,7 @@ def main():
             repo, release, known_ids, category, meta_id=record["id"],
             kind=KIND_PLUGIN, name_override=record["name"],
             readme_url=readme_url, readme_hash=readme_hash,
-            preserved_fields=record["fields"],
+            preserved_fields=record["fields"], scraped_at=scraped_at,
         )
         summary["path"] = record["rel_path"]
 
@@ -153,7 +155,7 @@ def main():
 
         release = fetch_release(full_name)
         meta_id, meta_text, summary = build_meta(
-            repo, release, known_ids, category, kind=KIND_PLUGIN
+            repo, release, known_ids, category, kind=KIND_PLUGIN, scraped_at=scraped_at
         )
         known_refs.add(norm)
         if candidate_identity:
@@ -167,6 +169,7 @@ def main():
         meta_id, meta_text, summary = build_meta(
             repo, release, known_ids, category, meta_id=meta_id,
             kind=KIND_PLUGIN, readme_url=readme_url, readme_hash=readme_hash,
+            scraped_at=scraped_at,
         )
         if readme_url:
             summary["readme_path"] = readme_url

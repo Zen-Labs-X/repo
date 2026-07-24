@@ -13,7 +13,7 @@ import urllib.parse
 import urllib.request
 import zipfile
 
-from scrape_common import REPO_ROOT, write_results
+from scrape_common import REPO_ROOT, scraper_timestamp, write_results
 
 UPSTREAM = "nicoverbruggen/ebook-fonts"
 UPSTREAM_URL = f"https://github.com/{UPSTREAM}"
@@ -63,7 +63,7 @@ def preview_images(tag):
         return images
 
 
-def package_meta(package_id, family, version, tag, published_at, asset_size):
+def package_meta(package_id, family, version, tag, published_at, updated_at, asset_size):
     path = f"packages/koreader/fonts/{package_id.removeprefix('font-')}"
     return "\n".join([
         f"# {family} font family for KOReader",
@@ -79,7 +79,7 @@ def package_meta(package_id, family, version, tag, published_at, asset_size):
         "dependencies=",
         f"source={UPSTREAM_URL}",
         "source_type=release",
-        f"updated_at={published_at}",
+        f"updated_at={updated_at}",
         f"published_at={published_at}",
         f"featured_image={path}/assets/featured.png",
         "assets.0.arch=any",
@@ -129,6 +129,7 @@ def main():
     parser = argparse.ArgumentParser(description="Cache KOReader ebook-fonts packages.")
     parser.add_argument("--dry-run", action="store_true", help="Report changes without writing.")
     args = parser.parse_args()
+    updated_at = scraper_timestamp()
 
     release = json.loads(request(f"https://api.github.com/repos/{UPSTREAM}/releases/latest"))
     assets = {asset["name"]: asset["browser_download_url"] for asset in release.get("assets", [])}
@@ -177,7 +178,9 @@ def main():
                 if existing != content:
                     raise RuntimeError(f"Conflicting font file in release: {filename}")
             archive = family_zip(font_files, dirname)
-            meta = package_meta(package_id, family, version, tag, published_at, len(archive)).encode()
+            meta = package_meta(
+                package_id, family, version, tag, published_at, updated_at, len(archive)
+            ).encode()
             targets = {
                 os.path.join(package_dir, ".meta"): meta,
                 os.path.join(package_dir, "assets", "featured.png"): preview,

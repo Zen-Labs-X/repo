@@ -38,12 +38,14 @@ class FontScraperTests(unittest.TestCase):
     def test_package_meta_uses_a_cached_install_asset_and_font_category(self):
         meta = scrape_fonts.package_meta(
             "font-nv-bitter", "NV Bitter", "4.1", "v2026.07.21",
-            "2026-07-21T13:18:47Z", 123,
+            "2026-07-21T13:18:47Z", "2026-07-24T12:34:56Z", 123,
         )
 
         self.assertIn("author=nicoverbruggen\n", meta)
         self.assertIn("category=fonts\n", meta)
         self.assertIn("assets.0.url=packages/koreader/fonts/nv-bitter/font-nv-bitter.zip\n", meta)
+        self.assertIn("updated_at=2026-07-24T12:34:56Z\n", meta)
+        self.assertIn("published_at=2026-07-21T13:18:47Z\n", meta)
         self.assertNotIn("install_url=", meta)
         self.assertNotIn("uninstall_url=", meta)
 
