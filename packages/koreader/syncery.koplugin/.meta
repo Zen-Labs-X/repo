@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=syncery
 name=Syncery
-version=1.2.2
+version=1.2.3
 description=Cross-device reading progress, annotations, metadata and font & style sync for KOReader.
 author=d0nizam
 category=utility
@@ -11,10 +11,10 @@ platforms=koreader
 dependencies=
 source=https://github.com/d0nizam/syncery.koplugin
 stars=16
-updated_at=2026-07-24T05:32:54Z
-published_at=2026-07-23T13:58:45Z
+updated_at=2026-07-24T13:55:46Z
+published_at=2026-07-24T10:40:21Z
 readme_url=packages/koreader/syncery.koplugin/README.md
-readme_hash=4df1901f7ba70e9430d41862a1f7d69dad528e2b
+readme_hash=6fc81a1ef82f63ae04c8f33190a3f0f2a4f8a7d6
 source_type=release
 source_asset=syncery.koplugin.zip
-size=685047
+size=701667
