@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=quicksettings
 name=Quicksettings
-version=1.2.0
+version=1.3.0
 description=koreader-plugin
 author=renandeivison
 category=utility
@@ -11,8 +11,8 @@ platforms=koreader
 dependencies=
 source=https://github.com/renandeivison/quicksettings
 stars=23
-updated_at=2026-07-24T13:55:46Z
-published_at=2026-07-01T22:54:39Z
+updated_at=2026-07-24T19:37:11Z
+published_at=2026-07-24T19:17:27Z
 readme_url=packages/koreader/quicksettings.koplugin/README.md
 readme_hash=9e25a8915f73fca0c3396bc6481f9bea347fde55
 source_type=source
