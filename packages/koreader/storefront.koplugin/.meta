@@ -3,18 +3,18 @@
 # zenpm:auto-scraped
 id=storefront
 name=Storefront
-version=26.7.23
+version=26.7.23.1
 description=Discover, install, and update community-created KOReader plugins and user patches without leaving your device.
 author=ultimatejimmy
 category=utility
 platforms=koreader
 dependencies=
 source=https://github.com/ultimatejimmy/storefront.koplugin
-stars=66
-updated_at=2026-07-23T16:08:46Z
-published_at=2026-07-23T13:11:03Z
+stars=68
+updated_at=2026-07-24T07:38:54Z
+published_at=2026-07-23T20:51:56Z
 readme_url=packages/koreader/storefront.koplugin/README.md
 readme_hash=ba037ffd9477e74898f9d22416a52443096e0fc6
 source_type=release
 source_asset=storefront.koplugin.zip
-size=120800
+size=129138
