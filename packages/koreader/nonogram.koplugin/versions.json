@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"nonogram.koplugin.zip","url":"https://github.com/omer-faruq/nonogram.koplugin/releases/download/v1.0.0/nonogram.koplugin.zip","size":20732,"digest":"sha256:1d6f0460602aa6730ca9030b30c90152a7c7004fe2d5dfd7a5db81377b63f705"}],"name":"v1.0.0"}]
+}

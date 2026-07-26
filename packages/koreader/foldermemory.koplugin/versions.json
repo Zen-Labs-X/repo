@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"foldermemory.koplugin.zip","url":"https://github.com/Craftwork2720/foldermemory.koplugin/releases/download/v1.0.0/foldermemory.koplugin.zip","size":28463,"digest":"sha256:0331b36a99a64989421419c5b87caf9fee26e2f8259a1a28f1188d543b9db65c"}],"name":"v1.0.0"}]
+}

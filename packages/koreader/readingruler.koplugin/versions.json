@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"readingruler.koplugin.zip","url":"https://github.com/Syakhisk/readingruler.koplugin/releases/download/v1.0.0/readingruler.koplugin.zip","size":13981,"digest":"sha256:ced3be996d3f7e235b80f9502de39f5915d250815437b8431b335311ebce1bbf"}],"name":"v1.0.0"}]
+}
