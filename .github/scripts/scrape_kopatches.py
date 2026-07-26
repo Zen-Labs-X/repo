@@ -142,6 +142,9 @@ def main():
             releases=releases, preserved_fields=record["fields"], scraped_at=scraped_at,
         )
         summary["path"] = record["rel_path"]
+        summary["versions_path"] = os.path.join(
+            os.path.dirname(record["rel_path"]), "versions.json"
+        )
 
         if (meta_text == record["content"] and not readme_changed
                 and not release_notes_changed and not prerelease_notes_changed):

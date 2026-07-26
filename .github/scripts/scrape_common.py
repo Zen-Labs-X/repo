@@ -644,6 +644,9 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
         "version": version,
         "category": category,
         "path": os.path.join("packages", "koreader", package_dir_name(meta_id, kind), ".meta"),
+        "versions_path": os.path.join(
+            "packages", "koreader", package_dir_name(meta_id, kind), "versions.json"
+        ),
     }
 
     if kind == KIND_PATCH and patch_assets is not None:

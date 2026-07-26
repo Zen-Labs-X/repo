@@ -70,7 +70,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          printf '%s' "$UPDATED" | python3 -c 'import json, os, sys; [print(path) for package in json.load(sys.stdin) for path in (package["path"], os.path.join(os.path.dirname(package["path"]), "versions.json"), package.get("readme_path"), package.get("release_notes_path"), package.get("prerelease_notes_path")) if path]' > /tmp/updated-paths.txt
+          printf '%s' "$UPDATED" | python3 -c 'import json, sys; [print(path) for package in json.load(sys.stdin) for path in (package["path"], package.get("versions_path"), package.get("readme_path"), package.get("release_notes_path"), package.get("prerelease_notes_path")) if path]' > /tmp/updated-paths.txt
 
           git add --pathspec-from-file=/tmp/updated-paths.txt
           if git diff --cached --quiet; then

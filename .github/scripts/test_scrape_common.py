@@ -225,7 +225,7 @@ class CachedPackageMetadataTests(unittest.TestCase):
             "tag_name": "v2.0.0-beta.1",
             "published_at": "2026-07-25T01:02:03Z",
         }
-        _package_id, meta_text, _summary = scrape_common.build_meta(
+        _package_id, meta_text, summary = scrape_common.build_meta(
             repo, release, set(), "utility", readme_url="packages/test/README.md",
             readme_hash="blob-sha",
             release_notes_url="packages/test/RELEASE_NOTES.md",
@@ -270,6 +270,10 @@ class CachedPackageMetadataTests(unittest.TestCase):
         self.assertIn("platforms=koreader\n", meta_text)
         self.assertIn("conflicts=other-package\n", meta_text)
         self.assertIn("incompatible_platforms=android\n", meta_text)
+        self.assertEqual(
+            summary["versions_path"],
+            "packages/koreader/example.koplugin/versions.json",
+        )
         fields = dict(
             line.split("=", 1) for line in meta_text.splitlines()
             if "=" in line and not line.startswith("#")
