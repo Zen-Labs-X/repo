@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v0.0.2","assets":[{"name":"shortcutstoolbar-v0.0.2.koplugin.zip","url":"https://github.com/xusoo/shortcutstoolbar.koplugin/releases/download/v0.0.2/shortcutstoolbar-v0.0.2.koplugin.zip","size":176158,"digest":"sha256:2ed418898eb543b51d64644deb8fbd27471b7c3668453315c38d984d744f9146"}],"name":"v0.0.2"},{"tag_name":"v0.0.1","assets":[{"name":"shortcutstoolbar-v0.0.1.koplugin.zip","url":"https://github.com/xusoo/shortcutstoolbar.koplugin/releases/download/v0.0.1/shortcutstoolbar-v0.0.1.koplugin.zip","size":1142195,"digest":"sha256:ff4625d929c4272f53d5b2d254a45c2eef11df39d61b9668cf203f5f7ff22f9e"}],"name":"v0.0.1"}]
+}

@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v0.1.0","assets":[{"name":"lifetracker.koplugin.zip","url":"https://github.com/uttam-salamander/koreader-life-tracker/releases/download/v0.1.0/lifetracker.koplugin.zip","size":2850050,"digest":"sha256:69b2c955003cb6136b33a4102dc9f512add5390154179b1124680f996798c89d"}],"name":"v0.1.0 - Initial Release"}]
+}

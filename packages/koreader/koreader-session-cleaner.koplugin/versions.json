@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v2.0.0-beta1","assets":[{"name":"Session_Cleaner_v2.0.0-beta1.zip","url":"https://github.com/graphirus-prog/koreader-session-cleaner/releases/download/v2.0.0-beta1/Session_Cleaner_v2.0.0-beta1.zip","size":71464,"digest":"sha256:ae460882b6871e22dc8164fb3b1d61c1f2aaff1c9be703c46e41079ac6911f55"}],"name":"Session Cleaner v2.0.0-beta1","prerelease":true},{"tag_name":"v1.10.1","assets":[{"name":"Session.Cleaner.v1.10.1.zip","url":"https://github.com/graphirus-prog/koreader-session-cleaner/releases/download/v1.10.1/Session.Cleaner.v1.10.1.zip","size":22695,"digest":"sha256:6dc25db08fdfcabef81c26d9a18a36f8c0db9f4be759322e56f0ce30b4565cee"}],"name":"Session Cleaner v1.10.1"}]
+}

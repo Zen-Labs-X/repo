@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"wordwise.koplugin.zip","url":"https://github.com/asxelot/wordwise.koplugin/releases/download/v1.0.0/wordwise.koplugin.zip","size":925892,"digest":"sha256:a97d1b0505e7e1a393534c0385ab0ebc5541c7e2038ec220b7f49cdb8def61ff"}],"name":"Word Wise v1.0.0"}]
+}
