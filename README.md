@@ -62,6 +62,17 @@ zenpm repo refresh
 
 Or via the ZenPM Sources page: enter the URL `https://xzenlabs.github.io/repo/`.
 
+## Local development
+
+Serve the repository, including `manifest.json` and its relative package files,
+with Python's standard library:
+
+```sh
+python3 .github/scripts/dev.py
+```
+
+The manifest is then available at `http://localhost:8000/manifest.json`.
+
 ## Packages
 
 | Package | Version | Platform | Dependencies |
