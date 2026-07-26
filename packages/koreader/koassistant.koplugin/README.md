@@ -1595,7 +1595,7 @@ You can add or substitute other highlight actions to this menu via **Manage Acti
 | Setting | Description | Default |
 |---------|-------------|---------|
 | **Response Language** | Language for definitions. Can follow Translation Language (`↵T`) or be set independently | `↵T` |
-| **Context Mode** | Surrounding text sent with lookup: None, Sentence, Paragraph, or Characters | None (Context is available on demand in the popup)|
+| **Context Mode** | Surrounding text sent with lookup: None, Sentence, Paragraph, or Characters | Sentence (use the popup's **Ctx** button to drop it for a single lookup) |
 | **Context Characters** | Character count when using "Characters" mode | 100 |
 | **Disable Auto-save for Dictionary** | Don't auto-save dictionary lookups to chat history | On |
 | **Copy Content** | What to include when copying in dictionary view (follow global / ask / full / question + response / definition only / everything) | Definition only |
@@ -1633,19 +1633,19 @@ Dictionary (KOA) is the default if you turn on Bypass mode. You can set any acti
 
 Context mode sends surrounding text (sentence/paragraph/characters) with your lookup. The compact view has a **Ctx** button to toggle context on-demand (it re-runs the request with/without the surrounding sentence as context).
 
-**Context OFF (default)**
+**Context OFF**
 - Natural, complete dictionary response
 - Multiple definitions and homographs included (e.g., "round" as noun, verb, adjective)
 - Faster response (less text to process)
 - Doesn't know which meaning is intended in your reading
 
-**Context ON**
+**Context ON (default)**
 - Precise, disambiguated definition for THIS usage
 - Explains word's role in THIS specific sentence
 - May miss other meanings/senses of the word (context disambiguates, so homographs aren't shown)
 - Slightly slower (more text to process)
 
-**Best practice:** Use context OFF for general lookups; turn context ON (via Ctx button) when you need disambiguation.
+**Best practice:** Context is ON by default, which is what you want while reading. Turn it OFF (via the **Ctx** button) when you want the word's full range of meanings rather than the one the sentence forces.
 
 ### Dictionary Language Indicators
 
@@ -1689,7 +1689,7 @@ For the best results, **create custom dictionary actions tailored to your specif
 
 **Tips:**
 - Use a **lighter model** (e.g., Haiku) for dictionary actions via per-action model override
-- **Context OFF** (default) gives complete entries with all senses; **Context ON** disambiguates for the specific usage
+- **Context ON** (default) disambiguates for the specific usage; **Context OFF** gives complete entries with all senses
 - For RTL languages, the compact view automatically uses Plain Text mode
 
 ### Dictionary Bypass
@@ -2628,7 +2628,7 @@ This setup means: AI responds in English by default, translates to Spanish, defi
 ### Dictionary Settings
 Behavior settings for AI dictionary lookups. (The **AI buttons in the dictionary popup** and the **Dictionary Popup Actions** manager now live in **[Menus & Buttons](#koreader-integration) → Dictionary popup**.) See [Dictionary Integration](#dictionary-integration) and [Bypass Modes](#bypass-modes) for details.
 - **Response Language**: Language for definitions (`↵T` follows Translation Language by default). Can be overridden per book in [Book Settings](#book-settings) ▸ Languages.
-- **Context Mode**: Surrounding text to include: None (default), Sentence, Paragraph, or Characters
+- **Context Mode**: Surrounding text to include: None, Sentence (default), Paragraph, or Characters
 - **Context Characters**: Character count for Characters mode (default: 100)
 - **Disable Auto-save for Dictionary**: Don't auto-save dictionary lookups (default: on)
 - **Copy Content**: What to include when copying in compact dictionary view: Follow global setting, Ask every time, Full, Question + Response, or Definition only (default)
