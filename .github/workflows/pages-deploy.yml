@@ -23,15 +23,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate manifest.json
+      - name: Generate manifest and package version indexes
         run: sh generate-manifest.sh
 
-      - name: Validate generated manifest.json
+      - name: Validate generated catalog
         run: |
           jq empty manifest.json
           meta_count="$(find packages -name '.meta' | wc -l | tr -d ' ')"
           package_count="$(jq '.packages | length' manifest.json)"
+          versions_count="$(find packages -name 'versions.json' | wc -l | tr -d ' ')"
           test "$meta_count" = "$package_count"
+          test "$meta_count" = "$versions_count"
+          find packages -name 'versions.json' -exec jq empty {} +
 
       - name: Sign manifest.json
         env:

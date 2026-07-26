@@ -19,12 +19,13 @@ from scrape_common import (
     existing_repository_identities,
     existing_repo_refs,
     existing_scraped_meta,
-    fetch_release,
-    fetch_prerelease,
+    fetch_releases,
     fetch_repo,
     is_inactive,
     load_category_cache,
     make_id,
+    newest_prerelease,
+    newest_stable_release,
     normalize_repo_ref,
     package_dir_name,
     repository_identity,
@@ -91,8 +92,14 @@ def main():
         )
         category_cache[repo_norm] = category
 
-        release = fetch_release(repo.get("full_name", record["ref"]))
-        prerelease = fetch_prerelease(repo.get("full_name", record["ref"]))
+        full_name = repo.get("full_name", record["ref"])
+        releases = fetch_releases(full_name)
+        if releases is None:
+            print(f"Could not refresh {record['rel_path']}: releases unavailable",
+                  file=sys.stderr)
+            continue
+        release = newest_stable_release(releases)
+        prerelease = newest_prerelease(releases)
         package_dir = os.path.dirname(record["path"])
         release_notes_url, release_notes_hash, release_notes_changed, release_notes_resolved = cache_release_notes(
             release, package_dir, args.dry_run
@@ -122,7 +129,7 @@ def main():
             release_notes_url=release_notes_url, release_notes_hash=release_notes_hash,
             prerelease=prerelease, prerelease_notes_url=prerelease_notes_url,
             prerelease_notes_hash=prerelease_notes_hash,
-            preserved_fields=record["fields"], scraped_at=scraped_at,
+            releases=releases, preserved_fields=record["fields"], scraped_at=scraped_at,
         )
         summary["path"] = record["rel_path"]
 
@@ -167,7 +174,7 @@ def main():
         if is_inactive(item):
             continue
 
-        repo = fetch_repo(full_name) or item
+        repo = item
         if not is_koplugin(repo) and not is_koplugin(item):
             continue
         if repo.get("archived") or is_inactive(repo):
@@ -182,10 +189,15 @@ def main():
         category = category_cache.get(norm) or classify_category(repo)
         category_cache[norm] = category
 
-        release = fetch_release(full_name)
-        prerelease = fetch_prerelease(full_name)
+        releases = fetch_releases(full_name)
+        if releases is None:
+            print(f"Could not add {full_name}: releases unavailable", file=sys.stderr)
+            continue
+        release = newest_stable_release(releases)
+        prerelease = newest_prerelease(releases)
         meta_id, meta_text, summary = build_meta(
-            repo, release, known_ids, category, kind=KIND_PLUGIN, scraped_at=scraped_at
+            repo, release, known_ids, category, kind=KIND_PLUGIN,
+            releases=releases, scraped_at=scraped_at
         )
         known_refs.add(norm)
         if candidate_identity:
@@ -208,7 +220,7 @@ def main():
             release_notes_url=release_notes_url, release_notes_hash=release_notes_hash,
             prerelease=prerelease, prerelease_notes_url=prerelease_notes_url,
             prerelease_notes_hash=prerelease_notes_hash,
-            scraped_at=scraped_at,
+            releases=releases, scraped_at=scraped_at,
         )
         if readme_url:
             summary["readme_path"] = readme_url

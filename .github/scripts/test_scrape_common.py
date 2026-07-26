@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Tests for cached package documentation used by the KOReader scrapers."""
+"""Tests for cached package metadata used by the KOReader scrapers."""
 
 import base64
+import json
 import os
 import tempfile
 import unittest
@@ -9,7 +10,7 @@ import unittest
 import scrape_common
 
 
-class CachedDocumentationTests(unittest.TestCase):
+class CachedPackageMetadataTests(unittest.TestCase):
     def setUp(self):
         self.repo_root = scrape_common.REPO_ROOT
         self.fetch_readme = scrape_common.fetch_readme
@@ -124,33 +125,89 @@ class CachedDocumentationTests(unittest.TestCase):
         finally:
             scrape_common.http_json = original_http_json
 
-    def test_fetch_release_distinguishes_a_missing_release(self):
+    def test_fetch_releases_returns_an_empty_list_when_none_exist(self):
         original_http_json = scrape_common.http_json
         scrape_common.http_json = lambda _url: (404, None, {})
         try:
-            self.assertEqual(scrape_common.fetch_release("owner/repo"), {})
+            self.assertEqual(scrape_common.fetch_releases("owner/repo"), [])
         finally:
             scrape_common.http_json = original_http_json
 
-    def test_fetch_prerelease_chooses_the_most_recent_published_version(self):
+    def test_one_release_request_supplies_stable_and_prerelease_metadata(self):
         original_http_json = scrape_common.http_json
-        scrape_common.http_json = lambda _url: (200, [
-            {"tag_name": "v2.0.0-beta.1", "prerelease": True,
-             "published_at": "2026-07-20T00:00:00Z"},
-            {"tag_name": "v2.0.0", "prerelease": False,
-             "published_at": "2026-07-24T00:00:00Z"},
-            {"tag_name": "v2.0.0-beta.2", "prerelease": True,
-             "published_at": "2026-07-25T00:00:00Z"},
-            {"tag_name": "v3.0.0-beta.1", "prerelease": True, "draft": True,
-             "published_at": "2026-07-26T00:00:00Z"},
-        ], {})
+        requests = []
+
+        def fake_http_json(url):
+            requests.append(url)
+            return 200, [
+                {"tag_name": "v2.0.0-beta.1", "prerelease": True,
+                 "published_at": "2026-07-20T00:00:00Z"},
+                {"tag_name": "v1.0.0", "prerelease": False,
+                 "published_at": "2026-07-21T00:00:00Z"},
+                {"tag_name": "v2.0.0", "prerelease": False,
+                 "published_at": "2026-07-24T00:00:00Z"},
+                {"tag_name": "v2.0.0-beta.2", "prerelease": True,
+                 "published_at": "2026-07-25T00:00:00Z"},
+                {"tag_name": "v3.0.0-beta.1", "prerelease": True, "draft": True,
+                 "published_at": "2026-07-26T00:00:00Z"},
+            ], {}
+
+        scrape_common.http_json = fake_http_json
         try:
+            releases = scrape_common.fetch_releases("owner/repo")
             self.assertEqual(
-                scrape_common.fetch_prerelease("owner/repo")["tag_name"],
+                scrape_common.newest_stable_release(releases)["tag_name"],
+                "v2.0.0",
+            )
+            self.assertEqual(
+                scrape_common.newest_prerelease(releases)["tag_name"],
                 "v2.0.0-beta.2",
             )
+            self.assertEqual(len(requests), 1)
+            self.assertTrue(requests[0].endswith("/releases?per_page=100"))
         finally:
             scrape_common.http_json = original_http_json
+
+    def test_installable_releases_keeps_version_picker_metadata(self):
+        releases = [
+            {
+                "tag_name": "v2.0.0-beta.1",
+                "name": "Beta\nrelease",
+                "prerelease": True,
+                "assets": [
+                    {
+                        "name": "plugin.zip",
+                        "browser_download_url": "https://example.com/plugin.zip",
+                        "size": 123,
+                        "digest": "sha256:abc",
+                    },
+                    {
+                        "name": "source.tar.gz",
+                        "browser_download_url": "https://example.com/source.tar.gz",
+                    },
+                ],
+            },
+            {
+                "tag_name": "v1.0.0",
+                "draft": True,
+                "assets": [{
+                    "name": "draft.zip",
+                    "browser_download_url": "https://example.com/draft.zip",
+                }],
+            },
+        ]
+
+        self.assertEqual(scrape_common.installable_releases(releases), [{
+            "tag_name": "v2.0.0-beta.1",
+            "name": "Beta release",
+            "prerelease": True,
+            "assets": [{
+                "name": "plugin.zip",
+                "url": "https://example.com/plugin.zip",
+                "size": 123,
+                "digest": "sha256:abc",
+            }],
+        }])
 
     def test_build_meta_includes_cached_documentation_fields(self):
         repo = {
@@ -182,6 +239,17 @@ class CachedDocumentationTests(unittest.TestCase):
                 "conflicts": "other-package",
                 "incompatible_platforms": "android",
             },
+            releases=[{
+                "tag_name": "v2.0.0-beta.1",
+                "name": "Beta release",
+                "prerelease": True,
+                "assets": [{
+                    "name": "example.koplugin.zip",
+                    "browser_download_url": "https://example.com/example.koplugin.zip",
+                    "size": 123,
+                    "digest": "sha256:abc",
+                }],
+            }],
             scraped_at="2026-07-24T12:34:56Z",
         )
 
@@ -202,6 +270,21 @@ class CachedDocumentationTests(unittest.TestCase):
         self.assertIn("platforms=koreader\n", meta_text)
         self.assertIn("conflicts=other-package\n", meta_text)
         self.assertIn("incompatible_platforms=android\n", meta_text)
+        fields = dict(
+            line.split("=", 1) for line in meta_text.splitlines()
+            if "=" in line and not line.startswith("#")
+        )
+        self.assertEqual(json.loads(fields["releases"]), [{
+            "tag_name": "v2.0.0-beta.1",
+            "name": "Beta release",
+            "prerelease": True,
+            "assets": [{
+                "name": "example.koplugin.zip",
+                "url": "https://example.com/example.koplugin.zip",
+                "size": 123,
+                "digest": "sha256:abc",
+            }],
+        }])
         self.assertNotIn("install_url=", meta_text)
         self.assertNotIn("uninstall_url=", meta_text)
 

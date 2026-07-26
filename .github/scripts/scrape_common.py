@@ -160,26 +160,34 @@ def fetch_repo(full_name):
     return None
 
 
-def fetch_release(full_name):
-    """Return the latest release, {} when none exists, or None when unavailable."""
-    status, data, _headers = http_json(f"{API}/repos/{full_name}/releases/latest")
-    if status == 200:
-        return data
-    if status == 404:
-        return {}
-    return None
-
-
-def fetch_prerelease(full_name):
-    """Return the newest prerelease, {} when none exists, or None when unavailable."""
+def fetch_releases(full_name):
+    """Return up to 100 releases, [] when none exist, or None when unavailable."""
     status, data, _headers = http_json(f"{API}/repos/{full_name}/releases?per_page=100")
     if status == 404:
-        return {}
+        return []
     if status != 200 or not isinstance(data, list):
         return None
+    return data
 
+
+def newest_stable_release(releases):
+    """Return the newest published non-draft stable release."""
+    stable_releases = [
+        release for release in releases
+        if not release.get("prerelease") and not release.get("draft")
+    ]
+    if not stable_releases:
+        return {}
+    return max(
+        stable_releases,
+        key=lambda release: release.get("published_at") or release.get("created_at") or "",
+    )
+
+
+def newest_prerelease(releases):
+    """Return the newest non-draft prerelease from a fetched release list."""
     prereleases = [
-        release for release in data
+        release for release in releases
         if release.get("prerelease") and not release.get("draft")
     ]
     if not prereleases:
@@ -188,6 +196,39 @@ def fetch_prerelease(full_name):
         prereleases,
         key=lambda release: release.get("published_at") or release.get("created_at") or "",
     )
+
+
+def installable_releases(releases):
+    """Return release metadata needed by ZenPM's version picker."""
+    result = []
+    for release in releases or []:
+        tag_name = str(release.get("tag_name") or "").strip()
+        if release.get("draft") or not tag_name:
+            continue
+
+        assets = []
+        for asset in release.get("assets") or []:
+            name = str(asset.get("name") or "").strip()
+            url = str(asset.get("browser_download_url") or "").strip()
+            if not name.lower().endswith(".zip") or not url:
+                continue
+            cached_asset = {"name": name, "url": url}
+            if asset.get("size"):
+                cached_asset["size"] = asset["size"]
+            if asset.get("digest"):
+                cached_asset["digest"] = asset["digest"]
+            assets.append(cached_asset)
+
+        if not assets:
+            continue
+        cached_release = {"tag_name": tag_name, "assets": assets}
+        name = str(release.get("name") or "").replace("\r", " ").replace("\n", " ").strip()
+        if name:
+            cached_release["name"] = name
+        if release.get("prerelease"):
+            cached_release["prerelease"] = True
+        result.append(cached_release)
+    return result
 
 
 def fetch_readme(full_name):
@@ -494,7 +535,7 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
                name_override=None, patch_assets=None, readme_url=None,
                readme_hash=None, release_notes_url=None, release_notes_hash=None,
                prerelease=None, prerelease_notes_url=None, prerelease_notes_hash=None,
-               preserved_fields=None, scraped_at=None):
+               releases=None, preserved_fields=None, scraped_at=None):
     owner = repo["owner"]["login"]
     repo_name = repo["name"]
     full_name = repo["full_name"]
@@ -586,6 +627,12 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
             f"prerelease_notes_url={prerelease_notes_url}",
             f"prerelease_notes_hash={prerelease_notes_hash}",
         ])
+
+    cached_releases = installable_releases(releases)
+    if cached_releases:
+        lines.append("releases=" + json.dumps(
+            cached_releases, ensure_ascii=False, separators=(",", ":")
+        ))
 
     summary = {
         "id": meta_id,
