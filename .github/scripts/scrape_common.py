@@ -558,6 +558,7 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
     existing_ids.add(meta_id)
 
     name = name_override or display_name(repo_name)
+    author = (preserved_fields or {}).get("author") or owner
     stars = repo.get("stargazers_count", 0)
     updated_at = scraped_at or scraper_timestamp()
     published_at = release.get("published_at") if isinstance(release, dict) else ""
@@ -602,7 +603,7 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
     lines.extend([
         f"version={version}",
         f"description={description}",
-        f"author={owner}",
+        f"author={author}",
         f"category={category}",
         f"platforms={platforms}",
         f"dependencies={dependencies}",

@@ -263,6 +263,7 @@ class CachedPackageMetadataTests(unittest.TestCase):
             release_notes_hash="notes-hash", prerelease=prerelease,
             prerelease_notes_url="packages/test/PRERELEASE_NOTES.md",
             prerelease_notes_hash="prerelease-notes-hash", preserved_fields={
+                "author": "ZenLabs",
                 "icon_url": "packages/test/assets/icon.svg",
                 "featured_image": "packages/test/assets/featured.png",
                 "featured": "true",
@@ -297,6 +298,7 @@ class CachedPackageMetadataTests(unittest.TestCase):
         self.assertIn("prerelease_notes_hash=prerelease-notes-hash\n", meta_text)
         self.assertIn("updated_at=2026-07-24T12:34:56Z\n", meta_text)
         self.assertIn("published_at=2026-07-20T01:02:03Z\n", meta_text)
+        self.assertIn("author=ZenLabs\n", meta_text)
         self.assertIn("icon_url=packages/test/assets/icon.svg\n", meta_text)
         self.assertIn("featured_image=packages/test/assets/featured.png\n", meta_text)
         self.assertIn("featured=true\n", meta_text)
