@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 import io
+import json
+import os
+import tempfile
 import unittest
 import zipfile
 from unittest import mock
@@ -48,6 +51,46 @@ class FontScraperTests(unittest.TestCase):
         self.assertIn("published_at=2026-07-21T13:18:47Z\n", meta)
         self.assertNotIn("install_url=", meta)
         self.assertNotIn("uninstall_url=", meta)
+
+    def test_caches_only_ttf_files_from_the_latest_junicode_release(self):
+        source = io.BytesIO()
+        with zipfile.ZipFile(source, "w") as archive:
+            archive.writestr("Junicode_2.226/Junicode-Regular.ttf", b"ttf")
+            archive.writestr("Junicode_2.226/Junicode-Regular.otf", b"otf")
+            archive.writestr("Junicode_2.226/README.txt", b"readme")
+        release = {
+            "tag_name": "v2.226",
+            "name": "Junicode version 2.226",
+            "published_at": "2026-06-20T10:58:50Z",
+            "assets": [{
+                "name": "Junicode_2.226.zip",
+                "browser_download_url": "https://example.invalid/Junicode_2.226.zip",
+            }],
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            fonts_root = scrape_fonts.FONTS_ROOT
+            scrape_fonts.FONTS_ROOT = temp_dir
+            try:
+                with mock.patch.object(
+                    scrape_fonts,
+                    "request",
+                    side_effect=[json.dumps(release).encode(), source.getvalue()],
+                ):
+                    changed, dirname = scrape_fonts.cache_junicode("2026-07-26T12:34:56Z")
+            finally:
+                scrape_fonts.FONTS_ROOT = fonts_root
+
+            self.assertTrue(changed)
+            self.assertEqual(dirname, "junicode")
+            archive_path = os.path.join(temp_dir, "junicode", "font-junicode.zip")
+            with zipfile.ZipFile(archive_path) as archive:
+                self.assertEqual(
+                    archive.namelist(),
+                    ["junicode/Junicode-Regular.ttf"],
+                )
+            with open(os.path.join(temp_dir, "junicode", ".meta"), encoding="utf-8") as meta:
+                self.assertIn("version=2.226\n", meta.read())
 
 
 if __name__ == "__main__":

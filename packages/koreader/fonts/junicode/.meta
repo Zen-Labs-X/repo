@@ -1,0 +1,19 @@
+# Junicode font family for KOReader
+# Cached from https://github.com/psb1558/Junicode-font release v2.226
+# zenpm:auto-scraped-font
+id=font-junicode
+name=Junicode
+version=2.226
+description=Junicode font family, including all available TrueType styles.
+author=psb1558
+category=fonts
+platforms=koreader
+dependencies=
+source=https://github.com/psb1558/Junicode-font
+source_type=release
+updated_at=2026-07-26T05:01:55Z
+published_at=2026-06-20T10:58:50Z
+assets.0.arch=any
+assets.0.asset=font-junicode.zip
+assets.0.url=packages/koreader/fonts/junicode/font-junicode.zip
+assets.0.size=25483438

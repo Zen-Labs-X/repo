@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cache installable KOReader font packages from ebook-fonts releases."""
+"""Cache installable KOReader font packages from upstream releases."""
 
 import argparse
 import io
@@ -17,6 +17,9 @@ from scrape_common import REPO_ROOT, scraper_timestamp, write_results
 
 UPSTREAM = "nicoverbruggen/ebook-fonts"
 UPSTREAM_URL = f"https://github.com/{UPSTREAM}"
+JUNICODE_UPSTREAM = "psb1558/Junicode-font"
+JUNICODE_UPSTREAM_URL = f"https://github.com/{JUNICODE_UPSTREAM}"
+JUNICODE_PACKAGE_ID = "font-junicode"
 FONTS_ROOT = os.path.join(REPO_ROOT, "packages", "koreader", "fonts")
 
 
@@ -43,12 +46,12 @@ def release_version(release):
     return (release.get("name") or release.get("tag_name") or "source").lstrip("vV")
 
 
-def archive_files(url):
+def archive_files(url, suffixes=(".ttf", ".otf")):
     with zipfile.ZipFile(io.BytesIO(request(url))) as archive:
         return {
             os.path.basename(info.filename): archive.read(info)
             for info in archive.infolist()
-            if not info.is_dir() and info.filename.lower().endswith((".ttf", ".otf"))
+            if not info.is_dir() and info.filename.lower().endswith(suffixes)
         }
 
 
@@ -90,6 +93,32 @@ def package_meta(package_id, family, version, tag, published_at, updated_at, ass
     ])
 
 
+def junicode_package_meta(version, tag, published_at, updated_at, asset_size):
+    path = f"packages/koreader/fonts/{JUNICODE_PACKAGE_ID.removeprefix('font-')}"
+    return "\n".join([
+        "# Junicode font family for KOReader",
+        f"# Cached from {JUNICODE_UPSTREAM_URL} release {tag}",
+        "# zenpm:auto-scraped-font",
+        f"id={JUNICODE_PACKAGE_ID}",
+        "name=Junicode",
+        f"version={version}",
+        "description=Junicode font family, including all available TrueType styles.",
+        "author=psb1558",
+        "category=fonts",
+        "platforms=koreader",
+        "dependencies=",
+        f"source={JUNICODE_UPSTREAM_URL}",
+        "source_type=release",
+        f"updated_at={updated_at}",
+        f"published_at={published_at}",
+        "assets.0.arch=any",
+        f"assets.0.asset={JUNICODE_PACKAGE_ID}.zip",
+        f"assets.0.url={path}/{JUNICODE_PACKAGE_ID}.zip",
+        f"assets.0.size={asset_size}",
+        "",
+    ])
+
+
 def content_matches(path, content):
     try:
         with open(path, "rb") as file:
@@ -125,8 +154,56 @@ def family_zip(files, directory="fonts"):
     return output.getvalue()
 
 
+def latest_zip_asset(release, upstream):
+    assets = [
+        asset for asset in release.get("assets", [])
+        if asset.get("name", "").lower().endswith(".zip")
+    ]
+    if len(assets) != 1:
+        raise RuntimeError(f"Latest {upstream} release must have exactly one ZIP asset")
+    return assets[0]
+
+
+def cache_junicode(updated_at, dry_run=False):
+    release = json.loads(request(f"https://api.github.com/repos/{JUNICODE_UPSTREAM}/releases/latest"))
+    tag = release.get("tag_name", "")
+    if not tag:
+        raise RuntimeError("Latest Junicode release has no tag name")
+
+    archive_asset = latest_zip_asset(release, "Junicode")
+    font_files = archive_files(archive_asset["browser_download_url"], (".ttf",))
+    if not font_files:
+        raise RuntimeError("Latest Junicode release has no TrueType font files")
+
+    package_dir = os.path.join(FONTS_ROOT, JUNICODE_PACKAGE_ID.removeprefix("font-"))
+    archive = family_zip(font_files, JUNICODE_PACKAGE_ID.removeprefix("font-"))
+    meta = junicode_package_meta(
+        tag.lstrip("vV"), tag, release.get("published_at", ""), updated_at,
+        len(archive),
+    ).encode()
+    targets = {
+        os.path.join(package_dir, ".meta"): meta,
+        os.path.join(package_dir, f"{JUNICODE_PACKAGE_ID}.zip"): archive,
+    }
+
+    changed = False
+    if dry_run:
+        changed = any(not content_matches(path, content) for path, content in targets.items())
+        changed = changed or os.path.exists(os.path.join(package_dir, "fonts"))
+        changed = changed or os.path.exists(os.path.join(package_dir, "scripts"))
+    else:
+        for path, content in targets.items():
+            changed = write_if_changed(path, content) or changed
+        for stale_path in (os.path.join(package_dir, "fonts"), os.path.join(package_dir, "scripts")):
+            if os.path.isdir(stale_path):
+                shutil.rmtree(stale_path)
+                changed = True
+
+    return changed, JUNICODE_PACKAGE_ID.removeprefix("font-")
+
+
 def main():
-    parser = argparse.ArgumentParser(description="Cache KOReader ebook-fonts packages.")
+    parser = argparse.ArgumentParser(description="Cache KOReader font packages.")
     parser.add_argument("--dry-run", action="store_true", help="Report changes without writing.")
     args = parser.parse_args()
     updated_at = scraper_timestamp()
@@ -199,6 +276,10 @@ def main():
                         shutil.rmtree(stale_path)
                         changed = True
 
+    junicode_changed, junicode_dir = cache_junicode(updated_at, args.dry_run)
+    expected_dirs.add(junicode_dir)
+    changed = junicode_changed or changed
+
     all_archive = family_zip(all_font_files)
     all_archive_path = os.path.join(FONTS_ROOT, "ebook-fonts-all.zip")
     if args.dry_run:
@@ -220,10 +301,10 @@ def main():
 
     if changed:
         state = "would update" if args.dry_run else "updated"
-        print(f"{state} {total} cached ebook-fonts package(s).", file=sys.stderr)
+        print(f"{state} {total} cached ebook-fonts package(s) and Junicode.", file=sys.stderr)
     else:
-        print(f"ebook-fonts cache is current ({total} packages).", file=sys.stderr)
-    updated = [{"id": "ebook-fonts", "name": "ebook-fonts", "kind": "fonts", "path": "packages/koreader/fonts"}] if changed else []
+        print(f"font cache is current ({total} ebook-fonts packages and Junicode).", file=sys.stderr)
+    updated = [{"id": "fonts", "name": "fonts", "kind": "fonts", "path": "packages/koreader/fonts"}] if changed else []
     write_results([], updated)
 
 

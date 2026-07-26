@@ -120,6 +120,24 @@
       }
     },
     {
+      "id": "ZenPM-kobo",
+      "name": "Zen Package Manager (Kobo Launcher)",
+      "version": "0.1.0",
+      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts",
+      "author": "ZenLabs",
+      "category": "utility",
+      "platforms": ["kobo"],
+      "dependencies": ["nickelmenu"],
+      "size": "0",
+      "launcher": {
+        "kobo": {
+          "entry_name": "Zen Package Manager",
+          "location": "main",
+          "type": "nickelmenu"
+        }
+      }
+    },
+    {
       "id": "koreader-kobo",
       "name": "KOReader (Kobo)",
       "version": "2026.03.0",
@@ -155,24 +173,6 @@
       }
     },
     {
-      "id": "ZenPM-kobo",
-      "name": "Zen Package Manager (Kobo Launcher)",
-      "version": "0.1.0",
-      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts",
-      "author": "ZenLabs",
-      "category": "utility",
-      "platforms": ["kobo"],
-      "dependencies": ["nickelmenu"],
-      "size": "0",
-      "launcher": {
-        "kobo": {
-          "entry_name": "Zen Package Manager",
-          "location": "main",
-          "type": "nickelmenu"
-        }
-      }
-    },
-    {
       "id": "acsm",
       "name": "Acsm",
       "version": "0.0.10",
@@ -186,24 +186,10 @@
       "source_asset": "acsm-koplugin-v0.0.10.zip",
       "source_type": "release",
       "stars": "54",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-16T19:38:09Z",
       "readme_url": "packages/koreader/acsm.koplugin/README.md",
-      "readme_hash": "47e7f7a6c54b60fd475c4123a4b97f0c67cba14d",
-      "release_notes_url": "packages/koreader/acsm.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "abac904d51dfc234e6df86468cedd104a4a61a5e1cf4f0d9570d70adee0e7e0a"
+      "readme_hash": "47e7f7a6c54b60fd475c4123a4b97f0c67cba14d"
     },
     {
       "id": "ai-dictionary-koreader",
@@ -273,24 +259,10 @@
       "source_asset": "ankiviewer.koplugin.zip",
       "source_type": "release",
       "stars": "26",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-04-05T13:04:50Z",
       "readme_url": "packages/koreader/ankiviewer.koplugin/README.md",
-      "readme_hash": "499ebf862677e5941b4e60d1e65c672b9a91906d",
-      "release_notes_url": "packages/koreader/ankiviewer.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "976bbfe1ec3266a925e6fb10988d314089c93de981e2777704114e37ad3696eb"
+      "readme_hash": "499ebf862677e5941b4e60d1e65c672b9a91906d"
     },
     {
       "id": "annas",
@@ -399,24 +371,10 @@
       "source_asset": "appearance.koplugin.zip",
       "source_type": "release",
       "stars": "98",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-05-16T18:19:03Z",
       "readme_url": "packages/koreader/appearance.koplugin/README.md",
-      "readme_hash": "ea8ba966419139dc3d56657609fd685bf65fbdbf",
-      "release_notes_url": "packages/koreader/appearance.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "4c8a9925439d0984799de54b76dceec64d0d8e49db26ec53dff29874c2e5a585"
+      "readme_hash": "ea8ba966419139dc3d56657609fd685bf65fbdbf"
     },
     {
       "id": "applauncher",
@@ -451,28 +409,10 @@
       "source_asset": "appstore.koplugin.zip",
       "source_type": "release",
       "stars": "353",
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
       "updated_at": "2026-07-26T03:31:16Z",
       "published_at": "2026-07-05T11:26:25Z",
       "readme_url": "packages/koreader/appstore.koplugin/README.md",
       "readme_hash": "40922cbc9210c00258f0ff1bbae1a6d82da2de6e"
-=======
-=======
->>>>>>> Stashed changes
-      "updated_at": "2026-07-26T04:27:07Z",
-      "published_at": "2026-07-05T11:26:25Z",
-      "readme_url": "packages/koreader/appstore.koplugin/README.md",
-      "readme_hash": "40922cbc9210c00258f0ff1bbae1a6d82da2de6e",
-      "release_notes_url": "packages/koreader/appstore.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "8b9d23ec5e10ab6917d197df4d686d28b68130abc450c61dcb6210fdfd1c568a"
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     },
     {
       "id": "assistant",
@@ -526,24 +466,10 @@
       "source_asset": "audiobookshelf.koplugin.zip",
       "source_type": "release",
       "stars": "86",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-05-01T00:30:06Z",
       "readme_url": "packages/koreader/audiobookshelf.koplugin/README.md",
-      "readme_hash": "a851fc1134fd2fb001f74318bfa07c1f67e1dde6",
-      "release_notes_url": "packages/koreader/audiobookshelf.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "1fd327027c98574032779d10c26b9c1895407541c2b84953381c5d491a744562"
+      "readme_hash": "a851fc1134fd2fb001f74318bfa07c1f67e1dde6"
     },
     {
       "id": "bluetooth",
@@ -558,24 +484,10 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/onatbas/bluetooth.koplugin/zip/refs/heads/main",
       "stars": "77",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-01-03T16:17:06Z",
       "readme_url": "packages/koreader/bluetooth.koplugin/README.md",
-      "readme_hash": "d40f541f2a29ad477eb7c0867f44c216f46e3f53",
-      "release_notes_url": "packages/koreader/bluetooth.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "5a3930802d3a91a912c77b8c5b0454b66b409edcd4a52f0bf95e87eb7221fb69"
+      "readme_hash": "d40f541f2a29ad477eb7c0867f44c216f46e3f53"
     },
     {
       "id": "boardgames",
@@ -625,24 +537,10 @@
       "source_asset": "Book.Nook.Charms.V1.1.1.zip",
       "source_type": "release",
       "stars": "20",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-06-19T19:36:06Z",
       "readme_url": "packages/koreader/booknookcharms.koplugin/README.md",
-      "readme_hash": "f2d75f7dbef66f36a17f9f38cc7733845c73c91c",
-      "release_notes_url": "packages/koreader/booknookcharms.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "404c45cd59132b53d08162c3793a2043875367665a17cb78c13fea0ebf821cfe"
+      "readme_hash": "f2d75f7dbef66f36a17f9f38cc7733845c73c91c"
     },
     {
       "id": "bookshelf",
@@ -677,24 +575,10 @@
       "source_asset": "bubblezoom.koplugin_1.2.0.zip",
       "source_type": "release",
       "stars": "24",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-05-24T19:09:19Z",
       "readme_url": "packages/koreader/bubblezoom.koplugin/README.md",
-      "readme_hash": "5dab0861333d68c36cdae73f5ded13e4938317d3",
-      "release_notes_url": "packages/koreader/bubblezoom.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "0e69f1c401e559dcb7149d072f39b31204edf93e09a6f4f6f92dc7c06ae5b8de"
+      "readme_hash": "5dab0861333d68c36cdae73f5ded13e4938317d3"
     },
     {
       "id": "casualkochess",
@@ -728,19 +612,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/Shac0x/charactertracker.koplugin/zip/refs/heads/main",
       "stars": "37",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "readme_url": "packages/koreader/charactertracker.koplugin/README.md",
       "readme_hash": "a006fcd4f68972d229cdef24adf21336491aa624"
     },
@@ -849,24 +721,10 @@
       "source_asset": "customisablesleepscreen_v2.2.0.zip",
       "source_type": "release",
       "stars": "206",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-05-09T16:09:40Z",
       "readme_url": "packages/koreader/customisablesleepscreen.koplugin/README.md",
-      "readme_hash": "466d84b72f0273a9066aaf9dc93021031425e33f",
-      "release_notes_url": "packages/koreader/customisablesleepscreen.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "7b7351836b90226f06687aecc551145c08f81ed54023e37f4f285038c6ec626a"
+      "readme_hash": "466d84b72f0273a9066aaf9dc93021031425e33f"
     },
     {
       "id": "derainbowify",
@@ -934,19 +792,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/kktse/dtdisplay.koplugin/zip/refs/heads/main",
       "stars": "26",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "readme_url": "packages/koreader/dtdisplay.koplugin/README.md",
       "readme_hash": "50b9eb232e5918fdabffae12e9d13b68ff3bf454"
     },
@@ -983,24 +829,10 @@
       "source_asset": "fanqie.koplugin.zip",
       "source_type": "release",
       "stars": "29",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-20T13:03:43Z",
       "readme_url": "packages/koreader/fanqie.koplugin/README.md",
-      "readme_hash": "a8896a52c499f21de6dacdf1e11253ac0dff3cc4",
-      "release_notes_url": "packages/koreader/fanqie.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "readme_hash": "a8896a52c499f21de6dacdf1e11253ac0dff3cc4"
     },
     {
       "id": "filebrowser",
@@ -1055,24 +887,10 @@
       "source_asset": "filesync.koplugin.zip",
       "source_type": "release",
       "stars": "28",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-04-28T08:40:16Z",
       "readme_url": "packages/koreader/filesync.koplugin/README.md",
-      "readme_hash": "82a9eb027cd853c81126729a1f1f78ad3a54a368",
-      "release_notes_url": "packages/koreader/filesync.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "6e8dbb51e2e192979b790550b543378818ae999aee50ba4cef656afe07f41912"
+      "readme_hash": "82a9eb027cd853c81126729a1f1f78ad3a54a368"
     },
     {
       "id": "floating-dictionary",
@@ -1105,24 +923,10 @@
       "source_asset": "foldermemory.koplugin.zip",
       "source_type": "release",
       "stars": "15",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-05-02T19:18:29Z",
       "readme_url": "packages/koreader/foldermemory.koplugin/README.md",
-      "readme_hash": "c719a1bef45abebb0c568075a0cceefe0038d3fe",
-      "release_notes_url": "packages/koreader/foldermemory.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "ca91677fbed2e98bbc53b86dd6cce622a9047fd4520e45855475ae46b9b3a941"
+      "readme_hash": "c719a1bef45abebb0c568075a0cceefe0038d3fe"
     },
     {
       "id": "font-cartisse",
@@ -1136,7 +940,7 @@
       "featured_image": "packages/koreader/fonts/cartisse/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1144,6 +948,28 @@
           "asset": "font-cartisse.zip",
           "url": "packages/koreader/fonts/cartisse/font-cartisse.zip",
           "size": "297921"
+        }
+      ]
+    },
+    {
+      "id": "font-junicode",
+      "name": "Junicode",
+      "version": "2.226",
+      "description": "Junicode font family, including all available TrueType styles.",
+      "author": "psb1558",
+      "category": "fonts",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/psb1558/Junicode-font",
+      "source_type": "release",
+      "updated_at": "2026-07-26T05:01:55Z",
+      "published_at": "2026-06-20T10:58:50Z",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "font-junicode.zip",
+          "url": "packages/koreader/fonts/junicode/font-junicode.zip",
+          "size": "25483438"
         }
       ]
     },
@@ -1159,7 +985,7 @@
       "featured_image": "packages/koreader/fonts/libron/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1182,7 +1008,7 @@
       "featured_image": "packages/koreader/fonts/nv-adelph/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1205,7 +1031,7 @@
       "featured_image": "packages/koreader/fonts/nv-alegreya/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1228,7 +1054,7 @@
       "featured_image": "packages/koreader/fonts/nv-alizar/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1251,7 +1077,7 @@
       "featured_image": "packages/koreader/fonts/nv-ancizar-sans/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1274,7 +1100,7 @@
       "featured_image": "packages/koreader/fonts/nv-ancizar-serif/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1297,7 +1123,7 @@
       "featured_image": "packages/koreader/fonts/nv-andada/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1320,7 +1146,7 @@
       "featured_image": "packages/koreader/fonts/nv-basker/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1343,7 +1169,7 @@
       "featured_image": "packages/koreader/fonts/nv-bitter/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1366,7 +1192,7 @@
       "featured_image": "packages/koreader/fonts/nv-cardo/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1389,7 +1215,7 @@
       "featured_image": "packages/koreader/fonts/nv-castoro/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1412,7 +1238,7 @@
       "featured_image": "packages/koreader/fonts/nv-charis-literacy/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1435,7 +1261,7 @@
       "featured_image": "packages/koreader/fonts/nv-charis-old-style/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1458,7 +1284,7 @@
       "featured_image": "packages/koreader/fonts/nv-charis/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1481,7 +1307,7 @@
       "featured_image": "packages/koreader/fonts/nv-clara/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1504,7 +1330,7 @@
       "featured_image": "packages/koreader/fonts/nv-disleksio/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1527,7 +1353,7 @@
       "featured_image": "packages/koreader/fonts/nv-elstob/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1550,7 +1376,7 @@
       "featured_image": "packages/koreader/fonts/nv-erewhon/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1573,7 +1399,7 @@
       "featured_image": "packages/koreader/fonts/nv-garamond/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1596,7 +1422,7 @@
       "featured_image": "packages/koreader/fonts/nv-gentium/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1619,7 +1445,7 @@
       "featured_image": "packages/koreader/fonts/nv-georsio/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1642,7 +1468,7 @@
       "featured_image": "packages/koreader/fonts/nv-halcyon/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1665,7 +1491,7 @@
       "featured_image": "packages/koreader/fonts/nv-ibarra/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1688,7 +1514,7 @@
       "featured_image": "packages/koreader/fonts/nv-jost/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1711,7 +1537,7 @@
       "featured_image": "packages/koreader/fonts/nv-junius/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1734,7 +1560,7 @@
       "featured_image": "packages/koreader/fonts/nv-kierkegaard/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1757,7 +1583,7 @@
       "featured_image": "packages/koreader/fonts/nv-legible-next/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1780,7 +1606,7 @@
       "featured_image": "packages/koreader/fonts/nv-libertinus/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1803,7 +1629,7 @@
       "featured_image": "packages/koreader/fonts/nv-literata/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1826,7 +1652,7 @@
       "featured_image": "packages/koreader/fonts/nv-membo/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1849,7 +1675,7 @@
       "featured_image": "packages/koreader/fonts/nv-newsreader/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1872,7 +1698,7 @@
       "featured_image": "packages/koreader/fonts/nv-ninepoint/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1895,7 +1721,7 @@
       "featured_image": "packages/koreader/fonts/nv-palatium/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1918,7 +1744,7 @@
       "featured_image": "packages/koreader/fonts/nv-publica-wide/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1941,7 +1767,7 @@
       "featured_image": "packages/koreader/fonts/nv-publica/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1964,7 +1790,7 @@
       "featured_image": "packages/koreader/fonts/nv-sable/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -1987,7 +1813,7 @@
       "featured_image": "packages/koreader/fonts/nv-scarlet/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -2010,7 +1836,7 @@
       "featured_image": "packages/koreader/fonts/nv-tabula/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -2033,7 +1859,7 @@
       "featured_image": "packages/koreader/fonts/nv-technical/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -2056,7 +1882,7 @@
       "featured_image": "packages/koreader/fonts/nv-yrsa/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -2079,7 +1905,7 @@
       "featured_image": "packages/koreader/fonts/nv-zilla-slab/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -2102,7 +1928,7 @@
       "featured_image": "packages/koreader/fonts/readerly/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -2125,7 +1951,7 @@
       "featured_image": "packages/koreader/fonts/sourcerer/assets/featured.png",
       "source": "https://github.com/nicoverbruggen/ebook-fonts",
       "source_type": "release",
-      "updated_at": "2026-07-26T03:33:04Z",
+      "updated_at": "2026-07-26T05:01:55Z",
       "published_at": "2026-07-21T13:18:47Z",
       "assets": [
         {
@@ -2222,24 +2048,10 @@
       "source_asset": "hardcoverapp.koplugin.zip",
       "source_type": "release",
       "stars": "392",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-04-05T02:10:53Z",
       "readme_url": "packages/koreader/hardcoverapp.koplugin/README.md",
-      "readme_hash": "980a5e50ba91f560b18c4ad0f802747dd6c7feee",
-      "release_notes_url": "packages/koreader/hardcoverapp.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "a2f74454aca4dec0a2a3b48606125f4db08ee240cb45b2f1c7686f3c236489fe"
+      "readme_hash": "980a5e50ba91f560b18c4ad0f802747dd6c7feee"
     },
     {
       "id": "highlightsync",
@@ -2308,19 +2120,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/ebanDev/iconschanger.koplugin/zip/refs/heads/main",
       "stars": "71",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "readme_url": "packages/koreader/iconschanger.koplugin/README.md",
       "readme_hash": "55a3dbe3d77b54006d82de4c6bc42166bd13ecdf"
     },
@@ -2395,28 +2195,10 @@
       "source_asset": "karakeep.koplugin.zip",
       "source_type": "release",
       "stars": "26",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2025-08-22T23:22:20Z",
-      "prerelease_version": "0.0.3-dev-9d310ab",
-      "prerelease_published_at": "2025-08-26T09:05:53Z",
       "readme_url": "packages/koreader/karakeep.koplugin/README.md",
-      "readme_hash": "ac13f8018bcd044ebdb1e071ee0c24b8d078a5e7",
-      "release_notes_url": "packages/koreader/karakeep.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "abda0aa3f1359ca4e00c897ce13961a8e839ed273c8a16644835f04283c94bf8",
-      "prerelease_notes_url": "packages/koreader/karakeep.koplugin/PRERELEASE_NOTES.md",
-      "prerelease_notes_hash": "040bf2c0f02e7bda2cb84c67bd9ee5198a3618f9cfe2d6bb2bb29dccc55ad034"
+      "readme_hash": "ac13f8018bcd044ebdb1e071ee0c24b8d078a5e7"
     },
     {
       "id": "kindlebtcontroller",
@@ -2432,24 +2214,10 @@
       "source_asset": "kindlebtcontroller.koplugin.zip",
       "source_type": "release",
       "stars": "59",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-14T15:38:01Z",
       "readme_url": "packages/koreader/kindlebtcontroller.koplugin/README.md",
-      "readme_hash": "a22f065c9dd2f8f1a8cabec6eccaaada5f321d46",
-      "release_notes_url": "packages/koreader/kindlebtcontroller.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "0c47a74f60b9701dd3cc377aa857743977031ac1095cf9ab8d20e8038ddc19bd"
+      "readme_hash": "a22f065c9dd2f8f1a8cabec6eccaaada5f321d46"
     },
     {
       "id": "kindlefetch",
@@ -2465,24 +2233,10 @@
       "source_asset": "kindlefetch.koplugin.zip",
       "source_type": "release",
       "stars": "25",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-19T06:45:28Z",
       "readme_url": "packages/koreader/kindlefetch.koplugin/README.md",
-      "readme_hash": "2e1fff2d6e9dc998f51d1332851656c45e0e516a",
-      "release_notes_url": "packages/koreader/kindlefetch.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "808980e34593f7b9ce336ee3f8ecf3752c1e3a0937cb0c8c150effd0a598a973"
+      "readme_hash": "2e1fff2d6e9dc998f51d1332851656c45e0e516a"
     },
     {
       "id": "koassistant",
@@ -2548,24 +2302,10 @@
       "source_asset": "koboard.koplugin.zip",
       "source_type": "release",
       "stars": "23",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-18T22:24:57Z",
       "readme_url": "packages/koreader/koboard.koplugin/README.md",
-      "readme_hash": "b39781aa28a677dfcc3c90f57919ecd38544b0a3",
-      "release_notes_url": "packages/koreader/koboard.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "b6008d07755d7ac958222f6879d757fc42f7d67fbb7a98e6a98cee9043ee199c"
+      "readme_hash": "b39781aa28a677dfcc3c90f57919ecd38544b0a3"
     },
     {
       "id": "kodashboard",
@@ -2599,24 +2339,10 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/GeorgeSG/KoInsight/zip/refs/heads/master",
       "stars": "575",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-01-11T20:21:32Z",
       "readme_url": "packages/koreader/koinsight.koplugin/README.md",
-      "readme_hash": "9a2bb9154ea26b6233f3094f47153fc7998f78e6",
-      "release_notes_url": "packages/koreader/koinsight.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "d6f523bc458f536453d881c09531ea68f7945e60ffc03d5f0984b118734e82a7"
+      "readme_hash": "9a2bb9154ea26b6233f3094f47153fc7998f78e6"
     },
     {
       "id": "kopet",
@@ -3510,24 +3236,10 @@
       "source_asset": "dynamic_panelzoom.koplugin.zip",
       "source_type": "release",
       "stars": "36",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-06-05T11:04:55Z",
       "readme_url": "packages/koreader/koreader-dynamic-panelzoom.koplugin/README.md",
-      "readme_hash": "9a9bedff423398f0a6b377dc2541e5f1c638089a",
-      "release_notes_url": "packages/koreader/koreader-dynamic-panelzoom.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "721e57fd83166ed23708a9595b2595c6245d0743bdfb8316bd83a3c8ae36c8da"
+      "readme_hash": "9a9bedff423398f0a6b377dc2541e5f1c638089a"
     },
     {
       "id": "koreader-frankenpatches-public",
@@ -3659,19 +3371,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/artemartemenko/KOReader_MultiUser.koplugin/zip/refs/heads/main",
       "stars": "37",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "readme_url": "packages/koreader/koreader-multiuser.koplugin/README.md",
       "readme_hash": "f97ea3be863c20304345825022d42a1ac40920ef"
     },
@@ -4090,24 +3790,10 @@
       "source_asset": "statistics.koplugin.zip",
       "source_type": "release",
       "stars": "20",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-09T08:55:08Z",
       "readme_url": "packages/koreader/koreader-physical-page-sync.koplugin/README.md",
-      "readme_hash": "0c4ce6a43ed9dbfd335ed2315b76d70a6b885c6f",
-      "release_notes_url": "packages/koreader/koreader-physical-page-sync.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "0a5c7c8cae438f79ae912335da846f41bc179f7207f43d9b8d7eda381302dd7b"
+      "readme_hash": "0c4ce6a43ed9dbfd335ed2315b76d70a6b885c6f"
     },
     {
       "id": "koreader-remote",
@@ -4141,19 +3827,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/karpushchenko/koreader-rsvp-plugin/zip/refs/heads/main",
       "stars": "34",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "readme_url": "packages/koreader/koreader-rsvp-plugin.koplugin/README.md",
       "readme_hash": "0ed60a384e8fef5a3054c404687a472c8765cd44"
     },
@@ -4481,24 +4155,10 @@
       "source_asset": "legado_plugin_update.zip",
       "source_type": "release",
       "stars": "227",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-03-17T09:51:09Z",
       "readme_url": "packages/koreader/legado.koplugin/README.md",
-      "readme_hash": "d57b2a034d81ea8993e4160fb865c03bc3f06420",
-      "release_notes_url": "packages/koreader/legado.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "e1a1007cc7b3d86fe48ce248aadd1e74ad865a6a8ff906cd8451f0b747f4b5ad"
+      "readme_hash": "d57b2a034d81ea8993e4160fb865c03bc3f06420"
     },
     {
       "id": "library-sync",
@@ -4599,28 +4259,10 @@
       "source_asset": "memobook.koplugin.zip",
       "source_type": "release",
       "stars": "28",
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
       "updated_at": "2026-07-26T03:31:16Z",
       "published_at": "2026-07-25T06:07:12Z",
       "readme_url": "packages/koreader/memobook.koplugin/README.md",
       "readme_hash": "03969b7f97565554d192fbe02e3ac6141c418c42"
-=======
-=======
->>>>>>> Stashed changes
-      "updated_at": "2026-07-26T04:27:07Z",
-      "published_at": "2026-07-25T06:07:12Z",
-      "readme_url": "packages/koreader/memobook.koplugin/README.md",
-      "readme_hash": "03969b7f97565554d192fbe02e3ac6141c418c42",
-      "release_notes_url": "packages/koreader/memobook.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "509172baad7175b90107867ce71e9d5c8b5902b31707508da0db816e10b358ff"
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     },
     {
       "id": "miniflux",
@@ -4654,28 +4296,11 @@
       "source": "https://github.com/miumiupy98-art/miuread-koreader",
       "source_asset": "miuread-v1.1.46-full.zip",
       "source_type": "release",
-<<<<<<< Updated upstream
       "stars": "59",
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "stars": "59",
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "stars": "61",
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "stars": "61",
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-25T15:56:29Z",
       "readme_url": "packages/koreader/miuread-koreader.koplugin/README.md",
-      "readme_hash": "04d119bc25e096f9d43750c57b35e3367ba18b80",
-      "release_notes_url": "packages/koreader/miuread-koreader.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "68b167f987fabe2f0ab9a6ffa033f9caea5166b185628205b7efca3cd7565572"
+      "readme_hash": "04d119bc25e096f9d43750c57b35e3367ba18b80"
     },
     {
       "id": "mokuroreader-koreader",
@@ -4820,28 +4445,10 @@
       "source_asset": "pinyin_enhancement.koplugin.zip",
       "source_type": "release",
       "stars": "50",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-06T11:05:56Z",
-      "prerelease_version": "1.5.3-beta.4",
-      "prerelease_published_at": "2026-07-06T03:46:14Z",
       "readme_url": "packages/koreader/pinyin-enhancement.koplugin/README.md",
-      "readme_hash": "f00060d0d1ee4ba65503414b43adc65b52dc6efd",
-      "release_notes_url": "packages/koreader/pinyin-enhancement.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "bf2a9872ca4e0cec7377211067153799794d4f8ed7a91843fdf1314c2ac77009",
-      "prerelease_notes_url": "packages/koreader/pinyin-enhancement.koplugin/PRERELEASE_NOTES.md",
-      "prerelease_notes_hash": "8ecfddbef3968f2255e708fccd2b18ad618af4d8e15b1127ba866a738fee365a"
+      "readme_hash": "f00060d0d1ee4ba65503414b43adc65b52dc6efd"
     },
     {
       "id": "plainui",
@@ -4857,24 +4464,10 @@
       "source_asset": "plainui.koplugin.zip",
       "source_type": "release",
       "stars": "30",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-05-06T22:55:11Z",
       "readme_url": "packages/koreader/plainui.koplugin/README.md",
-      "readme_hash": "c7fc1e3cecd83697b5c67a9ffdebc20e7d255592",
-      "release_notes_url": "packages/koreader/plainui.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "5827b3f0d3a640d965ef7cd381152ffaee21439c2f2033071bd74e0072b25e88"
+      "readme_hash": "c7fc1e3cecd83697b5c67a9ffdebc20e7d255592"
     },
     {
       "id": "pocketbook-bluetooth",
@@ -5011,28 +4604,10 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/zeeyado/quran-ebook/zip/refs/heads/main",
       "stars": "36",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-03-19T16:58:00Z",
-      "prerelease_version": "test-build",
-      "prerelease_published_at": "2026-07-25T19:07:29Z",
       "readme_url": "packages/koreader/quran-ebook.koplugin/README.md",
-      "readme_hash": "f59706bb87bc8f9a4eb5fb982ffb263e29ab557a",
-      "release_notes_url": "packages/koreader/quran-ebook.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "2f036f5438686b6404b445caae3217a97a4326f6d62d8fa13360fbea21897ea7",
-      "prerelease_notes_url": "packages/koreader/quran-ebook.koplugin/PRERELEASE_NOTES.md",
-      "prerelease_notes_hash": "7fcd948b8407cdc822bce6a0e143f5fdc1302a19d3014de47404530c00ceb255"
+      "readme_hash": "f59706bb87bc8f9a4eb5fb982ffb263e29ab557a"
     },
     {
       "id": "rakuyomi",
@@ -5050,28 +4625,10 @@
       "source": "https://github.com/tachibana-shin/rakuyomi",
       "source_type": "release",
       "stars": "460",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-22T13:45:56Z",
-      "prerelease_version": "1.37.2",
-      "prerelease_published_at": "2026-07-14T06:59:24Z",
       "readme_url": "packages/koreader/rakuyomi.koplugin/README.md",
       "readme_hash": "5767c006c7405d9ab4324602afa3c1c20cf26f15",
-      "release_notes_url": "packages/koreader/rakuyomi.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "d0756165b875fb3f9ae67c7078f5ffc6cb200c9ea9936c0c05e1444ed56f1fd2",
-      "prerelease_notes_url": "packages/koreader/rakuyomi.koplugin/PRERELEASE_NOTES.md",
-      "prerelease_notes_hash": "9177c13d5491de1e4ec4c49cdde605155a352e5fdc72b8eada0c440c97319df8",
       "assets": [
         {
           "arch": "arm64",
@@ -5131,28 +4688,10 @@
       "source_asset": "randomquote.koplugin-v0.1.0.zip",
       "source_type": "release",
       "stars": "16",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2025-12-17T08:02:38Z",
-      "prerelease_version": "0.1.1",
-      "prerelease_published_at": "2025-12-23T15:07:33Z",
       "readme_url": "packages/koreader/randomquote.koplugin/README.md",
-      "readme_hash": "a62d6cfa70163ed9e0fa6011225ecaffa4569f86",
-      "release_notes_url": "packages/koreader/randomquote.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "63de465f6c9d5e82bf98f850e8af0b12ccbc3a68bebe722b2da5df6692bad882",
-      "prerelease_notes_url": "packages/koreader/randomquote.koplugin/PRERELEASE_NOTES.md",
-      "prerelease_notes_hash": "590ca4dc80c23851ad02870f4fc77b78d5dd75471796b08bfd74900199341a8e"
+      "readme_hash": "a62d6cfa70163ed9e0fa6011225ecaffa4569f86"
     },
     {
       "id": "readeck-2",
@@ -5168,28 +4707,10 @@
       "source_asset": "readeck.koplugin-v0.1.1.zip",
       "source_type": "release",
       "stars": "102",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-05-07T15:08:44Z",
-      "prerelease_version": "0.0.1",
-      "prerelease_published_at": "2026-05-07T06:04:50Z",
       "readme_url": "packages/koreader/readeck-2.koplugin/README.md",
-      "readme_hash": "85468b1f41473f4237438209e1d02e42dccc123f",
-      "release_notes_url": "packages/koreader/readeck-2.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "ed1f01b05f80a01b754eb104f3ebf5f66c7e13cd3410511f818b6532d4bb7435",
-      "prerelease_notes_url": "packages/koreader/readeck-2.koplugin/PRERELEASE_NOTES.md",
-      "prerelease_notes_hash": "ac224acac7479d1688408ae45688f7b6f94a7def2cedef81abf9767beb793070"
+      "readme_hash": "85468b1f41473f4237438209e1d02e42dccc123f"
     },
     {
       "id": "readeck",
@@ -5204,19 +4725,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/flip-rossi/readeck.koplugin/zip/refs/heads/master",
       "stars": "46",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "readme_url": "packages/koreader/readeck.koplugin/README.md",
       "readme_hash": "97a00ea9b8cf6eb8af244a9cfee5816215113905"
     },
@@ -5290,24 +4799,10 @@
       "source_asset": "readingruler.koplugin.zip",
       "source_type": "release",
       "stars": "50",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2025-06-22T11:00:47Z",
       "readme_url": "packages/koreader/readingruler.koplugin/README.md",
-      "readme_hash": "3e83a96d3e2c1951398fa45256993b7c4945cf19",
-      "release_notes_url": "packages/koreader/readingruler.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "readme_hash": "3e83a96d3e2c1951398fa45256993b7c4945cf19"
     },
     {
       "id": "readingstreak",
@@ -5359,24 +4854,10 @@
       "source": "https://github.com/j-v/remotenote.koplugin",
       "source_type": "release",
       "stars": "19",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-02-22T02:01:46Z",
       "readme_url": "packages/koreader/remotenote.koplugin/README.md",
       "readme_hash": "14187afe9b3dbcc1b803bd0393ffca619cb08d90",
-      "release_notes_url": "packages/koreader/remotenote.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "dee01d672c2b9355be527d38a09836736bae7a048e47c6766592c452b75a035e",
       "assets": [
         {
           "arch": "arm",
@@ -5474,24 +4955,10 @@
       "source_asset": "simpleui_ext.koplugin.zip",
       "source_type": "release",
       "stars": "45",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-18T17:20:03Z",
       "readme_url": "packages/koreader/simpleui-ext.koplugin/README.md",
-      "readme_hash": "966ab90080c9d64bf7cdf64a507f18ca7452fb18",
-      "release_notes_url": "packages/koreader/simpleui-ext.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "249d90b93c97ee352b429dbe294fdd678ebcecbe5078d129256ed3f862f5de3d"
+      "readme_hash": "966ab90080c9d64bf7cdf64a507f18ca7452fb18"
     },
     {
       "id": "simpleui",
@@ -5508,28 +4975,10 @@
       "source_asset": "simpleui.koplugin.zip",
       "source_type": "release",
       "stars": "1146",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-16T09:01:44Z",
-      "prerelease_version": "1.1.2-beta.3",
-      "prerelease_published_at": "2026-03-18T20:49:42Z",
       "readme_url": "packages/koreader/simpleui.koplugin/README.md",
-      "readme_hash": "ca610f2281ab0e8f386cb24615991a02fe9359e9",
-      "release_notes_url": "packages/koreader/simpleui.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "3bfc82436851b1f851805d2992e4c6fb60d4a0f4a49fc567abb0b285bc02f304",
-      "prerelease_notes_url": "packages/koreader/simpleui.koplugin/PRERELEASE_NOTES.md",
-      "prerelease_notes_hash": "b12b34846fd7232594c9c02436a3808ef34b86f546b9673fd19b817233382f39"
+      "readme_hash": "ca610f2281ab0e8f386cb24615991a02fe9359e9"
     },
     {
       "id": "solitaire",
@@ -5602,24 +5051,10 @@
       "source_asset": "sudoku.koplugin.zip",
       "source_type": "release",
       "stars": "42",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-06-12T18:51:34Z",
       "readme_url": "packages/koreader/sudoku.koplugin/README.md",
-      "readme_hash": "c95f0f3f0b5f624f20ad16ffc2f1f9b44344ead1",
-      "release_notes_url": "packages/koreader/sudoku.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "576940967636dfddc8f5e7a885b3b20bbca2d59ea5a150fd52f82bbe3d347b77"
+      "readme_hash": "c95f0f3f0b5f624f20ad16ffc2f1f9b44344ead1"
     },
     {
       "id": "supersync",
@@ -5634,19 +5069,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/brendanlefebvre/supersync.koplugin/zip/refs/heads/main",
       "stars": "39",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "readme_url": "packages/koreader/supersync.koplugin/README.md",
       "readme_hash": "1bd67b19630e009ad288a8cacc636dfb8db7325b"
     },
@@ -5663,24 +5086,10 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/koplugin-swipe-animation/Swipe_Animation.koplugin/zip/refs/heads/main",
       "stars": "59",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-16T12:06:59Z",
       "readme_url": "packages/koreader/swipe-animation.koplugin/README.md",
-      "readme_hash": "68cef3682a736efdc5613d7e40a1cc59b5d534ad",
-      "release_notes_url": "packages/koreader/swipe-animation.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "70b8de5df876bca93b373cf1dae5c823219b8e368edd07324b89a0db98163cc0"
+      "readme_hash": "68cef3682a736efdc5613d7e40a1cc59b5d534ad"
     },
     {
       "id": "syncery",
@@ -5789,24 +5198,10 @@
       "source_asset": "updatesmanager.koplugin-v1.4.9.1.zip",
       "source_type": "release",
       "stars": "102",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-06-12T07:40:50Z",
       "readme_url": "packages/koreader/updatesmanager.koplugin/README.md",
-      "readme_hash": "25313d51e6a4924074f117e6e4e811f9f8454eb6",
-      "release_notes_url": "packages/koreader/updatesmanager.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "b6cc1a9948ddab1adfbae51f1f47f58a103de59345b7d5210c62125a1ab6266f"
+      "readme_hash": "25313d51e6a4924074f117e6e4e811f9f8454eb6"
     },
     {
       "id": "wallabag2",
@@ -5838,19 +5233,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/roygbyte/weather.koplugin/zip/refs/heads/master",
       "stars": "21",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "readme_url": "packages/koreader/weather.koplugin/README.md",
       "readme_hash": "5511f68940a91f9d66a737824985fc64aaf1bca4"
     },
@@ -5868,24 +5251,10 @@
       "source_asset": "weatherlockscreen.koplugin-v0.9.7-beta.1.zip",
       "source_type": "release",
       "stars": "70",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-06-28T11:29:52Z",
       "readme_url": "packages/koreader/weatherlockscreen.koplugin/README.md",
-      "readme_hash": "b3d535cfbde5cbd5b79ea073a030689352a07c9b",
-      "release_notes_url": "packages/koreader/weatherlockscreen.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "05ebcf6733066843c6a6da48725df0a5afd44a3ba70406c0b1f58c911248923b"
+      "readme_hash": "b3d535cfbde5cbd5b79ea073a030689352a07c9b"
     },
     {
       "id": "webbrowser",
@@ -5920,24 +5289,10 @@
       "source_asset": "miuread-v0.9.9-legacy-ota.zip",
       "source_type": "release",
       "stars": "34",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "published_at": "2026-07-18T17:49:10Z",
       "readme_url": "packages/koreader/weread-koplugin-fixed.koplugin/README.md",
-      "readme_hash": "a2eb1094f1d2a1e85884d56bc0b2542711a1bbdb",
-      "release_notes_url": "packages/koreader/weread-koplugin-fixed.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      "readme_hash": "a2eb1094f1d2a1e85884d56bc0b2542711a1bbdb"
     },
     {
       "id": "weread",
@@ -6015,23 +5370,6 @@
       "readme_hash": "4d46b8861654f54ed9c646510a25a14aae32cace"
     },
     {
-      "id": "zen-mtp-koplugin",
-      "name": "ZenMTP KOReader",
-      "version": "1.7",
-      "description": "Trigger MTP file-transfer mode from Kindle home or KOReader",
-      "author": "ZenLabs",
-      "category": "utility",
-      "platforms": ["koreader", "kindle"],
-      "dependencies": [],
-      "icon_url": "packages/koreader/zen_mtp.koplugin/assets/zenmtp.svg",
-      "featured_image": "packages/koreader/zen_mtp.koplugin/assets/zenmtp-featured.png",
-      "featured": true,
-      "featured_order": 25,
-      "size": "49469",
-      "source": "https://github.com/xZenLabs/ZenMTP",
-      "source_asset": "zen_mtp.koplugin.zip"
-    },
-    {
       "id": "zen-ui",
       "name": "Zen UI",
       "version": "2.5.3",
@@ -6054,6 +5392,23 @@
       "published_at": "2026-07-25T17:20:26Z",
       "readme_url": "packages/koreader/zen-ui.koplugin/README.md",
       "readme_hash": "81ffd3f5986a8e75d98548df38eead61c75c0b96"
+    },
+    {
+      "id": "zen-mtp-koplugin",
+      "name": "ZenMTP KOReader",
+      "version": "1.7",
+      "description": "Trigger MTP file-transfer mode from Kindle home or KOReader",
+      "author": "ZenLabs",
+      "category": "utility",
+      "platforms": ["koreader", "kindle"],
+      "dependencies": [],
+      "icon_url": "packages/koreader/zen_mtp.koplugin/assets/zenmtp.svg",
+      "featured_image": "packages/koreader/zen_mtp.koplugin/assets/zenmtp-featured.png",
+      "featured": true,
+      "featured_order": 25,
+      "size": "49469",
+      "source": "https://github.com/xZenLabs/ZenMTP",
+      "source_asset": "zen_mtp.koplugin.zip"
     },
     {
       "id": "zim-converter",
@@ -6123,27 +5478,9 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/stelzch/zotero.koplugin/zip/refs/heads/master",
       "stars": "150",
-<<<<<<< Updated upstream
       "updated_at": "2026-07-26T03:31:16Z",
-=======
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "updated_at": "2026-07-26T03:31:16Z",
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
-      "prerelease_version": "1.0.0-rc.1",
-      "prerelease_published_at": "2024-10-12T15:00:55Z",
->>>>>>> Stashed changes
-=======
-      "updated_at": "2026-07-26T04:27:07Z",
-      "prerelease_version": "1.0.0-rc.1",
-      "prerelease_published_at": "2024-10-12T15:00:55Z",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
       "readme_url": "packages/koreader/zotero.koplugin/README.md",
-      "readme_hash": "77d44a381b82e9c2472f4388e0055c9bf67fde9b",
-      "prerelease_notes_url": "packages/koreader/zotero.koplugin/PRERELEASE_NOTES.md",
-      "prerelease_notes_hash": "3473cbbae09aa764d30c4be97961be962ca238bb1fb39e3d57aa84ff0bcea6a8"
+      "readme_hash": "77d44a381b82e9c2472f4388e0055c9bf67fde9b"
     },
     {
       "id": "zzz-readermenuredesign",
