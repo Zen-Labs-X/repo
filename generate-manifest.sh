@@ -1,8 +1,8 @@
 #!/bin/sh
 set -eu
-# Generate manifest.json from all packages/**/.meta files
+# Generate manifest.json and per-package versions.json files from packages/**/.meta
 # Usage: sh generate-manifest.sh
-#   Always overwrites manifest.json
+#   Always overwrites manifest.json and each package's versions.json
 
 OUTPUT="manifest.json"
 
@@ -103,6 +103,14 @@ for meta_file in $meta_files; do
     release_notes_hash=$(grep '^release_notes_hash=' "$tmp" 2>/dev/null | sed 's/^release_notes_hash=//' | head -1)
     prerelease_notes_url=$(grep '^prerelease_notes_url=' "$tmp" 2>/dev/null | sed 's/^prerelease_notes_url=//' | head -1)
     prerelease_notes_hash=$(grep '^prerelease_notes_hash=' "$tmp" 2>/dev/null | sed 's/^prerelease_notes_hash=//' | head -1)
+    releases=$(grep '^releases=' "$tmp" 2>/dev/null | sed 's/^releases=//' | head -1)
+    versions_url="$(dirname "$meta_file")/versions.json"
+
+    {
+        printf '{\n'
+        printf '  "releases": %s\n' "${releases:-[]}"
+        printf '}\n'
+    } > "$versions_url"
 
     case "$category" in
         utility|games|productivity|media|theme|patches|fonts) ;;
@@ -185,6 +193,7 @@ for meta_file in $meta_files; do
     [ -n "$release_notes_hash" ] && printf ',\n      "release_notes_hash": "%s"' "$(json_escape "$release_notes_hash")" >> "$OUTPUT"
     [ -n "$prerelease_notes_url" ]  && printf ',\n      "prerelease_notes_url": "%s"' "$(json_escape "$prerelease_notes_url")" >> "$OUTPUT"
     [ -n "$prerelease_notes_hash" ] && printf ',\n      "prerelease_notes_hash": "%s"' "$(json_escape "$prerelease_notes_hash")" >> "$OUTPUT"
+    printf ',\n      "versions_url": "%s"' "$(json_escape "$versions_url")" >> "$OUTPUT"
 
     # Assets array (dot notation: assets.N.key)
     asset_indices=$(grep '^assets\.' "$tmp" 2>/dev/null \

@@ -88,6 +88,7 @@ The manifest is then available at `http://localhost:8000/manifest.json`.
 This repo follows the [ZenPM repository format](https://github.com/Zen-Labs-X/ZenPM#repository-format) (schema v1).
 
 - `manifest.json` — package catalog with all metadata (machine-readable)
+- `packages/<platform>/<id>/versions.json` — generated version-picker data for one package
 - `packages/<platform>/<id>/scripts/install.sh` — install script
 - `packages/<platform>/<id>/scripts/uninstall.sh` — uninstall script
 - `packages/<platform>/<id>/assets/` — optional icon (`icon.png`) and featured image (`featured.png`)
@@ -124,8 +125,13 @@ Each package in `manifest.json` may include:
 | `prerelease_published_at` | string | Publication timestamp of the package's newest prerelease, in UTC ISO 8601 format. |
 | `prerelease_notes_url` | string | Path to the cached notes for the package's newest prerelease. |
 | `prerelease_notes_hash` | string | SHA-256 hash of the cached prerelease notes; changes when their source content changes. |
+| `versions_url` | string | Path to the package's generated `versions.json`. The file contains up to 100 cached, non-draft GitHub releases with ZIP assets. |
 | `conflicts` | array of strings | Package IDs that must not be installed together. |
 | `incompatible_platforms` | array of strings | Platforms on which a package cannot be installed. |
+
+Each `versions.json` has a top-level `releases` array. Release entries use the
+same `tag_name`, `name`, `prerelease`, and `assets` fields returned by ZenPM's
+existing package-releases endpoint.
 
 Install and uninstall behavior is handled by the client unless a platform-specific package declares script URLs.
 
@@ -165,9 +171,13 @@ Forks are considered by default. Plugin packages use a release ZIP when one is
 available, otherwise the repository's default-branch source archive; patch
 packages install the matching Lua files directly. All generated packages use
 the shared KOReader install and uninstall scripts. During each scan, the
-repository README, latest stable release notes, and newest prerelease notes are
-cached beside the package. Their content hashes are included in the manifest,
-allowing clients to refresh only when the corresponding content changes.
+repository README, latest stable release notes, newest prerelease notes, and up
+to 100 installable releases are cached in the repository metadata.
+`generate-manifest.sh` writes each release list to the package's `versions.json`
+and keeps only its `versions_url` in the catalog. Documentation content hashes
+are included in the manifest, allowing clients to refresh only when the
+corresponding content changes. Cached releases let clients populate their
+version pickers without calling the GitHub API.
 
 ### Refreshing KOReader packages locally
 

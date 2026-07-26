@@ -20,11 +20,12 @@ from scrape_common import (
     existing_repository_identities,
     existing_scraped_meta,
     fetch_release,
-    fetch_prerelease,
+    fetch_releases,
     fetch_repo,
     fetch_tree,
     is_inactive,
     make_id,
+    newest_prerelease,
     normalize_repo_ref,
     package_dir_name,
     repository_identity,
@@ -100,8 +101,14 @@ def main():
             print(f"Could not refresh {record['rel_path']}: no patch files",
                   file=sys.stderr)
             continue
-        release = fetch_release(repo.get("full_name", record["ref"]))
-        prerelease = fetch_prerelease(repo.get("full_name", record["ref"]))
+        full_name = repo.get("full_name", record["ref"])
+        release = fetch_release(full_name)
+        releases = fetch_releases(full_name)
+        if releases is None:
+            print(f"Could not refresh {record['rel_path']}: releases unavailable",
+                  file=sys.stderr)
+            continue
+        prerelease = newest_prerelease(releases)
 
         package_dir = os.path.dirname(record["path"])
         release_notes_url, release_notes_hash, release_notes_changed, release_notes_resolved = cache_release_notes(
@@ -132,7 +139,7 @@ def main():
             release_notes_url=release_notes_url, release_notes_hash=release_notes_hash,
             prerelease=prerelease, prerelease_notes_url=prerelease_notes_url,
             prerelease_notes_hash=prerelease_notes_hash,
-            preserved_fields=record["fields"], scraped_at=scraped_at,
+            releases=releases, preserved_fields=record["fields"], scraped_at=scraped_at,
         )
         summary["path"] = record["rel_path"]
 
@@ -192,12 +199,17 @@ def main():
         assets = patch_assets(repo)
         if not assets:
             continue
-        release = fetch_release(repo.get("full_name", full_name))
-        prerelease = fetch_prerelease(repo.get("full_name", full_name))
+        full_name = repo.get("full_name", full_name)
+        release = fetch_release(full_name)
+        releases = fetch_releases(full_name)
+        if releases is None:
+            print(f"Could not add {full_name}: releases unavailable", file=sys.stderr)
+            continue
+        prerelease = newest_prerelease(releases)
 
         meta_id, meta_text, summary = build_meta(
             repo, release, known_ids, PATCH_CATEGORY, kind=KIND_PATCH,
-            patch_assets=assets, scraped_at=scraped_at,
+            patch_assets=assets, releases=releases, scraped_at=scraped_at,
         )
         known_refs.add(norm)
         if candidate_identity:
@@ -220,7 +232,8 @@ def main():
             readme_hash=readme_hash, release_notes_url=release_notes_url,
             release_notes_hash=release_notes_hash, prerelease=prerelease,
             prerelease_notes_url=prerelease_notes_url,
-            prerelease_notes_hash=prerelease_notes_hash, scraped_at=scraped_at,
+            prerelease_notes_hash=prerelease_notes_hash, releases=releases,
+            scraped_at=scraped_at,
         )
         if readme_url:
             summary["readme_path"] = readme_url
