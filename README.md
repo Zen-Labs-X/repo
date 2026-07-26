@@ -49,7 +49,7 @@ openssl pkeyutl -sign -inkey zenpm-key -in manifest.json -rawin -out manifest.js
 - `zenpm-key.pub` — public key distributed with ZenPM
 
 
-Default package repository for [Zen Package Manager](https://github.com/Zen-Labs-X/ZenPM) — the package manager for jailbroken Kindle and Kobo devices.
+Default package repository for [xZenLabs/zen-pm](https://github.com/xZenLabs/zen-pm) — the package manager for jailbroken Kindle and Kobo devices.
 
 ## How to use
 
@@ -85,7 +85,7 @@ The manifest is then available at `http://localhost:8000/manifest.json`.
 
 ## Repository format
 
-This repo follows the [ZenPM repository format](https://github.com/Zen-Labs-X/ZenPM#repository-format) (schema v1).
+This repo follows the [ZenPM repository format](https://github.com/xZenLabs/zen-pm#repository-format) (schema v1).
 
 - `manifest.json` — package catalog with all metadata (machine-readable)
 - `packages/<platform>/<id>/versions.json` — generated version-picker data for one package
@@ -167,6 +167,10 @@ In addition, plugins must have `koplugin` in their name or be tagged with the
 at least one user-patch Lua file whose filename starts with a number (for
 example, `2-example.lua`).
 
+ZenPM is explicitly included in the plugin scan because its repository has
+neither of the plugin naming or topic signals. Its generated metadata is stored
+at `packages/koreader/zenpm.koplugin/.meta`.
+
 Forks are considered by default. Plugin packages use a release ZIP when one is
 available, otherwise the repository's default-branch source archive; patch
 packages install the matching Lua files directly. All generated packages use
@@ -178,6 +182,9 @@ and keeps only its `versions_url` in the catalog. Documentation content hashes
 are included in the manifest, allowing clients to refresh only when the
 corresponding content changes. Cached releases let clients populate their
 version pickers without calling the GitHub API.
+
+Repositories listed in `.github/scripts/scrape_blacklist.json` are excluded from
+automatic discovery and refreshes. The list is empty by default.
 
 ### Refreshing KOReader packages locally
 

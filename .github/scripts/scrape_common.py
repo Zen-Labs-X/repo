@@ -18,6 +18,7 @@ API = "https://api.github.com"
 REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 KOREADER_DIR = os.path.join(REPO_ROOT, "packages", "koreader")
 CATEGORY_CACHE = os.path.join(os.path.dirname(__file__), "plugin_categories.json")
+SCRAPE_BLACKLIST = os.path.join(os.path.dirname(__file__), "scrape_blacklist.json")
 SCRAPED_MARKER = "zenpm:auto-scraped"
 
 MIN_STARS = 15
@@ -345,6 +346,18 @@ def repository_identity(ref):
     return owner, re.sub(r"[^a-z0-9]", "", repo)
 
 
+def load_blacklist():
+    """Return normalized GitHub repository refs excluded from scraping."""
+    try:
+        with open(SCRAPE_BLACKLIST, "r", encoding="utf-8") as fh:
+            values = json.load(fh)
+    except (OSError, ValueError):
+        return set()
+    if not isinstance(values, list):
+        return set()
+    return {ref for value in values if (ref := normalize_repo_ref(str(value)))}
+
+
 def parse_meta(meta_path):
     fields = {}
     scraped = False
@@ -396,18 +409,19 @@ def existing_repository_identities():
     return identities
 
 
-def existing_scraped_meta(category=None):
+def existing_scraped_meta(category=None, include_refs=()):
     records = []
+    include_refs = {normalize_repo_ref(ref) for ref in include_refs}
     for dirpath, _dirs, files in os.walk(KOREADER_DIR):
         if ".meta" not in files:
             continue
         meta_path = os.path.join(dirpath, ".meta")
         fields, scraped, content = parse_meta(meta_path)
-        if category is not None and fields.get("category", "").strip() != category:
-            continue
         ref = normalize_repo_ref(fields.get("source", ""))
         meta_id = fields.get("id", "").strip()
-        if scraped and ref and meta_id:
+        if category is not None and fields.get("category", "").strip() != category:
+            continue
+        if (scraped or ref in include_refs) and ref and meta_id:
             records.append({
                 "path": meta_path,
                 "rel_path": os.path.relpath(meta_path, REPO_ROOT),
@@ -560,8 +574,11 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
     platforms = (preserved_fields or {}).get(
         "platforms", DEFAULT_PLUGIN_PLATFORMS if kind == KIND_PLUGIN else "koreader"
     )
+    dependencies = (preserved_fields or {}).get("dependencies", "")
     conflicts = (preserved_fields or {}).get("conflicts", "")
     incompatible_platforms = (preserved_fields or {}).get("incompatible_platforms", "")
+    install_url = (preserved_fields or {}).get("install_url", "")
+    uninstall_url = (preserved_fields or {}).get("uninstall_url", "")
 
     lines = [
         f"# {name} {package_label} for KOReader",
@@ -588,9 +605,14 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
         f"author={owner}",
         f"category={category}",
         f"platforms={platforms}",
-        "dependencies=",
+        f"dependencies={dependencies}",
         f"source={repo['html_url']}",
     ])
+
+    if install_url:
+        lines.append(f"install_url={install_url}")
+    if uninstall_url:
+        lines.append(f"uninstall_url={uninstall_url}")
 
     for field in PRESENTATION_FIELDS:
         value = (preserved_fields or {}).get(field, "")

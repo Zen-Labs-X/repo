@@ -22,6 +22,7 @@ from scrape_common import (
     fetch_releases,
     fetch_repo,
     is_inactive,
+    load_blacklist,
     load_category_cache,
     make_id,
     newest_prerelease,
@@ -42,13 +43,29 @@ PLUGIN_QUERIES = (
     f"koreader-plugin in:name stars:>={MIN_STARS} fork:true",
 )
 
+EXTRA_PLUGIN_REPOS = {
+    "xzenlabs/zen-pm": {"id": "zenpm", "name": "ZenPM"},
+}
+
 
 def is_koplugin(repo):
+    if normalize_repo_ref(repo.get("full_name", "")) in EXTRA_PLUGIN_REPOS:
+        return True
     name = repo.get("name", "").lower()
     topics = [t.lower() for t in repo.get("topics", [])]
     if name.endswith(".koplugin") or "koplugin" in name:
         return True
     return "koplugin" in topics or "koreader-plugin" in topics
+
+
+def is_eligible_koplugin(repo, exclude_forks):
+    return (
+        repo.get("stargazers_count", 0) >= MIN_STARS
+        and not repo.get("archived")
+        and (not exclude_forks or not repo.get("fork"))
+        and not is_inactive(repo)
+        and is_koplugin(repo)
+    )
 
 
 def main():
@@ -66,16 +83,32 @@ def main():
 
     known_refs, known_ids = existing_repo_refs()
     known_repository_identities = existing_repository_identities()
+    blacklist = load_blacklist()
     discovered = discover(PLUGIN_QUERIES)
+    for ref in EXTRA_PLUGIN_REPOS:
+        if ref in blacklist:
+            continue
+        repo = fetch_repo(ref)
+        if repo:
+            discovered.setdefault(repo.get("full_name", ref), repo)
+        else:
+            print(f"Could not discover required plugin {ref}", file=sys.stderr)
     print(f"Discovered {len(discovered)} candidate plugin repos.",
           file=sys.stderr)
 
     category_cache = load_category_cache()
     category_cache.update(existing_meta_categories())
+    eligible_manual_refs = {
+        normalize_repo_ref(full_name)
+        for full_name, repo in discovered.items()
+        if normalize_repo_ref(full_name) in known_refs
+        and normalize_repo_ref(full_name) not in blacklist
+        and is_eligible_koplugin(repo, args.exclude_forks)
+    }
 
     updated = []
-    for record in existing_scraped_meta():
-        if record["category"] == "patches":
+    for record in existing_scraped_meta(include_refs=eligible_manual_refs):
+        if record["ref"] in blacklist or record["category"] == "patches":
             continue
         repo = fetch_repo(record["ref"])
         if not repo:
@@ -166,24 +199,14 @@ def main():
     added = []
     for full_name, item in sorted(discovered.items()):
         norm = normalize_repo_ref(full_name)
-        if norm in known_refs:
+        if norm in blacklist or norm in known_refs:
             continue
-        if item.get("stargazers_count", 0) < MIN_STARS:
-            continue
-        if item.get("archived"):
-            continue
-        if item.get("fork") and args.exclude_forks:
-            continue
-        if is_inactive(item):
-            continue
-
         repo = item
-        if not is_koplugin(repo) and not is_koplugin(item):
-            continue
-        if repo.get("archived") or is_inactive(repo):
+        if not is_eligible_koplugin(repo, args.exclude_forks):
             continue
 
-        candidate_id = make_id(repo.get("name", ""), set())
+        extra = EXTRA_PLUGIN_REPOS.get(norm)
+        candidate_id = extra["id"] if extra else make_id(repo.get("name", ""), set())
         candidate_identity = repository_identity(repo.get("full_name", full_name))
         if candidate_id in known_ids or candidate_identity in known_repository_identities:
             print(f"Skipping duplicate package {full_name}", file=sys.stderr)
@@ -199,7 +222,8 @@ def main():
         release = newest_stable_release(releases)
         prerelease = newest_prerelease(releases)
         meta_id, meta_text, summary = build_meta(
-            repo, release, known_ids, category, kind=KIND_PLUGIN,
+            repo, release, known_ids, category, meta_id=candidate_id,
+            kind=KIND_PLUGIN, name_override=extra["name"] if extra else None,
             releases=releases, scraped_at=scraped_at
         )
         known_refs.add(norm)
@@ -219,7 +243,8 @@ def main():
         )
         meta_id, meta_text, summary = build_meta(
             repo, release, known_ids, category, meta_id=meta_id,
-            kind=KIND_PLUGIN, readme_url=readme_url, readme_hash=readme_hash,
+            kind=KIND_PLUGIN, name_override=extra["name"] if extra else None,
+            readme_url=readme_url, readme_hash=readme_hash,
             release_notes_url=release_notes_url, release_notes_hash=release_notes_hash,
             prerelease=prerelease, prerelease_notes_url=prerelease_notes_url,
             prerelease_notes_hash=prerelease_notes_hash,

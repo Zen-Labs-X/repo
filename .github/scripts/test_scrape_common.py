@@ -13,6 +13,8 @@ import scrape_common
 class CachedPackageMetadataTests(unittest.TestCase):
     def setUp(self):
         self.repo_root = scrape_common.REPO_ROOT
+        self.koreader_dir = scrape_common.KOREADER_DIR
+        self.scrape_blacklist = scrape_common.SCRAPE_BLACKLIST
         self.fetch_readme = scrape_common.fetch_readme
         self.temp_dir = tempfile.TemporaryDirectory()
         scrape_common.REPO_ROOT = self.temp_dir.name
@@ -20,8 +22,37 @@ class CachedPackageMetadataTests(unittest.TestCase):
 
     def tearDown(self):
         scrape_common.REPO_ROOT = self.repo_root
+        scrape_common.KOREADER_DIR = self.koreader_dir
+        scrape_common.SCRAPE_BLACKLIST = self.scrape_blacklist
         scrape_common.fetch_readme = self.fetch_readme
         self.temp_dir.cleanup()
+
+    def test_load_blacklist_normalizes_github_urls(self):
+        scrape_common.SCRAPE_BLACKLIST = os.path.join(self.temp_dir.name, "blacklist.json")
+        with open(scrape_common.SCRAPE_BLACKLIST, "w", encoding="utf-8") as fh:
+            json.dump(["https://github.com/xZenLabs/zen-pm", "not a repo"], fh)
+
+        self.assertEqual(scrape_common.load_blacklist(), {"xzenlabs/zen-pm"})
+
+    def test_existing_scraped_meta_can_include_a_matching_manual_package(self):
+        scrape_common.KOREADER_DIR = os.path.join(
+            self.temp_dir.name, "packages", "koreader"
+        )
+        package_dir = os.path.join(scrape_common.KOREADER_DIR, "manual.koplugin")
+        os.makedirs(package_dir)
+        with open(os.path.join(package_dir, ".meta"), "w", encoding="utf-8") as fh:
+            fh.write(
+                "id=manual\n"
+                "name=Manual\n"
+                "category=utility\n"
+                "source=https://github.com/owner/manual.koplugin\n"
+            )
+
+        self.assertEqual(scrape_common.existing_scraped_meta(), [])
+        records = scrape_common.existing_scraped_meta(
+            include_refs={"owner/manual.koplugin"}
+        )
+        self.assertEqual(len(records), 1)
 
     def test_caches_readme_and_uses_its_blob_sha(self):
         scrape_common.fetch_readme = lambda _repo: ("# Cached\n", "blob-sha", True)
@@ -236,6 +267,9 @@ class CachedPackageMetadataTests(unittest.TestCase):
                 "featured_image": "packages/test/assets/featured.png",
                 "featured": "true",
                 "featured_order": "10",
+                "dependencies": "manual-dependency",
+                "install_url": "packages/test/install.sh",
+                "uninstall_url": "packages/test/uninstall.sh",
                 "conflicts": "other-package",
                 "incompatible_platforms": "android",
             },
@@ -268,6 +302,9 @@ class CachedPackageMetadataTests(unittest.TestCase):
         self.assertIn("featured=true\n", meta_text)
         self.assertIn("featured_order=10\n", meta_text)
         self.assertIn("platforms=koreader\n", meta_text)
+        self.assertIn("dependencies=manual-dependency\n", meta_text)
+        self.assertIn("install_url=packages/test/install.sh\n", meta_text)
+        self.assertIn("uninstall_url=packages/test/uninstall.sh\n", meta_text)
         self.assertIn("conflicts=other-package\n", meta_text)
         self.assertIn("incompatible_platforms=android\n", meta_text)
         self.assertEqual(
@@ -289,8 +326,6 @@ class CachedPackageMetadataTests(unittest.TestCase):
                 "digest": "sha256:abc",
             }],
         }])
-        self.assertNotIn("install_url=", meta_text)
-        self.assertNotIn("uninstall_url=", meta_text)
 
     def test_repository_identity_ignores_package_name_punctuation(self):
         self.assertEqual(

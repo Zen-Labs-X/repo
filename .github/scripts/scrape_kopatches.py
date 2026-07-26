@@ -23,6 +23,7 @@ from scrape_common import (
     fetch_repo,
     fetch_tree,
     is_inactive,
+    load_blacklist,
     make_id,
     newest_prerelease,
     newest_stable_release,
@@ -46,6 +47,16 @@ def looks_like_koreader_patch_repo(repo):
     if "koreader-user-patch" in topics:
         return True
     return name == "koreader.patches" or "koreader.patches" in name
+
+
+def is_eligible_patch_repo(repo, exclude_forks):
+    return (
+        repo.get("stargazers_count", 0) >= MIN_STARS
+        and not repo.get("archived")
+        and (not exclude_forks or not repo.get("fork"))
+        and not is_inactive(repo)
+        and looks_like_koreader_patch_repo(repo)
+    )
 
 
 def patch_assets(repo):
@@ -84,12 +95,23 @@ def main():
 
     known_refs, known_ids = existing_repo_refs()
     known_repository_identities = existing_repository_identities()
+    blacklist = load_blacklist()
     discovered = discover(PATCH_QUERIES)
     print(f"Discovered {len(discovered)} candidate patch repos.",
           file=sys.stderr)
 
+    eligible_manual_refs = {
+        normalize_repo_ref(full_name)
+        for full_name, repo in discovered.items()
+        if normalize_repo_ref(full_name) in known_refs
+        and normalize_repo_ref(full_name) not in blacklist
+        and is_eligible_patch_repo(repo, args.exclude_forks)
+    }
+
     updated = []
-    for record in existing_scraped_meta(PATCH_CATEGORY):
+    for record in existing_scraped_meta(PATCH_CATEGORY, eligible_manual_refs):
+        if record["ref"] in blacklist:
+            continue
         repo = fetch_repo(record["ref"])
         if not repo:
             print(f"Could not refresh {record['rel_path']}: repo not found",
@@ -176,21 +198,10 @@ def main():
     added = []
     for full_name, item in sorted(discovered.items()):
         norm = normalize_repo_ref(full_name)
-        if norm in known_refs:
+        if norm in blacklist or norm in known_refs:
             continue
-        if item.get("stargazers_count", 0) < MIN_STARS:
-            continue
-        if item.get("archived"):
-            continue
-        if item.get("fork") and args.exclude_forks:
-            continue
-        if is_inactive(item):
-            continue
-
         repo = item
-        if not looks_like_koreader_patch_repo(repo) and not looks_like_koreader_patch_repo(item):
-            continue
-        if repo.get("archived") or is_inactive(repo):
+        if not is_eligible_patch_repo(repo, args.exclude_forks):
             continue
 
         candidate_id = make_id(repo.get("name", ""), set())
