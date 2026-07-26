@@ -1,0 +1,5 @@
+- Remember sorting 
+- Remember scroll position after edit 
+- Note button 
+- Hide from calendar
+- Archive items (as complete  or abandoned)

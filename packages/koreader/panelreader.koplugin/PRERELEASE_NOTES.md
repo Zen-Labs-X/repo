@@ -1,0 +1,1 @@
+Stability improvements and contrast setting support

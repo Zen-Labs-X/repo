@@ -1,0 +1,1 @@
+[Breaking Change] Legacy module configuration is deprecated and will be incompatible with upcoming versions.

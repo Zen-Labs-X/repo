@@ -1,0 +1,18 @@
+# Kobo Dashboard plugin for KOReader
+# https://github.com/paulakfleck/kobo-dashboard
+# zenpm:auto-scraped
+id=kobo-dashboard
+name=Kobo Dashboard
+version=source
+description=An e-ink optimized dashboard that displays calendar events, weather forecast, and current date, for Kobo e-readers using KOReader.
+author=paulakfleck
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/paulakfleck/kobo-dashboard
+stars=15
+updated_at=2026-07-26T05:21:44Z
+readme_url=packages/koreader/kobo-dashboard.koplugin/README.md
+readme_hash=a88913128f760b3d713f8c33ff1f59eeee00d5ad
+source_type=source
+source_url=https://codeload.github.com/paulakfleck/kobo-dashboard/zip/refs/heads/main

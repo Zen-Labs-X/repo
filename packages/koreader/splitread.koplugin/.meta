@@ -1,0 +1,22 @@
+# Splitread plugin for KOReader
+# https://github.com/sadatdaniel/splitread.koplugin
+# zenpm:auto-scraped
+id=splitread
+name=Splitread
+version=1.1.0
+description=A KOReader plugin that displays real-time translations in a split panel, designed for language learners reading foreign-language books
+author=sadatdaniel
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/sadatdaniel/splitread.koplugin
+stars=15
+updated_at=2026-07-26T05:21:44Z
+published_at=2026-06-27T20:52:31Z
+readme_url=packages/koreader/splitread.koplugin/README.md
+readme_hash=b78b48548f321443090c25841e24aa0213259eab
+release_notes_url=packages/koreader/splitread.koplugin/RELEASE_NOTES.md
+release_notes_hash=ada0ea6ccf331d3b689101d7f928c1a2756a757a5b0a28176cf6d2cd705047f4
+source_type=release
+source_asset=splitread.koplugin.zip
+size=6421

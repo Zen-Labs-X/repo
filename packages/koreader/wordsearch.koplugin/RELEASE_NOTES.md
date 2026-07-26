@@ -1,0 +1,2 @@
+- Add an option to use a different font and change the font size
+- Fix for UTF-8 characters

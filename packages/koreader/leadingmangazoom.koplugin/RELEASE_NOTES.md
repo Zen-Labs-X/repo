@@ -1,0 +1,1 @@
+v1.1.1 Release: Fix physical page-turn button remapping bug on Kobo Sage, Kobo Libra 2, Kobo Forma, PocketBook, and Kindle Oasis devices when auto-rotating landscape pages.

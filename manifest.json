@@ -120,24 +120,6 @@
       }
     },
     {
-      "id": "ZenPM-kobo",
-      "name": "Zen Package Manager (Kobo Launcher)",
-      "version": "0.1.0",
-      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts",
-      "author": "ZenLabs",
-      "category": "utility",
-      "platforms": ["kobo"],
-      "dependencies": ["nickelmenu"],
-      "size": "0",
-      "launcher": {
-        "kobo": {
-          "entry_name": "Zen Package Manager",
-          "location": "main",
-          "type": "nickelmenu"
-        }
-      }
-    },
-    {
       "id": "koreader-kobo",
       "name": "KOReader (Kobo)",
       "version": "2026.03.0",
@@ -173,6 +155,24 @@
       }
     },
     {
+      "id": "ZenPM-kobo",
+      "name": "Zen Package Manager (Kobo Launcher)",
+      "version": "0.1.0",
+      "description": "Install Zen PM NickelMenu entry and Kobo helper scripts",
+      "author": "ZenLabs",
+      "category": "utility",
+      "platforms": ["kobo"],
+      "dependencies": ["nickelmenu"],
+      "size": "0",
+      "launcher": {
+        "kobo": {
+          "entry_name": "Zen Package Manager",
+          "location": "main",
+          "type": "nickelmenu"
+        }
+      }
+    },
+    {
       "id": "acsm",
       "name": "Acsm",
       "version": "0.0.10",
@@ -186,10 +186,12 @@
       "source_asset": "acsm-koplugin-v0.0.10.zip",
       "source_type": "release",
       "stars": "54",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-16T19:38:09Z",
       "readme_url": "packages/koreader/acsm.koplugin/README.md",
-      "readme_hash": "47e7f7a6c54b60fd475c4123a4b97f0c67cba14d"
+      "readme_hash": "47e7f7a6c54b60fd475c4123a4b97f0c67cba14d",
+      "release_notes_url": "packages/koreader/acsm.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "abac904d51dfc234e6df86468cedd104a4a61a5e1cf4f0d9570d70adee0e7e0a"
     },
     {
       "id": "ai-dictionary-koreader",
@@ -204,10 +206,12 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/SahandMalaei/ai-dictionary-koreader/zip/refs/heads/main",
       "stars": "81",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-12T17:11:51Z",
       "readme_url": "packages/koreader/ai-dictionary-koreader.koplugin/README.md",
-      "readme_hash": "1637624ab20e06b768b8c06788f103292763826c"
+      "readme_hash": "1637624ab20e06b768b8c06788f103292763826c",
+      "release_notes_url": "packages/koreader/ai-dictionary-koreader.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "143a1e80966041492024537a062e704bdcd8eef16f9da88f88b521358211f6e5"
     },
     {
       "id": "airplanemode",
@@ -223,10 +227,16 @@
       "source_asset": "airplanemode.koplugin-v1.9.2.zip",
       "source_type": "release",
       "stars": "52",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-06-23T03:01:29Z",
+      "prerelease_version": "0.0.1-alpha",
+      "prerelease_published_at": "2025-05-07T01:03:33Z",
       "readme_url": "packages/koreader/airplanemode.koplugin/README.md",
-      "readme_hash": "3a490a736265deeefa5cb570667459f40db2b129"
+      "readme_hash": "3a490a736265deeefa5cb570667459f40db2b129",
+      "release_notes_url": "packages/koreader/airplanemode.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "5741651b108e7d5efad7d556f6eab8c8871b622ee17f00192a0cf15b3b83d339",
+      "prerelease_notes_url": "packages/koreader/airplanemode.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "5eafa93491a7cfbfbc6a7189225c43bbc64bc7eeb7541dbc8640cf5121b20c1e"
     },
     {
       "id": "anki",
@@ -241,7 +251,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/Ajatt-Tools/anki.koplugin/zip/refs/heads/master",
       "stars": "214",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/anki.koplugin/README.md",
       "readme_hash": "b6067eac25438e2316876b99e362d0679d93db98"
     },
@@ -259,10 +269,12 @@
       "source_asset": "ankiviewer.koplugin.zip",
       "source_type": "release",
       "stars": "26",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-04-05T13:04:50Z",
       "readme_url": "packages/koreader/ankiviewer.koplugin/README.md",
-      "readme_hash": "499ebf862677e5941b4e60d1e65c672b9a91906d"
+      "readme_hash": "499ebf862677e5941b4e60d1e65c672b9a91906d",
+      "release_notes_url": "packages/koreader/ankiviewer.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "976bbfe1ec3266a925e6fb10988d314089c93de981e2777704114e37ad3696eb"
     },
     {
       "id": "annas",
@@ -278,10 +290,12 @@
       "source_asset": "annas.koplugin-v0.1.8.zip",
       "source_type": "release",
       "stars": "70",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-02T10:04:33Z",
       "readme_url": "packages/koreader/annas.koplugin/README.md",
-      "readme_hash": "5707b9e59a93e9a8d6206d2f1de53630edc5e6ac"
+      "readme_hash": "5707b9e59a93e9a8d6206d2f1de53630edc5e6ac",
+      "release_notes_url": "packages/koreader/annas.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "41431641d8bb6fbcf6172fbb0334f020e5eb5796f49ea89a452c0b17e5241b70"
     },
     {
       "id": "annotationsviewer",
@@ -297,10 +311,12 @@
       "source_asset": "annotationsviewer.koplugin.zip",
       "source_type": "release",
       "stars": "49",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-05T00:35:30Z",
       "readme_url": "packages/koreader/annotationsviewer.koplugin/README.md",
-      "readme_hash": "e179e6473ecc89d2bf572be34c03f2aaf991925f"
+      "readme_hash": "e179e6473ecc89d2bf572be34c03f2aaf991925f",
+      "release_notes_url": "packages/koreader/annotationsviewer.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "b64a19650fe3fd84707e01756e13946c4520c2185053603ab57fda4cb2fa1ac8"
     },
     {
       "id": "annotationsync",
@@ -316,10 +332,12 @@
       "source_asset": "AnnotationSync.koplugin.zip",
       "source_type": "release",
       "stars": "139",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-25T17:31:44Z",
       "readme_url": "packages/koreader/annotationsync.koplugin/README.md",
-      "readme_hash": "62b6874a34a5bcc1f0b5cd6d3ee4b077bd02c75a"
+      "readme_hash": "62b6874a34a5bcc1f0b5cd6d3ee4b077bd02c75a",
+      "release_notes_url": "packages/koreader/annotationsync.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "068d3762651afaec92f079edd7575cba624774e0f180bc040b9c62310f856245"
     },
     {
       "id": "ao3downloader",
@@ -335,10 +353,12 @@
       "source_asset": "AO3Downloader-v0.4.0.zip",
       "source_type": "release",
       "stars": "89",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2025-12-28T15:02:36Z",
       "readme_url": "packages/koreader/ao3downloader.koplugin/README.md",
-      "readme_hash": "adbe6bc718ad97ba20bcb451b63629932da18cab"
+      "readme_hash": "adbe6bc718ad97ba20bcb451b63629932da18cab",
+      "release_notes_url": "packages/koreader/ao3downloader.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "50058ba5feb970f782ec03a0011445b6923b9986993f5463bdb752aad3dab8ec"
     },
     {
       "id": "ao3updater",
@@ -353,7 +373,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/ProfBlack/ao3updater.koplugin/zip/refs/heads/main",
       "stars": "28",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/ao3updater.koplugin/README.md",
       "readme_hash": "7ee9eaaa6d994988dc0062330f424fbe0b6ee322"
     },
@@ -371,10 +391,12 @@
       "source_asset": "appearance.koplugin.zip",
       "source_type": "release",
       "stars": "98",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-16T18:19:03Z",
       "readme_url": "packages/koreader/appearance.koplugin/README.md",
-      "readme_hash": "ea8ba966419139dc3d56657609fd685bf65fbdbf"
+      "readme_hash": "ea8ba966419139dc3d56657609fd685bf65fbdbf",
+      "release_notes_url": "packages/koreader/appearance.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "4c8a9925439d0984799de54b76dceec64d0d8e49db26ec53dff29874c2e5a585"
     },
     {
       "id": "applauncher",
@@ -390,10 +412,12 @@
       "source_asset": "applauncher.koplugin.zip",
       "source_type": "release",
       "stars": "24",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2025-12-22T16:02:36Z",
       "readme_url": "packages/koreader/applauncher.koplugin/README.md",
-      "readme_hash": "a7670b18b89c80e38d536d563ce895f95037b1ce"
+      "readme_hash": "a7670b18b89c80e38d536d563ce895f95037b1ce",
+      "release_notes_url": "packages/koreader/applauncher.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "ae7b22a882ee47683a7f66489da8d683195f591988a2d6c6f22cedbcc8c23340"
     },
     {
       "id": "appstore",
@@ -409,10 +433,12 @@
       "source_asset": "appstore.koplugin.zip",
       "source_type": "release",
       "stars": "353",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-05T11:26:25Z",
       "readme_url": "packages/koreader/appstore.koplugin/README.md",
-      "readme_hash": "40922cbc9210c00258f0ff1bbae1a6d82da2de6e"
+      "readme_hash": "40922cbc9210c00258f0ff1bbae1a6d82da2de6e",
+      "release_notes_url": "packages/koreader/appstore.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "8b9d23ec5e10ab6917d197df4d686d28b68130abc450c61dcb6210fdfd1c568a"
     },
     {
       "id": "assistant",
@@ -428,10 +454,16 @@
       "source_asset": "assistant.koplugin-v1.11.zip",
       "source_type": "release",
       "stars": "549",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-06-02T06:45:40Z",
+      "prerelease_version": "1.11-rc6",
+      "prerelease_published_at": "2026-05-28T09:29:02Z",
       "readme_url": "packages/koreader/assistant.koplugin/README.md",
-      "readme_hash": "94448ed8c33dee8a12041c02c7707213863d7c90"
+      "readme_hash": "94448ed8c33dee8a12041c02c7707213863d7c90",
+      "release_notes_url": "packages/koreader/assistant.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "4b48d5a85ac735c74db13f24eef281ef14cfb20eb0af8dbc72f7e3b02a4b7f5b",
+      "prerelease_notes_url": "packages/koreader/assistant.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "9f9dfd7f736395957e2257106f0b3e2a6d39b4687833ac24fe79f885c756a26b"
     },
     {
       "id": "audiobook",
@@ -447,10 +479,12 @@
       "source_asset": "audiobook-koplugin-v0.1.17.1.zip",
       "source_type": "release",
       "stars": "96",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-16T22:35:38Z",
       "readme_url": "packages/koreader/audiobook.koplugin/README.md",
-      "readme_hash": "21248cc8af9d769806f245371a242c1ccd0a42ae"
+      "readme_hash": "21248cc8af9d769806f245371a242c1ccd0a42ae",
+      "release_notes_url": "packages/koreader/audiobook.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "ef12e593a5e7302c59aea494875ee62e44cd4fb84f643dca78f4c20b0da701a9"
     },
     {
       "id": "audiobookshelf",
@@ -466,10 +500,12 @@
       "source_asset": "audiobookshelf.koplugin.zip",
       "source_type": "release",
       "stars": "86",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-01T00:30:06Z",
       "readme_url": "packages/koreader/audiobookshelf.koplugin/README.md",
-      "readme_hash": "a851fc1134fd2fb001f74318bfa07c1f67e1dde6"
+      "readme_hash": "a851fc1134fd2fb001f74318bfa07c1f67e1dde6",
+      "release_notes_url": "packages/koreader/audiobookshelf.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "1fd327027c98574032779d10c26b9c1895407541c2b84953381c5d491a744562"
     },
     {
       "id": "bluetooth",
@@ -484,10 +520,12 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/onatbas/bluetooth.koplugin/zip/refs/heads/main",
       "stars": "77",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-01-03T16:17:06Z",
       "readme_url": "packages/koreader/bluetooth.koplugin/README.md",
-      "readme_hash": "d40f541f2a29ad477eb7c0867f44c216f46e3f53"
+      "readme_hash": "d40f541f2a29ad477eb7c0867f44c216f46e3f53",
+      "release_notes_url": "packages/koreader/bluetooth.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "5a3930802d3a91a912c77b8c5b0454b66b409edcd4a52f0bf95e87eb7221fb69"
     },
     {
       "id": "boardgames",
@@ -518,10 +556,12 @@
       "source_asset": "bookends.koplugin-v5.22.0.zip",
       "source_type": "release",
       "stars": "330",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-04T23:19:37Z",
       "readme_url": "packages/koreader/bookends.koplugin/README.md",
-      "readme_hash": "c5d8695e7f25be738cf077350181365d3b93b118"
+      "readme_hash": "c5d8695e7f25be738cf077350181365d3b93b118",
+      "release_notes_url": "packages/koreader/bookends.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "761cb23b0e6286bdf7f76bca271bedba61ae09de5acca60532dd7f571ec8b2ac"
     },
     {
       "id": "booknookcharms",
@@ -537,10 +577,12 @@
       "source_asset": "Book.Nook.Charms.V1.1.1.zip",
       "source_type": "release",
       "stars": "20",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-06-19T19:36:06Z",
       "readme_url": "packages/koreader/booknookcharms.koplugin/README.md",
-      "readme_hash": "f2d75f7dbef66f36a17f9f38cc7733845c73c91c"
+      "readme_hash": "f2d75f7dbef66f36a17f9f38cc7733845c73c91c",
+      "release_notes_url": "packages/koreader/booknookcharms.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "404c45cd59132b53d08162c3793a2043875367665a17cb78c13fea0ebf821cfe"
     },
     {
       "id": "bookshelf",
@@ -556,10 +598,12 @@
       "source_asset": "bookshelf.koplugin.zip",
       "source_type": "release",
       "stars": "434",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-24T20:50:20Z",
       "readme_url": "packages/koreader/bookshelf.koplugin/README.md",
-      "readme_hash": "c281aa90d5069fd4d48fa902cf347a271f87c978"
+      "readme_hash": "c281aa90d5069fd4d48fa902cf347a271f87c978",
+      "release_notes_url": "packages/koreader/bookshelf.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "034dfaa50ebf45ecc9a51f18dc9727aedb4f24bbb84a12e60d3a78f971c025e3"
     },
     {
       "id": "bubblezoom",
@@ -575,10 +619,12 @@
       "source_asset": "bubblezoom.koplugin_1.2.0.zip",
       "source_type": "release",
       "stars": "24",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-24T19:09:19Z",
       "readme_url": "packages/koreader/bubblezoom.koplugin/README.md",
-      "readme_hash": "5dab0861333d68c36cdae73f5ded13e4938317d3"
+      "readme_hash": "5dab0861333d68c36cdae73f5ded13e4938317d3",
+      "release_notes_url": "packages/koreader/bubblezoom.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "0e69f1c401e559dcb7149d072f39b31204edf93e09a6f4f6f92dc7c06ae5b8de"
     },
     {
       "id": "casualkochess",
@@ -594,10 +640,12 @@
       "source_asset": "casualkochess.koplugin.v2.0.2.zip",
       "source_type": "release",
       "stars": "28",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-25T20:28:58Z",
       "readme_url": "packages/koreader/casualkochess.koplugin/README.md",
-      "readme_hash": "c7090fcfd55d31a47964c1423768e4b919eba8e6"
+      "readme_hash": "c7090fcfd55d31a47964c1423768e4b919eba8e6",
+      "release_notes_url": "packages/koreader/casualkochess.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "2453fe651338837d55bd580cbf2f3a33db006f6f42bf956d8f4d6644ae509614"
     },
     {
       "id": "charactertracker",
@@ -612,7 +660,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/Shac0x/charactertracker.koplugin/zip/refs/heads/main",
       "stars": "37",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/charactertracker.koplugin/README.md",
       "readme_hash": "a006fcd4f68972d229cdef24adf21336491aa624"
     },
@@ -630,10 +678,16 @@
       "source_asset": "cloudlibrary.koplugin.zip",
       "source_type": "release",
       "stars": "16",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-06T10:43:59Z",
+      "prerelease_version": "1.4.3-beta.2",
+      "prerelease_published_at": "2026-07-06T10:43:45Z",
       "readme_url": "packages/koreader/cloudlibrary.koplugin/README.md",
-      "readme_hash": "7a48b6e388f2695dd976fa8e823945c9035d4be1"
+      "readme_hash": "7a48b6e388f2695dd976fa8e823945c9035d4be1",
+      "release_notes_url": "packages/koreader/cloudlibrary.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "09da352a527f3f8bd0c2c515d92fff88efe0e6b497977f456915a6c1477d1cb2",
+      "prerelease_notes_url": "packages/koreader/cloudlibrary.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "ac24a4d174d71199c7a5376d300aa1621267ebd96f2e33ff3a71dfa06da782a3"
     },
     {
       "id": "comicmeta",
@@ -649,10 +703,12 @@
       "source_asset": "v2.0.zip",
       "source_type": "release",
       "stars": "62",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2025-09-25T01:56:25Z",
       "readme_url": "packages/koreader/comicmeta.koplugin/README.md",
-      "readme_hash": "438df8ce50603f034a2cd076d4a2325b39e5a8e1"
+      "readme_hash": "438df8ce50603f034a2cd076d4a2325b39e5a8e1",
+      "release_notes_url": "packages/koreader/comicmeta.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "3d250ef3779c364075e63f8ab632c939b0f1f9a0a6ce3a784b1f4a06f4c09d19"
     },
     {
       "id": "comicreader",
@@ -668,10 +724,12 @@
       "source_asset": "comicreader.koplugin.zip",
       "source_type": "release",
       "stars": "91",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-01-05T10:48:13Z",
       "readme_url": "packages/koreader/comicreader.koplugin/README.md",
-      "readme_hash": "6d41ee9b220cfb85d334be59fc88231bbac48cb1"
+      "readme_hash": "6d41ee9b220cfb85d334be59fc88231bbac48cb1",
+      "release_notes_url": "packages/koreader/comicreader.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "345519a03bfa4904794f685c99c1e7f8c87a00364d54a21ba7ab6e1859120f06"
     },
     {
       "id": "connections",
@@ -686,7 +744,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/odrling/connections.koplugin/zip/refs/heads/main",
       "stars": "17",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/connections.koplugin/README.md",
       "readme_hash": "5626b4760a1fbbdba9b3574cc961df9a78b772ec"
     },
@@ -703,7 +761,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/Billiam/crashlog.koplugin/zip/refs/heads/main",
       "stars": "23",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/crashlog.koplugin/README.md",
       "readme_hash": "c5521b130f4c4b5ded416a8d782be52dbae03e51"
     },
@@ -721,10 +779,12 @@
       "source_asset": "customisablesleepscreen_v2.2.0.zip",
       "source_type": "release",
       "stars": "206",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-09T16:09:40Z",
       "readme_url": "packages/koreader/customisablesleepscreen.koplugin/README.md",
-      "readme_hash": "466d84b72f0273a9066aaf9dc93021031425e33f"
+      "readme_hash": "466d84b72f0273a9066aaf9dc93021031425e33f",
+      "release_notes_url": "packages/koreader/customisablesleepscreen.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "7b7351836b90226f06687aecc551145c08f81ed54023e37f4f285038c6ec626a"
     },
     {
       "id": "derainbowify",
@@ -740,10 +800,16 @@
       "source_asset": "derainbowify.koplugin.zip",
       "source_type": "release",
       "stars": "21",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-05T17:26:41Z",
+      "prerelease_version": "0.0.11",
+      "prerelease_published_at": "2026-07-08T00:13:25Z",
       "readme_url": "packages/koreader/derainbowify.koplugin/README.md",
-      "readme_hash": "7c34aa4c33682eb78be5573e55456223aecf0e5c"
+      "readme_hash": "7c34aa4c33682eb78be5573e55456223aecf0e5c",
+      "release_notes_url": "packages/koreader/derainbowify.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "252bddfd019692147ae510ca832e76103d5bb11375bc734ff7562215d171d162",
+      "prerelease_notes_url": "packages/koreader/derainbowify.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "666bd3fcd2cbef2eb93f031752d318aee74eb3d0f810920e7b20dd7edf7d3e71"
     },
     {
       "id": "dictionarymode",
@@ -758,7 +824,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/ckilb/dictionarymode.koplugin/zip/refs/heads/main",
       "stars": "31",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/dictionarymode.koplugin/README.md",
       "readme_hash": "b74b4392a63e9a71e4249f3abe14dd1ed11958b2"
     },
@@ -775,7 +841,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/DucNg/digitalclock.koplugin/zip/refs/heads/main",
       "stars": "26",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/digitalclock.koplugin/README.md",
       "readme_hash": "60d295e97cc6d9063dd64b11d4bf422d380d860c"
     },
@@ -792,7 +858,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/kktse/dtdisplay.koplugin/zip/refs/heads/main",
       "stars": "26",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/dtdisplay.koplugin/README.md",
       "readme_hash": "50b9eb232e5918fdabffae12e9d13b68ff3bf454"
     },
@@ -810,10 +876,12 @@
       "source_asset": "Email.to.KOReader.v1.1.1.zip",
       "source_type": "release",
       "stars": "39",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2025-11-14T23:07:31Z",
       "readme_url": "packages/koreader/emailtokoreader.koplugin/README.md",
-      "readme_hash": "9210f2d869605c131f9ab2c547f7aef2784e7cf1"
+      "readme_hash": "9210f2d869605c131f9ab2c547f7aef2784e7cf1",
+      "release_notes_url": "packages/koreader/emailtokoreader.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "c3a53e0b4a7a91b7b4edb123ccb9a642e7148cb4a95e74d89dc8107bf40b757d"
     },
     {
       "id": "fanqie",
@@ -829,10 +897,12 @@
       "source_asset": "fanqie.koplugin.zip",
       "source_type": "release",
       "stars": "29",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-20T13:03:43Z",
       "readme_url": "packages/koreader/fanqie.koplugin/README.md",
-      "readme_hash": "a8896a52c499f21de6dacdf1e11253ac0dff3cc4"
+      "readme_hash": "a8896a52c499f21de6dacdf1e11253ac0dff3cc4",
+      "release_notes_url": "packages/koreader/fanqie.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "filebrowser",
@@ -848,10 +918,16 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/b-/filebrowser.koplugin/zip/refs/heads/main",
       "stars": "163",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-02-07T15:20:30Z",
+      "prerelease_version": "config-menus_2025-07-18-2.40.2",
+      "prerelease_published_at": "2025-07-18T17:13:21Z",
       "readme_url": "packages/koreader/filebrowser.koplugin/README.md",
-      "readme_hash": "f8c519aebcae96dbcc7629bf89bb3b8d2c92f9ef"
+      "readme_hash": "f8c519aebcae96dbcc7629bf89bb3b8d2c92f9ef",
+      "release_notes_url": "packages/koreader/filebrowser.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "prerelease_notes_url": "packages/koreader/filebrowser.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "7d315984329f0ea628dd772b54f23bf23fc2daa24a2f83ac14fe71be8d022576"
     },
     {
       "id": "filebrowserplus",
@@ -868,10 +944,16 @@
       "source_asset": "filebrowserplus.koplugin-v1.1.0-linux-armv7.zip",
       "source_type": "release",
       "stars": "238",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2025-11-18T09:07:46Z",
+      "prerelease_version": "1.2.0-pre",
+      "prerelease_published_at": "2026-05-16T13:57:10Z",
       "readme_url": "packages/koreader/filebrowserplus.koplugin/README.md",
-      "readme_hash": "dc13fcc83d7606c9e63d1e88c73abff95f3792d0"
+      "readme_hash": "dc13fcc83d7606c9e63d1e88c73abff95f3792d0",
+      "release_notes_url": "packages/koreader/filebrowserplus.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "03919496dab0801790a816a1a00a657e094b4ffcf71f8e334f51109af9bc48bd",
+      "prerelease_notes_url": "packages/koreader/filebrowserplus.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "5016af45a856b73abbf6b6ac093184564cd8dff50b5ca65c34a42a2c9cb876f3"
     },
     {
       "id": "filesync",
@@ -887,10 +969,12 @@
       "source_asset": "filesync.koplugin.zip",
       "source_type": "release",
       "stars": "28",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-04-28T08:40:16Z",
       "readme_url": "packages/koreader/filesync.koplugin/README.md",
-      "readme_hash": "82a9eb027cd853c81126729a1f1f78ad3a54a368"
+      "readme_hash": "82a9eb027cd853c81126729a1f1f78ad3a54a368",
+      "release_notes_url": "packages/koreader/filesync.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "6e8dbb51e2e192979b790550b543378818ae999aee50ba4cef656afe07f41912"
     },
     {
       "id": "floating-dictionary",
@@ -905,7 +989,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/DisastrousPatience83/Floating-Dictionary.koplugin/zip/refs/heads/main",
       "stars": "24",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/floating-dictionary.koplugin/README.md",
       "readme_hash": "13d22454b1878ed5eb9cb1209272828bbd2f9906"
     },
@@ -923,10 +1007,12 @@
       "source_asset": "foldermemory.koplugin.zip",
       "source_type": "release",
       "stars": "15",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-02T19:18:29Z",
       "readme_url": "packages/koreader/foldermemory.koplugin/README.md",
-      "readme_hash": "c719a1bef45abebb0c568075a0cceefe0038d3fe"
+      "readme_hash": "c719a1bef45abebb0c568075a0cceefe0038d3fe",
+      "release_notes_url": "packages/koreader/foldermemory.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "ca91677fbed2e98bbc53b86dd6cce622a9047fd4520e45855475ae46b9b3a941"
     },
     {
       "id": "font-cartisse",
@@ -1976,10 +2062,12 @@
       "source_asset": "foot-cream-v1.6.0.koplugin.zip",
       "source_type": "release",
       "stars": "62",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-14T12:36:59Z",
       "readme_url": "packages/koreader/foot-cream.koplugin/README.md",
-      "readme_hash": "8e8fba7f3087faf7224c67bff3152311735d203c"
+      "readme_hash": "8e8fba7f3087faf7224c67bff3152311735d203c",
+      "release_notes_url": "packages/koreader/foot-cream.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "349fa66e31a4a8ba8de2083f5041d037da6ebd6147f4d38c2b11b54f3e9007c4"
     },
     {
       "id": "gota-koplugin-for-raindrop",
@@ -1994,7 +2082,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/cristenger/gota.koplugin-for-raindrop/zip/refs/heads/main",
       "stars": "17",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/gota-koplugin-for-raindrop.koplugin/README.md",
       "readme_hash": "05bf0d0182fa64fd2c5060271faf72dcd409e409"
     },
@@ -2011,7 +2099,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/edoput/gotobed.koplugin/zip/refs/heads/master",
       "stars": "15",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/gotobed.koplugin/README.md",
       "readme_hash": "2e292343f367ef6f4999b774093d67af8dfb6de7"
     },
@@ -2029,10 +2117,12 @@
       "source_asset": "grimmory.koplugin.zip",
       "source_type": "release",
       "stars": "50",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-11T00:01:41Z",
       "readme_url": "packages/koreader/grimmory.koplugin/README.md",
-      "readme_hash": "fc1b0c9f0892c3968a43f87a3d0602eaa80db3e8"
+      "readme_hash": "fc1b0c9f0892c3968a43f87a3d0602eaa80db3e8",
+      "release_notes_url": "packages/koreader/grimmory.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "5d79a023546b87354774362356c5d3066008660c48257977d73efd30afbc60f1"
     },
     {
       "id": "hardcoverapp",
@@ -2048,10 +2138,12 @@
       "source_asset": "hardcoverapp.koplugin.zip",
       "source_type": "release",
       "stars": "392",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-04-05T02:10:53Z",
       "readme_url": "packages/koreader/hardcoverapp.koplugin/README.md",
-      "readme_hash": "980a5e50ba91f560b18c4ad0f802747dd6c7feee"
+      "readme_hash": "980a5e50ba91f560b18c4ad0f802747dd6c7feee",
+      "release_notes_url": "packages/koreader/hardcoverapp.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "a2f74454aca4dec0a2a3b48606125f4db08ee240cb45b2f1c7686f3c236489fe"
     },
     {
       "id": "highlightsync",
@@ -2066,10 +2158,12 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/gitalexcampos/highlightsync.koplugin/zip/refs/heads/master",
       "stars": "216",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-02-12T16:16:50Z",
       "readme_url": "packages/koreader/highlightsync.koplugin/README.md",
-      "readme_hash": "7154407acef77864a4a6ae2d9cf90547c4e101d1"
+      "readme_hash": "7154407acef77864a4a6ae2d9cf90547c4e101d1",
+      "release_notes_url": "packages/koreader/highlightsync.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "20b7e5df143bff244f626b339a74f5ca1136a71591f6db83a011653ed9e401b6"
     },
     {
       "id": "homeassistant",
@@ -2085,10 +2179,16 @@
       "source_asset": "homeassistant.koplugin.zip",
       "source_type": "release",
       "stars": "53",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-19T14:31:06Z",
+      "prerelease_version": "2.7.0",
+      "prerelease_published_at": "2026-01-19T15:41:05Z",
       "readme_url": "packages/koreader/homeassistant.koplugin/README.md",
-      "readme_hash": "5d82827fa3608ef17445a932548533c609e0ab3a"
+      "readme_hash": "5d82827fa3608ef17445a932548533c609e0ab3a",
+      "release_notes_url": "packages/koreader/homeassistant.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "9626dfa3c355944d6233129bdc010b527e8c67c3f008bc8d75cb7b124bd2ef51",
+      "prerelease_notes_url": "packages/koreader/homeassistant.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "135237029cc074ea50210d26be01a630631526343f5cc29d36036b2ff284a49d"
     },
     {
       "id": "homepage",
@@ -2103,7 +2203,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/reuerendo/homepage.koplugin/zip/refs/heads/main",
       "stars": "24",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/homepage.koplugin/README.md",
       "readme_hash": "38bd11b7a47f13aedd1d8fed125036d590b6a561"
     },
@@ -2120,7 +2220,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/ebanDev/iconschanger.koplugin/zip/refs/heads/main",
       "stars": "71",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/iconschanger.koplugin/README.md",
       "readme_hash": "55a3dbe3d77b54006d82de4c6bc42166bd13ecdf"
     },
@@ -2138,10 +2238,12 @@
       "source_asset": "illustrations.koplugin.zip",
       "source_type": "release",
       "stars": "33",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-04-25T01:00:45Z",
       "readme_url": "packages/koreader/illustrations.koplugin/README.md",
-      "readme_hash": "6d287b67a5212bc4a377d69549f0dab54cb50a40"
+      "readme_hash": "6d287b67a5212bc4a377d69549f0dab54cb50a40",
+      "release_notes_url": "packages/koreader/illustrations.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "8366e98569a3617bf428af9e7aa7e1b491c5515410f1100b5cf4398b3239e3b7"
     },
     {
       "id": "instapaper",
@@ -2157,10 +2259,12 @@
       "source_asset": "instapaper.koplugin.zip",
       "source_type": "release",
       "stars": "37",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-20T18:12:51Z",
       "readme_url": "packages/koreader/instapaper.koplugin/README.md",
-      "readme_hash": "ac2ec07ba3e11e24fd8ae5b8756d94f5f130b040"
+      "readme_hash": "ac2ec07ba3e11e24fd8ae5b8756d94f5f130b040",
+      "release_notes_url": "packages/koreader/instapaper.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "d75dff62bd688a9d933eaf8426d04282ce59f641d16a3eb95d6c8cde6ef091b6"
     },
     {
       "id": "kamare",
@@ -2176,10 +2280,16 @@
       "source_asset": "kamare.koplugin.zip",
       "source_type": "release",
       "stars": "43",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-04-22T17:20:36Z",
+      "prerelease_version": "0.9.16",
+      "prerelease_published_at": "2026-02-11T18:16:05Z",
       "readme_url": "packages/koreader/kamare.koplugin/README.md",
-      "readme_hash": "50003662ff04f1f91fc0bdc3d482d650bc226a6d"
+      "readme_hash": "50003662ff04f1f91fc0bdc3d482d650bc226a6d",
+      "release_notes_url": "packages/koreader/kamare.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "6c3c512913978e8bc17ba57061a23fd142a80206f99ba1984ad7bf483d518768",
+      "prerelease_notes_url": "packages/koreader/kamare.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "592513090d627e333e268a0d8619764d715e11eb682bb0d46000bcad0bb89334"
     },
     {
       "id": "karakeep",
@@ -2195,10 +2305,16 @@
       "source_asset": "karakeep.koplugin.zip",
       "source_type": "release",
       "stars": "26",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2025-08-22T23:22:20Z",
+      "prerelease_version": "0.0.3-dev-9d310ab",
+      "prerelease_published_at": "2025-08-26T09:05:53Z",
       "readme_url": "packages/koreader/karakeep.koplugin/README.md",
-      "readme_hash": "ac13f8018bcd044ebdb1e071ee0c24b8d078a5e7"
+      "readme_hash": "ac13f8018bcd044ebdb1e071ee0c24b8d078a5e7",
+      "release_notes_url": "packages/koreader/karakeep.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "abda0aa3f1359ca4e00c897ce13961a8e839ed273c8a16644835f04283c94bf8",
+      "prerelease_notes_url": "packages/koreader/karakeep.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "040bf2c0f02e7bda2cb84c67bd9ee5198a3618f9cfe2d6bb2bb29dccc55ad034"
     },
     {
       "id": "kindlebtcontroller",
@@ -2214,10 +2330,12 @@
       "source_asset": "kindlebtcontroller.koplugin.zip",
       "source_type": "release",
       "stars": "59",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-14T15:38:01Z",
       "readme_url": "packages/koreader/kindlebtcontroller.koplugin/README.md",
-      "readme_hash": "a22f065c9dd2f8f1a8cabec6eccaaada5f321d46"
+      "readme_hash": "a22f065c9dd2f8f1a8cabec6eccaaada5f321d46",
+      "release_notes_url": "packages/koreader/kindlebtcontroller.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "0c47a74f60b9701dd3cc377aa857743977031ac1095cf9ab8d20e8038ddc19bd"
     },
     {
       "id": "kindlefetch",
@@ -2233,10 +2351,12 @@
       "source_asset": "kindlefetch.koplugin.zip",
       "source_type": "release",
       "stars": "25",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-19T06:45:28Z",
       "readme_url": "packages/koreader/kindlefetch.koplugin/README.md",
-      "readme_hash": "2e1fff2d6e9dc998f51d1332851656c45e0e516a"
+      "readme_hash": "2e1fff2d6e9dc998f51d1332851656c45e0e516a",
+      "release_notes_url": "packages/koreader/kindlefetch.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "808980e34593f7b9ce336ee3f8ecf3752c1e3a0937cb0c8c150effd0a598a973"
     },
     {
       "id": "koassistant",
@@ -2252,10 +2372,33 @@
       "source_asset": "koassistant.koplugin.zip",
       "source_type": "release",
       "stars": "168",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-05T14:17:02Z",
+      "prerelease_version": ".0.8.1-beta",
+      "prerelease_published_at": "2026-01-07T17:04:48Z",
       "readme_url": "packages/koreader/koassistant.koplugin/README.md",
-      "readme_hash": "aa444c662d756f19938bf9166e63d2e231bd9c69"
+      "readme_hash": "aa444c662d756f19938bf9166e63d2e231bd9c69",
+      "release_notes_url": "packages/koreader/koassistant.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "48a6fdd4a406cbac665aecc2df2b5e3f4cf8ab7df44c92b04705243c06116df6",
+      "prerelease_notes_url": "packages/koreader/koassistant.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "5b4f4bc459cf2c61c36362d58e0818a095bc7bb9905bb4ff6c19779365a7e12c"
+    },
+    {
+      "id": "kobo-dashboard",
+      "name": "Kobo Dashboard",
+      "version": "source",
+      "description": "An e-ink optimized dashboard that displays calendar events, weather forecast, and current date, for Kobo e-readers using KOReader.",
+      "author": "paulakfleck",
+      "category": "productivity",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "source": "https://github.com/paulakfleck/kobo-dashboard",
+      "source_type": "source",
+      "source_url": "https://codeload.github.com/paulakfleck/kobo-dashboard/zip/refs/heads/main",
+      "stars": "15",
+      "updated_at": "2026-07-26T05:21:44Z",
+      "readme_url": "packages/koreader/kobo-dashboard.koplugin/README.md",
+      "readme_hash": "a88913128f760b3d713f8c33ff1f59eeee00d5ad"
     },
     {
       "id": "kobo",
@@ -2269,10 +2412,12 @@
       "source": "https://github.com/OGKevin/kobo.koplugin",
       "source_type": "release",
       "stars": "153",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-02-20T10:58:00Z",
       "readme_url": "packages/koreader/kobo.koplugin/README.md",
       "readme_hash": "262fca4e0ff42c7056223a3387547d60881247db",
+      "release_notes_url": "packages/koreader/kobo.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "4174c8ce5652858648010846b7ddb25f02029d1f0fee8ca6f0f33c3a6048878c",
       "assets": [
         {
           "arch": "kobo",
@@ -2302,10 +2447,12 @@
       "source_asset": "koboard.koplugin.zip",
       "source_type": "release",
       "stars": "23",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-18T22:24:57Z",
       "readme_url": "packages/koreader/koboard.koplugin/README.md",
-      "readme_hash": "b39781aa28a677dfcc3c90f57919ecd38544b0a3"
+      "readme_hash": "b39781aa28a677dfcc3c90f57919ecd38544b0a3",
+      "release_notes_url": "packages/koreader/koboard.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "b6008d07755d7ac958222f6879d757fc42f7d67fbb7a98e6a98cee9043ee199c"
     },
     {
       "id": "kodashboard",
@@ -2321,10 +2468,12 @@
       "source_asset": "kodashboard-v1.2.5-minimal.zip",
       "source_type": "release",
       "stars": "90",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-02T01:59:29Z",
       "readme_url": "packages/koreader/kodashboard.koplugin/README.md",
-      "readme_hash": "102bf8f863083f10545b235ff519b38a3ddf01b7"
+      "readme_hash": "102bf8f863083f10545b235ff519b38a3ddf01b7",
+      "release_notes_url": "packages/koreader/kodashboard.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "bed3b87dc1ff943301a4cafc1bc711ad38fe022f15c64e84b5392a25c3e3b9b1"
     },
     {
       "id": "koinsight",
@@ -2339,10 +2488,12 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/GeorgeSG/KoInsight/zip/refs/heads/master",
       "stars": "575",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-01-11T20:21:32Z",
       "readme_url": "packages/koreader/koinsight.koplugin/README.md",
-      "readme_hash": "9a2bb9154ea26b6233f3094f47153fc7998f78e6"
+      "readme_hash": "9a2bb9154ea26b6233f3094f47153fc7998f78e6",
+      "release_notes_url": "packages/koreader/koinsight.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "d6f523bc458f536453d881c09531ea68f7945e60ffc03d5f0984b118734e82a7"
     },
     {
       "id": "kopet",
@@ -2358,10 +2509,12 @@
       "source_asset": "kopet.koplugin.zip",
       "source_type": "release",
       "stars": "27",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-04-18T12:38:18Z",
       "readme_url": "packages/koreader/kopet.koplugin/README.md",
-      "readme_hash": "f34f90986263a8f673e1975fbc691a29764357eb"
+      "readme_hash": "f34f90986263a8f673e1975fbc691a29764357eb",
+      "release_notes_url": "packages/koreader/kopet.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "a2a2ad7ac6605f29466241f4a7eb5592cf825b786d9337a9b97d95c61c7efb7d"
     },
     {
       "id": "koreader-10",
@@ -3217,10 +3370,12 @@
       "source_asset": "dogearmanager-V1.0.0.zip",
       "source_type": "release",
       "stars": "26",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-19T18:10:05Z",
       "readme_url": "packages/koreader/koreader-custom-bookmark-manager.koplugin/README.md",
-      "readme_hash": "d70ff4535be387880c5bd06722fc7bcfd4b65956"
+      "readme_hash": "d70ff4535be387880c5bd06722fc7bcfd4b65956",
+      "release_notes_url": "packages/koreader/koreader-custom-bookmark-manager.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "c73f3a06fc8eb2f56e6080239638cc9fe8c317b299e35eca4e67801dee38fae2"
     },
     {
       "id": "koreader-dynamic-panelzoom",
@@ -3236,10 +3391,12 @@
       "source_asset": "dynamic_panelzoom.koplugin.zip",
       "source_type": "release",
       "stars": "36",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-06-05T11:04:55Z",
       "readme_url": "packages/koreader/koreader-dynamic-panelzoom.koplugin/README.md",
-      "readme_hash": "9a9bedff423398f0a6b377dc2541e5f1c638089a"
+      "readme_hash": "9a9bedff423398f0a6b377dc2541e5f1c638089a",
+      "release_notes_url": "packages/koreader/koreader-dynamic-panelzoom.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "721e57fd83166ed23708a9595b2595c6245d0743bdfb8316bd83a3c8ae36c8da"
     },
     {
       "id": "koreader-frankenpatches-public",
@@ -3315,10 +3472,12 @@
       "source_asset": "jellyfin.koplugin.zip",
       "source_type": "release",
       "stars": "21",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-21T04:30:46Z",
       "readme_url": "packages/koreader/koreader-jellyfin-plugin.koplugin/README.md",
-      "readme_hash": "f776f132814488e970979d8bfa6c6cddcdec0c7b"
+      "readme_hash": "f776f132814488e970979d8bfa6c6cddcdec0c7b",
+      "release_notes_url": "packages/koreader/koreader-jellyfin-plugin.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "ca2dbca6a27e3184fc227df3fe07fe7dbf2033999cb1fe9e0056f8d36606f3c0"
     },
     {
       "id": "koreader-life-tracker",
@@ -3334,10 +3493,12 @@
       "source_asset": "lifetracker.koplugin.zip",
       "source_type": "release",
       "stars": "32",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-01-25T17:27:28Z",
       "readme_url": "packages/koreader/koreader-life-tracker.koplugin/README.md",
-      "readme_hash": "1335dc2b07ac25be89d21df7a6faf2deec2a91fc"
+      "readme_hash": "1335dc2b07ac25be89d21df7a6faf2deec2a91fc",
+      "release_notes_url": "packages/koreader/koreader-life-tracker.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "9e3a3cb2c52a1e2d7188aeb92e3610d7f5b764716290da3e4cb4f69c3b083e31"
     },
     {
       "id": "koreader-menu-customizer",
@@ -3353,10 +3514,12 @@
       "source_asset": "menu_customizer.koplugin.zip",
       "source_type": "release",
       "stars": "125",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-05T23:04:28Z",
       "readme_url": "packages/koreader/koreader-menu-customizer.koplugin/README.md",
-      "readme_hash": "63940bd4cc7a826c7b9cfaf04ac1e46a740a0bff"
+      "readme_hash": "63940bd4cc7a826c7b9cfaf04ac1e46a740a0bff",
+      "release_notes_url": "packages/koreader/koreader-menu-customizer.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "ed74ce9d87c048a4cb42709165d624071ee0168fbdb7d0c200614e56e170e109"
     },
     {
       "id": "koreader-multiuser",
@@ -3371,7 +3534,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/artemartemenko/KOReader_MultiUser.koplugin/zip/refs/heads/main",
       "stars": "37",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/koreader-multiuser.koplugin/README.md",
       "readme_hash": "f97ea3be863c20304345825022d42a1ac40920ef"
     },
@@ -3388,7 +3551,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/MySTerY1747/KOReader-Obsidian-Sync/zip/refs/heads/main",
       "stars": "23",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/koreader-obsidian-sync.koplugin/README.md",
       "readme_hash": "1708f724932933e912e76028550fcf2fd1d9b921"
     },
@@ -3790,10 +3953,12 @@
       "source_asset": "statistics.koplugin.zip",
       "source_type": "release",
       "stars": "20",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-09T08:55:08Z",
       "readme_url": "packages/koreader/koreader-physical-page-sync.koplugin/README.md",
-      "readme_hash": "0c4ce6a43ed9dbfd335ed2315b76d70a6b885c6f"
+      "readme_hash": "0c4ce6a43ed9dbfd335ed2315b76d70a6b885c6f",
+      "release_notes_url": "packages/koreader/koreader-physical-page-sync.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "0a5c7c8cae438f79ae912335da846f41bc179f7207f43d9b8d7eda381302dd7b"
     },
     {
       "id": "koreader-remote",
@@ -3809,10 +3974,12 @@
       "source_asset": "koreaderremote-v0.9.5.zip",
       "source_type": "release",
       "stars": "19",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-19T22:51:08Z",
       "readme_url": "packages/koreader/koreader-remote.koplugin/README.md",
-      "readme_hash": "8929d6ba5f02c17d369150ea5ae39c05692dd6da"
+      "readme_hash": "8929d6ba5f02c17d369150ea5ae39c05692dd6da",
+      "release_notes_url": "packages/koreader/koreader-remote.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "1070b89fb5d3b2553558efc9e9ad8179390d6db80bfc1d40129c17acc033ccf8"
     },
     {
       "id": "koreader-rsvp-plugin",
@@ -3827,7 +3994,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/karpushchenko/koreader-rsvp-plugin/zip/refs/heads/main",
       "stars": "34",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/koreader-rsvp-plugin.koplugin/README.md",
       "readme_hash": "0ed60a384e8fef5a3054c404687a472c8765cd44"
     },
@@ -3845,10 +4012,12 @@
       "source_asset": "screenlockpin.koplugin--2026.05.zip",
       "source_type": "release",
       "stars": "71",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-02T15:31:56Z",
       "readme_url": "packages/koreader/koreader-screenlockpin.koplugin/README.md",
-      "readme_hash": "c493621f0dd4c628c86833df09f9d6329250d199"
+      "readme_hash": "c493621f0dd4c628c86833df09f9d6329250d199",
+      "release_notes_url": "packages/koreader/koreader-screenlockpin.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "7b56e355d7ad728ca0ad73dbf40683ee9aac96bb7a6358e4e55e193488250049"
     },
     {
       "id": "koreader-session-cleaner",
@@ -3864,10 +4033,16 @@
       "source_asset": "Session.Cleaner.v1.10.1.zip",
       "source_type": "release",
       "stars": "15",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-04-18T08:24:41Z",
+      "prerelease_version": "2.0.0-beta1",
+      "prerelease_published_at": "2026-04-18T12:49:16Z",
       "readme_url": "packages/koreader/koreader-session-cleaner.koplugin/README.md",
-      "readme_hash": "0609cc68d6d98f34d2eefca8e338f16e634ff708"
+      "readme_hash": "0609cc68d6d98f34d2eefca8e338f16e634ff708",
+      "release_notes_url": "packages/koreader/koreader-session-cleaner.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "432a686de5be0abcc70c2145a2d07889e3790ec297d12237a9a3f2f9e0955063",
+      "prerelease_notes_url": "packages/koreader/koreader-session-cleaner.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "f0791c4c182242c1e58201be96dad73b2f8ace34e086f7e2d3ef28d1ca8c1218"
     },
     {
       "id": "koreader-user-patches-2",
@@ -4117,10 +4292,12 @@
       "source_asset": "kosyncthing_plus.koplugin.zip",
       "source_type": "release",
       "stars": "28",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-23T09:53:21Z",
       "readme_url": "packages/koreader/kosyncthing-plus.koplugin/README.md",
-      "readme_hash": "807048667606930428c3333be2dc80b9fecc8e6e"
+      "readme_hash": "807048667606930428c3333be2dc80b9fecc8e6e",
+      "release_notes_url": "packages/koreader/kosyncthing-plus.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "30c4327e6988607e848cb4038bc48381ccb0227cc23b2b9b475d09ae58734c71"
     },
     {
       "id": "leadingmangazoom",
@@ -4136,10 +4313,12 @@
       "source_asset": "leadingmangazoom.koplugin.zip",
       "source_type": "release",
       "stars": "16",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-24T21:33:08Z",
       "readme_url": "packages/koreader/leadingmangazoom.koplugin/README.md",
-      "readme_hash": "ffe506c5d6b190667659b5843b117e3712f90389"
+      "readme_hash": "ffe506c5d6b190667659b5843b117e3712f90389",
+      "release_notes_url": "packages/koreader/leadingmangazoom.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "09a75f1f5c26bfecaf282fbddbbf44f32c03cc56cef772664a7a50248e02a276"
     },
     {
       "id": "legado",
@@ -4155,10 +4334,12 @@
       "source_asset": "legado_plugin_update.zip",
       "source_type": "release",
       "stars": "227",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-17T09:51:09Z",
       "readme_url": "packages/koreader/legado.koplugin/README.md",
-      "readme_hash": "d57b2a034d81ea8993e4160fb865c03bc3f06420"
+      "readme_hash": "d57b2a034d81ea8993e4160fb865c03bc3f06420",
+      "release_notes_url": "packages/koreader/legado.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "e1a1007cc7b3d86fe48ce248aadd1e74ad865a6a8ff906cd8451f0b747f4b5ad"
     },
     {
       "id": "library-sync",
@@ -4172,10 +4353,12 @@
       "source": "https://github.com/komadorirobin/library-sync.koplugin",
       "source_type": "release",
       "stars": "16",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-19T17:00:10Z",
       "readme_url": "packages/koreader/library-sync.koplugin/README.md",
       "readme_hash": "bc530f901cfe0c39c4b5f44e5cde40122958c521",
+      "release_notes_url": "packages/koreader/library-sync.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "33d76e7a8923e579a485e49251d9087df77e0ec9e9658a05d311951065951b46",
       "assets": [
         {
           "arch": "any",
@@ -4203,10 +4386,12 @@
       "source": "https://github.com/kaikozlov/localsend.koplugin",
       "source_type": "release",
       "stars": "232",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-22T16:58:33Z",
       "readme_url": "packages/koreader/localsend.koplugin/README.md",
       "readme_hash": "43d3020ac211e6e2921146f6ab2178dfeb22172e",
+      "release_notes_url": "packages/koreader/localsend.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "cc3422f2e04603c05f95df585b75b970791ddde6c09dd685c6861c018c219901",
       "assets": [
         {
           "arch": "arm",
@@ -4241,7 +4426,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/Shac0x/maximum.koplugin/zip/refs/heads/main",
       "stars": "45",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/maximum.koplugin/README.md",
       "readme_hash": "6a0b5d735151bced5d84bfe7a4b5b948fe537590"
     },
@@ -4259,10 +4444,12 @@
       "source_asset": "memobook.koplugin.zip",
       "source_type": "release",
       "stars": "28",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-25T06:07:12Z",
       "readme_url": "packages/koreader/memobook.koplugin/README.md",
-      "readme_hash": "03969b7f97565554d192fbe02e3ac6141c418c42"
+      "readme_hash": "03969b7f97565554d192fbe02e3ac6141c418c42",
+      "release_notes_url": "packages/koreader/memobook.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "509172baad7175b90107867ce71e9d5c8b5902b31707508da0db816e10b358ff"
     },
     {
       "id": "miniflux",
@@ -4278,10 +4465,16 @@
       "source_asset": "miniflux.koplugin.zip",
       "source_type": "release",
       "stars": "93",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-04-27T07:05:30Z",
+      "prerelease_version": "0.0.11-dev",
+      "prerelease_published_at": "2026-04-27T06:55:43Z",
       "readme_url": "packages/koreader/miniflux.koplugin/README.md",
-      "readme_hash": "f7ea02bac25be1f335ead05823f3dacc0d902b5a"
+      "readme_hash": "f7ea02bac25be1f335ead05823f3dacc0d902b5a",
+      "release_notes_url": "packages/koreader/miniflux.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "045a6aaa03f2b89b9949abee5b09df1967b6058e86c18dc375e6aed87bb355a9",
+      "prerelease_notes_url": "packages/koreader/miniflux.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "79ab474f7a0300522511a575e169f3f3d97a9f0ab53d56ea2b2ee9f1dfb7ab31"
     },
     {
       "id": "miuread-koreader",
@@ -4296,11 +4489,13 @@
       "source": "https://github.com/miumiupy98-art/miuread-koreader",
       "source_asset": "miuread-v1.1.46-full.zip",
       "source_type": "release",
-      "stars": "59",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "stars": "61",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-25T15:56:29Z",
       "readme_url": "packages/koreader/miuread-koreader.koplugin/README.md",
-      "readme_hash": "04d119bc25e096f9d43750c57b35e3367ba18b80"
+      "readme_hash": "04d119bc25e096f9d43750c57b35e3367ba18b80",
+      "release_notes_url": "packages/koreader/miuread-koreader.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "68b167f987fabe2f0ab9a6ffa033f9caea5166b185628205b7efca3cd7565572"
     },
     {
       "id": "mokuroreader-koreader",
@@ -4316,10 +4511,12 @@
       "source_asset": "mokuroreader-v2.1.0-standard.zip",
       "source_type": "release",
       "stars": "21",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2025-11-23T18:25:23Z",
       "readme_url": "packages/koreader/mokuroreader-koreader.koplugin/README.md",
-      "readme_hash": "d940d6d2d0480f01c88767e57bc41f9a1be9e029"
+      "readme_hash": "d940d6d2d0480f01c88767e57bc41f9a1be9e029",
+      "release_notes_url": "packages/koreader/mokuroreader-koreader.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "8f2b27dfcbe388316ab6ce4a52e442e307ab1a149631bad9c6278a07bb7f05b3"
     },
     {
       "id": "nonogram",
@@ -4335,10 +4532,12 @@
       "source_asset": "nonogram.koplugin.zip",
       "source_type": "release",
       "stars": "18",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2025-11-27T15:42:57Z",
       "readme_url": "packages/koreader/nonogram.koplugin/README.md",
-      "readme_hash": "4b92f733ee267d5b6cf011e3a1e26f9195864ef0"
+      "readme_hash": "4b92f733ee267d5b6cf011e3a1e26f9195864ef0",
+      "release_notes_url": "packages/koreader/nonogram.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "816a3e22a4953d6840979e89b1aa11962ad95248d7de2a5c1ceef9c534c6c6c2"
     },
     {
       "id": "notes",
@@ -4353,9 +4552,13 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/prasy-loyola/notes.koplugin/zip/refs/heads/main",
       "stars": "56",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
+      "prerelease_version": "0.8.0-alpha",
+      "prerelease_published_at": "2026-01-07T21:35:45Z",
       "readme_url": "packages/koreader/notes.koplugin/README.md",
-      "readme_hash": "c4740941222fa89335d2520f79073faef3cf8381"
+      "readme_hash": "c4740941222fa89335d2520f79073faef3cf8381",
+      "prerelease_notes_url": "packages/koreader/notes.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "8516fa3cffc8db50da5ffb5a169fe7992f0442578169d32cd2be5fffed749e7f"
     },
     {
       "id": "onyxbooxsync",
@@ -4371,10 +4574,12 @@
       "source_asset": "onyxbooxsync.koplugin.zip",
       "source_type": "release",
       "stars": "36",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-18T08:01:58Z",
       "readme_url": "packages/koreader/onyxbooxsync.koplugin/README.md",
-      "readme_hash": "f7339c5c51e088ca1a8a2e0fbd1948fb5d0f4800"
+      "readme_hash": "f7339c5c51e088ca1a8a2e0fbd1948fb5d0f4800",
+      "release_notes_url": "packages/koreader/onyxbooxsync.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "a13bb7904da7cce8962c5a4d68199390a1fa245dc8cfa369bffef43efc54f2bc"
     },
     {
       "id": "opds-plus",
@@ -4390,10 +4595,12 @@
       "source_asset": "opds_plus.koplugin.zip",
       "source_type": "release",
       "stars": "154",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-19T14:10:02Z",
       "readme_url": "packages/koreader/opds-plus.koplugin/README.md",
-      "readme_hash": "2dc3435edf1cb73a61ba7f93cc8a483bc803fabd"
+      "readme_hash": "2dc3435edf1cb73a61ba7f93cc8a483bc803fabd",
+      "release_notes_url": "packages/koreader/opds-plus.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "711a056efbcdc10b07a8bb704eeb54d482b8a61e1b879c4faaf17ad07220eda9"
     },
     {
       "id": "panelreader",
@@ -4408,10 +4615,16 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/Kaito0/panelreader.koplugin/zip/refs/heads/main",
       "stars": "33",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-12T16:31:18Z",
+      "prerelease_version": "1.0.0.1",
+      "prerelease_published_at": "2026-01-25T15:16:56Z",
       "readme_url": "packages/koreader/panelreader.koplugin/README.md",
-      "readme_hash": "020f734623538db3fc3852e2f02055594bb9237a"
+      "readme_hash": "020f734623538db3fc3852e2f02055594bb9237a",
+      "release_notes_url": "packages/koreader/panelreader.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "a9dd03b486e2ab256b0c078bd420a8bd15042e50f777e42f40f5b3d3662dbdea",
+      "prerelease_notes_url": "packages/koreader/panelreader.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "92df0c009a5f6ac992383af2623911500efa5b245328db0b9af166ebd26445a2"
     },
     {
       "id": "pencil",
@@ -4426,10 +4639,16 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/mysticknits/pencil.koplugin/zip/refs/heads/main",
       "stars": "115",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-18T13:09:10Z",
+      "prerelease_version": "0.1.0",
+      "prerelease_published_at": "2026-01-12T02:25:42Z",
       "readme_url": "packages/koreader/pencil.koplugin/README.md",
-      "readme_hash": "cf2f62bcb22d8888d5de6f47af4f6b92155e3f4f"
+      "readme_hash": "cf2f62bcb22d8888d5de6f47af4f6b92155e3f4f",
+      "release_notes_url": "packages/koreader/pencil.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "c6e0b9c9e816de23e78f50092edd28665f714e322c7e21ac1ee1f9e557c60a3d",
+      "prerelease_notes_url": "packages/koreader/pencil.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "d5273f7165586abbc6a6224004abe75b7b678fd09c540fb4b456c5ec3937e1de"
     },
     {
       "id": "pinyin-enhancement",
@@ -4445,10 +4664,16 @@
       "source_asset": "pinyin_enhancement.koplugin.zip",
       "source_type": "release",
       "stars": "50",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-06T11:05:56Z",
+      "prerelease_version": "1.5.3-beta.4",
+      "prerelease_published_at": "2026-07-06T03:46:14Z",
       "readme_url": "packages/koreader/pinyin-enhancement.koplugin/README.md",
-      "readme_hash": "f00060d0d1ee4ba65503414b43adc65b52dc6efd"
+      "readme_hash": "f00060d0d1ee4ba65503414b43adc65b52dc6efd",
+      "release_notes_url": "packages/koreader/pinyin-enhancement.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "bf2a9872ca4e0cec7377211067153799794d4f8ed7a91843fdf1314c2ac77009",
+      "prerelease_notes_url": "packages/koreader/pinyin-enhancement.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "8ecfddbef3968f2255e708fccd2b18ad618af4d8e15b1127ba866a738fee365a"
     },
     {
       "id": "plainui",
@@ -4464,10 +4689,12 @@
       "source_asset": "plainui.koplugin.zip",
       "source_type": "release",
       "stars": "30",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-06T22:55:11Z",
       "readme_url": "packages/koreader/plainui.koplugin/README.md",
-      "readme_hash": "c7fc1e3cecd83697b5c67a9ffdebc20e7d255592"
+      "readme_hash": "c7fc1e3cecd83697b5c67a9ffdebc20e7d255592",
+      "release_notes_url": "packages/koreader/plainui.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "5827b3f0d3a640d965ef7cd381152ffaee21439c2f2033071bd74e0072b25e88"
     },
     {
       "id": "pocketbook-bluetooth",
@@ -4497,7 +4724,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/ckilb/pocketbookcover.koplugin/zip/refs/heads/main",
       "stars": "23",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/pocketbookcover.koplugin/README.md",
       "readme_hash": "8e4c179eb21fb017b000fbcd387a6f26a42d5d64"
     },
@@ -4515,10 +4742,12 @@
       "source_asset": "pocketbooksync.koplugin-v1.0.2.zip",
       "source_type": "release",
       "stars": "154",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-04-23T12:42:11Z",
       "readme_url": "packages/koreader/pocketbooksync.koplugin/README.md",
-      "readme_hash": "b7b8fd423ef96381558fabf0fb4cc10ea4b4a0b2"
+      "readme_hash": "b7b8fd423ef96381558fabf0fb4cc10ea4b4a0b2",
+      "release_notes_url": "packages/koreader/pocketbooksync.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "3b176955d5b842fb10e029e6b27d8a0dfb435b73a7cccbacdcd8a7dca6e6ffce"
     },
     {
       "id": "pocketbooktools",
@@ -4533,7 +4762,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/reuerendo/pocketbooktools.koplugin/zip/refs/heads/main",
       "stars": "17",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/pocketbooktools.koplugin/README.md",
       "readme_hash": "bac06c6d7d623dc098781fbb6c8bef55ca0295e1"
     },
@@ -4550,7 +4779,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/fairlygood/provider-webdav-highlights.koplugin/zip/refs/heads/drafts",
       "stars": "28",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/provider-webdav-highlights.koplugin/README.md",
       "readme_hash": "f1d9609b4dff54ccdeb4751538225efca938b50c"
     },
@@ -4568,10 +4797,12 @@
       "source_asset": "quickrss.koplugin.zip",
       "source_type": "release",
       "stars": "64",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-03T17:24:15Z",
       "readme_url": "packages/koreader/quickrss.koplugin/README.md",
-      "readme_hash": "49f013b30634999e957135012de20a07300bea71"
+      "readme_hash": "49f013b30634999e957135012de20a07300bea71",
+      "release_notes_url": "packages/koreader/quickrss.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "4200abaf3020ae33884789b742f9785733640c4528cda317fa7caf9082358100"
     },
     {
       "id": "quicksettings",
@@ -4586,10 +4817,37 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/renandeivison/quicksettings/zip/refs/heads/main",
       "stars": "23",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-24T19:17:27Z",
       "readme_url": "packages/koreader/quicksettings.koplugin/README.md",
-      "readme_hash": "9e25a8915f73fca0c3396bc6481f9bea347fde55"
+      "readme_hash": "9e25a8915f73fca0c3396bc6481f9bea347fde55",
+      "release_notes_url": "packages/koreader/quicksettings.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "09f0fe211af4a358762dee6102e81af36945ce8b821652571ccb9f5ea62cca8d"
+    },
+    {
+      "id": "quickui",
+      "name": "Quickui",
+      "version": "1.0.2",
+      "description": "Quick Actions, Cover Visuals, Cloze Mode, Header & Footer — more efficient KOReader.",
+      "author": "gytwo",
+      "category": "theme",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "size": "142067",
+      "source": "https://github.com/gytwo/quickui.koplugin",
+      "source_asset": "quickui.koplugin.zip",
+      "source_type": "release",
+      "stars": "16",
+      "updated_at": "2026-07-26T05:21:44Z",
+      "published_at": "2026-07-25T15:59:36Z",
+      "prerelease_version": "1.0.2-beta.2",
+      "prerelease_published_at": "2026-07-25T15:59:21Z",
+      "readme_url": "packages/koreader/quickui.koplugin/README.md",
+      "readme_hash": "23669888e3ef224b6710653f4327a2135cb7a363",
+      "release_notes_url": "packages/koreader/quickui.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "279fe4ead77a5c86046c16d456c2bf445b6329ca44eccfb7177a34c6c56bc8f4",
+      "prerelease_notes_url": "packages/koreader/quickui.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "279fe4ead77a5c86046c16d456c2bf445b6329ca44eccfb7177a34c6c56bc8f4"
     },
     {
       "id": "quran-ebook",
@@ -4604,10 +4862,16 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/zeeyado/quran-ebook/zip/refs/heads/main",
       "stars": "36",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-19T16:58:00Z",
+      "prerelease_version": "test-build",
+      "prerelease_published_at": "2026-07-25T19:07:29Z",
       "readme_url": "packages/koreader/quran-ebook.koplugin/README.md",
-      "readme_hash": "f59706bb87bc8f9a4eb5fb982ffb263e29ab557a"
+      "readme_hash": "f59706bb87bc8f9a4eb5fb982ffb263e29ab557a",
+      "release_notes_url": "packages/koreader/quran-ebook.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "2f036f5438686b6404b445caae3217a97a4326f6d62d8fa13360fbea21897ea7",
+      "prerelease_notes_url": "packages/koreader/quran-ebook.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "7fcd948b8407cdc822bce6a0e143f5fdc1302a19d3014de47404530c00ceb255"
     },
     {
       "id": "rakuyomi",
@@ -4625,10 +4889,16 @@
       "source": "https://github.com/tachibana-shin/rakuyomi",
       "source_type": "release",
       "stars": "460",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-22T13:45:56Z",
+      "prerelease_version": "1.37.2",
+      "prerelease_published_at": "2026-07-14T06:59:24Z",
       "readme_url": "packages/koreader/rakuyomi.koplugin/README.md",
       "readme_hash": "5767c006c7405d9ab4324602afa3c1c20cf26f15",
+      "release_notes_url": "packages/koreader/rakuyomi.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "d0756165b875fb3f9ae67c7078f5ffc6cb200c9ea9936c0c05e1444ed56f1fd2",
+      "prerelease_notes_url": "packages/koreader/rakuyomi.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "9177c13d5491de1e4ec4c49cdde605155a352e5fdc72b8eada0c440c97319df8",
       "assets": [
         {
           "arch": "arm64",
@@ -4688,10 +4958,16 @@
       "source_asset": "randomquote.koplugin-v0.1.0.zip",
       "source_type": "release",
       "stars": "16",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2025-12-17T08:02:38Z",
+      "prerelease_version": "0.1.1",
+      "prerelease_published_at": "2025-12-23T15:07:33Z",
       "readme_url": "packages/koreader/randomquote.koplugin/README.md",
-      "readme_hash": "a62d6cfa70163ed9e0fa6011225ecaffa4569f86"
+      "readme_hash": "a62d6cfa70163ed9e0fa6011225ecaffa4569f86",
+      "release_notes_url": "packages/koreader/randomquote.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "63de465f6c9d5e82bf98f850e8af0b12ccbc3a68bebe722b2da5df6692bad882",
+      "prerelease_notes_url": "packages/koreader/randomquote.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "590ca4dc80c23851ad02870f4fc77b78d5dd75471796b08bfd74900199341a8e"
     },
     {
       "id": "readeck-2",
@@ -4707,10 +4983,16 @@
       "source_asset": "readeck.koplugin-v0.1.1.zip",
       "source_type": "release",
       "stars": "102",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-07T15:08:44Z",
+      "prerelease_version": "0.0.1",
+      "prerelease_published_at": "2026-05-07T06:04:50Z",
       "readme_url": "packages/koreader/readeck-2.koplugin/README.md",
-      "readme_hash": "85468b1f41473f4237438209e1d02e42dccc123f"
+      "readme_hash": "85468b1f41473f4237438209e1d02e42dccc123f",
+      "release_notes_url": "packages/koreader/readeck-2.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "ed1f01b05f80a01b754eb104f3ebf5f66c7e13cd3410511f818b6532d4bb7435",
+      "prerelease_notes_url": "packages/koreader/readeck-2.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "ac224acac7479d1688408ae45688f7b6f94a7def2cedef81abf9767beb793070"
     },
     {
       "id": "readeck",
@@ -4725,7 +5007,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/flip-rossi/readeck.koplugin/zip/refs/heads/master",
       "stars": "46",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/readeck.koplugin/README.md",
       "readme_hash": "97a00ea9b8cf6eb8af244a9cfee5816215113905"
     },
@@ -4741,10 +5023,16 @@
       "source": "https://github.com/readest/readest",
       "source_type": "release",
       "stars": "22755",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-19T20:11:12Z",
+      "prerelease_version": "0.11.16",
+      "prerelease_published_at": "2026-06-28T18:51:29Z",
       "readme_url": "packages/koreader/readest.koplugin/README.md",
       "readme_hash": "a7a9fd2ec0c0a7c7604efa9587fc3003a10fd045",
+      "release_notes_url": "packages/koreader/readest.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "20efd1b7b2a08a816585ff880d53b36c1f5defba54e5b9b022f7b91bbe4b70f4",
+      "prerelease_notes_url": "packages/koreader/readest.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "2dd10e6a38e8e9bcc0cff4eb58e4c1a8b7b8aeb3cfe6f7dbddbdc098ac38affc",
       "assets": [
         {
           "arch": "any",
@@ -4780,10 +5068,12 @@
       "source_asset": "readinginsights.koplugin.zip",
       "source_type": "release",
       "stars": "62",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-24T08:55:42Z",
       "readme_url": "packages/koreader/readinginsights.koplugin/README.md",
-      "readme_hash": "3030bc8611bb8e79f0be2f2dfa6c8c49f4a98620"
+      "readme_hash": "3030bc8611bb8e79f0be2f2dfa6c8c49f4a98620",
+      "release_notes_url": "packages/koreader/readinginsights.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "7c8d1eb3146d7a4a3b37f003a53226cde47e979ae14c9445dea1ccf49faceea9"
     },
     {
       "id": "readingruler",
@@ -4799,10 +5089,12 @@
       "source_asset": "readingruler.koplugin.zip",
       "source_type": "release",
       "stars": "50",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2025-06-22T11:00:47Z",
       "readme_url": "packages/koreader/readingruler.koplugin/README.md",
-      "readme_hash": "3e83a96d3e2c1951398fa45256993b7c4945cf19"
+      "readme_hash": "3e83a96d3e2c1951398fa45256993b7c4945cf19",
+      "release_notes_url": "packages/koreader/readingruler.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "readingstreak",
@@ -4818,10 +5110,12 @@
       "source_asset": "readingstreak.koplugin-v1.3.6.zip",
       "source_type": "release",
       "stars": "51",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-27T14:16:52Z",
       "readme_url": "packages/koreader/readingstreak.koplugin/README.md",
-      "readme_hash": "c7b73bc1aa2a8c1836eed5dfda299b6341f95376"
+      "readme_hash": "c7b73bc1aa2a8c1836eed5dfda299b6341f95376",
+      "release_notes_url": "packages/koreader/readingstreak.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "01c25cbd413b1f1858b70b56d8fbd0cdab62ac9527c4f46318e3a8e0187175d5"
     },
     {
       "id": "readmastery",
@@ -4837,10 +5131,12 @@
       "source_asset": "ReadMastery.koplugin.zip",
       "source_type": "release",
       "stars": "69",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-05T16:57:44Z",
       "readme_url": "packages/koreader/readmastery.koplugin/README.md",
-      "readme_hash": "2caa85a0caebec9e4c273b50d1e5d31af0f3a472"
+      "readme_hash": "2caa85a0caebec9e4c273b50d1e5d31af0f3a472",
+      "release_notes_url": "packages/koreader/readmastery.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "b7413f052d8e57f5be5f5671d21d07443bc006b0a4ca00c83ad9c4bfb8461096"
     },
     {
       "id": "remotenote",
@@ -4854,10 +5150,12 @@
       "source": "https://github.com/j-v/remotenote.koplugin",
       "source_type": "release",
       "stars": "19",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-02-22T02:01:46Z",
       "readme_url": "packages/koreader/remotenote.koplugin/README.md",
       "readme_hash": "14187afe9b3dbcc1b803bd0393ffca619cb08d90",
+      "release_notes_url": "packages/koreader/remotenote.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "dee01d672c2b9355be527d38a09836736bae7a048e47c6766592c452b75a035e",
       "assets": [
         {
           "arch": "arm",
@@ -4899,10 +5197,12 @@
       "source_asset": "rssreader.koplugin.zip",
       "source_type": "release",
       "stars": "83",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-12T19:31:23Z",
       "readme_url": "packages/koreader/rssreader.koplugin/README.md",
-      "readme_hash": "4760bddeaac8e9237abe35cb0648ca5234836c25"
+      "readme_hash": "4760bddeaac8e9237abe35cb0648ca5234836c25",
+      "release_notes_url": "packages/koreader/rssreader.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "ab6e110f62b6c2ae6a0ee08b312ee4ff1505047d35083b09cdaa29d76cd85e44"
     },
     {
       "id": "sake",
@@ -4917,10 +5217,12 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/Sudashiii/Sake/zip/refs/heads/master",
       "stars": "81",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-10T07:57:32Z",
       "readme_url": "packages/koreader/sake.koplugin/README.md",
-      "readme_hash": "a08f6aafe745ae55e6b9fa938b260d5ef0f401b9"
+      "readme_hash": "a08f6aafe745ae55e6b9fa938b260d5ef0f401b9",
+      "release_notes_url": "packages/koreader/sake.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "5e92a082c4f818cd18a5070a16fef0ba3041d0c93fa76083634c19a7170dabd0"
     },
     {
       "id": "shortcutstoolbar",
@@ -4936,10 +5238,12 @@
       "source_asset": "shortcutstoolbar-v0.0.2.koplugin.zip",
       "source_type": "release",
       "stars": "67",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-04-15T20:21:24Z",
       "readme_url": "packages/koreader/shortcutstoolbar.koplugin/README.md",
-      "readme_hash": "c5fda6f7bfb4f32a953e8ac3cd9a1bd8dcddf1f0"
+      "readme_hash": "c5fda6f7bfb4f32a953e8ac3cd9a1bd8dcddf1f0",
+      "release_notes_url": "packages/koreader/shortcutstoolbar.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "d80449f4bf0e0b9098e751fb15805a35f2d33202350253f939ec01f2304e46fe"
     },
     {
       "id": "simpleui-ext",
@@ -4955,10 +5259,12 @@
       "source_asset": "simpleui_ext.koplugin.zip",
       "source_type": "release",
       "stars": "45",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-18T17:20:03Z",
       "readme_url": "packages/koreader/simpleui-ext.koplugin/README.md",
-      "readme_hash": "966ab90080c9d64bf7cdf64a507f18ca7452fb18"
+      "readme_hash": "966ab90080c9d64bf7cdf64a507f18ca7452fb18",
+      "release_notes_url": "packages/koreader/simpleui-ext.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "249d90b93c97ee352b429dbe294fdd678ebcecbe5078d129256ed3f862f5de3d"
     },
     {
       "id": "simpleui",
@@ -4975,10 +5281,16 @@
       "source_asset": "simpleui.koplugin.zip",
       "source_type": "release",
       "stars": "1146",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-16T09:01:44Z",
+      "prerelease_version": "1.1.2-beta.3",
+      "prerelease_published_at": "2026-03-18T20:49:42Z",
       "readme_url": "packages/koreader/simpleui.koplugin/README.md",
-      "readme_hash": "ca610f2281ab0e8f386cb24615991a02fe9359e9"
+      "readme_hash": "ca610f2281ab0e8f386cb24615991a02fe9359e9",
+      "release_notes_url": "packages/koreader/simpleui.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "3bfc82436851b1f851805d2992e4c6fb60d4a0f4a49fc567abb0b285bc02f304",
+      "prerelease_notes_url": "packages/koreader/simpleui.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "b12b34846fd7232594c9c02436a3808ef34b86f546b9673fd19b817233382f39"
     },
     {
       "id": "solitaire",
@@ -4994,10 +5306,33 @@
       "source_asset": "solitaire.koplugin.zip",
       "source_type": "release",
       "stars": "24",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-03-07T22:35:27Z",
       "readme_url": "packages/koreader/solitaire.koplugin/README.md",
-      "readme_hash": "3be9c191b27c8ed076b6831aebb27adb95ba3769"
+      "readme_hash": "3be9c191b27c8ed076b6831aebb27adb95ba3769",
+      "release_notes_url": "packages/koreader/solitaire.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "c023cedd8f5ada36934df42e0f6e1bbda50cd7f657f64570fb15c509376eed86"
+    },
+    {
+      "id": "splitread",
+      "name": "Splitread",
+      "version": "1.1.0",
+      "description": "A KOReader plugin that displays real-time translations in a split panel, designed for language learners reading foreign-language books",
+      "author": "sadatdaniel",
+      "category": "media",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "size": "6421",
+      "source": "https://github.com/sadatdaniel/splitread.koplugin",
+      "source_asset": "splitread.koplugin.zip",
+      "source_type": "release",
+      "stars": "15",
+      "updated_at": "2026-07-26T05:21:44Z",
+      "published_at": "2026-06-27T20:52:31Z",
+      "readme_url": "packages/koreader/splitread.koplugin/README.md",
+      "readme_hash": "b78b48548f321443090c25841e24aa0213259eab",
+      "release_notes_url": "packages/koreader/splitread.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "ada0ea6ccf331d3b689101d7f928c1a2756a757a5b0a28176cf6d2cd705047f4"
     },
     {
       "id": "storefront",
@@ -5013,10 +5348,16 @@
       "source_asset": "storefront.koplugin.zip",
       "source_type": "release",
       "stars": "78",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-25T16:52:15Z",
+      "prerelease_version": "26.7.25.2-beta",
+      "prerelease_published_at": "2026-07-25T16:03:13Z",
       "readme_url": "packages/koreader/storefront.koplugin/README.md",
-      "readme_hash": "8b6a5523358b586f627bbff9396bddf9b7673edb"
+      "readme_hash": "8b6a5523358b586f627bbff9396bddf9b7673edb",
+      "release_notes_url": "packages/koreader/storefront.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "cad771f4e03c1cf2355eae5b53edc98167b1ecffe2efbffcde7bd19af261eb97",
+      "prerelease_notes_url": "packages/koreader/storefront.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "1e0922faad451117f41a1d3f5829811988f4c5ace65bd8f671806b661540f38b"
     },
     {
       "id": "storygraph",
@@ -5032,10 +5373,12 @@
       "source_asset": "storygraph.koplugin.zip",
       "source_type": "release",
       "stars": "34",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-04-29T01:37:02Z",
       "readme_url": "packages/koreader/storygraph.koplugin/README.md",
-      "readme_hash": "b27ec1055f31c42c3cb32da02204434776913fe5"
+      "readme_hash": "b27ec1055f31c42c3cb32da02204434776913fe5",
+      "release_notes_url": "packages/koreader/storygraph.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "b9e5af1cd3a7de161d7374dbac08dcafdb07eee23dcd31c8ef5e8b8271650a42"
     },
     {
       "id": "sudoku",
@@ -5051,10 +5394,12 @@
       "source_asset": "sudoku.koplugin.zip",
       "source_type": "release",
       "stars": "42",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-06-12T18:51:34Z",
       "readme_url": "packages/koreader/sudoku.koplugin/README.md",
-      "readme_hash": "c95f0f3f0b5f624f20ad16ffc2f1f9b44344ead1"
+      "readme_hash": "c95f0f3f0b5f624f20ad16ffc2f1f9b44344ead1",
+      "release_notes_url": "packages/koreader/sudoku.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "576940967636dfddc8f5e7a885b3b20bbca2d59ea5a150fd52f82bbe3d347b77"
     },
     {
       "id": "supersync",
@@ -5069,7 +5414,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/brendanlefebvre/supersync.koplugin/zip/refs/heads/main",
       "stars": "39",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/supersync.koplugin/README.md",
       "readme_hash": "1bd67b19630e009ad288a8cacc636dfb8db7325b"
     },
@@ -5086,10 +5431,12 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/koplugin-swipe-animation/Swipe_Animation.koplugin/zip/refs/heads/main",
       "stars": "59",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-16T12:06:59Z",
       "readme_url": "packages/koreader/swipe-animation.koplugin/README.md",
-      "readme_hash": "68cef3682a736efdc5613d7e40a1cc59b5d534ad"
+      "readme_hash": "68cef3682a736efdc5613d7e40a1cc59b5d534ad",
+      "release_notes_url": "packages/koreader/swipe-animation.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "70b8de5df876bca93b373cf1dae5c823219b8e368edd07324b89a0db98163cc0"
     },
     {
       "id": "syncery",
@@ -5105,10 +5452,12 @@
       "source_asset": "syncery.koplugin.zip",
       "source_type": "release",
       "stars": "17",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-24T10:40:21Z",
       "readme_url": "packages/koreader/syncery.koplugin/README.md",
-      "readme_hash": "6fc81a1ef82f63ae04c8f33190a3f0f2a4f8a7d6"
+      "readme_hash": "6fc81a1ef82f63ae04c8f33190a3f0f2a4f8a7d6",
+      "release_notes_url": "packages/koreader/syncery.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "786707b4a21445cff507cad46525e676e401a3234836c3d741f821a57eba513c"
     },
     {
       "id": "tbrplanner",
@@ -5124,10 +5473,12 @@
       "source_asset": "tbrplanner.koplugin.zip",
       "source_type": "release",
       "stars": "24",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2025-12-22T15:23:10Z",
       "readme_url": "packages/koreader/tbrplanner.koplugin/README.md",
-      "readme_hash": "c8f553bf1daffb25301b1793a6ca82eb2a91d3b0"
+      "readme_hash": "c8f553bf1daffb25301b1793a6ca82eb2a91d3b0",
+      "release_notes_url": "packages/koreader/tbrplanner.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "f497a80d684155df863ec6784181e834211f33cb4fa76818786a6aa4115da226"
     },
     {
       "id": "telegramdownloader",
@@ -5143,10 +5494,12 @@
       "source_asset": "TelegramDownloader.koplugin-v1.0.4.zip",
       "source_type": "release",
       "stars": "38",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-06-02T17:32:16Z",
       "readme_url": "packages/koreader/telegramdownloader.koplugin/README.md",
-      "readme_hash": "f16eb667b74870e9a995180e90bbe72723ff0cc1"
+      "readme_hash": "f16eb667b74870e9a995180e90bbe72723ff0cc1",
+      "release_notes_url": "packages/koreader/telegramdownloader.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "dda6ad95ea7b64db7c88640c63d95c8521b578cf59c3c125e6ef2a3468a90fb0"
     },
     {
       "id": "telegramhighlights",
@@ -5162,10 +5515,12 @@
       "source_asset": "telegramhighlights.koplugin.zip",
       "source_type": "release",
       "stars": "75",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-18T22:21:44Z",
       "readme_url": "packages/koreader/telegramhighlights.koplugin/README.md",
-      "readme_hash": "dd9270209ad8bc7db365593fde5e010bb2b17ae6"
+      "readme_hash": "dd9270209ad8bc7db365593fde5e010bb2b17ae6",
+      "release_notes_url": "packages/koreader/telegramhighlights.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "tts",
@@ -5180,7 +5535,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/norude/TTS.koplugin/zip/refs/heads/main",
       "stars": "31",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/tts.koplugin/README.md",
       "readme_hash": "25e74073d5c7ac1ed892febc17db0de1c649ed5d"
     },
@@ -5198,10 +5553,12 @@
       "source_asset": "updatesmanager.koplugin-v1.4.9.1.zip",
       "source_type": "release",
       "stars": "102",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-06-12T07:40:50Z",
       "readme_url": "packages/koreader/updatesmanager.koplugin/README.md",
-      "readme_hash": "25313d51e6a4924074f117e6e4e811f9f8454eb6"
+      "readme_hash": "25313d51e6a4924074f117e6e4e811f9f8454eb6",
+      "release_notes_url": "packages/koreader/updatesmanager.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "b6cc1a9948ddab1adfbae51f1f47f58a103de59345b7d5210c62125a1ab6266f"
     },
     {
       "id": "wallabag2",
@@ -5216,7 +5573,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/clach04/wallabag2.koplugin/zip/refs/heads/master",
       "stars": "21",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/wallabag2.koplugin/README.md",
       "readme_hash": "045b5dd3b000a36454ad1586c24591f93f630e58"
     },
@@ -5233,7 +5590,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/roygbyte/weather.koplugin/zip/refs/heads/master",
       "stars": "21",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/weather.koplugin/README.md",
       "readme_hash": "5511f68940a91f9d66a737824985fc64aaf1bca4"
     },
@@ -5251,10 +5608,12 @@
       "source_asset": "weatherlockscreen.koplugin-v0.9.7-beta.1.zip",
       "source_type": "release",
       "stars": "70",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-06-28T11:29:52Z",
       "readme_url": "packages/koreader/weatherlockscreen.koplugin/README.md",
-      "readme_hash": "b3d535cfbde5cbd5b79ea073a030689352a07c9b"
+      "readme_hash": "b3d535cfbde5cbd5b79ea073a030689352a07c9b",
+      "release_notes_url": "packages/koreader/weatherlockscreen.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "05ebcf6733066843c6a6da48725df0a5afd44a3ba70406c0b1f58c911248923b"
     },
     {
       "id": "webbrowser",
@@ -5270,10 +5629,12 @@
       "source_asset": "webbrowser.koplugin.zip",
       "source_type": "release",
       "stars": "92",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-05-12T17:11:22Z",
       "readme_url": "packages/koreader/webbrowser.koplugin/README.md",
-      "readme_hash": "8dc6263f5841c8c4c51dc91b345e550a9da99ead"
+      "readme_hash": "8dc6263f5841c8c4c51dc91b345e550a9da99ead",
+      "release_notes_url": "packages/koreader/webbrowser.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "dae8cdc2ac135fdc823918d2cbc731b009bcb5b7c6fc9cf6a59842f682dd7f36"
     },
     {
       "id": "weread-koplugin-fixed",
@@ -5289,10 +5650,12 @@
       "source_asset": "miuread-v0.9.9-legacy-ota.zip",
       "source_type": "release",
       "stars": "34",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-18T17:49:10Z",
       "readme_url": "packages/koreader/weread-koplugin-fixed.koplugin/README.md",
-      "readme_hash": "a2eb1094f1d2a1e85884d56bc0b2542711a1bbdb"
+      "readme_hash": "a2eb1094f1d2a1e85884d56bc0b2542711a1bbdb",
+      "release_notes_url": "packages/koreader/weread-koplugin-fixed.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "weread",
@@ -5306,11 +5669,13 @@
       "source": "https://github.com/finlater/weread.koplugin",
       "source_type": "source",
       "source_url": "https://codeload.github.com/finlater/weread.koplugin/zip/refs/heads/main",
-      "stars": "285",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "stars": "287",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-18T16:56:12Z",
       "readme_url": "packages/koreader/weread.koplugin/README.md",
-      "readme_hash": "4efd6d350b9c93b03bc525b349481aef193f643f"
+      "readme_hash": "4efd6d350b9c93b03bc525b349481aef193f643f",
+      "release_notes_url": "packages/koreader/weread.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "a69ded584d35d0101fa2e469e720ffc90dbd0f7ced310fb18eeb7848241b2af0"
     },
     {
       "id": "wordreference",
@@ -5326,10 +5691,12 @@
       "source_asset": "wordreference.koplugin.zip",
       "source_type": "release",
       "stars": "59",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-08T23:23:13Z",
       "readme_url": "packages/koreader/wordreference.koplugin/README.md",
-      "readme_hash": "7f45818e55d1b29a2e7fbe7a563d6f3c7b2bf382"
+      "readme_hash": "7f45818e55d1b29a2e7fbe7a563d6f3c7b2bf382",
+      "release_notes_url": "packages/koreader/wordreference.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "6d56ccb9fb89c75fc7a2fd6dcef2703b6c19b060ec65e019e01909cf9006375d"
     },
     {
       "id": "wordsearch",
@@ -5345,10 +5712,33 @@
       "source_asset": "wordsearch.koplugin.zip",
       "source_type": "release",
       "stars": "23",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-04T15:07:28Z",
       "readme_url": "packages/koreader/wordsearch.koplugin/README.md",
-      "readme_hash": "a21623b51d3d63e5a5bfa7a25c13b5e67c06736f"
+      "readme_hash": "a21623b51d3d63e5a5bfa7a25c13b5e67c06736f",
+      "release_notes_url": "packages/koreader/wordsearch.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "5a75303e37d1deee320e94a2883535f7106d4ec01c97ae6c790b58dac65fa237"
+    },
+    {
+      "id": "wordwise",
+      "name": "Wordwise",
+      "version": "1.0.0",
+      "description": "Word Wise for KOReader — short definitions above difficult words, drawn as a per-page overlay on the original book.",
+      "author": "asxelot",
+      "category": "productivity",
+      "platforms": ["koreader"],
+      "dependencies": [],
+      "size": "925892",
+      "source": "https://github.com/asxelot/wordwise.koplugin",
+      "source_asset": "wordwise.koplugin.zip",
+      "source_type": "release",
+      "stars": "15",
+      "updated_at": "2026-07-26T05:21:44Z",
+      "published_at": "2026-07-23T08:27:43Z",
+      "readme_url": "packages/koreader/wordwise.koplugin/README.md",
+      "readme_hash": "3a2a03dbeb2f3309fb4212330e8177d4fd3b3289",
+      "release_notes_url": "packages/koreader/wordwise.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "01a782a4b776ad4b6c90f33fa794b8b395c0aebe125aedb291c8a763b0d9920d"
     },
     {
       "id": "xray",
@@ -5364,10 +5754,33 @@
       "source_asset": "xray.koplugin.zip",
       "source_type": "release",
       "stars": "125",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-23T16:14:49Z",
+      "prerelease_version": "26.7.22.2-beta",
+      "prerelease_published_at": "2026-07-22T20:54:13Z",
       "readme_url": "packages/koreader/xray.koplugin/README.md",
-      "readme_hash": "4d46b8861654f54ed9c646510a25a14aae32cace"
+      "readme_hash": "4d46b8861654f54ed9c646510a25a14aae32cace",
+      "release_notes_url": "packages/koreader/xray.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "aeaeaeb1759c6bb5ff4a02664c84a77dcd7747fb332dde35123a7b2a070702d9",
+      "prerelease_notes_url": "packages/koreader/xray.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "a4cf6073c7b7bfc653ad5bdfeb69fe45c5a06890dde6cae273743b2e03ddcb90"
+    },
+    {
+      "id": "zen-mtp-koplugin",
+      "name": "ZenMTP KOReader",
+      "version": "1.7",
+      "description": "Trigger MTP file-transfer mode from Kindle home or KOReader",
+      "author": "ZenLabs",
+      "category": "utility",
+      "platforms": ["koreader", "kindle"],
+      "dependencies": [],
+      "icon_url": "packages/koreader/zen_mtp.koplugin/assets/zenmtp.svg",
+      "featured_image": "packages/koreader/zen_mtp.koplugin/assets/zenmtp-featured.png",
+      "featured": true,
+      "featured_order": 25,
+      "size": "49469",
+      "source": "https://github.com/xZenLabs/ZenMTP",
+      "source_asset": "zen_mtp.koplugin.zip"
     },
     {
       "id": "zen-ui",
@@ -5388,27 +5801,16 @@
       "source_asset": "zen_ui.koplugin.zip",
       "source_type": "release",
       "stars": "375",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-25T17:20:26Z",
+      "prerelease_version": "2.5.3-beta13",
+      "prerelease_published_at": "2026-07-26T03:41:48Z",
       "readme_url": "packages/koreader/zen-ui.koplugin/README.md",
-      "readme_hash": "81ffd3f5986a8e75d98548df38eead61c75c0b96"
-    },
-    {
-      "id": "zen-mtp-koplugin",
-      "name": "ZenMTP KOReader",
-      "version": "1.7",
-      "description": "Trigger MTP file-transfer mode from Kindle home or KOReader",
-      "author": "ZenLabs",
-      "category": "utility",
-      "platforms": ["koreader", "kindle"],
-      "dependencies": [],
-      "icon_url": "packages/koreader/zen_mtp.koplugin/assets/zenmtp.svg",
-      "featured_image": "packages/koreader/zen_mtp.koplugin/assets/zenmtp-featured.png",
-      "featured": true,
-      "featured_order": 25,
-      "size": "49469",
-      "source": "https://github.com/xZenLabs/ZenMTP",
-      "source_asset": "zen_mtp.koplugin.zip"
+      "readme_hash": "81ffd3f5986a8e75d98548df38eead61c75c0b96",
+      "release_notes_url": "packages/koreader/zen-ui.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "37396101506852884d7d620b95afa9ff63ad906aaa47392b81a56a8c09a9085f",
+      "prerelease_notes_url": "packages/koreader/zen-ui.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "37396101506852884d7d620b95afa9ff63ad906aaa47392b81a56a8c09a9085f"
     },
     {
       "id": "zim-converter",
@@ -5423,7 +5825,7 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/Bartvelp/zim-converter/zip/refs/heads/master",
       "stars": "31",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "readme_url": "packages/koreader/zim-converter.koplugin/README.md",
       "readme_hash": "e4a828790152d7761cc90460b172a393cae09a3f"
     },
@@ -5441,10 +5843,12 @@
       "source_asset": "zlibrary_plugin_v1.0.41.zip",
       "source_type": "release",
       "stars": "531",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-21T16:53:26Z",
       "readme_url": "packages/koreader/zlibrary-2.koplugin/README.md",
-      "readme_hash": "b9b2d465bfc3f33dccb17bf0aa75b97b25ca06f1"
+      "readme_hash": "b9b2d465bfc3f33dccb17bf0aa75b97b25ca06f1",
+      "release_notes_url": "packages/koreader/zlibrary-2.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "id": "zlibrary",
@@ -5460,10 +5864,12 @@
       "source_asset": "zlibrary.koplugin.zip",
       "source_type": "release",
       "stars": "217",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-02-05T20:31:02Z",
       "readme_url": "packages/koreader/zlibrary.koplugin/README.md",
-      "readme_hash": "ce3083e806c41642782581c52e356c0dd7bea4a9"
+      "readme_hash": "ce3083e806c41642782581c52e356c0dd7bea4a9",
+      "release_notes_url": "packages/koreader/zlibrary.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "9034bf776e7d785642909d0660fcb132787e421e25e3b25f74af3974978eaeca"
     },
     {
       "id": "zotero",
@@ -5478,9 +5884,13 @@
       "source_type": "source",
       "source_url": "https://codeload.github.com/stelzch/zotero.koplugin/zip/refs/heads/master",
       "stars": "150",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
+      "prerelease_version": "1.0.0-rc.1",
+      "prerelease_published_at": "2024-10-12T15:00:55Z",
       "readme_url": "packages/koreader/zotero.koplugin/README.md",
-      "readme_hash": "77d44a381b82e9c2472f4388e0055c9bf67fde9b"
+      "readme_hash": "77d44a381b82e9c2472f4388e0055c9bf67fde9b",
+      "prerelease_notes_url": "packages/koreader/zotero.koplugin/PRERELEASE_NOTES.md",
+      "prerelease_notes_hash": "3473cbbae09aa764d30c4be97961be962ca238bb1fb39e3d57aa84ff0bcea6a8"
     },
     {
       "id": "zzz-readermenuredesign",
@@ -5496,10 +5906,12 @@
       "source_asset": "zzz-readermenuredesign.koplugin.zip",
       "source_type": "release",
       "stars": "94",
-      "updated_at": "2026-07-26T03:31:16Z",
+      "updated_at": "2026-07-26T05:21:44Z",
       "published_at": "2026-07-08T23:28:31Z",
       "readme_url": "packages/koreader/zzz-readermenuredesign.koplugin/README.md",
-      "readme_hash": "df70c4cc7c7c75fac100d42b55a0fe4fc7a04c4a"
+      "readme_hash": "df70c4cc7c7c75fac100d42b55a0fe4fc7a04c4a",
+      "release_notes_url": "packages/koreader/zzz-readermenuredesign.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "27c43912daa61be52b6d18400bee46d363159a97228ccdd323d34b76b407336e"
     }
   ]
 }

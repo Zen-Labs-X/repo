@@ -1,0 +1,2 @@
+- Support for changes in upcoming KOReader update.
+- Added custom button for the [X-Ray](https://github.com/ultimatejimmy/koreader-xray-plugin/) plugin.

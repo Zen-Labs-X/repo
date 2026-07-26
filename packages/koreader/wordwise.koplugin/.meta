@@ -1,0 +1,22 @@
+# Wordwise plugin for KOReader
+# https://github.com/asxelot/wordwise.koplugin
+# zenpm:auto-scraped
+id=wordwise
+name=Wordwise
+version=1.0.0
+description=Word Wise for KOReader — short definitions above difficult words, drawn as a per-page overlay on the original book.
+author=asxelot
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/asxelot/wordwise.koplugin
+stars=15
+updated_at=2026-07-26T05:21:44Z
+published_at=2026-07-23T08:27:43Z
+readme_url=packages/koreader/wordwise.koplugin/README.md
+readme_hash=3a2a03dbeb2f3309fb4212330e8177d4fd3b3289
+release_notes_url=packages/koreader/wordwise.koplugin/RELEASE_NOTES.md
+release_notes_hash=01a782a4b776ad4b6c90f33fa794b8b395c0aebe125aedb291c8a763b0d9920d
+source_type=release
+source_asset=wordwise.koplugin.zip
+size=925892
