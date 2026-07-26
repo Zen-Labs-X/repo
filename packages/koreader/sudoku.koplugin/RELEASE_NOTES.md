@@ -1,0 +1,1 @@
+ - feat: add option to  load puzzles from bundled puzzle banks

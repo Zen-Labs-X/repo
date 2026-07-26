@@ -1,0 +1,4 @@
+- Fixed an error that prevented the settings menu from loading (hopefully!);
+- Added an option to use personal highlights in the "Quote of the Day" module;
+- Miscellaneous bug fixes;
+- Improved data retrieval for Reading and Reading Stats.

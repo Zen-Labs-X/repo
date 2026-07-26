@@ -1,0 +1,1 @@
+-- Make compatible with hardcover

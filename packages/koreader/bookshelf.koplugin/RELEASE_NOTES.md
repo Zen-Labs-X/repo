@@ -1,0 +1,2 @@
+- Fix: colour e-ink screens (Kaleido, PocketBook Color, etc.) showed washed-out shelf covers until an unrelated screen refresh happened to trigger the colour waveform; covers now redraw in full colour straight away (#289)
+- Colour panel dithering: a new toggle in Performance tweaks (colour screens only) if you'd rather turn this off

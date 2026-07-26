@@ -1,0 +1,1 @@
+- Added [offlinetranslator.koplugin](https://github.com/anezih/offlinetranslator.koplugin) integration.

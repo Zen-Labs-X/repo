@@ -1,0 +1,3 @@
+- show multiple notes as a scrollable list instead of buttons
+- remove alias by tapping it in a scrollable list
+- attach a selection to an existing memo as an alias 

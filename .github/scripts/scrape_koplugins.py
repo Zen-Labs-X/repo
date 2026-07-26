@@ -11,6 +11,7 @@ from scrape_common import (
     MIN_STARS,
     VALID_CATEGORIES,
     build_meta,
+    cache_release_notes,
     cache_readme,
     classify_category,
     discover,
@@ -19,6 +20,7 @@ from scrape_common import (
     existing_repo_refs,
     existing_scraped_meta,
     fetch_release,
+    fetch_prerelease,
     fetch_repo,
     is_inactive,
     load_category_cache,
@@ -90,7 +92,22 @@ def main():
         category_cache[repo_norm] = category
 
         release = fetch_release(repo.get("full_name", record["ref"]))
+        prerelease = fetch_prerelease(repo.get("full_name", record["ref"]))
         package_dir = os.path.dirname(record["path"])
+        release_notes_url, release_notes_hash, release_notes_changed, release_notes_resolved = cache_release_notes(
+            release, package_dir, args.dry_run
+        )
+        if not release_notes_resolved:
+            print(f"Could not refresh {record['rel_path']}: release notes unavailable",
+                  file=sys.stderr)
+            continue
+        prerelease_notes_url, prerelease_notes_hash, prerelease_notes_changed, prerelease_notes_resolved = cache_release_notes(
+            prerelease, package_dir, args.dry_run, "PRERELEASE_NOTES.md"
+        )
+        if not prerelease_notes_resolved:
+            print(f"Could not refresh {record['rel_path']}: prerelease notes unavailable",
+                  file=sys.stderr)
+            continue
         readme_url, readme_hash, readme_changed, readme_resolved = cache_readme(
             repo.get("full_name", record["ref"]), package_dir, args.dry_run
         )
@@ -102,11 +119,15 @@ def main():
             repo, release, known_ids, category, meta_id=record["id"],
             kind=KIND_PLUGIN, name_override=record["name"],
             readme_url=readme_url, readme_hash=readme_hash,
+            release_notes_url=release_notes_url, release_notes_hash=release_notes_hash,
+            prerelease=prerelease, prerelease_notes_url=prerelease_notes_url,
+            prerelease_notes_hash=prerelease_notes_hash,
             preserved_fields=record["fields"], scraped_at=scraped_at,
         )
         summary["path"] = record["rel_path"]
 
-        if meta_text == record["content"] and not readme_changed:
+        if (meta_text == record["content"] and not readme_changed
+                and not release_notes_changed and not prerelease_notes_changed):
             continue
 
         if args.dry_run and meta_text != record["content"]:
@@ -120,6 +141,14 @@ def main():
         if readme_changed:
             summary["readme_path"] = os.path.join(
                 os.path.dirname(record["rel_path"]), "README.md"
+            )
+        if release_notes_changed:
+            summary["release_notes_path"] = os.path.join(
+                os.path.dirname(record["rel_path"]), "RELEASE_NOTES.md"
+            )
+        if prerelease_notes_changed:
+            summary["prerelease_notes_path"] = os.path.join(
+                os.path.dirname(record["rel_path"]), "PRERELEASE_NOTES.md"
             )
 
         updated.append(summary)
@@ -154,6 +183,7 @@ def main():
         category_cache[norm] = category
 
         release = fetch_release(full_name)
+        prerelease = fetch_prerelease(full_name)
         meta_id, meta_text, summary = build_meta(
             repo, release, known_ids, category, kind=KIND_PLUGIN, scraped_at=scraped_at
         )
@@ -163,16 +193,29 @@ def main():
 
         dest_dir = os.path.join(KOREADER_DIR, package_dir_name(meta_id, KIND_PLUGIN))
         dest = os.path.join(dest_dir, ".meta")
+        release_notes_url, release_notes_hash, _release_notes_changed, _release_notes_resolved = cache_release_notes(
+            release, dest_dir, args.dry_run
+        )
+        prerelease_notes_url, prerelease_notes_hash, _prerelease_notes_changed, _prerelease_notes_resolved = cache_release_notes(
+            prerelease, dest_dir, args.dry_run, "PRERELEASE_NOTES.md"
+        )
         readme_url, readme_hash, _readme_changed, _readme_resolved = cache_readme(
             repo.get("full_name", full_name), dest_dir, args.dry_run
         )
         meta_id, meta_text, summary = build_meta(
             repo, release, known_ids, category, meta_id=meta_id,
             kind=KIND_PLUGIN, readme_url=readme_url, readme_hash=readme_hash,
+            release_notes_url=release_notes_url, release_notes_hash=release_notes_hash,
+            prerelease=prerelease, prerelease_notes_url=prerelease_notes_url,
+            prerelease_notes_hash=prerelease_notes_hash,
             scraped_at=scraped_at,
         )
         if readme_url:
             summary["readme_path"] = readme_url
+        if release_notes_url:
+            summary["release_notes_path"] = release_notes_url
+        if prerelease_notes_url:
+            summary["prerelease_notes_path"] = prerelease_notes_url
 
         if args.dry_run:
             print(f"\n--- {dest} ---")

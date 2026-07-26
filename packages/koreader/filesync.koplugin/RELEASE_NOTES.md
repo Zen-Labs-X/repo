@@ -1,0 +1,2 @@
+- Start server flow now triggers KOReader's standard "Turn on Wi-Fi?" prompt instead of bailing with a warning when WiFi is off; server starts automatically once connected. Same flow applies to the update check. (#23)
+- Web UI now opens in the KOReader home folder by default. (#22)

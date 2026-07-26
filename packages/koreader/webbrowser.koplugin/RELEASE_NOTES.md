@@ -1,0 +1,2 @@
+- open sanitized and save sanitized buttons on search popup (uses [rssreader.koplugin](https://github.com/omer-faruq/rssreader.koplugin) functions, so you need to install it also) 
+- cache folder safety modifications

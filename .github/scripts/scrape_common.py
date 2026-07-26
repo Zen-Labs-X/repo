@@ -4,6 +4,7 @@
 import base64
 import binascii
 import datetime
+import hashlib
 import json
 import os
 import re
@@ -160,10 +161,33 @@ def fetch_repo(full_name):
 
 
 def fetch_release(full_name):
+    """Return the latest release, {} when none exists, or None when unavailable."""
     status, data, _headers = http_json(f"{API}/repos/{full_name}/releases/latest")
     if status == 200:
         return data
+    if status == 404:
+        return {}
     return None
+
+
+def fetch_prerelease(full_name):
+    """Return the newest prerelease, {} when none exists, or None when unavailable."""
+    status, data, _headers = http_json(f"{API}/repos/{full_name}/releases?per_page=100")
+    if status == 404:
+        return {}
+    if status != 200 or not isinstance(data, list):
+        return None
+
+    prereleases = [
+        release for release in data
+        if release.get("prerelease") and not release.get("draft")
+    ]
+    if not prereleases:
+        return {}
+    return max(
+        prereleases,
+        key=lambda release: release.get("published_at") or release.get("created_at") or "",
+    )
 
 
 def fetch_readme(full_name):
@@ -210,6 +234,34 @@ def cache_readme(full_name, package_dir, dry_run=False):
             fh.write(content)
 
     return os.path.relpath(path, REPO_ROOT), readme_hash, changed, True
+
+
+def cache_release_notes(release, package_dir, dry_run=False, filename="RELEASE_NOTES.md"):
+    """Cache a release body beside its package and return manifest fields."""
+    if release is None:
+        return None, None, False, False
+
+    path = os.path.join(package_dir, filename)
+    if not release:
+        changed = os.path.exists(path)
+        if changed and not dry_run:
+            os.remove(path)
+        return None, None, changed, True
+
+    content = release.get("body") or ""
+    release_notes_hash = hashlib.sha256(content.encode("utf-8")).hexdigest()
+    try:
+        with open(path, "r", encoding="utf-8") as fh:
+            changed = fh.read() != content
+    except OSError:
+        changed = True
+
+    if changed and not dry_run:
+        os.makedirs(package_dir, exist_ok=True)
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(content)
+
+    return os.path.relpath(path, REPO_ROOT), release_notes_hash, changed, True
 
 
 def fetch_tree(full_name, branch):
@@ -440,7 +492,9 @@ def scraper_timestamp():
 
 def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PLUGIN,
                name_override=None, patch_assets=None, readme_url=None,
-               readme_hash=None, preserved_fields=None, scraped_at=None):
+               readme_hash=None, release_notes_url=None, release_notes_hash=None,
+               prerelease=None, prerelease_notes_url=None, prerelease_notes_hash=None,
+               preserved_fields=None, scraped_at=None):
     owner = repo["owner"]["login"]
     repo_name = repo["name"]
     full_name = repo["full_name"]
@@ -452,6 +506,13 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
     stars = repo.get("stargazers_count", 0)
     updated_at = scraped_at or scraper_timestamp()
     published_at = release.get("published_at") if isinstance(release, dict) else ""
+    prerelease_version = (
+        (prerelease.get("tag_name") or "").lstrip("vV")
+        if isinstance(prerelease, dict) else ""
+    )
+    prerelease_published_at = (
+        prerelease.get("published_at") if isinstance(prerelease, dict) else ""
+    )
     description = clean_description(repo.get("description"))
     default_branch = repo.get("default_branch", "main")
     package_label = "patch" if kind == KIND_PATCH else "plugin"
@@ -505,11 +566,25 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
         lines.append(f"updated_at={updated_at}")
     if published_at:
         lines.append(f"published_at={published_at}")
+    if prerelease_version:
+        lines.append(f"prerelease_version={prerelease_version}")
+    if prerelease_published_at:
+        lines.append(f"prerelease_published_at={prerelease_published_at}")
 
     if readme_url and readme_hash:
         lines.extend([
             f"readme_url={readme_url}",
             f"readme_hash={readme_hash}",
+        ])
+    if release_notes_url and release_notes_hash:
+        lines.extend([
+            f"release_notes_url={release_notes_url}",
+            f"release_notes_hash={release_notes_hash}",
+        ])
+    if prerelease_notes_url and prerelease_notes_hash:
+        lines.extend([
+            f"prerelease_notes_url={prerelease_notes_url}",
+            f"prerelease_notes_hash={prerelease_notes_hash}",
         ])
 
     summary = {

@@ -1,0 +1,2 @@
+- Support for changes in upcoming KOReader update.
+- Added a button to access the [X-Ray plugin](https://github.com/ultimatejimmy/koreader-xray-plugin/) from the WordReference definition dialog. This will only appear if you have the plugin installed.

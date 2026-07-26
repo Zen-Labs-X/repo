@@ -1,0 +1,1 @@
+[Full change logs](https://www.mobileread.com/forums/showpost.php?p=4557691&postcount=84)

@@ -1,0 +1,1 @@
+Refactor HighlightSync logic for better performance

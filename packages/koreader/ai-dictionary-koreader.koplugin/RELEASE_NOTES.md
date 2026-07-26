@@ -1,0 +1,3 @@
+- Added support for giving the output in languages other than English
+- When helpful, the plugin now shows an image alongside text
+- Bugfixes

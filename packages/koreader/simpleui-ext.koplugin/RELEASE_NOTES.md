@@ -1,0 +1,3 @@
+- Added a standalone translation system (sui_ext_i18n.lua) so SimpleUI Extra no longer depends on the base SimpleUI plugin for localization.
+- Added seven language translations — Simplified Chinese, Turkish, German, French, Spanish, Brazilian Portuguese, and Russian — covering the entire plugin UI.
+- Fixed a crash in the "Simple" progress bar style used by Currently Reading (with Pace) and Currently Reading (Yanllsama v1).
