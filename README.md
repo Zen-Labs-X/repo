@@ -151,8 +151,7 @@ All files are served as static content — no server-side logic required. ZenPM 
 
 ### KOReader plugins and patches
 
-KOReader packages are discovered automatically from GitHub on the 1st and 15th
-of each month. A newly discovered package is proposed in its own pull request.
+KOReader packages are discovered automatically from GitHub every few hours. Newly discovered packages are added directly to the catalog.
 
 To be eligible, a repository must:
 
