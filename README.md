@@ -107,6 +107,12 @@ Each package in `manifest.json` may include:
 | `published_at` | string | Timestamp of the upstream package's most recent GitHub release, in UTC ISO 8601 format. |
 | `readme_url` | string | Path to the cached package README. |
 | `readme_hash` | string | Git blob SHA of the cached README; changes when its source README changes. |
+| `release_notes_url` | string | Path to the cached notes for the package's latest stable release. |
+| `release_notes_hash` | string | SHA-256 hash of the cached stable release notes; changes when their source content changes. |
+| `prerelease_version` | string | Version of the package's newest prerelease. |
+| `prerelease_published_at` | string | Publication timestamp of the package's newest prerelease, in UTC ISO 8601 format. |
+| `prerelease_notes_url` | string | Path to the cached notes for the package's newest prerelease. |
+| `prerelease_notes_hash` | string | SHA-256 hash of the cached prerelease notes; changes when their source content changes. |
 | `conflicts` | array of strings | Package IDs that must not be installed together. |
 | `incompatible_platforms` | array of strings | Platforms on which a package cannot be installed. |
 
@@ -148,8 +154,9 @@ Forks are considered by default. Plugin packages use a release ZIP when one is
 available, otherwise the repository's default-branch source archive; patch
 packages install the matching Lua files directly. All generated packages use
 the shared KOReader install and uninstall scripts. During each scan, the
-repository README is cached beside the package and its Git blob SHA is included
-in the manifest, allowing clients to refresh only when that hash changes.
+repository README, latest stable release notes, and newest prerelease notes are
+cached beside the package. Their content hashes are included in the manifest,
+allowing clients to refresh only when the corresponding content changes.
 
 ### Refreshing KOReader packages locally
 

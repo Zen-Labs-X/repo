@@ -95,8 +95,14 @@ for meta_file in $meta_files; do
     stars=$(grep '^stars=' "$tmp" 2>/dev/null | sed 's/^stars=//' | head -1)
     updated_at=$(grep '^updated_at=' "$tmp" 2>/dev/null | sed 's/^updated_at=//' | head -1)
     published_at=$(grep '^published_at=' "$tmp" 2>/dev/null | sed 's/^published_at=//' | head -1)
+    prerelease_version=$(grep '^prerelease_version=' "$tmp" 2>/dev/null | sed 's/^prerelease_version=//' | head -1)
+    prerelease_published_at=$(grep '^prerelease_published_at=' "$tmp" 2>/dev/null | sed 's/^prerelease_published_at=//' | head -1)
     readme_url=$(grep '^readme_url=' "$tmp" 2>/dev/null | sed 's/^readme_url=//' | head -1)
     readme_hash=$(grep '^readme_hash=' "$tmp" 2>/dev/null | sed 's/^readme_hash=//' | head -1)
+    release_notes_url=$(grep '^release_notes_url=' "$tmp" 2>/dev/null | sed 's/^release_notes_url=//' | head -1)
+    release_notes_hash=$(grep '^release_notes_hash=' "$tmp" 2>/dev/null | sed 's/^release_notes_hash=//' | head -1)
+    prerelease_notes_url=$(grep '^prerelease_notes_url=' "$tmp" 2>/dev/null | sed 's/^prerelease_notes_url=//' | head -1)
+    prerelease_notes_hash=$(grep '^prerelease_notes_hash=' "$tmp" 2>/dev/null | sed 's/^prerelease_notes_hash=//' | head -1)
 
     case "$category" in
         utility|games|productivity|media|theme|patches|fonts) ;;
@@ -171,8 +177,14 @@ for meta_file in $meta_files; do
     [ -n "$stars" ]        && printf ',\n      "stars": "%s"' "$stars" >> "$OUTPUT"
     [ -n "$updated_at" ]   && printf ',\n      "updated_at": "%s"' "$(json_escape "$updated_at")" >> "$OUTPUT"
     [ -n "$published_at" ] && printf ',\n      "published_at": "%s"' "$(json_escape "$published_at")" >> "$OUTPUT"
+    [ -n "$prerelease_version" ] && printf ',\n      "prerelease_version": "%s"' "$(json_escape "$prerelease_version")" >> "$OUTPUT"
+    [ -n "$prerelease_published_at" ] && printf ',\n      "prerelease_published_at": "%s"' "$(json_escape "$prerelease_published_at")" >> "$OUTPUT"
     [ -n "$readme_url" ]   && printf ',\n      "readme_url": "%s"' "$(json_escape "$readme_url")" >> "$OUTPUT"
     [ -n "$readme_hash" ]  && printf ',\n      "readme_hash": "%s"' "$(json_escape "$readme_hash")" >> "$OUTPUT"
+    [ -n "$release_notes_url" ]  && printf ',\n      "release_notes_url": "%s"' "$(json_escape "$release_notes_url")" >> "$OUTPUT"
+    [ -n "$release_notes_hash" ] && printf ',\n      "release_notes_hash": "%s"' "$(json_escape "$release_notes_hash")" >> "$OUTPUT"
+    [ -n "$prerelease_notes_url" ]  && printf ',\n      "prerelease_notes_url": "%s"' "$(json_escape "$prerelease_notes_url")" >> "$OUTPUT"
+    [ -n "$prerelease_notes_hash" ] && printf ',\n      "prerelease_notes_hash": "%s"' "$(json_escape "$prerelease_notes_hash")" >> "$OUTPUT"
 
     # Assets array (dot notation: assets.N.key)
     asset_indices=$(grep '^assets\.' "$tmp" 2>/dev/null \

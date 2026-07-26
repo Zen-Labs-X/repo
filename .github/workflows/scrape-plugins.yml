@@ -58,7 +58,7 @@ jobs:
           package_count="$(jq '.packages | length' manifest.json)"
           test "$meta_count" = "$package_count"
 
-      - name: Commit refreshed metadata and READMEs
+      - name: Commit refreshed metadata, READMEs, and release notes
         if: ${{ steps.scrape.outputs.updated_count != '0' }}
         env:
           UPDATED: ${{ steps.scrape.outputs.updated }}
@@ -67,7 +67,7 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          printf '%s' "$UPDATED" | python3 -c 'import json, sys; [print(path) for package in json.load(sys.stdin) for path in (package["path"], package.get("readme_path")) if path]' > /tmp/updated-paths.txt
+          printf '%s' "$UPDATED" | python3 -c 'import json, sys; [print(path) for package in json.load(sys.stdin) for path in (package["path"], package.get("readme_path"), package.get("release_notes_path"), package.get("prerelease_notes_path")) if path]' > /tmp/updated-paths.txt
 
           git add --pathspec-from-file=/tmp/updated-paths.txt
           if git diff --cached --quiet; then
@@ -75,7 +75,7 @@ jobs:
               exit 0
           fi
 
-          git commit -m "Refresh scraped KOReader package metadata and READMEs"
+          git commit -m "Refresh scraped KOReader package metadata, READMEs, and release notes"
           git push origin HEAD:main
           git fetch origin main
 
@@ -102,9 +102,9 @@ jobs:
           done < /tmp/added-dirs.txt
 
           # Each element of $ADDED is a package summary object. Emit TSV lines.
-          printf '%s' "$ADDED" | python3 -c 'import json, sys; [print("\t".join([str(index), p["id"], p["name"], p.get("kind", "plugin"), p["path"], p.get("readme_path", ""), p["repo"], p["url"], str(p["stars"]), p["version"], str(p.get("assets", 0))])) for index, p in enumerate(json.load(sys.stdin))]' > /tmp/added.tsv
+          printf '%s' "$ADDED" | python3 -c 'import json, sys; [print("\t".join([str(index), p["id"], p["name"], p.get("kind", "plugin"), p["path"], p.get("readme_path", ""), p.get("release_notes_path", ""), p.get("prerelease_notes_path", ""), p["repo"], p["url"], str(p["stars"]), p["version"], str(p.get("assets", 0))])) for index, p in enumerate(json.load(sys.stdin))]' > /tmp/added.tsv
 
-          while IFS="$(printf '\t')" read -r index id name kind meta readme repo url stars version assets; do
+          while IFS="$(printf '\t')" read -r index id name kind meta readme release_notes prerelease_notes repo url stars version assets; do
               [ -n "$id" ] || continue
               branch="scrape/${kind}/${id}"
 
@@ -113,6 +113,8 @@ jobs:
               cp -R "$snapshot_dir/$index/." "$(dirname "$meta")"
               git add "$meta"
               [ -z "$readme" ] || git add "$readme"
+              [ -z "$release_notes" ] || git add "$release_notes"
+              [ -z "$prerelease_notes" ] || git add "$prerelease_notes"
               sh generate-manifest.sh
               jq empty manifest.json
               git add manifest.json
