@@ -19,13 +19,13 @@ from scrape_common import (
     existing_repository_identities,
     existing_repo_refs,
     existing_scraped_meta,
-    fetch_release,
     fetch_releases,
     fetch_repo,
     is_inactive,
     load_category_cache,
     make_id,
     newest_prerelease,
+    newest_stable_release,
     normalize_repo_ref,
     package_dir_name,
     repository_identity,
@@ -93,12 +93,12 @@ def main():
         category_cache[repo_norm] = category
 
         full_name = repo.get("full_name", record["ref"])
-        release = fetch_release(full_name)
         releases = fetch_releases(full_name)
         if releases is None:
             print(f"Could not refresh {record['rel_path']}: releases unavailable",
                   file=sys.stderr)
             continue
+        release = newest_stable_release(releases)
         prerelease = newest_prerelease(releases)
         package_dir = os.path.dirname(record["path"])
         release_notes_url, release_notes_hash, release_notes_changed, release_notes_resolved = cache_release_notes(
@@ -174,7 +174,7 @@ def main():
         if is_inactive(item):
             continue
 
-        repo = fetch_repo(full_name) or item
+        repo = item
         if not is_koplugin(repo) and not is_koplugin(item):
             continue
         if repo.get("archived") or is_inactive(repo):
@@ -189,11 +189,11 @@ def main():
         category = category_cache.get(norm) or classify_category(repo)
         category_cache[norm] = category
 
-        release = fetch_release(full_name)
         releases = fetch_releases(full_name)
         if releases is None:
             print(f"Could not add {full_name}: releases unavailable", file=sys.stderr)
             continue
+        release = newest_stable_release(releases)
         prerelease = newest_prerelease(releases)
         meta_id, meta_text, summary = build_meta(
             repo, release, known_ids, category, kind=KIND_PLUGIN,

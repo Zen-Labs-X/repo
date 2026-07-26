@@ -125,31 +125,46 @@ class CachedPackageMetadataTests(unittest.TestCase):
         finally:
             scrape_common.http_json = original_http_json
 
-    def test_fetch_release_distinguishes_a_missing_release(self):
+    def test_fetch_releases_returns_an_empty_list_when_none_exist(self):
         original_http_json = scrape_common.http_json
         scrape_common.http_json = lambda _url: (404, None, {})
         try:
-            self.assertEqual(scrape_common.fetch_release("owner/repo"), {})
+            self.assertEqual(scrape_common.fetch_releases("owner/repo"), [])
         finally:
             scrape_common.http_json = original_http_json
 
-    def test_fetch_prerelease_chooses_the_most_recent_published_version(self):
+    def test_one_release_request_supplies_stable_and_prerelease_metadata(self):
         original_http_json = scrape_common.http_json
-        scrape_common.http_json = lambda _url: (200, [
-            {"tag_name": "v2.0.0-beta.1", "prerelease": True,
-             "published_at": "2026-07-20T00:00:00Z"},
-            {"tag_name": "v2.0.0", "prerelease": False,
-             "published_at": "2026-07-24T00:00:00Z"},
-            {"tag_name": "v2.0.0-beta.2", "prerelease": True,
-             "published_at": "2026-07-25T00:00:00Z"},
-            {"tag_name": "v3.0.0-beta.1", "prerelease": True, "draft": True,
-             "published_at": "2026-07-26T00:00:00Z"},
-        ], {})
+        requests = []
+
+        def fake_http_json(url):
+            requests.append(url)
+            return 200, [
+                {"tag_name": "v2.0.0-beta.1", "prerelease": True,
+                 "published_at": "2026-07-20T00:00:00Z"},
+                {"tag_name": "v1.0.0", "prerelease": False,
+                 "published_at": "2026-07-21T00:00:00Z"},
+                {"tag_name": "v2.0.0", "prerelease": False,
+                 "published_at": "2026-07-24T00:00:00Z"},
+                {"tag_name": "v2.0.0-beta.2", "prerelease": True,
+                 "published_at": "2026-07-25T00:00:00Z"},
+                {"tag_name": "v3.0.0-beta.1", "prerelease": True, "draft": True,
+                 "published_at": "2026-07-26T00:00:00Z"},
+            ], {}
+
+        scrape_common.http_json = fake_http_json
         try:
+            releases = scrape_common.fetch_releases("owner/repo")
             self.assertEqual(
-                scrape_common.fetch_prerelease("owner/repo")["tag_name"],
+                scrape_common.newest_stable_release(releases)["tag_name"],
+                "v2.0.0",
+            )
+            self.assertEqual(
+                scrape_common.newest_prerelease(releases)["tag_name"],
                 "v2.0.0-beta.2",
             )
+            self.assertEqual(len(requests), 1)
+            self.assertTrue(requests[0].endswith("/releases?per_page=100"))
         finally:
             scrape_common.http_json = original_http_json
 

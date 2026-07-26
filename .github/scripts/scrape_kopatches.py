@@ -19,13 +19,13 @@ from scrape_common import (
     existing_repo_refs,
     existing_repository_identities,
     existing_scraped_meta,
-    fetch_release,
     fetch_releases,
     fetch_repo,
     fetch_tree,
     is_inactive,
     make_id,
     newest_prerelease,
+    newest_stable_release,
     normalize_repo_ref,
     package_dir_name,
     repository_identity,
@@ -102,12 +102,12 @@ def main():
                   file=sys.stderr)
             continue
         full_name = repo.get("full_name", record["ref"])
-        release = fetch_release(full_name)
         releases = fetch_releases(full_name)
         if releases is None:
             print(f"Could not refresh {record['rel_path']}: releases unavailable",
                   file=sys.stderr)
             continue
+        release = newest_stable_release(releases)
         prerelease = newest_prerelease(releases)
 
         package_dir = os.path.dirname(record["path"])
@@ -184,7 +184,7 @@ def main():
         if is_inactive(item):
             continue
 
-        repo = fetch_repo(full_name) or item
+        repo = item
         if not looks_like_koreader_patch_repo(repo) and not looks_like_koreader_patch_repo(item):
             continue
         if repo.get("archived") or is_inactive(repo):
@@ -200,11 +200,11 @@ def main():
         if not assets:
             continue
         full_name = repo.get("full_name", full_name)
-        release = fetch_release(full_name)
         releases = fetch_releases(full_name)
         if releases is None:
             print(f"Could not add {full_name}: releases unavailable", file=sys.stderr)
             continue
+        release = newest_stable_release(releases)
         prerelease = newest_prerelease(releases)
 
         meta_id, meta_text, summary = build_meta(

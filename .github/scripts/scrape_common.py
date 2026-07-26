@@ -160,16 +160,6 @@ def fetch_repo(full_name):
     return None
 
 
-def fetch_release(full_name):
-    """Return the latest release, {} when none exists, or None when unavailable."""
-    status, data, _headers = http_json(f"{API}/repos/{full_name}/releases/latest")
-    if status == 200:
-        return data
-    if status == 404:
-        return {}
-    return None
-
-
 def fetch_releases(full_name):
     """Return up to 100 releases, [] when none exist, or None when unavailable."""
     status, data, _headers = http_json(f"{API}/repos/{full_name}/releases?per_page=100")
@@ -178,6 +168,20 @@ def fetch_releases(full_name):
     if status != 200 or not isinstance(data, list):
         return None
     return data
+
+
+def newest_stable_release(releases):
+    """Return the newest published non-draft stable release."""
+    stable_releases = [
+        release for release in releases
+        if not release.get("prerelease") and not release.get("draft")
+    ]
+    if not stable_releases:
+        return {}
+    return max(
+        stable_releases,
+        key=lambda release: release.get("published_at") or release.get("created_at") or "",
+    )
 
 
 def newest_prerelease(releases):
@@ -192,14 +196,6 @@ def newest_prerelease(releases):
         prereleases,
         key=lambda release: release.get("published_at") or release.get("created_at") or "",
     )
-
-
-def fetch_prerelease(full_name):
-    """Return the newest prerelease, {} when none exists, or None when unavailable."""
-    releases = fetch_releases(full_name)
-    if releases is None:
-        return None
-    return newest_prerelease(releases)
 
 
 def installable_releases(releases):
