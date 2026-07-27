@@ -1,1 +1,1 @@
-The 'Open Glimpse' menu item is now disabled (greyed out) when no book is open.
+Clear image-switch ghosting: switching to another image now flashes just the panel region (a proper e-ink clear cycle) so the previous image no longer ghosts through the new one — most noticeable in Night Mode. Open, close, and zoom/pan stay flashless.
