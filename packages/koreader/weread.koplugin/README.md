@@ -4,62 +4,30 @@
 
 在 KOReader 上阅读微信读书书籍和公众号文章、同步阅读时长的插件。
 
-## 相关项目
+## 其它项目推荐
 
-| 插件 | 简介 |
-|------|------|
-| [kindlebtcontroller.koplugin](https://github.com/finlater/kindlebtcontroller.koplugin) | 蓝牙手柄/遥控器控制 Kindle —— 翻页、调节亮度、章节跳转等 20+ 操作，按键完全可自定义 |
-| [one.koplugin](https://github.com/finlater/one.koplugin) | 在 KOReader 上离线阅读「ONE · 一个」每日更新：一图、一文、一问答 |
+| 插件 | 简介                                                  |
+|------|-----------------------------------------------------|
+| [kindlebtcontroller.koplugin](https://github.com/finlater/kindlebtcontroller.koplugin) | 蓝牙手柄/遥控器控制 Kindle —— 翻页、调节亮度、章节跳转等 20+ 操作，按键完全可自定义。 |
+| [one.koplugin](https://github.com/finlater/one.koplugin) | 在 KOReader 上离线阅读「ONE · 一个」每日更新：一图、一文、一问答。           |
 
 ## 功能
 
-**书籍**
+| 主菜单 | 微信读书书架 | 公众号 |
+|:---:|:---:|:---:|
+| ![主菜单](screenshots/main_manu.png) | ![微信读书书架](screenshots/bookshelf.png) | ![公众号](screenshots/bookshelf_wp.png) |
 
-- 浏览微信读书书架，搜索书籍
-- 下载单章或整本书为 EPUB，直接在 KOReader 中阅读
-- 章节目录按书籍缓存为独立 `catalog.json`，并支持在章节列表中手动刷新
-- 章节内容解码、CSS 样式、图片资源打包
-- 自动生成目录（TOC），自动嵌入封面
-- 下载并嵌入划线、将想法存入 SQLite，阅读时可一键显示/隐藏，点击划线在原生分页弹框中查看想法；旧缓存缺少 SQLite 数据时会按单章/全文自动补齐
+| 搜索书籍 | 书籍详情 | 下载书籍 |
+|:---:|:---:|:---:|
+| ![搜索书籍](screenshots/book_search.png) | ![书籍详情](screenshots/book_detail.png) | ![下载书籍](screenshots/download.png) |
 
-**公众号**
+| 书评 | 划线与想法 | 阅读进度同步 |
+|:---:|:---:|:---:|
+| ![书评](screenshots/book_review.png) | ![划线与想法](screenshots/thought.png) | ![阅读进度同步](screenshots/read_progress.png) |
 
-- 浏览已关注的公众号列表
-- 下载公众号文章为 HTML（图片内嵌 base64，KOReader 可自由调节字体大小）
-- 文章列表本地缓存，无需重复请求
-
-**阅读时间上报**
-
-- 自动向微信读书上报阅读时长（默认每 30 秒一次）
-- 支持两种目标书籍模式：
-  - **自动关联**：打开微信读书缓存书籍时自动上报该书，关闭时自动停止
-  - **手动设置**：从书架选择一本固定书籍作为上报对象
-- 支持「仅在阅读时上报」或「KOReader 启动即上报」两种触发模式，不检查翻页活动
-- 上报状态可在菜单中查看（已上报次数、最近上报时间、错误信息）
-- 阅读时长上报复用当前 KOReader 实时位置；云端冲突尚未处理时会暂停上报，避免旧位置覆盖新位置
-
-**阅读进度同步**
-
-- 打开微信读书缓存书籍时自动拉取进度，关闭书籍或设备挂起时上传进度
-- 菜单中的「立即同步进度」可随时手动拉取、比较和处理冲突
-
-**阅读统计**
-
-完整移植 APP 阅读统计能力, 支持按照周/月/年/总 维度查看
-- 阅读时长
-- 阅读天数
-- 阅读排行
-
-**书籍管理**
-
-- 书架支持多种排序方式（最后阅读时间、书名、默认顺序）与筛选（已读完/未读完、已下载/未下载，两组可组合）
-- 书籍详情页展示作者、出版社、出版时间、评分、字数、阅读进度等信息，并可按需查看推荐书评和最新书评
-- EPUB 自动嵌入封面图片
-- 缓存管理：查看/清理单本或全部缓存，并可扫描本地缓存目录导入手动放入的书籍与公众号文章（需联网，仅导入与微信读书书架 ID 匹配的目录）
-- 自定义下载目录：可指定书籍/文章的保存位置（默认 `<KOReader 数据目录>/weread/cache`）
-- 每本书的目录保存在 `<缓存目录>/<书籍 ID>/catalog.json`；旧版 `weread.lua` 中的目录会在启动时自动迁移
-- 书籍元数据、阅读上下文和公众号文章列表分别保存在书籍目录的 `metadata.json`、`reading_state.json` 和 `articles.json`；`weread.lua` 只保留缓存路径索引
-- 每本书的想法按划线范围保存在书籍目录的 `thoughts.db`，点击时只查询当前划线对应的记录
+| 阅读时间上报 | 阅读统计 | 设置 |
+|:---:|:---:|:---:|
+| ![阅读时间上报](screenshots/read_report.png) | ![阅读统计](screenshots/read_stats.png) | ![设置](screenshots/setting.png) |
 
 ## TODO
 
@@ -70,15 +38,17 @@
 
 ## 安装
 
-> ⚠️ 请使用**较新版本**的 KOReader，过旧的版本可能导致插件无法加载或启动失败（表现为「工具」菜单下找不到「微信读书」）。已知 `2024.11` 会出问题，`2026.3` 可正常使用；建议升级到最新版。详见 [#14](https://github.com/finlater/weread.koplugin/issues/14)。
+> ⚠️ 建议使用 **KOReader 2026.03 或更高版本**。旧版本可能无法正常加载或使用插件，例如「工具」菜单中找不到「微信读书」。详见 [#14](https://github.com/finlater/weread.koplugin/issues/14)。
 
-将插件目录复制到 KOReader 的 plugins 目录：
+1. 前往 [GitHub Releases](https://github.com/finlater/weread.koplugin/releases) 下载最新的 `weread.koplugin-vX.Y.Z.zip` 安装包。
+2. 解压安装包，得到 `weread.koplugin` 文件夹。
+3. 将该文件夹复制到 KOReader 的 `plugins` 目录：
 
 ```
 koreader/plugins/weread.koplugin/
 ```
 
-重启 KOReader，在菜单中找到：
+4. 重启 KOReader，在菜单中找到：
 
 ```
 工具 → 微信读书

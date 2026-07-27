@@ -1,3 +1,3 @@
-- search fix for certain kindle devices
+- Fix for page turn buttons on the main tabs
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.26-beta7...26.7.26-beta8
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.27-beta...26.7.27-beta2
