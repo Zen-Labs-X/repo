@@ -1,0 +1,1 @@
+The 'Open Glimpse' menu item is now disabled (greyed out) when no book is open.

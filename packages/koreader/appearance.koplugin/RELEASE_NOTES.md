@@ -1,12 +1,21 @@
-## [1.5.1](https://github.com/Euphoriyy/appearance.koplugin/compare/v1.5.0...v1.5.1) (2026-05-16)
-[![Github Downloads (by release)](https://img.shields.io/github/downloads/Euphoriyy/appearance.koplugin/v1.5.1/total.svg)](#)
+## [1.6.0](https://github.com/Euphoriyy/appearance.koplugin/compare/v1.5.1...v1.6.0) (2026-07-27)
+[![Github Downloads (by release)](https://img.shields.io/github/downloads/Euphoriyy/appearance.koplugin/v1.6.0/total.svg)](#)
+
+> [!IMPORTANT]  
+> This release resolves issues that cause crashes when loading documents or attempting to update from within the plugin. Please update manually.
+
+
+### Features
+
+* **ui/dict_font_face:** add toggle for changing the titlebar font ([3b173ef](https://github.com/Euphoriyy/appearance.koplugin/commit/3b173efb7f99b59fd431d7d9b2ee223d9029e129))
 
 
 ### Bug Fixes
 
-* **ui/background_image:** clear SimpleUI widget cache before setupLayout in reload_filemanager ([510fc06](https://github.com/Euphoriyy/appearance.koplugin/commit/510fc0684261bb3ae3a43036e87b2170de37c13e)), closes [#58](https://github.com/Euphoriyy/appearance.koplugin/issues/58)
-* **ui/background_image:** properly reload and repaint SimpleUI homescreen on background changes ([c496164](https://github.com/Euphoriyy/appearance.koplugin/commit/c496164549c9ceecda1437b18dbc09b4b8fac4f6))
-* **ui/background_image:** skip image reload when adjusting transparency settings ([bce6862](https://github.com/Euphoriyy/appearance.koplugin/commit/bce686289729cc94dbb23fb4dfe9a24a623793cc))
-* **ui/transparency:** correct grammar in bottom bar transparency menu label ([f8e82e4](https://github.com/Euphoriyy/appearance.koplugin/commit/f8e82e47092d51a7b6333a87841b769d2824ca9a))
+* **book/background_color:** forward saturation argument ([4830dd0](https://github.com/Euphoriyy/appearance.koplugin/commit/4830dd0ea9617d038cfda5c352ec3fd8d7c9ab48)), closes [#67](https://github.com/Euphoriyy/appearance.koplugin/issues/67)
+* **lib/updater:** implement function for unpacking archives ([64b160d](https://github.com/Euphoriyy/appearance.koplugin/commit/64b160d47b3d3d0af8e98e880f619cebc25ae6fd))
+* **meta:** remove deprecated name field ([83850c1](https://github.com/Euphoriyy/appearance.koplugin/commit/83850c14eeb5cb56283483e2b5cf7f66ca24a84c))
+* **ui/font_face:** refresh titlebar font after applying changes ([128189f](https://github.com/Euphoriyy/appearance.koplugin/commit/128189f0f04534271797a910195c357d2befd9e0))
+* **ui:** correct font detection behavior ([d1cd4ad](https://github.com/Euphoriyy/appearance.koplugin/commit/d1cd4addfe672e99e60f60dd2f5751cfb84d6edd))
 
-*Supported KOReader Version: **v2026.03***
+*Supported KOReader Version: **v2026.07***

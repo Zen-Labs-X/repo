@@ -1,6 +1,6 @@
 ## What's Changed
 
-- Add release notes
-- Add filter for installed packages
-- Scroll featured image up when scrolling package descriptions
-- Bug fixes
+- Fix potential backend port conflict
+- Fix README not loading sometimes
+- Fuzzy match assets that aren't exactly the same from release -> prerelease
+- Better tab styling

@@ -1,3 +1,3 @@
-- fix manual refresh UI issue
+- search fix for certain kindle devices
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.26-beta3...26.7.26-beta4
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.26-beta7...26.7.26-beta8

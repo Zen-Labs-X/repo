@@ -1,8 +1,8 @@
-## [0.0.10](https://github.com/Euphoriyy/derainbowify.koplugin/compare/v0.0.9...v0.0.10) (2026-06-07)
-[![Github Downloads (by release)](https://img.shields.io/github/downloads/Euphoriyy/derainbowify.koplugin/v0.0.10/total.svg)](#)
+## [0.0.12](https://github.com/Euphoriyy/derainbowify.koplugin/compare/v0.0.11...v0.0.12) (2026-07-26)
+[![Github Downloads (by release)](https://img.shields.io/github/downloads/Euphoriyy/derainbowify.koplugin/v0.0.12/total.svg)](#)
 
 
 ### Bug Fixes
-* Fixes support for hard float Kindle devices
+* Reorders the option in fixed layout documents to be more consistently aligned
 
-*Supported KOReader Version: **v2026.03***
+*Supported KOReader Versions: **v2026.07***
