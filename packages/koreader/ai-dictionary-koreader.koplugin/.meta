@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=ai-dictionary-koreader
 name=Ai Dictionary Koreader
-version=2.6
+version=2.7
 description=Context-aware AI dictionary plugin for KOReader: instant definitions, explanations, deep dives, pronunciation, and vocabulary learning on e-ink devices.
 author=SahandMalaei
 category=productivity
@@ -11,11 +11,11 @@ platforms=koreader
 dependencies=
 source=https://github.com/SahandMalaei/ai-dictionary-koreader
 stars=81
-updated_at=2026-07-26T19:18:53Z
-published_at=2026-07-12T17:11:51Z
+updated_at=2026-07-28T19:39:55Z
+published_at=2026-07-27T17:45:00Z
 readme_url=packages/koreader/ai-dictionary-koreader.koplugin/README.md
-readme_hash=1637624ab20e06b768b8c06788f103292763826c
+readme_hash=fa0acb126c54fa60a325d425a2c54366ed1e6d68
 release_notes_url=packages/koreader/ai-dictionary-koreader.koplugin/RELEASE_NOTES.md
-release_notes_hash=143a1e80966041492024537a062e704bdcd8eef16f9da88f88b521358211f6e5
+release_notes_hash=202d58782dc03a1439e6b6cb38f32ac206cdaee7cbe0c2f5aba540649220a44e
 source_type=source
 source_url=https://codeload.github.com/SahandMalaei/ai-dictionary-koreader/zip/refs/heads/main

@@ -1,0 +1,144 @@
+# Glimpse
+
+A KOReader plugin for peeking at maps, family trees and other reference
+images from anywhere in a book, without losing your reading position.
+
+Instead of bookmark → table of contents → find the map → navigate back, you
+open Glimpse (ideally via a gesture), swipe through the reference images the
+book contains, zoom and pan, and close it. You're still exactly where you
+were.
+
+<p align="center">
+  <img width="380" alt="Glimpse in action — swiping through a book's maps and reference images without leaving your page" src="https://github.com/Fank1/glimpse/releases/download/v0.1.43/example-video-framed.gif">
+  &nbsp;
+  <img width="380" alt="A reference map opened full-screen in the Glimpse viewer" src="https://github.com/Fank1/glimpse/releases/download/v0.1.43/map-framed.png">
+</p>
+
+## What it does
+
+- Scans the EPUB's HTML directly for images and **filters out ornaments,
+  icons, dividers, covers and publisher chrome**, judging each image by its
+  size and aspect ratio, repetition across chapters, filename and alt text,
+  position in the book, and captions (a genuine caption or figure-style
+  filename keeps an image; boilerplate text doesn't).
+- Remembers the **last image you viewed** per book, including its **zoom
+  level and pan position**, and reopens right where you left off, handy
+  when you keep returning to the same corner of the same map.
+- Spoiler-safe by default: only searches **up to your current position**
+  (per chapter); switchable to the whole book. When nothing has appeared
+  yet, the empty state offers a **one-time whole-book search** without
+  changing the setting.
+- **Night-mode friendly:** line-art illustrations with transparent
+  backgrounds get a white backing so they stay visible (and clean-edged)
+  in night mode instead of vanishing against the dark page.
+
+## Installation
+
+1. Download the latest `glimpse-vX.Y.Z.koplugin.zip` from the
+   [releases page](https://github.com/Fank1/glimpse/releases).
+2. Unzip it and copy the `glimpse.koplugin/` folder into KOReader's
+   `plugins/` directory.
+3. Restart KOReader.
+
+After that, updates install from within KOReader: Tools → Glimpse →
+Updates → *Check for updates*.
+
+## Usage
+
+- **Menu:** with a book open: Tools (wrench icon) → Glimpse → *Open
+  Glimpse* (greyed out when no book is open).
+- **Gesture (recommended):** Settings → Taps and gestures → Gesture manager →
+  pick a gesture → *Reader* → **Open Glimpse**. One-touch access is
+  the whole point of the plugin. The Glimpse menu's top row shows which
+  gesture (if any) currently opens it; tap that row for the exact steps,
+  and the first time you open Glimpse from the menu without a gesture bound
+  you get a one-time reminder to set one.
+- **Dot indicator:** tap it to jump near that image directly, not just
+  swipe through one at a time; its tap target is padded well beyond the
+  dots themselves. A small image opens a bit larger than its native
+  size already (up to 150%, never more than actually fits); double-tap
+  to zoom in further (2× that) and again to return. A "Reset" button only
+  appears once you're actually zoomed past the resting view.
+- **Mode switch (⋯ menu):** the viewer's ⋯ menu shows *Mode: Images up to
+  here* / *Mode: All images*; tap it to flip the mode and reopen on the
+  same image where possible, with a brief notice naming the mode you
+  switched to. The gallery heading tells you how many images the chapter
+  scope is holding back.
+- **Quick Actions:** the contents of the ⋯ menu are configurable under
+  Tools → Glimpse → *Quick Actions* — hide the rows you don't use, or add
+  nav buttons, captions and Restore hidden images to it.
+
+### Settings (Tools → Glimpse)
+
+| Setting | Meaning |
+| --- | --- |
+| Mode: Show images up to current chapter *(default)* | Images past your current chapter stay hidden (no spoilers). |
+| Mode: Show all images | Everything, incl. parts you haven't reached. |
+| Quick Actions | Choose which actions appear in the viewer's ⋯ menu: Gallery, Hide Image, the Mode switch, Rotate 90°, Show in Book, Restore hidden images, Show Nav Buttons, Show Image Captions and Invert in Night Mode. Defaults to the original six; the last three are off until you add them. (Reset Rotation is automatic; Restore only appears when something is hidden.) |
+| Restore hidden images | Undo the viewer's per-book **Remove image from collection**. |
+| Advanced → Hide irrelevant images *(checkbox, on)* | Hides covers, publisher logos, ornaments and other non-reference imagery. Off = every image in the book. |
+| Advanced → Show image captions (beta) *(checkbox, on)* | Show the image's caption from the book as a solid tab tucked into the viewer's top-left corner (white with black text in day mode, black with white text at night), wrapping onto multiple lines for longer captions. |
+| Advanced → Enable top menu tap zone *(checkbox, on)* | While the viewer is open, a tap along the top edge opens KOReader's top menu (only that one, never the bottom menu) over the drawer. Off leaves the top edge inert. |
+| Advanced → Rescan this book | Drop the cached scan (scans are cached per book file); use if the file was replaced or images seem out of date. |
+| Updates → Check for updates | Fetch the latest GitHub release and install it in place (with backup and rollback), then offer a restart. |
+| Updates → Include pre-release versions *(checkbox, off)* | Also offer releases marked pre-release on GitHub: test builds, at your own risk. Normal update checks never see those. |
+
+The menu also shows (dimmed, informational) which gesture currently
+opens Glimpse, at the top of the list.
+
+### Gallery
+
+⋯ → *Gallery* shows every image as a Pinterest-style masonry grid, each
+thumbnail with a subtle rounded outline (a heavier one marks the image
+you're currently on) and a small number badge showing its reading order,
+keeping its own aspect ratio instead of being cropped to a uniform tile.
+Paged when there are enough to browse; a *Back* button returns to the
+normal viewer. Tap a thumbnail to jump straight to that image instead.
+
+### Releasing
+
+```sh
+./release.sh 0.2.0 --notes "what changed"   # builds + publishes a PRE-release
+./release.sh 1.0.0 --final                  # a real release, visible to updaters
+DRYRUN=1 ./release.sh                       # build the zip only
+```
+
+Pre-releases are invisible to the normal update check (`releases/latest`
+skips them), so they form the opt-in test channel behind "Include
+pre-release versions".
+
+## Scope and limitations
+
+- **EPUB (and other crengine-rendered zip/HTML formats) only.** PDF/DjVu
+  have no HTML metadata to filter on; other formats get a polite message.
+- "Read so far" granularity is the **chapter** (spine item): images in the
+  chapter you are currently in are shown. It tracks your *current* position,
+  not the furthest you've ever read.
+- Images inlined as `data:` URIs or applied via CSS backgrounds are ignored.
+
+## Development
+
+```
+plugin/                     the plugin (copy/stage as glimpse.koplugin/)
+  main.lua                  KOReader wiring: menu, gesture action, scan cache,
+                            viewer subclass (dots, captions, hide, swipe-nav)
+  glimpse_scanner.lua       pure Lua, no KOReader deps: EPUB container/OPF/HTML
+                            parsing, image-header dimension sniffing (PNG,
+                            JPEG, GIF, WebP, BMP, SVG), filter heuristics
+builder/
+  check.sh                  syntax gate + fixture regen + unit tests; run it
+                            before calling any change done
+  make_fixture_epub.py      deterministic fixture EPUB (stdlib only) with
+                            trap cases (ornaments, dividers, commented-out
+                            markup, URL-encoded paths, SVG)
+  scanner_tests.lua         headless tests against the extracted fixture
+  smoke_userpatch.lua       userpatch that exercises the live plugin inside a
+                            running KOReader (see file header)
+  stage.sh                  checks + builds dist/glimpse.koplugin + zip
+```
+
+The scanner takes an injected `read_file(archive_path)` function; inside
+KOReader that is crengine's `getDocumentFileContent` (with a libarchive
+fallback), in tests it reads the extracted fixture. Image dimensions are
+sniffed from file headers; no image decoding happens during a scan, and a
+full decode only happens for the image currently on screen.
