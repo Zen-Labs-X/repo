@@ -12,6 +12,25 @@ import scrape_koplugins
 
 
 class PluginScraperTests(unittest.TestCase):
+    def test_koreader_plugin_topic_variants_are_discovered_and_eligible(self):
+        for topic in ("koreader-plugin", "koreader-plugins"):
+            with self.subTest(topic=topic):
+                repo = {
+                    "name": "example",
+                    "full_name": "owner/example",
+                    "topics": [topic],
+                }
+                self.assertTrue(scrape_koplugins.is_koplugin(repo))
+
+        self.assertIn(
+            f"topic:koreader-plugin stars:>={scrape_common.MIN_STARS} fork:true",
+            scrape_koplugins.PLUGIN_QUERIES,
+        )
+        self.assertIn(
+            f"topic:koreader-plugins stars:>={scrape_common.MIN_STARS} fork:true",
+            scrape_koplugins.PLUGIN_QUERIES,
+        )
+
     def test_zenpm_is_added_with_its_fixed_koplugin_id(self):
         repo = {
             "owner": {"login": "xZenLabs"},

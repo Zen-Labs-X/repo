@@ -39,8 +39,8 @@ from scrape_common import (
 PLUGIN_QUERIES = (
     f"topic:koplugin stars:>={MIN_STARS} fork:true",
     f"topic:koreader-plugin stars:>={MIN_STARS} fork:true",
+    f"topic:koreader-plugins stars:>={MIN_STARS} fork:true",
     f"koplugin in:name stars:>={MIN_STARS} fork:true",
-    f"koreader-plugin in:name stars:>={MIN_STARS} fork:true",
 )
 
 EXTRA_PLUGIN_REPOS = {
@@ -55,7 +55,11 @@ def is_koplugin(repo):
     topics = [t.lower() for t in repo.get("topics", [])]
     if name.endswith(".koplugin") or "koplugin" in name:
         return True
-    return "koplugin" in topics or "koreader-plugin" in topics
+    return (
+        "koplugin" in topics
+        or "koreader-plugin" in topics
+        or "koreader-plugins" in topics
+    )
 
 
 def is_eligible_koplugin(repo, exclude_forks):
