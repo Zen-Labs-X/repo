@@ -1,0 +1,23 @@
+# Quickmenu plugin for KOReader
+# https://github.com/jbreizh/quickmenu.koplugin
+# zenpm:auto-scraped
+id=quickmenu
+name=Quickmenu
+version=1.9-alpha
+description=Quick Menu for settings and actions.
+author=jbreizh
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/jbreizh/quickmenu.koplugin
+stars=15
+updated_at=2026-07-28T14:22:15Z
+published_at=2026-07-17T08:37:15Z
+readme_url=packages/koreader/quickmenu.koplugin/README.md
+readme_hash=ae4d4b92e08ade175937d7cb25c241b264e58ca6
+release_notes_url=packages/koreader/quickmenu.koplugin/RELEASE_NOTES.md
+release_notes_hash=05bb64cc44190665690fa4911700989b143717e8246eff836393b2e22b8a0d84
+releases=[{"tag_name":"1.9-alpha","assets":[{"name":"quickmenu.koplugin.zip","url":"https://github.com/jbreizh/quickmenu.koplugin/releases/download/1.9-alpha/quickmenu.koplugin.zip","size":171892,"digest":"sha256:44f7deacc7c80f98eb66d195063f0e35ae6a5322e0d97af8969c0e976a3ab33c"}],"name":"Quick Menu V1.9 ALPHA"},{"tag_name":"1.8","assets":[{"name":"quickmenu.koplugin.zip","url":"https://github.com/jbreizh/quickmenu.koplugin/releases/download/1.8/quickmenu.koplugin.zip","size":157485,"digest":"sha256:7edd49361ee2faafb2d24a0a311254804598139d0b0736043619a2d84c8abc57"}],"name":"Quick Menu V1.8"},{"tag_name":"1.7","assets":[{"name":"quickmenu.koplugin.zip","url":"https://github.com/jbreizh/quickmenu.koplugin/releases/download/1.7/quickmenu.koplugin.zip","size":128820,"digest":"sha256:c6986fff8578378025cd26274a94527a45a1a9b72e25bd0bbd1f7f6f5becfb7b"}],"name":"Quick Menu V1.7"},{"tag_name":"1.6","assets":[{"name":"quickmenu.koplugin.zip","url":"https://github.com/jbreizh/quickmenu.koplugin/releases/download/1.6/quickmenu.koplugin.zip","size":129440,"digest":"sha256:59171a0a82e828f39bb253666761d3c55ee508a5db64d2dc4cffc02614a30cfa"}],"name":"Quick Menu V1.6"},{"tag_name":"1.5","assets":[{"name":"quickmenu.koplugin.zip","url":"https://github.com/jbreizh/quickmenu.koplugin/releases/download/1.5/quickmenu.koplugin.zip","size":129767,"digest":"sha256:870810064ee72fa64330036f6f840e9a6e846d4b2e2d34068bfa4d1df31c5b4f"}],"name":"Quick Menu V1.5"},{"tag_name":"1.4","assets":[{"name":"quickmenu.koplugin.zip","url":"https://github.com/jbreizh/quickmenu.koplugin/releases/download/1.4/quickmenu.koplugin.zip","size":135487,"digest":"sha256:891e19b59183f9602560c081279f5e480d4dc03126f9220a5fe2b449a3b0490b"}],"name":"Quick Menu V1.4"},{"tag_name":"1.3","assets":[{"name":"quickmenu.koplugin.zip","url":"https://github.com/jbreizh/quickmenu.koplugin/releases/download/1.3/quickmenu.koplugin.zip","size":132424,"digest":"sha256:b59ff1e332b9b59c13af508b47d5bf4981e661fea5dbce401c5a668af256bb3c"}],"name":"Quick Menu V1.3"},{"tag_name":"1.2","assets":[{"name":"quickmenu.koplugin.zip","url":"https://github.com/jbreizh/quickmenu.koplugin/releases/download/1.2/quickmenu.koplugin.zip","size":39877,"digest":"sha256:d3f8b3fe0ff6e8812d561130282f11e06820e0c99a9fbdb57fe230f355b2c963"}],"name":"Quick Menu V1.2"},{"tag_name":"1.1","assets":[{"name":"quickmenu.koplugin.zip","url":"https://github.com/jbreizh/quickmenu.koplugin/releases/download/1.1/quickmenu.koplugin.zip","size":30017,"digest":"sha256:651e1441393adcdc6b3360093d7b232b7e0f6bc1fa47d220510f4f0d3c7d993f"}],"name":"Quick Menu V1.1"},{"tag_name":"1.0","assets":[{"name":"quickmenu.koplugin.zip","url":"https://github.com/jbreizh/quickmenu.koplugin/releases/download/1.0/quickmenu.koplugin.zip","size":25866,"digest":"sha256:67eeaddcdadb5952a01070fb75cb610da5fdae089dc4f2ff8ed90e23a4e90ce3"}],"name":"Quick Menu V1.0"}]
+source_type=release
+source_asset=quickmenu.koplugin.zip
+size=171892
