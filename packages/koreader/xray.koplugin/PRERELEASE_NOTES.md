@@ -1,4 +1,3 @@
-- Fix one bug with timeline 
-- Update logic to accommodate non-standard TOC formatting
+- Fix duplicate detection logic to prevent spoilers #92 
 
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.7.23...26.7.27-beta
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.7.27-beta...26.7.27-beta2

@@ -1,3 +1,3 @@
-- Fix for page turn buttons on the main tabs
+- fix list item overlap with pagination button on certain screen sizes
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.27-beta...26.7.27-beta2
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.27-beta2...26.7.27-beta3

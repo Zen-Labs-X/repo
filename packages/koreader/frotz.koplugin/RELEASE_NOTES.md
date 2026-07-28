@@ -1,0 +1,1 @@
+This release fixes the use of Bluetooth keyboard with Frotz.
