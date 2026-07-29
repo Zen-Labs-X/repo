@@ -1,4 +1,3 @@
-- Fix Installed tab number of item logic
-- Fix updater for plugins without version in _meta.lua
+- Pre-release version of the fonts tool
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.27-beta4...26.7.28-beta2
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.28-beta...26.7.29-beta1

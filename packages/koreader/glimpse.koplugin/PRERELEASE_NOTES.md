@@ -1,1 +1,1 @@
-Fix: tapping an image in the Gallery's Ignored pile no longer crashes KOReader — it's now a no-op. Long-pressing a Gallery thumbnail now opens a small menu next to it ('Ignore this image' in the Collection, 'Add back to Collection' in the Ignored pile) instead of moving the image immediately, so the action is deliberate and labelled.
+Gallery heading: halve the top margin and tuck the 'N images' subtitle closer under the title. ⋯ menu: draw the border ring over the content so the gray row dividers no longer overrun the black outline.
