@@ -10,8 +10,7 @@ This patch brings fluid page turn animations to devices that lack native hardwar
 
 * Smooth and faster page-turn animations
 * Reduces screen flickering during page turns
-* Customizable full refresh interval to control ghosting
-  *(Automatic refresh on chapter changes and image pages supported.)*
+* Customizable refresh interval 
 * Supports page-turn gestures in all directions
 * Improved experience in Night Mode
 * **New:** MTK device support (Kobo, Kindle 2022 and newer)
@@ -19,6 +18,7 @@ This patch brings fluid page turn animations to devices that lack native hardwar
 * **New:** Adjustable animation delay (in milliseconds) for both portrait and landscape orientations through
   **Settings (⚙) → Gesture Manager → Page Turn Animation Settings**, eliminating the need to edit Lua files manually
 * **New:** Customizable refresh mode with two options: **UI**, **Fast**
+* **New:** Mild Global Refresh option for an improved text-only reading experience.
 ---
 ## Installation
 
@@ -52,7 +52,24 @@ Applicable to Android versions of KOReader running on devices such as **BOOX, iR
 ## Supported Devices
 * **Fully tested:** Kobo devices, Kindle devices (including KV, KO, and KPW series), and most Linux-based e-ink devices running KOReader.
 * **Android:** Android devices are **currently not supported**, as the animation performance is not satisfactory on the Android platform.
-
+---
+## 菜单结构
+```
+Settings (⚙)
+├── Taps and gestures
+│   ├── Page turns
+│   │   └── ☑ Page turn animations
+│   └── Swipe Animation Settings
+│       ├── Swipe animation refresh mode
+│       │   ├── ○ UI refresh
+│       │   └── ○ Fast refresh 
+│       ├── Portrait animation frame delay: ms
+│       ├── Landscape animation frame delay: ms
+│       └── ☑ Mild global refresh
+└── Screen
+    └── E-ink settings
+        └── Full refresh rate
+```
 ---
 
 ## FAQ
