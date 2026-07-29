@@ -11,14 +11,14 @@ This patch brings fluid page turn animations to devices that lack native hardwar
 * Smooth and faster page-turn animations
 * Reduces screen flickering during page turns
 * Customizable full refresh interval to control ghosting
-  *(Automatic refresh on chapter changes and image pages is currently not supported.)*
+  *(Automatic refresh on chapter changes and image pages supported.)*
 * Supports page-turn gestures in all directions
 * Improved experience in Night Mode
 * **New:** MTK device support (Kobo, Kindle 2022 and newer)
 * **New:** Page-turn animation support for fixed-layout formats such as PDF, DjVu, and CBZ
 * **New:** Adjustable animation delay (in milliseconds) for both portrait and landscape orientations through
   **Settings (⚙) → Gesture Manager → Page Turn Animation Settings**, eliminating the need to edit Lua files manually
-* **New:** Customizable refresh mode with three options: **UI**, **Partial**, and **Fast**
+* **New:** Customizable refresh mode with two options: **UI**, **Fast**
 ---
 ## Installation
 
@@ -68,7 +68,7 @@ Common causes include:
 3. The installation was not performed correctly. Restore your backup and repeat the installation steps carefully.
 
 
-### Q: The "Page Turn Animation" option appears, but nothing happens.
+### Q: The "Page Turn Animation" option doesn't appear/The "Page Turn Animation" option appears, but nothing happens.
 
 Update KOReader to the latest version and reinstall the patch.
 
