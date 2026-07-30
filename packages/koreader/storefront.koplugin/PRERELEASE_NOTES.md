@@ -1,4 +1,3 @@
-- Fix a bug with the plugin/patch details page
-- refactor codebase
+- Fix button text color in dark mark #55 
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.29-beta1...26.7.29-beta2
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.29.4...26.7.30-beta
