@@ -1,3 +1,3 @@
-- Fix button text color in dark mark #55 
+- add wiki viewer to plugin details page for repos with a wiki
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.29.4...26.7.30-beta
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.30-beta4...26.7.30-beta5
