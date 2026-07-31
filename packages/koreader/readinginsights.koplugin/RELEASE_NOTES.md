@@ -1,3 +1,3 @@
 **Changed**
 
-Reworked the heatmap popup into a single aligned panel: one shared period header with paging arrows.
+Side years in the insights year pager now use the smaller label style, so only the selected year stays bold.
