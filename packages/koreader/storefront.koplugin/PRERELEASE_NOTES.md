@@ -1,3 +1,3 @@
-Add memory safeguards around images in readme and wiki rendering
+More readme/wiki loading safeguards for low memory devices
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.30-beta7...26.7.30-beta8
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.30-beta8...26.7.30-beta9

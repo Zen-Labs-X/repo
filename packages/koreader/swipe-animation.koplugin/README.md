@@ -1,114 +1,90 @@
-[简体中文](./README_zh.md) | **English**
+**简体中文** | [English](./README_en.md)
 
 # Swipe_Animation
 
-A software page-turn animation patch for KOReader that provides a smooth "wipe / erase and reveal" effect.
+KOReader 软件翻页动画补丁（擦除渐显效果）
 
-This patch brings fluid page turn animations to devices that lack native hardware support (or as an enhanced experience on supported devices).
+为 KOReader 提供流畅的「擦除渐显」（wipe）翻页动画效果，特别适合没有硬件翻页动画支持的设备。
 
-## Features
+## 功能特点
 
-* Smooth and faster page-turn animations
-* Reduces screen flickering during page turns
-* Customizable refresh interval 
-* Supports page-turn gestures in all directions
-* Improved experience in Night Mode
-* **New:** MTK device support (Kobo, Kindle 2022 and newer)
-* **New:** Page-turn animation support for fixed-layout formats such as PDF, DjVu, and CBZ
-* **New:** Adjustable animation delay (in milliseconds) for both portrait and landscape orientations through
-  **Settings (⚙) → Gesture Manager → Page Turn Animation Settings**, eliminating the need to edit Lua files manually
-* **New:** Customizable refresh mode with two options: **UI**, **Fast**
-* **New:** Mild Global Refresh option for an improved text-only reading experience.
----
-## Installation
+- 翻页动画更流畅、速度更快
+- 减少翻页过程中的屏幕抖动
+- 可自定义刷新速率
+- 支持全方向滑动翻页
+- 优化夜间模式体验
+- **新增**：MTK 设备支持（Kobo、Kindle 2022 及以上）
+- **新增**：支持 PDF、DjVu、CBZ 等固定排版格式的翻页动画
+- **新增**：支持自定义横/竖屏的翻页动画延迟时间（毫秒）（可通过 **设置（齿轮图标） -> 动作手势 -> 翻页动画设置** 进行微调，免去手动修改 lua 文件的麻烦）
+- **新增**：支持自定义刷新模式，UI / Fast 两种模式可选
+- **新增**：轻度全局刷新选项，优化纯文字阅读体验
 
-> **Important:** Back up your `koreader` directory before installing.
+## 安装方法
 
-### Kindle / Kobo (Linux Version)
-1. Connect your device to your computer via USB.
-2. **Back up** your existing `koreader` folder.
-3. Copy the `ffi`, `frontend`, and `patches` folders from the extracted package into your device's `koreader` directory, and **merge/overwrite** the existing folders.
-   **Do not delete the original folders.**
-   * Typical path: `D:\.adds\koreader\`
-   * **Note:** If your device already supports native hardware page-turn animations and you only want to enable native animations for PDF files, simply copy the `patches` folder into the `koreader` directory instead of installing the full patch.
-4. Safely eject the device and restart KOReader.
-5. Enable the animation:
-   * Open any book.
-   * Go to **Settings (⚙) → Gesture Manager → Page Turning**.
-   * Enable **Page Turn Animation**.
-6. *(Optional)* Adjust the animation delay:
-   * Open **Settings (⚙) → Gesture Manager → Page Turn Animation Settings**.
-   * Configure separate animation delays (ms) for portrait and landscape mode.
+**重要提醒**：安装前请务必备份 `koreader` 文件夹。
 
-### Android E-Ink Devices
-Applicable to Android versions of KOReader running on devices such as **BOOX, iReader, Hanvon, Xiaomi**, and other Android-based e-readers.
-1. Connect your Android device.
-2. From the extracted package, open the **Android Version** (`android_version`) folder.
-3. Copy the `patches` folder into your device's `koreader` directory and merge it with the existing files.
-   * If the `patches` folder does not exist, it will be created automatically.
-4. Restart KOReader.
----
+### Kindle / Kobo 设备（Linux版）安装步骤
 
-## Supported Devices
-* **Fully tested:** Kobo devices, Kindle devices (including KV, KO, and KPW series), and most Linux-based e-ink devices running KOReader.
-* **Android:** Android devices are **currently not supported**, as the animation performance is not satisfactory on the Android platform.
----
+1. 用 USB 线连接设备到电脑。
+2. **先备份** 原有的 `koreader` 文件夹。
+3. 将您下载解压后的文件夹根目录中的 `ffi`、`frontend` 以及 `patches` 文件夹，**复制** 并**覆盖**到设备上的 `koreader` 目录中（**注意**：请勿删除原文件夹）。
+   - 常见路径：`D:\.adds\koreader\`
+   - **特别说明**：如果您的设备原本就支持原生翻页动画，且您不希望使用本补丁的软件擦除动画，而仅希望为 PDF 文件开启设备原生的硬件级翻页动画，您可以选择**只将 `patches` 文件夹**复制到设备上的 `koreader/` 目录下即可。
+4. 安全弹出设备后重启 KOReader。
+5. 开启动画：
+   - 打开任意书籍 -> 点击顶部菜单 -> **设置（齿轮图标）** -> **动作手势** -> **翻页**
+   - 勾选 **「翻页动画」**
+6. 调整延迟（可选）：
+   - 进入 **设置（齿轮图标） -> 动作手势 -> 翻页动画设置**，可以直接设置横竖屏的翻页延时（ms）。
+
+### 安卓墨水屏设备（Android版）安装步骤
+
+适用于文石 Boox、掌阅、汉王、小米等运行安卓版 KOReader 的设备：
+1. 连接您的安卓设备。
+2. 将您下载解压后的 **`安卓版`（或 `android_version`）文件夹里的 `patches` 文件夹**，直接**复制并覆盖**到您设备上的 `koreader` 目录下（如果设备上原先没有 `patches` 文件夹，会自动创建；如果有，选择覆盖合并即可）。
+3. 重启 KOReader 即可生效。
+
+## 支持设备
+
+- **已充分测试**：Kobo 系列，Kindle 系列（包括 KV、KO 和 KPW 系列）及大多数运行 KOReader 的 Linux 墨水屏设备
+- **安卓设备支持**：因在安卓设备上此插件表现不佳，暂不支持安卓设备
+
 ## 菜单结构
 ```
-Settings (⚙)
-├── Taps and gestures
-│   ├── Page turns
-│   │   └── ☑ Page turn animations
-│   └── Swipe Animation Settings
-│       ├── Swipe animation refresh mode
-│       │   ├── ○ UI refresh
-│       │   └── ○ Fast refresh 
-│       ├── Portrait animation frame delay: ms
-│       ├── Landscape animation frame delay: ms
-│       └── ☑ Mild global refresh
-└── Screen
-    └── E-ink settings
-        └── Full refresh rate
+设置（⚙）
+├── 手势
+│   ├── 翻页
+│   │   └── ☑ 翻页动画
+│   └── 翻页动画设置
+│       ├── 翻页动画刷新模式
+│       │   ├── ○ UI刷新
+│       │   └── ○ Fast刷新
+│       ├── 竖屏动画帧延迟：毫秒 
+│       ├── 横屏动画帧延迟：毫秒
+│       └── ☑ 轻度全局刷新
+└── 屏幕
+    └── 墨水屏设置
+        └── 完全刷新速率
 ```
----
+## 常见问题
+**Q：KOreader安装补丁后闪退怎么办？** 
+A：请先使用备份恢复原始文件。常见原因包括：
+1. *KOReader 版本过旧。* 请先将 KOReader 更新至最新版本，然后重新安装本补丁。
+2. *使用 macOS 复制文件。* 请先恢复原始文件，再手动删除设备中对应的原文件，然后重新复制补丁中的新文件。
+3. *安装步骤有误。* 请恢复备份后，按照安装说明重新安装本补丁。
 
-## FAQ
+**Q：没有出现“翻页动画”选项？/出现“翻页动画”选项但没有效果？**  
+A：请先更新 KOReader 到最新版本，再重新安装本补丁。
 
-### Q: KOReader crashes after installing the patch.
+**Q：每翻一页都黑白闪烁？**  
+A：在 **设置 -> 屏幕 -> 墨水屏设置 -> 完全刷新速率** 中调整数值。
 
-Restore the original files from your backup.
+## 版本与贡献
 
-Common causes include:
+- 原作者：`xhs:5699990012`
+- nuku 改进版
+- v3.x 版本进一步优化与 MTK 支持：`Echoes`、`小红薯6809667F`、`斯普特尼克的漫游`
 
-1. Your KOReader version is outdated. Update KOReader to the latest version and reinstall the patch.
-2. You are using macOS to copy the files. Restore the original files first, delete the corresponding original files manually, and then copy the patched files again.
-3. The installation was not performed correctly. Restore your backup and repeat the installation steps carefully.
+## 许可证
 
-
-### Q: The "Page Turn Animation" option doesn't appear/The "Page Turn Animation" option appears, but nothing happens.
-
-Update KOReader to the latest version and reinstall the patch.
-
-
-### Q: The screen flashes black and white on every page turn.
-
-Adjust the **Full Refresh Interval** under:
-
-**Settings → Screen → E-Ink Settings → Full Refresh Interval**
-
-
-## Credits
-
-* Original author: `xhs:5699990012`
-* Improved version: **nuku**
-* v3.x optimization and MTK support:
-
-  * **Echoes**
-  * **小红薯6809667F**
-  * **斯普特尼克的漫游**
-
----
-
-## License
-
-This project is licensed under **GPLv3**, following the same license as KOReader.
+本项目遵循 KOReader 相同许可证（GPLv3）。
