@@ -1,12 +1,12 @@
 ## 新功能与改进
-- 主模块重构和拆分，统一日志模块，增加http错误打印
-- 增加ci流程卡点、自动化发布
-- 修复想法弹窗在老版本koreader单页只显示一条内容问题
+- 支持自动预下载下一章，支持批量勾选多章节下载
+- 支持注释显示
+- 支持手势快捷菜单
 
-感谢 @shichen35 的贡献🎉🎉🎉
+感谢 @jqs7  的贡献🎉🎉🎉
 
 ## What's Changed
-* fix(thought): resolve TextViewer text widget across stable and develo… by @shichen35 in https://github.com/finlater/weread.koplugin/pull/76
+* feat: support multi-chapter downloads, chapter preloading, and WeRead quick menu by @finlater in https://github.com/finlater/weread.koplugin/pull/84
 
 
-**Full Changelog**: https://github.com/finlater/weread.koplugin/compare/v0.5.0...v0.5.1
+**Full Changelog**: https://github.com/finlater/weread.koplugin/compare/v0.5.1...v0.6.0

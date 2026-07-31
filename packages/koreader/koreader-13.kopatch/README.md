@@ -96,5 +96,11 @@ A patch that remembers the furthest page you've actually read in a book, and off
 
 ### Release Notes
 
-**v1.0.0 (Current)**
+**v1.1.0 (Current)**
+- Added a standalone "Set current page as reading location" system action and menuitem
+- Added "Percentage mode" to show percentage instead of page number
+- Subtle shadow below the button
+- New setting for the button border radius
+
+**v1.0.0**
 - Initial release

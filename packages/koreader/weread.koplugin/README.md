@@ -13,25 +13,28 @@
 
 ## 功能
 
-| 主菜单 | 微信读书书架 | 公众号 |
+| 主菜单 | 书架 | 公众号 |
 |:---:|:---:|:---:|
 | ![主菜单](screenshots/main_manu.png) | ![微信读书书架](screenshots/bookshelf.png) | ![公众号](screenshots/bookshelf_wp.png) |
 
-| 搜索书籍 | 书籍详情 | 下载书籍 |
+| 阅读时间上报 | 阅读统计 | 阅读进度同步 |
 |:---:|:---:|:---:|
-| ![搜索书籍](screenshots/book_search.png) | ![书籍详情](screenshots/book_detail.png) | ![下载书籍](screenshots/download.png) |
+| ![阅读时间上报](screenshots/read_report.png) | ![阅读统计](screenshots/read_stats.png) | ![阅读进度同步](screenshots/read_progress.png) |
 
-| 书评 | 划线与想法 | 阅读进度同步 |
+| 多选章节下载 | 章节预下载 | 下载全书 |
 |:---:|:---:|:---:|
-| ![书评](screenshots/book_review.png) | ![划线与想法](screenshots/thought.png) | ![阅读进度同步](screenshots/read_progress.png) |
+| ![多选章节下载](screenshots/download_multi_chapter.png) | ![章节预下载](screenshots/pre_download_next_chapter.png) | ![下载全书](screenshots/download.png) |
 
-| 阅读时间上报 | 阅读统计 | 设置 |
+| 书籍详情 | 书评 | 划线和想法 |
 |:---:|:---:|:---:|
-| ![阅读时间上报](screenshots/read_report.png) | ![阅读统计](screenshots/read_stats.png) | ![设置](screenshots/setting.png) |
+| ![书籍详情](screenshots/book_detail.png) | ![书评](screenshots/book_review.png) | ![划线和想法](screenshots/thought.png) |
+
+| 搜索书籍 | 快捷菜单 | 设置 |
+|:---:|:---:|:---:|
+| ![搜索书籍](screenshots/book_search.png) | ![快捷菜单](screenshots/quick_menu.png) | ![设置](screenshots/setting.png) |
 
 ## TODO
 
-- [ ] 按需缓存章节, 支持一次性缓存多个章节
 - [ ] 书签/笔记展示
 - [ ] 更丰富的书籍详情（热门划线等）
 - [ ] 书架页面支持搜索功能（包括阅读时间上报手动选择目标书籍时支持搜索）
@@ -74,7 +77,7 @@ koreader/plugins/weread.koplugin/
 ├── 立即同步进度       （阅读微信读书缓存书籍时显示）
 ├── 书籍详情           （阅读微信读书缓存书籍时显示）
 ├── 显示划线和想法     （阅读书籍时显示，开关）
-├── 书架               书架浏览（书籍 + 公众号分类；章节列表可手动刷新）
+├── 书架               书架浏览（书籍 + 公众号分类；章节列表可刷新、多选下载）
 ├── 搜索               搜索微信读书
 ├── 阅读时间上报        后台上报阅读时长
 │   ├── 启用阅读时间上报
@@ -92,10 +95,13 @@ koreader/plugins/weread.koplugin/
 │   ├── 进度管理
 │   │   ├── 打开时拉取进度（默认关闭）
 │   │   └── 关闭时上传进度（默认关闭）
-│   ├── 下载内容
+│   ├── 下载设置
 │   │   ├── 书籍图片（默认开启）
 │   │   ├── 公众号文章图片（默认关闭）
-│   │   └── 划线和想法（默认关闭）
+│   │   └── 章节预下载
+│   │       ├── 自动预下载下一章（默认关闭，开启时会确认网络卡顿风险）
+│   │       ├── 预下载划线和想法（默认关闭，总开关关闭时不可操作）
+│   │       └── 显示预下载提示（默认开启，总开关关闭时不可操作）
 │   ├── 想法
 │   │   ├── 划线边缘防误触（默认开启）
 │   │   └── 边缘区域：20%（可调 10%–40%）

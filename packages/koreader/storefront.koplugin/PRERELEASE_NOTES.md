@@ -1,3 +1,3 @@
-More readme/wiki loading safeguards for low memory devices
+- Update more translations
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.30-beta8...26.7.30-beta9
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.7.31-beta2...26.7.31-beta3
