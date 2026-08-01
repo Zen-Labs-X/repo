@@ -1,2 +1,2 @@
-### [0.1.6](https://github.com/naleo/audiobookshelf.koplugin/compare/v0.1.5...v0.1.6) (2026-05-01)
+### [0.1.7](https://github.com/naleo/audiobookshelf.koplugin/compare/v0.1.6...v0.1.7) (2026-08-01)
 
