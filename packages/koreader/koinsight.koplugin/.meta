@@ -1,21 +1,21 @@
 # Koinsight plugin for KOReader
-# https://github.com/GeorgeSG/KoInsight
+# https://github.com/Ko-Insight/KoInsight
 # zenpm:auto-scraped
 id=koinsight
 name=Koinsight
-version=0.2.2
+version=0.2.3
 description=📚 KoInsight brings your KoReader reading stats to life with a clean, web-based dashboard.
 author=GeorgeSG
 category=productivity
 platforms=koreader
 dependencies=
-source=https://github.com/GeorgeSG/KoInsight
+source=https://github.com/Ko-Insight/KoInsight
 stars=583
-updated_at=2026-08-01T13:39:19Z
-published_at=2026-01-11T20:21:32Z
+updated_at=2026-08-01T19:17:01Z
+published_at=2026-08-01T15:20:34Z
 readme_url=packages/koreader/koinsight.koplugin/README.md
-readme_hash=9a2bb9154ea26b6233f3094f47153fc7998f78e6
+readme_hash=08736475b29d5c6ca4321e851da45e6346e49bd5
 release_notes_url=packages/koreader/koinsight.koplugin/RELEASE_NOTES.md
-release_notes_hash=d6f523bc458f536453d881c09531ea68f7945e60ffc03d5f0984b118734e82a7
+release_notes_hash=741d32dba4e010b66f4e4bb118da82bc38d641aedffa2f39e6dd90e983c61ea5
 source_type=source
-source_url=https://codeload.github.com/GeorgeSG/KoInsight/zip/refs/heads/master
+source_url=https://codeload.github.com/Ko-Insight/KoInsight/zip/refs/heads/master

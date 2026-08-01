@@ -1,2 +1,3 @@
-- Fix: colour e-ink screens (Kaleido, PocketBook Color, etc.) showed washed-out shelf covers until an unrelated screen refresh happened to trigger the colour waveform; covers now redraw in full colour straight away (#289)
-- Colour panel dithering: a new toggle in Performance tweaks (colour screens only) if you'd rather turn this off
+- Fix: a background timer meant to catch newly added books could keep the device awake while you were reading
+- Fix: some Kobo virtual-library book covers weren't showing, falling back to text
+- Fix: joining multiple authors ("and", "et al.") now translates correctly instead of always showing in English
