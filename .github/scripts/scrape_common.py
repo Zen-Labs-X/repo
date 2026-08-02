@@ -221,7 +221,10 @@ def installable_releases(releases):
             assets.append(cached_asset)
 
         if not assets:
-            continue
+            source_url = str(release.get("zipball_url") or "").strip()
+            if not source_url:
+                continue
+            assets.append({"name": "source-code.zip", "url": source_url})
         cached_release = {"tag_name": tag_name, "assets": assets}
         name = str(release.get("name") or "").replace("\r", " ").replace("\n", " ").strip()
         if name:

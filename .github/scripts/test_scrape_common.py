@@ -226,19 +226,39 @@ class CachedPackageMetadataTests(unittest.TestCase):
                     "browser_download_url": "https://example.com/draft.zip",
                 }],
             },
+            {
+                "tag_name": "v1.0.0",
+                "name": "Source release",
+                "assets": [],
+                "zipball_url": "https://api.example.com/repos/owner/repo/zipball/v1.0.0",
+            },
+            {
+                "tag_name": "v0.9.0",
+                "assets": [],
+            },
         ]
 
-        self.assertEqual(scrape_common.installable_releases(releases), [{
-            "tag_name": "v2.0.0-beta.1",
-            "name": "Beta release",
-            "prerelease": True,
-            "assets": [{
-                "name": "plugin.zip",
-                "url": "https://example.com/plugin.zip",
-                "size": 123,
-                "digest": "sha256:abc",
-            }],
-        }])
+        self.assertEqual(scrape_common.installable_releases(releases), [
+            {
+                "tag_name": "v2.0.0-beta.1",
+                "name": "Beta release",
+                "prerelease": True,
+                "assets": [{
+                    "name": "plugin.zip",
+                    "url": "https://example.com/plugin.zip",
+                    "size": 123,
+                    "digest": "sha256:abc",
+                }],
+            },
+            {
+                "tag_name": "v1.0.0",
+                "name": "Source release",
+                "assets": [{
+                    "name": "source-code.zip",
+                    "url": "https://api.example.com/repos/owner/repo/zipball/v1.0.0",
+                }],
+            },
+        ])
 
     def test_build_meta_includes_cached_documentation_fields(self):
         repo = {

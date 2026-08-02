@@ -125,7 +125,7 @@ Each package in `manifest.json` may include:
 | `prerelease_published_at` | string | Publication timestamp of the package's newest prerelease, in UTC ISO 8601 format. |
 | `prerelease_notes_url` | string | Path to the cached notes for the package's newest prerelease. |
 | `prerelease_notes_hash` | string | SHA-256 hash of the cached prerelease notes; changes when their source content changes. |
-| `versions_url` | string | Path to the package's generated `versions.json`. The file contains up to 100 cached, non-draft GitHub releases with ZIP assets. |
+| `versions_url` | string | Path to the package's generated `versions.json`. The file contains up to 100 cached, non-draft GitHub releases with uploaded ZIP assets or source-code ZIP fallbacks. |
 | `conflicts` | array of strings | Package IDs that must not be installed together. |
 | `incompatible_platforms` | array of strings | Platforms on which a package cannot be installed. |
 
@@ -135,7 +135,8 @@ existing package-releases endpoint.
 
 Install and uninstall behavior is handled by the client unless a platform-specific package declares script URLs.
 
-These fields are optional. Omit them if no assets are available.
+These fields are optional. Release history may be empty when no downloadable
+archive is available.
 
 ## Hosting
 
@@ -180,7 +181,8 @@ to 100 installable releases are cached in the repository metadata.
 and keeps only its `versions_url` in the catalog. Documentation content hashes
 are included in the manifest, allowing clients to refresh only when the
 corresponding content changes. Cached releases let clients populate their
-version pickers without calling the GitHub API.
+version pickers without calling the GitHub API. When a release has no uploaded
+ZIP asset, its automatically generated GitHub source-code ZIP is cached instead.
 
 Repositories listed in `.github/scripts/scrape_blacklist.json` are excluded from
 automatic discovery and refreshes. The list is empty by default.
