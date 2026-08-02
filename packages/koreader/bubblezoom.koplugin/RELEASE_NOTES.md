@@ -1,1 +1,1 @@
-- Added [offlinetranslator.koplugin](https://github.com/anezih/offlinetranslator.koplugin) integration.
+- Updated for the KOReader 2026.07 release.

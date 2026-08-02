@@ -1,0 +1,23 @@
+# Kotranslate plugin for KOReader
+# https://github.com/omer-faruq/kotranslate.koplugin
+# zenpm:auto-scraped
+id=kotranslate
+name=Kotranslate
+version=1.0.1
+description=Multi-provider translation plugin for KOReader with 9 services: offline (companion app), DeepL, Google, Microsoft, Yandex, Lingva, MyMemory, LibreTranslate, and KOReader default.
+author=omer-faruq
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/omer-faruq/kotranslate.koplugin
+stars=15
+updated_at=2026-08-02T13:39:43Z
+published_at=2026-03-27T18:02:17Z
+readme_url=packages/koreader/kotranslate.koplugin/README.md
+readme_hash=a9115ebf7b800cc4ba717425aff955cc29fe9834
+release_notes_url=packages/koreader/kotranslate.koplugin/RELEASE_NOTES.md
+release_notes_hash=60516fd3b10a4de49ba347c1e9b6c7dbbe519914cd09a63c7768faadfb69d41c
+releases=[{"tag_name":"v1.0.1","assets":[{"name":"kotranslate.koplugin.zip","url":"https://github.com/omer-faruq/kotranslate.koplugin/releases/download/v1.0.1/kotranslate.koplugin.zip","size":34139,"digest":"sha256:ff8525e522aec922b7d94f78e1d290daa289880a4409b2a298831ac3e6fbdb7f"}],"name":"v1.0.1"},{"tag_name":"v1.0.0","assets":[{"name":"kotranslate.koplugin.zip","url":"https://github.com/omer-faruq/kotranslate.koplugin/releases/download/v1.0.0/kotranslate.koplugin.zip","size":33223,"digest":"sha256:4caeca5675931ae1410ae26bdb793742c809b22ee8ef2f71c289ac773d13812c"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=kotranslate.koplugin.zip
+size=34139
