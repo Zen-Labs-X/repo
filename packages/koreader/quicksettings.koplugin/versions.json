@@ -1,3 +1,3 @@
 {
-  "releases": []
+  "releases": [{"tag_name":"v1.3.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/renandeivison/quicksettings/zipball/v1.3.0"}],"name":"Version 1.3"},{"tag_name":"v1.2.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/renandeivison/quicksettings/zipball/v1.2.0"}],"name":"Version 1.2.0 - New Focus Mode"},{"tag_name":"v1.1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/renandeivison/quicksettings/zipball/v1.1.0"}],"name":"Version 1.1.0 - New Buttons added and minor patch fixes"},{"tag_name":"v1.0.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/renandeivison/quicksettings/zipball/v1.0.0"}],"name":"Initial Public Release"}]
 }
