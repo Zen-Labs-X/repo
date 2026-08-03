@@ -1,3 +1,7 @@
-**Changed**
+Changed
 
-Side years in the insights year pager now use the smaller label style, so only the selected year stays bold.
+- Refresh achievements only when they're actually shown
+
+Fixed
+
+- Separator was missing between the Reading goal and Achievements
