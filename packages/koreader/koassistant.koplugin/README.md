@@ -209,6 +209,12 @@ return {
 
 > **Note:** GUI-entered keys take priority over file-based keys. The API Keys menu shows `[set]` for GUI keys and `(file)` for keys from apikeys.lua. Provider pickers only list providers that have a key configured (plus local/no-key providers like Ollama), so the menus stay short.
 
+**Option C: OpenAI Subscription (device login)**
+
+If your ChatGPT plan includes Codex access, go to **Tools → KOAssistant → API Keys → OpenAI Subscription** and tap **Connect**. KOAssistant displays an OpenAI verification URL and one-time code; it never tries to open a browser on the e-reader. Open the URL on another device, enter the code, then return to KOReader and tap **Check authorization**. This is separate from the OpenAI API-key provider and does not use API credits.
+
+KOAssistant stores the OAuth access/refresh tokens in its settings and never displays or logs them. They are excluded from ordinary backups; enabling **Include API keys** includes them, and **Reset API Keys** disconnects the subscription. Subscription access depends on OpenAI's Codex backend and eligible ChatGPT account entitlements, so available models and service behavior may change.
+
 See [Supported Providers](#supported-providers--settings) for full list with links to get API keys.
 
 > **Free Options Available:** Don't want to pay? Groq, Gemini, and Ollama offer free tiers. See [Free Tier Providers](#free-tier-providers).
