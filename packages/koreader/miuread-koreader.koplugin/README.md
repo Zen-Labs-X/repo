@@ -1,26 +1,20 @@
 # 觅阅 · 微信读书助手
 
-KOReader 的微信读书插件。
+KOReader 的微信读书插件，支持 Kindle、Kobo 与 Android 等 KOReader 设备。
 
-## 发布 3.0.1 正式版
+## 当前版本
 
-1. 将本仓库包中的全部文件上传或覆盖到仓库 `main` 分支。
-2. 打开 GitHub 仓库的 **Actions** 页面。
-3. 选择 **Release full package**。
-4. 点击 **Run workflow**，输入 `v3.0.1`。
+当前源码为 `4.0.0` 正式版，应提交到 `main` 分支。
 
-workflow 会自动完成：
+详细变更见 `CHANGELOG-4.0.0.txt`。
 
-- 检查 `_meta.lua`、`config.lua` 与发布标签的版本号是否一致；
-- 读取 `CHANGELOG-3.0.1.txt` 作为更新说明；
-- 生成 `miuread-v3.0.1-full.zip`；
-- 创建或更新 GitHub Release；
-- 校验公开下载地址与安装包 SHA-256；
-- 将新的 `update.json` 写入 `main` 分支，供插件在线更新。
+## 分支与发布
 
-## 仓库结构
+- `main`：正式版源码，使用 `.github/workflows/release.yml` 发布并更新 `update.json`。
+- `beta`：内测版源码，使用 `.github/workflows/release-beta.yml` 发布并更新 `update-beta.json`。
 
-- `miuread.koplugin/`：插件源码；
-- `.github/workflows/release.yml`：正式版发布；
-- `.github/workflows/release-beta.yml`：内测版发布；
-- `CHANGELOG-3.0.1.txt`：3.0.1 更新说明。
+两个 workflow 都保留在默认分支，GitHub Actions 才会同时显示正式版与内测版入口。
+
+## 安装
+
+将完整安装包中的 `miuread.koplugin` 文件夹放入 KOReader 的 `plugins` 目录，然后完整重启 KOReader。
