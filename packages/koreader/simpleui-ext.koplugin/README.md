@@ -34,7 +34,7 @@ Displays the most recently opened book as a full-width hero card, mirroring the 
 │  │  Art     │  A young man grows up hearing legends   │
 │  │          │  about himself…                         │
 │  │          │                                         │
-│  └──────────┘  73 / 272  [████████░░░]  4h 12m left  │
+│  └──────────┘  73 / 272  [████████░░░]  4h 12m left   │
 └───────────────────────────────────────────────────────┘
 ```
 
@@ -173,7 +173,7 @@ Enhanced version of SimpleUI's built-in Currently Reading module with additional
 │ 73% • 199 pages • 2h 15m                    │
 │ ████████████░░░░░                           │
 │ 5h 30m to go                                │
-│ 45m/day • 0.8 pg/min • 5.2%/day            │
+│ 45m/day • 0.8 pg/min • 5.2%/day             │
 └─────────────────────────────────────────────┘
 ```
 
@@ -214,7 +214,7 @@ A completely redesigned, highly detailed, and fully dynamic reading statistics d
 ┌─────────────────────────────────────────────┐
 │ ┌──────┐  The Name of the Wind              │
 │ │      │  Patrick Rothfuss                  │
-│ │Cover │                                     │
+│ │Cover │                                    │
 │ │      │  ┌─────────┬─────────┬─────────┐   │
 │ └──────┘  │THIS BOOK│  SPEED  │ EXTRA 1 │   │
 │           │ 2h left │ 0.8pg/m │ 21 days │   │
@@ -265,7 +265,7 @@ A completely redesigned, highly detailed, and fully dynamic reading statistics d
 In addition to new modules, this plugin applies transparent patches to SimpleUI's built-in modules to add missing functionality.
 
 <details>
-<summary><b>Recent Books — Extra Options</b> — Multi-row layout, row spacing, and Exclude Paths for the built-in Recent Books module</summary>
+<summary><b>Recent Books — Extra Options</b> — Multi-row layout, row spacing, Exclude Paths, and Ignore First Book for the built-in Recent Books module</summary>
 
 ### Recent Books — Extra Options
 
@@ -275,6 +275,7 @@ Adds extra display options to SimpleUI's built-in **Recent Books** module withou
 - **Rows** — Show 1-4 rows of up to 5 books each (up to 20 books total), instead of the fixed single row
 - **Row Spacing** — Adjustable vertical spacing between rows (0-300%); only shown when Rows > 1
 - **Exclude Paths from Recent** — Comma-separated path fragments; books whose path contains any fragment are skipped (identical to the filter on Cover Deck, Hero Currently Reading, etc.)
+- **Ignore First Book** — When enabled, the very first entry of ReadHistory (typically the same book as Currently Reading, or the most recently opened book) is skipped, so the Recent Books module's data starts from the second book. Avoids redundant visual emphasis on a book the user is likely already actively reading.
 
 **Settings (via Arrange Modules → Recent Books):**
 
@@ -283,6 +284,7 @@ Adds extra display options to SimpleUI's built-in **Recent Books** module withou
 | Rows | Number of rows of recent books to display (1-4, default: 1) |
 | Row Spacing | Vertical spacing between rows (0-300%, default: 100%); only active when Rows > 1 |
 | Exclude Paths from Recent | Comma-separated path fragments; books whose path contains any fragment are skipped (e.g. `/mnt/onboard/rss, instapaper, cache`) |
+| Ignore First Book | When on, the recent books list starts from the second most recent book (default: off) |
 
 **Note:** When **Show Frame** or **Solid Background** is enabled on the Recent Books module, each row is rendered as its own bordered/background card rather than a single unified box. This patch is disabled by default (opt-in). Enable it via **Tools → SimpleUI Extra → Patches**.
 
@@ -585,7 +587,7 @@ This improves startup performance by preventing the module from loading at all.
 
 **Available patches:**
 
-- **Recent Books — Extra Options** — Multi-row layout, row spacing, and Exclude Paths for the built-in Recent Books module
+- **Recent Books — Extra Options** — Multi-row layout, row spacing, Exclude Paths, and Ignore First Book for the built-in Recent Books module
 - **Cover Deck — Exclude Paths from Recent** — Filter books from Cover Deck's Recent Books source
 - **Cover Deck — Description Strip** — Show book descriptions below/above the carousel
 - **Module Copies** — Place the same module on multiple homescreen pages

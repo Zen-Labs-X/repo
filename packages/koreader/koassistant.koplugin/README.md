@@ -2,7 +2,8 @@
 
 [![GitHub Release](https://img.shields.io/github/v/release/zeeyado/koassistant.koplugin)](https://github.com/zeeyado/koassistant.koplugin/releases/latest)
 [![License: GPL-3.0](https://img.shields.io/github/license/zeeyado/koassistant.koplugin)](LICENSE)
-[![Translation Status](https://hosted.weblate.org/widgets/koassistant/-/svg-badge.svg)](https://hosted.weblate.org/engage/koassistant/)
+[![AI-translated](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhosted.weblate.org%2Fapi%2Fprojects%2Fkoassistant%2Fstatistics%2F&query=%24.fuzzy_percent&suffix=%25&label=AI-translated&color=8ab4f8&cacheSeconds=3600)](https://hosted.weblate.org/engage/koassistant/)
+[![Human-reviewed](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhosted.weblate.org%2Fapi%2Fprojects%2Fkoassistant%2Fstatistics%2F&query=%24.translated_percent&suffix=%25&label=human-reviewed&color=brightgreen&cacheSeconds=3600)](https://hosted.weblate.org/engage/koassistant/)
 
 **Powerful, customizable AI assistant for KOReader.**
 
@@ -31,7 +32,7 @@ Note: This README is the main documentation for now, and is being migrated to th
 - **AI Book Tools** → let the AI search and read the open book on demand to ground its answers (gather-then-generate by default, or an interactive agentic loop)
 - **Multilingual** → chat in any of 47 languages the AI understands, and use the KOAssistant UI in over 20 languages
 
-19 built-in providers (Anthropic, OpenAI, Gemini, Ollama, and more) plus custom OpenAI-compatible providers. OpenAI can also be used without an API key by signing in with your ChatGPT plan (OpenAI Subscription). Fully configurable: custom actions, behaviors, domains, per-action model overrides. Reasoning/thinking is configured per model (stance dial + per-model overrides). **One-tap auto-update** keeps the plugin current. Personal reading data (highlights, annotations, notebooks) is opt-in, not sent to the AI unless you enable it.
+[28 built-in providers](#supported-providers--settings) (Anthropic, OpenAI, Gemini, Ollama, and more) plus custom OpenAI-compatible providers. OpenAI can also be used without an API key by signing in with your ChatGPT plan (OpenAI Subscription). Fully configurable: custom actions, behaviors, domains, per-action model overrides. Reasoning/thinking is configured per model (stance dial + per-model overrides). **One-tap auto-update** keeps the plugin current. Personal reading data (highlights, annotations, notebooks) is opt-in, not sent to the AI unless you enable it.
 
 **Status:** Active development. [issues](https://github.com/zeeyado/koassistant.koplugin/issues), [discussions](https://github.com/zeeyado/koassistant.koplugin/discussions), and [translations](https://hosted.weblate.org/engage/koassistant/) welcome. If you are somewhat technical and don't want to wait for tested releases, you can run off main branch to get the latest features. Breakage may happen. Also see [Assistant Plugin](https://github.com/omer-faruq/assistant.koplugin); both can run side by side.
 
@@ -2431,7 +2432,7 @@ These launch entries sit at the top of the menu:
 - **Browse Artifacts**: Open the Artifact Browser to view all cached artifacts
 
 ### Provider & Model
-- **Provider**: Select AI provider (19 built-in + custom providers)
+- **Provider**: Select AI provider (28 built-in + custom providers)
   - Tap to select from built-in providers. The picker lists only providers that have an API key configured, plus local/no-key providers (Ollama, custom local presets) — set a key in **API Keys** to make a provider appear
   - Custom providers appear with ★ prefix (see [Adding Custom Providers](#adding-custom-providers))
   - Long-press "Add custom provider..." to create your own
@@ -3534,30 +3535,45 @@ The built-in **News Update** action demonstrates this. It uses `enable_web_searc
 
 ## Supported Providers + Settings
 
-KOAssistant supports **19 built-in AI providers**, plus any number of custom OpenAI-compatible providers you add yourself (OpenAI is listed twice below: once for API keys, once for ChatGPT-subscription login). Please test and give feedback -- fixes are quickly implemented
+KOAssistant supports **28 built-in AI providers** — a **curated set** the maintainer tests with real keys and automated probes, and a **community set** (marked `*` in the plugin and *Docs-based* below) implemented from provider documentation — plus any number of custom OpenAI-compatible providers you add yourself (OpenAI is listed twice below: once for API keys, once for ChatGPT-subscription login). Please test and give feedback -- fixes are quickly implemented
 
-| Provider | Description | Get API Key |
-|----------|-------------|-------------|
-| **Anthropic** | Claude models (primary focus) | [console.anthropic.com](https://console.anthropic.com/) |
-| **OpenAI** | GPT models | [platform.openai.com](https://platform.openai.com/) |
-| **OpenAI Subscription** | GPT models via your ChatGPT plan's Codex access (device login; no API key, no API credits; unofficial) | [Quick Setup, Option C](#2-add-your-api-key) |
-| **DeepSeek** | Cost-effective reasoning models | [platform.deepseek.com](https://platform.deepseek.com/) |
-| **Gemini** | Google's Gemini models | [aistudio.google.com](https://aistudio.google.com/) |
-| **Ollama** | Local models (no API key needed) | [ollama.ai](https://ollama.ai/) |
-| **Groq** | Extremely fast inference | [console.groq.com](https://console.groq.com/) |
-| **Fireworks** | Fast inference for open models | [fireworks.ai](https://fireworks.ai/) |
-| **SambaNova** | Fastest inference; small free tier (3 models, 20 requests/day) | [cloud.sambanova.ai](https://cloud.sambanova.ai/) |
-| **Together** | 200+ open source models | [api.together.xyz](https://api.together.xyz/) |
-| **Mistral** | European provider, coding models | [console.mistral.ai](https://console.mistral.ai/) |
-| **xAI** | Grok models, up to 1M context | [console.x.ai](https://console.x.ai/) |
-| **OpenRouter** | Meta-provider, 500+ models | [openrouter.ai](https://openrouter.ai/) |
-| **Requesty** | OpenAI-compatible model router | [requesty.ai](https://requesty.ai/) |
-| **Cohere** | Command models | [dashboard.cohere.com](https://dashboard.cohere.com/) |
-| **Qwen** | Alibaba's Qwen models | [dashscope.console.aliyun.com](https://dashscope.console.aliyun.com/) |
-| **Kimi** | Moonshot models | [platform.moonshot.cn](https://platform.moonshot.cn/) |
-| **Doubao** | ByteDance Volcano Engine | [console.volcengine.com](https://console.volcengine.com/) |
-| **Z.AI** | GLM models, free tier available | [z.ai](https://z.ai/) |
-| **Perplexity** | Sonar models, built-in web search with citations | [perplexity.ai](https://www.perplexity.ai/settings/api) |
+| Provider | Description | Status | Get API Key |
+|----------|-------------|--------|-------------|
+| **Anthropic** | Claude models (primary focus) | Tested | [console.anthropic.com](https://console.anthropic.com/) |
+| **OpenAI** | GPT models | Tested | [platform.openai.com](https://platform.openai.com/) |
+| **OpenAI Subscription** | GPT models via your ChatGPT plan's Codex access (device login; no API key, no API credits; unofficial) | Tested | [Quick Setup, Option C](#2-add-your-api-key) |
+| **DeepSeek** | Cost-effective reasoning models | Tested | [platform.deepseek.com](https://platform.deepseek.com/) |
+| **Gemini** | Google's Gemini models | Tested | [aistudio.google.com](https://aistudio.google.com/) |
+| **Ollama** | Local models (no API key needed) | Tested | [ollama.ai](https://ollama.ai/) |
+| **Groq** | Extremely fast inference | Docs-based* | [console.groq.com](https://console.groq.com/) |
+| **Fireworks** | Fast inference for open models | Docs-based* | [fireworks.ai](https://fireworks.ai/) |
+| **SambaNova** | Fastest inference; small free tier (3 models, 20 requests/day) | Docs-based* | [cloud.sambanova.ai](https://cloud.sambanova.ai/) |
+| **Together** | 200+ open source models | Docs-based* | [api.together.xyz](https://api.together.xyz/) |
+| **Mistral** | European provider, coding models | Tested | [console.mistral.ai](https://console.mistral.ai/) |
+| **xAI** | Grok models, up to 1M context | Tested | [console.x.ai](https://console.x.ai/) |
+| **OpenRouter** | Meta-provider, 500+ models | Tested | [openrouter.ai](https://openrouter.ai/) |
+| **Requesty** | OpenAI-compatible model router | Docs-based* | [requesty.ai](https://requesty.ai/) |
+| **Cohere** | Command models | Docs-based* | [dashboard.cohere.com](https://dashboard.cohere.com/) |
+| **Qwen** | Alibaba's Qwen models | Docs-based* | [dashscope.console.aliyun.com](https://dashscope.console.aliyun.com/) |
+| **Kimi** | Moonshot models | Docs-based* | [platform.moonshot.cn](https://platform.moonshot.cn/) |
+| **Doubao** | ByteDance Volcano Engine | Docs-based* | [console.volcengine.com](https://console.volcengine.com/) |
+| **Z.AI** | GLM models, free tier available | Tested | [z.ai](https://z.ai/) |
+| **Perplexity** | Sonar models, built-in web search with citations | Tested | [perplexity.ai](https://www.perplexity.ai/settings/api) |
+| **Cerebras** | Very fast open-model inference (hosts gpt-oss) | Docs-based* | [cloud.cerebras.ai](https://cloud.cerebras.ai/) |
+| **MiniMax** | MiniMax M-series models | Docs-based* | [platform.minimax.io](https://platform.minimax.io/) |
+| **DeepInfra** | Many open models, low prices | Docs-based* | [deepinfra.com](https://deepinfra.com/) |
+| **Novita AI** | Open-model marketplace | Docs-based* | [novita.ai](https://novita.ai/) |
+| **Hyperbolic** | Open-model host | Docs-based* | [app.hyperbolic.xyz](https://app.hyperbolic.xyz/) |
+| **Nebius AI Studio** | Open-model host | Docs-based* | [studio.nebius.com](https://studio.nebius.com/) |
+| **Chutes** | Decentralized GPU marketplace | Docs-based* | [chutes.ai](https://chutes.ai/) |
+| **Featherless** | Huge open-model catalog | Docs-based* | [featherless.ai](https://featherless.ai/) |
+| **Vercel AI Gateway** | 200+ models behind one key | Docs-based* | [vercel.com](https://vercel.com/) |
+
+> **\*Tested vs docs-based:** *Tested* providers are covered by the maintainer's own API keys and automated probe/test tooling. *Docs-based* providers are implemented from their official documentation and user reports — they should work the same way, but the maintainer holds no key for them, so regressions can go unnoticed until someone reports them (fixes are quick once reported).
+>
+> **You can help promote a docs-based provider to tested:**
+> - **Test and report** — try it and open an issue with what worked and what didn't (a screenshot of any error message is gold), or
+> - **Donate a test key** — send a limited-spend, revocable API key to the contact email on the maintainer's GitHub profile. It only needs a few cents of quota to join the automated probe battery, and you can revoke it anytime.
 
 > **Free & Low-Cost Options**
 >
@@ -3623,6 +3639,15 @@ You can add your own OpenAI-compatible providers for local servers or cloud serv
 
 API key is automatically disabled for preset local providers.
 
+**Community-set model lists (built-in hosted providers):**
+
+The community-set providers above (Cerebras, MiniMax, DeepInfra, Novita AI, Hyperbolic, Nebius AI Studio, Chutes, Featherless, Vercel AI Gateway) are regular built-in providers — pick them in **Settings → Provider**, add the key in **Settings → API Keys**. They ship with a tiny *seed* model list, so the intended flow is:
+
+1. In the model menu, tap **Fetch models from provider...** to pull the live model list and tap-to-add the ones you want
+2. Tap **Test provider...** to run a quick capability check (streaming, tool calling, reasoning parameter) — recorded capabilities make features like AI Book Tools work where the model supports them
+
+Both of these work for any provider you have a key for, curated or community.
+
 **Manual setup (cloud services or unlisted endpoints):**
 
 1. Go to **Settings → Provider**
@@ -3635,12 +3660,15 @@ API key is automatically disabled for preset local providers.
 **Managing custom providers:**
 - Custom providers appear with ★ prefix in the Provider menu
 - Long-press a custom provider to **edit** or **remove** it
+- Long-press → **Fetch models from provider...** pulls the live `/models` list into a tap-to-add picker (filter row to narrow; an "Add all" row appears for short lists)
 - Long-press to toggle **API key requirement** on/off
 - Set API keys for custom providers in **Settings → API Keys**
 
 **Tips:**
-- For Ollama's OpenAI-compatible mode, use `http://localhost:11434/v1/chat/completions`
+- For Ollama's OpenAI-compatible mode, use `http://localhost:11434/v1/chat/completions` — fetch-models then lists your local models with no key
 - The first custom model you add becomes the default automatically
+
+**Regional providers (bring your own access):** some providers can't ship as presets because signup or auth is restricted: **SiliconFlow**, **Baidu Qianfan**, and **iFlytek** require mainland-China phone/business verification; **Tencent Hunyuan** has no clean international self-serve (use a rehost that carries it); **ModelScope**'s free endpoint has reliability issues; **Yandex** has no confirmed international signup, and **Sber GigaChat**'s rotating-token auth doesn't fit the custom-provider slot at all. If you *do* have working access to one of these through an OpenAI-compatible endpoint, the manual setup above works — please share a working config in an issue so others benefit.
 
 ### Adding Custom Models
 
@@ -4099,12 +4127,15 @@ lua tests/inspect.lua --web      # Interactive web UI
 
 KOAssistant supports localization with translations managed via Weblate.
 
-[![Translation Status](https://hosted.weblate.org/widgets/koassistant/-/svg-badge.svg)](https://hosted.weblate.org/engage/koassistant/)
+[![AI-translated](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhosted.weblate.org%2Fapi%2Fprojects%2Fkoassistant%2Fstatistics%2F&query=%24.fuzzy_percent&suffix=%25&label=AI-translated&color=8ab4f8&cacheSeconds=3600)](https://hosted.weblate.org/engage/koassistant/)
+[![Human-reviewed](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhosted.weblate.org%2Fapi%2Fprojects%2Fkoassistant%2Fstatistics%2F&query=%24.translated_percent&suffix=%25&label=human-reviewed&color=brightgreen&cacheSeconds=3600)](https://hosted.weblate.org/engage/koassistant/)
+
+All languages are fully pre-translated by AI (marked "needs editing" on Weblate); human review and improvements are very welcome.
 
 **[Contribute translations on Weblate](https://hosted.weblate.org/engage/koassistant/)**
 
-**Current languages (24):**
-- **Western & Northern European:** French, German, Italian, Spanish, Portuguese, Brazilian Portuguese, Dutch, Finnish
+**Current languages (26):**
+- **Western & Northern European:** French, German, Italian, Spanish, Portuguese, Brazilian Portuguese, Dutch, Finnish, Norwegian Bokmål, Swedish
 - **Eastern European:** Russian, Polish, Czech, Ukrainian
 - **Asian:** Chinese, Japanese, Korean, Vietnamese, Indonesian, Thai
 - **South Asian:** Hindi, Bengali, Urdu
