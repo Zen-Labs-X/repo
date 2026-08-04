@@ -60,6 +60,7 @@ While splitread is enabled, tap the **⚙** icon in the bottom-right corner of t
 - **Source language** - language of the book (default: Auto detect)
 - **Target language** - language to translate into (default: English)
 - **Auto-translate** - toggle automatic translation on page turns
+- **Provider** - allows you to switch between translation providers. (To learn how to obtain a Gemini Translation API key, see the section further down this page)
 - **Font size** - adjust the translation panel font size
 
 Settings are saved globally across all books.
@@ -67,6 +68,35 @@ Settings are saved globally across all books.
 ### Disabling for a book
 
 Go back to the same **NAVIGATION** menu -> **splitread** -> **Disable for this book**. The screen returns to normal.
+
+### Getting a Gemini API Key
+
+1. Sign in to your Google account.
+
+   > **Recommendation:** Use a separate Google account that does **not** have a payment method attached. This helps ensure you stay within the free tier and prevents accidental charges.
+
+2. Go to **Google AI Studio**: https://aistudio.google.com/apikey
+
+3. If prompted, create a new project.
+
+4. Click **Create API Key** and copy the generated key.
+
+5. **Keep your API key private.**
+   - Never share it with anyone.
+
+6. Create a file named `keys.lua`.
+
+7. Add your API key following the template in `keys.lua.sample`:
+
+   ```lua
+   return {
+       gemini = "your-gemini-api-key-here",
+   }
+   ```
+
+8. Save the file and restart KOReader.
+
+The Gemini translation provider is now ready to use.
 
 ---
 

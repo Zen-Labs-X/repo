@@ -1,4 +1,1 @@
-## What's Changed
-
-- Added support for panel resizing.
-- Fixed minor bugs and improved overall stability.
+Added support for Gemini based translation
