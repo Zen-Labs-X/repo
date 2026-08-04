@@ -19,4 +19,5 @@
 - New Zen Renderer
 - Respect non-linear page fragments in Page Browser
 - Add Restarting notice
+- Improved Chinese translations
 - Bug fixes

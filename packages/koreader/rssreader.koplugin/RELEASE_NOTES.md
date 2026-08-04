@@ -1,6 +1,7 @@
-- Add CommaFeed tag browsing and per-story tag editing
+- Fix non-Latin titles (Cyrillic, etc.) being sanitized to underscores in filenames
 
-    Adds a virtual "Tags" folder under CommaFeed accounts that lists all
-    tags and lets you drill into a tag's stories. Also adds an "Edit Tags" 
-    action on stories  and shows a story's current tags in its long-press
-    popup.
+    Filename sanitization used a whitelist of ASCII word chars, so any
+    non-ASCII letter was stripped, turning archived titles into
+    all-underscore filenames. Switch to a blacklist of characters actually
+    illegal in filenames, and make title truncation UTF-8 boundary aware
+    so it can't cut a multi-byte character in half.
