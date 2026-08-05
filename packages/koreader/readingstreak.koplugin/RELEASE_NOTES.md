@@ -1,3 +1,3 @@
 
-### Added
-- Added KOReader uninstall hook `deletePluginSettings()` to remove plugin settings when users check **"Also delete plugin settings"** in plugin management ([#15](https://github.com/advokatb/readingstreak.koplugin/issues/15)).
+### Fixed
+- Fixed reading time continuing to run when the device was suspended (thanks to @jandamm, #17).
