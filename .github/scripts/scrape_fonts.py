@@ -17,6 +17,7 @@ from scrape_common import REPO_ROOT, scraper_timestamp, write_results
 
 UPSTREAM = "nicoverbruggen/ebook-fonts"
 UPSTREAM_URL = f"https://github.com/{UPSTREAM}"
+UPSTREAM_ARCHIVE_VARIANT = "relaxed"
 JUNICODE_UPSTREAM = "psb1558/Junicode-font"
 JUNICODE_UPSTREAM_URL = f"https://github.com/{JUNICODE_UPSTREAM}"
 JUNICODE_PACKAGE_ID = "font-junicode"
@@ -53,6 +54,23 @@ def archive_files(url, suffixes=(".ttf", ".otf")):
             for info in archive.infolist()
             if not info.is_dir() and info.filename.lower().endswith(suffixes)
         }
+
+
+def collection_archive_url(collection):
+    collection_name = collection.get("name", "")
+    archive_url = collection.get("archives", {}).get(UPSTREAM_ARCHIVE_VARIANT)
+    if not archive_url:
+        raise RuntimeError(
+            f"Release manifest has no {UPSTREAM_ARCHIVE_VARIANT} archive for {collection_name}"
+        )
+    return archive_url
+
+
+def relaxed_filename(filename):
+    stem, separator, style = filename.rpartition("-")
+    if not separator:
+        raise RuntimeError(f"Cannot map font filename to relaxed variant: {filename}")
+    return f"{stem}_R-{style}"
 
 
 def preview_images(tag):
@@ -228,16 +246,15 @@ def main():
     total = 0
     for collection in collections:
         collection_name = collection.get("name", "")
-        archive_url = collection.get("archives", {}).get("other")
-        if not archive_url:
-            raise RuntimeError(f"Release manifest has no cross-device archive for {collection_name}")
+        archive_url = collection_archive_url(collection)
         available_files = archive_files(archive_url)
         for font in collection.get("fonts", []):
             family = font.get("family", "").strip()
             filenames = [os.path.basename(urllib.parse.urlparse(url).path) for url in font.get("files", [])]
             if not family or not filenames:
                 raise RuntimeError(f"Invalid {collection_name} font entry: {font!r}")
-            missing = [filename for filename in filenames if filename not in available_files]
+            relaxed_filenames = [relaxed_filename(filename) for filename in filenames]
+            missing = [filename for filename in relaxed_filenames if filename not in available_files]
             if missing:
                 raise RuntimeError(f"Release archive is missing {family}: {', '.join(missing)}")
             preview_name = family.replace(" ", "-") + ".png"
@@ -249,7 +266,7 @@ def main():
             dirname = package_id.removeprefix("font-")
             expected_dirs.add(dirname)
             package_dir = os.path.join(FONTS_ROOT, dirname)
-            font_files = {filename: available_files[filename] for filename in filenames}
+            font_files = {filename: available_files[filename] for filename in relaxed_filenames}
             for filename, content in font_files.items():
                 existing = all_font_files.setdefault(filename, content)
                 if existing != content:

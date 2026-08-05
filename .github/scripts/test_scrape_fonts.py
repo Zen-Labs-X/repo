@@ -12,6 +12,31 @@ import scrape_fonts
 
 
 class FontScraperTests(unittest.TestCase):
+    def test_collection_archive_url_selects_only_relaxed_fonts(self):
+        collection = {
+            "name": "core",
+            "archives": {
+                "kobo": "https://example.invalid/kobo-core-fonts.zip",
+                "other": "https://example.invalid/other-core-fonts.zip",
+                "relaxed": "https://example.invalid/relaxed-core-fonts.zip",
+            },
+        }
+
+        self.assertEqual(
+            scrape_fonts.collection_archive_url(collection),
+            "https://example.invalid/relaxed-core-fonts.zip",
+        )
+
+    def test_collection_archive_url_requires_relaxed_fonts(self):
+        with self.assertRaisesRegex(RuntimeError, "no relaxed archive for extra"):
+            scrape_fonts.collection_archive_url({"name": "extra", "archives": {"other": "unused"}})
+
+    def test_relaxed_filename_adds_the_upstream_variant_suffix(self):
+        self.assertEqual(
+            scrape_fonts.relaxed_filename("NV_Legible_Next-BoldItalic.ttf"),
+            "NV_Legible_Next_R-BoldItalic.ttf",
+        )
+
     def test_preview_images_reads_tagged_source_archive(self):
         source = io.BytesIO()
         with zipfile.ZipFile(source, "w") as archive:
@@ -38,17 +63,21 @@ class FontScraperTests(unittest.TestCase):
         with zipfile.ZipFile(io.BytesIO(archive)) as zip_file:
             self.assertEqual(zip_file.namelist(), ["nv-bitter/NV_Bitter-Regular.ttf"])
 
-    def test_package_meta_uses_a_cached_install_asset_and_font_category(self):
+    def test_package_meta_preserves_identity_and_advances_version_for_client_updates(self):
+        package_id = "font-" + scrape_fonts.slugify("NV Bitter")
         meta = scrape_fonts.package_meta(
-            "font-nv-bitter", "NV Bitter", "4.1", "v2026.07.21",
-            "2026-07-21T13:18:47Z", "2026-07-24T12:34:56Z", 123,
+            package_id, "NV Bitter", "4.2", "v2026.08.05",
+            "2026-08-05T19:18:11Z", "2026-08-05T20:49:38Z", 123,
         )
 
+        self.assertEqual(package_id, "font-nv-bitter")
+        self.assertIn("id=font-nv-bitter\n", meta)
+        self.assertIn("version=4.2\n", meta)
         self.assertIn("author=nicoverbruggen\n", meta)
         self.assertIn("category=fonts\n", meta)
         self.assertIn("assets.0.url=packages/koreader/fonts/nv-bitter/font-nv-bitter.zip\n", meta)
-        self.assertIn("updated_at=2026-07-24T12:34:56Z\n", meta)
-        self.assertIn("published_at=2026-07-21T13:18:47Z\n", meta)
+        self.assertIn("updated_at=2026-08-05T20:49:38Z\n", meta)
+        self.assertIn("published_at=2026-08-05T19:18:11Z\n", meta)
         self.assertNotIn("install_url=", meta)
         self.assertNotIn("uninstall_url=", meta)
 

@@ -118,6 +118,13 @@ def main():
                   file=sys.stderr)
             continue
 
+        canonical_ref = normalize_repo_ref(repo.get("full_name", record["ref"]))
+        if canonical_ref:
+            known_refs.add(canonical_ref)
+        canonical_identity = repository_identity(canonical_ref)
+        if canonical_identity:
+            known_repository_identities.add(canonical_identity)
+
         assets = patch_assets(repo)
         if not assets:
             print(f"Could not refresh {record['rel_path']}: no patch files",
