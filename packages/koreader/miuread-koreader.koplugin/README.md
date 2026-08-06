@@ -4,16 +4,17 @@ A WeRead plugin for KOReader, supporting Kindle, Kobo, Android, and other KORead
 
 ## Current Release
 
-This repository contains the stable `4.1.1` source and is intended for the `main` branch.
+This repository contains the stable `4.1.2` source and is intended for the `main` branch.
 
-See `CHANGELOG-4.1.1.txt` for the release notes.
+See `CHANGELOG-4.1.2.txt` for the release notes.
 
-## Branches and Releases
+## Releases
 
-- `main`: stable source, released through `.github/workflows/release.yml`; publishes `update.json`.
-- `beta`: beta source, released through `.github/workflows/release-beta.yml`; publishes `update-beta.json`.
+This repository contains stable releases only.
 
-Both workflows should remain on the default branch so that the stable and beta release actions remain available in GitHub Actions.
+- `main`: stable source
+- `.github/workflows/release.yml`: stable release workflow
+- `update.json`: stable update manifest
 
 ## Installation
 

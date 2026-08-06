@@ -1,1 +1,3 @@
-German #62 (Thanks  @Zwipfy ) and Hungarian translation fix
+**New**
+
+Tapping on previous and next year also change the year

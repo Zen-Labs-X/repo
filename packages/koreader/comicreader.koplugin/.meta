@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=comicreader
 name=Comicreader
-version=0.0.6
+version=0.0.7
 description=A plugin to enhance your comic (or any paged document) reading experience on KOReader.
 author=KORComic
 category=media
@@ -11,13 +11,13 @@ platforms=koreader
 dependencies=
 source=https://github.com/KORComic/comicreader.koplugin
 stars=95
-updated_at=2026-08-06T03:12:09Z
-published_at=2026-07-28T19:42:08Z
+updated_at=2026-08-06T08:45:44Z
+published_at=2026-08-06T04:42:56Z
 readme_url=packages/koreader/comicreader.koplugin/README.md
 readme_hash=6d41ee9b220cfb85d334be59fc88231bbac48cb1
 release_notes_url=packages/koreader/comicreader.koplugin/RELEASE_NOTES.md
-release_notes_hash=b813292071902ab84d3e446d691684b6929bba0b84cb733a246eec0c6bfe1380
-releases=[{"tag_name":"v0.0.6","assets":[{"name":"comicreader.koplugin.zip","url":"https://github.com/KORComic/comicreader.koplugin/releases/download/v0.0.6/comicreader.koplugin.zip","size":84546,"digest":"sha256:84be6089b171f20b1d4ed76d6c187dad8b981529b5284d792d08b3aecd65c3f3"}],"name":"v0.0.6"},{"tag_name":"v0.0.5","assets":[{"name":"comicreader.koplugin.zip","url":"https://github.com/KORComic/comicreader.koplugin/releases/download/v0.0.5/comicreader.koplugin.zip","size":84446,"digest":"sha256:07346c4774c88ff9db8613521017e84200cc929ca1ff3ca03232600ce16daa30"}],"name":"v0.0.5"},{"tag_name":"v0.0.4","assets":[{"name":"comicreader.koplugin.zip","url":"https://github.com/KORComic/comicreader.koplugin/releases/download/v0.0.4/comicreader.koplugin.zip","size":84266,"digest":"sha256:9b4b3ff497e9a5860c7a74008d225f7f2ef0ab748467aaced18d0528b60cd1bd"}],"name":"v0.0.4"},{"tag_name":"v0.0.3","assets":[{"name":"comicreader.koplugin.zip","url":"https://github.com/KORComic/comicreader.koplugin/releases/download/v0.0.3/comicreader.koplugin.zip","size":68408,"digest":"sha256:8b61ba87056e5deea4182f8b67750416db2d27e03eea1ffa95cbeddccbba879b"}],"name":"v0.0.3"},{"tag_name":"v0.0.2","assets":[{"name":"comicreader.koplugin.zip","url":"https://github.com/KORComic/comicreader.koplugin/releases/download/v0.0.2/comicreader.koplugin.zip","size":68170,"digest":"sha256:90ce19b5dfb46f43dc2836c87374f39dedd849bbd08fe5e032cab7ca47e9c4c4"}],"name":"v0.0.2"}]
+release_notes_hash=a92b5f687a3f3c817d79d6dd2603e33bd840b2f9c378a194e6dad1b847cb7079
+releases=[{"tag_name":"v0.0.7","assets":[{"name":"comicreader.koplugin.zip","url":"https://github.com/KORComic/comicreader.koplugin/releases/download/v0.0.7/comicreader.koplugin.zip","size":84637,"digest":"sha256:166d7f2bc32f408e9ab7a7f218b7253badb1bcc4c72e512b546bcd1e8737b9b9"}],"name":"v0.0.7"},{"tag_name":"v0.0.6","assets":[{"name":"comicreader.koplugin.zip","url":"https://github.com/KORComic/comicreader.koplugin/releases/download/v0.0.6/comicreader.koplugin.zip","size":84546,"digest":"sha256:84be6089b171f20b1d4ed76d6c187dad8b981529b5284d792d08b3aecd65c3f3"}],"name":"v0.0.6"},{"tag_name":"v0.0.5","assets":[{"name":"comicreader.koplugin.zip","url":"https://github.com/KORComic/comicreader.koplugin/releases/download/v0.0.5/comicreader.koplugin.zip","size":84446,"digest":"sha256:07346c4774c88ff9db8613521017e84200cc929ca1ff3ca03232600ce16daa30"}],"name":"v0.0.5"},{"tag_name":"v0.0.4","assets":[{"name":"comicreader.koplugin.zip","url":"https://github.com/KORComic/comicreader.koplugin/releases/download/v0.0.4/comicreader.koplugin.zip","size":84266,"digest":"sha256:9b4b3ff497e9a5860c7a74008d225f7f2ef0ab748467aaced18d0528b60cd1bd"}],"name":"v0.0.4"},{"tag_name":"v0.0.3","assets":[{"name":"comicreader.koplugin.zip","url":"https://github.com/KORComic/comicreader.koplugin/releases/download/v0.0.3/comicreader.koplugin.zip","size":68408,"digest":"sha256:8b61ba87056e5deea4182f8b67750416db2d27e03eea1ffa95cbeddccbba879b"}],"name":"v0.0.3"},{"tag_name":"v0.0.2","assets":[{"name":"comicreader.koplugin.zip","url":"https://github.com/KORComic/comicreader.koplugin/releases/download/v0.0.2/comicreader.koplugin.zip","size":68170,"digest":"sha256:90ce19b5dfb46f43dc2836c87374f39dedd849bbd08fe5e032cab7ca47e9c4c4"}],"name":"v0.0.2"}]
 source_type=release
 source_asset=comicreader.koplugin.zip
-size=84546
+size=84637
