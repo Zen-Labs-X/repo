@@ -1,3 +1,13 @@
-- Fix: a background timer meant to catch newly added books could keep the device awake while you were reading
-- Fix: some Kobo virtual-library book covers weren't showing, falling back to text
-- Fix: joining multiple authors ("and", "et al.") now translates correctly instead of always showing in English
+- Reader launcher buttons: position, size, side and edge are now adjustable, set up on a live preview canvas in Settings > Start menu > Launcher button position and size (#279)
+- The menu button and micro-modules button can each be shown or hidden for reading mode on their own, independently of the home screen
+- Put the launcher at the top and the start menu opens downward from it, on the same side as the button
+- Settings > Start menu is now one section, with a "While reading" band for the reader-only settings
+- Minimum start menu width: widen the panel without lengthening your menu labels
+- Selected chip colour: set the fill and text colours for the selected chip in the chip bar (#294)
+- New "Go to home screen" gesture action: closes the book and returns to the top of the shelf, whatever folder you were in (#223)
+- Faster start menu while reading: the Random book card no longer holds the menu up while it picks
+- Fix: swiping the hero book snapped the shelf back to page 1 once you had paginated past it (#303)
+- Fix: hero micro-modules could overflow their card above 100% size, clipping content instead of shortening it (#249)
+- Fix: start-menu micro-module rows could run off the top of the screen, with no way to reach them
+- Fix: the start-menu text-size preview did nothing when opened while reading (#297)
+- Fix: book descriptions kept a stray space at the start of every paragraph (#306)
