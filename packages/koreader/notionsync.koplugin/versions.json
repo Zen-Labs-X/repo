@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v0.2.0","assets":[{"name":"notionsync.koplugin.zip","url":"https://github.com/CezaryPukownik/notionsync.koplugin/releases/download/v0.2.0/notionsync.koplugin.zip","size":15816,"digest":"sha256:8cef2e14344d0958da83337e42abca72f067a0f90bf3cc90803fda6df325c115"}],"name":"v0.2.0 \"Gwyhyr\""},{"tag_name":"v0.1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/CezaryPukownik/notionsync.koplugin/zipball/v0.1.0"}],"name":"v0.1.0 \"Alzur\""}]
+}

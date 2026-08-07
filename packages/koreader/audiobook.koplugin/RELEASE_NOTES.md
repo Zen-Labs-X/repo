@@ -1,4 +1,4 @@
-## Audiobook Read-Along v0.1.17.13
+## Audiobook Read-Along v0.1.17.14
 
 **Download, unzip, and copy `audiobook.koplugin/` to your KOReader plugins directory. Restart KOReader.**
 
@@ -24,4 +24,4 @@
 See [README](https://github.com/stradichenko/audiobook.koplugin/blob/master/README.md) for full documentation.
 
 
-**Full Changelog**: https://github.com/stradichenko/audiobook.koplugin/compare/v0.1.17.12...v0.1.17.13
+**Full Changelog**: https://github.com/stradichenko/audiobook.koplugin/compare/v0.1.17.13...v0.1.17.14
