@@ -130,7 +130,10 @@ for meta_file in $meta_files; do
         printf '%s\n' "$source" >> "$seen_sources"
     fi
 
-    if [ -n "$featured_order" ]; then
+    # Silently ignore featured_order when not featured
+    if [ "$featured" != "true" ]; then
+        featured_order=""
+    elif [ -n "$featured_order" ]; then
         case "$featured_order" in
             *[!0-9]*)
                 echo "Invalid featured_order in $meta_file: $featured_order" >&2
@@ -138,11 +141,6 @@ for meta_file in $meta_files; do
                 exit 1
                 ;;
         esac
-        if [ "$featured" != "true" ]; then
-            echo "featured_order requires featured=true in $meta_file" >&2
-            rm -f "$tmp"
-            exit 1
-        fi
         featured_order=$(printf '%s' "$featured_order" | sed 's/^0*//;s/^$/0/')
     fi
 
@@ -167,12 +165,11 @@ for meta_file in $meta_files; do
     [ -n "$uninstall_url" ] && printf ',\n      "uninstall_url": "%s"' "$(json_escape "$uninstall_url")" >> "$OUTPUT"
     [ -n "$icon_url" ]       && printf ',\n      "icon_url": "%s"' "$(json_escape "$icon_url")" >> "$OUTPUT"
     [ -n "$featured_image" ] && printf ',\n      "featured_image": "%s"' "$(json_escape "$featured_image")" >> "$OUTPUT"
-
     # Optional boolean: featured
     if [ "$featured" = "true" ]; then
         printf ',\n      "featured": true' >> "$OUTPUT"
+        [ -n "$featured_order" ] && printf ',\n      "featured_order": %s' "$featured_order" >> "$OUTPUT"
     fi
-    [ -n "$featured_order" ] && printf ',\n      "featured_order": %s' "$featured_order" >> "$OUTPUT"
 
     # Size
     [ -n "$size" ] && printf ',\n      "size": "%s"' "$size" >> "$OUTPUT"
