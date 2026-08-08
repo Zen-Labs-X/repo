@@ -12,6 +12,4 @@ source=https://github.com/xZenLabs/ZenMTP
 source_asset=zen_mtp.koplugin.zip
 icon_url=packages/koreader/zen_mtp.koplugin/assets/zenmtp.svg
 featured_image=packages/koreader/zen_mtp.koplugin/assets/zenmtp-featured.png
-featured=true
-featured_order=25
 size=49469

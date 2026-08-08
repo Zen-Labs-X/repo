@@ -49,6 +49,19 @@ json_escape() {
     printf '  "packages": [\n'
 } > "$OUTPUT"
 
+# --- read featured list ---
+featured_file="featured.txt"
+featured_lookup=""
+if [ -f "$featured_file" ]; then
+    line_num=0
+    while IFS= read -r fid; do
+        case "$fid" in ''|\#*) continue ;; esac
+        line_num=$((line_num + 1))
+        featured_lookup="${featured_lookup}${fid}=${line_num}
+"
+    done < "$featured_file"
+fi
+
 # --- collect .meta files ---
 meta_files="$(find packages -name '.meta' | sort)"
 count=$(printf '%s\n' "$meta_files" | wc -l | tr -d ' ')
@@ -105,6 +118,18 @@ for meta_file in $meta_files; do
     prerelease_notes_hash=$(grep '^prerelease_notes_hash=' "$tmp" 2>/dev/null | sed 's/^prerelease_notes_hash=//' | head -1)
     releases=$(grep '^releases=' "$tmp" 2>/dev/null | sed 's/^releases=//' | head -1)
     versions_url="$(dirname "$meta_file")/versions.json"
+
+    # Override featured from central featured.txt if present
+    if [ -n "$featured_lookup" ]; then
+        central_order=$(printf '%s\n' "$featured_lookup" | grep "^${id}=" | sed "s/^${id}=//")
+        if [ -n "$central_order" ]; then
+            featured="true"
+            featured_order="$central_order"
+        else
+            featured=""
+            featured_order=""
+        fi
+    fi
 
     {
         printf '{\n'

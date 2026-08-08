@@ -10,5 +10,4 @@ install_url=packages/kindle/zen-mtp/scripts/install.sh
 uninstall_url=packages/kindle/zen-mtp/scripts/uninstall.sh
 icon_url=packages/kindle/zen-mtp/assets/zenmtp.svg
 featured_image=packages/kindle/zen-mtp/assets/zenmtp-featured.png
-featured=false
 size=0
