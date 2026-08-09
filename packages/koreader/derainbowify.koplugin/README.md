@@ -12,25 +12,23 @@
 A plugin for [<img src="img/koreader.png" width="24" /> KOReader](https://koreader.rocks) that adds an option to remove the rainbow artifacts produced on Kaleido 3 color e-ink screens. It is primarily useful for black and white comics/manga that use image patterns which produce these artifacts.
 
 It uses fourier transforms on-the-fly to directly target the moiré patterns responsible for the rainbow effect.
-Compared to the method used for reducing the rainbow effect that is found in the official Kobo software, the method utilized by this plugin does *not* negatively affect the image by introducing blur, instead retaining sharpness.
+Compared to the method used for reducing the rainbow effect that is found in the official Kobo software, this method does *not* negatively affect the image by introducing noticeable blur, instead it stays sharp.
 
-The methodology for this is explained in detail by [this video](https://www.youtube.com/watch?v=Dw2HTJCGMhw) by [@axu2](https://github.com/axu2), the maintainer of [Kindle Comic Converter](https://github.com/ciromattia/kcc).
+> The methodology for this is explained in detail in [this video](https://www.youtube.com/watch?v=Dw2HTJCGMhw) by [@axu2](https://github.com/axu2), the maintainer of [Kindle Comic Converter](https://github.com/ciromattia/kcc).
 
-Currently the filtering does make rendering pages for the first time slower, but the goal is to gradually make improvements to the performance.
+The filtering does make rendering each page for the first time slower, but performance should be improved with future updates. The time taken to read a page should make it feel seamless as rendering is automatically done in the background.
 
 Made for koreader/koreader#11877.
 
 ## Installation
-1. Download the latest release.
+1. Download the latest release [here](https://github.com/Euphoriyy/derainbowify.koplugin/releases/latest).
 2. Extract the `derainbowify.koplugin` directory from the archive.
 3. Move the `derainbowify.koplugin` directory to the `koreader/plugins` folder on your device.
 4. Restart KOReader.
-5. You should see a new option called "Derainbow" on the contrast menu when opening a document.
+5. You should see a new option called "Derainbow" on the <sub><img src="img/appbar.contrast.svg" style="width:2%; height:auto;"></sub> **Contrast** menu when opening a document.
 
 ## Compatibility
 By design, this plugin is designed for e-readers that use color e-ink such as the Kobo Libra Color, Kobo Clara Color, Kindle Colorsoft, PocketBook Inkpad Color 3, and relevant Bigme, Boox, and Meebook devices.
-
-For now, only the Kobo Libra Color has been fully tested, but the other devices are supported.
 
 ## Building
 In order to compile and test the plugin yourself, you may run the `package.sh` script found at the root of this repository. It will produce a ZIP file containing the plugin located at `/tmp/derainbowify.koplugin.zip`.
