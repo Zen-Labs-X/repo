@@ -1,0 +1,23 @@
+# Crossword plugin for KOReader
+# https://github.com/omer-faruq/crossword.koplugin
+# zenpm:auto-scraped
+id=crossword
+name=Crossword
+version=0.3.0
+description=Play crossword puzzles on KOReader. Load local .puz/.ipuz files, fetch from various sources, or generate new puzzles from your installed dictionaries.
+author=omer-faruq
+category=games
+platforms=koreader
+dependencies=
+source=https://github.com/omer-faruq/crossword.koplugin
+stars=17
+updated_at=2026-08-09T07:03:39Z
+published_at=2026-06-12T20:12:26Z
+readme_url=packages/koreader/crossword.koplugin/README.md
+readme_hash=87061c6d80d40904ece79e2d1715451ffae8cc43
+release_notes_url=packages/koreader/crossword.koplugin/RELEASE_NOTES.md
+release_notes_hash=b4ec114de21527202ca70ea243406c994b4e681b77042abb08b0e34857397a11
+releases=[{"tag_name":"v0.3.0","assets":[{"name":"crossword.koplugin.zip","url":"https://github.com/omer-faruq/crossword.koplugin/releases/download/v0.3.0/crossword.koplugin.zip","size":60537,"digest":"sha256:053ddb4937c0bf10d709c08cc75e4566ffed17974fc58a252368816f052e1bf8"}],"name":"v0.3.0"},{"tag_name":"v0.2.1","assets":[{"name":"crossword.koplugin.zip","url":"https://github.com/omer-faruq/crossword.koplugin/releases/download/v0.2.1/crossword.koplugin.zip","size":59001,"digest":"sha256:fe728406495c189aae5f5302ab1657810c32707e40b32376b1f1859a01415eb9"}],"name":"v0.2.1"},{"tag_name":"v0.2.0","assets":[{"name":"crossword.koplugin.zip","url":"https://github.com/omer-faruq/crossword.koplugin/releases/download/v0.2.0/crossword.koplugin.zip","size":56546,"digest":"sha256:353d927e7cdb1aa9397722ce6a07f96f67980418db56ba01b24494f8b3d0224c"}],"name":"v0.2.0"},{"tag_name":"v0.1.0","assets":[{"name":"crossword.koplugin.zip","url":"https://github.com/omer-faruq/crossword.koplugin/releases/download/v0.1.0/crossword.koplugin.zip","size":55912,"digest":"sha256:e46f8ca52002fddfae857cd206d1555f1832042ba3845c4451ad7e5901025b10"}],"name":"v0.1.0"}]
+source_type=release
+source_asset=crossword.koplugin.zip
+size=60537
