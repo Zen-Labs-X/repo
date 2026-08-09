@@ -1,8 +1,9 @@
 ## What's Changed
 
-- Large performance improvements
+- Major performance improvements
 - New Settings page
 - Use Zen Mode without restarting
+- Home strip widget controls
 - Settings page memory (return to prev opened Settings)
 - Improved all Settings submenus
 - Custom icon packs (Extras > Custom icons)
@@ -10,7 +11,7 @@
 - New book switcher in Launcher (Launcher > Book switcher)
 - Quotes improvements (Moments of Zen)
 - Improved default covers
-- Accessibility improvements for non-touch devices
+- Major accessibility improvements for non-touch devices
 - Add Calibre tag to Navbar (Navbar > Tabs)
 - Add Calibre tag strip to Home page (Home > Widgets)
 - Add opening banner to books on Home
@@ -21,4 +22,5 @@
 - Respect non-linear page fragments in Page Browser
 - Add Restarting notice
 - Improved Chinese translations
+- Improved first time setup guide
 - Bug fixes

@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=ai-dictionary-koreader
 name=Ai Dictionary Koreader
-version=2.7
+version=2.8
 description=Context-aware AI dictionary plugin for KOReader: instant definitions, explanations, deep dives, pronunciation, and vocabulary learning on e-ink devices.
 author=SahandMalaei
 category=productivity
@@ -11,12 +11,12 @@ platforms=koreader
 dependencies=
 source=https://github.com/SahandMalaei/ai-dictionary-koreader
 stars=81
-updated_at=2026-08-09T13:01:40Z
-published_at=2026-07-27T17:45:00Z
+updated_at=2026-08-09T18:49:28Z
+published_at=2026-08-09T14:34:31Z
 readme_url=packages/koreader/ai-dictionary-koreader.koplugin/README.md
 readme_hash=fa0acb126c54fa60a325d425a2c54366ed1e6d68
 release_notes_url=packages/koreader/ai-dictionary-koreader.koplugin/RELEASE_NOTES.md
-release_notes_hash=202d58782dc03a1439e6b6cb38f32ac206cdaee7cbe0c2f5aba540649220a44e
-releases=[{"tag_name":"v2.7","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.7"}],"name":"v2.7"},{"tag_name":"v2.6","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.6"}]},{"tag_name":"v2.5","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.5"}]},{"tag_name":"v2.3","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.3"}]},{"tag_name":"v2.2","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.2"}],"name":"v2.2"},{"tag_name":"v2.1","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.1"}]},{"tag_name":"v2.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.0"}]},{"tag_name":"v1.9","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v1.9"}]},{"tag_name":"v1.7","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v1.7"}]},{"tag_name":"v1.5","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v1.5"}],"name":"v1.5"},{"tag_name":"v1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v1.0"}],"name":"v1.0"}]
+release_notes_hash=8627c03a29dc31a5bc11911defec958a568b03e1f9fccbd6c47fe4d70f781752
+releases=[{"tag_name":"v2.8","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.8"}],"name":"v2.8"},{"tag_name":"v2.7","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.7"}],"name":"v2.7"},{"tag_name":"v2.6","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.6"}]},{"tag_name":"v2.5","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.5"}]},{"tag_name":"v2.3","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.3"}]},{"tag_name":"v2.2","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.2"}],"name":"v2.2"},{"tag_name":"v2.1","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.1"}]},{"tag_name":"v2.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v2.0"}]},{"tag_name":"v1.9","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v1.9"}]},{"tag_name":"v1.7","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v1.7"}]},{"tag_name":"v1.5","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v1.5"}],"name":"v1.5"},{"tag_name":"v1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SahandMalaei/ai-dictionary-koreader/zipball/v1.0"}],"name":"v1.0"}]
 source_type=source
 source_url=https://codeload.github.com/SahandMalaei/ai-dictionary-koreader/zip/refs/heads/main
