@@ -1,3 +1,5 @@
-**New**
+**Added** 
+- "Chapters per page" setting (Advanced settings ▸ Book progress popup) to control how many chapters the chapter bar shows per page — presets 10 / 25 (default) / 35 / 50, plus a custom value dialog. Previously hardcoded to 25.
 
-Add settings toggles to show or hide the chapter bar in the Book progress popup and the "started / expected finish" date row in the Pace section (both on by default)
+**Changed**
+- Tapping a greyed-out (dead-end) paging arrow now does nothing instead of closing the popup
