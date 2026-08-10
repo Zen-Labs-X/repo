@@ -177,3 +177,22 @@ The best way to help is to flag conversions that come out wrong while you read. 
 Each flag records the book title, what was detected, the value, the conversion, the surrounding sentence, and its location. Nothing else.
 
 **Prefer not to send anything?** Leave the toggle off. Flags made from the Units list are still saved to a plain-text log on the device at `koreader/footcream/flagged_errors.txt` (e.g. on a Kobo, `.adds/koreader/footcream/flagged_errors.txt`). You can review it via **Debug** → **View flagged errors**, attach it to a GitHub issue in this repo, then tidy up with **Debug** → **Clear flagged errors**.
+
+***
+
+## License
+
+Footcream is free software, licensed under the **GNU Affero General Public
+License v3.0 or later** (AGPL-3.0-or-later). The full text is in
+[LICENSE](LICENSE).
+
+Copyright (C) 2026 Erik Fanki
+
+The plugin runs inside KOReader's own Lua process and uses its internals, and
+[KOReader is AGPL-3.0](https://github.com/koreader/koreader) — so Footcream
+matches it. In practice: use it, fork it, modify it freely; if you distribute a
+modified version, ship its source under the same terms.
+
+Community translations contributed through Crowdin are under the same licence,
+so they can be shipped as part of the plugin — see
+[l10n/README.md](l10n/README.md).
