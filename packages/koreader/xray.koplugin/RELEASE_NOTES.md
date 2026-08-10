@@ -1,5 +1,9 @@
-- Fix duplicate detection logic to prevent spoilers https://github.com/ultimatejimmy/xray.koplugin/issues/92
-- Fix one bug with timeline
-- Update logic to accommodate non-standard TOC formatting
+## What's Changed
+* fix: keep PDF X-Ray context within current page by @giorgiobrullo in https://github.com/ultimatejimmy/xray.koplugin/pull/93
+* fix: cancel active AI requests by @giorgiobrullo in https://github.com/ultimatejimmy/xray.koplugin/pull/94
+* Fix bug with unit converter 
 
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.7.23...26.7.27
+## New Contributors
+* @giorgiobrullo made their first contribution in https://github.com/ultimatejimmy/xray.koplugin/pull/93
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.7.27...26.8.9

@@ -1,0 +1,29 @@
+# Koreader Tweaks Lauch patch for KOReader
+# https://github.com/lautaroelkin/koreader-tweaks-lauch
+# zenpm:auto-scraped
+id=koreader-tweaks-lauch
+name=Koreader Tweaks Lauch
+version=source
+description=Custom Lua patches, and UI tweaks for KOReader on E-ink devices.
+author=lautaroelkin
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/lautaroelkin/koreader-tweaks-lauch
+stars=15
+updated_at=2026-08-10T02:14:01Z
+readme_url=packages/koreader/koreader-tweaks-lauch.kopatch/README.md
+readme_hash=7386f099ac9a3aa13469c86a7e1e82e9b11c79f3
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-page-browser.lua
+assets.0.url=https://raw.githubusercontent.com/lautaroelkin/koreader-tweaks-lauch/main/2-page-browser.lua
+assets.0.size=47933
+assets.1.arch=any
+assets.1.asset=2-page-scrubber-alt.lua
+assets.1.url=https://raw.githubusercontent.com/lautaroelkin/koreader-tweaks-lauch/main/2-page-scrubber-alt.lua
+assets.1.size=29745
+assets.2.arch=any
+assets.2.asset=2-page-scrubber.lua
+assets.2.url=https://raw.githubusercontent.com/lautaroelkin/koreader-tweaks-lauch/main/2-page-scrubber.lua
+assets.2.size=29599
