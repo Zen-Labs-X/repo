@@ -1,1 +1,4 @@
-Machine-readable update manifest for MiuRead Stable. Do not install this release directly.
+- 性能 主页、下载、封面和元数据改为局部更新，减少闪屏、重建与操作卡顿。
+- 稳定 修复 Kindle 休眠唤醒和 Reader 返回主页异常，休眠时冻结非必要后台任务。
+- 交互 最近阅读按真实 Reader 会话更新，重整主页更新逻辑并保留用户设置。
+- 性能 账号、书籍详情和章节目录改为后台读取；轻量模式按实际延迟降低后台任务频率。
