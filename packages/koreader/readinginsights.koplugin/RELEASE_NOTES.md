@@ -1,5 +1,3 @@
-**Added** 
-- "Chapters per page" setting (Advanced settings ▸ Book progress popup) to control how many chapters the chapter bar shows per page — presets 10 / 25 (default) / 35 / 50, plus a custom value dialog. Previously hardcoded to 25.
+**Fixed**
 
-**Changed**
-- Tapping a greyed-out (dead-end) paging arrow now does nothing instead of closing the popup
+Weekly reading streak resetting across New Year when Jan 1 is a Monday
