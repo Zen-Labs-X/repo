@@ -178,6 +178,17 @@ Each flag records the book title, what was detected, the value, the conversion, 
 
 **Prefer not to send anything?** Leave the toggle off. Flags made from the Units list are still saved to a plain-text log on the device at `koreader/footcream/flagged_errors.txt` (e.g. on a Kobo, `.adds/koreader/footcream/flagged_errors.txt`). You can review it via **Debug** → **View flagged errors**, attach it to a GitHub issue in this repo, then tidy up with **Debug** → **Clear flagged errors**.
 
+### Translations
+
+Footcream's menus come in 30 languages, but every one of them was first
+drafted by AI — so they need a real speaker to read them and fix what sounds
+wrong. That happens here, with nothing to install and no programming:
+
+**https://crowdin.com/project/foot-cream**
+
+Even ten corrected lines genuinely help. See [TRANSLATING.md](TRANSLATING.md)
+for where to start.
+
 ***
 
 ## License
