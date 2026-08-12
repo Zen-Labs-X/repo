@@ -1,4 +1,4 @@
-## Audiobook Read-Along v0.1.17.14
+## Audiobook Read-Along v0.1.17.20
 
 **Download, unzip, and copy `audiobook.koplugin/` to your KOReader plugins directory. Restart KOReader.**
 
@@ -24,4 +24,8 @@
 See [README](https://github.com/stradichenko/audiobook.koplugin/blob/master/README.md) for full documentation.
 
 
-**Full Changelog**: https://github.com/stradichenko/audiobook.koplugin/compare/v0.1.17.13...v0.1.17.14
+## What's Changed
+* Fix Storyteller overlay parsing: multiline SMIL and unzip brackets by @Juansero29 in https://github.com/stradichenko/audiobook.koplugin/pull/51
+
+
+**Full Changelog**: https://github.com/stradichenko/audiobook.koplugin/compare/v0.1.17.19...v0.1.17.20
