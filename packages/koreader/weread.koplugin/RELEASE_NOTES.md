@@ -2,17 +2,23 @@
 
 ### 新功能
 
-- 支持使用方向键、翻页键和确认键操作书架、书籍详情、章节列表、书评与阅读统计，方便无触屏或主要依赖物理按键的设备使用。
-- 新增可绑定到手势或按键的“微信读书·书架”“微信读书·本地书架”“微信读书·阅读统计”和“微信读书·搜索”动作；阅读界面继续提供快捷菜单。
+- 本地书支持同步微信读书的划线与想法，无需重新生成 EPUB。
+- 同步划线想法支持取消和断点续传，并可一键显示或隐藏划线。
 
-### 优化与问题修复
+### 优化与修复
 
-- 优化大书和图片较多书籍的下载方式，显著降低内存占用，并在完成、失败或取消后自动清理临时文件。
-- 脚注改为按 KOReader 默认方式显示在页面底部，解决脚注看不到或点击后跳错位置的问题。
-- 改进划线与想法显示：长标题可以换行，想法标记不再被划线遮住。
-- 修复空书架、空书评以及快速切换书籍时可能导致的闪退。
-- 修复从微信读书书架打开图书后，书架残留并阻挡 KOReader 退出的问题。
+- 整本下载失败时自动重试，不再保存残缺 EPUB。
+- weread 主菜单简化和重构。
 
-> **升级提示：** 脚注显示方式会写入下载的书籍，已经下载的旧书需要重新下载才能使用新的脚注效果。
+感谢 @lostanother、@Mr54233 的贡献。
 
-感谢 @SuzyZhang-Dev、@MsReverie、@jsfaint、@jqs7 和 @ViggoC 的贡献。
+本地书划线与想法功能参考了 https://github.com/Mr54233/pickthought.koplugin 的实现。
+
+## What's Changed
+* fix(download): avoid incomplete full-book EPUBs by @lostanother in https://github.com/finlater/weread.koplugin/pull/118
+* feat: sync local-book underlines and thoughts by @finlater in https://github.com/finlater/weread.koplugin/pull/117
+
+## New Contributors
+* @lostanother made their first contribution in https://github.com/finlater/weread.koplugin/pull/118
+
+**Full Changelog**: https://github.com/finlater/weread.koplugin/compare/v1.1.0...v1.2.0

@@ -2770,7 +2770,7 @@ See [Privacy & Data](#privacy--data) for background on what gets sent to AI prov
   - **Max Pages (PDF, DJVU, CBZ…)**: Maximum pages to extract from page-based formats (100-5,000, default 2,000)
   - **Don't warn about truncated extractions**: When unchecked (default), a blocking warning dialog appears before sending requests where extracted text was truncated to fit the character limit. It shows the coverage percentage so you know how much of the document was included. The warning offers Cancel, Continue Anyway, or Don't warn again
   - **Don't warn about large extractions**: When unchecked (default), a warning dialog appears before sending requests with over 500K characters (~125K tokens) of extracted text. Most models except Gemini will struggle at this size. The warning offers Cancel, Continue, or Don't warn again
-  - **Clear Action Cache**: Clear cached artifact responses (X-Ray, X-Ray (Simple), Recap, Summary, Analysis, About, Analyze Notes, Key Arguments, Counterarguments, Discussion Questions, Quiz, Insights, Reading Guide) for the current book (requires book to be open). To clear just one action, use the delete button in the artifact viewer instead.
+  - **Delete Book Artifacts**: Delete all saved artifacts (X-Ray, X-Ray (Simple), Recap, Summary, Analysis, About, Analyze Notes, Key Arguments, Counterarguments, Discussion Questions, Quiz, Insights, Reading Guide) for the current book (requires book to be open). To delete just one, use the delete button in the artifact viewer instead.
 
 ### Backup & Reset
 Backup and restore functionality, index maintenance, plus reset options. See [Backup & Restore](#backup--restore) for full details.
@@ -3327,9 +3327,9 @@ All artifact results are cached per book. X-Ray and Recap additionally support *
 - Automatically moves with the book if you reorganize your library
 - Deleted with the book if you delete it via KOReader's file manager
 
-**Clearing the cache:**
+**Deleting artifacts:**
 - **Per-action**: In the artifact viewer, use the Delete button. For X-Ray specifically: options menu → "Delete X-Ray" (or "Delete Section X-Ray" for sections). Deleting the main X-Ray also clears all associated AI Wiki entries.
-- **All actions for book**: Settings → Privacy & Data → Text Extraction → Clear Action Cache (requires book to be open)
+- **All actions for book**: Settings → Privacy & Data → Text Extraction → Delete Book Artifacts (requires book to be open)
 - Either option forces fresh generation on next run (useful if analysis got off track, or to switch between incremental and complete tracks)
 
 **Requirements:**
