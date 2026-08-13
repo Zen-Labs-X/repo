@@ -1,0 +1,22 @@
+# Koreader Book Receipt plugin for KOReader
+# https://github.com/Estela-Zelin84/KOReader_Book-Receipt
+# zenpm:auto-scraped
+id=koreader-book-receipt
+name=Koreader Book Receipt
+version=20260801
+description=KOReader 屏保/阅读进度插件，休眠时显示阅读小票：进度、时长、统计。支持中文与自定义背景。
+author=Estela-Zelin84
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/Estela-Zelin84/KOReader_Book-Receipt
+stars=15
+updated_at=2026-08-13T19:08:48Z
+published_at=2026-07-31T12:32:32Z
+readme_url=packages/koreader/koreader-book-receipt.koplugin/README.md
+readme_hash=da323897011031c1184f836f64e37cce10be2905
+release_notes_url=packages/koreader/koreader-book-receipt.koplugin/RELEASE_NOTES.md
+release_notes_hash=98c32c48f9d1c746ed4096692159c97bd840d9b9b03c16b9e3d5658b3bd9a67d
+releases=[{"tag_name":"20260801","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/Estela-Zelin84/KOReader_Book-Receipt/zipball/20260801"}],"name":"v2.2 · 中文增强版 · 阅读收据屏保插件"},{"tag_name":"20260731","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/Estela-Zelin84/KOReader_Book-Receipt/zipball/20260731"}],"name":"v2.1.1 · 中文增强版 · 阅读收据屏保插件"},{"tag_name":"20260730","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/Estela-Zelin84/KOReader_Book-Receipt/zipball/20260730"}],"name":"v2.1 · 中文增强版 · 阅读收据屏保插件"},{"tag_name":"main","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/Estela-Zelin84/KOReader_Book-Receipt/zipball/main"}],"name":"v2.0 · 中文增强版 · 阅读收据屏保插件"}]
+source_type=source
+source_url=https://codeload.github.com/Estela-Zelin84/KOReader_Book-Receipt/zip/refs/heads/main
