@@ -78,7 +78,12 @@ def main():
                         help="Print planned .meta files without writing.")
     parser.add_argument("--exclude-forks", action="store_true",
                         help="Exclude forked repositories (default: include).")
+    parser.add_argument("--package", metavar="ID",
+                        help="Refresh only an existing package ID (skips discovery).")
     args = parser.parse_args()
+    package_id = (args.package or "").strip()
+    if args.package is not None and not package_id:
+        parser.error("--package requires a non-empty package ID")
     scraped_at = scraper_timestamp()
 
     if not token():
@@ -88,17 +93,21 @@ def main():
     known_refs, known_ids = existing_repo_refs()
     known_repository_identities = existing_repository_identities()
     blacklist = load_blacklist()
-    discovered = discover(PLUGIN_QUERIES)
-    for ref in EXTRA_PLUGIN_REPOS:
-        if ref in blacklist:
-            continue
-        repo = fetch_repo(ref)
-        if repo:
-            discovered.setdefault(repo.get("full_name", ref), repo)
-        else:
-            print(f"Could not discover required plugin {ref}", file=sys.stderr)
-    print(f"Discovered {len(discovered)} candidate plugin repos.",
-          file=sys.stderr)
+    discovered = {}
+    if package_id:
+        print(f"Refreshing only plugin package {package_id}.", file=sys.stderr)
+    else:
+        discovered = discover(PLUGIN_QUERIES)
+        for ref in EXTRA_PLUGIN_REPOS:
+            if ref in blacklist:
+                continue
+            repo = fetch_repo(ref)
+            if repo:
+                discovered.setdefault(repo.get("full_name", ref), repo)
+            else:
+                print(f"Could not discover required plugin {ref}", file=sys.stderr)
+        print(f"Discovered {len(discovered)} candidate plugin repos.",
+              file=sys.stderr)
 
     category_cache = load_category_cache()
     category_cache.update(existing_meta_categories())
@@ -110,8 +119,16 @@ def main():
         and is_eligible_koplugin(repo, args.exclude_forks)
     }
 
+    records = existing_scraped_meta(include_refs=eligible_manual_refs)
+    if package_id:
+        records = [record for record in records if record["id"] == package_id]
+        if not records:
+            print(f"Could not find scraped plugin package {package_id!r}.",
+                  file=sys.stderr)
+            return 1
+
     updated = []
-    for record in existing_scraped_meta(include_refs=eligible_manual_refs):
+    for record in records:
         if record["ref"] in blacklist or record["category"] == "patches":
             continue
         repo = fetch_repo(record["ref"])

@@ -5,6 +5,11 @@ on:
     # Every six hours.
     - cron: '0 */6 * * *'
   workflow_dispatch:
+    inputs:
+      package:
+        description: Existing plugin package ID to refresh (leave blank for a full scrape)
+        required: false
+        type: string
 
 permissions:
   actions: write
@@ -22,16 +27,25 @@ jobs:
         id: scrape_plugins
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 .github/scripts/scrape_koplugins.py
+          TARGET_PACKAGE: ${{ inputs.package }}
+        run: |
+          set -eu
+          if [ -n "$TARGET_PACKAGE" ]; then
+            python3 .github/scripts/scrape_koplugins.py --package "$TARGET_PACKAGE"
+          else
+            python3 .github/scripts/scrape_koplugins.py
+          fi
 
       - name: Run patch scraper
         id: scrape_patches
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.package == '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/scrape_kopatches.py
 
       - name: Refresh cached font packages
         id: scrape_fonts
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.package == '' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/scrape_fonts.py

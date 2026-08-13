@@ -181,6 +181,113 @@ class PluginScraperTests(unittest.TestCase):
             _added, updated = write_results.call_args.args
             self.assertEqual(len(updated), 1)
 
+    def test_package_filter_refreshes_only_the_requested_plugin(self):
+        repo = {
+            "owner": {"login": "AnthonyGress"},
+            "name": "zen_ui.koplugin",
+            "full_name": "AnthonyGress/zen_ui.koplugin",
+            "html_url": "https://github.com/AnthonyGress/zen_ui.koplugin",
+            "default_branch": "main",
+            "stargazers_count": 446,
+            "description": "A clean, minimal UI for KOReader",
+            "topics": ["koplugin"],
+            "archived": False,
+            "fork": False,
+        }
+        releases = [{
+            "tag_name": "v2.0.0",
+            "published_at": "2026-08-13T12:00:00Z",
+            "assets": [],
+        }]
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            original_root = scrape_common.REPO_ROOT
+            original_common_koreader_dir = scrape_common.KOREADER_DIR
+            original_plugin_koreader_dir = scrape_koplugins.KOREADER_DIR
+            scrape_common.REPO_ROOT = temp_dir
+            scrape_common.KOREADER_DIR = os.path.join(
+                temp_dir, "packages", "koreader"
+            )
+            scrape_koplugins.KOREADER_DIR = scrape_common.KOREADER_DIR
+
+            target_dir = os.path.join(
+                scrape_common.KOREADER_DIR, "zen-ui.koplugin"
+            )
+            other_dir = os.path.join(
+                scrape_common.KOREADER_DIR, "other.koplugin"
+            )
+            os.makedirs(target_dir)
+            os.makedirs(other_dir)
+            target_meta_path = os.path.join(target_dir, ".meta")
+            other_meta_path = os.path.join(other_dir, ".meta")
+            with open(target_meta_path, "w", encoding="utf-8") as fh:
+                fh.write(
+                    "# zenpm:auto-scraped\n"
+                    "id=zen-ui\n"
+                    "name=Zen UI\n"
+                    "version=1.0.0\n"
+                    "description=Old description\n"
+                    "author=AnthonyGress\n"
+                    "category=theme\n"
+                    "platforms=koreader\n"
+                    "dependencies=\n"
+                    "source=https://github.com/AnthonyGress/zen_ui.koplugin\n"
+                )
+            with open(other_meta_path, "w", encoding="utf-8") as fh:
+                fh.write(
+                    "# zenpm:auto-scraped\n"
+                    "id=other\n"
+                    "name=Other\n"
+                    "version=1.0.0\n"
+                    "description=Other plugin\n"
+                    "author=owner\n"
+                    "category=utility\n"
+                    "platforms=koreader\n"
+                    "dependencies=\n"
+                    "source=https://github.com/owner/other.koplugin\n"
+                )
+
+            try:
+                with mock.patch.object(scrape_koplugins, "discover") as discover, mock.patch.object(
+                    scrape_koplugins, "fetch_repo", return_value=repo
+                ) as fetch_repo, mock.patch.object(
+                    scrape_koplugins, "fetch_releases", return_value=releases
+                ), mock.patch.object(
+                    scrape_koplugins, "cache_release_notes",
+                    return_value=(None, None, False, True),
+                ), mock.patch.object(
+                    scrape_koplugins, "cache_readme",
+                    return_value=(None, None, False, True),
+                ), mock.patch.object(
+                    scrape_koplugins, "load_blacklist", return_value=set()
+                ), mock.patch.object(
+                    scrape_koplugins, "load_category_cache", return_value={}
+                ), mock.patch.object(
+                    scrape_koplugins, "save_category_cache"
+                ), mock.patch.object(
+                    scrape_koplugins, "scraper_timestamp",
+                    return_value="2026-08-13T12:01:00Z",
+                ), mock.patch.object(
+                    scrape_koplugins, "write_results"
+                ) as write_results, mock.patch.object(
+                    sys, "argv", ["scrape_koplugins.py", "--package", "zen-ui"]
+                ):
+                    self.assertEqual(scrape_koplugins.main(), 0)
+            finally:
+                scrape_common.REPO_ROOT = original_root
+                scrape_common.KOREADER_DIR = original_common_koreader_dir
+                scrape_koplugins.KOREADER_DIR = original_plugin_koreader_dir
+
+            discover.assert_not_called()
+            fetch_repo.assert_called_once_with("anthonygress/zen_ui.koplugin")
+            with open(target_meta_path, encoding="utf-8") as fh:
+                self.assertIn("version=2.0.0\n", fh.read())
+            with open(other_meta_path, encoding="utf-8") as fh:
+                self.assertIn("version=1.0.0\n", fh.read())
+            added, updated = write_results.call_args.args
+            self.assertEqual(added, [])
+            self.assertEqual([item["id"] for item in updated], ["zen-ui"])
+
 
 if __name__ == "__main__":
     unittest.main()
