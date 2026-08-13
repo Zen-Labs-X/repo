@@ -75,6 +75,7 @@ jobs:
           find packages -name 'versions.json' -exec jq empty {} +
 
       - name: Commit scraped package changes
+        id: commit
         if: ${{ steps.scrape.outputs.added_count != '0' || steps.scrape.outputs.updated_count != '0' }}
         run: |
           set -eu
@@ -86,14 +87,18 @@ jobs:
           git add --all -- manifest.json packages
           if git diff --cached --quiet; then
               echo "No scraped package changes to commit."
+              echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
               exit 0
           fi
 
           git commit -m "Refresh scraped KOReader packages"
+          COMMIT_SHA="$(git rev-parse HEAD)"
           git push origin HEAD:main
+          echo "sha=$COMMIT_SHA" >> "$GITHUB_OUTPUT"
 
       - name: Dispatch GitHub Pages deployment
         if: ${{ steps.scrape.outputs.added_count != '0' || steps.scrape.outputs.updated_count != '0' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run pages-deploy.yml --ref main
+          SOURCE_REF: ${{ steps.commit.outputs.sha }}
+        run: gh workflow run pages-deploy.yml --ref main --field source_ref="$SOURCE_REF"
