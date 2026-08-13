@@ -1,4 +1,4 @@
-## Audiobook Read-Along v0.1.17.20
+## Audiobook Read-Along v0.1.17.23
 
 **Download, unzip, and copy `audiobook.koplugin/` to your KOReader plugins directory. Restart KOReader.**
 
@@ -25,7 +25,7 @@ See [README](https://github.com/stradichenko/audiobook.koplugin/blob/master/READ
 
 
 ## What's Changed
-* Fix Storyteller overlay parsing: multiline SMIL and unzip brackets by @Juansero29 in https://github.com/stradichenko/audiobook.koplugin/pull/51
+* fix(android): MediaPlayer JNI for EPUB Media Overlay on Boox (v0.1.17.34) by @Juansero29 in https://github.com/stradichenko/audiobook.koplugin/pull/56
 
 
-**Full Changelog**: https://github.com/stradichenko/audiobook.koplugin/compare/v0.1.17.19...v0.1.17.20
+**Full Changelog**: https://github.com/stradichenko/audiobook.koplugin/compare/v0.1.17.22...v0.1.17.23
