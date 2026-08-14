@@ -3594,17 +3594,19 @@ KOAssistant supports **28 built-in AI providers** — a **curated set** the main
 
 ### Free Tier Providers
 
-Several providers offer free tiers for testing or budget-conscious users. Details below verified August 2026 -- free tiers change often, so treat the numbers as indicative and check the provider's own limits page for the current state:
+Several providers offer free tiers for testing or budget-conscious users. Details below verified mid-August 2026 -- free tiers change often, so treat the numbers as indicative and check the provider's own limits page for the current state:
 
 | Provider | Free Tier Details |
 |----------|-------------------|
-| **Groq** | Nearly all models free, no card needed. Limits are per model, roughly 30 requests/min and 6-15K tokens/min (up to ~14K requests/day on small models). Also hosts OpenAI's open-weight `gpt-oss-120b`/`gpt-oss-20b` on the free tier |
-| **Gemini** | Flash and Flash-Lite class models free (`gemini-3.6-flash`, `gemini-3.5-flash`, the flash-lite variants, 2.5-flash family), no card needed. Pro models are paid-only (removed from the free tier April 2026). Caution: enabling billing on the Google Cloud project removes the free tier for that project -- keep your free key on a project without billing |
+| **Groq** | Nearly all models free, no card needed. Limits are per model, roughly 30 requests/min and 6-30K tokens/min (up to ~14K requests/day on small models; limits are shared across your whole account). Also hosts OpenAI's open-weight `gpt-oss-120b`/`gpt-oss-20b` on the free tier |
+| **Gemini** | Flash and Flash-Lite class models free (`gemini-3.6-flash`, `gemini-3.5-flash`, the flash-lite variants, 2.5-flash family), no card needed; roughly 5-15 requests/min and 100-1,000 requests/day depending on the model. Pro models are paid-only (removed from the free tier April 2026). Caution: enabling billing on the Google Cloud project removes the free tier for that project -- keep your free key on a project without billing, and use a separate project for a paid key |
 | **Ollama** | Completely free (runs locally on your hardware) |
-| **Mistral** | Free tier ("free mode" / Experiment plan) covers **all** La Plateforme models, roughly 1B tokens/month; phone verification required, no card. (Separately, `mistral-small-latest` and `magistral-small-latest` are Apache 2.0 open-weight -- you can also self-host them via Ollama) |
+| **Mistral** | Free tier ("free mode" / Experiment plan) covers **all** La Plateforme models, roughly 1B tokens/month; phone verification required, no card. The catch is a very low request rate (~2 requests/min -- fine for chat, slow for multi-request builds); Mistral no longer publishes exact numbers, check Admin Console → Limits. (Separately, `mistral-small-latest` and `magistral-small-latest` are Apache 2.0 open-weight -- you can also self-host them via Ollama) |
 | **OpenRouter** | `:free` model variants (rotating roster -- DeepSeek, Llama, `gpt-oss`, and more): 20 requests/min and 50 requests/day account-wide; a one-time $10 credit purchase permanently raises that to 1,000 requests/day |
-| **Z.AI** | GLM-4.7-Flash (and 4.5-Flash) free; 1 concurrent request |
-| **SambaNova** | Free tier limited to 3 models (DeepSeek-V3.1, Llama-3.3-70B, gpt-oss-120b) at 20 requests/day -- fine for a quick trial, too small for daily use |
+| **Z.AI** | GLM-4.7-Flash free (genuinely free, not trial credits); 1 concurrent request, ~1,000 requests/day |
+| **SambaNova** | Free tier limited to 3 models (DeepSeek-V3.1, Llama-3.3-70B, gpt-oss-120b) at 20 requests/day and 200K tokens/day per model -- fine for a quick trial, too small for daily use |
+
+> **Note:** Some providers widely described as "free" online are actually time-limited trials -- e.g. Cerebras offers $5 in credits that expire after 30 days, not a persistent free tier. When in doubt, check whether the allowance renews.
 
 **Best for testing:** Groq (fast free inference, no card), Gemini (free Flash models, no card), Ollama (no API key needed).
 

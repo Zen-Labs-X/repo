@@ -1,3 +1,3 @@
 ## What's Changed
 
-- Minor bug fixes
+- Update icon
