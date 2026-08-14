@@ -1,8 +1,8 @@
-# Zen UI plugin for KOReader
+# ZenOS plugin for KOReader
 # https://github.com/AnthonyGress/zen_ui.koplugin
 # zenpm:auto-scraped
 id=zen-ui
-name=Zen UI
+name=ZenOS
 version=2.5.4
 description=A clean, minimal UI for KOReader
 author=AnthonyGress
@@ -10,6 +10,9 @@ category=theme
 platforms=koreader
 dependencies=
 source=https://github.com/AnthonyGress/zen_ui.koplugin
+plugin_module=zenos
+plugin_module_aliases=zen_ui
+source_asset_aliases=zen_ui.koplugin.zip
 icon_url=packages/koreader/zen-ui.koplugin/assets/zen.svg
 featured_image=packages/koreader/zen-ui.koplugin/assets/featured.png
 conflicts=simpleui

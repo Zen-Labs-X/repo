@@ -6382,7 +6382,7 @@
     },
     {
       "id": "zen-ui",
-      "name": "Zen UI",
+      "name": "ZenOS",
       "version": "2.5.4",
       "description": "A clean, minimal UI for KOReader",
       "author": "AnthonyGress",
@@ -6397,6 +6397,9 @@
       "size": "1011867",
       "source": "https://github.com/AnthonyGress/zen_ui.koplugin",
       "source_asset": "zen_ui.koplugin.zip",
+      "source_asset_aliases": ["zen_ui.koplugin.zip"],
+      "plugin_module": "zenos",
+      "plugin_module_aliases": ["zen_ui"],
       "source_type": "release",
       "stars": "490",
       "updated_at": "2026-08-14T19:00:33Z",

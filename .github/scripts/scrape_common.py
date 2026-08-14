@@ -36,6 +36,12 @@ PRESENTATION_FIELDS = (
     "featured_order",
 )
 
+PLUGIN_IDENTITY_FIELDS = (
+    "plugin_module",
+    "plugin_module_aliases",
+    "source_asset_aliases",
+)
+
 VALID_CATEGORIES = ("utility", "games", "productivity", "media", "theme", "patches", "fonts")
 DEFAULT_CATEGORY = "utility"
 PATCH_CATEGORY = "patches"
@@ -613,6 +619,11 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
         f"source={repo['html_url']}",
     ])
 
+    for field in PLUGIN_IDENTITY_FIELDS:
+        value = (preserved_fields or {}).get(field, "")
+        if value:
+            lines.append(f"{field}={value}")
+
     if install_url:
         lines.append(f"install_url={install_url}")
     if uninstall_url:
@@ -675,6 +686,16 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
         ),
     }
 
+    source_asset_aliases = {
+        value.strip()
+        for value in (preserved_fields or {}).get("source_asset_aliases", "").split(",")
+        if value.strip()
+    }
+    canonical_zip_assets = [
+        asset for asset in zip_assets
+        if asset.get("name", "") not in source_asset_aliases
+    ]
+
     if kind == KIND_PATCH and patch_assets is not None:
         lines.append("source_type=source")
         for i, asset in enumerate(patch_assets):
@@ -685,6 +706,10 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
         summary["assets"] = len(patch_assets)
     elif len(zip_assets) >= 2:
         lines.append("source_type=release")
+        if len(canonical_zip_assets) == 1:
+            canonical_asset = canonical_zip_assets[0]
+            lines.append(f"source_asset={canonical_asset.get('name', '')}")
+            lines.append(f"size={canonical_asset.get('size', 0)}")
         for i, asset in enumerate(zip_assets):
             aname = asset.get("name", "")
             lines.append(f"assets.{i}.arch={detect_arch(aname)}")

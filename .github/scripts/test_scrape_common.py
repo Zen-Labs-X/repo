@@ -349,6 +349,85 @@ class CachedPackageMetadataTests(unittest.TestCase):
             }],
         }])
 
+    def test_build_meta_marks_canonical_zip_and_keeps_compatibility_asset(self):
+        repo = {
+            "owner": {"login": "owner"},
+            "name": "zen_ui.koplugin",
+            "full_name": "owner/zen_ui.koplugin",
+            "html_url": "https://github.com/owner/zen_ui.koplugin",
+            "default_branch": "main",
+            "stargazers_count": 20,
+            "description": "Example package",
+        }
+        release = {
+            "tag_name": "v3.0.0",
+            "assets": [
+                {
+                    "name": "zenos.koplugin.zip",
+                    "browser_download_url": "https://example.com/zenos.koplugin.zip",
+                    "size": 200,
+                },
+                {
+                    "name": "zen_ui.koplugin.zip",
+                    "browser_download_url": "https://example.com/zen_ui.koplugin.zip",
+                    "size": 201,
+                },
+            ],
+        }
+
+        _package_id, meta_text, summary = scrape_common.build_meta(
+            repo, release, set(), "theme", meta_id="zen-ui", name_override="ZenOS",
+            preserved_fields={
+                "plugin_module": "zenos",
+                "plugin_module_aliases": "zen_ui",
+                "source_asset_aliases": "zen_ui.koplugin.zip",
+            },
+            scraped_at="2026-08-14T00:00:00Z",
+        )
+
+        self.assertIn("plugin_module=zenos\n", meta_text)
+        self.assertIn("plugin_module_aliases=zen_ui\n", meta_text)
+        self.assertIn("source_asset_aliases=zen_ui.koplugin.zip\n", meta_text)
+        self.assertIn("source_asset=zenos.koplugin.zip\n", meta_text)
+        self.assertIn("assets.0.asset=zenos.koplugin.zip\n", meta_text)
+        self.assertIn("assets.1.asset=zen_ui.koplugin.zip\n", meta_text)
+        self.assertIn("assets.0.arch=any\n", meta_text)
+        self.assertIn("assets.1.arch=any\n", meta_text)
+        self.assertEqual(summary["assets"], 2)
+
+    def test_build_meta_keeps_legacy_alias_when_release_has_no_canonical_zip(self):
+        repo = {
+            "owner": {"login": "owner"},
+            "name": "zen_ui.koplugin",
+            "full_name": "owner/zen_ui.koplugin",
+            "html_url": "https://github.com/owner/zen_ui.koplugin",
+            "default_branch": "main",
+            "stargazers_count": 20,
+            "description": "Example package",
+        }
+        release = {
+            "tag_name": "v2.5.4",
+            "assets": [{
+                "name": "zen_ui.koplugin.zip",
+                "browser_download_url": "https://example.com/zen_ui.koplugin.zip",
+                "size": 201,
+            }],
+        }
+
+        _package_id, meta_text, summary = scrape_common.build_meta(
+            repo, release, set(), "theme", meta_id="zen-ui", name_override="ZenOS",
+            preserved_fields={
+                "plugin_module": "zenos",
+                "plugin_module_aliases": "zen_ui",
+                "source_asset_aliases": "zen_ui.koplugin.zip",
+            },
+            scraped_at="2026-08-14T00:00:00Z",
+        )
+
+        self.assertIn("source_asset=zen_ui.koplugin.zip\n", meta_text)
+        self.assertNotIn("assets.0.", meta_text)
+        self.assertEqual(summary["assets"], 1)
+
     def test_repository_identity_ignores_package_name_punctuation(self):
         self.assertEqual(
             scrape_common.repository_identity("https://github.com/xZenLabs/ZenMTP"),

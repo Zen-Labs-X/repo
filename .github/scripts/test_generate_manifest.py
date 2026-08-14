@@ -29,6 +29,9 @@ class GenerateManifestTests(unittest.TestCase):
                     "category=utility\n"
                     "platforms=koreader\n"
                     "dependencies=\n"
+                    "plugin_module=zenos\n"
+                    "plugin_module_aliases=zen_ui\n"
+                    "source_asset_aliases=zen_ui.koplugin.zip\n"
                     'releases=[{"tag_name":"v2.0.0-beta.1","name":"Beta release",'
                     '"prerelease":true,"assets":[{"name":"test.koplugin.zip",'
                     '"url":"https://example.com/test.koplugin.zip","size":123,'
@@ -62,6 +65,9 @@ class GenerateManifestTests(unittest.TestCase):
 
             package = packages["test"]
             self.assertEqual(package["versions_url"], "packages/test/versions.json")
+            self.assertEqual(package["plugin_module"], "zenos")
+            self.assertEqual(package["plugin_module_aliases"], ["zen_ui"])
+            self.assertEqual(package["source_asset_aliases"], ["zen_ui.koplugin.zip"])
             self.assertNotIn("releases", package)
             self.assertEqual(releases, [{
                 "tag_name": "v2.0.0-beta.1",

@@ -103,6 +103,9 @@ for meta_file in $meta_files; do
     featured_image=$(grep '^featured_image=' "$tmp" 2>/dev/null | sed 's/^featured_image=//' | head -1)
     source=$(grep '^source=' "$tmp" 2>/dev/null | sed 's/^source=//' | head -1)
     source_asset=$(grep '^source_asset=' "$tmp" 2>/dev/null | sed 's/^source_asset=//' | head -1)
+    source_asset_aliases=$(grep '^source_asset_aliases=' "$tmp" 2>/dev/null | sed 's/^source_asset_aliases=//' | head -1)
+    plugin_module=$(grep '^plugin_module=' "$tmp" 2>/dev/null | sed 's/^plugin_module=//' | head -1)
+    plugin_module_aliases=$(grep '^plugin_module_aliases=' "$tmp" 2>/dev/null | sed 's/^plugin_module_aliases=//' | head -1)
     source_type=$(grep '^source_type=' "$tmp" 2>/dev/null | sed 's/^source_type=//' | head -1)
     source_url=$(grep '^source_url=' "$tmp" 2>/dev/null | sed 's/^source_url=//' | head -1)
     stars=$(grep '^stars=' "$tmp" 2>/dev/null | sed 's/^stars=//' | head -1)
@@ -202,6 +205,9 @@ for meta_file in $meta_files; do
     # Source fields
     [ -n "$source" ]       && printf ',\n      "source": "%s"' "$(json_escape "$source")" >> "$OUTPUT"
     [ -n "$source_asset" ] && printf ',\n      "source_asset": "%s"' "$(json_escape "$source_asset")" >> "$OUTPUT"
+    [ -n "$source_asset_aliases" ] && printf ',\n      "source_asset_aliases": %s' "$(csv_to_json_array "$source_asset_aliases")" >> "$OUTPUT"
+    [ -n "$plugin_module" ] && printf ',\n      "plugin_module": "%s"' "$(json_escape "$plugin_module")" >> "$OUTPUT"
+    [ -n "$plugin_module_aliases" ] && printf ',\n      "plugin_module_aliases": %s' "$(csv_to_json_array "$plugin_module_aliases")" >> "$OUTPUT"
     [ -n "$source_type" ]  && printf ',\n      "source_type": "%s"' "$(json_escape "$source_type")" >> "$OUTPUT"
     [ -n "$source_url" ]   && printf ',\n      "source_url": "%s"' "$(json_escape "$source_url")" >> "$OUTPUT"
     [ -n "$stars" ]        && printf ',\n      "stars": "%s"' "$stars" >> "$OUTPUT"
