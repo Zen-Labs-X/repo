@@ -1,4 +1,4 @@
 ## What's Changed
 
-- Add Changes tab
-- Add simple mode
+- Boox bug fixes
+- Minor bug fixes
