@@ -1,15 +1,18 @@
-Pre-release for on-device testing.
+Pre-release for on-device testing (invisible to the normal updater).
 
-🎯 Smarter relevance filter (fewer good images wrongly hidden)
-- Maps, family trees, diagrams and charts named as such (map, family-tree, diagram, chart, timeline…) are now recognized as reference content, so an endpaper map or a family tree that used to fall just under the size cutoff is kept.
-- Illustrated non-fiction gets a gentler filter automatically: when a book already keeps lots of figures (cookbooks, science, how-to), Glimpse lowers the size floor for that book so its smaller diagrams and charts come through — while novels stay strict. Validated across a 200+ book library. Takes effect on update; no rescan needed.
+Changes since v1.2.3:
 
-🧭 Menu tidy-up
-- 'Include bookmarked pages' promoted from Advanced to the main Glimpse menu.
-- 'Rotate 90°' is now 'Rotate image', and it's hidden for bookmarked pages (where it doesn't apply).
-- 'Show Zoom Control' → 'Show Zoom Controls'.
+Menu
+- Gallery is now always in the ⋯ menu, pinned to the bottom as its own floating item (removed from the configurable Quick Actions).
+- Shorter ⋯ labels: 'Nav Buttons', 'Zoom Controls', 'Image Captions' (dropped 'Show').
+- The spoiler scope now reads 'Mode: Spoiler-free' (was 'Mode: Images up to here').
 
-🔖 Bookmarks
-- Bookmarked page thumbnails render lighter (drawer-sized, not full-screen) for less memory per page.
+Gallery
+- The page arrows always show now (greyed out on a single page) so the bottom bar stops shifting as you page.
+- Long-pressing a thumbnail dims the other thumbnails and lifts the action tooltip a little higher, so the pressed one stands out.
 
-Please check filter behaviour on your own books, and the bookmark features in night mode.
+Viewer polish
+- Active buttons (⋯, nav arrows, zoom control, Back/Reset, page pill) now cast a soft drop shadow; disabled buttons stay flat.
+- The page-position pill's corners are a touch less rounded, matching the updated design.
+
+Please test in BOTH day and night mode (the shadow's night polarity couldn't be verified in the emulator).
