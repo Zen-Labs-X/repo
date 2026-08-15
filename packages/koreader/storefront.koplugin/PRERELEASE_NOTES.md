@@ -1,5 +1,3 @@
-- general performance improvements across multiple areas
-- only fetch ratings once per hour instead of every tab change
-- fix bug with filter bar showing all the time. It now remembers the user preferences again.
+- fix filter bug
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.9...26.8.14-beta
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.15-alpha...26.8.15-alpha2

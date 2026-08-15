@@ -209,17 +209,17 @@ return {
 }
 ```
 
-> **Note:** GUI-entered keys take priority over file-based keys. The API Keys menu shows `[set]` for GUI keys and `(file)` for keys from apikeys.lua. Provider pickers only list providers that have a key configured (plus local/no-key providers like Ollama), so the menus stay short.
+> **Note:** GUI-entered keys take priority over file-based keys. The API Keys menu shows `[set]` for GUI keys and `(file)` for keys from apikeys.lua. Provider pickers only list providers that have a key configured (plus local/no-key providers like Ollama), so the menus stay short. You can also keep several keys for one provider (for example a free and a paid one) and switch between them -- see [API Keys](#api-keys).
 
 **Option C: OpenAI Subscription (device login)**
 
-If your ChatGPT plan includes Codex access, go to **Tools → KOAssistant → API Keys → OpenAI Subscription** and tap **Connect**. KOAssistant displays an OpenAI verification URL and one-time code; it never tries to open a browser on the e-reader. Open the URL on another device, enter the code, then return to KOReader and tap **Check authorization**. This is separate from the OpenAI API-key provider and does not use API credits.
+Works with any ChatGPT account that has Codex access -- **including free accounts** (verified August 2026; free-account limits are undocumented, expect them to be modest). Device code access must be enabled for your ChatGPT account -- the verification page at `https://auth.openai.com/codex/device` shows instructions for enabling it if it isn't yet. Go to **Tools → KOAssistant → API Keys → OpenAI Subscription** and tap **Connect**. KOAssistant displays an OpenAI verification URL and one-time code; it never tries to open a browser on the e-reader. Open the URL on another device, enter the code, then return to KOReader and tap **Check authorization**. This is separate from the OpenAI API-key provider and does not use API credits.
 
 KOAssistant stores the OAuth access/refresh tokens in its settings and never displays or logs them. They are excluded from ordinary backups; enabling **Include API keys** includes them, and **Reset API Keys** disconnects the subscription. Subscription access depends on OpenAI's Codex backend and eligible ChatGPT account entitlements, so available models and service behavior may change.
 
 See [Supported Providers](#supported-providers--settings) for full list with links to get API keys.
 
-> **Free Options Available:** Don't want to pay? Groq, Gemini, and Ollama offer free tiers. See [Free Tier Providers](#free-tier-providers). Already paying for ChatGPT? Use it here instead of API credits (Option C above) -- see [Using a Subscription Instead of API Credits](#using-a-subscription-instead-of-api-credits).
+> **Free Options Available:** Don't want to pay? Groq, Gemini, and Ollama offer free tiers, and a **free ChatGPT account** works via OpenAI Subscription (device login, experimental). See [Free Tier Providers](#free-tier-providers). Already paying for ChatGPT? Use it here instead of API credits (Option C above) -- see [Using a Subscription Instead of API Credits](#using-a-subscription-instead-of-api-credits).
 
 ### 3. Restart KOReader
 
@@ -2443,9 +2443,26 @@ These launch entries sit at the top of the menu:
 
 ### API Keys
 - Enter API keys directly via the GUI (no file editing needed)
-- Shows status indicators: `[set]` for GUI-entered keys, `(file)` for keys from apikeys.lua, `[connected]` for OpenAI Subscription
+- Shows status indicators: `[set]` for GUI-entered keys, `(file)` for keys from apikeys.lua, `[N keys]` when several are configured, `[connected]` for OpenAI Subscription
 - GUI keys take priority over file-based keys
-- Tap a provider to enter, view (masked), or clear its key
+- Tap a provider to enter its first key. Once a key exists, tapping opens the **key manager** instead
+
+**Multiple keys per provider** -- for example a free Gemini key and a paid one, switchable without editing files:
+
+- The key manager lists every key you have for that provider, masked (`AIz...x3Fq`), each labeled with where it came from (added in app, or apikeys.lua) and which one is currently in use
+- **Tap a key to use it.** The switch applies from the next request, everywhere (chat, provider tests, image generation)
+- **Hold a key** to rename or delete it (keys from apikeys.lua are changed by editing that file instead)
+- **Add API key...** adds another key; give keys names like "free" or "paid" so the list stays readable
+- The manager is also reachable from the provider's own model menu (the "API keys..." row)
+- In apikeys.lua, multiple keys are written as a list of named entries:
+
+```lua
+gemini = {
+    { key = "KEY1", alias = "free" },
+    { key = "KEY2", alias = "paid" },
+},
+```
+
 - **OpenAI Subscription** is managed here too, but opens a Connect / Disconnect dialog instead of key entry (device login with your ChatGPT plan). See [Quick Setup, Option C](#2-add-your-api-key)
 
 ### Temperature
@@ -2804,7 +2821,7 @@ Backup and restore functionality, index maintenance, plus reset options. See [Ba
 - **Provider Settings**:
   - **Z.AI Region**: Select endpoint (International: api.z.ai / China: open.bigmodel.cn). Same API key works on both.
   - **Qwen Region**: Select your Alibaba Cloud region (International: Singapore / China: Beijing / US: Virginia). API keys are region-specific and NOT interchangeable.
-- **AI Book Tools (Experimental)**: Let the AI search and read the open book on demand to ground its answers in the actual text. See [AI Book Tools](#ai-book-tools-experimental). Supported on Gemini, Claude (Anthropic), OpenAI (API or Subscription), OpenRouter (Claude/GPT/Gemini models), plus DeepSeek, Mistral, Groq, and xAI; other providers fall back to normal chat. Requires "Allow Text Extraction".
+- **AI Book Tools (Experimental)**: Let the AI search and read the open book on demand to ground its answers in the actual text. See [AI Book Tools](#ai-book-tools-experimental). Supported on Gemini, Claude (Anthropic), OpenAI (API or Subscription), OpenRouter (Claude/GPT/Gemini models), plus DeepSeek, Mistral, Groq, xAI, Fireworks, Qwen (`qwen3-max`), and Ollama; other providers fall back to normal chat. Requires "Allow Text Extraction".
   - **AI Book Tools** (posture): Off (no tool use anywhere; the Tools chip disappears) / Manual (the Tools chip in book chats starts OFF) / Auto (default; the Tools chip starts ON — the AI still decides per question whether to actually search). Predefined actions never use tools unless they explicitly offer smart retrieval. Overridable per book, and per-chat via the **Tools** chip.
   - **Book Tools Mode**: Gather then answer (default; the AI quietly collects passages first, then answers as a normal streamed request with web search available) or Interactive (the original agentic loop; no streaming or web search while tools run).
   - **Book Tools Lookup Effort**: Quick (up to 4 lookups in 2 rounds) / Standard (up to 8 in 4 rounds) / Thorough (up to 16 in 6 rounds, larger passage budget).
@@ -3222,7 +3239,7 @@ When chatting about an open book, the AI can call **local tools to look things u
 
   Set the posture globally in Settings, or **per book** (Book Settings, or hold the Tools chip for a For-this-book / Global picker). The per-book value wins over the global one; the Tools chip wins for the current chat once you tap it.
 - **Lookup effort dial** (quick / standard / thorough): caps how many lookups the AI may make per question — **quick** (2 turns / 4 calls), **standard** (4 / 8), **thorough** (6 / 16) — and tells the model its remaining budget so it plans its searches (broad → narrow) instead of being cut off mid-search.
-- **Providers**: **Gemini**, **Claude (Anthropic)**, **OpenAI** (API or Subscription), and **OpenRouter**, plus **DeepSeek, Mistral, Groq, and xAI** on tool-capable models. Providers/models without tool support automatically fall back to normal chat.
+- **Providers**: **Gemini**, **Claude (Anthropic)**, **OpenAI** (API or Subscription), and **OpenRouter**, plus **DeepSeek, Mistral, Groq, xAI, Fireworks, Qwen** (and **Ollama** locally) on tool-capable models. Providers/models without tool support automatically fall back to normal chat.
 - **Requires** "Allow Text Extraction" — the tools read book text (see [Text Extraction and Double-gating](#text-extraction-and-double-gating)). A trusted provider also satisfies this.
 - **Where it applies**: freeform chat and replies about an **open book** (book/highlight context), plus **Smart retrieval** for two context-aware actions (below). Not predefined artifact actions like X-Ray or Summary (those extract their own context and are deliberately kept tools-free, including their follow-up replies), and not general, library, or X-Ray chat.
 - **Smart retrieval (as an action source)**: two highlight-context actions — **Explain in Context** and **Analyze in Context** — offer "Smart retrieval (AI searches the book)" as a fourth source in the scope/source popup (alongside full text / summary / AI knowledge). The AI gathers the passages relevant to your highlight and question, then answers from them. It is **preselected** when your session is tools-capable; the row is shown grayed with the reason when it isn't (unsupported provider, extraction consent off, tools posture Off, or a non-full scope). Direct entry points (highlight long-press, dictionary) run the same gather silently, with no popup.
@@ -3484,7 +3501,7 @@ Supported providers can search the web to include current information in their r
 | **Anthropic** | `web_search_20250305` tool | All models; the effort dial sets max searches (2 / 5 / 10) |
 | **OpenAI** | Native web search (Responses API) | GPT-5 models; the effort dial sets search context size |
 | **OpenAI Subscription** | Native web search (Responses API via the Codex backend) | Same GPT-5 models and effort mapping as OpenAI |
-| **Gemini** | Google Search grounding | Search-grounding-capable models; search count automatic |
+| **Gemini** | Google Search grounding | Search-grounding-capable models; search count automatic. **Free-tier keys: grounding on Gemini 3.x models is rejected** (instant "quota exceeded" 429 even when plain requests work) -- use a 2.5 model for web search on a free key (only possible on Google accounts old enough to still have 2.5 models), switch provider, or add paid credits (confirmed to lift the limit). The error dialog offers "Try again without web search" |
 | **xAI** | Live search (Responses API) | Grok-4 models (search decided automatically) |
 | **OpenRouter** | Exa search via `:online` suffix | Works with all models (~$0.02/search); effort sets result count (3 / 5 / 10) |
 | **Perplexity** | Built-in Sonar web search | Always-on, every response includes citations |
@@ -3535,7 +3552,7 @@ The built-in **News Update** action demonstrates this. It uses `enable_web_searc
 
 ## Supported Providers + Settings
 
-KOAssistant supports **28 built-in AI providers** — a **curated set** the maintainer tests with real keys and automated probes, and a **community set** (marked `*` in the plugin and *Docs-based* below) implemented from provider documentation — plus any number of custom OpenAI-compatible providers you add yourself (OpenAI is listed twice below: once for API keys, once for ChatGPT-subscription login). Please test and give feedback -- fixes are quickly implemented
+KOAssistant supports **28 built-in AI providers** — a **curated set** the maintainer tests with real keys and automated probes, and a **community set** (marked `*` in the plugin and *Docs-based* below) implemented from provider documentation — plus any number of custom OpenAI-compatible providers you add yourself (OpenAI is listed twice below: once for API keys, once for ChatGPT-subscription login). Please test and give feedback -- fixes are quickly implemented. If you use a Docs-based provider and want it properly verified, you can also send a limited/spending-capped API key to the contact email on the maintainer's GitHub profile -- live probing is exactly what promotes a provider into the tested set
 
 | Provider | Description | Status | Get API Key |
 |----------|-------------|--------|-------------|
@@ -3546,16 +3563,16 @@ KOAssistant supports **28 built-in AI providers** — a **curated set** the main
 | **Gemini** | Google's Gemini models | Tested | [aistudio.google.com](https://aistudio.google.com/) |
 | **Ollama** | Local models (no API key needed) | Tested | [ollama.ai](https://ollama.ai/) |
 | **Groq** | Extremely fast inference | Docs-based* | [console.groq.com](https://console.groq.com/) |
-| **Fireworks** | Fast inference for open models | Docs-based* | [fireworks.ai](https://fireworks.ai/) |
+| **Fireworks** | Fast inference for open models; book tools supported | Tested | [fireworks.ai](https://fireworks.ai/) |
 | **SambaNova** | Fastest inference; small free tier (3 models, 20 requests/day) | Docs-based* | [cloud.sambanova.ai](https://cloud.sambanova.ai/) |
 | **Together** | 200+ open source models | Docs-based* | [api.together.xyz](https://api.together.xyz/) |
 | **Mistral** | European provider, coding models | Tested | [console.mistral.ai](https://console.mistral.ai/) |
 | **xAI** | Grok models, up to 1M context | Tested | [console.x.ai](https://console.x.ai/) |
 | **OpenRouter** | Meta-provider, 500+ models | Tested | [openrouter.ai](https://openrouter.ai/) |
 | **Requesty** | OpenAI-compatible model router | Docs-based* | [requesty.ai](https://requesty.ai/) |
-| **Cohere** | Command models | Docs-based* | [dashboard.cohere.com](https://dashboard.cohere.com/) |
-| **Qwen** | Alibaba's Qwen models | Docs-based* | [dashscope.console.aliyun.com](https://dashscope.console.aliyun.com/) |
-| **Kimi** | Moonshot models | Docs-based* | [platform.moonshot.cn](https://platform.moonshot.cn/) |
+| **Cohere** | Command models | Tested | [dashboard.cohere.com](https://dashboard.cohere.com/) |
+| **Qwen** | Alibaba's Qwen models; book tools on `qwen3-max` | Tested | [modelstudio.console.alibabacloud.com](https://modelstudio.console.alibabacloud.com/) (international; CN console differs) |
+| **Kimi** | Moonshot models | Tested | [platform.moonshot.ai](https://platform.moonshot.ai/) (international; platform.moonshot.cn for the China region setting) |
 | **Doubao** | ByteDance Volcano Engine | Docs-based* | [console.volcengine.com](https://console.volcengine.com/) |
 | **Z.AI** | GLM models, free tier available | Tested | [z.ai](https://z.ai/) |
 | **Perplexity** | Sonar models, built-in web search with citations | Tested | [perplexity.ai](https://www.perplexity.ai/settings/api) |
@@ -3599,12 +3616,13 @@ Several providers offer free tiers for testing or budget-conscious users. Detail
 | Provider | Free Tier Details |
 |----------|-------------------|
 | **Groq** | Nearly all models free, no card needed. Limits are per model, roughly 30 requests/min and 6-30K tokens/min (up to ~14K requests/day on small models; limits are shared across your whole account). Also hosts OpenAI's open-weight `gpt-oss-120b`/`gpt-oss-20b` on the free tier |
-| **Gemini** | Flash and Flash-Lite class models free (`gemini-3.6-flash`, `gemini-3.5-flash`, the flash-lite variants, 2.5-flash family), no card needed; roughly 5-15 requests/min and 100-1,000 requests/day depending on the model. Pro models are paid-only (removed from the free tier April 2026). Caution: enabling billing on the Google Cloud project removes the free tier for that project -- keep your free key on a project without billing, and use a separate project for a paid key |
+| **OpenAI (ChatGPT account)** | The **OpenAI Subscription** provider works with a **free ChatGPT account** (verified August 2026) -- no API key, no card: sign in with a device code and chat on your account's quota. Experimental/unofficial, and the free-account limits are not documented, so expect them to be modest. Setup: connect via [Quick Setup, Option C](#2-add-your-api-key); device code access must be enabled for your ChatGPT account (the verification page at `auth.openai.com/codex/device` explains how). Models served on a free account: `gpt-5.6-terra` (the default), `gpt-5.6-luna`, `gpt-5.5`, `gpt-5.4-mini`; the rest of the list is refused on free accounts with a clear error (paid plans may serve more) |
+| **Gemini** | Flash and Flash-Lite class models free (`gemini-3.7-flash` (the plugin default), `gemini-3.6-flash`, `gemini-3.5-flash`, the flash-lite variants, 2.5-flash family), no card needed; per-model daily limits are LOW on the newest flashes (~20 requests/day observed on 3.x flash) with more room on 2.5 models. Pro models are paid-only (removed from the free tier April 2026). **The 2.5 family is unavailable on new Google accounts** (roughly mid-2026 onward): requests return "no longer available to new users", even with paid credits. **Web search (grounding) does not work on free keys with Gemini 3.x models** -- those requests fail instantly with a "quota exceeded" 429 while plain requests work; use a 2.5 model for web search (older accounts only) or turn it off (the error dialog offers a one-tap retry without it); paid credits lift this limit (verified). Caution: enabling billing on the Google Cloud project removes the free tier for that project -- keep your free key on a project without billing. Going paid is its own maze: new billed projects use prepaid credits bought inside Google AI Studio (minimum $10; Google Cloud trial credits explicitly do NOT apply), and AI Studio access may require age verification in the EEA. If AI Studio cannot create the key itself, create the project in the Cloud Console first, then create the key in AI Studio against that project |
 | **Ollama** | Completely free (runs locally on your hardware) |
 | **Mistral** | Free tier ("free mode" / Experiment plan) covers **all** La Plateforme models, roughly 1B tokens/month; phone verification required, no card. The catch is a very low request rate (~2 requests/min -- fine for chat, slow for multi-request builds); Mistral no longer publishes exact numbers, check Admin Console → Limits. (Separately, `mistral-small-latest` and `magistral-small-latest` are Apache 2.0 open-weight -- you can also self-host them via Ollama) |
 | **OpenRouter** | `:free` model variants (rotating roster -- DeepSeek, Llama, `gpt-oss`, and more): 20 requests/min and 50 requests/day account-wide; a one-time $10 credit purchase permanently raises that to 1,000 requests/day |
 | **Z.AI** | GLM-4.7-Flash free (genuinely free, not trial credits); 1 concurrent request, ~1,000 requests/day |
-| **SambaNova** | Free tier limited to 3 models (DeepSeek-V3.1, Llama-3.3-70B, gpt-oss-120b) at 20 requests/day and 200K tokens/day per model -- fine for a quick trial, too small for daily use |
+| **SambaNova** | The advertised free tier (3 models at 20 requests/day) no longer works card-free: new accounts get "a payment method is required" on every API call until a card is added (verified August 2026). Treat as paid-with-trial rather than free |
 
 > **Note:** Some providers widely described as "free" online are actually time-limited trials -- e.g. Cerebras offers $5 in credits that expire after 30 days, not a persistent free tier. When in doubt, check whether the allowance renews.
 
@@ -3614,7 +3632,7 @@ Several providers offer free tiers for testing or budget-conscious users. Detail
 
 If you already pay for an AI subscription, you may be able to use it in KOAssistant instead of buying API credits:
 
-- **Available now -- OpenAI Subscription**: if your ChatGPT plan includes Codex access, sign in with a device code and chat on your plan's quota instead of API billing. No API key needed. See [Quick Setup, Option C](#2-add-your-api-key). This is an unofficial integration: KOAssistant identifies itself honestly and it may stop working if OpenAI changes the Codex service.
+- **Available now -- OpenAI Subscription**: sign in with a device code and chat on your ChatGPT account's quota instead of API billing -- works with paid plans AND free ChatGPT accounts (verified August 2026). No API key needed. See [Quick Setup, Option C](#2-add-your-api-key). This is an unofficial integration: KOAssistant identifies itself honestly and it may stop working if OpenAI changes the Codex service.
 - **Planned -- coding-plan subscriptions** (Kimi Code, Z.AI GLM Coding Plan, MiniMax Coding Plan): these plans expose standard API endpoints that a subscriber's own plan key can use, so no technical circumvention is involved -- but their terms generally permit only a short list of named coding tools, and KOAssistant is not on those lists. Support is planned as a strictly opt-in feature behind an explicit warning you must acknowledge: it is against the plan's terms of service, it may stop working at any time, and in principle the provider could restrict your account. KOAssistant will always identify itself honestly and will never impersonate an allowlisted client -- if a provider blocks third-party clients, the integration stops working rather than sneaking around it.
 - **Not planned -- Claude (Anthropic), Google, GitHub Copilot subscriptions**: these providers ban third-party subscription use and enforce it server-side, so supporting them would require actively impersonating their official clients. That is out of scope permanently (barring a policy change on their side).
 
@@ -3726,16 +3744,16 @@ The first model in each provider's list is its default. Current defaults (subjec
 | Provider | Default | Notable alternatives |
 |----------|---------|----------------------|
 | **Anthropic** | `claude-sonnet-5` | `claude-opus-4-8` (most capable / reasoning), `claude-haiku-4-5` (fast), `claude-sonnet-4-6` (1M context) |
-| **OpenAI** | `gpt-5.5` | `gpt-5.4`, `gpt-5.4-mini`, `gpt-5.4-nano` |
+| **OpenAI** | `gpt-5.6-terra` | `gpt-5.6-sol` (most capable), `gpt-5.6-luna` (cost-saver), `gpt-5.5`, `gpt-5.4-mini` |
 | **DeepSeek** | `deepseek-v4-pro` | `deepseek-v4-flash` (V4, 1M context, thinking on by default) |
-| **Gemini** | `gemini-3.5-flash` | `gemini-3.1-pro-preview` (flagship), `gemini-3.1-flash-lite` (ultrafast), `gemini-2.5-flash/pro` |
-| **Groq** | `llama-3.3-70b-versatile` | `llama-3.1-8b-instant`, `openai/gpt-oss-120b`, `groq/compound` |
+| **Gemini** | `gemini-3.7-flash` | `gemini-3.6-flash`, `gemini-3.1-pro-preview` (paid only), `gemini-3.5-flash-lite` (ultrafast), `gemini-2.5-flash/pro` (older accounts only) |
+| **Groq** | `openai/gpt-oss-120b` | `openai/gpt-oss-20b` (fast), `groq/compound`, `groq/compound-mini` |
 | **Mistral** | `mistral-large-latest` | `mistral-medium-latest`, `mistral-small-latest`, `magistral-medium-latest` (reasoning) |
-| **xAI** | `grok-4.5` | `grok-4.3`, `grok-4.20-0309-reasoning`/`-non-reasoning` |
+| **xAI** | `grok-4.6` | `grok-4.5`, `grok-4.3`, `grok-4.20-0309-reasoning`/`-non-reasoning` |
 | **Perplexity** | `sonar-pro` | `sonar-reasoning-pro`, `sonar-deep-research`, `sonar` |
 | **Z.AI** | `glm-5.2` | `glm-5.1`, `glm-5`, `glm-4.7` (reasoning), `glm-4.7-flash` (free) |
 | **Cohere** | `command-a-plus-05-2026` | `command-a-reasoning-08-2025`, `command-r7b-12-2024` (fast) |
-| **Kimi** | `kimi-k2.6` | `kimi-k2.6-thinking` (reasoning), `kimi-k2-turbo-preview` (fast) |
+| **Kimi** | `kimi-k2.6` | `kimi-k2.6-thinking` (reasoning), `kimi-k2-turbo-preview` (fast) -- these two are China-platform only; the international platform serves `kimi-k2.6` |
 | **Qwen** | `qwen3-max` | `qwen3.5-plus`, `qwen3.5-flash`, `qwen-turbo` |
 | **Doubao** | `doubao-seed-2.0-pro-32k` | `doubao-seed-2.0-pro-256k`, `doubao-seed-2.0-lite` |
 | **Ollama** | `llama4` | `qwen3.5`, `deepseek-v4`, `gemma4`, `mistral`, `phi4`, `tinyllama` |

@@ -1,5 +1,6 @@
 ## What's Changed
 
-- Added Auto Sync Exclude Directories feature #9  #10 
-- Optimized gesture registration: merged reader/filemanager paired gestures into unified general gestures
-- Remove logger.info
+- Added folder navigation to book download/delete dialog for switching cloud directories
+- Optimized upload/download/delete progress dialogs with book name and progress counter display
+- feat: add auto WiFi prompt and retry for network-dependent operations
+- Improved Chinese translations
