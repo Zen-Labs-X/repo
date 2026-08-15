@@ -1,21 +1,9 @@
-Pre-release for on-device testing. Everything below is new since v1.2.4.
+Glimpse v1.2.13 (pre-release)
 
-## Tidier menu
-- Top level trimmed to the essentials (Enable Glimpse, the gesture row, Open Glimpse, Mode, Include Bookmarks in Gallery) plus the Quick Actions / Settings / Advanced / Updates sub-menus.
-- Most toggles now live under **Settings →** (nav buttons, zoom controls, invert in night mode, captions, maximum zoom, top-menu tap zone).
-- **Advanced →** now holds only: Disable irrelevant image filtering (off by default), Suppress "format not supported" notice, Disable shadows, Rescan this book.
-- New **Settings → Gestures →** sub-menu to toggle the viewer's touch gestures individually: Double-tap for maximum zoom, Swipe left/right to navigate, Pinch to zoom in/out (all on by default).
-- "Include Bookmarks in Gallery" sits directly under Mode, and is also a ⋯ Quick Action.
+From your test-bench report:
 
-## Gallery switcher
-- The Shown/Ignored control is now a segmented switcher showing both pools and their counts at once ("Gallery [n]" / "Ignored [n]") — tap a segment to switch.
-- Square, slightly taller count chips; the switcher extends toward Back with a guaranteed gap so it never crowds it.
+• [5.5] Bookmarked-page thumbnails are now cached to disk. The first render of each page is unchanged, but once a page has been rendered, reopening the Gallery — even after closing and reopening the book — shows it instantly instead of re-rendering. The cache is size-capped and rebuilds itself if you change the book's font or margins.
 
-## Shadows
-- Soft drop shadow on the viewer's active buttons, the Gallery switcher, and the ⋯ pop-up menu, so they lift off the page. Greyed-out dead-end buttons stay flat.
-- **Advanced → Disable shadows** now removes all of these together with the drawer's shadow.
+• [5.4] Removing a bookmark now clears its dogear from the page immediately, while Glimpse is still open, instead of only after Glimpse closes.
 
-## Please poke at
-- The whole menu tree + the three Gestures toggles.
-- Tapping each half of the gallery switcher; check the right-side margin to Back.
-- Shadows on vs. off (buttons, switcher, ⋯ menu) in both Day and Night mode.
+Note on [5.5]: this speeds up *repeat* opens, not the very first render pass (that's KOReader's own ~500ms/page cost). Curious whether the second open now feels instant with your 20-bookmark book.
