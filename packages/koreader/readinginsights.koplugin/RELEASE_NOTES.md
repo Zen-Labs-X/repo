@@ -1,3 +1,3 @@
-Just a small refactor
+**Fix**
 
-- Extract streak calendar popup into views/streak_calendar_view.lua
+- Match streak popup header/date row heights to the days|weeks row

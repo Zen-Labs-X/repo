@@ -1,18 +1,21 @@
-Pre-release for on-device testing (invisible to the normal updater).
+Pre-release for on-device testing. Everything below is new since v1.2.4.
 
-Changes since v1.2.3:
+## Tidier menu
+- Top level trimmed to the essentials (Enable Glimpse, the gesture row, Open Glimpse, Mode, Include Bookmarks in Gallery) plus the Quick Actions / Settings / Advanced / Updates sub-menus.
+- Most toggles now live under **Settings →** (nav buttons, zoom controls, invert in night mode, captions, maximum zoom, top-menu tap zone).
+- **Advanced →** now holds only: Disable irrelevant image filtering (off by default), Suppress "format not supported" notice, Disable shadows, Rescan this book.
+- New **Settings → Gestures →** sub-menu to toggle the viewer's touch gestures individually: Double-tap for maximum zoom, Swipe left/right to navigate, Pinch to zoom in/out (all on by default).
+- "Include Bookmarks in Gallery" sits directly under Mode, and is also a ⋯ Quick Action.
 
-Menu
-- Gallery is now always in the ⋯ menu, pinned to the bottom as its own floating item (removed from the configurable Quick Actions).
-- Shorter ⋯ labels: 'Nav Buttons', 'Zoom Controls', 'Image Captions' (dropped 'Show').
-- The spoiler scope now reads 'Mode: Spoiler-free' (was 'Mode: Images up to here').
+## Gallery switcher
+- The Shown/Ignored control is now a segmented switcher showing both pools and their counts at once ("Gallery [n]" / "Ignored [n]") — tap a segment to switch.
+- Square, slightly taller count chips; the switcher extends toward Back with a guaranteed gap so it never crowds it.
 
-Gallery
-- The page arrows always show now (greyed out on a single page) so the bottom bar stops shifting as you page.
-- Long-pressing a thumbnail dims the other thumbnails and lifts the action tooltip a little higher, so the pressed one stands out.
+## Shadows
+- Soft drop shadow on the viewer's active buttons, the Gallery switcher, and the ⋯ pop-up menu, so they lift off the page. Greyed-out dead-end buttons stay flat.
+- **Advanced → Disable shadows** now removes all of these together with the drawer's shadow.
 
-Viewer polish
-- Active buttons (⋯, nav arrows, zoom control, Back/Reset, page pill) now cast a soft drop shadow; disabled buttons stay flat.
-- The page-position pill's corners are a touch less rounded, matching the updated design.
-
-Please test in BOTH day and night mode (the shadow's night polarity couldn't be verified in the emulator).
+## Please poke at
+- The whole menu tree + the three Gestures toggles.
+- Tapping each half of the gallery switcher; check the right-side margin to Back.
+- Shadows on vs. off (buttons, switcher, ⋯ menu) in both Day and Night mode.
