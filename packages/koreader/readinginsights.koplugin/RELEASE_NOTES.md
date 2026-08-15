@@ -1,3 +1,3 @@
-**Fix**
+**Fixed**
 
-- Match streak popup header/date row heights to the days|weeks row
+- Fix achievements/streak computation silently failing on every call #67

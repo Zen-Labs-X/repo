@@ -1,0 +1,1 @@
+Some small improvements: Pairing with desktop integrated into the main app and KUAL support dropped.
