@@ -1,4 +1,4 @@
-## Audiobook Read-Along v0.1.17.25
+## Audiobook Read-Along v0.1.17.32
 
 **Download, unzip, and copy `audiobook.koplugin/` to your KOReader plugins directory. Restart KOReader.**
 
@@ -11,7 +11,7 @@
 - Bundled kindle-gst-play (GStreamer WAV player for Cat 2 Kindles)
 - Bundled kindle-gst-play-native (KinAMP-parity fallback for audio-less PW4-class Kindles)
 - Bundled wav-play (ALSA player for PocketBook and other devices without aplay)
-- Android TTS helper (pre-built tts_helper.dex)
+- Android TTS helper and MediaSession helpers (pre-built tts_helper.dex, media_session_helper.dex)
 
 ### Install paths
 | Platform | Path |
@@ -24,4 +24,8 @@
 See [README](https://github.com/stradichenko/audiobook.koplugin/blob/master/README.md) for full documentation.
 
 
-**Full Changelog**: https://github.com/stradichenko/audiobook.koplugin/compare/v0.1.17.24...v0.1.17.25
+## What's Changed
+* feat(i18n): French and Spanish translations for the plugin by @Juansero29 in https://github.com/stradichenko/audiobook.koplugin/pull/58
+
+
+**Full Changelog**: https://github.com/stradichenko/audiobook.koplugin/compare/v0.1.17.27...v0.1.17.32
