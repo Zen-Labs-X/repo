@@ -1,0 +1,1 @@
+**Full Changelog**: https://github.com/pengcw/legado.koplugin/commits/1.1.6

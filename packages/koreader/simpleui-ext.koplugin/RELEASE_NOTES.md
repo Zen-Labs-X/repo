@@ -1,2 +1,5 @@
-- fix: show the centre book description for every Cover Deck source types
-- fix: Support the new Recent Book module in the SimpleUI plugin (pr by @GOSENGWONG )
+- fix: some display issues, pr  from @GOSENGWONG :
+
+    The author line in module_hero_currently and the Cover Deck description
+    strip both overflowed their box. Both now let TextBoxWidget do the clipping
+    via height + height_overflow_show_ellipsis instead of hand-rolled measurement.
