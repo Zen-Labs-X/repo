@@ -1,0 +1,23 @@
+# Neo Quicksettings For Koreader plugin for KOReader
+# https://github.com/yanllsama/Neo-QuickSettings-for-KOReader
+# zenpm:auto-scraped
+id=neo-quicksettings-for-koreader
+name=Neo Quicksettings For Koreader
+version=1.10
+description=A highly customizable, powerful, and visually rich quick settings panel plugin for KOReader. **Neo QuickSettings** redefines how you interact with your device by giving you full control over your s...
+author=yanllsama
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/yanllsama/Neo-QuickSettings-for-KOReader
+stars=15
+updated_at=2026-08-16T18:35:32Z
+published_at=2026-07-09T11:02:47Z
+readme_url=packages/koreader/neo-quicksettings-for-koreader.koplugin/README.md
+readme_hash=c4dd1e871950205d63ed609fed38c4ef2ae705da
+release_notes_url=packages/koreader/neo-quicksettings-for-koreader.koplugin/RELEASE_NOTES.md
+release_notes_hash=8ed3a289f8cfddbd663638820d904c06bf53fd9b3e71f4b211a96d2aa9998e52
+releases=[{"tag_name":"v1.10","assets":[{"name":"neo_quicksetting.koplugin.zip","url":"https://github.com/yanllsama/Neo-QuickSettings-for-KOReader/releases/download/v1.10/neo_quicksetting.koplugin.zip","size":541159,"digest":"sha256:c38c900ae8dcb41c73fb6bbe6182a27a527d78eabfb533f539924ffe2b695caf"}],"name":"v1.10 - Neo QuickSettings for KOReader"},{"tag_name":"Koreader-plugin","assets":[{"name":"neo_quicksetting.koplugin.zip","url":"https://github.com/yanllsama/Neo-QuickSettings-for-KOReader/releases/download/Koreader-plugin/neo_quicksetting.koplugin.zip","size":534498,"digest":"sha256:e1c576274aead74f88632bc4a83f116cac7f48077ece24c7045d665d5c8d49b5"}],"name":"Neo QuickSettings for KOReader"}]
+source_type=release
+source_asset=neo_quicksetting.koplugin.zip
+size=541159
