@@ -1,3 +1,4 @@
-- fix eink loading issue
+- Various UI updates
+- add translations for screensavers
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.16-beta...26.8.16-beta2
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.16-beta3...26.8.17-beta
