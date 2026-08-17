@@ -1,5 +1,3 @@
-- translations support for new screensaver feature
-- UI fixes for new screensaver feature
-- memory fix 
+- fix eink loading issue
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.15-alpha3...26.8.15-alpha4
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.16-beta...26.8.16-beta2
