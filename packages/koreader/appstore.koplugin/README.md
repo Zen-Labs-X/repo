@@ -190,6 +190,20 @@ By default, the AppStore plugin **excludes** repositories that are forks with ze
 
 **Note**: Changing this setting does not automatically refresh the cache. Use the **Refresh cache** action from the toolbar to apply the new filter scope to your current results.
 
+## Download Source (mirror / proxy)
+
+Where GitHub itself is slow or unreachable, downloads can be routed through a proxy prefix instead. The setting lives under the **gear icon** (⚙️) → **Download source**, and is also reachable from the installed-plugins and installed-patches settings dialogs. It defaults to **Direct (GitHub)**; leave it there and nothing about the plugin's network behaviour changes.
+
+Three public mirrors are offered as presets (gh-proxy.com, gh.ddlc.top, ghproxy.net), plus **Custom** for a prefix of your own — including one you host yourself, e.g. `http://192.168.1.10:8080/`. A custom prefix must be a complete `http://` or `https://` URL with no query string; a trailing `/` is added if you omit one. Plain `http://` is accepted for self-hosted mirrors but asks for confirmation first, because the connection is unencrypted and what comes back through it is plugin code that gets extracted and run.
+
+Scope, worth knowing before you switch:
+
+- **What is routed:** plugin archives, release assets, patch files and README fetches — everything that goes through a raw or download URL.
+- **What is *not* routed:** every `api.github.com` call, i.e. browsing, searching, repository metadata and update checks. Those keep going to GitHub directly. This is deliberate: your GitHub PAT travels in the `Authorization` header of those requests, and sending it through a third-party proxy would hand your token to whoever runs it. So a mirror helps with downloads, not with a blocked API host.
+- **Trust:** a mirror operator controls the bytes that land in your plugins folder, and there is no checksum or signature check. Prefer **Direct (GitHub)** unless you have a reason not to.
+
+The same setting can also be written in `appstore_configuration.lua` as `download_mirror_preset` / `download_mirror_prefix` (see `appstore_configuration.sample.lua`). The two do not fight: whichever was touched last applies. Pick a source in the UI and it overrides the config file; edit the config file afterwards and it wins again. Removing the key counts as an edit and restores the default. This is how a config file you sync between devices keeps working even after you have poked at the setting on one of them.
+
 ## Troubleshooting
 
 | Symptom | Likely Cause | Suggested Fix |
@@ -233,7 +247,7 @@ Tools live in `l10n/tools/` (run with the LuaJIT that ships with KOReader, or an
 
 ```
 # 1. Regenerate the English key template after changing source strings
-luajit l10n/tools/extract.lua main.lua appstore_updates.lua appstore_repo_content.lua _meta.lua > l10n/template.lua
+luajit l10n/tools/extract.lua main.lua appstore_updates.lua appstore_repo_content.lua appstore_mirror.lua _meta.lua > l10n/template.lua
 
 # 2. Copy template.lua to l10n/<code>.lua (matching KOReader's locale code) and translate the values
 
@@ -243,6 +257,21 @@ luajit l10n/tools/validate.lua l10n/template.lua l10n/<code>.lua
 
 Keep the keys byte-for-byte identical to the source strings (including `%s`/`%d`
 placeholders, newlines and characters such as `→ · — ≥ ⭐ …`) — only the values change.
+
+## Tests
+
+`tests/` holds standalone scripts for the modules whose logic can be exercised without
+the UI. Each prints one line per check and exits non-zero on the first failure, so they
+can be chained. Run them from an extracted KOReader directory:
+
+```
+./luajit plugins/appstore.koplugin/tests/appstore_plugin_paths_test.lua
+./luajit plugins/appstore.koplugin/tests/appstore_mirror_test.lua
+```
+
+The plugin_paths one needs KOReader's own LuaJIT (it loads `datastorage` and `lfs`).
+The mirror one stubs its KOReader dependencies and runs under any LuaJIT, as long as
+the working directory is a KOReader tree so that `common/socket/url.lua` is reachable.
 
 ## Credits
 

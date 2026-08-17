@@ -1,6 +1,6 @@
 # SimpleUI for KOReader
 
-A clean, distraction-free UI plugin for KOReader that transforms your reading experience. SimpleUI adds a **dedicated Home Screen**, a customisable bottom navigation bar, a top status bar, and a reworked library title bar, giving you instant access to your library, history, collections, and reading stats without navigating through nested menus.
+A clean, distraction-free UI plugin for KOReader that transforms your reading experience. SimpleUI adds a **dedicated Home Screen**, a customisable Navigation Bar, a top status bar, and a reworked library title bar, giving you instant access to your library, history, collections, and reading stats without navigating through nested menus.
 
 <div style="display: flex; flex-direction: row; flex-wrap: wrap; gap: 10px; max-width: 1000px; justify-content: center;">
 <img src="https://github.com/user-attachments/assets/4ea92760-c2bf-488b-9f5a-1f663157c97f" width="240" height="324" alt="simpleUI1" style="object-fit: contain;" />
@@ -16,34 +16,60 @@ A clean, distraction-free UI plugin for KOReader that transforms your reading ex
 
 The centrepiece of SimpleUI. A home screen that gives you everything at a glance:
 
-- **Clock & Date** — a large, readable clock with full date display
+- **Clock & Date** — a large, readable clock with full date display, or your own custom text
 - **Currently Reading** — your active book with cover art, title, author, progress bar, percentage read, and estimated time left
 - **Recent Books** — a row of up to 5 recent books with cover thumbnails and progress indicators; tap any to resume reading
-- **Collections** — your KOReader collections displayed as tappable cover cards, right on the home screen
-- **Reading Goals** — visual progress tracker for your annual and daily reading goals, including physical books read
-- **Reading Stats** — compact stat cards showing today's reading time, pages, streaks, and all-time totals
-- **Quick Actions** — up to 3 customisable rows of shortcut buttons (Library, History, Wi-Fi toggle, Brightness, Stats, and more)
 - **New Books** — a row of up to 5 recently added books sorted by file date; unread books are labelled "New" and started books show their read percentage; opt-in via Arrange Modules
-- **Quote of the Day** — optional literary header, randomly picked from a curated list of 100+ quotes; can also show your own highlights
-- **Module ordering** — rearrange Home Screen modules in any order to match your workflow
-- **Per-module scaling** — resize each module independently, or lock all scales together for uniform adjustments
+- **To Be Read (TBR)** — a row of books you've marked as "to be read", backed by a real KOReader collection
+- **Cover Deck** — your recent or TBR books as a horizontal cover-flow carousel
+- **Flat Library** — a single grid of every book in your library, regardless of folder structure
+- **Collections** — your KOReader collections displayed as tappable cover cards, with an **Auto** cover style that switches between a single cover and a 4-cover grid depending on collection size
+- **Featured Collection** — like Collections, but focused on one collection at a time, shown as a row of covers; add multiple instances to feature more than one
+- **Reading Goals** — visual progress tracker for your annual and daily reading goals, including physical books read
+- **Reading Stats** — compact stat cards showing today's reading time, pages, streaks, and all-time totals, with full statistics windows and streak tracking behind them (see **Reading Stats & Streaks** below)
+- **Quick Actions Row** — up to 3 customisable rows of shortcut buttons (Library, History, Wi-Fi toggle, Brightness, Stats, and more)
+- **Action List** — the same shortcuts as Quick Actions, shown as a vertical app-launcher-style list instead of a row
+- **Spacer** — a blank block to add breathing room between modules
+- **Quote of the Day** — optional literary header, randomly picked from a curated list of 100+ quotes; can also show your own highlights. Supply your own pool by placing a `.lua` file in `<KOReader settings dir>/simpleui/custom_quotes/` (created automatically on first run, never touched by updates) returning a table of `{ q = "...", a = "Author", b = "Book (optional)" }` entries, then set **Source → Custom** on the module. Edit the built-in pool instead via `desktop_modules/quotes.lua` in the plugin folder.
+- **Module ordering & per-module scaling** — rearrange Home Screen modules in any order, resize each independently, or lock all scales together for uniform adjustments
+- **Wallpaper** — a background image for the Home Screen, with auto-rotate, stretch, and Night Mode inversion options
+- **Presets** — save and load full Home Screen configurations (layout, scales, wallpaper) to switch between different looks
 - **Start with Home Screen** — set the Home Screen as the first screen KOReader opens every time you pick up your device
 
-### Bottom Navigation Bar
+### Custom Screens
+
+Build extra Home-Screen-like pages of your own, each with an independent module layout, alongside your main Home Screen:
+
+- **Create, rename, and delete** as many custom screens as you like
+- Configure modules on each one exactly as on the main Home Screen (any module above can be used)
+- Each Custom Screen gets its own **Quick Action** automatically, so it can be opened from the Navigation Bar, Quick Actions Row, or Quick Settings Bar, with its own icon
+
+### Navigation Bar
 
 A persistent tab bar at the bottom of the screen for one-tap navigation:
 
-- Up to **5 fully customisable tabs**: Library, History, Collections, Favourites, Continue Reading, Home Screen, Wi-Fi Toggle, Brightness, Stats, Bookmark Browser, and custom folder or collection shortcuts
+- Up to **5 fully customisable tabs**: Library, History, Collections, Favourites, Continue Reading, Home Screen, Wi-Fi Toggle, Brightness, Stats, Bookmark Browser, and custom folder, collection, or Custom Screen shortcuts
 - **3 display modes**: icons only, text only, or icons + text
-- **Navpager mode** — replaces the pagination bar with Prev/Next arrows at the edges of the bottom bar; arrows dim when there is no previous or next page
+- **3 bar styles**: Default, Framed, Bare
+- **Adjustable bar size, icon size, and label size**
+- **Navpager mode** — replaces the pagination bar with Prev/Next arrows at the edges of the Navigation Bar; arrows dim when there is no previous or next page
 - **Hold anywhere on the bar** to instantly open navigation settings
 
 ### Top Status Bar
 
 A slim status bar always visible at the top of the screen:
 
-- Displays **clock, battery level, Wi-Fi status, frontlight brightness, disk usage, and RAM** all configurable
+- Displays **clock, battery level, Wi-Fi status, frontlight brightness, disk usage, and RAM**, plus custom text — all configurable
 - Each item can be placed on the **left or right** side independently
+- Adjustable bar size, with an optional swipe indicator
+
+### Quick Settings Bar
+
+An extra panel tab injected into KOReader's native touch menu, giving one-tap access to your favourite Quick Actions plus frontlight and warmth sliders without leaving your current screen:
+
+- Configure which Quick Actions appear, and reorder them
+- Optional **frontlight** and **warmth** sliders
+- **3 button types**: Round, Rounded Square, Bare, with adjustable label size and background
 
 ### Custom Title Bar
 
@@ -67,18 +93,28 @@ Custom cover art for folders in the Library mosaic view:
 - Optional **item count badge** with configurable position
 - **Hide selection underline** for a cleaner look
 
+### Reading Stats & Streaks
+
+Beyond the compact Reading Stats module, SimpleUI adds dedicated statistics windows:
+
+- **Reading Insights** — a year-by-year overview with a monthly chart and current/best day and week streaks
+- **Streak Manager** — a calendar view of your reading activity, with a **freeze** mechanic: bank freezes automatically as you read, then spend one to cover a single missed day right after an active one, so a one-off gap doesn't reset your streak
+- **Finished Books** — a list of every book you finished this year, with the date range you spent reading each one
+
 ### Quick Actions
 
-Shortcut buttons configurable both on the Home Screen and in the bottom bar:
+Shortcut buttons configurable on the Home Screen, the Navigation Bar, the Title Bar, and the Quick Settings Bar:
 
 - Assign any action to a **custom folder**, **collection**, or **KOReader plugin**
 - Quick **Wi-Fi toggle** and **frontlight control**
 - **Power menu** (Restart, Quit) accessible as a tab
 - **Bookmark Browser** — browse your highlights and bookmarks across all books
+- Every **Custom Screen** gets its own Quick Action automatically
+- Icons can be a built-in image, a Nerd Font symbol, or your own custom icon file
 
 ### Settings
 
-All features are accessible via **Menu → Tools → SimpleUI**
+All features are accessible via **Menu → Tools → Simple UI**, which opens the **SUI Settings Window** — a full-screen, touch-friendly panel (not a native KOReader submenu) with sections for Home Screen, Bars, Library, Style, Quick Actions, and About.
 
 ---
 
@@ -91,11 +127,11 @@ All features are accessible via **Menu → Tools → SimpleUI**
    * Kindle: `/koreader/plugins`
    * Android: `koreader/plugins` at the root of onboard storage.
 4. Restart KOReader
-5. Go to **Menu → Tools → SimpleUI** to enable and configure the plugin
+5. Go to **Menu → Tools → Simple UI** to open the SUI Settings Window and configure the plugin
 
-> **Tip:** After enabling the plugin, tap the **Home Screen** tab in the bottom bar to open your new home screen.
+> **Tip:** After enabling the plugin, tap the **Home Screen** tab in the Navigation Bar to open your new home screen.
 
-> **Tip:** To make the Home Screen your default start screen, go to **Menu → Tools → SimpleUI → Home Screen → Start with Home Screen**. From then on, KOReader opens directly to your home screen every time you turn on your device.
+> **Tip:** To make the Home Screen your default start screen, go to **Simple UI → Home Screen → Behaviour → Start with Home Screen**. From then on, KOReader opens directly to your home screen every time you turn on your device.
 
 ---
 
@@ -105,35 +141,17 @@ SimpleUI has full translation support. The UI language is detected automatically
 
 ### Included languages
 
-| Language | File | Status |
-|---|---|---|
-| English | *(built-in)* | Complete |
-| Português (Brasil) | `locale/pt_BR.po` | Partial (99.6% — 3 missing) |
-| Português (Portugal) | `locale/pt_PT.po` | Partial (99.6% — 3 missing) |
-| Polski (Polish) | `locale/pl.po` | Partial (98.7% — 11 missing) |
-| Български (Bulgarian) | `locale/bg.po` | Partial (98.6% — 12 missing) |
-| Magyar (Hungarian) | `locale/hu.po` | Partial (98.2% — 15 missing) |
-| 简体中文 (Chinese Simplified) | `locale/zh_CN.po` | Partial (98.2% — 15 missing) ⚠️ |
-| Русский (Russian) | `locale/ru.po` | Partial (98.1% — 16 missing) |
-| Čeština (Czech) | `locale/cs.po` | Partial (97.7% — 19 missing) |
-| 日本語 (Japanese) | `locale/ja.po` | Partial (97.7% — 19 missing) |
-| Tiếng Việt (Vietnamese) | `locale/vi.po` | Partial (97.7% — 19 missing) ⚠️ |
-| Español | `locale/es.po` | Partial (59.4% — 337 missing) |
-| Türkçe (Turkish) | `locale/tr.po` | Partial (43.9% — 466 missing) |
-| Deutsch (German) | `locale/de.po` | Partial (43.6% — 469 missing) |
-| Français (French) | `locale/fr.po` | Partial (41.9% — 483 missing) ⚠️ |
-| Română (Romanian) | `locale/ro.po` | Partial (39.7% — 501 missing) |
-| Română (Moldova) | `locale/ro_MD.po` | Partial (39.7% — 501 missing) |
-| Українська (Ukrainian) | `locale/uk.po` | Partial (38.9% — 508 missing) |
-| Svenska (Swedish) | `locale/sv.po` | Partial (38.3% — 513 missing) |
-| Italiano (Italian) | `locale/it_IT.po` | Partial (36.0% — 532 missing) ⚠️ |
-| 繁體中文 (Chinese Traditional) | `locale/zh_TW.po` | Partial (35.5% — 536 missing) |
+English is built in. Beyond that, translation files exist for:
 
-> ⚠️ These files contain syntax errors (unescaped quotes or literal line breaks inside strings) and currently fail to load in KOReader, even though most of their content is translated. Contributions to fix the offending lines are welcome.
+Bulgarian (`bg`), Czech (`cs`), German (`de`), Spanish (`es`), French (`fr`), Hungarian (`hu`), Italian (`it_IT`), Japanese (`ja`), Lithuanian (`lt_LT`), Polish (`pl`), Portuguese – Brazil (`pt_BR`), Portuguese – Portugal (`pt_PT`), Romanian (`ro`, `ro_MD`), Russian (`ru`), Swedish (`sv`), Turkish (`tr`), Ukrainian (`uk`), Vietnamese (`vi`), Chinese Simplified (`zh_CN`), Chinese Traditional (`zh_TW`) — each as `locale/<code>.po`.
+
+Coverage varies by language and changes frequently as contributions come in, so we don't track exact percentages here — open a `.po` file or a PO editor such as [Poedit](https://poedit.net/) to see how complete a given language currently is.
+
+> ⚠️ A `.po` file can contain syntax errors (an unescaped quote or a literal line break inside a string) that stop it from loading in KOReader, even though most of its content is translated. If a language you expect to see falls back to English, this is the most likely cause. Run `msgfmt --statistics -o /dev/null locale/<code>.po` to check a file for errors — contributions to fix the offending lines are welcome.
 
 ### Adding a new language
 
-All 831 strings in the plugin are translatable. To add a new language:
+Every user-facing string in the plugin is translatable. To add a new language:
 
 1. Copy `locale/simpleui.pot` to `locale/<lang>.po`, using the standard locale code for your language (examples: `de`, `fr`, `it`, `ja`)
 2. Open the file in any text editor or a dedicated PO editor such as [Poedit](https://poedit.net/)
@@ -159,45 +177,6 @@ The plugin first tries an exact match for the locale code (e.g. `pt_PT.po`), the
 
 ---
 
-## 🔧 Customisation
-
-### Custom Quote of the Day
-
-You can supply your own quotes by placing a `.lua` file in the **custom quotes folder** on your device:
-
-```
-<KOReader settings dir>/simpleui/custom_quotes/
-```
-
-(`<KOReader settings dir>` is typically `/mnt/onboard/.adds/koreader/settings` on Kobo or `/mnt/us/koreader/settings` on Kindle.)
-
-The file must return a table of entries in this format:
-
-```lua
-return {
-    { q = "Quote text.", a = "Author Name", b = "Book Title (optional)" },
-    { q = "Another quote.", a = "Another Author" },
-}
-```
-
-Once the file is in place, go to **Menu → Tools → SimpleUI → Home Screen → Quote of the Day → Source → Custom** and select your file. Changes take effect the next time the Home Screen is opened.
-
-The `custom_quotes/` folder is created automatically on first run and is never touched by plugin updates.
-
-To add, remove or edit the **built-in** quote pool instead, open `desktop_modules/quotes.lua` inside the plugin folder and follow the same format.
-
-### Custom Quick-Action Icons
-
-You can use your own SVG icons for custom quick-action buttons. Place `.svg` files in the **custom icons folder**:
-
-```
-<KOReader settings dir>/simpleui/custom_icons/
-```
-
-They will appear in the icon picker when creating or editing a custom quick action (**Menu → Tools → SimpleUI → Quick Actions → Edit → Icon**).
-
-The `custom_icons/` folder is created automatically on first run and is never touched by plugin updates.
-
 ---
 
 ### Icon Packs
@@ -220,7 +199,7 @@ The `packs/` folder is created automatically on first run and is never touched b
 
 #### Applying a pack
 
-Go to **Menu → Tools → SimpleUI → Style → Icons → Icon Packs** and tap the pack you want. Icons are applied immediately to the live UI — no restart needed.
+Go to **Simple UI → Style → Icons → Icon Packs** and tap the pack you want. Icons are applied immediately to the live UI — no restart needed.
 
 Packs are **additive and partial**: only the slots covered by the pack are changed. Slots not included in a pack keep their current value (custom or default). To revert everything afterwards, use **Style → Icons → System Icons → Reset All System Icons**.
 
@@ -254,7 +233,7 @@ Every file in the pack root must be an `.svg` or `.png`. The filename (without e
 | `sui_pager_first.svg` | First page |
 | `sui_pager_last.svg` | Last page |
 
-**Navpager arrows (Bottom Bar)**
+**Navpager arrows (Navigation Bar)**
 
 | Filename | Description |
 |----------|-------------|
@@ -373,6 +352,16 @@ All files are optional — a valid pack can contain as few as one icon.
 - Use `.svg` for best results; KOReader renders SVGs at any resolution. `.png` files work but may look blurry on high-DPI screens.
 - Icon paths are stored as absolute paths in settings. If you move or rename the pack folder after applying it, the icons will break until you re-apply the pack. Zip-installed packs are extracted to `packs/` and are therefore stable.
 - To share a pack, zip the folder (`NightOwl/`) and distribute the `.zip`.
+
+#### Custom Icons Folder
+
+The lightweight, single-icon alternative to a full pack. Place `.svg` files in:
+
+```
+<KOReader settings dir>/simpleui/custom_icons/
+```
+
+to make them available in the icon picker when creating or editing a custom Quick Action (**Quick Actions → Edit → Icon**). Like `packs/`, this folder is created automatically on first run and left untouched by updates. Use an Icon Pack when you want to restyle many icons at once with a shared identity; use this folder when you just want one specific icon for one specific action.
 
 ---
 
