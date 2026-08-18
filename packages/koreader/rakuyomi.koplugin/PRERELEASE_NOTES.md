@@ -1,6 +1,6 @@
-## [1.37.2](https://github.com/tachibana-shin/rakuyomi/compare/v1.37.1...v1.37.2) (2026-07-14)
+## [1.40.1](https://github.com/tachibana-shin/rakuyomi/compare/v1.40.0...v1.40.1) (2026-08-18)
 
 
-### Performance Improvements
+### Bug Fixes
 
-* add test cases to rust ([#248](https://github.com/tachibana-shin/rakuyomi/issues/248)) ([cecd3be](https://github.com/tachibana-shin/rakuyomi/commit/cecd3be2f65237cea0319f2ad54aa72038cde0a7))
+* condition for android build key in build-all.sh ([6e6e736](https://github.com/tachibana-shin/rakuyomi/commit/6e6e7369bf05638e09a3fc7decf2e488768d0c05))

@@ -115,6 +115,41 @@ Stay tuned for continuous improvements and updates! Contributions and suggestion
 - Linux users can also install [Readest on Flathub][link-flathub].
 - Web: Visit and use **Readest for Web** at [https://web.readest.com][link-web-readest].
 
+#### Nix
+
+> [!NOTE]
+> The Nix package supports `x86_64-linux` only. nix-darwin is not supported.
+
+Try it without installing. `--accept-flake-config` opts in to the project's
+binary cache; without it Nix builds the whole Rust/Tauri stack from source.
+
+```sh
+nix run --accept-flake-config github:readest/readest
+```
+
+To install it, add the input to your `flake.nix`:
+
+```nix
+inputs.readest.url = "github:readest/readest";
+```
+
+then in `configuration.nix` add the package and the cache. The cache is needed
+here as well because a flake input's own `nixConfig` does not apply to your
+system build:
+
+```nix
+environment.systemPackages = [
+  inputs.readest.packages.${pkgs.stdenv.hostPlatform.system}.default
+];
+
+nix.settings = {
+  substituters = [ "https://readest.cachix.org" ];
+  trusted-public-keys = [
+    "readest.cachix.org-1:KvKAePcZZCZB8ytFIAOGdgN3VRdmFHGRMHqMVckbt5c="
+  ];
+};
+```
+
 ## Documentation
 
 Guides, tutorials, and FAQs for installing and using Readest live in the official documentation:
