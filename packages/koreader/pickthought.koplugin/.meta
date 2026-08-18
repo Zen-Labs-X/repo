@@ -4,14 +4,14 @@
 id=pickthought
 name=Pickthought
 version=0.3.2
-description=把微信读书的想法塞进你的书里——KOReader 想法注入插件
+description=把微信读书的想法塞进你的书里
 author=Mr54233
 category=utility
 platforms=koreader
 dependencies=
 source=https://github.com/Mr54233/pickthought.koplugin
 stars=19
-updated_at=2026-08-17T18:46:29Z
+updated_at=2026-08-18T01:34:31Z
 published_at=2026-08-16T14:13:26Z
 prerelease_version=0.1.0-pre
 prerelease_published_at=2026-07-27T13:01:25Z
