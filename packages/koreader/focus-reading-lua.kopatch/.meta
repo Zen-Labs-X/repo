@@ -1,0 +1,25 @@
+# Focus Reading.Lua patch for KOReader
+# https://github.com/gmacahia/focus-reading.lua
+# zenpm:auto-scraped
+id=focus-reading-lua
+name=Focus Reading.Lua
+version=1.0
+description=Focus Reading lets you use bionic reading, guided dots, or both together. Works on any fonts you have on your ereader
+author=gmacahia
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/gmacahia/focus-reading.lua
+stars=15
+updated_at=2026-08-18T06:54:30Z
+published_at=2026-05-30T13:46:34Z
+readme_url=packages/koreader/focus-reading-lua.kopatch/README.md
+readme_hash=1edb134455c30947c8972d2f276266ff8c8b5c51
+release_notes_url=packages/koreader/focus-reading-lua.kopatch/RELEASE_NOTES.md
+release_notes_hash=216e276e1a19091654ffeeea2f3f64847e99010c40f7873b341b52187de82220
+releases=[{"tag_name":"1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/gmacahia/focus-reading.lua/zipball/1.0"}],"name":"Focus Reading 1.0"}]
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-focus-reading.lua
+assets.0.url=https://raw.githubusercontent.com/gmacahia/focus-reading.lua/main/2-focus-reading.lua
+assets.0.size=31240
