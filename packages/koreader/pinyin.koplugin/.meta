@@ -1,0 +1,22 @@
+# Pinyin plugin for KOReader
+# https://github.com/zhouwt/pinyin.koplugin
+# zenpm:auto-scraped
+id=pinyin
+name=Pinyin
+version=1.0
+description=汉字拼音标注插件 (Pinyin for KOReader)
+author=zhouwt
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/zhouwt/pinyin.koplugin
+stars=15
+updated_at=2026-08-18T12:55:42Z
+published_at=2026-08-15T15:06:27Z
+readme_url=packages/koreader/pinyin.koplugin/README.md
+readme_hash=3262d16c466e84d0cb35a810991b93590b9188bd
+release_notes_url=packages/koreader/pinyin.koplugin/RELEASE_NOTES.md
+release_notes_hash=2f49bc0a0f8549e42c446c9d6ab5f21fc7e6305e498f8f4e9b2be8145ba213d5
+releases=[{"tag_name":"v1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/zhouwt/pinyin.koplugin/zipball/v1.0"}],"name":"pinyin.koplugin"}]
+source_type=source
+source_url=https://codeload.github.com/zhouwt/pinyin.koplugin/zip/refs/heads/main

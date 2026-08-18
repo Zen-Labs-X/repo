@@ -1,1 +1,3 @@
-Improved compatibility with KOReader 2026.03 and earlier: opening Folder style from a chip's menu no longer crashes.
+- "Exit" inside a book now exits KOReader rather than returning you to the shelf (#302) - to reach your shelf from a book, use the file browser button in the reader's top menu
+- The selection frame follows the cover you tap after touching the hero (#335)
+- Books downloaded from a catalogue are named "Author - Title" like KOReader's own catalogue browser, so the same book no longer arrives twice under two names (#336)

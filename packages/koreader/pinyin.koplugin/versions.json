@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/zhouwt/pinyin.koplugin/zipball/v1.0"}],"name":"pinyin.koplugin"}]
+}
