@@ -9,10 +9,10 @@ MiuRead（觅阅 · 微信读书助手）是面向 KOReader 的非官方微信�
 - 正式 OTA：`stable-channel/update.json`
 - 内测 OTA：`beta-channel/update-beta.json`
 
-## Current Versions
+## Versions
 
-- 当前正式版本：`4.6.7`
-- 当前内测版本：`4.7.0-beta.20`
+- 正式版：以 GitHub Releases 中最新的非 Pre-release 为准。
+- 内测版：以 GitHub Releases 中最新的 Pre-release 为准。
 
 完整版本记录见 [`CHANGELOG.md`](CHANGELOG.md)。
 
@@ -29,7 +29,9 @@ MiuRead（觅阅 · 微信读书助手）是面向 KOReader 的非官方微信�
 - Beta tag：`vX.Y.Z-beta.N`
 - 正式版发布到 `stable-channel`
 - 内测版发布到 `beta-channel`
-- tag、`miuread.koplugin/miuread/config.lua` 与 `miuread.koplugin/_meta.lua` 中的版本必须一致。
+- 创建 Tag 后，发布工作流会自动同步分支源码中的版本号、发布通道与 `CHANGELOG.md`，再把 Tag 指向同步后的提交。
+- Beta Tag 必须创建在 `beta` 最新提交；Stable Tag 必须创建在 `main` 最新提交。
+- 最终分支源码、Tag 源码、Release 安装包与 OTA 清单保持同一版本。
 
 仓库根目录 `update.json` 仅保留为旧正式版 OTA 桥接入口，不作为当前正式版实时更新清单。
 
