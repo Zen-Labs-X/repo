@@ -1,2 +1,1 @@
-- 新增正式/内测双更新通道，并吸收部分内测功能
-- feat: 新增书摘卡片图片合成基座 (miuread/book_excerpt_card)
+- 重构 Kindle 熄屏后台任务为 ScreenSaver Hold

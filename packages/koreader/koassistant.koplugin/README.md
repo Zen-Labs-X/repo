@@ -188,6 +188,8 @@ koreader
         └── ...
 ```
 
+> **Tip**: Delete unneccesary folders like `screenshot/` and `tests/` to save space if installing manually. These extra folders are not part of release zips.
+
 > **This is the only time you need to install manually.** After this, KOAssistant updates itself: when a new version is available, you'll see release notes with an "Update Now" button. One tap and it handles everything (download, install, preserve your settings). See [Updating the Plugin](#updating-the-plugin) for details.
 
 **Alternative:** You can also install KOAssistant directly from within KOReader using the [App Store plugin](https://github.com/omer-faruq/appstore.koplugin), which lets you browse, install, and update KOReader plugins without a computer. It can install from releases or from the latest main branch code.
