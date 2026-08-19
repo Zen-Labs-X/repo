@@ -37,15 +37,17 @@
 - **Failsafe protection:** Prevents accidental remote data loss when setting up a fresh device.
 - **Trash Bin & Restoration:** Easily view and undelete accidentally removed notes/highlights.
 - **Pending Documents Queue:** View and manage documents awaiting sync, with options to sync individually or remove from the queue.
+- **Full Library Sync:** Scan your entire library for books with annotations that were never synced (not just the currently dirty ones) and sync them in one pass.
+- **Device Purging:** Remove a stale or retired device's entries from reading progress sync, with an undo (un-purge) option.
 - **Configurable sync files:** Use hashes or actual filenames for sync storage.
-- **Localization:** Available in English, Italian (it_IT), and Hungarian (hu).
+- **Localization:** Available in English, Italian (it_IT), Hungarian (hu), and Simplified Chinese (zh_CN).
 
 ## ⚠️ KOReader Version Requirements
 
 > [!WARNING]
-> **Reading Progress Sync** requires a **development/nightly version** of KOReader that includes the **Cloud storage+** plugin. On stable releases without this plugin, all progress sync options will be greyed out in the menu and a **"Why are some options greyed out?"** item will explain this in-app.
+> **Reading Progress Sync** requires **KOReader 2026.07 or later**, which includes the **Cloud storage+** plugin. On older releases without this plugin, all progress sync options will be greyed out in the menu and a **"Why are some options greyed out?"** item will explain this in-app.
 >
-> Core annotation sync works on both stable and development versions.
+> Core annotation sync works on both older and newer versions.
 
 ## 📦 Installation
 
@@ -58,9 +60,9 @@
 
 AnnotationSync supports two cloud integration methods, depending on your version of KOReader.
 
-### Cloud storage+ plugin (dev/nightly KOReader — recommended)
+### Cloud storage+ plugin (KOReader 2026.07+ — recommended)
 
-Newer KOReader development builds include a **Cloud storage+** plugin that manages all your cloud accounts in one place. AnnotationSync integrates with it automatically.
+KOReader 2026.07 and later include a **Cloud storage+** plugin that manages all your cloud accounts in one place. AnnotationSync integrates with it automatically.
 
 **Step 1 — Configure your provider in Cloud storage+:**
 1. In KOReader, open **Tools → Cloud storage+**.
@@ -74,16 +76,16 @@ Newer KOReader development builds include a **Cloud storage+** plugin that manag
 > *By default, sync files are named after an MD5 hash of the document path. To use actual filenames instead (useful if you organize files with Calibre):*
 > **Tools → Annotation Sync → Settings → Use filename instead of hash**
 
-### Legacy SyncService (stable KOReader)
+### Legacy SyncService (KOReader before 2026.07)
 
-On stable KOReader releases without the Cloud storage+ plugin, AnnotationSync uses KOReader's built-in SyncService.
+On KOReader releases older than 2026.07, without the Cloud storage+ plugin, AnnotationSync uses KOReader's built-in SyncService.
 
 1. Go to **Tools → Annotation Sync → Settings → Cloud settings**.
 2. A configuration dialog opens directly. Select your provider type and enter your server details (URL, username, password).
 3. Tap **Confirm** to save. Restart KOReader if prompted.
 
 > [!NOTE]
-> Reading Progress Sync and Cloud storage+ integration are unavailable on stable KOReader. The "Why are some options greyed out?" menu item provides an in-app explanation.
+> Reading Progress Sync and Cloud storage+ integration are unavailable before KOReader 2026.07. The "Why are some options greyed out?" menu item provides an in-app explanation.
 
 ## 🛠 Usage & Configuration
 
@@ -94,6 +96,9 @@ On stable KOReader releases without the Cloud storage+ plugin, AnnotationSync us
 
 - **Sync All** — Mass-sync all documents that have pending local changes.
   - **Tools → Annotation Sync → Sync All**
+
+- **Sync All (including unread)** — Scan your entire library for books with annotations that have never been synced (not just the ones AnnotationSync already knows are dirty) and sync them too. Useful for a first-time bulk sync, or after importing an existing library with pre-made annotations.
+  - **Tools → Annotation Sync → Sync All (including unread)**
 
 - **Automatic Syncing** — Automatically run Sync All as soon as a network connection becomes available.
   - **Tools → Annotation Sync → Settings → Automatically Sync All when network becomes available**
@@ -109,7 +114,7 @@ On stable KOReader releases without the Cloud storage+ plugin, AnnotationSync us
 
 ### 🔄 Reading Progress Sync
 
-*(Requires dev/nightly KOReader with the Cloud storage+ plugin)*
+*(Requires KOReader 2026.07+ with the Cloud storage+ plugin)*
 
 1. Go to **Tools → Annotation Sync → Settings**.
 2. Enable **Enable Reading Progress Sync**.
@@ -120,6 +125,10 @@ On stable KOReader releases without the Cloud storage+ plugin, AnnotationSync us
 4. To jump to the progress of another device:
    - Go to **Tools → Annotation Sync → Jump to device progress**.
    - Select a device from the menu (sorted by progress percentage descending, with alphabetical tie-breaking by device name) to jump directly to its reading position.
+5. To remove a stale or retired device from progress sync:
+   - Go to **Tools → Annotation Sync → Purge device from progress sync...** and confirm the device to purge.
+   - Purged devices are hidden from the "Jump to device progress" list and no longer contribute progress data.
+   - To restore a purged device, go to **Tools → Annotation Sync → Settings → Manage purged devices** and un-purge it.
 
 ### ⚙️ Settings Synchronization
 
@@ -181,6 +190,7 @@ All AnnotationSync actions can be bound to gestures or added to KOReader profile
 |---|---|
 | AnnotationSync: Manual Sync | Sync the active document's annotations |
 | AnnotationSync: Sync All | Sync all locally-changed documents |
+| AnnotationSync: Sync All (including unread) | Scan the library and sync every book with unsynced annotations |
 | AnnotationSync: Push reading progress | Push the current page position to the cloud |
 | AnnotationSync: Jump to device progress | Open the device progress selector |
 | AnnotationSync: Push settings to cloud | Upload selected settings |
@@ -204,12 +214,12 @@ Koofr is a cloud storage provider that supports WebDAV. Connecting KOReader to K
 
 ### 2. Configure WebDAV in KOReader
 
-**With Cloud storage+ (dev/nightly KOReader):**
+**With Cloud storage+ (KOReader 2026.07+):**
 1. Go to **Tools → Cloud storage+** and add a new WebDAV server.
 2. Fill in the connection details (see below) and save.
 3. Then go to **Tools → Annotation Sync → Settings → Cloud settings** and select your newly added Koofr server.
 
-**With the legacy SyncService (stable KOReader):**
+**With the legacy SyncService (KOReader before 2026.07):**
 1. Go to **Tools → Annotation Sync → Settings → Cloud settings**.
 2. Choose **Add WebDAV server** (or select your existing WebDAV entry to update it).
 3. Fill in the connection details below and save.

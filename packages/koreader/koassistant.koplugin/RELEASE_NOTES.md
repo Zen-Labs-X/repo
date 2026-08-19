@@ -1,3 +1,23 @@
+# KOAssistant v0.21.2 Release Notes
+
+Maintenance release for v0.21.0, focused on X-Ray reliability. Notes for v0.21.1 and v0.21.0 below, since they came in quick succession.
+
+If updating OTA from v0.21.0 or earlier gives you a luajit error, see the manual-install note under v0.21.1 below (one-time; updating from v0.21.1 works normally).
+
+## Maintenance (v0.21.2)
+
+- **Intermittent X-Ray build failures fixed** ("response is not valid JSON"): malformed JSON from the model is now repaired before parsing. Quiz parsing got the same hardening.
+- **Long requests are no longer killed at 3 minutes** (limit now 15; you can still cancel from the loading dialog).
+- **Connections cleaned up**: every connection must name its relationship (no more bare name-drops), rows show the relationship text in full, wrong-entity resolution and duplicate accumulation fixed, entity pages no longer drown in connection lists, and a crash in the overflow list is fixed.
+- **Category narrowing survives updates** (a "Characters only" X-Ray no longer regrows all categories), and update requests are slimmer on long books.
+- **Timeline reliability on updates.** Two defects fixed: v0.21.0's "Shorter Update Requests" trimming could freeze the timeline (updates stopped recording new events entirely; the trimming and its setting are removed, updates send the full lists again), and the update instructions now explicitly forbid re-sending existing timeline events (re-sends were appended as duplicates, in the worst case replaying the whole story from the start). If an affected book's timeline has gaps or duplicated stretches, a rebuild restores it.
+- **Archived versions keep your most complete builds** instead of just the most recent, with honest labels in the versions list.
+- **Reader engagement removed from X-Ray**: it never worked as designed, and highlights/annotations are no longer sent with X-Ray builds at all. Existing X-Rays are unaffected; Recap and highlight analysis keep their highlight use.
+- New **Light (characters and story arc)** preset in the X-Ray categories picker.
+- The "Global (use setting)" reasoning option now works on built-in actions that pin reasoning; it was silently inert.
+
+---
+
 # KOAssistant v0.21.1 Release Notes
 
 ⚠ You may have to install this fix manually ⚠
@@ -190,4 +210,5 @@ Setting expectations for the new surfaces:
 * @savvasdalkitsis made their first contribution in https://github.com/zeeyado/koassistant.koplugin/pull/96
 * @bmanturner made their first contribution in https://github.com/zeeyado/koassistant.koplugin/pull/101
 
-**Full Changelog**: https://github.com/zeeyado/koassistant.koplugin/compare/v0.20.0...v0.21.1
+**Full Changelog**: https://github.com/zeeyado/koassistant.koplugin/compare/v0.20.0...v0.21.2
+
