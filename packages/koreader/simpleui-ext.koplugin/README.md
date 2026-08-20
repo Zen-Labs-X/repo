@@ -468,7 +468,7 @@ Renders one of the three Reading Insights pages as a static snapshot on the slee
 | Dependency | Notes |
 |---|---|
 | **KOReader** | Any recent build |
-| **SimpleUI plugin** | Required — this plugin extends SimpleUI's homescreen |
+| **SimpleUI plugin** | Required — this plugin extends SimpleUI's homescreen. Both the pre-2.5 flat layout and the 2.5+ foldered layout (`infra/`, `screens/`, `modules/`, …) are supported; see `utils/sui_compat.lua` |
 | **Statistics plugin** | Optional — enables the time-remaining estimate in Hero Currently Reading |
 | **CoverBrowser / Bookshelf** | Optional — richer book descriptions in Hero Currently Reading |
 
