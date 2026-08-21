@@ -1,17 +1,15 @@
 ## Changes
-- Add a manual Bookshelf integration action for uploading local author images to BookOrbit.
-- Match exact author names, BookOrbit sort names, reversed name order, and Bookshelf slugs.
-- Upload only when the BookOrbit author has no image; existing server images are never overwritten.
-- Skip ambiguous author matches and report them in the completion summary.
-- Stream multipart image uploads to keep memory use low on e-readers.
-- Document the migration workflow from Grimmory author images to BookOrbit.
-
-## Requirements
-- The configured BookOrbit account must have permission to edit metadata.
+- Match manifest-tracked books by stable server ID before comparing titles and filenames.
+- Prevent title, subtitle, volume-formatting, and source-filename changes from downloading the same BookOrbit book again.
+- Keep metadata refresh replacements on the existing local path.
+- Extend Mirror selected sync source to move older manifest-tracked duplicates of the same server book to `.library-sync-trash`.
+- Keep the copy matching the current download profile when available; otherwise keep the most recently tracked copy.
+- Continue skipping open books and never touch untracked local files during mirror cleanup.
 
 ## Verification
-- luajit tests/provider_contract_spec.lua
-- lua tests/provider_contract_spec.lua
-- luac syntax validation for plugin and test files
-- git diff --check
-- ZIP integrity and directory-layout checks for both OTA assets
+- Regression coverage for `Vol. 01` to `Vol. 1`
+- Regression coverage for moving subtitle text into BookOrbit’s subtitle field
+- Regression coverage for tracked duplicate cleanup
+- Lua and LuaJIT contract tests
+- Full Lua syntax validation
+- ZIP integrity and directory-layout validation for both OTA assets
