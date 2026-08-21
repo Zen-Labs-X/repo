@@ -1,10 +1,10 @@
-<img  alt="Panels+ v1.3.0 banner" src="https://github.com/user-attachments/assets/658897e4-965f-4746-998e-226895e6697f" />
+<img width="100%" alt="Panels+ v1.3.0 banner" src="https://github.com/user-attachments/assets/658897e4-965f-4746-998e-226895e6697f" />
 
 Built from tag: `v1.3.0`
 
 Welcome to **The Touchy Update**! For this release, I focused on polishing several features I found myself missing while reading on my e-reader over the past few weeks. 
 
-Why "The Touchy Update", you ask? Well, it introduces new **experimental OCR support** (activated via a long press on text). Ironically, it also brings **touchless functionality** to Kobo devices, allowing you to turn pages using physical buttons and compatible Bluetooth page-turners. *(Note: Since I only own a non-Kobo device running KOReader, I have to take it on faith that this works flawlessly on real Kobo hardware. If you are a Kobo user and the physical buttons don't work for navigating panels, please open an issue here on GitHub, and I'll fix it ASAP!)*.
+Why "The Touchy Update", you ask? Well, it introduces new **experimental OCR support** (activated via a long press on text). Ironically, it also brings **touchless functionality** to Kobo devices, allowing you to turn pages using physical buttons and compatible Bluetooth page-turners.
 
 This update also includes quality-of-life improvements for rotation handling, dark mode support, and much more. Check out the details below:
 

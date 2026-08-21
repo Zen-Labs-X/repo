@@ -1,7 +1,8 @@
-## [1.40.2](https://github.com/tachibana-shin/rakuyomi/compare/v1.40.1...v1.40.2) (2026-08-19)
+## [1.40.3](https://github.com/tachibana-shin/rakuyomi/compare/v1.40.2...v1.40.3) (2026-08-21)
 
 
 ### Bug Fixes
 
-* link kindle server binary fully static ([#303](https://github.com/tachibana-shin/rakuyomi/issues/303)) ([6413d14](https://github.com/tachibana-shin/rakuyomi/commit/6413d14427cebbef7e0c6cab9f6696ac83bb15f9))
-* **release:** republish android plugin as a single rakuyomi-android.zip ([#302](https://github.com/tachibana-shin/rakuyomi/issues/302)) ([de4f3a4](https://github.com/tachibana-shin/rakuyomi/commit/de4f3a4c6bea8e5eccbf9e605cbc5486e0cdbdec)), closes [#296](https://github.com/tachibana-shin/rakuyomi/issues/296)
+* crash when saving settings with a large tracker/chat id ([#317](https://github.com/tachibana-shin/rakuyomi/issues/317)) ([87a36bc](https://github.com/tachibana-shin/rakuyomi/commit/87a36bc803a6e003f1f17b290ebb503409d4c6c0)), closes [#316](https://github.com/tachibana-shin/rakuyomi/issues/316)
+* record the SDK mode the Aidoku module actually booted as ([#311](https://github.com/tachibana-shin/rakuyomi/issues/311)) ([e2536a6](https://github.com/tachibana-shin/rakuyomi/commit/e2536a667eaed34abe59ada2ce117e31b98810c9)), closes [#304](https://github.com/tachibana-shin/rakuyomi/issues/304)
+* search and library missing post text ([#308](https://github.com/tachibana-shin/rakuyomi/issues/308)) ([e79d298](https://github.com/tachibana-shin/rakuyomi/commit/e79d298043520b576d2fff27785e9351dd8c93dd))

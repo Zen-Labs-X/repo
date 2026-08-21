@@ -5,12 +5,6 @@
 - Fix Deselect All not showing when bottom bar tab count reaches max limit
 - Move Remove button next to Save in built-in action edit dialog
 - Adjust title and author font size in list view
-- Fix placeholder cover dim effect not showing when selected in filemanager #4 
-- Improve Chinese translations 
-- 修复底部栏移除最后一个按钮时崩溃闪退的问题（无按钮时显示提示性文字）
-- 修复底部栏移除最右边按钮后触摸区域仍为旧按钮的问题
-- 修复底部栏因达数量限制而无法批量移除所有按钮的问题
-- 将内置动作编辑框的移除按钮放至保存按钮左侧（保持与自定义动作编辑框相同布局）
-- 调整显示模式列表视图下标题及作者字体大小（解决字体过大的问题）
-- 修复无封面书籍的占位封面及列表视图下的书籍封面无选中效果的问题 #4 
-- 完善中文翻译
+- Fix placeholder cover dim effect not showing when selected in filemanager
+- Add 'Hide in PDF' option for bottom bar
+- Improve Chinese translations
