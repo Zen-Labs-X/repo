@@ -1,6 +1,6 @@
-Enhancement by [TomasDiLeo](https://github.com/TomasDiLeo)
+### Enhancement by @jmanoj0905 
 
-- Adjust font sizes based on screen DPI to keep consistency between devices
-- Changed all fonts to the default monospace font in KoReader for consistent alignment
-- Refine card drawing logic: center the suits correctly, draw a corner suit on partially drawn cards (piles and stock), enhanced pattern rendering.
-- Improve refresh behavior for Eink devices, avoid partial refreshes when unnecessary
+- Fix foundation card selection so foundation cards can move back to tableau as documented
+- Prevent completed games from being saved again on close
+- Reject malformed saved-game data before it can corrupt runtime state
+- Polish the board UI with clearer status text, adaptive tableau spacing, improved card rendering, cleaner empty slots, and a less crowded action bar

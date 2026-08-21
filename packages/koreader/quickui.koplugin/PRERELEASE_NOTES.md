@@ -8,7 +8,7 @@
 - Fix placeholder cover dim effect not showing when selected in filemanager #4 
 - Improve Chinese translations 
 - 修复底部栏移除最后一个按钮时崩溃闪退的问题（无按钮时显示提示性文字）
-- 修复底部栏移除最右边按钮后触摸区域仍未旧按钮的问题
+- 修复底部栏移除最右边按钮后触摸区域仍为旧按钮的问题
 - 修复底部栏因达数量限制而无法批量移除所有按钮的问题
 - 将内置动作编辑框的移除按钮放至保存按钮左侧（保持与自定义动作编辑框相同布局）
 - 调整显示模式列表视图下标题及作者字体大小（解决字体过大的问题）

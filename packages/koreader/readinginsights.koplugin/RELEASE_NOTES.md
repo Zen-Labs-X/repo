@@ -1,3 +1,3 @@
-**Fix** 
+**Changed**
 
-- The divider under the monthly chart now stays thick only when both Reading goal and Achievements are shown; thin otherwise.
+Added a thin divider under the Last week avg time/pages row, above the daily chart.

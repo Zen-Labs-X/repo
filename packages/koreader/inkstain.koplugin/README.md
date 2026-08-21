@@ -6,7 +6,7 @@
 
 ![License](https://img.shields.io/badge/License-GPL--3.0-12B7F5?style=for-the-badge)
 ![KOReader](https://img.shields.io/badge/KOReader-Plugin-555555?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-2.1.0-12B7F5?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-3.0.0-12B7F5?style=for-the-badge)
 ![Tested](https://img.shields.io/badge/Tested-KPW4-12B7F5?style=for-the-badge)
 
 > 让每一次休眠，都留下一张属于自己的墨痕账单。
@@ -46,8 +46,11 @@
 - 📦 **.po 语言包**：采用标准 gettext .po 文本文件，纯 Lua 运行时解析，无需编译
 
 ## 📸 效果预览
-<img width="417.8" height="579" alt="图片1" src="https://github.com/user-attachments/assets/9fe03773-086d-4fbe-8f88-b927042ed729" />
-<img width="368.6" height="505.2" alt="图片2" src="https://github.com/user-attachments/assets/70fb205a-d721-4fc0-930a-7f27b734a2df" />
+
+<img width="552.9" height="757.8" alt="636089544-70fb205a-d721-4fc0-930a-7f27b734a2df" src="https://github.com/user-attachments/assets/45fec9ab-2b83-4bdf-ae89-9b90a9ac61cf" />
+<img width="626.7" height="868.5" alt="636089545-9fe03773-086d-4fbe-8f88-b927042ed729" src="https://github.com/user-attachments/assets/91d19d9e-a0d3-4461-938c-2ee38e763ee4" />
+
+
 壁纸采用收据 / 墨痕账单风格，主要包含四个区域：
 
 - 页眉：单号、统计周期、数据来源、总时长、书单数量
@@ -57,7 +60,7 @@
 
 ## 🔧 使用方法
 
-1. 下载 release 中的 `inkstain.koplugin-v2.1.0.zip`
+1. 下载 release 中的 `inkstain.koplugin-v3.0.0.zip`
 2. 解压后，将 `inkstain.koplugin` 文件夹复制到 KOReader 的 `plugins` 目录
 3. 重启 KOReader
 4. 打开 KOReader 顶部菜单，在插件菜单位置找到「墨痕壁纸」
@@ -96,9 +99,11 @@
 
 ## 📝 更新日志
 
-### v2.1.0（2026.08）
+### v3.0.0（2026.08）
 
 - ✅ 修复切换壁纸语言后生成壁纸闪退（`pickQuote` 参数错误）
+- ✅ 修复觅阅阅读记录不显示：补充读取 `library`（本地书库），不再仅依赖 `shelf_cache`（云端书架）
+- ✅ 修复觅阅进度取值不完整：对齐觅阅 `local_progress` 逻辑，补全 `pending`/`verified` 进度字段
 - ✅ 重构壁纸本地化为 .po 语言包系统（仿 ZenUI 插件方案）
 - ✅ 新增 `locales/zh.po` 和 `locales/en.po`，纯文本 .po 文件，无需编译
 - ✅ 新增 `i18n.lua` 模块：运行时纯 Lua 解析 .po，带缓存和回退
@@ -162,4 +167,3 @@
 GNU General Public License v3.0
 
 Copyright (C) 2026 Estela-Zelin84
-

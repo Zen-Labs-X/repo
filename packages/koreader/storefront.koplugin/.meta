@@ -4,14 +4,14 @@
 id=storefront
 name=Storefront
 version=26.8.18.2
-description=Discover, install, and update KOReader plugins, user patches, and fonts without leaving your device.
+description=Discover, install, and update KOReader plugins, user patches, screensavers, and fonts without leaving your device.
 author=ultimatejimmy
 category=utility
 platforms=koreader
 dependencies=
 source=https://github.com/ultimatejimmy/storefront.koplugin
-stars=163
-updated_at=2026-08-21T06:55:26Z
+stars=164
+updated_at=2026-08-21T12:57:02Z
 published_at=2026-08-18T20:06:16Z
 prerelease_version=26.8.19-beta
 prerelease_published_at=2026-08-20T02:42:08Z
