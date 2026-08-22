@@ -1,5 +1,5 @@
 ## What's Changed
 
-- Allow chaning folder icon/name in Navbar
-- Fix status bars sometimes turning back on in reader
-- Update incompatible plugins
+- Fix KOReader exit not closing search in settings
+- Physical page buttons control Home Book Strip widget
+- Filter books by language from Navbar and Home controls
