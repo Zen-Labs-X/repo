@@ -24,6 +24,7 @@ from scrape_common import (
     is_inactive,
     load_blacklist,
     load_category_cache,
+    looks_like_koreader_patch_repo,
     make_id,
     newest_prerelease,
     newest_stable_release,
@@ -69,6 +70,7 @@ def is_eligible_koplugin(repo, exclude_forks):
         and (not exclude_forks or not repo.get("fork"))
         and not is_inactive(repo)
         and is_koplugin(repo)
+        and not looks_like_koreader_patch_repo(repo)
     )
 
 
@@ -223,6 +225,10 @@ def main():
         if norm in blacklist or norm in known_refs:
             continue
         repo = item
+        if is_koplugin(repo) and looks_like_koreader_patch_repo(repo):
+            print(f"Skipping unsupported mixed patch/plugin repository {full_name}",
+                  file=sys.stderr)
+            continue
         if not is_eligible_koplugin(repo, args.exclude_forks):
             continue
 

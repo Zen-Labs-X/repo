@@ -12,6 +12,19 @@ import scrape_kopatches
 
 
 class PatchScraperTests(unittest.TestCase):
+    @mock.patch.object(scrape_kopatches, "fetch_tree", return_value=[
+        {"type": "blob", "path": "2-page-scrubber.lua", "size": 123},
+        {"type": "tree", "path": "page_scrubber.koplugin"},
+        {"type": "blob", "path": "page_scrubber.koplugin/main.lua", "size": 456},
+    ])
+    def test_repository_with_nested_plugin_has_no_patch_assets(self, _fetch_tree):
+        repo = {
+            "full_name": "owner/page_scrubber.koplugin",
+            "default_branch": "main",
+        }
+
+        self.assertIsNone(scrape_kopatches.patch_assets(repo))
+
     def test_renamed_repository_is_refreshed_without_duplicate_package(self):
         old_ref = "ameyrk99/koreader-patches-plugins"
         repo = {

@@ -31,6 +31,18 @@ class PluginScraperTests(unittest.TestCase):
             scrape_koplugins.PLUGIN_QUERIES,
         )
 
+    def test_patch_repository_with_plugin_metadata_is_not_eligible(self):
+        repo = {
+            "name": "page_scrubber.koplugin",
+            "full_name": "owner/page_scrubber.koplugin",
+            "topics": ["koreader-plugin", "koreader-user-patch"],
+            "stargazers_count": 26,
+            "archived": False,
+            "fork": False,
+        }
+
+        self.assertFalse(scrape_koplugins.is_eligible_koplugin(repo, False))
+
     def test_zenpm_is_added_with_its_fixed_koplugin_id(self):
         repo = {
             "owner": {"login": "xZenLabs"},

@@ -24,6 +24,7 @@ from scrape_common import (
     fetch_tree,
     is_inactive,
     load_blacklist,
+    looks_like_koreader_patch_repo,
     make_id,
     newest_prerelease,
     newest_stable_release,
@@ -41,14 +42,6 @@ PATCH_QUERIES = (
 )
 
 
-def looks_like_koreader_patch_repo(repo):
-    name = repo.get("name", "").lower()
-    topics = [t.lower() for t in repo.get("topics", [])]
-    if "koreader-user-patch" in topics:
-        return True
-    return name == "koreader.patches" or "koreader.patches" in name
-
-
 def is_eligible_patch_repo(repo, exclude_forks):
     return (
         repo.get("stargazers_count", 0) >= MIN_STARS
@@ -62,8 +55,16 @@ def is_eligible_patch_repo(repo, exclude_forks):
 def patch_assets(repo):
     branch = repo.get("default_branch") or "main"
     branch_url = urllib.parse.quote(branch, safe="")
+    tree = fetch_tree(repo["full_name"], branch)
+    if any(
+        item.get("type") == "tree"
+        and any(part.lower().endswith(".koplugin") for part in item.get("path", "").split("/"))
+        for item in tree
+    ):
+        return None
+
     assets = []
-    for item in fetch_tree(repo["full_name"], branch):
+    for item in tree:
         if item.get("type") != "blob":
             continue
         path = item.get("path", "")
@@ -125,12 +126,16 @@ def main():
         if canonical_identity:
             known_repository_identities.add(canonical_identity)
 
+        full_name = repo.get("full_name", record["ref"])
         assets = patch_assets(repo)
+        if assets is None:
+            print(f"Skipping unsupported mixed patch/plugin repository {full_name}",
+                  file=sys.stderr)
+            continue
         if not assets:
             print(f"Could not refresh {record['rel_path']}: no patch files",
                   file=sys.stderr)
             continue
-        full_name = repo.get("full_name", record["ref"])
         releases = fetch_releases(full_name)
         if releases is None:
             print(f"Could not refresh {record['rel_path']}: releases unavailable",
@@ -218,6 +223,10 @@ def main():
             continue
 
         assets = patch_assets(repo)
+        if assets is None:
+            print(f"Skipping unsupported mixed patch/plugin repository {full_name}",
+                  file=sys.stderr)
+            continue
         if not assets:
             continue
         full_name = repo.get("full_name", full_name)

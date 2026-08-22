@@ -355,6 +355,14 @@ def repository_identity(ref):
     return owner, re.sub(r"[^a-z0-9]", "", repo)
 
 
+def looks_like_koreader_patch_repo(repo):
+    name = repo.get("name", "").lower()
+    topics = [topic.lower() for topic in repo.get("topics", [])]
+    if "koreader-user-patch" in topics:
+        return True
+    return name == "koreader.patches" or "koreader.patches" in name
+
+
 def load_blacklist():
     """Return normalized GitHub repository refs excluded from scraping."""
     try:
