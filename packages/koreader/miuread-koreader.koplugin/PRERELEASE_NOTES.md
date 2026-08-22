@@ -1,5 +1,6 @@
-- 打开书籍时只执行一次主页冻结/后台停止，去除重复清理与重复 park。
-- 主页页码、栏目等非关键状态不再在点书时强制整份设置写盘；回到主页空闲后再保存。
-- 主页首屏不再同步读取 KOReader statistics.sqlite3；本地统计与微信读书统计统一等待主页空闲并串行后台刷新。
-- 自动微信书架快速索引失败时保留旧缓存，不再立即退回完整书架请求；手动刷新仍允许完整回退。
-- 增加 ReaderOpenPerf 交接耗时记录，用于继续定位 KOReader 文档打开阶段。
+- 将觅阅阅读工具栏拆成桌面模式与插件模式两个独立开关：桌面模式继续使用 `reader_ui.enabled`，插件模式使用现有 `reader_ui.plugin_mode_enabled`。插件模式缺省/旧配置一律按关闭处理，不再被桌面模式的开关状态带入。
+- 插件模式的“插件设置”新增“阅读界面”入口，可单独开启或关闭觅阅阅读工具栏；默认关闭时，顶部点击、下滑、菜单键等阅读菜单入口保持 KOReader 原生行为。用户主动开启后才允许觅阅工具栏接管对应入口。
+- 修复 ReaderMenu bridge 生命周期：保存一次 KOReader 原生菜单 handler，ReaderUI 或插件实例重建时不再把旧觅阅 wrapper 当成新的 original，避免形成 MiuRead → MiuRead → KOReader 的残留调用链。关闭当前模式工具栏时会恢复 KOReader 原生 handler。
+- 为顶部专用触摸区和 ReaderMenu bridge 增加 ReaderUI generation/owner 校验；关闭开关、Reader 结束或旧回调失效后，残留 callback 只能返回给 KOReader，不能再次拉起觅阅工具栏。
+- `show_reader_quick_panel()` 与实际显示函数增加最终权限门，即使来自旧手势、Gesture Manager action 或延迟回调，也必须通过当前运行模式对应的工具栏开关才能创建界面。ReaderReady、旋转提交和休眠唤醒统一重新同步当前模式的 hook 状态。
+- 不修改 beta.29 前光/色温控制器，也不修改登录认证、下载任务、Kindle/Kobo 休眠唤醒、阅读时间、精确进度和主页布局；未新增持久化字段，`SCHEMA` 保持 119。

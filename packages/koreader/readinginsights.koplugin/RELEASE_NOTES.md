@@ -1,3 +1,3 @@
 **Changed**
 
-Added a thin divider under the Last week avg time/pages row, above the daily chart.
+- Prevent tap/long-press on reading goal target in goal-only mode. Prevent some unnecessary popup.
