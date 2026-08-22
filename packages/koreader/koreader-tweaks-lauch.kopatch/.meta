@@ -3,7 +3,7 @@
 # zenpm:auto-scraped
 id=koreader-tweaks-lauch
 name=Koreader Tweaks Lauch
-version=source
+version=1.0.0
 description=Custom Lua patches, and UI tweaks for KOReader on E-ink devices.
 author=lautaroelkin
 category=patches
@@ -11,9 +11,13 @@ platforms=koreader
 dependencies=
 source=https://github.com/lautaroelkin/koreader-tweaks-lauch
 stars=26
-updated_at=2026-08-21T18:45:55Z
+updated_at=2026-08-22T01:37:41Z
+published_at=2026-08-21T22:06:15Z
 readme_url=packages/koreader/koreader-tweaks-lauch.kopatch/README.md
-readme_hash=3a72dd5df881f8a0480375bbee67e43d784ccdc2
+readme_hash=75331df820b38a3d4451e113116a71da939c27a1
+release_notes_url=packages/koreader/koreader-tweaks-lauch.kopatch/RELEASE_NOTES.md
+release_notes_hash=48eee4041848203c04bbce9e071412a4f1b5de97242ecc3a0e44dd2af68fc8c1
+releases=[{"tag_name":"v1.0.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/lautaroelkin/koreader-tweaks-lauch/zipball/v1.0.0"}],"name":"V1.0.0 Page Browser: Initial Release"}]
 source_type=source
 assets.0.arch=any
 assets.0.asset=2-page-browser.lua
