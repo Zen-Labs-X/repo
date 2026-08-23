@@ -1,4 +1,4 @@
 ## What's Changed
 
-- ZenOS migration
-- Update icon
+- Fix an edge case on android where backend can close while a package is updating
+- Fix android permissions
