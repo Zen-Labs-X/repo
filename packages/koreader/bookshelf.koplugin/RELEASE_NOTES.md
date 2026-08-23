@@ -1,2 +1,2 @@
-- Statistics tokens (%book_read_time, %book_pages_read and friends) now work in list view lines, not just the hero card
-- Fixed a crash when the reader rebuilds the document under the shelf, most easily triggered by "Reset document settings" (thanks for the Reddit report)
+- A line break inside a line's template counts as a space now, instead of swallowing everything after it the moment the line needed shortening (#345)
+- A shortened line ends in one "…", not two (#345)
