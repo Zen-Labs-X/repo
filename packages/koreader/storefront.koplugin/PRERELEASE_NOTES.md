@@ -1,4 +1,3 @@
-- add new fonts
-- remove search from updates tab
+- fix UI bug with some translations
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.18.2...26.8.21-beta
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.21-beta...26.8.22-beta
