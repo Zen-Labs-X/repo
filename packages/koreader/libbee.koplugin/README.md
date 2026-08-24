@@ -23,11 +23,15 @@ Libbee brings your public library loans directly into KOReader. With integrated 
 
 - **Direct Shelf Access**: Browse all active ebook loans from your connected Libby shelf directly within KOReader.
 - **On-Device ACSM Fulfillment**: Automatically fulfills and decrypts Adobe DRM `.acsm` loans to standard `.epub` and `.pdf` files on the device.
+- **In-App Early Returns**: Return loans early directly to your library within KOReader to immediately free up loan slots and clean up local files.
+- **Automatic Loan Expiration**: Automatically removes downloaded book files 1 day after the loan expiration date while preserving reading progress, bookmarks, and highlights.
+- **Multi-Library & Multi-Card Support**: Seamlessly browse and manage loans across multiple cards and library systems linked to your Libby account.
 - **Anonymous Device Activation**: Ready to use out of the box with automatic one-time anonymous device activation.
 - **Optional ByteBooks Multi-Device Sync**: Sign in with a ByteBooks ID to synchronize and read the same loan across multiple authorized devices.
-- **Cover and Metadata Display**: View book titles, authors, cover art, and remaining loan duration.
+- **Cover and Metadata Display**: View book titles, authors, cover art, format badges, and remaining loan duration.
 - **Grid and List Views**: Flexible shelf presentation tailored for e-ink and high-resolution screens.
 - **Offline Shelf Cache**: Cached shelf metadata allows offline browsing of currently borrowed titles.
+- **In-App Diagnostic Log Viewer**: View sync, download, and error logs directly on device without connecting to a computer.
 - **Over-The-Air (OTA) Updates**: Automatic and manual update checks via GitHub Releases with preservation of user settings.
 
 ---
@@ -36,12 +40,12 @@ Libbee brings your public library loans directly into KOReader. With integrated 
 
 Comprehensive guides, setup instructions, and feature details are available on the [Libbee Wiki](https://github.com/ultimatejimmy/libbee/wiki):
 
-- [Installation Guide](https://github.com/ultimatejimmy/libbee/wiki/Installation-Guide): Step-by-step setup for e-readers and devices, plus update instructions.
-- [Authentication and Setup](https://github.com/ultimatejimmy/libbee/wiki/Authentication-and-Setup): How to link your Libby account using the 8-digit setup code displayed in KOReader.
-- [DRM and Fulfillment](https://github.com/ultimatejimmy/libbee/wiki/DRM-and-Fulfillment): Detailed explanation of on-device ACSM fulfillment and ByteBooks multi-device sync.
-- [User Interface and Features](https://github.com/ultimatejimmy/libbee/wiki/User-Interface-and-Features): Guide to shelf navigation, view modes, cover caching, and offline reading.
-- [Configuration Reference](https://github.com/ultimatejimmy/libbee/wiki/Configuration-Reference): Reference for all configuration options and default download paths.
-- [Troubleshooting and FAQ](https://github.com/ultimatejimmy/libbee/wiki/Troubleshooting-and-FAQ): Solutions for common errors, network issues, and general questions.
+- [Installation Guide](https://github.com/ultimatejimmy/libbee/wiki/1.-Installation-Guide): Step-by-step setup for e-readers and devices, plus update instructions.
+- [Authentication and Setup](https://github.com/ultimatejimmy/libbee/wiki/2.-Authentication-and-Setup): How to link your Libby account using the 8-digit setup code displayed in KOReader.
+- [DRM and Fulfillment](https://github.com/ultimatejimmy/libbee/wiki/3.-DRM-and-Fulfillment): Detailed explanation of on-device ACSM fulfillment and ByteBooks multi-device sync.
+- [User Interface and Features](https://github.com/ultimatejimmy/libbee/wiki/4.-User-Interface-and-Features): Guide to shelf navigation, view modes, cover caching, and offline reading.
+- [Configuration Reference](https://github.com/ultimatejimmy/libbee/wiki/5.-Configuration-Reference): Reference for all configuration options and default download paths.
+- [Troubleshooting and FAQ](https://github.com/ultimatejimmy/libbee/wiki/6.-Troubleshooting-and-FAQ): Solutions for common errors, network issues, and general questions.
 
 ---
 
