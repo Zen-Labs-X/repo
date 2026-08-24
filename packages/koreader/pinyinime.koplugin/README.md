@@ -2,9 +2,9 @@
 
 > 基于 KOReader 内置简体中文输入法的拼音增强插件。
 
-Pinyin IME 沿用 KOReader 的简体中文键盘、输入框与按键交互，在原有输入体验上增加候选栏、完整词库、整句输入、双拼、个性化学习和后续词联想。插件只在简体中文键盘生效，不会替换 KOReader 的其他键盘布局。
+Pinyin IME 沿用 KOReader 的简体中文键盘、输入框与按键交互，在原有输入体验上增加候选栏、完整词库、混拼、整句输入、双拼、个性化学习和后续词联想。插件只在简体中文键盘生效，不会替换 KOReader 的其他键盘布局。
 
-**当前版本：v1.1.1**　·　[下载插件](https://github.com/Merpyzf/pinyinime.koplugin/releases/download/v1.1.1/pinyinime.koplugin-v1.1.1.zip)　·　[查看版本说明](https://github.com/Merpyzf/pinyinime.koplugin/releases/tag/v1.1.1)
+**当前版本：v1.2.0**　·　[下载插件](https://github.com/Merpyzf/pinyinime.koplugin/releases/download/v1.2.0/pinyinime.koplugin-v1.2.0.zip)　·　[查看版本说明](https://github.com/Merpyzf/pinyinime.koplugin/releases/tag/v1.2.0)
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/Merpyzf/pinyinime.koplugin/main/assets/screenshots/v1.0.0/input-candidates.png" width="520" alt="全拼输入 nihaoshijie 时显示你好世界整句候选和紧凑候选栏">
@@ -24,20 +24,20 @@ Pinyin IME 是 KOReader 简体中文输入法的增强层，不是另一套键�
 
 ## 为离线词库做的优化
 
-完整词库是这个版本的重点。词库查询、候选计算和学习数据处理均在设备本地完成，插件运行没有网络依赖。
+混拼和词库扩充是这个版本的重点。词库查询、候选计算和学习数据处理均在设备本地完成，插件运行没有网络依赖。
 
 ### 完整万象词库
 
-主词库来自 Wanxiang 的现代中文词条与权重，经过面向 KOReader 运行环境的构建和索引。发布包内的主数据库约 123 MiB，包含常用词、短语、专名及用于整句解码和上下文排序的数据。
+主词库来自 Wanxiang 的现代中文词条与权重，经过面向 KOReader 运行环境的构建和索引。发布包内的主数据库约 108 MiB，包含常用词、短语、专名及用于整句解码和后续词联想的数据。
 
 ### 学术与通用补充词库
 
-独立的补充数据库约 28 MiB，收录 560,885 条基线缺失记录，覆盖常用表达以及计算机、医学、法律、金融、理工、人文等领域。只有主词库结果不足时才会查询补充库，避免让长尾词条干扰常用候选。
+独立的补充数据库约 52 MiB，保留 560,885 条补充记录，并加入更多常用表达和专业词汇。只有主词库结果不足或输入混拼时才会查询补充库，避免让长尾词条干扰常用候选。
 
 ### 适合电纸书设备的查询路径
 
 - 使用只读 SQLite 数据库，运行时不会改写发布词库。
-- schema v5 为高频编码、整句上下文和词间转移准备了紧凑查询表。
+- schema v5 为高频编码和后续词联想准备了紧凑查询表。
 - 词库首次需要时才初始化，并在多个输入框之间复用，减少不必要的启动成本。
 - 查询结果有边界并使用小型缓存，控制内存占用和候选生成时间。
 - 候选排序会综合词频、整句路径、输入上下文和可选的个人学习结果。
@@ -47,9 +47,11 @@ Pinyin IME 是 KOReader 简体中文输入法的增强层，不是另一套键�
 
 ## 输入能力
 
-### 全拼与五种双拼
+### 全拼、混拼与五种双拼
 
 支持全拼，以及搜狗双拼、拼音加加双拼、微软双拼、小鹤双拼和自然码双拼。长按虚拟键盘的空格键，可以在输入时快速切换方案。自然码沿用原“常用双拼”的内部标识和键位，升级后已有方案设置无需迁移。
+
+全拼模式支持将完整拼音和后续音节的声母混合输入。例如，输入 `beijdax`，候选中可直接出现“北京大学”。混拼会自动识别，不需要额外开启；纯全拼、简拼和双拼仍按原有方式工作。
 
 ### 简拼、纠错与整句输入
 
@@ -81,15 +83,15 @@ Pinyin IME 是 KOReader 简体中文输入法的增强层，不是另一套键�
 
 ## 安装
 
-1. 下载 [pinyinime.koplugin-v1.1.1.zip](https://github.com/Merpyzf/pinyinime.koplugin/releases/download/v1.1.1/pinyinime.koplugin-v1.1.1.zip)。
+1. 下载 [pinyinime.koplugin-v1.2.0.zip](https://github.com/Merpyzf/pinyinime.koplugin/releases/download/v1.2.0/pinyinime.koplugin-v1.2.0.zip)。
 2. 解压压缩包，得到顶层文件夹 `pinyinime.koplugin/`。
 3. 用 USB 将阅读器连接到电脑，把整个文件夹复制到 `koreader/plugins/`。
 4. 确认最终路径为 `koreader/plugins/pinyinime.koplugin/main.lua`，不要多套一层同名目录。
 5. 安全弹出阅读器，然后重启 KOReader。
 6. 在 KOReader 中启用“简体中文”键盘布局。
-7. 进入 `设置 → 设备 → 键盘 → 拼音输入法`，确认菜单中显示 `版本：v1.1.1`。
+7. 进入 `设置 → 设备 → 键盘 → 拼音输入法`，确认菜单中显示 `版本：v1.2.0`。
 
-发布包解压后约占 160 MiB。考虑复制过程和后续升级，建议设备至少预留 200 MiB 可用空间；精确大小和校验值见 [v1.1.1 版本记录](versions/v1.1.1.md)。
+发布包解压后约占 170 MiB。考虑复制过程和后续升级，建议设备至少预留 220 MiB 可用空间；精确大小和校验值见 [v1.2.0 版本记录](versions/v1.2.0.md)。
 
 ## 升级
 

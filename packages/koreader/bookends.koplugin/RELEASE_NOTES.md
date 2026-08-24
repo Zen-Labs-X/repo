@@ -1,7 +1,9 @@
-**Chapter progress at any TOC depth**
+**Fixes the in-app updater**
 
-The chapter progress tokens now take a depth suffix, the same way `%chap_title_1`…`%chap_title_9` already do: `%chap_read_N`, `%chap_pages_N`, `%chap_pages_left_N`, `%chap_pct_N`, `%chap_pct_left_N`, plus `%chap_time_left_N` and `%chap_time_left_N_eta`.
+Installing an update crashed KOReader before it could finish. Bookends unpacked the downloaded file using a KOReader helper that was removed from KOReader itself in mid-2026, so on current versions that call failed and took the reader down with it. It now unpacks using the same library KOReader uses internally.
 
-Without a number they track the deepest chapter, as before. With a depth, e.g. `%chap_read_1`, they measure against the top-level chapter instead. Useful for books with a very fine table of contents, where a plain `%chap_read` shows a tiny sub-section's length next to a top-level `%chap_title_1`.
+The download was never the problem, so nothing was left half-installed — the previous version stayed in place and came back on restart.
 
-Type them manually (they're not in the token picker). The README token reference lists the full set.
+**If you're on v5.23.0 or earlier you'll need to install this one by hand.** The updater is the thing that was broken, so it can't update itself. Download the zip below, unzip it, and copy the `bookends.koplugin` folder over the existing one in your KOReader `plugins` directory. Updates after this one work normally again.
+
+Everything in [v5.23.0](https://github.com/AndyHazz/bookends.koplugin/releases/tag/v5.23.0) is included — auto preset by file type, the progress-marker fix, the new tokens, and Ukrainian and European Portuguese translations.
