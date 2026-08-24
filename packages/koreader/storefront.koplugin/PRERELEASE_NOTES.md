@@ -1,3 +1,4 @@
-- Improve logic for number of items per page on Installed tab
+- Fix bug with larger downloads in the "Update All" batch updater.
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.22-beta...26.8.23-beta
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.24-beta...26.8.24-beta2

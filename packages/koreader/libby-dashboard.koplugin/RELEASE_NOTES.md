@@ -1,0 +1,1 @@
+**Full Changelog**: https://github.com/jadehawk/libby-dashboard.koplugin/compare/v0.2.5...v0.2.6

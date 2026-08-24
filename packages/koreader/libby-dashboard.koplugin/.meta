@@ -1,0 +1,23 @@
+# Libby Dashboard plugin for KOReader
+# https://github.com/jadehawk/libby-dashboard.koplugin
+# zenpm:auto-scraped
+id=libby-dashboard
+name=Libby Dashboard
+version=0.2.6
+description=KOReader plugin for browsing Libby loans, downloading EPUB/PDF books, and managing Adobe/ByteBooks authorization.
+author=jadehawk
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/jadehawk/libby-dashboard.koplugin
+stars=16
+updated_at=2026-08-24T18:48:00Z
+published_at=2026-08-24T00:25:29Z
+readme_url=packages/koreader/libby-dashboard.koplugin/README.md
+readme_hash=b29db457a50bca4e6f336b4b4704fa453bd8c79a
+release_notes_url=packages/koreader/libby-dashboard.koplugin/RELEASE_NOTES.md
+release_notes_hash=16ce74d4c80cc33bcd958d01d944c3d787568aa24bc144d60e36b1330d71d4c0
+releases=[{"tag_name":"v0.2.6","assets":[{"name":"libby-dashboard.koplugin.zip","url":"https://github.com/jadehawk/libby-dashboard.koplugin/releases/download/v0.2.6/libby-dashboard.koplugin.zip","size":163081,"digest":"sha256:9385bac558a19da66b25be0ebded6a83354fdbc115e425d49c4519331a4ee8b8"}],"name":"v0.2.6"},{"tag_name":"v0.2.5","assets":[{"name":"libby-dashboard.koplugin.zip","url":"https://github.com/jadehawk/libby-dashboard.koplugin/releases/download/v0.2.5/libby-dashboard.koplugin.zip","size":162275,"digest":"sha256:b5dd6bb1966ea5ff313aaf202c793b39735cd4a4d72bd5ea7f4168f056a0b6da"}],"name":"v0.2.5"},{"tag_name":"v0.2.4","assets":[{"name":"libby-dashboard.koplugin.zip","url":"https://github.com/jadehawk/libby-dashboard.koplugin/releases/download/v0.2.4/libby-dashboard.koplugin.zip","size":160519,"digest":"sha256:4321caca093e641b770d20cbc087691a7fd12e494d62a4f2b5969ce54d640dd8"}],"name":"v0.2.4"},{"tag_name":"v0.2.3","assets":[{"name":"libby-dashboard.koplugin.zip","url":"https://github.com/jadehawk/libby-dashboard.koplugin/releases/download/v0.2.3/libby-dashboard.koplugin.zip","size":154191,"digest":"sha256:041cf5aaa32d8e40e7361c2121179e71852a4655137b76c69ff5d122a4a015ef"}],"name":"v0.2.3"},{"tag_name":"v0.2.2","assets":[{"name":"libby-dashboard.koplugin.zip","url":"https://github.com/jadehawk/libby-dashboard.koplugin/releases/download/v0.2.2/libby-dashboard.koplugin.zip","size":152222,"digest":"sha256:6c6acff5967f6565dbe79307911d25a878689603f50f83067718199547d85ade"}],"name":"v0.2.2"},{"tag_name":"v0.2.1","assets":[{"name":"libby-dashboard.koplugin.zip","url":"https://github.com/jadehawk/libby-dashboard.koplugin/releases/download/v0.2.1/libby-dashboard.koplugin.zip","size":144269,"digest":"sha256:f74414b6fd694715cb9ca0c8574ee354a5005e4c3dab4ae147aa81852c87400c"}],"name":"v0.2.1"}]
+source_type=release
+source_asset=libby-dashboard.koplugin.zip
+size=163081
