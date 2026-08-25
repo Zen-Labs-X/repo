@@ -1,9 +1,11 @@
-This is a huge update of KinAMP. The main feature is the completely new Koreader plugin interface. For quick access, assign it to the lower right corner tap in the *Gesture manager*. 
+KinAMP3 is a huge update of this application:
 
-It has many new features, the main ones are listed below:
-- Music - **OGG** file format support
-- Music - Track metadata decoding
-- Radio - AAC, M3U and PLS internet radio stations accepted
-- Radio - Station metadata decoded for ICY compatible stations
-- Koreader - Completely new interface, with floating player window; no more menu access; with Playlist and Radio editor
- 
+- Completely redesigned **Koreader plugin**. Read the documentation about using it.
+- **OGG format** support
+- **AAC radio** encoding support, as well as PLS and M3U stations - around 90% of the stations from the database are supported
+- File **metadata** support
+- Icecast radio metadata support
+
+KinAMP has now an experimental **Kobo support** too - Koreader plugin only.
+
+On Kindles it is included in the **KindleTweaks KPM** repository. Read the documentation about installing it using `kpm`.

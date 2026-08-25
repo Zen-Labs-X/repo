@@ -93,7 +93,40 @@ To quickly access KinAMP, assign it to a gesture: **Cog menu > Taps and Gestures
 Installation
 ------------
 
+### Installing using `kpm`
+
+Add the KindleTweaks repo to KPM, using `kterm` or an *SSH connection*:
+
+    /var/local/kmc/bin/kpm add-repo https://kindletweaks.github.io/Repo/manifest.json
+
+Then install KinAMP:
+
+    /var/local/kmc/bin/kpm install kinamp
+
+### Installing from the release
+
 Download the [latest release](https://github.com/kbarni/KinAMP/releases) and unzip it to the root of the Kindle's storage. Start it from KUAL or from the home screen.
+
+Kobo
+----
+
+KinAMP3 has experimental support for Kobo devices.
+
+Kobo devices run the Koreader plugin only - there is no native app.
+
+To install, download `kinamp-kobo.zip` from the release and unzip it to the root of the Kobo's storage. It installs:
+
+```
+.adds/koreader/kinamp/                   the player and its libraries
+.adds/koreader/plugins/kinamp.koplugin/  the plugin
+```
+
+Both halves sit inside Koreader's own folder, so removing KinAMP is a matter of deleting
+those two directories.
+
+Audio goes out over Bluetooth, so **pair your headphones from the Kobo's own settings
+before starting Koreader** - unlike on the Kindle, the plugin does not manage the Bluetooth
+connection itself.
 
 For more information about building and porting to other devices, see the [Hacking](HACKING.md) document.
 

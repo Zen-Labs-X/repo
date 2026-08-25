@@ -1,3 +1,3 @@
-Improve series cache management/restoration
+- fix new API entry tool for android
 
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.8.23-beta...26.8.23-beta3
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.8.25-beta...26.8.25-beta2
