@@ -1,2 +1,2 @@
-- A line break inside a line's template counts as a space now, instead of swallowing everything after it the moment the line needed shortening (#345)
-- A shortened line ends in one "…", not two (#345)
+- A shelf pinned to a specific author now finds its books in every "Author name formatting" setting (#347)
+- Folder names like "Locked Tomb, The" read as "The Locked Tomb", the way book titles already do (#341)
