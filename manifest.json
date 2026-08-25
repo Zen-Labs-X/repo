@@ -6607,7 +6607,7 @@
       "category": "theme",
       "platforms": ["koreader"],
       "dependencies": [],
-      "conflicts": ["simpleui"],
+      "conflicts": ["simpleui", "quickmenu", "appearance", "zzz-readermenuredesign", "vos"],
       "icon_url": "packages/koreader/zen-ui.koplugin/assets/zen.svg",
       "featured_image": "packages/koreader/zen-ui.koplugin/assets/featured.png",
       "featured": true,
