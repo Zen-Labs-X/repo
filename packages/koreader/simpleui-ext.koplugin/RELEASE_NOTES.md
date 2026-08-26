@@ -1,1 +1,1 @@
-- Adapt to SimpleUI 2.5 
+ - adapt to simpleui 2.6

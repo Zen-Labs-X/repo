@@ -1,7 +1,7 @@
 What's New in Simple UI 2.6.0:
 
 - Reading Heatmap: Added a new Reading Heatmap module.
-- Personalization: Introduced a browsable asset picker for easier selection and installation of icons and wallpapers.
+- Customization: Introduced a browsable asset picker for easier selection and installation of icons and wallpapers.
 - Clock: Added independent size controls for the clock face, date, and battery text.
 - Cover Deck: Added a per-instance progress badge to the Cover Deck module.
 - To Be Read: Added an option to automatically remove books from your TBR list once they are marked as finished.
