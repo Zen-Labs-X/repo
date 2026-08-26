@@ -16,6 +16,7 @@ This plugin brings Kindle-style X-Ray features to KOReader. It uses AI to track 
 ## What it does
 
 - **AI-Powered Insights**: Supports Google Gemini, OpenAI, **DeepSeek**, **Claude**, and **Custom API** providers (like OpenRouter).
+- **Phone & PC Quick Setup**: Set API keys in seconds via QR code scanning or web browser with end-to-end zero-knowledge encryption, completely eliminating on-screen e-ink typing.
 - **Character Tracking**: View bios and roles. Now supports **Merging Duplicates** with AI-consolidated summaries.
 - **Customizable Detail**: Choose between short or long AI descriptions to fit your preference.
 - **Linked Entries**: Automatically connect related characters and locations through smart cross-referencing.
