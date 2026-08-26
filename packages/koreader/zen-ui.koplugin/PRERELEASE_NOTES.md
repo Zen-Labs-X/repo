@@ -1,10 +1,12 @@
 ## What's Changed
 
+- Automatically add new ZenPM plugins to Launcher
 - Add three-page carousel layout to the page browser
 - Add opacity slider to Library background (Library > Background)
 - Add new icon for bookmark (dogear) in Reader
 - Add font options for TOC and Bookmarks (Reader > Zen page browser)
 - Add custom highlight names (Reader > Highlight / Lookup)
+- Add folder cover image picker (Hold folder > Edit > Set folder cover)
 - Add option to hide the Wi-Fi status icon when Wi-Fi is off (Library > Status bar)
 - Allow renaming the To Be Read collection
 - Fix restore library location regression
