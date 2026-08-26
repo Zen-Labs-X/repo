@@ -1,6 +1,6 @@
-## [1.41.2](https://github.com/tachibana-shin/rakuyomi/compare/v1.41.1...v1.41.2) (2026-08-24)
+## [1.41.3](https://github.com/tachibana-shin/rakuyomi/compare/v1.41.2...v1.41.3) (2026-08-26)
 
 
 ### Bug Fixes
 
-* rebuild focused backend fixes ([#314](https://github.com/tachibana-shin/rakuyomi/issues/314)) ([bd3cad5](https://github.com/tachibana-shin/rakuyomi/commit/bd3cad5e6a268afa4336398e9ab3d737711b7fcb))
+* alias `@/types/constants` lnreader ([17cc35c](https://github.com/tachibana-shin/rakuyomi/commit/17cc35c270d359f9a47fd27818765c407da7ee84)), closes [#324](https://github.com/tachibana-shin/rakuyomi/issues/324)
