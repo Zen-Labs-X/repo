@@ -1,5 +1,3 @@
-- Fix download issue
-- Fix button UI for long version numbers
-- Update screen flashing on eink
+- Fix number of items logic on the installed tab
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.26-beta...26.8.26-beta2
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.26-beta2...26.8.27-beta2
