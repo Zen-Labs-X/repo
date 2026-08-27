@@ -45,6 +45,7 @@ PLUGIN_QUERIES = (
 )
 
 EXTRA_PLUGIN_REPOS = {
+    "xzenlabs/zen-fm": {"id": "zenfm", "name": "ZenFM"},
     "xzenlabs/zen-pm": {"id": "zenpm", "name": "ZenPM"},
 }
 
@@ -64,8 +65,9 @@ def is_koplugin(repo):
 
 
 def is_eligible_koplugin(repo, exclude_forks):
+    extra = normalize_repo_ref(repo.get("full_name", "")) in EXTRA_PLUGIN_REPOS
     return (
-        repo.get("stargazers_count", 0) >= MIN_STARS
+        (extra or repo.get("stargazers_count", 0) >= MIN_STARS)
         and not repo.get("archived")
         and (not exclude_forks or not repo.get("fork"))
         and not is_inactive(repo)

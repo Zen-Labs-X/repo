@@ -43,15 +43,15 @@ class PluginScraperTests(unittest.TestCase):
 
         self.assertFalse(scrape_koplugins.is_eligible_koplugin(repo, False))
 
-    def test_zenpm_is_added_with_its_fixed_koplugin_id(self):
+    def test_extra_repo_is_added_below_threshold_with_fixed_id(self):
         repo = {
             "owner": {"login": "xZenLabs"},
-            "name": "zen-pm",
-            "full_name": "xZenLabs/zen-pm",
-            "html_url": "https://github.com/xZenLabs/zen-pm",
+            "name": "zen-fm",
+            "full_name": "xZenLabs/zen-fm",
+            "html_url": "https://github.com/xZenLabs/zen-fm",
             "default_branch": "main",
-            "stargazers_count": 15,
-            "description": "ZenPM",
+            "stargazers_count": 7,
+            "description": "ZenFM",
             "topics": [],
             "archived": False,
             "fork": False,
@@ -101,14 +101,14 @@ class PluginScraperTests(unittest.TestCase):
                 scrape_koplugins.KOREADER_DIR = original_plugin_koreader_dir
 
             meta_path = os.path.join(
-                temp_dir, "packages", "koreader", "zenpm.koplugin", ".meta"
+                temp_dir, "packages", "koreader", "zenfm.koplugin", ".meta"
             )
             with open(meta_path, encoding="utf-8") as fh:
                 meta = fh.read()
-            self.assertIn("id=zenpm\n", meta)
-            self.assertIn("name=ZenPM\n", meta)
+            self.assertIn("id=zenfm\n", meta)
+            self.assertIn("name=ZenFM\n", meta)
             self.assertIn("version=1.1.0\n", meta)
-            self.assertIn("source=https://github.com/xZenLabs/zen-pm\n", meta)
+            self.assertIn("source=https://github.com/xZenLabs/zen-fm\n", meta)
 
     def test_eligible_manual_package_is_refreshed_in_place(self):
         repo = {
