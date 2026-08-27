@@ -1,6 +1,6 @@
 ## What's Changed
 
-- Automatically add new ZenPM plugins to Launcher
+- Automatically add and remove ZenPM-installed plugins in Launcher
 - Add three-page carousel layout to the page browser
 - Add opacity slider to Library background (Library > Background)
 - Add new icon for bookmark (dogear) in Reader
@@ -9,9 +9,13 @@
 - Add folder cover image picker (Hold folder > Edit > Set folder cover)
 - Add option to hide the Wi-Fi status icon when Wi-Fi is off (Library > Status bar)
 - Add parent + child per folder view in Authors/Series/Tags/Languages tabs
+- Add ordering for To Be Read books in Navbar/Home Book Strip widget
+- Add more options and ordering to Launcher Book Details
+- Add OPDS already downloaded tracking + dim covers
 - Allow renaming the To Be Read collection
 - Fix restore library location regression
 - Fix finished books reporting 0
 - Fix brightness schedule not applying after first wake on some devices
 - Adjust opening banner border color
+- Ignore cbz and Rakuyomi chapters from books finished stat
 - Bug fixes
