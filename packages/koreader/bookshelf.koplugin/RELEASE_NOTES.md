@@ -1,2 +1,4 @@
-- A shelf pinned to a specific author now finds its books in every "Author name formatting" setting (#347)
-- Folder names like "Locked Tomb, The" read as "The Locked Tomb", the way book titles already do (#341)
+- The hero card shows a book's description again when a two-line title left only a little room - it now fills whatever space remains, down to a single line, instead of vanishing (#349)
+- Generated covers for books without artwork no longer cut short titles off with "…" when the last word only just fit; the same fix stops uppercase hero titles doing the odd early wrap (thanks for the Reddit report)
+- Swiping between pages of an overflowing chip bar no longer leaves a ghost line from the previously selected chip (#352)
+- On a series shelf, the series filter dialog now marks the option that is actually in effect, instead of showing "standalone and books in series" as active before it was (#350)

@@ -1,3 +1,4 @@
-- fix android connection bug.
+- Handle long folder names in the folder picker
+- Add toggle for grouping when multiple accounts/library cards are active
 
-**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.23-beta...26.8.23-beta2
+**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.23...26.8.26-beta
