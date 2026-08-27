@@ -116,6 +116,15 @@ Shortcut buttons configurable on the Home Screen, the Navigation Bar, the Title 
 
 All features are accessible via **Menu → Tools → Simple UI**, which opens the **SUI Settings Window** — a full-screen, touch-friendly panel (not a native KOReader submenu) with sections for Home Screen, Bars, Library, Style, Quick Actions, and About.
 
+### Backup & Restore
+
+Export your entire SimpleUI configuration to a single portable `.sui` file and restore it on any device:
+
+- **One-tap export** from *About → Backup & Restore*, or bind the **Backup** Quick Action to a bar or gesture
+- Choose what to include: appearance/style, home screen layout, bars, library settings, quick actions, goals & streaks, wallpaper, custom quotes, and custom icons (files included)
+- Restore selectively — untick any category during import; preset libraries **merge** into yours (identical presets de-duplicate, conflicting ones are renamed `name (1)` instead of overwritten)
+- Files live in `settings/simpleui/backups/` — copy them somewhere safe (e.g. over USB) before re-flashing firmware
+
 ---
 
 ## Installation
