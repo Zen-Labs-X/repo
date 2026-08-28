@@ -1,0 +1,23 @@
+# Readingstyle plugin for KOReader
+# https://github.com/omer-faruq/readingstyle.koplugin
+# zenpm:auto-scraped
+id=readingstyle
+name=Readingstyle
+version=1.2.0
+description=a KOReader plugin that puts common book-layout settings behind simple controls. You can adjust how a book looks without digging through Style Tweaks or writing CSS.
+author=omer-faruq
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/omer-faruq/readingstyle.koplugin
+stars=16
+updated_at=2026-08-28T10:48:21Z
+published_at=2026-08-27T09:47:18Z
+readme_url=packages/koreader/readingstyle.koplugin/README.md
+readme_hash=ebe14d33623cd94f52adde3e1f884cbe8c5440c7
+release_notes_url=packages/koreader/readingstyle.koplugin/RELEASE_NOTES.md
+release_notes_hash=75c1dd0370bf0fc0e5873e50631ed814e935544a3536edda18df1a731afe9efe
+releases=[{"tag_name":"v1.2.0","assets":[{"name":"readingstyle.koplugin.zip","url":"https://github.com/omer-faruq/readingstyle.koplugin/releases/download/v1.2.0/readingstyle.koplugin.zip","size":172430,"digest":"sha256:8a12cbacee281eba1aab5c1dca742467b2a29c82ad3cd3a3eabc6a64519991c2"}],"name":"v1.2.0"},{"tag_name":"v1.1.0","assets":[{"name":"readingstyle.koplugin.zip","url":"https://github.com/omer-faruq/readingstyle.koplugin/releases/download/v1.1.0/readingstyle.koplugin.zip","size":167690,"digest":"sha256:0dd21f981e03e4b3d55d4ff9194dad06560c5342e0e8d508bfa9c7bce491e30a"}],"name":"v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"readingstyle.koplugin.zip","url":"https://github.com/omer-faruq/readingstyle.koplugin/releases/download/v1.0.0/readingstyle.koplugin.zip","size":131422,"digest":"sha256:b2eaf43809d6768fd1ae7bd0736ca7106618ba4684dc5bc03372ae6f3103c25b"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=readingstyle.koplugin.zip
+size=172430

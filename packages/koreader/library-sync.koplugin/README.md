@@ -152,6 +152,16 @@ It also moves older manifest-tracked duplicate files when multiple local paths p
 
 Library Sync matches manifest-tracked books by stable server ID before comparing filenames. Changing a BookOrbit title, subtitle, volume formatting, or source filename therefore does not make an existing tracked book appear missing. Metadata refresh replaces the existing local path and does not rename it automatically.
 
+Mirror cleanup only starts after every OPDS page has loaded successfully and the server's advertised catalogue total has been verified. Non-EPUB entries such as PDF or CBZ books count as present on the server, so they protect matching tracked files from cleanup, but Library Sync does not download them. A failed, incomplete, or unverifiable catalogue aborts the sync before downloads or local moves. Large cleanup queues require a second confirmation showing the local count, received server count, and exact number of files to move.
+
+Each new cleanup run uses one timestamped trash batch. To recover books, use:
+
+```text
+Library Sync -> Restore books from Mirror trash
+```
+
+The restore action also supports older trash layouts containing many timestamp folders. It restores the newest available copy to each original relative path, skips older backup copies, and never overwrites an existing destination file.
+
 ## Usage
 
 To download missing books:
@@ -167,6 +177,8 @@ Menu -> Magnifying glass -> Library Sync -> Refresh existing metadata
 ```
 
 The first metadata refresh records the current state in `library_sync_manifest.lua` and may refresh previously untracked books once. Later runs skip unchanged books. Replacements are downloaded to a temporary file, checked for non-zero size, and moved into place only after the existing file has been backed up. Existing `grimmory_sync_manifest.lua` files are read as migration fallbacks.
+
+When configured API metadata cannot be loaded completely, metadata refresh stops before replacing local files instead of comparing a degraded OPDS-only state with previously enriched signatures. An unusually large manual refresh queue requires a second confirmation with exact counts.
 
 The currently open book is skipped. To refresh one EPUB, long-press it in KOReader's file browser and choose `Refresh server metadata`. To refresh the open book, use `Refresh open book metadata`; Library Sync will ask before closing it.
 
@@ -187,6 +199,8 @@ Automatic refresh is off by default. Available options are:
 - `Check at startup`
 - `Check interval`
 - `Use OPDS updated timestamp as refresh trigger`
+
+Automatic refresh stops without replacing files when its queue is unusually large. Run a manual refresh to inspect and confirm that queue.
 
 Automatic checks scan the local library and contact the server, so they consume more battery than manual-only use. Timers stop while KOReader is suspended and restart on resume.
 

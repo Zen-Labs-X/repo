@@ -1,0 +1,18 @@
+# Fingerink plugin for KOReader
+# https://github.com/SMUsamaShah/fingerink.koplugin
+# zenpm:auto-scraped
+id=fingerink
+name=Fingerink
+version=source
+description=KOreader plugin to draw on old kindles with fingers
+author=SMUsamaShah
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/SMUsamaShah/fingerink.koplugin
+stars=15
+updated_at=2026-08-28T10:48:21Z
+readme_url=packages/koreader/fingerink.koplugin/README.md
+readme_hash=e5a4273fcc89a7bb6a5340a11e056f594619c61d
+source_type=source
+source_url=https://codeload.github.com/SMUsamaShah/fingerink.koplugin/zip/refs/heads/main
