@@ -1,3 +1,3 @@
 ## What's Changed
 
-- Fix ZenFM startup on PocketBook firmware without shell arithmetic support
+- Keep ZenFM icons visible in dark mode
