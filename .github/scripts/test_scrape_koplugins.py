@@ -195,10 +195,10 @@ class PluginScraperTests(unittest.TestCase):
 
     def test_package_filter_refreshes_only_the_requested_plugin(self):
         repo = {
-            "owner": {"login": "AnthonyGress"},
-            "name": "zen_ui.koplugin",
-            "full_name": "AnthonyGress/zen_ui.koplugin",
-            "html_url": "https://github.com/AnthonyGress/zen_ui.koplugin",
+            "owner": {"login": "xZenLabs"},
+            "name": "zen-os",
+            "full_name": "xZenLabs/zen-os",
+            "html_url": "https://github.com/xZenLabs/zen-os",
             "default_branch": "main",
             "stargazers_count": 446,
             "description": "A clean, minimal UI for KOReader",
@@ -293,7 +293,9 @@ class PluginScraperTests(unittest.TestCase):
             discover.assert_not_called()
             fetch_repo.assert_called_once_with("anthonygress/zen_ui.koplugin")
             with open(target_meta_path, encoding="utf-8") as fh:
-                self.assertIn("version=2.0.0\n", fh.read())
+                meta = fh.read()
+            self.assertIn("version=2.0.0\n", meta)
+            self.assertIn("source=https://github.com/xZenLabs/zen-os\n", meta)
             with open(other_meta_path, encoding="utf-8") as fh:
                 self.assertIn("version=1.0.0\n", fh.read())
             added, updated = write_results.call_args.args
