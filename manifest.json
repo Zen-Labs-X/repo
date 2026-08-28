@@ -6647,17 +6647,17 @@
       "featured": true,
       "featured_order": 1,
       "size": "2212453",
-      "source": "https://github.com/AnthonyGress/zen_ui.koplugin",
+      "source": "https://github.com/xZenLabs/zen-os",
       "source_asset": "zenos.koplugin.zip",
       "source_asset_aliases": ["zen_ui.koplugin.zip"],
       "plugin_module": "zenos",
       "plugin_module_aliases": ["zen_ui"],
       "source_type": "release",
       "stars": "591",
-      "updated_at": "2026-08-27T22:58:17Z",
+      "updated_at": "2026-08-28T03:58:03Z",
       "published_at": "2026-08-23T16:01:39Z",
-      "prerelease_version": "3.2.0-beta8",
-      "prerelease_published_at": "2026-08-27T22:58:06Z",
+      "prerelease_version": "3.2.0-beta9",
+      "prerelease_published_at": "2026-08-28T03:57:53Z",
       "readme_url": "packages/koreader/zen-ui.koplugin/README.md",
       "readme_hash": "bfa252426b32fcd4b748a7a7c868c2b7c9dfe993",
       "release_notes_url": "packages/koreader/zen-ui.koplugin/RELEASE_NOTES.md",
@@ -6669,13 +6669,13 @@
         {
           "arch": "any",
           "asset": "zenos.koplugin.zip",
-          "url": "https://github.com/AnthonyGress/zen_ui.koplugin/releases/download/v3.1.0/zenos.koplugin.zip",
+          "url": "https://github.com/xZenLabs/zen-os/releases/download/v3.1.0/zenos.koplugin.zip",
           "size": "2212453"
         },
         {
           "arch": "any",
           "asset": "zen_ui.koplugin.zip",
-          "url": "https://github.com/AnthonyGress/zen_ui.koplugin/releases/download/v3.1.0/zen_ui.koplugin.zip",
+          "url": "https://github.com/xZenLabs/zen-os/releases/download/v3.1.0/zen_ui.koplugin.zip",
           "size": "2213233"
         }
       ]
