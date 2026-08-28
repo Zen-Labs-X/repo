@@ -1,3 +1,4 @@
 ## What's Changed
 
-_No changelog entries for this version._
+- Fix: deduplicate multiple similar languages i.e en and en-us
+- Fix: Variable Book strip control width

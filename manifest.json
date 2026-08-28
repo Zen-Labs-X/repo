@@ -6686,22 +6686,22 @@
       "featured_image": "packages/koreader/zen-ui.koplugin/assets/featured.png",
       "featured": true,
       "featured_order": 1,
-      "size": "2257714",
+      "size": "2257768",
       "source": "https://github.com/xZenLabs/zen-os",
       "source_asset": "zenos.koplugin.zip",
       "source_asset_aliases": ["zen_ui.koplugin.zip"],
       "plugin_module": "zenos",
       "plugin_module_aliases": ["zen_ui"],
       "source_type": "release",
-      "stars": "598",
-      "updated_at": "2026-08-28T18:49:29Z",
-      "published_at": "2026-08-28T18:49:20Z",
+      "stars": "599",
+      "updated_at": "2026-08-28T18:56:59Z",
+      "published_at": "2026-08-28T18:56:49Z",
       "prerelease_version": "3.2.1-beta1",
       "prerelease_published_at": "2026-08-28T18:44:19Z",
       "readme_url": "packages/koreader/zen-ui.koplugin/README.md",
       "readme_hash": "89519aa1e4e76db0013068797ef3d6bdd3a1d8e2",
       "release_notes_url": "packages/koreader/zen-ui.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "8b515907f9ea1635abc6d1922810cda9b147f0bd58ce3732a5ef529c5a4d0916",
+      "release_notes_hash": "fa05f5261cd3d07e8ff3f84194aa8d17e88a0dfc9c50f4e7f58a9c503b5f237c",
       "prerelease_notes_url": "packages/koreader/zen-ui.koplugin/PRERELEASE_NOTES.md",
       "prerelease_notes_hash": "8b515907f9ea1635abc6d1922810cda9b147f0bd58ce3732a5ef529c5a4d0916",
       "versions_url": "packages/koreader/zen-ui.koplugin/versions.json",
@@ -6710,13 +6710,13 @@
           "arch": "any",
           "asset": "zenos.koplugin.zip",
           "url": "https://github.com/xZenLabs/zen-os/releases/download/v3.2.1/zenos.koplugin.zip",
-          "size": "2257714"
+          "size": "2257768"
         },
         {
           "arch": "any",
           "asset": "zen_ui.koplugin.zip",
           "url": "https://github.com/xZenLabs/zen-os/releases/download/v3.2.1/zen_ui.koplugin.zip",
-          "size": "2258506"
+          "size": "2258560"
         }
       ]
     },
