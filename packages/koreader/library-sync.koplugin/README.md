@@ -15,6 +15,7 @@ The plugin was previously distributed as `grimmory-sync.koplugin`. New installat
 - Optional automatic metadata refresh at startup or on an interval.
 - Configurable folder routing and file naming.
 - Bookshelf-compatible author image downloads and BookOrbit uploads.
+- Automatic registration of downloaded EPUB files in BookOrbit's local matching state.
 - SimpleUI actions and recent-download history.
 - Manual OTA updates from GitHub Releases.
 
@@ -30,6 +31,14 @@ The plugin was previously distributed as `grimmory-sync.koplugin`. New installat
 | Reading progress and highlight sync | Not handled | Use BookOrbit's official KOReader plugin |
 
 Library Sync complements BookOrbit's official KOReader plugin. Library Sync handles book delivery, local file organization, metadata replacement, and Bookshelf images. BookOrbit's plugin handles progress, reading sessions, ratings, and highlights.
+
+When the BookOrbit plugin is installed, EPUB files downloaded or replaced by Library Sync are also registered in BookOrbit's local file-matching state after the verified file has reached its final path. This does not open the book or change its reading status. For books downloaded with an older Library Sync release, run:
+
+```text
+Library Sync -> BookOrbit integration -> Register existing Library Sync books
+```
+
+The reconciliation reads Library Sync's manifest, hashes only files that are not already registered unchanged, and batches the BookOrbit state update. Exact BookOrbit book and file IDs from OPDS are preferred; older manifest entries can fall back to BookOrbit's match endpoint when necessary.
 
 ## Installation
 

@@ -1,14 +1,21 @@
 ## KOReader Plugin
 
-### New Features
+### Improvements
 
-- **Portuguese (Portugal) translation**: LocalSend's UI is now available in Portuguese (Portugal) — the first community-contributed translation. The plugin follows KOReader's **Language** setting automatically, with untranslated strings falling back to English. Thanks @CookieCaptainD! (https://github.com/kaikozlov/localsend.koplugin/pull/16)
-
-  > **Updating from v1.4.2 or earlier?** The translation system debuted in v1.4.3, so your first update won't include the locale files. After updating and restarting, open **Check for updates** again and tap **Reinstall** so they're installed.
+* **Better compatibility with current LocalSend apps**: Updated sending, receiving, and device discovery to match LocalSend 1.18.2. Transfers between KOReader and current LocalSend versions should be more reliable, especially when HTTPS is enabled.
+* **Faster file transfers**: Sending multiple files now makes better use of parallel transfers, while file reading and writing has been optimized to reduce overhead on slower e-readers.
+* **More reliable device discovery**: Nearby devices are less likely to disappear or become unreachable after network changes, and compatibility with older LocalSend clients has also been improved.
+* **Better sleep and WiFi handling**: LocalSend now shuts down and comes back more reliably when your e-reader sleeps, wakes up, disconnects from WiFi, or reconnects quickly.
+* **Keeps the device awake during transfers**: KOReader temporarily prevents standby while scanning or actively transferring a file, then returns to normal power-saving behavior when the operation finishes.
+* **Better default receive folder**: If you haven't chosen a save folder yet, LocalSend now uses your KOReader home folder instead of the filesystem root.
 
 ### Bug Fixes
 
-- **Older Kindle kernel support**: 32-bit ARM builds now run on Linux 2.6.22 kernels (such as the Kindle DX Graphite) that predate `epoll_create1`, `eventfd2`, `accept4`, `pipe2`, and `dup3`. The receiver can start, show up in LocalSend, and complete transfers on these older devices, extending the Linux 2.6.31 support added in v1.4.2 even further back.
+* **Receiver automatically recovers if it stops**: If the LocalSend receiver unexpectedly exits while it should be running, the plugin now tries to restart it automatically instead of quietly becoming unavailable.
+* **More reliable HTTPS transfers**: Fixed several compatibility problems that could prevent discovery or transfers when encryption was enabled.
+* **Large transfers no longer time out after 30 seconds**: File uploads can now continue for as long as the transfer itself is making progress.
+* **File checksums and timestamps**: Received files now preserve timestamps supplied by the sender, and corrupted transfers can be retried cleanly without leaving the failed partial file behind.
+* **LocalSend Web compatibility**: Fixed several PIN, connection, and transfer issues when sending to or receiving from LocalSend Web over WebRTC.
 
 ---
 
@@ -28,3 +35,4 @@
 3. Restart KOReader
 
 See README for usage instructions.
+
