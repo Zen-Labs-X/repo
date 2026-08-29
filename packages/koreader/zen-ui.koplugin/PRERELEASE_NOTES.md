@@ -1,3 +1,5 @@
 ## What's Changed
 
-_No changelog entries for this version._
+- Fix: allow cancelling ZenPM download and time out after one minute
+- Fix reader highlight crash
+- Fix some icons not rendering
