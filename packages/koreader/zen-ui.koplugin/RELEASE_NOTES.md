@@ -1,4 +1,5 @@
 ## What's Changed
 
-- Fix: deduplicate multiple similar languages i.e en and en-us
-- Fix: Variable Book strip control width
+- Fix: allow cancelling ZenPM download and time out after one minute
+- Fix reader highlight crash
+- Fix some icons not rendering
