@@ -1,3 +1,2 @@
-**Changed**
-
-- Opening Achievements from menu now show first the cached data and checking if anything new in the background. Much faster opening from the menu.
+**Fixed** 
+The range heatmap's week-column count to a constant per months-setting instead of letting it vary period-to-period, so cell size and grid width no longer jitter by a pixel or two when paging through the calendar heatmap

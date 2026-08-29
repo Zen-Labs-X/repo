@@ -1,15 +1,5 @@
-### v3.6.0
-**2026-08-27**
+感谢这位老哥提供的crash
+<img width="250" height="100" alt="image" src="https://github.com/user-attachments/assets/8e3bb1a4-ab10-4b7e-9751-9743e653a13e" />
 
-### 新增
--新增轻量模式（低内存设备）：降低分辨率至 60%、跳过墨水点绘制、跳过 QR 图片加载，显著减少内存占用。在「通用设置」中开启
 
-### 修复
--修复字体选择器导致闪退的问题：改回输入框方式输入字体文件名，不再使用文件选择器
--修复字体文件复制导致低内存设备 OOM 闪退：24MB 字体从一次性读取改为 64KB 分块复制
--修复 Font:getFace 回退路径无保护导致崩溃：全部加 pcall 包裹，逐层降级（自定义 → 内置 → 系统）
--修复 drawText 字体加载失败时崩溃：getFontFace 返回 nil 时跳过绘制
--修复 i18n 模块冲突导致崩溃：require("i18n") 命中 KOReader 自带模块，改用 dofile 加载插件本地 i18n.lua
-
-### 变更
--墨水污渍效果默认关闭（show_stains 默认值改为 false）
+**OTA终于tmd修好了**
