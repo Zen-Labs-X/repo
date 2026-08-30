@@ -1,0 +1,23 @@
+# Kindle plugin for KOReader
+# https://github.com/kaikozlov/kindle.koplugin
+# zenpm:auto-scraped
+id=kindle
+name=Kindle
+version=0.0.5
+description=Kindle plugin for KOReader - read your Kindle's library in KOReader
+author=kaikozlov
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/kaikozlov/kindle.koplugin
+stars=15
+updated_at=2026-08-30T04:48:29Z
+published_at=2026-08-25T21:46:31Z
+readme_url=packages/koreader/kindle.koplugin/README.md
+readme_hash=98a37eee588861afe1394ec1ec2dd140c70a25a1
+release_notes_url=packages/koreader/kindle.koplugin/RELEASE_NOTES.md
+release_notes_hash=1c6c2ead67ae9ee32cf7bd4870bcd521d06d6ec5b7cbc91d23fb1df8090b5eb6
+releases=[{"tag_name":"v0.0.5","assets":[{"name":"kindle-koplugin-armv7.zip","url":"https://github.com/kaikozlov/kindle.koplugin/releases/download/v0.0.5/kindle-koplugin-armv7.zip","size":22091819,"digest":"sha256:35fda255c726b62a601225c4744a4fa1e29e25b3c8f8e1dbb2b4afe0e6dd561f"}],"name":"v0.0.5"},{"tag_name":"v0.0.4","assets":[{"name":"kindle-koplugin-armv7.zip","url":"https://github.com/kaikozlov/kindle.koplugin/releases/download/v0.0.4/kindle-koplugin-armv7.zip","size":24025454,"digest":"sha256:e1a64b47624383b0f519956570f50efaf5be2478b1731d10853a18942556c2b9"}],"name":"v0.0.4"},{"tag_name":"v0.0.3","assets":[{"name":"kindle-koplugin-armv7.zip","url":"https://github.com/kaikozlov/kindle.koplugin/releases/download/v0.0.3/kindle-koplugin-armv7.zip","size":24012479,"digest":"sha256:14db3bdf4cb1256b37d214f2d57f33aea734246df48397a8192a7aaba91c461a"}],"name":"v0.0.3"}]
+source_type=release
+source_asset=kindle-koplugin-armv7.zip
+size=22091819

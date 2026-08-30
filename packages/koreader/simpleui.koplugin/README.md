@@ -30,7 +30,7 @@ The centrepiece of SimpleUI. A home screen that gives you everything at a glance
 - **Quick Actions Row** — up to 3 customisable rows of shortcut buttons (Library, History, Wi-Fi toggle, Brightness, Stats, and more)
 - **Action List** — the same shortcuts as Quick Actions, shown as a vertical app-launcher-style list instead of a row
 - **Spacer** — a blank block to add breathing room between modules
-- **Quote of the Day** — optional literary header, randomly picked from a curated list of 100+ quotes; can also show your own highlights. Supply your own pool by placing a `.lua` file in `<KOReader settings dir>/simpleui/custom_quotes/` (created automatically on first run, never touched by updates) returning a table of `{ q = "...", a = "Author", b = "Book (optional)" }` entries, then set **Source → Custom** on the module. Edit the built-in pool instead via `desktop_modules/quotes.lua` in the plugin folder.
+- **Quote of the Day** — optional literary header, randomly picked from a curated list of 100+ quotes; can also show your own highlights. Supply your own pool by placing a `.lua` file in `<KOReader settings dir>/simpleui/sui_quotes/` (created automatically on first run, never touched by updates) returning a table of `{ q = "...", a = "Author", b = "Book (optional)" }` entries, then set **Source → Custom** on the module. Edit the built-in pool instead via `modules/quotes.lua` in the plugin folder.
 - **Module ordering & per-module scaling** — rearrange Home Screen modules in any order, resize each independently, or lock all scales together for uniform adjustments
 - **Wallpaper** — a background image for the Home Screen, with auto-rotate, stretch, and Night Mode inversion options
 - **Presets** — save and load full Home Screen configurations (layout, scales, wallpaper) to switch between different looks
@@ -114,7 +114,7 @@ Shortcut buttons configurable on the Home Screen, the Navigation Bar, the Title 
 
 ### Settings
 
-All features are accessible via **Menu → Tools → Simple UI**, which opens the **SUI Settings Window** — a full-screen, touch-friendly panel (not a native KOReader submenu) with sections for Home Screen, Bars, Library, Style, Quick Actions, and About.
+All features are accessible from the **SUI Settings Window** — a full-screen, touch-friendly panel with sections for Home Screen, Bars, Library, Style, Quick Actions, and About. Open it by tapping the **Settings** button (gear icon), which sits in the Navigation Bar and Quick Settings Bar by default and can also be bound to a Quick Action or gesture of your own. Long-pressing most bars or modules jumps straight to their own settings without going through the section list at all.
 
 ### Backup & Restore
 
@@ -124,6 +124,14 @@ Export your entire SimpleUI configuration to a single portable `.sui` file and r
 - Choose what to include: appearance/style, home screen layout, bars, library settings, quick actions, goals & streaks, wallpaper, custom quotes, and custom icons (files included)
 - Restore selectively — untick any category during import; preset libraries **merge** into yours (identical presets de-duplicate, conflicting ones are renamed `name (1)` instead of overwritten)
 - Files live in `settings/simpleui/backups/` — copy them somewhere safe (e.g. over USB) before re-flashing firmware
+
+### Factory Reset
+
+Found under **About → Factory Reset**. This wipes every Simple UI setting — layout, bars, quick actions, presets library, everything the plugin has ever saved — back to defaults, then restarts KOReader.
+
+- **Asset files are untouched.** Wallpapers, custom icons, custom quote files, and exported presets/backups live as plain files under `settings/simpleui/`, not as settings entries, so a Factory Reset never deletes them; only the configuration that pointed to them is cleared.
+- **The Welcome Screen runs again.** Because the reset also clears the "onboarding seen" flag, the next restart boots straight back into the first-run Welcome Screen, exactly like a fresh install.
+- **Export a Backup first** if you might want your current setup back afterwards — Factory Reset itself does not create one.
 
 ---
 
@@ -135,12 +143,12 @@ Export your entire SimpleUI configuration to a single portable `.sui` file and r
    * Kobo: `/.adds/koreader/plugins`
    * Kindle: `/koreader/plugins`
    * Android: `koreader/plugins` at the root of onboard storage.
-4. Restart KOReader
-5. Go to **Menu → Tools → Simple UI** to open the SUI Settings Window and configure the plugin
+4. Restart KOReader — Simple UI enables itself automatically and, on this first launch only, walks you through a short **Welcome Screen** (pick a starter layout, a few quick tips) before landing on your new Home Screen
+5. From there, tap the **Settings** button (gear icon) on the Navigation Bar any time to open the SUI Settings Window and configure the plugin further
 
-> **Tip:** After enabling the plugin, tap the **Home Screen** tab in the Navigation Bar to open your new home screen.
+> **Tip:** If you skip or close the Welcome Screen, tap the **Home Screen** tab in the Navigation Bar to open your new home screen.
 
-> **Tip:** To make the Home Screen your default start screen, go to **Simple UI → Home Screen → Behaviour → Start with Home Screen**. From then on, KOReader opens directly to your home screen every time you turn on your device.
+> **Tip:** "Start with Home Screen" is already on after the Welcome Screen finishes, so KOReader opens directly to your Home Screen every time you turn on your device. You can toggle it any time from the Settings button under **Home Screen → Behaviour → Start with Home Screen**.
 
 ---
 
@@ -208,7 +216,7 @@ The `packs/` folder is created automatically on first run and is never touched b
 
 #### Applying a pack
 
-Go to **Simple UI → Style → Icons → Icon Packs** and tap the pack you want. Icons are applied immediately to the live UI — no restart needed.
+Open Simple UI's Settings and go to **Style → Icons → Icon Packs**, then tap the pack you want. Icons are applied immediately to the live UI — no restart needed.
 
 Packs are **additive and partial**: only the slots covered by the pack are changed. Slots not included in a pack keep their current value (custom or default). To revert everything afterwards, use **Style → Icons → System Icons → Reset All System Icons**.
 
