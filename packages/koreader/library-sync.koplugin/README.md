@@ -1,21 +1,21 @@
 # Library Sync for KOReader
 
-Library Sync mirrors EPUB books and metadata from a Grimmory or BookOrbit server into a local KOReader library. It scans local files, compares them with a selected OPDS catalogue, downloads missing books, and can safely replace existing EPUB files when server metadata changes.
+Library Sync mirrors EPUB books, CBZ comics, and metadata from a Grimmory or BookOrbit server into a local KOReader library. It scans local files, compares them with a selected OPDS catalogue, downloads missing books, and can safely replace existing EPUB or CBZ files when server metadata changes.
 
 The plugin was previously distributed as `grimmory-sync.koplugin`. New installations should use `library-sync.koplugin`; existing `grimmory-sync.koplugin` installations remain supported for OTA updates and settings migration. Do not install both directories at the same time.
 
 ## Features
 
 - Grimmory and BookOrbit server providers.
-- Recursive local EPUB scanning and fuzzy duplicate detection.
+- Recursive local EPUB/CBZ scanning and fuzzy duplicate detection.
 - Paginated OPDS catalogue support with Basic authentication.
 - Downloads for books missing on the device.
 - Optional mirror mode for moving books removed from the selected sync source to local trash.
-- Safe, manifest-based metadata refresh for existing EPUB files.
+- Safe, manifest-based metadata refresh for existing EPUB and CBZ files.
 - Optional automatic metadata refresh at startup or on an interval.
 - Configurable folder routing and file naming.
 - Bookshelf-compatible author image downloads and BookOrbit uploads.
-- Automatic registration of downloaded EPUB files in BookOrbit's local matching state.
+- Automatic registration of downloaded EPUB and CBZ files in BookOrbit's local matching state.
 - SimpleUI actions and recent-download history.
 - Manual OTA updates from GitHub Releases.
 
@@ -32,7 +32,7 @@ The plugin was previously distributed as `grimmory-sync.koplugin`. New installat
 
 Library Sync complements BookOrbit's official KOReader plugin. Library Sync handles book delivery, local file organization, metadata replacement, and Bookshelf images. BookOrbit's plugin handles progress, reading sessions, ratings, and highlights.
 
-When the BookOrbit plugin is installed, EPUB files downloaded or replaced by Library Sync are also registered in BookOrbit's local file-matching state after the verified file has reached its final path. This does not open the book or change its reading status. For books downloaded with an older Library Sync release, run:
+When the BookOrbit plugin is installed, EPUB and CBZ files downloaded or replaced by Library Sync are also registered in BookOrbit's local file-matching state after the verified file has reached its final path. This does not open the book or change its reading status. For books downloaded with an older Library Sync release, run:
 
 ```text
 Library Sync -> BookOrbit integration -> Register existing Library Sync books
@@ -108,7 +108,7 @@ Credentials are stored as plain text in KOReader's platform-specific `settings/`
 
 `Download folder profile` controls where new books are stored below the local book path:
 
-- `Library root`: place all EPUB files directly in the library directory.
+- `Library root`: place all EPUB and CBZ files directly in the library directory.
 - `Author folders`: organize books under author-sort names.
 - `Genre/series folders`: organize books by the first genre or tag, then series.
 - `Custom rules file`: load custom Lua rules from `library_sync_path_rules.lua` or another configured path. Existing `grimmory_sync_path_rules.lua` paths remain valid when saved in settings.
@@ -122,13 +122,13 @@ Custom rules may match `genre`/`genres`, `tag`/`tags`, `author`/`authors`, or us
 
 `Download file naming` controls names for newly downloaded files:
 
-- `Server file name`: use Grimmory's original filename when available. BookOrbit's OPDS filename convention is `Title - Author.epub`.
-- `Library Sync default`: use `Author, Firstname - Title.epub`.
-- `Calibre title-authors`: use `Title - Authors.epub`.
+- `Server file name`: use Grimmory's original filename when available. BookOrbit falls back to `Title - Author.<ext>`.
+- `Library Sync default`: use `Author, Firstname - Title.<ext>`.
+- `Calibre title-authors`: use `Title - Authors.<ext>`.
 
 New installations default to `Server file name`. Existing installations without a saved filename profile retain the former default naming behavior.
 
-Duplicate detection is broader than the selected naming profile. It checks server names, Library Sync names, Calibre names, article-sorted names such as `Apollo Murders, The - Chris Hadfield.epub`, underscore variants, and title-only fallbacks.
+The server's `.epub` or `.cbz` extension is preserved by every naming profile. Duplicate detection is broader than the selected profile: it checks server names, Library Sync names, Calibre names, article-sorted names, underscore variants, and title-only fallbacks.
 
 ## Sync Sources
 
@@ -151,7 +151,7 @@ Select `All books (default)` before a full-library refresh.
 
 ### Mirror Selected Sync Source
 
-`Mirror selected sync source` is off by default. When enabled, `Sync missing books` still downloads missing books, then moves manifest-tracked local EPUBs that are no longer present in the selected sync source to:
+`Mirror selected sync source` is off by default. When enabled, `Sync missing books` still downloads missing books, then moves manifest-tracked local EPUB and CBZ files that are no longer present in the selected sync source to:
 
 ```text
 <library>/.library-sync-trash/
@@ -161,7 +161,7 @@ It also moves older manifest-tracked duplicate files when multiple local paths p
 
 Library Sync matches manifest-tracked books by stable server ID before comparing filenames. Changing a BookOrbit title, subtitle, volume formatting, or source filename therefore does not make an existing tracked book appear missing. Metadata refresh replaces the existing local path and does not rename it automatically.
 
-Mirror cleanup only starts after every OPDS page has loaded successfully and the server's advertised catalogue total has been verified. Non-EPUB entries such as PDF or CBZ books count as present on the server, so they protect matching tracked files from cleanup, but Library Sync does not download them. A failed, incomplete, or unverifiable catalogue aborts the sync before downloads or local moves. Large cleanup queues require a second confirmation showing the local count, received server count, and exact number of files to move.
+Mirror cleanup only starts after every OPDS page has loaded successfully and the server's advertised catalogue total has been verified. Unsupported entries such as PDF books count as present on the server, so they protect matching tracked files from cleanup, but Library Sync does not download them. A failed, incomplete, or unverifiable catalogue aborts the sync before downloads or local moves. Large cleanup queues require a second confirmation showing the local count, received server count, and exact number of files to move.
 
 Each new cleanup run uses one timestamped trash batch. To recover books, use:
 
@@ -179,7 +179,7 @@ To download missing books:
 Menu -> Magnifying glass -> Library Sync -> Sync missing books
 ```
 
-To replace matched local EPUB files when metadata has changed:
+To replace matched local EPUB or CBZ files when metadata has changed:
 
 ```text
 Menu -> Magnifying glass -> Library Sync -> Refresh existing metadata
@@ -189,7 +189,7 @@ The first metadata refresh records the current state in `library_sync_manifest.l
 
 When configured API metadata cannot be loaded completely, metadata refresh stops before replacing local files instead of comparing a degraded OPDS-only state with previously enriched signatures. An unusually large manual refresh queue requires a second confirmation with exact counts.
 
-The currently open book is skipped. To refresh one EPUB, long-press it in KOReader's file browser and choose `Refresh server metadata`. To refresh the open book, use `Refresh open book metadata`; Library Sync will ask before closing it.
+The currently open book is skipped. To refresh one EPUB or CBZ file, long-press it in KOReader's file browser and choose `Refresh server metadata`. To refresh the open book, use `Refresh open book metadata`; Library Sync will ask before closing it.
 
 ## SimpleUI Actions
 
