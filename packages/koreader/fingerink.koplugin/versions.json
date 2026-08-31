@@ -1,3 +1,3 @@
 {
-  "releases": []
+  "releases": [{"tag_name":"0.2","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SMUsamaShah/fingerink.koplugin/zipball/0.2"}],"name":"Panel size, icons and position"}]
 }
