@@ -1,3 +1,3 @@
-- Fix number of items logic on the installed tab
+- add non-touch device support
 
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.26-beta2...26.8.27-beta2
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.27-beta2...26.8.31-beta
