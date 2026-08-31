@@ -2,8 +2,8 @@ name: Scrape KOReader plugins, patches, and fonts
 
 on:
   schedule:
-    # Every six hours.
-    - cron: '0 */6 * * *'
+    # Every two hours.
+    - cron: '0 */2 * * *'
   workflow_dispatch:
     inputs:
       package:
