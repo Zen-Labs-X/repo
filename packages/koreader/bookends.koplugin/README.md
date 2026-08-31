@@ -115,12 +115,30 @@ Tokens are placeholders that expand to live values. Type `%` followed by a name,
 | `%filename` | File name (no path/extension) | *The_Great_Gatsby* |
 | `%file_num` | This file's position among the documents in its folder | *5* |
 | `%file_count` | Documents in this file's folder | *10* |
+| `%author_count` | Number of authors | *3* |
+| `%authors_short` | Short author list, collapsing to "et al." at three or more | *Frank Herbert, Brian Herbert, et al.* |
+| `%status` | Reading status value: `unread`, `reading`, `on_hold`, `finished` (never translated, so conditionals stay reliable) | *finished* |
+| `%status_label` | The same status as a word, translated | *Finished* |
+| `%rating` | Your rating as stars | *★★★★☆* |
+| `%rating_number` | Your rating as a number | *4* |
+| `%description` | Book description / blurb | *A desert planet…* |
+| `%size` | File size | *2 KB* |
+| `%added` | Date added, from the file's own date | *2024-03-09* |
+| `%opened` | Date the book was last opened | *2024-07-03* |
+| `%favourite` | A star when the book is in Favourites, empty otherwise | *★* |
+| `%quote` | A highlight from this book, in quotation marks | *"The spice must flow."* |
+| `%quote_source` | Title and author, to caption `%quote` | *Dune, Frank Herbert* |
 | `%lang` | Book language | *en* |
 | `%format` | Document format | *EPUB* |
 | `%highlights` | Number of highlights | *3* |
 | `%notes` | Number of notes | *1* |
 | `%bookmarks` | Number of bookmarks | *5* |
 | `%annotations` | Total annotations (highlights + notes + bookmarks) | *9* |
+| `%calibre{name}` | Any Calibre column, by its lookup name (the `#` is optional) | *cosy* |
+
+> **Calibre columns.** If your library is managed by Calibre, `%calibre{name}` shows any column from it, using the column's lookup name: a custom column `#mood` renders with `%calibre{mood}`. Text, list, number, date, yes/no and multi-value columns all work; long-text ("Comments") columns are skipped, being the wrong shape for a status line. Three standard fields come through the same way: `%calibre{pubdate}` (the year), `%calibre{publisher}` and `%calibre{rating}`. Conditionals work too, e.g. `[if:calibre{mood}="cosy"]Cosy read[/if]`.
+
+> This reads the `metadata.calibre` file Calibre writes into your KOReader home folder, and reads nothing at all unless one of your lines actually uses the token. One caveat worth knowing: KOReader's own wireless Calibre sync rewrites that file and permanently drops custom columns from it. A small `calibre.bookshelf.json` saved alongside preserves them and is shared with [Bookshelf](https://github.com/AndyHazz/bookshelf.koplugin) if you run both plugins.
 
 > **Author and last-digit families, typed manually.** `%author_1` through `%author_5` pick a specific author by position, the same way `%author_2` does. And `%page_num_lastdigit`, `%page_count_lastdigit`, `%pages_left_lastdigit`, `%chap_read_lastdigit`, `%chap_pages_lastdigit` and `%chap_pages_left_lastdigit` expose just the final digit of their counter, for languages whose grammar branches on it (Hungarian vowel harmony, for instance: `[if:page_num_lastdigit=3]`). Neither family appears in the token picker.
 
@@ -199,6 +217,7 @@ Tokens are placeholders that expand to live values. Type `%` followed by a name,
 | `%batt` | Battery level | *73%* |
 | `%batt_icon` | Battery icon (dynamic) | Changes with charge level |
 | `%wifi` | Wi-Fi icon (dynamic) | Hidden when off, changes when connected/disconnected |
+| `%wifi_icon` | The same Wi-Fi glyph under Bookshelf's name for it | *(wifi glyph)* |
 | `%plugin_content` | Plugin content (dynamic) | Aggregates output from plugins that register with KOReader's footer hook (e.g. `kobo.koplugin` Bluetooth, `readtimer.koplugin` countdown); hidden when none are reporting. Add a brace filter to restrict to one plugin: `%plugin_content{readtimer}` shows only the read-timer countdown, `%plugin_content{kobo}` only kobo.koplugin's contribution. |
 | `%light` | Frontlight brightness | *18* or *OFF* |
 | `%light_pct` | Frontlight brightness as a percentage | *56%* |
@@ -208,6 +227,7 @@ Tokens are placeholders that expand to live values. Type `%` followed by a name,
 | `%warmth_icon` | Warmth icon (dynamic) | Shown on devices with a warm frontlight |
 | `%nightmode` | Night-mode icon (dynamic) | Moon when inverted, sun when not |
 | `%mem` | RAM usage percentage | *33%* |
+| `%sysused` | System memory used, in MiB | *84 MiB* |
 | `%ram` | RAM usage in MiB | *128 MiB* |
 | `%disk` | Free disk space | *2.4 GB* |
 | `%invert` | Page-turn direction indicator | Changes when inverted |
@@ -389,6 +409,7 @@ Tags override the line's per-line style. If a line is set to Bold, `[i]text[/i]`
 
 - **Auto-hide** — Lines where all tokens resolve to empty or zero are automatically hidden
 - **Token width limits** — Append `{N}` to any token to cap its width at N pixels: `%chap_title{200} - %chap_read/%chap_pages` truncates the chapter title with ellipsis if it exceeds 200 pixels. Works with `%bar{400}` to set a fixed bar width instead of auto-fill.
+- **Elastic gap.** `%spacer` absorbs the leftover width of a line, pushing everything after it to the far edge: `%author%spacer%book_pct` puts the author hard left and the percentage hard right on one line. A line can only stretch in one place, so if it also has a `%bar` the bar takes the space and the spacer is dropped; a second `%spacer` is dropped too.
 - **Delimited tokens** — A token name runs until the next non-letter, so text placed straight after it is read as part of the name. Wrap the name in angle brackets to butt text directly against it: `%<book_time_left_h>h%<book_time_left_m>m` → `4h40m`. Width limits still work inside: `%<author{200}>`.
 - **Pluralisation** — Write `%highlights highlight(s)` and it becomes `1 highlight` or `3 highlights`
 - **Odd/even pages** — Set any line to appear on all pages, odd pages only, or even pages only
@@ -448,6 +469,12 @@ The Bookends menu separates **global** settings (apply everywhere, never saved w
 | Prioritise left/right and truncate long center text | Off | Reverses the default centre-first truncation |
 | Text colour | Black | Default text colour (per-preset) |
 | Symbol colour | Black | Default colour for icon glyphs |
+
+#### Bookshelf's status line
+
+If you also run [Bookshelf](https://github.com/AndyHazz/bookshelf.koplugin), it can put its own status line across the top of the reader. **Bookshelf draws it and Bookshelf owns the switch** (*menu > Settings > Also show status line in reader*), so it works whether or not Bookends is installed.
+
+All Bookends does is get out of the way: your top-row regions, and any top-anchored progress bar, all shift down by the height of the strip, so they keep the spacing you set between them. Nothing to configure here.
 
 #### Disabling the stock status bar
 
