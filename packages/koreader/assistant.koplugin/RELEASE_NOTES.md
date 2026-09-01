@@ -1,31 +1,25 @@
-## v1.15 Release Notes
-
-### Changes since v1.14
-
-This is a usability-focused iteration around provider setup, web search, and prompt context.
+> ⚠️ **OTA Users: Please update twice — the first OTA loses translations, the second restores them.** Details below.
 
 #### Highlights
+Smarter context control, per-model tuning, and more resilient API handling.
 
-- **UI-managed Provider Keys — zero-config start** — After installing from the KOReader Plugin Store, you can configure everything directly in the UI. No `configuration.lua` editing required. Add, edit, and delete custom providers in Settings, with `display_name`, built-in presets, and per-handler **Browse Models** (fetches via the handler's own `FetchModels`). The plugin also starts cleanly with no file-based config at all.
-- **Web search configuration UI** — Web search moves from config file to UI: manage multiple search APIs, long-press to edit/delete, and see configured state at a glance via menu icons. The Ask dialog now has a dedicated **Use web search** checkbox.
-- **Notebook & context improvements** — Multiple general notebooks with a folder picker and dedicated settings submenu. Prompts can now optionally include **book metadata** and **nearby page text** as context, with related settings regrouped for clarity.
-- **Settings & menu polish** — Reorganized menus, unified Title Case labels, dynamic navigation, and conditional display of Custom Prompts.
+#### What's New
 
-#### Fixes & Improvements
+**Context Management — New "Current Chapter Only" Option**
+Context management in the Ask dialog now includes `Current Chapter Only`. When `Include Text Read So Far` is checked, you can limit context to the current chapter only (auto-detected via the book's Table of Contents). Great for focusing answers on the chapter you're reading. Hidden automatically if the book has no TOC. Thanks to @Vilhelm-Ian (#205).
 
-- Fixed ~20s delay before the Wi-Fi prompt on every AI action; consolidated `runWhenOnline` handling across 21 call sites.
-- Fixed forwarding of the `thinking` parameter to OpenAI-compatible handlers, `null tool_calls` crashes, Gemini OpenAI-compat response tolerance, and OpenRouter model filtering via `/models/user`.
-- Improved stream error handling (surface server messages), auto-scroll behavior, and Responses API `reasoning_summary` handling.
-- Hardened `ai_translate.py` and `l10n/Makefile` (now fails on `.po` syntax errors).
-- Added headless test framework and `wbuilder` UI preview tooling.
+**Per-Model Parameter Presets**
+Configure separate `additional_parameters` (e.g. `temperature`, `max_tokens`, `reasoning`) for each model under the same provider via `model_parameters` in `configuration.lua`. Switching models via Settings → Browse Models applies the matching preset automatically; models without a preset keep the shared defaults. See `configuration.sample.lua` for examples. Thanks to @SUBHAM-ROY (#200).
 
-#### Thanks
+**Automatic Retry on API 429 (Rate Limit)**
+When the provider returns **HTTP 429 Too Many Requests** (rate limit / quota exceeded), the plugin now retries automatically — up to 8 times — respecting `Retry-After` headers, with exponential backoff and jitter. Works for both streaming and non-streaming requests. During streaming, a cancellable countdown `API Busy (429) — Attempts N/M` is shown.
 
-Special thanks to contributors in this cycle:
+#### Improvements & Fixes
+- **Web Search compatibility** — Search tool renamed to `assistant_web_search` to avoid 400 errors on gateways (e.g. OneAPI) that filter the generic `web_search` name.
+- **Dictionary accuracy** — Dictionary and Term X-Ray prompts now include book title/author and handle word forms better.
+- **More robust streaming** — Ignore SSE `id:` fields to fix stray `id:0 id:1...` text with Qwen and other OpenAI-compatible models.
+- **Settings dialog** — Browse Models failures no longer close the settings window.
+- **Ask dialog polish** — Improved checkbox layout, separator, input height; reasoning blocks now wrap correctly.
 
-- @SUBHAM-ROY — web search toggle for Ask, OpenRouter guardrail-aware model filtering
-- @jdbway — Wi-Fi delay fix (#197)
-- @anhnn2010 — multiple general notebooks (#192)
-- @Craftwork2720 — `thinking` parameter forwarding (#188)
-
-And everyone who helped with translations, feedback, and testing.
+#### Translations & Details
+All 42+ languages updated. The plugin now reuses KOReader's native translation module directly instead of bundling a stale copy of `gettext` — only the adapter entry is customized — with translations shipped as compiled `.mo` files for faster loading. This format change is why OTA requires two passes; fresh installs via zip are not affected.
