@@ -1,3 +1,3 @@
 {
-  "releases": [{"tag_name":"0.2","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SMUsamaShah/fingerink.koplugin/zipball/0.2"}],"name":"Panel size, icons and position"}]
+  "releases": [{"tag_name":"v0.2.1","assets":[{"name":"fingerink.koplugin.zip","url":"https://github.com/SMUsamaShah/fingerink.koplugin/releases/download/v0.2.1/fingerink.koplugin.zip","size":16315,"digest":"sha256:4f7ca2a441fa3e9cc76186ff0561aad5337c4c5a842406c2a549cc8d6f3c8543"}],"name":"Finger Ink 0.2.1"},{"tag_name":"0.2","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/SMUsamaShah/fingerink.koplugin/zipball/0.2"}],"name":"Panel size, icons and position"}]
 }
