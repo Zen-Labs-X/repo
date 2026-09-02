@@ -1,4 +1,3 @@
-- Fix PDF fulfillment bug #13 
-- Minor styling changes to top icons
+- PDF fixes
 
-**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.31-beta...26.9.1-beta
+**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.9.1-beta...26.9.1-beta2
