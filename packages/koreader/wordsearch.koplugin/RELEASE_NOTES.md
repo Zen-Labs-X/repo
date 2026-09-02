@@ -1,2 +1,2 @@
-- Add an option to use a different font and change the font size
-- Fix for UTF-8 characters
+- fix: show selection checkmarks via mandatory, not the inert checked field
+- feat: color the highlight lines on color-capable devices
