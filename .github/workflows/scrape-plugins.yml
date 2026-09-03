@@ -15,6 +15,10 @@ permissions:
   actions: write
   contents: write
 
+concurrency:
+  group: scrape-koreader
+  cancel-in-progress: false
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
