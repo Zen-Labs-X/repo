@@ -1,3 +1,5 @@
+# v.0.8.1-beta
+
 ## v0.8.1-beta
 
 New features added to extended thinking and streaming. 

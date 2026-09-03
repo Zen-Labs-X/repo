@@ -1,3 +1,5 @@
+# v0.1.1
+
 ## What's Changed
 * New features and bug fixes by @DenisovichDev in https://github.com/DenisovichDev/randomquote.koplugin/pull/9
 

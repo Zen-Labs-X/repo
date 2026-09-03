@@ -1,3 +1,5 @@
+# 1.2.0-pre
+
 - This pre-release aims to test the following functionality contributed by @cb12tre
 
 
@@ -21,4 +23,3 @@
 > ## Why
 >
 > These changes make FilebrowserPlus safer (server does not stay exposed indefinitely), faster to control from the main menu, and clearer to use thanks to dynamic status feedback.
-

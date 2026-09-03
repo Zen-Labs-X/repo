@@ -1,3 +1,5 @@
+# v0.1.0-pre
+
 ## 安装
 
 1. 下载 `pickthought.koplugin.zip` 并解压

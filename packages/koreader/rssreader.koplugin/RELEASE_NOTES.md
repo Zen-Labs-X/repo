@@ -1,3 +1,5 @@
+# v1.16.0
+
 ## Better book metadata for saved EPUBs
 
 Articles you save as EPUB now arrive with proper metadata, so they look like real books in your library instead of untitled files. Everything is read from data the plugin already downloads — no article takes any longer to save.
@@ -61,3 +63,37 @@ key-based Kobo/PocketBook models:
 
 If you would rather have a dedicated shortcut, the **RSS Reader** action can be
 bound to a key combination with the Hotkeys plugin.
+
+# v1.14.1
+
+- Fix non-Latin titles (Cyrillic, etc.) being sanitized to underscores in filenames
+
+    Filename sanitization used a whitelist of ASCII word chars, so any
+    non-ASCII letter was stripped, turning archived titles into
+    all-underscore filenames. Switch to a blacklist of characters actually
+    illegal in filenames, and make title truncation UTF-8 boundary aware
+    so it can't cut a multi-byte character in half.
+
+# v1.14.0
+
+- Add CommaFeed tag browsing and per-story tag editing
+
+    Adds a virtual "Tags" folder under CommaFeed accounts that lists all
+    tags and lets you drill into a tag's stories. Also adds an "Edit Tags" 
+    action on stories  and shows a story's current tags in its long-press
+    popup.
+
+# v1.13.0
+
+- Add article starring support for CommaFeed accounts
+    Wire CommaFeed's /entry/star API into the story viewer toolbar and the
+    story long-press menu (next to Add to List), show a star marker in
+    story titles, and add a ★ Starred virtual feed at the root level that
+    aggregates all starred articles. 
+
+- Fix Miniflux feed state restore , pr by philvernon
+
+# v1.12.0
+
+- "open sanitized " and "save sanitized" buttons on link popup
+- add api support for the webbrowser plugin

@@ -1,3 +1,5 @@
+# v1.10.1
+
 Session Cleaner v1.10.1 is the recommended public baseline.
 
 This release keeps the trusted database/session engine and replaces the old UI with a stable native KOReader menu-based interface.

@@ -1,3 +1,5 @@
+# v0.4.0
+
 ## What's Changed
 * Fix cookie parsing by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/15
 * Ao3 downloader code refactor by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/16
@@ -12,3 +14,34 @@ Download and extract the zip file `AO3Downloader-v0.4.0.zip`.
 Move the folder `AO3Downloader.koplugin` inside the extracted folder to your devices `koreader/plugins` folder.
 
 The menu option to open the plugins menu should then be found under the search tab while the filemanger is open.
+
+# v0.3.2
+
+## What's Changed
+* Fix searching works by & relationship tag by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/13
+
+
+**Full Changelog**: https://github.com/IntrovertedMage/AO3Downloader.koplugin/compare/v0.3.1...v0.3.2
+
+# v0.3.1
+
+## What's Changed
+* Update filename generation in UpdateFanfic to extract from fanfic path, also fixes update bug by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/12
+
+
+**Full Changelog**: https://github.com/IntrovertedMage/AO3Downloader.koplugin/compare/v0.3.0...v0.3.1
+
+# v0.3.0
+
+## What's Changed
+* Add filename template setting by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/7
+* Implemented event for opening plugin menu so it can now be assigned to a gesture. by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/10
+* Add setting to change which folder fanfic are saved to  by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/11
+
+
+**Full Changelog**: https://github.com/IntrovertedMage/AO3Downloader.koplugin/compare/v0.2.2...v0.3.0
+
+# v0.2.2
+
+## What's Changed
+* Fixed delete filter option in custom filter menu by @IntrovertedMage in https://github.com/IntrovertedMage/AO3Downloader.koplugin/pull/5

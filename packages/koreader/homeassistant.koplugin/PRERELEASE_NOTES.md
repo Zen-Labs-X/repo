@@ -1,3 +1,5 @@
+# v2.7.0
+
 * **New "Heartbeat" feature, that sends KOReader status (on/off) to the Home Assistant `sensor.koreader_status`**(BETA)[^1]
  _Feedback welcome!_
 * Split `main.lua` into `messages.lua`

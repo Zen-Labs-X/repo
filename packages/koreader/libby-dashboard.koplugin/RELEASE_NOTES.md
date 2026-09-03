@@ -1,3 +1,5 @@
+# v0.2.6.1
+
 # Libby Dashboard v0.2.6.1
 
 ## Highlights
@@ -79,3 +81,21 @@
   - Extended Loan Time.
   - Protected EPUB extended-loan behavior.
 - Full Lua 5.1 test suite passes for this release.
+
+# v0.2.6
+
+**Full Changelog**: https://github.com/jadehawk/libby-dashboard.koplugin/compare/v0.2.5...v0.2.6
+
+# v0.2.5
+
+**Full Changelog**: https://github.com/jadehawk/libby-dashboard.koplugin/compare/v0.2.4...v0.2.5
+
+# v0.2.4
+
+**Full Changelog**: https://github.com/jadehawk/libby-dashboard.koplugin/compare/v0.2.3...v0.2.4
+
+# v0.2.3
+
+**Full Changelog**: https://github.com/jadehawk/libby-dashboard.koplugin/compare/v0.2.2...v0.2.3
+
+- HOTFIX. Error 502 was preventing ACSM download on certain internet connections.

@@ -1,3 +1,5 @@
+# webapp/v2026.07.10.1
+
 New release because a few DNS issues with the KOReader plugin have been resolved + Web E-Reader and Hardcover progress sync.
 
 ## What's Changed
@@ -22,3 +24,9 @@ New release because a few DNS issues with the KOReader plugin have been resolved
 * @ananyatimalsina made their first contribution in https://github.com/Sudashiii/Sake/pull/61
 
 **Full Changelog**: https://github.com/Sudashiii/Sake/compare/webapp/v2026.04.04.4...webapp/v2026.07.10.1
+
+# webapp/v2026.04.04.4
+
+I've added quite a lot of stuff the last weeks. Thanks for everyone who created an issue and reported bugs or suggested features!
+
+The KOReader plugin finally has all the feature I originally wanted but were not that straight forward to Implement. Syncs are now downloaded seamlessly in the background - no need to manually press the sync button anymore! Also some other improvements to fix DNS Issues and upload progress on book exit, Menu restructure and more!

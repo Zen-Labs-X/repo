@@ -1,3 +1,5 @@
+# v1.0.0
+
 ## Installation
 1. Download `foldermemory.koplugin.zip`
 2. Extract to `koreader/plugins/`

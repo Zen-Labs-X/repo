@@ -1,3 +1,5 @@
+# v0.4
+
 ## New Features
 * **Annotations viewable from within book** – A new menu entry for current-book annotations makes it easier to access and manage your notes from within a book.
 * **Enhanced Filtering** – Extensive filtering options help you find the notes you need quicker and more easily. Following options have been added:
@@ -17,4 +19,29 @@
 * **Gesture Support** – Improved gesture handling so that gestures set up in the file manager or reader still work when plugin is open. Settings for swipe gestures has been added as well.
 * **Annotation Caching** – Annotations are now cached, which helps with loading speed of large amount of annotations.
 * **Annotation Gathering** – Now also uses KOReader's cached book information DB for gathering annotation which should cover most use cases.
-* **Menu** – Adjusted menus so they are a bit more organised. 
+* **Menu** – Adjusted menus so they are a bit more organised.
+
+# v0.3
+
+## What's Changed
+* Author name now shows up in annotation info and details
+* Sorting options have been added
+* Added support to go through pages with vertical swipes
+* Now shows all active filters in subtitle
+* Added support for custom metadata
+* Now gets highlight colors dynamically, so you can use this now in combination with patches that modify these colors :)
+* General fixes with tap behaviour in footer and content height generation
+* feature: fire `AnnotationsModified` events when annotations are modified by @SethMilliken in https://github.com/xblain/annotationsviewer.koplugin/pull/1
+
+## New Contributors
+* @SethMilliken made their first contribution in https://github.com/xblain/annotationsviewer.koplugin/pull/1
+
+**Full Changelog**: https://github.com/xblain/annotationsviewer.koplugin/compare/v0.2...v0.3
+
+# v0.2
+
+**Full Changelog**: https://github.com/xblain/annotationsviewer.koplugin/compare/v0.1...v0.2
+
+# v0.1
+
+First release

@@ -1,3 +1,5 @@
+# v0.1.0
+
 # Life Tracker for KOReader v0.1.0
 
 A bullet journal-style life planner plugin for KOReader. Track quests, habits, mood, and reading stats directly on your e-reader.

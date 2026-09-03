@@ -1,3 +1,5 @@
+# v2.0.0-beta1
+
 Session Cleaner v2.0.0-beta1
 
 This is the first frozen beta of the new v2 line.

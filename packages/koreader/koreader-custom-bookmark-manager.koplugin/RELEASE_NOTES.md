@@ -1,3 +1,5 @@
+# V1.0.0
+
 ## Installation
 
 1. Download `dogearmanager-V1.0.0.zip` below

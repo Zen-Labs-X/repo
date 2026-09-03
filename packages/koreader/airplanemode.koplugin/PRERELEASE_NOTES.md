@@ -1,1 +1,0 @@
-Initial release for enabling airplane mode in koreader

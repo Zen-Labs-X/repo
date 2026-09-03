@@ -1,3 +1,5 @@
+# v0.2.0
+
 > "Just as a gnomish-forged Gwyhyr blade hones the edge of a witcher’s craft with razor-sharp precision, this update sharpens the connection between your library and your digital archives."
 
 Welcome to the **v0.2.0 "Gwyhyr"** release. While Alzur gave us life, Gwyhyr brings the refinement. This version focuses on precision—sharpening the sync logic, expanding the metadata gathered from your tomes, and smoothing out the user interface.
@@ -27,3 +29,33 @@ To upgrade to Gwyhyr, you must perform a small ritual in your **Notion Database*
 4. Restart KOReader.
 
 **Full Changelog**: https://github.com/CezaryPukownik/koreader-notion-sync/commits/v0.2.0
+
+# v0.1.0
+
+> "Just as the mage Alzur forged the first witchers to bring order to a chaotic world, this plugin forges the first link to tame your unruly highlights."
+
+This is the first public release of NotionSync for KOReader. It provides a seamless bridge between your e-reader and your second brain, turning scattered notes into organized knowledge.
+
+### ⚔️ Core Features
+
+- Sync to Notion: Automatically creates a new page for each book in your Notion database and populates it with your highlights.
+
+- Smart Upsert: Intelligently detects new or modified highlights. It appends new quotes and updates existing ones without creating duplicates.
+
+- Formatting: Highlights are saved as elegant Quote blocks, complete with metadata (Page number, Date, Chapter, and Notes) and invisible ID anchors for robust tracking.
+
+- UI Configuration: No manual file editing required. You can input your Notion Token and browse/select your target Database directly from the KOReader interface.
+
+- One-Tap Sync: Supports KOReader's Gesture Manager. You can bind "Sync to Notion" to a corner tap for an uninterrupted workflow.
+
+### 📦 Installation
+
+Download notionsync.koplugin.zip from the Assets section below.
+
+Connect your device via USB and extract the zip into the koreader/plugins/ directory.
+
+Restart KOReader.
+
+Go to Tools → NotionSync Settings to configure your token and database.
+
+**Full Changelog**: https://github.com/CezaryPukownik/koreader-notion-sync/commits/v0.1.0

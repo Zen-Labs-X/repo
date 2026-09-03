@@ -1,3 +1,5 @@
+# v1.4.4
+
 ## 更新说明 
 
 - 云端书籍列表添加目录切换按钮，可快捷切换云端书籍目录
@@ -21,3 +23,33 @@
 - Improved Chinese translations #11 
 
 Thanks to @iav  for contributions to improving the K3 device experience.
+
+# v1.4.3
+
+## What's Changed
+
+- Added Auto Sync Exclude Directories feature #9  #10 
+- Optimized gesture registration: merged reader/filemanager paired gestures into unified general gestures
+- Remove logger.info
+
+# v1.4.2
+
+## What's Changed
+
+- Fix: support all KOReader formats in book validation (including .fb2.zip)
+- Non-touch navigation for the cloud book dialog
+
+# v1.4.1
+
+## What's Changed
+
+- Added changelog.lua to track version history
+- Optimize plugin module loading path and fix naming conflict with other plugins
+
+# v1.4
+
+Added English support, progress bar for upload/download, separated manual/auto sync download modes, and optimized update channel.
+- Added English support: Menu changed to English with Chinese translation (v1.4)
+- Progress bar for upload/download: Upload progress by book count, download progress by bytes (v1.4)
+- Manual and auto sync download modes are no longer shared: Prevents temporary switching of download mode in manual sync from affecting automated sync tasks (v1.4)
+- Optimized update channel: Added three update sources options - GitHub (Latest), GitHub (Pre-release), Gitee (Latest)  (v1.4)

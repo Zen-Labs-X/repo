@@ -1,3 +1,5 @@
+# v1.13.0
+
 ### New
 
 - Download plugins through a GitHub mirror or proxy — pick the source from the menu, or set a custom URL prefix (useful where GitHub is slow or blocked). (#31, thanks @THE-XSX)
@@ -32,3 +34,49 @@
 ---
 
 Thanks to @iav, @koma52, @THE-XSX and @ksaMask123 for their contributions to this release.
+
+# v1.12.0
+
+-  Show README in a TextViewer popup on KOReader >= 2026.07
+
+    Incorporates [#19](https://github.com/omer-faruq/appstore.koplugin/issues/19) (Readme in TextViewer) by @kerivin, gated behind a
+    KOReader version check as discussed on the PR: TextViewer only gained
+    Markdown rendering (text_format = "md") in v2026.07, so older versions
+    keep the previous cache-to-file-then-open flow, and the "Clear cached
+    README files" setting stays limited to that legacy path.
+ - Multi-directory plugin path support (extra_plugin_paths) — plugins can now be discovered and installed from multiple configured directories instead of one fixed path; install destination is selectable, updates write back to the correct directory, and paths can be hidden/shown via a new "Manage plugin paths" screen.
+- Added localization support (zh_CN, tr, es, fr, de, pt_BR).
+- Added GPL-3.0 license.
+- Fixed blank pages in the full changelog viewer.
+- Fine-grained PAT rejection on GitHub search is now detected and explained to the user.
+
+# v1.10.0
+
+## Modifications via PR 16,17,20 by [iav](https://github.com/iav)
+### Browser & installed-list navigation improvements
+
+- Added pagination to the Installed Plugins and Installed Patches screens, with a configurable items-per-page setting.
+- Added a compact toolbar (Switch tab / Refresh / Installed) to the plugin and patch browser.
+- Added an installed checkmark next to plugins you already have in the browse list.
+- Added a direct switch between Installed Plugins and Installed Patches without returning to the browser.
+- Added hardware-keyboard shortcuts (R/F/S/T) and a Menu-key shortcut for refresh, filter, sort, and switch-tab actions.
+- Cursor position and sort/filter selection are now preserved across page flips and list rebuilds on keyboard/D-pad devices.
+- Fixed stale/ghosted screen content when switching between AppStore dialogs on e-ink screens.
+- Reduced screen flashing when simply flipping pages, keeping the full-screen flash only for tab/filter/sort changes.
+
+### Install message fix
+
+- Fixed install/update success messages sometimes showing "nil" instead of the plugin's name.
+
+### Update detection fix
+
+- Fixed plugins with a "v"-prefixed version number (e.g. v1.4.2) being incorrectly flagged as needing an update.
+
+# v1.9.1
+
+- release options pagination when there are more than 8 assests.
+
+# v1.9.0
+
+ - Add release ignore feature to suppress update notifications for specific versions until newer release available
+    - Add "Ignore this release" button to download options dialog for updates

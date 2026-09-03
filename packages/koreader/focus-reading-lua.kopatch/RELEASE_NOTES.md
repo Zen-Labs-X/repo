@@ -1,3 +1,5 @@
+# 1.0
+
 **Full Changelog**
 
 - Added **Focus Reading** for EPUB, HTML, and XHTML books.

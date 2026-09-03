@@ -1,3 +1,5 @@
+# 2.0b
+
 This is the public beta of the rewritten Frotz plugin.
 
 The engine was changed to Git and Bocfel, based on RemGlk backend.

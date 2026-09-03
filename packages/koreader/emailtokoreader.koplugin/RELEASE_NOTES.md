@@ -1,3 +1,5 @@
+# v1.1.1
+
 ## Email to KOReader v1.1.1
 
 ### Fixes
@@ -13,3 +15,34 @@
 - Cleaner and more consistent fallback path assignment
 - Improved settings persistence code
 - Minor code cleanup, formatting fixes, and internal optimizations
+
+# v1.1.0
+
+## Email to KOReader v1.1.0
+
+### New
+- Cyrillic and Unicode filename support (RFC 2047/2231 decoding)
+- Automatic Cyrillic→Latin transliteration for filename compatibility
+- Smart fallback path (user home → KOReader home directory)
+- "View Download Path" menu item
+
+### Fixes
+- Write error handling and detailed error messages
+- Directory creation on-demand
+- Path validation improvements
+
+### Improvements
+- Multi-line email header support
+- Enhanced logging and user notifications
+
+# v1.0.0
+
+### Initial release with:
+
+- IMAP email integration
+- Multi-file download support
+- Large file handling (up to 3.5MB)
+- In-app configuration
+- Debug mode
+- Auto-refresh file browser
+- Gmail app password support

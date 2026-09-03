@@ -1,3 +1,5 @@
+# v2.0
+
 ## What’s new in v2.0
 
 - Cleaner and more organized menu (`Care`, `Pet Info`, `Settings`, `Danger Zone`).
@@ -16,3 +18,7 @@
 - **Sleepy**: appears at low energy and reduces XP gain until rested.
 
 Status badges are shown in **View Pet** (`SICK`, `BORED`, `SLEEPY`) for quick visibility.
+
+# v1.0.0
+
+**Full Changelog**: https://github.com/PedroMachado1/kopet.koplugin/commits/v1.0.0

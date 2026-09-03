@@ -1,3 +1,5 @@
+# v1.2.0
+
 DoctorBattery v1.2.0
 ✨ New Features
 🇵🇹 Portuguese Translation
@@ -45,3 +47,30 @@ The goal is to progressively support as many Kindle, Kobo, Android, and Linux-ba
 🛠 Improvements
 General code improvements and internal refinements.
 Expanded infrastructure for future hardware compatibility.
+
+# v.1.1.0
+
+## What's New
+
+### Added
+- Export Debug Report feature.
+- Battery information can now be exported to a text file for troubleshooting and compatibility analysis.
+
+### Improved
+- Updated README documentation.
+- Added instructions for contributing new translations.
+- General code cleanup and improvements.
+
+### Fixed
+- Fixed the Debug Report export issue that could cause the plugin to crash on some devices.
+
+### Debug Report
+
+If Doctor Battery doesn't work correctly on your device, export a Debug Report and attach it when opening a GitHub Issue.
+
+Please also include:
+- Device model
+- KOReader version
+- A brief description of the problem
+
+The Debug Report helps identify missing or unsupported battery information, making it easier to improve compatibility across different e-readers.
