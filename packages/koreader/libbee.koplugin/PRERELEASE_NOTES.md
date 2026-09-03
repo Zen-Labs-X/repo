@@ -1,3 +1,10 @@
+# 26.9.3-beta4
+
+- Fix for android PDFs
+- Clean up temp files automatically if download is cancelled or interrupted
+
+**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.9.3-beta...26.9.3-beta4
+
 # 26.9.3-beta
 
 - Add loading bar/info, useful for large PDF downloads
@@ -23,10 +30,3 @@
 - Add non-touch support for older button-only devices
 
 **Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.27...26.8.31-beta
-
-# 26.8.26-beta
-
-- Handle long folder names in the folder picker
-- Add toggle for grouping when multiple accounts/library cards are active
-
-**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.23...26.8.26-beta
