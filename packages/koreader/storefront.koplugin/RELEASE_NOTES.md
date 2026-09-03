@@ -1,3 +1,18 @@
+# 26.9.3
+
+## What's New
+
+- **Non-touch device support**: You can now navigate and use Storefront entirely using physical buttons and page-turn keys.
+- **Less screen flashing**: Reworked e-ink refresh behavior to cut down on unnecessary full-screen flashes while browsing around.
+- **Better performance**: Noticeably snappier overall, especially on older and lower-powered e-readers.
+- **Faster update checks**: The *Check Updates* button is much more responsive and loads faster.
+- **Download reliability**: Fixed issues with downloads failing, including a bug that caused larger files to fail when running *Update All*.
+- **UI fixes for long names**: Cleaned up button layouts so long version numbers no longer overflow or wrap awkwardly, and fixed folder picker issues with long screensaver directory names.
+- **Smoother tab loading**: Cleaned up the loading and refresh behavior when viewing READMEs and the *Versions* tab.
+- **Font tracking**: Improved font tracking/management.
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.23...26.9.3
+
 # 26.8.23
 
 ## What's New in 26.8.23
@@ -51,30 +66,3 @@ Submit your own screensavers to the catalog here: https://ultimatejimmy.github.i
 
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.9...26.8.18
-
-# 26.8.9
-
-# Release Notes
-
-Here's everything new, improved, and fixed since the last stable release (**v26.8.2.1**).
-
-### New Features
-
-* **In-app ratings and voting:** You can now upvote or downvote plugins directly within the storefront to share feedback and highlight community favorites.
-* **Ignore updates:** Skip updates for individual plugins if you'd prefer to stay on your current version. Ignored updates won't trigger update badges or prompts.
-* **Font viewer sizing controls:** The font viewer now automatically matches your text size settings, with new buttons to easily scale the sample text up or down.
-* **Korean language support:** Added Korean translations for the plugin interface.
-
-### Performance & Reliability
-
-* **E-ink performance boost:** Optimized the rating and voting system so dialogs load much faster and smoother on low-powered e-readers.
-* **Faster README images:** Improved how images inside plugin details and READMEs are fetched and rendered.
-* **Catalog fallbacks:** Added fallback catalog sources and improved initial setup logic to make sure new installs load the catalog right away, even if a primary server is temporarily down.
-
-### User Interface & Bug Fixes
-
-* **Dynamic button & tab sizing:** Buttons and menu tabs now automatically adjust their layout to fit translated text of varying lengths cleanly.
-* **Update count fixes:** Fixed minor display bugs where ignored versions could mess with update counts or refresh indicators.
-* **UI Polish:** Visual cleanup around deletion prompts, restart buttons, and dialog layouts.
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.2.1...26.8.9

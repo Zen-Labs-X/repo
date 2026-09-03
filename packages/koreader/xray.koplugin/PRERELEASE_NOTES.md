@@ -1,3 +1,9 @@
+# 26.9.2-beta
+
+- Image menu pagination fix.
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.9.1-beta2...26.9.2-beta
+
 # 26.9.1-beta2
 
 - image menu performance fix
@@ -24,9 +30,3 @@
 - More UI/UX improvements to the image viewer
 
 **Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.8.28-beta...26.8.28-beta2
-
-# 26.8.28-beta
-
-- First beta version of the image/map viewer feature
-
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.8.27...26.8.28-beta

@@ -1,3 +1,10 @@
+# 26.9.3-beta
+
+- Add loading bar/info, useful for large PDF downloads
+- improved handling/downloading for different types of PDF files
+
+**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.9.1-beta2...26.9.3-beta
+
 # 26.9.1-beta2
 
 - PDF fixes
@@ -23,9 +30,3 @@
 - Add toggle for grouping when multiple accounts/library cards are active
 
 **Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.23...26.8.26-beta
-
-# 26.8.23-beta2
-
-- fix android connection bug.
-
-**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.23-beta...26.8.23-beta2

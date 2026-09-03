@@ -1,3 +1,17 @@
+# v1.6.0
+
+## [1.6.0](https://github.com/rameezk/rebind.koplugin/compare/v1.5.0...v1.6.0) (2026-09-03)
+
+
+### Features
+
+* rename the EPUB to "Author - Title" when filing a book ([#24](https://github.com/rameezk/rebind.koplugin/issues/24)) ([92ccd81](https://github.com/rameezk/rebind.koplugin/commit/92ccd817927262d24bd6b121118296da8620e711))
+
+
+### Bug Fixes
+
+* make the whole rebind picker scroll as one view ([#23](https://github.com/rameezk/rebind.koplugin/issues/23)) ([1df6b96](https://github.com/rameezk/rebind.koplugin/commit/1df6b96647621ffd76dab6725d9d1ccde50b2a76))
+
 # v1.5.0
 
 ## [1.5.0](https://github.com/rameezk/rebind.koplugin/compare/v1.4.0...v1.5.0) (2026-07-30)
@@ -39,15 +53,3 @@
 ### Features
 
 * sync description from hardcover ([#5](https://github.com/rameezk/rebind.koplugin/issues/5)) ([3826e7a](https://github.com/rameezk/rebind.koplugin/commit/3826e7a28d0a1deee13818106014a99682695c2a))
-
-# v1.1.0
-
-## [1.1.0](https://github.com/rameezk/rebind.koplugin/compare/v1.0.0...v1.1.0) (2026-07-23)
-
-
-### Features
-
-* add funding ([ce97137](https://github.com/rameezk/rebind.koplugin/commit/ce971378299cf9d0e0e6c365b999d77caa32849f))
-* add funding ([6cc5e25](https://github.com/rameezk/rebind.koplugin/commit/6cc5e25105763aa2146f080c1e571c4f0473f9e5))
-* remove funding ([6993a98](https://github.com/rameezk/rebind.koplugin/commit/6993a9875fad81dd1dad174629784cde48dbd04d))
-* update funding information ([f04b027](https://github.com/rameezk/rebind.koplugin/commit/f04b02779f090d192d8e24a2f92686421cda06e4))
