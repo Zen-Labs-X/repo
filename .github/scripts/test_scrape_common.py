@@ -2,6 +2,7 @@
 """Tests for cached package metadata used by the KOReader scrapers."""
 
 import base64
+import hashlib
 import json
 import os
 import tempfile
@@ -83,22 +84,36 @@ class CachedPackageMetadataTests(unittest.TestCase):
         self.assertFalse(resolved)
         self.assertTrue(os.path.exists(cache_path))
 
-    def test_caches_latest_release_notes_and_uses_a_content_hash(self):
-        release = {"body": "## Fixed\n\n- A bug\n"}
+    def test_caches_five_latest_stable_release_notes_and_uses_a_content_hash(self):
+        releases = [
+            {
+                "tag_name": f"v{i}",
+                "name": f"Release {i}",
+                "body": f"Notes {i}",
+                "published_at": f"2026-07-{i:02d}T00:00:00Z",
+            }
+            for i in range(1, 7)
+        ]
+        releases.extend([
+            {"tag_name": "v7-beta", "body": "Beta", "prerelease": True,
+             "published_at": "2026-07-07T00:00:00Z"},
+            {"tag_name": "v8", "body": "Draft", "draft": True,
+             "published_at": "2026-07-08T00:00:00Z"},
+        ])
+        expected = "\n\n".join(
+            f"# v{i}\n\nNotes {i}" for i in range(6, 1, -1)
+        ) + "\n"
 
         url, notes_hash, changed, resolved = scrape_common.cache_release_notes(
-            release, self.package_dir
+            releases, self.package_dir
         )
 
         self.assertEqual(url, "packages/test/RELEASE_NOTES.md")
-        self.assertEqual(
-            notes_hash,
-            "e087032c83e5567ca2c40122aff26c80d53d5bad2ca400bae30e53269f1f8902",
-        )
+        self.assertEqual(notes_hash, hashlib.sha256(expected.encode()).hexdigest())
         self.assertTrue(changed)
         self.assertTrue(resolved)
         with open(os.path.join(self.package_dir, "RELEASE_NOTES.md"), encoding="utf-8") as fh:
-            self.assertEqual(fh.read(), release["body"])
+            self.assertEqual(fh.read(), expected)
 
     def test_missing_latest_release_removes_cached_release_notes(self):
         os.makedirs(self.package_dir)
@@ -107,7 +122,7 @@ class CachedPackageMetadataTests(unittest.TestCase):
             fh.write("# Cached\n")
 
         url, notes_hash, changed, resolved = scrape_common.cache_release_notes(
-            {}, self.package_dir
+            [], self.package_dir
         )
 
         self.assertIsNone(url)
@@ -117,15 +132,26 @@ class CachedPackageMetadataTests(unittest.TestCase):
         self.assertFalse(os.path.exists(cache_path))
 
     def test_caches_prerelease_notes_in_a_separate_file(self):
-        release = {"body": "## Beta\n"}
+        releases = [
+            {"tag_name": "v2-beta", "name": "Beta release", "body": "## Beta\n",
+             "prerelease": True, "published_at": "2026-07-02T00:00:00Z"},
+            {"tag_name": "v2-alpha", "body": "Alpha", "prerelease": True,
+             "published_at": "2026-07-03T00:00:00Z"},
+            {"tag_name": "v2", "body": "Stable",
+             "published_at": "2026-07-04T00:00:00Z"},
+        ]
 
         url, _notes_hash, changed, resolved = scrape_common.cache_release_notes(
-            release, self.package_dir, filename="PRERELEASE_NOTES.md"
+            releases, self.package_dir, filename="PRERELEASE_NOTES.md", prerelease=True
         )
 
         self.assertEqual(url, "packages/test/PRERELEASE_NOTES.md")
         self.assertTrue(changed)
         self.assertTrue(resolved)
+        with open(
+            os.path.join(self.package_dir, "PRERELEASE_NOTES.md"), encoding="utf-8"
+        ) as fh:
+            self.assertEqual(fh.read(), "# v2-beta\n\n## Beta\n")
 
     def test_unavailable_release_keeps_existing_release_notes(self):
         os.makedirs(self.package_dir)
@@ -179,8 +205,10 @@ class CachedPackageMetadataTests(unittest.TestCase):
                  "published_at": "2026-07-24T00:00:00Z"},
                 {"tag_name": "v2.0.0-beta.2", "prerelease": True,
                  "published_at": "2026-07-25T00:00:00Z"},
-                {"tag_name": "v3.0.0-beta.1", "prerelease": True, "draft": True,
+                {"tag_name": "v2.1.0-alpha3", "prerelease": True,
                  "published_at": "2026-07-26T00:00:00Z"},
+                {"tag_name": "v3.0.0-beta.1", "prerelease": True, "draft": True,
+                 "published_at": "2026-07-27T00:00:00Z"},
             ], {}
 
         scrape_common.http_json = fake_http_json
@@ -193,6 +221,10 @@ class CachedPackageMetadataTests(unittest.TestCase):
             self.assertEqual(
                 scrape_common.newest_prerelease(releases)["tag_name"],
                 "v2.0.0-beta.2",
+            )
+            self.assertEqual(
+                scrape_common.newest_alpha_release(releases)["tag_name"],
+                "v2.1.0-alpha3",
             )
             self.assertEqual(len(requests), 1)
             self.assertTrue(requests[0].endswith("/releases?per_page=100"))
@@ -276,6 +308,10 @@ class CachedPackageMetadataTests(unittest.TestCase):
             "tag_name": "v2.0.0-beta.1",
             "published_at": "2026-07-25T01:02:03Z",
         }
+        alpha = {
+            "tag_name": "v2.0.0-alpha.2",
+            "published_at": "2026-07-24T01:02:03Z",
+        }
         _package_id, meta_text, summary = scrape_common.build_meta(
             repo, release, set(), "utility", readme_url="packages/test/README.md",
             readme_hash="blob-sha",
@@ -306,6 +342,7 @@ class CachedPackageMetadataTests(unittest.TestCase):
                 }],
             }],
             scraped_at="2026-07-24T12:34:56Z",
+            alpha=alpha,
         )
 
         self.assertIn("readme_url=packages/test/README.md\n", meta_text)
@@ -314,6 +351,8 @@ class CachedPackageMetadataTests(unittest.TestCase):
         self.assertIn("release_notes_hash=notes-hash\n", meta_text)
         self.assertIn("prerelease_version=2.0.0-beta.1\n", meta_text)
         self.assertIn("prerelease_published_at=2026-07-25T01:02:03Z\n", meta_text)
+        self.assertIn("alpha_version=2.0.0-alpha.2\n", meta_text)
+        self.assertIn("alpha_published_at=2026-07-24T01:02:03Z\n", meta_text)
         self.assertIn("prerelease_notes_url=packages/test/PRERELEASE_NOTES.md\n", meta_text)
         self.assertIn("prerelease_notes_hash=prerelease-notes-hash\n", meta_text)
         self.assertIn("updated_at=2026-07-24T12:34:56Z\n", meta_text)

@@ -210,6 +210,16 @@ class PluginScraperTests(unittest.TestCase):
             "tag_name": "v2.0.0",
             "published_at": "2026-08-13T12:00:00Z",
             "assets": [],
+        }, {
+            "tag_name": "v2.1.0-beta1",
+            "published_at": "2026-08-14T12:00:00Z",
+            "prerelease": True,
+            "assets": [],
+        }, {
+            "tag_name": "v2.1.0-alpha2",
+            "published_at": "2026-08-15T12:00:00Z",
+            "prerelease": True,
+            "assets": [],
         }]
 
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -267,7 +277,7 @@ class PluginScraperTests(unittest.TestCase):
                 ), mock.patch.object(
                     scrape_koplugins, "cache_release_notes",
                     return_value=(None, None, False, True),
-                ), mock.patch.object(
+                ) as cache_release_notes, mock.patch.object(
                     scrape_koplugins, "cache_readme",
                     return_value=(None, None, False, True),
                 ), mock.patch.object(
@@ -292,9 +302,18 @@ class PluginScraperTests(unittest.TestCase):
 
             discover.assert_not_called()
             fetch_repo.assert_called_once_with("anthonygress/zen_ui.koplugin")
+            self.assertEqual(cache_release_notes.call_args_list, [
+                mock.call(releases, target_dir, False),
+                mock.call(
+                    releases, target_dir, False, "PRERELEASE_NOTES.md",
+                    prerelease=True,
+                ),
+            ])
             with open(target_meta_path, encoding="utf-8") as fh:
                 meta = fh.read()
             self.assertIn("version=2.0.0\n", meta)
+            self.assertIn("prerelease_version=2.1.0-beta1\n", meta)
+            self.assertIn("alpha_version=2.1.0-alpha2\n", meta)
             self.assertIn("source=https://github.com/xZenLabs/zen-os\n", meta)
             with open(other_meta_path, encoding="utf-8") as fh:
                 self.assertIn("version=1.0.0\n", fh.read())

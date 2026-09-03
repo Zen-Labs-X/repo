@@ -113,6 +113,8 @@ for meta_file in $meta_files; do
     published_at=$(grep '^published_at=' "$tmp" 2>/dev/null | sed 's/^published_at=//' | head -1)
     prerelease_version=$(grep '^prerelease_version=' "$tmp" 2>/dev/null | sed 's/^prerelease_version=//' | head -1)
     prerelease_published_at=$(grep '^prerelease_published_at=' "$tmp" 2>/dev/null | sed 's/^prerelease_published_at=//' | head -1)
+    alpha_version=$(grep '^alpha_version=' "$tmp" 2>/dev/null | sed 's/^alpha_version=//' | head -1)
+    alpha_published_at=$(grep '^alpha_published_at=' "$tmp" 2>/dev/null | sed 's/^alpha_published_at=//' | head -1)
     readme_url=$(grep '^readme_url=' "$tmp" 2>/dev/null | sed 's/^readme_url=//' | head -1)
     readme_hash=$(grep '^readme_hash=' "$tmp" 2>/dev/null | sed 's/^readme_hash=//' | head -1)
     release_notes_url=$(grep '^release_notes_url=' "$tmp" 2>/dev/null | sed 's/^release_notes_url=//' | head -1)
@@ -215,6 +217,8 @@ for meta_file in $meta_files; do
     [ -n "$published_at" ] && printf ',\n      "published_at": "%s"' "$(json_escape "$published_at")" >> "$OUTPUT"
     [ -n "$prerelease_version" ] && printf ',\n      "prerelease_version": "%s"' "$(json_escape "$prerelease_version")" >> "$OUTPUT"
     [ -n "$prerelease_published_at" ] && printf ',\n      "prerelease_published_at": "%s"' "$(json_escape "$prerelease_published_at")" >> "$OUTPUT"
+    [ -n "$alpha_version" ] && printf ',\n      "alpha_version": "%s"' "$(json_escape "$alpha_version")" >> "$OUTPUT"
+    [ -n "$alpha_published_at" ] && printf ',\n      "alpha_published_at": "%s"' "$(json_escape "$alpha_published_at")" >> "$OUTPUT"
     [ -n "$readme_url" ]   && printf ',\n      "readme_url": "%s"' "$(json_escape "$readme_url")" >> "$OUTPUT"
     [ -n "$readme_hash" ]  && printf ',\n      "readme_hash": "%s"' "$(json_escape "$readme_hash")" >> "$OUTPUT"
     [ -n "$release_notes_url" ]  && printf ',\n      "release_notes_url": "%s"' "$(json_escape "$release_notes_url")" >> "$OUTPUT"

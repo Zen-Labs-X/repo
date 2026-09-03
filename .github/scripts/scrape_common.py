@@ -192,15 +192,31 @@ def newest_stable_release(releases):
 
 
 def newest_prerelease(releases):
-    """Return the newest non-draft prerelease from a fetched release list."""
+    """Return the newest non-alpha, non-draft prerelease."""
     prereleases = [
         release for release in releases
         if release.get("prerelease") and not release.get("draft")
+        and "-alpha" not in str(release.get("tag_name") or "").lower()
     ]
     if not prereleases:
         return {}
     return max(
         prereleases,
+        key=lambda release: release.get("published_at") or release.get("created_at") or "",
+    )
+
+
+def newest_alpha_release(releases):
+    """Return the newest non-draft alpha prerelease."""
+    alphas = [
+        release for release in releases
+        if release.get("prerelease") and not release.get("draft")
+        and "-alpha" in str(release.get("tag_name") or "").lower()
+    ]
+    if not alphas:
+        return {}
+    return max(
+        alphas,
         key=lambda release: release.get("published_at") or release.get("created_at") or "",
     )
 
@@ -287,19 +303,37 @@ def cache_readme(full_name, package_dir, dry_run=False):
     return os.path.relpath(path, REPO_ROOT), readme_hash, changed, True
 
 
-def cache_release_notes(release, package_dir, dry_run=False, filename="RELEASE_NOTES.md"):
-    """Cache a release body beside its package and return manifest fields."""
-    if release is None:
+def cache_release_notes(releases, package_dir, dry_run=False,
+                        filename="RELEASE_NOTES.md", prerelease=False):
+    """Cache the five newest stable or beta release bodies for a package."""
+    if releases is None:
         return None, None, False, False
 
     path = os.path.join(package_dir, filename)
-    if not release:
+    matching = sorted(
+        (
+            release for release in releases
+            if bool(release.get("prerelease")) == prerelease
+            and not release.get("draft")
+            and (not prerelease or "-alpha" not in str(
+                release.get("tag_name") or ""
+            ).lower())
+        ),
+        key=lambda release: release.get("published_at") or release.get("created_at") or "",
+        reverse=True,
+    )[:5]
+    if not matching:
         changed = os.path.exists(path)
         if changed and not dry_run:
             os.remove(path)
         return None, None, changed, True
 
-    content = release.get("body") or ""
+    sections = []
+    for release in matching:
+        title = str(release.get("tag_name") or release.get("name") or "Release")
+        title = title.replace("\r", " ").replace("\n", " ").strip()
+        sections.append(f"# {title}\n\n{release.get('body') or ''}".rstrip())
+    content = "\n\n".join(sections) + "\n"
     release_notes_hash = hashlib.sha256(content.encode("utf-8")).hexdigest()
     try:
         with open(path, "r", encoding="utf-8") as fh:
@@ -566,7 +600,7 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
                name_override=None, patch_assets=None, readme_url=None,
                readme_hash=None, release_notes_url=None, release_notes_hash=None,
                prerelease=None, prerelease_notes_url=None, prerelease_notes_hash=None,
-               releases=None, preserved_fields=None, scraped_at=None):
+               releases=None, preserved_fields=None, scraped_at=None, alpha=None):
     owner = repo["owner"]["login"]
     repo_name = repo["name"]
     full_name = repo["full_name"]
@@ -586,6 +620,11 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
     prerelease_published_at = (
         prerelease.get("published_at") if isinstance(prerelease, dict) else ""
     )
+    alpha_version = (
+        (alpha.get("tag_name") or "").lstrip("vV")
+        if isinstance(alpha, dict) else ""
+    )
+    alpha_published_at = alpha.get("published_at") if isinstance(alpha, dict) else ""
     description = clean_description(repo.get("description"))
     default_branch = repo.get("default_branch", "main")
     package_label = "patch" if kind == KIND_PATCH else "plugin"
@@ -656,6 +695,10 @@ def build_meta(repo, release, existing_ids, category, meta_id=None, kind=KIND_PL
         lines.append(f"prerelease_version={prerelease_version}")
     if prerelease_published_at:
         lines.append(f"prerelease_published_at={prerelease_published_at}")
+    if alpha_version:
+        lines.append(f"alpha_version={alpha_version}")
+    if alpha_published_at:
+        lines.append(f"alpha_published_at={alpha_published_at}")
 
     if readme_url and readme_hash:
         lines.extend([

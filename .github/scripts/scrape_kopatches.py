@@ -146,14 +146,14 @@ def main():
 
         package_dir = os.path.dirname(record["path"])
         release_notes_url, release_notes_hash, release_notes_changed, release_notes_resolved = cache_release_notes(
-            release, package_dir, args.dry_run
+            releases, package_dir, args.dry_run
         )
         if not release_notes_resolved:
             print(f"Could not refresh {record['rel_path']}: release notes unavailable",
                   file=sys.stderr)
             continue
         prerelease_notes_url, prerelease_notes_hash, prerelease_notes_changed, prerelease_notes_resolved = cache_release_notes(
-            prerelease, package_dir, args.dry_run, "PRERELEASE_NOTES.md"
+            releases, package_dir, args.dry_run, "PRERELEASE_NOTES.md", prerelease=True
         )
         if not prerelease_notes_resolved:
             print(f"Could not refresh {record['rel_path']}: prerelease notes unavailable",
@@ -248,10 +248,10 @@ def main():
         dest_dir = os.path.join(KOREADER_DIR, package_dir_name(meta_id, KIND_PATCH))
         dest = os.path.join(dest_dir, ".meta")
         release_notes_url, release_notes_hash, _release_notes_changed, _release_notes_resolved = cache_release_notes(
-            release, dest_dir, args.dry_run
+            releases, dest_dir, args.dry_run
         )
         prerelease_notes_url, prerelease_notes_hash, _prerelease_notes_changed, _prerelease_notes_resolved = cache_release_notes(
-            prerelease, dest_dir, args.dry_run, "PRERELEASE_NOTES.md"
+            releases, dest_dir, args.dry_run, "PRERELEASE_NOTES.md", prerelease=True
         )
         readme_url, readme_hash, _readme_changed, _readme_resolved = cache_readme(
             repo.get("full_name", full_name), dest_dir, args.dry_run

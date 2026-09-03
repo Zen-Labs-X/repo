@@ -119,11 +119,13 @@ Each package in `manifest.json` may include:
 | `published_at` | string | Timestamp of the upstream package's most recent GitHub release, in UTC ISO 8601 format. |
 | `readme_url` | string | Path to the cached package README. |
 | `readme_hash` | string | Git blob SHA of the cached README; changes when its source README changes. |
-| `release_notes_url` | string | Path to the cached notes for the package's latest stable release. |
+| `release_notes_url` | string | Path to the cached notes for the package's five latest stable releases. |
 | `release_notes_hash` | string | SHA-256 hash of the cached stable release notes; changes when their source content changes. |
-| `prerelease_version` | string | Version of the package's newest prerelease. |
-| `prerelease_published_at` | string | Publication timestamp of the package's newest prerelease, in UTC ISO 8601 format. |
-| `prerelease_notes_url` | string | Path to the cached notes for the package's newest prerelease. |
+| `prerelease_version` | string | Version of the package's newest non-alpha prerelease. |
+| `prerelease_published_at` | string | Publication timestamp of the package's newest non-alpha prerelease, in UTC ISO 8601 format. |
+| `alpha_version` | string | Version of ZenOS's newest alpha prerelease. |
+| `alpha_published_at` | string | Publication timestamp of ZenOS's newest alpha prerelease, in UTC ISO 8601 format. |
+| `prerelease_notes_url` | string | Path to the cached notes for the package's five latest non-alpha prereleases. |
 | `prerelease_notes_hash` | string | SHA-256 hash of the cached prerelease notes; changes when their source content changes. |
 | `versions_url` | string | Path to the package's generated `versions.json`. The file contains up to 100 cached, non-draft GitHub releases with uploaded ZIP assets or source-code ZIP fallbacks. |
 | `conflicts` | array of strings | Package IDs that must not be installed together. |
@@ -175,7 +177,7 @@ Forks are considered by default. Plugin packages use a release ZIP when one is
 available, otherwise the repository's default-branch source archive; patch
 packages install the matching Lua files directly. All generated packages use
 the shared KOReader install and uninstall scripts. During each scan, the
-repository README, latest stable release notes, newest prerelease notes, and up
+repository README, the five latest stable and non-alpha prerelease notes, and up
 to 100 installable releases are cached in the repository metadata.
 `generate-manifest.sh` writes each release list to the package's `versions.json`
 and keeps only its `versions_url` in the catalog. Documentation content hashes
