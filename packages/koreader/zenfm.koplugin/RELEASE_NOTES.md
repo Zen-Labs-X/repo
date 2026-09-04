@@ -1,3 +1,11 @@
+# v1.0.4
+
+## What's Changed
+
+- Add QR code
+- Keep ZenFM icons visible in dark mode
+- Reorganize settings
+
 # v1.0.3
 
 ## What's Changed
