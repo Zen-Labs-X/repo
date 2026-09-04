@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.1","assets":[{"name":"chess.koplugin.zip","url":"https://github.com/omer-faruq/chess.koplugin/releases/download/v1.0.1/chess.koplugin.zip","size":29011803,"digest":"sha256:f3a5277553b5c2cc991773516c8d7ef482d57b9678d859524e20073c9bef3ef8"}],"name":"v1.0.1"}]
+}

@@ -1,0 +1,23 @@
+# Chess plugin for KOReader
+# https://github.com/omer-faruq/chess.koplugin
+# zenpm:auto-scraped
+id=chess
+name=Chess
+version=1.0.1
+description=Chess plugin for Koreader
+author=omer-faruq
+category=games
+platforms=koreader
+dependencies=
+source=https://github.com/omer-faruq/chess.koplugin
+stars=15
+updated_at=2026-09-04T17:15:50Z
+published_at=2025-11-30T10:32:18Z
+readme_url=packages/koreader/chess.koplugin/README.md
+readme_hash=ad1b8ab5b0b2e798049668e35f36710523310bcc
+release_notes_url=packages/koreader/chess.koplugin/RELEASE_NOTES.md
+release_notes_hash=5df168475effeaaa589ee316047af856e5459ad891f9d76fcc739ad9910f5690
+releases=[{"tag_name":"v1.0.1","assets":[{"name":"chess.koplugin.zip","url":"https://github.com/omer-faruq/chess.koplugin/releases/download/v1.0.1/chess.koplugin.zip","size":29011803,"digest":"sha256:f3a5277553b5c2cc991773516c8d7ef482d57b9678d859524e20073c9bef3ef8"}],"name":"v1.0.1"}]
+source_type=release
+source_asset=chess.koplugin.zip
+size=29011803
