@@ -1,3 +1,10 @@
+# 26.9.3-beta5
+
+- handle more types of PDFs
+- add non-touch for cancel button
+
+**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.9.3-beta4...26.9.3-beta5
+
 # 26.9.3-beta4
 
 - Fix for android PDFs
@@ -24,9 +31,3 @@
 - Minor styling changes to top icons
 
 **Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.31-beta...26.9.1-beta
-
-# 26.8.31-beta
-
-- Add non-touch support for older button-only devices
-
-**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.27...26.8.31-beta
