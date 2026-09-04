@@ -1,3 +1,10 @@
+# 26.9.4-beta
+
+- UI updates
+- memory fixes
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.9.2-beta...26.9.4-beta
+
 # 26.9.2-beta
 
 - Image menu pagination fix.
@@ -24,9 +31,3 @@
 - Updates to unit converter feature for non-English languages to make it more robust and support non-ASCII characters
 
 **Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.8.28-beta2...26.8.28-beta3
-
-# 26.8.28-beta2
-
-- More UI/UX improvements to the image viewer
-
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.8.28-beta...26.8.28-beta2

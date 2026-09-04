@@ -53,6 +53,7 @@ A chip can point at:
 - A **specific** series, author, genre, collection, format, rating, folder, or reading status -- a shelf showing just that one slice of your library.
 - **Favourites** -- the built-in starred shelf.
 - An **OPDS catalogue** -- an online book catalogue browsed as a shelf, with downloads. See [OPDS catalogues](#opds-catalogues).
+- Your **Kindle library** -- on a Kindle, the books in the Kindle's own library. See [Kindle library](#kindle-library).
 
 Each chip remembers its own **filters** (reading status, genre, language, format, rating, collection, or folder -- see [Chip sources, filters, and sorts](#chip-sources-filters-and-sorts)), sort priority (up to three levels deep, e.g. *surname, then series, then series number*), label, icon, colour, and whether it's enabled.
 
@@ -276,6 +277,26 @@ Catalogues that only *lend* DRM-protected books (library loans) can't be used --
 
 ---
 
+## Kindle library
+
+On a Kindle, Bookshelf can show the books in your Kindle's own library as an ordinary shelf, alongside the books you side-load yourself. It needs the **Kindle Virtual Library** plugin ([kindle.koplugin](https://github.com/kaikozlov/kindle.koplugin)) installed: a Kindle book has to be converted before KOReader can read it, and that plugin is what does the converting. Without it the source isn't offered at all.
+
+**Setting up.** Add a chip (long-press any chip -> **+ Add new chip**) and pick **Kindle Virtual Library** as its source. The option only appears on a Kindle that has the plugin installed, so it stays out of the way everywhere else.
+
+**What you get.** Your Kindle books with their own cover art, sorted however you like -- title, author, progress, when you last opened them, or anything else the sort picker offers. Titles that the Kindle derived from filenames (`01. The Colour of Magic - Terry Pratchett`) are tidied up, with a trailing or leading author name removed only where the Kindle's own records confirm that is who wrote it; an unrecognised name is left alone rather than guessed at. Series numbering is kept, so a numbered series still reads in order. A book with no cover art gets Bookshelf's own placeholder, showing title and author, rather than the blank "No image available" card the Kindle stores for it.
+
+**Reading progress.** The progress shown on a cover comes from the Kindle's own record until you have read the book in KOReader, after which KOReader's is used. That is what the shelf *displays*, not where the book opens: the Kindle's percentage is never handed to KOReader as a position, so opening a Kindle book for the first time starts at the beginning however far through it you were on the Kindle. The status marker follows the display rule, which means a book you finished on the Kindle is marked finished even though KOReader has never opened it, while long-pressing it still reports its reading status as unopened -- that dialog sets *KOReader's* status, and KOReader has not read it. All of which is to say the Kindle's record and KOReader's are kept apart rather than merged.
+
+**The first open.** The first time you open a Kindle book it has to be converted. That takes a few minutes, the screen will not respond while it works, and it cannot be stopped once started -- so Bookshelf asks first, and only asks once per book. Every open after that is immediate, because the converted copy is kept.
+
+**Books that will not open.** Older MOBI and AZW purchases are protected in a way no KOReader plugin can undo, and `.azw3` files cannot be read by KOReader at all, protected or not. Both say so when you tap them, naming the format, rather than dropping you into the file browser. KFX books -- most of a modern Kindle library -- are unaffected.
+
+**Searching.** Once you have a Kindle chip, searching your library searches your Kindle books too. And searching from an OPDS catalogue now offers both: **Search my library** alongside the catalogue's own search, so browsing a catalogue no longer means leaving it to check whether you already own something.
+
+**Read-only.** The book menu leaves out Move, Delete and Reset for these books. The files belong to your Kindle's library rather than being files you put on the device, and deleting one would really remove the book.
+
+---
+
 ## Hardcover enrichment
 
 If you also use `hardcoverapp.koplugin`, Bookshelf can link books to Hardcover and cache a small amount of Hardcover metadata for display. Everything Hardcover follows that plugin's state: it all appears only while the plugin is installed and enabled, so it stays out of the way if you don't use Hardcover. Disable or remove the plugin and the **Hardcover enrichment** menu (in the bookshelf menu, above Settings) disappears and linked books revert to their own ratings, covers, metadata and descriptions. Nothing is lost -- the cached data stays on disk and comes back if you re-enable the plugin.
@@ -357,6 +378,8 @@ Each cover can show small badges and bars at the corners. Configure them under *
 The colours of these elements are set separately under **Settings -> Colors** (see below).
 
 The same **Cover display** menu also has **True cover aspect ratio**. Off by default, Bookshelf fits every cover to a uniform book rectangle; turn this on to show each cover at its real shape instead. Covers keep the same width but vary in height -- on the shelf they sit along the bottom shelf line, in the hero area they align to the top -- so wide or square covers stop being cropped or stretched.
+
+Two more rows in that menu change how a cover is drawn rather than how it is sized. **Square cover corners** replaces the rounded card shape with square ones, and **No cover drop shadow** draws covers flat against the page rather than raised off it, giving their reserved pixels back to the cover so it grows slightly. They are independent, so a flatter grid can keep the shadow or lose it separately. Both are off by default, and list view's cover column is unaffected either way -- a table cell has never had the chrome.
 
 ---
 
@@ -584,6 +607,10 @@ Each chip points at one of:
 - **Specific** series / author / genre / collection / format / rating / language / folder / reading status -- a shelf scoped to a single chosen value.
 - **Folder (flattened)** -- a single folder shown as every book beneath it in one list, no sub-folder cards (vs. the plain folder source, which keeps the sub-folder tree).
 - **OPDS catalog** -- an online catalogue browsed as a shelf (see [OPDS catalogues](#opds-catalogues)). The feed's own order is authoritative, so these chips have no sort priority, and the local filters don't apply -- some catalogues offer their own filters as tiles instead.
+- **Kindle Virtual Library** -- on a Kindle, the books in the Kindle's own library, shown as a sortable shelf with their own covers. Needs the Kindle Virtual Library plugin, and is offered only where it is installed. See [Kindle library](#kindle-library).
+
+
+
 
 #### Filters
 
@@ -673,6 +700,8 @@ Tokens are placeholders prefixed with `%`. Conditional logic uses `[if:cond]…[
 | `%authors` | *Neil Gaiman, Terry Pratchett* (all authors) |
 | `%author_count` | *2* (number of authors) |
 | `%authors_short` | first author, or *A and B*, or *A, B, et al.* for three or more |
+| `%genres` | *Science Fiction, Classics* (all genres, what calibre calls tags) |
+| `%genre` | *Science Fiction* (first genre) |
 | `%series` / `%series_name` | *Dune* |
 | `%series_num` | *1* |
 | `%rating` | *★★★☆☆* (empty when unrated) |

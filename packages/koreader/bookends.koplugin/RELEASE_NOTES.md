@@ -1,3 +1,14 @@
+# v5.25.0
+
+**Fixes**
+
+- Fixed a crash when turning the top or bottom status bar on while another plugin is hosting the Bookends menu. The settings dialog now opens over the menu instead of replacing it in that case.
+- `%sysused` now reports correctly on older Kindles such as the Paperwhite 3, where it was counting reclaimable disk cache as used memory and sitting close to full. Thanks to @ksaMask123 for tracking this down and fixing it.
+
+**Changes**
+
+- `%sysused` renders as `84M` rather than `84 MiB`, matching `%ram` and the Bookshelf plugin. Lines using it will be a little shorter.
+
 # v5.24.0
 
 **Calibre columns in your status bar**
@@ -109,23 +120,3 @@ The chapter progress tokens now take a depth suffix, the same way `%chap_title_1
 Without a number they track the deepest chapter, as before. With a depth, e.g. `%chap_read_1`, they measure against the top-level chapter instead. Useful for books with a very fine table of contents, where a plain `%chap_read` shows a tiny sub-section's length next to a top-level `%chap_title_1`.
 
 Type them manually (they're not in the token picker). The README token reference lists the full set.
-
-# v5.21.0
-
-**New progress bar markers: Bookmarks and Today**
-
-Building on the session/book-open markers from the last release, bars can now also show every page bookmark in the current book, or where you were at the start of today's reading — so at a glance you can see how much of the book you've read today. The Today marker survives app restarts and switching between books. Both use the same size, position, and colour controls as the existing marker types.
-
-**New tokens for time left**
-
-`%book_time_left_h` / `%book_time_left_m` and their chapter equivalents (`%chap_time_left_h` / `%chap_time_left_m`) split the combined time-remaining display into separate hour and minute values, so you can lay them out exactly how you want.
-
-**New option**
-
-Added a toggle to disable the automatic clock/battery refresh timer, if you'd rather turn it off.
-
-**Fixes**
-
-- Time-left tokens now show a proper zero on the last page of a chapter or book, matching your chosen time format, instead of a fixed "0m".
-- Long-pressing an inline progress bar (not just a full-width one) now opens the skim dialog, when that gesture is enabled.
-- Fixed a crash when launching the Bookends menu from certain third-party app launchers.
