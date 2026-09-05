@@ -1,3 +1,12 @@
+# v1.41.6
+
+## [1.41.6](https://github.com/tachibana-shin/rakuyomi/compare/v1.41.5...v1.41.6) (2026-09-05)
+
+
+### Bug Fixes
+
+* **html:** flatten nested element lists + MangaPlus blank images ([#336](https://github.com/tachibana-shin/rakuyomi/issues/336)) ([c46b1a8](https://github.com/tachibana-shin/rakuyomi/commit/c46b1a8e3ce3274584c0e8787da1d3b19c464b6a))
+
 # v1.41.5
 
 ## [1.41.5](https://github.com/tachibana-shin/rakuyomi/compare/v1.41.4...v1.41.5) (2026-09-01)
@@ -36,17 +45,3 @@
 ### Bug Fixes
 
 * rebuild focused backend fixes ([#314](https://github.com/tachibana-shin/rakuyomi/issues/314)) ([bd3cad5](https://github.com/tachibana-shin/rakuyomi/commit/bd3cad5e6a268afa4336398e9ab3d737711b7fcb))
-
-# v1.41.1
-
-## [1.41.1](https://github.com/tachibana-shin/rakuyomi/compare/v1.41.0...v1.41.1) (2026-08-23)
-
-
-### Bug Fixes
-
-* disable stream mode ([11e7d37](https://github.com/tachibana-shin/rakuyomi/commit/11e7d37613ce462e66ea4e8d72f8c5f465138e88))
-
-
-### Reverts
-
-* remove streaming reader from main (still in development on feat/stream-read) ([92bb8df](https://github.com/tachibana-shin/rakuyomi/commit/92bb8df93c6a3155758d77be003b59e0c0fb50c8))
