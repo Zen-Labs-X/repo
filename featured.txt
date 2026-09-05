@@ -1,6 +1,6 @@
 # Featured packages in display order (one package ID per line)
 # Lines starting with # are ignored, blank lines are skipped
-zen-fm
+zenfm
 rakuyomi
 zen-ui
 zen-mtp-koplugin
