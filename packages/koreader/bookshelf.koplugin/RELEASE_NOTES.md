@@ -1,3 +1,12 @@
+# v4.5.1
+
+- Stack folder tiles no longer show a white corner when the cover drop shadow is off (#362)
+- Toggling rotation from a start menu action redraws the shelf straight away, instead of on the next tap
+- With a custom chip colour, the currently-reading chip keeps its outline and the divider beside it stays visible
+- Calibre custom columns are now read from metadata files up to 64 MB (#357)
+- Calibre number columns above a million show in full, rather than as 1.2e+06
+- Some English/American spelling inconsistency caught and corrected (#358)
+
 # v4.5.0
 
 **Kindle library**
@@ -69,8 +78,3 @@ Patch for v4.4.0. See those notes for the full feature list.
 - Generated covers for books without artwork no longer cut short titles off with "…" when the last word only just fit; the same fix stops uppercase hero titles doing the odd early wrap (thanks for the Reddit report)
 - Swiping between pages of an overflowing chip bar no longer leaves a ghost line from the previously selected chip (#352)
 - On a series shelf, the series filter dialog now marks the option that is actually in effect, instead of showing "standalone and books in series" as active before it was (#350)
-
-# v4.3.4
-
-- A shelf pinned to a specific author now finds its books in every "Author name formatting" setting (#347)
-- Folder names like "Locked Tomb, The" read as "The Locked Tomb", the way book titles already do (#341)
