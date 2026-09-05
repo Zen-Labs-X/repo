@@ -1,0 +1,23 @@
+# Storytellersync plugin for KOReader
+# https://github.com/Sirozha1337/storytellersync.koplugin
+# zenpm:auto-scraped
+id=storytellersync
+name=Storytellersync
+version=1.0.0
+description=KOReader plugin to sync progress with Storyteller app
+author=Sirozha1337
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/Sirozha1337/storytellersync.koplugin
+stars=15
+updated_at=2026-09-05T01:59:10Z
+published_at=2026-04-28T16:57:13Z
+readme_url=packages/koreader/storytellersync.koplugin/README.md
+readme_hash=517eafe49f8494387de61d49fb208c8da8390353
+release_notes_url=packages/koreader/storytellersync.koplugin/RELEASE_NOTES.md
+release_notes_hash=55d678fff1b97cc409f6a6071b6d557efe6190e9c640388a756ccfa7ddff674e
+releases=[{"tag_name":"v1.0.0","assets":[{"name":"storytellersync.koplugin-v1.0.0.zip","url":"https://github.com/Sirozha1337/storytellersync.koplugin/releases/download/v1.0.0/storytellersync.koplugin-v1.0.0.zip","size":17078,"digest":"sha256:58ed42cf60c8bd79f8efd531544f6afc38bca63a4d17ada0ffa8ed6acc0584a4"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=storytellersync.koplugin-v1.0.0.zip
+size=17078

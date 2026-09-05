@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"storytellersync.koplugin-v1.0.0.zip","url":"https://github.com/Sirozha1337/storytellersync.koplugin/releases/download/v1.0.0/storytellersync.koplugin-v1.0.0.zip","size":17078,"digest":"sha256:58ed42cf60c8bd79f8efd531544f6afc38bca63a4d17ada0ffa8ed6acc0584a4"}],"name":"v1.0.0"}]
+}
