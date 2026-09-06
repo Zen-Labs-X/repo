@@ -1,3 +1,11 @@
+# v4.6.0
+
+- On-hold and finished books now show their badge and fade on list-view covers, following the same settings as the cover view (#365)
+- OPDS downloads use the server's filename when that option is on (#354)
+- Pinching to fit more rows fills them again, and redraws faster than before
+- The line editor no longer closes when a tap in the Tokens or Icons picker misses a row (#364)
+- Swipe to change pages in the token picker
+
 # v4.5.1
 
 - Stack folder tiles no longer show a white corner when the cover drop shadow is off (#362)
@@ -71,10 +79,3 @@ Patch for v4.4.0. See those notes for the full feature list.
 
 - Calibre custom columns survive a wireless calibre sync on books that have a publisher, publication date or rating; before, only books with none of the three kept them
 - The Recent shelf no longer offers a page it cannot fill
-
-# v4.3.5
-
-- The hero card shows a book's description again when a two-line title left only a little room - it now fills whatever space remains, down to a single line, instead of vanishing (#349)
-- Generated covers for books without artwork no longer cut short titles off with "…" when the last word only just fit; the same fix stops uppercase hero titles doing the odd early wrap (thanks for the Reddit report)
-- Swiping between pages of an overflowing chip bar no longer leaves a ghost line from the previously selected chip (#352)
-- On a series shelf, the series filter dialog now marks the option that is actually in effect, instead of showing "standalone and books in series" as active before it was (#350)
