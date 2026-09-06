@@ -217,7 +217,7 @@ Edit `apikeys.lua` and add your API key(s):
 return {
     anthropic = "your-key-here",  -- console.anthropic.com
     openai = "",                  -- platform.openai.com
-    -- See apikeys.lua.sample for all 29 providers
+    -- See apikeys.lua.sample for all 31 providers
 }
 ```
 
