@@ -1,3 +1,13 @@
+# v1.4.2
+
+## 新功能与改进
+
+- 优化划线和想法的拉取速度与进度显示，减少网络请求。
+- 提升显示划线和想法时的翻页流畅度。
+- 修复清理想法不彻底，以及重新打开书籍后重复匹配的问题。
+
+**Full Changelog**: https://github.com/finlater/weread.koplugin/compare/v1.4.1...v1.4.2
+
 # v1.4.1
 
 ## 新功能与改进
@@ -64,30 +74,3 @@
 * @baily-zhang made their first contribution in https://github.com/finlater/weread.koplugin/pull/130
 
 **Full Changelog**: https://github.com/finlater/weread.koplugin/compare/v1.2.0...v1.3.0
-
-# v1.2.0
-
-## 新功能与改进
-
-### 新功能
-
-- 本地书支持同步微信读书的划线与想法，无需重新生成 EPUB。
-- 同步划线想法支持取消和断点续传，并可一键显示或隐藏划线。
-
-### 优化与修复
-
-- 整本下载失败时自动重试，不再保存残缺 EPUB。
-- weread 主菜单简化和重构。
-
-感谢 @lostanother、@Mr54233 的贡献。
-
-本地书划线与想法功能参考了 https://github.com/Mr54233/pickthought.koplugin 的实现。
-
-## What's Changed
-* fix(download): avoid incomplete full-book EPUBs by @lostanother in https://github.com/finlater/weread.koplugin/pull/118
-* feat: sync local-book underlines and thoughts by @finlater in https://github.com/finlater/weread.koplugin/pull/117
-
-## New Contributors
-* @lostanother made their first contribution in https://github.com/finlater/weread.koplugin/pull/118
-
-**Full Changelog**: https://github.com/finlater/weread.koplugin/compare/v1.1.0...v1.2.0
