@@ -1,3 +1,11 @@
+# v1.4.5
+
+## What's Changed
+
+- Integrate with Bookshelf: batch operations now auto-enter Bookshelf selection mode and retrieve selected books
+- Fix garbled text when truncating Chinese folder paths in cloud book dialog navigation
+- Improved Chinese translations
+
 # v1.4.4
 
 ## 更新说明 
@@ -45,11 +53,3 @@ Thanks to @iav  for contributions to improving the K3 device experience.
 
 - Added changelog.lua to track version history
 - Optimize plugin module loading path and fix naming conflict with other plugins
-
-# v1.4
-
-Added English support, progress bar for upload/download, separated manual/auto sync download modes, and optimized update channel.
-- Added English support: Menu changed to English with Chinese translation (v1.4)
-- Progress bar for upload/download: Upload progress by book count, download progress by bytes (v1.4)
-- Manual and auto sync download modes are no longer shared: Prevents temporary switching of download mode in manual sync from affecting automated sync tasks (v1.4)
-- Optimized update channel: Added three update sources options - GitHub (Latest), GitHub (Pre-release), Gitee (Latest)  (v1.4)

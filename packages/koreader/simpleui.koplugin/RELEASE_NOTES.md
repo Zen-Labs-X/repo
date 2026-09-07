@@ -1,3 +1,13 @@
+# 2.7.1
+
+What's New in Simple UI v2.7.1
+
+- Speed up Cover Deck module refresh after closing a book;
+- The D-Pad row selector in the Settings windows only shows up when you press a button;
+- Fix bug preventing "Currently Reading" from refreshing on book close;
+- Fix bug blocking Library access after using the Quick Settings Bar to head home;
+- General bug fixes and quality-of-life optimizations.
+
 # 2.7.0
 
 What's New in Simple UI v2.7.0
@@ -47,17 +57,4 @@ What's New in Simple UI v2.1.1
 - Collections Manager: Resolved an issue that prevented the creation of new book collections.
 - Reader Experience: Eliminated the home screen reopening flash after changing formatting settings inside the reader.
 - Gyroscope Rotation: Corrected an error affecting screen rotation via the gyroscope.
-- General bug fixes and quality-of-life optimizations.
-
-# 2.1
-
-What's New in Simple UI v2.1.0
-
-- Streak & Freeze System: Track reading streaks via a calendar view and earn Freezes through reading milestones.
-- New Quick Actions: Added "Recent" book switching grid, "Random" book opener, and custom "Group" action folders.
-- Quote of the Day Upgrades: Support for custom quotes blended with book highlights, plus an optional fixed-height layout.
-- Cover Deck: Simplified reorderable items and added support for Favorites and Collections.
-- Icon Customization: Custom menu tab icons are now assignable via settings.
-- Book Cover Transitions: Show full-screen covers when opening/closing books, with high-quality file reading and aspect ratio preservation.
-- Reading Goals: Option to hide specific books from your goals directly from the finished books list.
 - General bug fixes and quality-of-life optimizations.

@@ -1,0 +1,23 @@
+# Stretch plugin for KOReader
+# https://github.com/mgrimace/stretch.koplugin
+# zenpm:auto-scraped
+id=stretch
+name=Stretch
+version=1.0.1
+description=A KOReader plugin that stretches manga and comic pages to fill the screen width without extra scrolling
+author=mgrimace
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/mgrimace/stretch.koplugin
+stars=5
+updated_at=2026-09-07T22:23:19Z
+published_at=2026-08-18T12:16:09Z
+readme_url=packages/koreader/stretch.koplugin/README.md
+readme_hash=54ae1afb719d18b20fa2a048290d4ecec5a40785
+release_notes_url=packages/koreader/stretch.koplugin/RELEASE_NOTES.md
+release_notes_hash=3283e4bd88130ce2fb59e0dd18bc1e42f193ecda6f6dfeda994450facfa57987
+releases=[{"tag_name":"v1.0.1","assets":[{"name":"stretch.koplugin.zip","url":"https://github.com/mgrimace/stretch.koplugin/releases/download/v1.0.1/stretch.koplugin.zip","size":7004,"digest":"sha256:aedbb225fe942f00b31528f289ab320e8c4db3529d915851cf6a83674db2cdfc"}],"name":"v1.0.1"},{"tag_name":"v1.0.0","assets":[{"name":"stretch.koplugin.zip","url":"https://github.com/mgrimace/stretch.koplugin/releases/download/v1.0.0/stretch.koplugin.zip","size":3165,"digest":"sha256:a4192f036f14aae45d26c1bf25fcc9a05572524bfc58acf2bbc629b73182fef9"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=stretch.koplugin.zip
+size=7004

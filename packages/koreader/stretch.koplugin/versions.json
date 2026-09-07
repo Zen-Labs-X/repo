@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.1","assets":[{"name":"stretch.koplugin.zip","url":"https://github.com/mgrimace/stretch.koplugin/releases/download/v1.0.1/stretch.koplugin.zip","size":7004,"digest":"sha256:aedbb225fe942f00b31528f289ab320e8c4db3529d915851cf6a83674db2cdfc"}],"name":"v1.0.1"},{"tag_name":"v1.0.0","assets":[{"name":"stretch.koplugin.zip","url":"https://github.com/mgrimace/stretch.koplugin/releases/download/v1.0.0/stretch.koplugin.zip","size":3165,"digest":"sha256:a4192f036f14aae45d26c1bf25fcc9a05572524bfc58acf2bbc629b73182fef9"}],"name":"v1.0.0"}]
+}
