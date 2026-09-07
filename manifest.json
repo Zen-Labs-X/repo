@@ -6924,10 +6924,30 @@
       "featured_image": "packages/koreader/zen_mtp.koplugin/assets/zenmtp-featured.png",
       "featured": true,
       "featured_order": 4,
-      "size": "49469",
-      "source": "https://github.com/xZenLabs/ZenMTP",
-      "source_asset": "zen_mtp.koplugin.zip",
-      "versions_url": "packages/koreader/zen_mtp.koplugin/versions.json"
+      "source": "https://github.com/xZenLabs/zen-mtp",
+      "source_type": "release",
+      "stars": "26",
+      "updated_at": "2026-09-07T17:45:19Z",
+      "published_at": "2026-06-19T20:09:19Z",
+      "readme_url": "packages/koreader/zen_mtp.koplugin/README.md",
+      "readme_hash": "d9fa074b237d73007d10ec06bb620201dd43c6ab",
+      "release_notes_url": "packages/koreader/zen_mtp.koplugin/RELEASE_NOTES.md",
+      "release_notes_hash": "8aae14a7494a2dd5b79f153a5184d686d9c8a65f68d9987638c9dad0636ca3c1",
+      "versions_url": "packages/koreader/zen_mtp.koplugin/versions.json",
+      "assets": [
+        {
+          "arch": "any",
+          "asset": "ZenMTP.zip",
+          "url": "https://github.com/xZenLabs/zen-mtp/releases/download/v1.7/ZenMTP.zip",
+          "size": "41761"
+        },
+        {
+          "arch": "any",
+          "asset": "zen_mtp.koplugin.zip",
+          "url": "https://github.com/xZenLabs/zen-mtp/releases/download/v1.7/zen_mtp.koplugin.zip",
+          "size": "48252"
+        }
+      ]
     },
     {
       "id": "zenfm",
