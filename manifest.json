@@ -9283,7 +9283,7 @@
     {
       "id": "zen-mtp-koplugin",
       "name": "ZenMTP KOReader",
-      "version": "1.7",
+      "version": "1.7.1",
       "description": "Trigger MTP file-transfer mode from Kindle home or KOReader",
       "author": "ZenLabs",
       "category": "utility",
@@ -9296,25 +9296,25 @@
       "source": "https://github.com/xZenLabs/zen-mtp",
       "source_type": "release",
       "stars": "26",
-      "updated_at": "2026-09-07T18:29:19Z",
-      "published_at": "2026-06-19T20:09:19Z",
+      "updated_at": "2026-09-07T20:21:47Z",
+      "published_at": "2026-09-07T19:55:52Z",
       "readme_url": "packages/koreader/zen_mtp.koplugin/README.md",
-      "readme_hash": "d9fa074b237d73007d10ec06bb620201dd43c6ab",
+      "readme_hash": "d717e82c15a10a1025162ef2f36fe685b6bd4bc1",
       "release_notes_url": "packages/koreader/zen_mtp.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "8aae14a7494a2dd5b79f153a5184d686d9c8a65f68d9987638c9dad0636ca3c1",
+      "release_notes_hash": "4eb1fb88d18683c91a7e16ac149c06d06c0545d19c9cb60e2dd317f463d864ac",
       "versions_url": "packages/koreader/zen_mtp.koplugin/versions.json",
       "assets": [
         {
           "arch": "any",
           "asset": "ZenMTP.zip",
-          "url": "https://github.com/xZenLabs/zen-mtp/releases/download/v1.7/ZenMTP.zip",
-          "size": "41761"
+          "url": "https://github.com/xZenLabs/zen-mtp/releases/download/v1.7.1/ZenMTP.zip",
+          "size": "41971"
         },
         {
           "arch": "any",
           "asset": "zen_mtp.koplugin.zip",
-          "url": "https://github.com/xZenLabs/zen-mtp/releases/download/v1.7/zen_mtp.koplugin.zip",
-          "size": "48252"
+          "url": "https://github.com/xZenLabs/zen-mtp/releases/download/v1.7.1/zen_mtp.koplugin.zip",
+          "size": "48784"
         }
       ]
     },

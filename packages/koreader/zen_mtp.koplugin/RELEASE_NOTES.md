@@ -1,3 +1,8 @@
+# v1.7.1
+
+- Fix colorsoft issues
+- add uninstall cleanup
+
 # v1.7
 
 # v1.6
@@ -5,5 +10,3 @@
 # v1.5
 
 # v1.4
-
-# v1.1

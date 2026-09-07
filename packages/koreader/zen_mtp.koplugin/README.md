@@ -20,13 +20,13 @@ Three components work together:
 - Deployed to `/mnt/us/documents/ZenMTP/ZenMTP.sh` (alongside `zen.png` splash)
 - Saves frontlight brightness, writes restore flag, launches the watcher, shows splash
 - Stops usbnet jobs, restarts the `mtp` upstart job, binds the USB gadget UDC
-- After healthy MTP is confirmed, writes a setup-done flag so the watcher knows MTP is fully ready
+- Reports healthy MTP only after the USB controller reaches an active host state
 
 ### 3. Restore Daemon (`zen_mtpd.sh`)
 - Deployed to `/mnt/us/.ZenMTP/zen_mtpd.sh` (separate dir, outside documents/)
 - Launched by `ZenMTP.sh` via upstart event `zenmtp-restore` (with double-fork fallback)
 - Two-phase poll:
-  - **Phase 1** (up to 120s): waits for MTP to come online (tizen-mtp process + functionfs mount + UDC bound)
+  - **Phase 1** (up to 120s): waits for MTP to come online (tizen-mtp process + functionfs mount + configured/suspended UDC), then restores KOReader if startup fails
   - **Phase 2** (up to 6h): heartbeat-polls MTP health every 2s; when MTP goes inactive for 4s, triggers restore
 - On restore: kills splash daemon, draws splash via `eips`, launches KOReader, restores frontlight brightness
 - Aborts if KOReader is already running (manual launch during MTP session)
