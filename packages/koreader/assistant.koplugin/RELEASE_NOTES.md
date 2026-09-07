@@ -1,3 +1,35 @@
+# v1.17
+
+> 📦 **Android users:** this release repairs the accelerated text renderer that was silently broken on Android — AI answers and dictionary results will render noticeably faster after updating.
+
+#### Highlights
+Do more from the screen: tune your AI providers, test them, and update the plugin — without opening a configuration file.
+
+#### What's New
+
+**Provider Setup, Now Fully On-Screen**
+- **Reasoning Option** — dial back (or off) a model's "thinking" in one tap. The dialog shows only the choices your selected provider understands, applies immediately, and never touches your config file.
+- **Test Connection** — probe a new provider right from the add/edit form; tells you instantly if the address, key, or model name is wrong, with the provider's own explanation (your key is never shown).
+- **Cleaner provider management** — Add moved to the presets menu, Delete now lives inside Edit with a confirmation, simplified button row.
+- **Better model picker** — title names the provider, "Manual" renamed to **Custom**, explicit **OK** to confirm.
+
+**OTA Updates You Can Trust**
+- The update dialog now pre-fills the right target for you: stable installs upgrade to the latest stable release by default, development installs stay on the bleeding edge — unless you explicitly type a different branch or tag to switch.
+- New releases are checked quietly in the background (at most once per 48 hours) with a toast when one is out.
+- Failed downloads are reported persistently instead of flashing by, Android installs are far more robust, and only the files the plugin actually needs are installed.
+
+#### Improvements & Fixes
+- **Your Ask dialog choices stick** — Web Search and Copy-to-Clipboard now keep their state after a restart instead of resetting.
+- **Consistent dialog buttons** — confirm buttons are now uniformly **OK** across all dialogs instead of a mix of Save/OK.
+- **Errors in plain language** — see what the provider actually said ("invalid API key", "model not found") instead of a raw data blob.
+- **Quicker recovery from rate limits** — retries now wait at most 5 seconds (was up to a minute) and show the reason.
+- **Follow-up suggestions per prompt** — each prompt decides whether the model offers follow-up questions, instead of one global switch.
+- **Simpler config template** — fresh setups are built around four clearly-labelled service types; existing configs unaffected.
+- **Cleaner debug logs** — verbose request data trimmed, so logs attached to bug reports stay readable.
+
+#### Translations
+All languages refreshed with the new on-screen settings.
+
 # v1.16
 
 > ⚠️ **OTA Users: Please update twice — the first OTA loses translations, the second restores them.** Details below.
@@ -113,67 +145,3 @@ This release introduces two performance improvements:
 ---
 
 **Stats**: 70 files changed, +41,440 / -32,086 lines (mostly translation updates).
-
-# v1.12
-
-# v1.12 Release Notes
-
-We're excited to announce v1.12! This release brings web search tool calling, native Markdown rendering, over-the-air updates, and much more.
-
-## Web Search Tool Calling (#180)
-
-The assistant can now search the web to enrich its responses—especially useful for web novels, current events, and factual queries. It supports multiple search backends (SerpAPI, Tavily, SearXNG, and Exa), multi-round tool-call loops (up to 3 rounds), and works across all three wire formats (OpenAI, Anthropic, and Gemini).
-
-When web search is configured, prompts that support web-powered queries will display a small globe icon (🌐) in the prompt menu, so you can tell at a glance which features benefit from live web access. Tasks like translation that don't need web search remain unaffected, so response speed is never compromised.
-
-## Native Markdown Rendering with libhoedown
-
-A bundled `libhoedown` native library now handles Markdown-to-HTML conversion, providing full support for tables, code blocks, and other advanced formatting. The plugin automatically detects the target architecture and falls back to KOReader's pure-Lua parser when the native library is unavailable.
-
-## Over-the-Air Updates
-
-The plugin can now check for and install updates directly from GitHub Repo. Head to the settings menu to check for new versions—no manual downloads needed.
-
-## OpenAI Responses API
-
-Support for OpenAI's `/v1/responses` endpoint has been added, enabling built-in web search, file search, and function-calling tools natively through the OpenAI API.
-
-## Model Picker
-
-A paginated, searchable model picker is now available for most API providers (OpenAI, Anthropic, Gemini, and compatible providers). You can browse and switch between available models directly from the UI without manually editing configuration files—just pick and go.
-
-## Other Improvements
-
-- **OpenAI thinking budget**: `enable_thinking` and `thinking_budget` options are now whitelisted for OpenAI-compatible providers (#182)
-- **Handler architecture refactored**: provider handlers now use object-oriented settings, with a `SyncOptions` hook for per-request configuration
-- **Gigachat** has been refactored to inherit from the OpenAI handler. Note: this change is untested by the maintainers due to lack of platform access; feedback from Gigachat users is welcome.
-- **Performance**: optimized line processing in the streaming querier and adopted `string.buffer` for string concatenation
-- **Reasoning text** support for models that emit thinking/reasoning content
-- **Korean localization** synced with upstream KOReader translations
-
-## Configuration: `base_url` Now Uses the True Base URL
-
-The `base_url` field in `configuration.lua` now expects the actual API base URL (e.g., `https://api.openai.com/v1`) instead of the full `/chat/completions` endpoint. Existing configurations are still handled with backward compatibility—no immediate migration required—but updating to the new format is recommended for clarity.
-
-## Bug Fixes
-
-- Fixed crashes caused by config-only custom prompts (#183)
-- Fixed pipe table rendering when libhoedown is unavailable (#176)
-- Fixed markdown list bullets to use filled discs (#184)
-- Fixed variable errors in the Gigachat handler
-- Fixed Gemma handler metatable caching and dynamic inheritance
-- Fixed model name overriding in the settings dialog
-- Fixed prompt button updates when web search tools change
-
-## Contributors
-
-Thanks to everyone who contributed to this release:
-
-- **boypt** — web search tool calling, OTA updates, libhoedown, Responses API, model picker, architecture refactoring, and many fixes
-- **Charles Han** — markdown list bullet fix (#184) and custom prompt crash fix (#183)
-- **Dávid Szakállas** — OpenAI thinking budget whitelist (#182)
-- **Balmisjutas** — pipe table rendering fix (#176)
-
----
-
-[Full changelog](https://github.com/boypt/assistant.koplugin/compare/v1.11...v1.12)
