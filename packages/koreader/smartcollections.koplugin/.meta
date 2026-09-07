@@ -1,0 +1,18 @@
+# Smartcollections plugin for KOReader
+# https://github.com/BeatrizCastex/SmartCollections
+# zenpm:auto-scraped
+id=smartcollections
+name=Smartcollections
+version=source
+description=Smart Collections adds AO3-style, metadata‑driven filtering and auto‑updating “smart shelves” to KOReader’s file browser.
+author=BeatrizCastex
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/BeatrizCastex/SmartCollections
+stars=13
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/smartcollections.koplugin/README.md
+readme_hash=a0b1feb5cb406cd910ece3a0e338c7ac2a3fcf1c
+source_type=source
+source_url=https://codeload.github.com/BeatrizCastex/SmartCollections/zip/refs/heads/main

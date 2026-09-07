@@ -1,0 +1,18 @@
+# Anki Flashcards Koreader plugin for KOReader
+# https://github.com/lgallard/anki-flashcards-koreader
+# zenpm:auto-scraped
+id=anki-flashcards-koreader
+name=Anki Flashcards Koreader
+version=source
+description=A KOReader plugin that generates AI-powered Anki flashcards from highlighted text on your Kobo e-reader. Highlight a phrase, tap Anki Card, and get a full flashcard—definition, IPA, synonyms, cloze...
+author=lgallard
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/lgallard/anki-flashcards-koreader
+stars=13
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/anki-flashcards-koreader.koplugin/README.md
+readme_hash=398bedf1fcbcac46bb780fcfb04e2ca2c927eb70
+source_type=source
+source_url=https://codeload.github.com/lgallard/anki-flashcards-koreader/zip/refs/heads/main

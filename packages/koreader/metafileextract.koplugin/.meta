@@ -1,0 +1,23 @@
+# Metafileextract plugin for KOReader
+# https://github.com/RafaelMeirim/metafileextract.koplugin
+# zenpm:auto-scraped
+id=metafileextract
+name=Metafileextract
+version=1.5.6
+description=KOReader plugin to automatically parse metadata from filenames and sync local .meta description files.
+author=RafaelMeirim
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/RafaelMeirim/metafileextract.koplugin
+stars=5
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-06-20T18:19:42Z
+readme_url=packages/koreader/metafileextract.koplugin/README.md
+readme_hash=22b0c4f88c40733452882098f4e3f030c588eb70
+release_notes_url=packages/koreader/metafileextract.koplugin/RELEASE_NOTES.md
+release_notes_hash=91fb8df320d5e6804ad289920efba6516257a32cc892ec2ba129f0ad5a0d1eda
+releases=[{"tag_name":"v1.5.6","assets":[{"name":"metafileextract.koplugin.zip","url":"https://github.com/RafaelMeirim/metafileextract.koplugin/releases/download/v1.5.6/metafileextract.koplugin.zip","size":8230,"digest":"sha256:3589f8bd0dd958c2979cfa6201d2a17b047f31491332266c52db7a9aacc918e4"}],"name":"MetaFileExtract v1.5.5"},{"tag_name":"v1.5.5","assets":[{"name":"metafileextract.koplugin.zip","url":"https://github.com/RafaelMeirim/metafileextract.koplugin/releases/download/v1.5.5/metafileextract.koplugin.zip","size":8125,"digest":"sha256:1d70d7b4a61e4860e04b8da3d0dd9c2ac036fbcd3d92a1b9eca275aeb5cee74a"}],"name":"MetaFileExtract v1.5.5"},{"tag_name":"v1.5.4","assets":[{"name":"metafileextract.koplugin.zip","url":"https://github.com/RafaelMeirim/metafileextract.koplugin/releases/download/v1.5.4/metafileextract.koplugin.zip","size":8192,"digest":"sha256:ee286bd36034c747e7abbfa76f1ea36df6e3a4ad34d1951f0270a4fa5e9a2fde"}],"name":"MetaFileExtract v1.5.4"},{"tag_name":"v1.5.3","assets":[{"name":"metafileextract.koplugin.zip","url":"https://github.com/RafaelMeirim/metafileextract.koplugin/releases/download/v1.5.3/metafileextract.koplugin.zip","size":7562,"digest":"sha256:9272e09680c02960eb91f2e8dfbcf4e4eb51ff5d67772495c534613e2717d6e6"}],"name":"MetaFileExtract v1.53 - Decimal chapter support"},{"tag_name":"v1.5.2","assets":[{"name":"metafileextract.koplugin.zip","url":"https://github.com/RafaelMeirim/metafileextract.koplugin/releases/download/v1.5.2/metafileextract.koplugin.zip","size":7470,"digest":"sha256:95b8a52bf5af55594f67bdaaf492bad8233cc819f69966e88e0fe95dbe76ee7d"}],"name":"MetaFileExtract v1.5.2 - New menu and functions"},{"tag_name":"v1.5.0","assets":[{"name":"metafileextract.koplugin.zip","url":"https://github.com/RafaelMeirim/metafileextract.koplugin/releases/download/v1.5.0/metafileextract.koplugin.zip","size":7065,"digest":"sha256:ed76695e530f9b7775b774097d8f11a42353fb8b44f9b9b23da7eb0667f6856c"}],"name":"MetaFileExtract v1.5.0 - Batch Rename with Sequential Numbering"}]
+source_type=release
+source_asset=metafileextract.koplugin.zip
+size=8230

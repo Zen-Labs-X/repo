@@ -1,0 +1,18 @@
+# Legadoskill plugin for KOReader
+# https://github.com/rezmdie/legadoSkill
+# zenpm:auto-scraped
+id=legadoskill
+name=Legadoskill
+version=source
+description=Automate creating Legado reading source files by analyzing websites with AI to generate valid JSON for efficient source development.
+author=rezmdie
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/rezmdie/legadoSkill
+stars=12
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/legadoskill.koplugin/README.md
+readme_hash=89ba8b739a1aa0152981ec2fa088fb2b1dfa213d
+source_type=source
+source_url=https://codeload.github.com/rezmdie/legadoSkill/zip/refs/heads/main

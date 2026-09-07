@@ -1,0 +1,18 @@
+# Offline Google Translate plugin for KOReader
+# https://github.com/Bluemoondragon07/Offline-Google-Translate.koplugin
+# zenpm:auto-scraped
+id=offline-google-translate
+name=Offline Google Translate
+version=source
+description=An android KOreader plugin to quickly translate sentences offline using Google Translate
+author=Bluemoondragon07
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/Bluemoondragon07/Offline-Google-Translate.koplugin
+stars=9
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/offline-google-translate.koplugin/README.md
+readme_hash=ab43f5bb68523960490a90aa2f40a091b360c1ba
+source_type=source
+source_url=https://codeload.github.com/Bluemoondragon07/Offline-Google-Translate.koplugin/zip/refs/heads/main

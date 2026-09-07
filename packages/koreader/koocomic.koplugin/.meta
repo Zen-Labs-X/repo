@@ -1,0 +1,23 @@
+# Koocomic plugin for KOReader
+# https://github.com/jackchensky/KooComic
+# zenpm:auto-scraped
+id=koocomic
+name=Koocomic
+version=0.4.0
+description=koo漫画（KooComic）— 非官方 KOOBONE 漫画书库连接器，可在 Kindle/KOReader 中浏览、下载和阅读个人漫画。
+author=jackchensky
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/jackchensky/KooComic
+stars=6
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-21T09:45:50Z
+readme_url=packages/koreader/koocomic.koplugin/README.md
+readme_hash=cec99378556ebb1d00872f4ea787aea52fd65c3c
+release_notes_url=packages/koreader/koocomic.koplugin/RELEASE_NOTES.md
+release_notes_hash=2db13b05e30f25efa5a886df6990b57fbd84bc91095584068490ac4d2a455961
+releases=[{"tag_name":"v0.4.0","assets":[{"name":"koocomic.koplugin-v0.4.0.zip","url":"https://github.com/jackchensky/KooComic/releases/download/v0.4.0/koocomic.koplugin-v0.4.0.zip","size":54245,"digest":"sha256:5141565e01a28fb464372846eafe0b31a6627dfd64c944f1944c350bad3ab438"}],"name":"koo漫画 v0.4.0"}]
+source_type=release
+source_asset=koocomic.koplugin-v0.4.0.zip
+size=54245

@@ -1,0 +1,23 @@
+# Errol plugin for KOReader
+# https://github.com/agaragou/errol.koplugin
+# zenpm:auto-scraped
+id=errol
+name=Errol
+version=0.3
+description=KOReader plugin to sync highlights to Telegram & Discord. Features offline queue, background sync, and book downloader.
+author=agaragou
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/agaragou/errol.koplugin
+stars=14
+updated_at=2026-09-07T18:29:19Z
+published_at=2025-12-23T10:57:30Z
+readme_url=packages/koreader/errol.koplugin/README.md
+readme_hash=7fd6b5a7671c4d85fc987339a84c9d2591de9acd
+release_notes_url=packages/koreader/errol.koplugin/RELEASE_NOTES.md
+release_notes_hash=b2230a3d73044c6beace317c97381f9ec92c2cf1b09b6ea42b28fd01c06c192b
+releases=[{"tag_name":"v0.3","assets":[{"name":"errol.koplugin.zip","url":"https://github.com/agaragou/errol.koplugin/releases/download/v0.3/errol.koplugin.zip","size":14952,"digest":"sha256:e951942e256fb428da50d5a16a7eb1b56594f9f38ecc1022740b645861013865"}],"name":"v0.3"},{"tag_name":"v0.2","assets":[{"name":"errol.koplugin.zip","url":"https://github.com/agaragou/errol.koplugin/releases/download/v0.2/errol.koplugin.zip","size":13705,"digest":"sha256:17b97b93fa571188957d30c82bfa15b0c7859f0e9345a60f4cf8be4127d9b7e0"}],"name":"v0.2"},{"tag_name":"v0.1.1","assets":[{"name":"errol.koplugin.zip","url":"https://github.com/agaragou/errol.koplugin/releases/download/v0.1.1/errol.koplugin.zip","size":10706,"digest":"sha256:5667182d6d3f4440eda21357d5113d7b3efd46e4f8e2bf77f635be3f680924df"}],"name":"v0.1.1"},{"tag_name":"v0.1","assets":[{"name":"errol.koplugin.zip","url":"https://github.com/agaragou/errol.koplugin/releases/download/v0.1/errol.koplugin.zip","size":10347,"digest":"sha256:57276b2607dffa93644b221a15831be47fb7aa19baa3b48a730a9b6dd7ff841e"}],"name":"v0.1"}]
+source_type=release
+source_asset=errol.koplugin.zip
+size=14952

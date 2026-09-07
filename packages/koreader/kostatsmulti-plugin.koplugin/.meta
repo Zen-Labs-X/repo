@@ -1,0 +1,23 @@
+# Kostatsmulti Plugin plugin for KOReader
+# https://github.com/ThePixelPro366/KoStatsMulti-Plugin
+# zenpm:auto-scraped
+id=kostatsmulti-plugin
+name=Kostatsmulti Plugin
+version=1.0
+description=KoStats – KOReader Statistics Analyzer
+author=ThePixelPro366
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/ThePixelPro366/KoStatsMulti-Plugin
+stars=10
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-02-28T19:58:09Z
+readme_url=packages/koreader/kostatsmulti-plugin.koplugin/README.md
+readme_hash=fd04c98d95de8ad0c84e9f39f30d87f3bd36bfbf
+release_notes_url=packages/koreader/kostatsmulti-plugin.koplugin/RELEASE_NOTES.md
+release_notes_hash=f6fc105fa3ea027a1493ef32b1e1c05af5dd37d55c59ace881f4f2859cba93d1
+releases=[{"tag_name":"v1.0","assets":[{"name":"KoStatsMulti.zip","url":"https://github.com/ThePixelPro366/KoStatsMulti-Plugin/releases/download/v1.0/KoStatsMulti.zip","size":3786,"digest":"sha256:c52f1be5d6ebb454893bd059ca5b0d3b6cb58e9b9e992d1b968001183ca263ce"}],"name":"Highlite/Annotationsync"},{"tag_name":"Beta","assets":[{"name":"kostats.koplugin.zip","url":"https://github.com/ThePixelPro366/KoStatsMulti-Plugin/releases/download/Beta/kostats.koplugin.zip","size":2897,"digest":"sha256:f00ecb6e84bf7d7240001f736b60f2f8d2c3998a9281df2938054c061b36615f"}],"name":"v.1 Early Beta"}]
+source_type=release
+source_asset=KoStatsMulti.zip
+size=3786

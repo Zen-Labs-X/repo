@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/right9code/annas-fetch.koplugin/zipball/v1.1.0"}],"name":"v1.1.0 - Custom Mirror URL, Security Hardening, Stability Fixes"},{"tag_name":"v1.0.0","assets":[{"name":"annas-fetch.koplugin-v1.0.0.zip","url":"https://github.com/right9code/annas-fetch.koplugin/releases/download/v1.0.0/annas-fetch.koplugin-v1.0.0.zip","size":2990004,"digest":"sha256:fe9804d9487e2516e74c16c6cf6676ac874057c10f1c67f223b6806261e18572"}],"name":"Initial Release"}]
+}

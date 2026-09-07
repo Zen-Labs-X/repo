@@ -1,15 +1,23 @@
 # Board Games plugin for KOReader
 # https://github.com/KitanaCode/boardgames.koplugin
+# zenpm:auto-scraped
 id=boardgames
 name=Board Games
-version=1.0.1
-description=Six e-ink-friendly board and puzzle games for KOReader: Checkers, Chess, Connect 4, Tic Tac Toe, Minesweeper, and Battleship.
+version=.1.0.2
+description=A 6-in-1, e-ink-friendly board game plugin for KOReader featuring Chess, Checkers, Connect 4, Tic Tac Toe, Minesweeper, and Battleship.
 author=KitanaCode
 category=games
 platforms=koreader
 dependencies=
 source=https://github.com/KitanaCode/boardgames.koplugin
-stars=6
+stars=9
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-19T20:44:51Z
+readme_url=packages/koreader/boardgames.koplugin/README.md
+readme_hash=e5299d16fce6c731a5e708392287d4607af4bde7
+release_notes_url=packages/koreader/boardgames.koplugin/RELEASE_NOTES.md
+release_notes_hash=573194fb5bfd8996f8e9b9fedad68c97ff5d477d882d8499ff65ec5a6b1c7547
+releases=[{"tag_name":"V.1.0.2","assets":[{"name":"Board.Games.V1.0.2.zip","url":"https://github.com/KitanaCode/boardgames.koplugin/releases/download/V.1.0.2/Board.Games.V1.0.2.zip","size":1088919,"digest":"sha256:eb18ab6ed5025cf29b71fb861c8be13fb1f53abf4e47eb6e8710104b982d5a3a"}],"name":"Board Games V1.0.2"},{"tag_name":"V.1.0.1","assets":[{"name":"Board.Games.V1.0.1.zip","url":"https://github.com/KitanaCode/boardgames.koplugin/releases/download/V.1.0.1/Board.Games.V1.0.1.zip","size":1096126,"digest":"sha256:b1c59c94e1b213a8d7f83f20da9ac4df64052e67d1974144005cba15c664bda6"}],"name":"Board Games V1.0.1"},{"tag_name":"V.1.0.0","assets":[{"name":"Board.Games.V1.0.0.zip","url":"https://github.com/KitanaCode/boardgames.koplugin/releases/download/V.1.0.0/Board.Games.V1.0.0.zip","size":1096004,"digest":"sha256:2a62f0ac7abc841a47e00875e6acf259fee03a32a7a8888c236b2bd4263f479b"}],"name":"Board Games V1.0.0"}]
 source_type=release
-source_asset=Board.Games.V1.0.1.zip
-size=1096126
+source_asset=Board.Games.V1.0.2.zip
+size=1088919

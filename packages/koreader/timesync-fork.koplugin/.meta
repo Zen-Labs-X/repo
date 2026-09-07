@@ -1,0 +1,23 @@
+# Timesync Fork plugin for KOReader
+# https://github.com/fvelsg/timesync-fork.koplugin
+# zenpm:auto-scraped
+id=timesync-fork
+name=Timesync Fork
+version=LTS
+description=Timesync Plugin alternative For Koreader
+author=fvelsg
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/fvelsg/timesync-fork.koplugin
+stars=11
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-02-21T20:16:10Z
+readme_url=packages/koreader/timesync-fork.koplugin/README.md
+readme_hash=21ab967b3322ecd0dd660b06c24b3bdfd1ecf13e
+release_notes_url=packages/koreader/timesync-fork.koplugin/RELEASE_NOTES.md
+release_notes_hash=ef888cef1a1257b41489b29e809a4c5b111380ba718e745cee158605949930d7
+releases=[{"tag_name":"LTS","assets":[{"name":"timesync-fork.koplugin.zip","url":"https://github.com/fvelsg/timesync-fork.koplugin/releases/download/LTS/timesync-fork.koplugin.zip","size":15771,"digest":"sha256:f994fabf036e5bf00c314494b7aefbfe60c754c76c34dd8855c45649b81483d8"}],"name":"Release 1"}]
+source_type=release
+source_asset=timesync-fork.koplugin.zip
+size=15771

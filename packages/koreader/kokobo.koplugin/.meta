@@ -1,0 +1,18 @@
+# Kokobo plugin for KOReader
+# https://github.com/TnS-hun/KOkobo
+# zenpm:auto-scraped
+id=kokobo
+name=Kokobo
+version=source
+description=Download your Kobo books and view your wishlist from KOReader.
+author=TnS-hun
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/TnS-hun/KOkobo
+stars=12
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/kokobo.koplugin/README.md
+readme_hash=10fe4808a28f10acc7adf77299a425692f28f091
+source_type=source
+source_url=https://codeload.github.com/TnS-hun/KOkobo/zip/refs/heads/main

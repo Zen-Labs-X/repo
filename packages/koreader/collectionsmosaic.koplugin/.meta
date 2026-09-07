@@ -1,0 +1,23 @@
+# Collectionsmosaic plugin for KOReader
+# https://github.com/dwigunakd/collectionsmosaic.koplugin
+# zenpm:auto-scraped
+id=collectionsmosaic
+name=Collectionsmosaic
+version=1.0.5
+description=Display Collections as Virtual Folder in Koreader File Browser developed with the help of Claude AI.
+author=dwigunakd
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/dwigunakd/collectionsmosaic.koplugin
+stars=6
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-04-24T09:39:55Z
+readme_url=packages/koreader/collectionsmosaic.koplugin/README.md
+readme_hash=9d5f085dce4093a1252febfca9bd585f03ff5d0e
+release_notes_url=packages/koreader/collectionsmosaic.koplugin/RELEASE_NOTES.md
+release_notes_hash=04684e64c4f2ae16ddf1cc869b135364a80b93d4f70ee7f837d893630f8b02cc
+releases=[{"tag_name":"v1.0.5","assets":[{"name":"zcollectionsview.koplugin.zip","url":"https://github.com/dwigunakd/collectionsmosaic.koplugin/releases/download/v1.0.5/zcollectionsview.koplugin.zip","size":18160,"digest":"sha256:90a2b8fb388e5a846768031bc0a60ecd1e3fe4ccd3b2e7f93869d3dc84ef1070"}],"name":"Collections View v1.0.5"},{"tag_name":"v1.0.4","assets":[{"name":"zcollectionsview.koplugin.zip","url":"https://github.com/dwigunakd/collectionsmosaic.koplugin/releases/download/v1.0.4/zcollectionsview.koplugin.zip","size":17254,"digest":"sha256:1a49418a4fda4699fd791f99a8948e967bf655690f2bb832f94d9d0aad074d4d"}],"name":"Collections View v1.0.4"},{"tag_name":"v1.0.3","assets":[{"name":"zcollectionsview.koplugin.zip","url":"https://github.com/dwigunakd/collectionsmosaic.koplugin/releases/download/v1.0.3/zcollectionsview.koplugin.zip","size":12444,"digest":"sha256:3e0cded2b5aa1ebc40175586da6bbc07f3a886b467892068e0c6d3303ea83fb9"}],"name":"Collections View v1.0.3"},{"tag_name":"v1.0.2","assets":[{"name":"zcollectionsview.koplugin.zip","url":"https://github.com/dwigunakd/collectionsmosaic.koplugin/releases/download/v1.0.2/zcollectionsview.koplugin.zip","size":11750,"digest":"sha256:525f10edc3aa3a96336311add5a3c6ab3770adb21372cc45ca858a51a479f020"}],"name":"Collections View v1.0.2"},{"tag_name":"v1.0.1","assets":[{"name":"zcollectionsview.koplugin.zip","url":"https://github.com/dwigunakd/collectionsmosaic.koplugin/releases/download/v1.0.1/zcollectionsview.koplugin.zip","size":12523,"digest":"sha256:19f20b7f120406241c3ab201e5e19c279c5b0edf310abdf0f4502550413700ce"}],"name":"Collections View v1.0.1"},{"tag_name":"v1.0.0","assets":[{"name":"zcollectionsview.koplugin.zip","url":"https://github.com/dwigunakd/collectionsmosaic.koplugin/releases/download/v1.0.0/zcollectionsview.koplugin.zip","size":13785,"digest":"sha256:032b70be5c77d4f1805a4c96f47e79622bad29c37a76bd535395f710b3195800"}],"name":"Collections View v1.0.0"}]
+source_type=release
+source_asset=zcollectionsview.koplugin.zip
+size=18160

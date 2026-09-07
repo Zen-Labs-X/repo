@@ -1,0 +1,41 @@
+# Kopatches patch for KOReader
+# https://github.com/gytwo/kopatches
+# zenpm:auto-scraped
+id=kopatches
+name=Kopatches
+version=source
+description=Three KOReader patches that bring a customizable quick‑action panel, a comprehensive cover visual overhaul for the file browser, and a cloze‑style annotation‑hiding mode for self‑testing.
+author=gytwo
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/gytwo/kopatches
+stars=5
+updated_at=2026-09-07T18:34:13Z
+readme_url=packages/koreader/kopatches.kopatch/README.md
+readme_hash=b65649c8b28c0b800d722dd497fddad64c8364f8
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-fm-cover-En.lua
+assets.0.url=https://raw.githubusercontent.com/gytwo/kopatches/master/2-fm-cover-En.lua
+assets.0.size=127894
+assets.1.arch=any
+assets.1.asset=2-fm-cover.lua
+assets.1.url=https://raw.githubusercontent.com/gytwo/kopatches/master/2-fm-cover.lua
+assets.1.size=128035
+assets.2.arch=any
+assets.2.asset=2-quickactions-En.lua
+assets.2.url=https://raw.githubusercontent.com/gytwo/kopatches/master/2-quickactions-En.lua
+assets.2.size=291421
+assets.3.arch=any
+assets.3.asset=2-quickactions.lua
+assets.3.url=https://raw.githubusercontent.com/gytwo/kopatches/master/2-quickactions.lua
+assets.3.size=290956
+assets.4.arch=any
+assets.4.asset=2-reader-clozemode-En.lua
+assets.4.url=https://raw.githubusercontent.com/gytwo/kopatches/master/2-reader-clozemode-En.lua
+assets.4.size=18947
+assets.5.arch=any
+assets.5.asset=2-reader-clozemode.lua
+assets.5.url=https://raw.githubusercontent.com/gytwo/kopatches/master/2-reader-clozemode.lua
+assets.5.size=19001

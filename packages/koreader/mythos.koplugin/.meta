@@ -1,0 +1,23 @@
+# Mythos plugin for KOReader
+# https://github.com/unitreign/Mythos
+# zenpm:auto-scraped
+id=mythos
+name=Mythos
+version=0.3.0
+description=A simple web novel library for KOReader. Browse, track, and export your favorite stories as EPUBs to read offline.
+author=unitreign
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/unitreign/Mythos
+stars=7
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-09T17:00:00Z
+readme_url=packages/koreader/mythos.koplugin/README.md
+readme_hash=b7d7f4e5f59c1c861c9ac45de52ea0afa9c8a95b
+release_notes_url=packages/koreader/mythos.koplugin/RELEASE_NOTES.md
+release_notes_hash=0649fd5eff6b54532d93c94886ad747ef76fa53faa8cce3cc89b1174abf8779e
+releases=[{"tag_name":"v0.3.0","assets":[{"name":"mythos.koplugin.zip","url":"https://github.com/unitreign/Mythos/releases/download/v0.3.0/mythos.koplugin.zip","size":161096,"digest":"sha256:f6a192f6601e3deb19edda51e5aa06dba70cc535e3c33228f02772163c818868"}],"name":"Mythos v0.3.0"},{"tag_name":"v0.2.0","assets":[{"name":"mythos.koplugin.zip","url":"https://github.com/unitreign/Mythos/releases/download/v0.2.0/mythos.koplugin.zip","size":161918,"digest":"sha256:a9c0ca8fafab2fd2e8a0ebcd2f20d14a155b210e498e47b8ef2c19aa45cdea62"}],"name":"Mythos v0.2.0"},{"tag_name":"v0.1.0","assets":[{"name":"mythos.koplugin.zip","url":"https://github.com/unitreign/Mythos/releases/download/v0.1.0/mythos.koplugin.zip","size":160466,"digest":"sha256:305581fbf34aee4024261b0e04ac7e158d1de8521058322f475b92a584c47b3f"}],"name":"Mythos v0.1.0 — Initial Release"}]
+source_type=release
+source_asset=mythos.koplugin.zip
+size=161096

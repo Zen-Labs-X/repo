@@ -1,0 +1,22 @@
+# Stopwatchtimer plugin for KOReader
+# https://github.com/markleenders/stopwatchtimer.koplugin
+# zenpm:auto-scraped
+id=stopwatchtimer
+name=Stopwatchtimer
+version=1.0.5
+description=A Stopwatch and Timer for KoReader
+author=markleenders
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/markleenders/stopwatchtimer.koplugin
+stars=9
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-06-12T11:26:07Z
+readme_url=packages/koreader/stopwatchtimer.koplugin/README.md
+readme_hash=25174ac320e23483b3b98a3f5f4f5ce197e02c23
+release_notes_url=packages/koreader/stopwatchtimer.koplugin/RELEASE_NOTES.md
+release_notes_hash=61de437d02bd6fe6bad1361ee7f7577e5c6945d86d113b936f70b807fe7fd20c
+releases=[{"tag_name":"v1.0.5","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/markleenders/stopwatchtimer.koplugin/zipball/v1.0.5"}],"name":"v1.0.5"},{"tag_name":"v1.0.4","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/markleenders/stopwatchtimer.koplugin/zipball/v1.0.4"}],"name":"v1.0.4"},{"tag_name":"v1.0.3","assets":[{"name":"stopwatchtimer.koplugin.zip","url":"https://github.com/markleenders/stopwatchtimer.koplugin/releases/download/v1.0.3/stopwatchtimer.koplugin.zip","size":6055,"digest":"sha256:a2eacfd56125aa263f3d4d1dbaf2daaed6d9e0d61956a6da914ab4bf75860d1f"}],"name":"v1.0.3"},{"tag_name":"v1.0.2","assets":[{"name":"stopwatchtimer.koplugin.zip","url":"https://github.com/markleenders/stopwatchtimer.koplugin/releases/download/v1.0.2/stopwatchtimer.koplugin.zip","size":3218,"digest":"sha256:8bda432946fe934aa0666014ed4c3828d8a2ef499a8b3aeb4ccf7540babb3433"}],"name":"v1.0.2"},{"tag_name":"v1.0.1","assets":[{"name":"stopwatchtimer.koplugin.zip","url":"https://github.com/markleenders/stopwatchtimer.koplugin/releases/download/v1.0.1/stopwatchtimer.koplugin.zip","size":3523,"digest":"sha256:eebfb1f19ce02bdc2de5d9d56121ac6b5d68b04770882de0c2552596f0f2e98e"}],"name":"v1.0.1"},{"tag_name":"v1.0.0","assets":[{"name":"stopwatchtimer.koplugin.zip","url":"https://github.com/markleenders/stopwatchtimer.koplugin/releases/download/v1.0.0/stopwatchtimer.koplugin.zip","size":3276,"digest":"sha256:88c949177568ca456217b8a8437180547a97c651df84a35376aea8d8a4dc1990"}],"name":"v1.0.0"}]
+source_type=source
+source_url=https://codeload.github.com/markleenders/stopwatchtimer.koplugin/zip/refs/heads/main

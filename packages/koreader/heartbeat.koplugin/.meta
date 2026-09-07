@@ -1,0 +1,23 @@
+# Heartbeat plugin for KOReader
+# https://github.com/moritz-john/heartbeat.koplugin
+# zenpm:auto-scraped
+id=heartbeat
+name=Heartbeat
+version=26.03.25
+description=Expose KOReader's (reading) state and book metadata as a Home Assistant binary sensor
+author=moritz-john
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/moritz-john/heartbeat.koplugin
+stars=10
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-03-25T17:16:46Z
+readme_url=packages/koreader/heartbeat.koplugin/README.md
+readme_hash=80d89058eded9ccce3a29f1a4f43f2113038ff61
+release_notes_url=packages/koreader/heartbeat.koplugin/RELEASE_NOTES.md
+release_notes_hash=6235cbf707260c15cbbe7849e3a50f50f24ef1fbce28be66760e377b1b17ca4e
+releases=[{"tag_name":"v26.03.25","assets":[{"name":"heartbeat.koplugin.zip","url":"https://github.com/moritz-john/heartbeat.koplugin/releases/download/v26.03.25/heartbeat.koplugin.zip","size":5594,"digest":"sha256:c085f8c2a97cb130f0ab1b5dd4bd0a51fc1f27ed786c8ec6ff743af5be0ec4f2"}],"name":"v26.03.25 heartbeat.koplugin.zip"},{"tag_name":"v26.03.19","assets":[{"name":"heartbeat.koplugin.zip","url":"https://github.com/moritz-john/heartbeat.koplugin/releases/download/v26.03.19/heartbeat.koplugin.zip","size":5460,"digest":"sha256:a3c13e4e7f9c73c2ae04494d593079e80dda8e97a4a9de3b9ab190cd9a6370cb"}],"name":"v26.03.19 heartbeat.koplugin.zip"}]
+source_type=release
+source_asset=heartbeat.koplugin.zip
+size=5594

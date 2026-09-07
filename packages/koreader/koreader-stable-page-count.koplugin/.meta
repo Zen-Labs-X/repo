@@ -1,0 +1,23 @@
+# Koreader Stable Page Count plugin for KOReader
+# https://github.com/treetrum/koreader-stable-page-count
+# zenpm:auto-scraped
+id=koreader-stable-page-count
+name=Koreader Stable Page Count
+version=0.2.1
+description=KOReader plugin for setting a desired stable page count instead of characters per page.
+author=treetrum
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/treetrum/koreader-stable-page-count
+stars=5
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-24T01:34:37Z
+readme_url=packages/koreader/koreader-stable-page-count.koplugin/README.md
+readme_hash=cad06b167368d3dca6a385ef14dbc5bfb7ae6158
+release_notes_url=packages/koreader/koreader-stable-page-count.koplugin/RELEASE_NOTES.md
+release_notes_hash=34c907769d78de9ac4786080f54069093df43cb067333da137928951d1f792a3
+releases=[{"tag_name":"v0.2.1","assets":[{"name":"pagecount.koplugin.zip","url":"https://github.com/treetrum/koreader-stable-page-count/releases/download/v0.2.1/pagecount.koplugin.zip","size":3189,"digest":"sha256:15bc10f22ebfce9dabc6722c0600e890520bdd1a2bbf0e2bf78871c6bddfb3a3"}],"name":"v0.2.1"},{"tag_name":"v0.2.0","assets":[{"name":"pagecount.koplugin.zip","url":"https://github.com/treetrum/koreader-stable-page-count/releases/download/v0.2.0/pagecount.koplugin.zip","size":2920,"digest":"sha256:54932d414f17438ea3055340956c943c1f769080cbd6376cb3fceca88513d363"}],"name":"v0.2.0"},{"tag_name":"v0.1.1","assets":[{"name":"koreader-stable-page-count-v0.1.1.zip","url":"https://github.com/treetrum/koreader-stable-page-count/releases/download/v0.1.1/koreader-stable-page-count-v0.1.1.zip","size":2920,"digest":"sha256:5fd1c53dfc1daa8cad9839f6d244954a1129a67ca003d932c563f5fa6cd6a627"},{"name":"pagecount.koplugin.zip","url":"https://github.com/treetrum/koreader-stable-page-count/releases/download/v0.1.1/pagecount.koplugin.zip","size":2920,"digest":"sha256:5fd1c53dfc1daa8cad9839f6d244954a1129a67ca003d932c563f5fa6cd6a627"}],"name":"v0.1.1"},{"tag_name":"v0.1.0","assets":[{"name":"koreader-stable-page-count-v0.1.0.zip","url":"https://github.com/treetrum/koreader-stable-page-count/releases/download/v0.1.0/koreader-stable-page-count-v0.1.0.zip","size":2960,"digest":"sha256:6cb175338d4f88ac0a0ba61fe87ff02b5aadefed2a2485ae234a95800dfc2e6a"}],"name":"v0.1.0"}]
+source_type=release
+source_asset=pagecount.koplugin.zip
+size=3189

@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"syncthing.koplugin.zip","url":"https://github.com/bps/syncthing.koplugin/releases/download/v1.0.0/syncthing.koplugin.zip","size":148374,"digest":"sha256:35e746a3a11e4660bf91e2ac469e08cc3ca44788fc9979d2a08d98744af4dde6"}],"name":"v1.0.0"}]
+}

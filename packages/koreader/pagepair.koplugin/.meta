@@ -1,0 +1,23 @@
+# Pagepair plugin for KOReader
+# https://github.com/GarionBracken/PagePair
+# zenpm:auto-scraped
+id=pagepair
+name=Pagepair
+version=source
+description=A Plugin for KOReader on Kindle to allow you to sync them together to have two kindles beside one another like a book
+author=GarionBracken
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/GarionBracken/PagePair
+stars=5
+updated_at=2026-09-07T18:29:19Z
+prerelease_version=1.0.0-beta.1
+prerelease_published_at=2026-08-12T00:05:56Z
+readme_url=packages/koreader/pagepair.koplugin/README.md
+readme_hash=ccac5a8d1adcfec3cc99bd359aec8c853e8000c1
+prerelease_notes_url=packages/koreader/pagepair.koplugin/PRERELEASE_NOTES.md
+prerelease_notes_hash=3c69b3e5d0f80b31b5d2dcf45b282a9aa3daf4645222c12c43f89a0edba7a5cf
+releases=[{"tag_name":"v1.0.0-beta.1","assets":[{"name":"pagepair-v1.0.0-beta.1.zip","url":"https://github.com/GarionBracken/PagePair/releases/download/v1.0.0-beta.1/pagepair-v1.0.0-beta.1.zip","size":763037,"digest":"sha256:5c072b64ea28bcc82f226c42cd2bd7b7ec10217ab5be857dd87ded1f887ef247"}],"name":"PagePair v1.0.0-beta.1","prerelease":true}]
+source_type=source
+source_url=https://codeload.github.com/GarionBracken/PagePair/zip/refs/heads/main

@@ -1,0 +1,23 @@
+# Leko Reader plugin for KOReader
+# https://github.com/jnjnnjzch/leko-reader
+# zenpm:auto-scraped
+id=leko-reader
+name=Leko Reader
+version=0.15.49
+description=全程本地运行的 KOReader 网络小说插件，支持 Legado 兼容书源，致力于让阅读轻快流畅。 An on-device KOReader web novel reader with Legado-compatible sources, built for fast and fluid reading.
+author=jnjnnjzch
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/jnjnnjzch/leko-reader
+stars=13
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-27T01:00:18Z
+readme_url=packages/koreader/leko-reader.koplugin/README.md
+readme_hash=cac4b67f79ee782b86e5f566147779f981054f10
+release_notes_url=packages/koreader/leko-reader.koplugin/RELEASE_NOTES.md
+release_notes_hash=17395c743886d680dc2c809b2df9f343a5931b45436f8b8a373ec7e41518fc7c
+releases=[{"tag_name":"v0.15.49","assets":[{"name":"Leko-Reader-KOReader-0.15.49.zip","url":"https://github.com/jnjnnjzch/leko-reader/releases/download/v0.15.49/Leko-Reader-KOReader-0.15.49.zip","size":886550,"digest":"sha256:95361b1ba432aed272bf96bca54611ed23583672c4c2def65205b2d7afb318ec"}],"name":"Leko Reader 0.15.49"},{"tag_name":"v0.15.47","assets":[{"name":"Leko-Reader-KOReader-0.15.47.zip","url":"https://github.com/jnjnnjzch/leko-reader/releases/download/v0.15.47/Leko-Reader-KOReader-0.15.47.zip","size":883784,"digest":"sha256:e3d9ee9b7a3bfd58a2245bc8fc637d686a6d1785f6e38a9a1198e1a7d0050bb9"}],"name":"Leko Reader 0.15.47"},{"tag_name":"v0.15.39","assets":[{"name":"Leko-Reader-KOReader-0.15.39.zip","url":"https://github.com/jnjnnjzch/leko-reader/releases/download/v0.15.39/Leko-Reader-KOReader-0.15.39.zip","size":867765,"digest":"sha256:eaaafbfaf01fbaa96a8f6cc18ee3691da357a6a8edc3746e7cfdad8555ae1449"}],"name":"Leko Reader 0.15.39"},{"tag_name":"v0.15.38","assets":[{"name":"Leko-Reader-KOReader-0.15.38.zip","url":"https://github.com/jnjnnjzch/leko-reader/releases/download/v0.15.38/Leko-Reader-KOReader-0.15.38.zip","size":860588,"digest":"sha256:16e20ff29c0f7ad60f86f7f686fbe461fa9c439fe8277f43bba5f0f9a876e562"}],"name":"Leko Reader 0.15.38"}]
+source_type=release
+source_asset=Leko-Reader-KOReader-0.15.49.zip
+size=886550

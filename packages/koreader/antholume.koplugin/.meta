@@ -1,0 +1,18 @@
+# Antholume plugin for KOReader
+# https://github.com/evanreichard/AnthoLume
+# zenpm:auto-scraped
+id=antholume
+name=Antholume
+version=source
+description=Mirror for: https://gitea.va.reichard.io/evan/AnthoLume
+author=evanreichard
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/evanreichard/AnthoLume
+stars=14
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/antholume.koplugin/README.md
+readme_hash=0a981cebdea2127e6f365f856cc8e6a0931a4a35
+source_type=source
+source_url=https://codeload.github.com/evanreichard/AnthoLume/zip/refs/heads/master

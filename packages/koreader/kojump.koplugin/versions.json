@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"kojump.koplugin.zip","url":"https://github.com/dani84bs/kojump.koplugin/releases/download/v1.0.0/kojump.koplugin.zip","size":6846,"digest":"sha256:b4a47bb421fd14401fc1180fed0eef579dd7f18c29200ffabaaae9b892807dc3"}],"name":"Release v1.0.0"}]
+}

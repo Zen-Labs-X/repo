@@ -1,0 +1,23 @@
+# Reordermenus plugin for KOReader
+# https://github.com/nraikm/reordermenus.koplugin
+# zenpm:auto-scraped
+id=reordermenus
+name=Reordermenus
+version=0.3
+description=KOReader plugin to reorder & hide menus
+author=nraikm
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/nraikm/reordermenus.koplugin
+stars=8
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-09-04T22:57:10Z
+readme_url=packages/koreader/reordermenus.koplugin/README.md
+readme_hash=9a4f10c056c6270ceede2f1aa56b14eb99ff1dfe
+release_notes_url=packages/koreader/reordermenus.koplugin/RELEASE_NOTES.md
+release_notes_hash=b7e898455091d6f4362c2474aed0ffb496305166181d691f033d836085ec9fd5
+releases=[{"tag_name":"v0.3","assets":[{"name":"reorderingmenus.koplugin-v0.3.zip","url":"https://github.com/nraikm/reordermenus.koplugin/releases/download/v0.3/reorderingmenus.koplugin-v0.3.zip","size":325888,"digest":"sha256:c74392db235c3f5471a73233b4b6105d76237eeb76a2cf06afcb78cbdb0f9826"}],"name":"v0.3"},{"tag_name":"v0.2-beta","assets":[{"name":"reorderingmenus.koplugin.zip","url":"https://github.com/nraikm/reordermenus.koplugin/releases/download/v0.2-beta/reorderingmenus.koplugin.zip","size":22670,"digest":"sha256:c3706ffc87ba91ba92442d2ac83e30b2c242562a5cee9dbdb9fa967a887fd42d"}],"name":"v0.2-beta: Live Menu Sync"},{"tag_name":"v0.1-beta","assets":[{"name":"reorderingmenus.koplugin.zip","url":"https://github.com/nraikm/reordermenus.koplugin/releases/download/v0.1-beta/reorderingmenus.koplugin.zip","size":21703,"digest":"sha256:d5667cf2a75723cc14470d12fd52eb0275bb1e74cd0abd547e1f32a1faf35be3"}],"name":"v0.1-beta: Initial Release"}]
+source_type=release
+source_asset=reorderingmenus.koplugin-v0.3.zip
+size=325888

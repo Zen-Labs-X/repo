@@ -1,0 +1,18 @@
+# Clock plugin for KOReader
+# https://github.com/jperon/clock.koplugin
+# zenpm:auto-scraped
+id=clock
+name=Clock
+version=source
+description=Analog clock for https://github.com/koreader/koreader.
+author=jperon
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/jperon/clock.koplugin
+stars=13
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/clock.koplugin/README.md
+readme_hash=795fb5789be6da996d7154ae53a3879745631f58
+source_type=source
+source_url=https://codeload.github.com/jperon/clock.koplugin/zip/refs/heads/master

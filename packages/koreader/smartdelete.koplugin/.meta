@@ -1,0 +1,23 @@
+# Smartdelete plugin for KOReader
+# https://github.com/tachibana-shin/smartdelete.koplugin
+# zenpm:auto-scraped
+id=smartdelete
+name=Smartdelete
+version=1.0.2
+description=SmartDelete is a KOReader plugin that enhances file deletion safety by prompting users before deleting files, with special attention to book data such as bookmarks and reading history.
+author=tachibana-shin
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/tachibana-shin/smartdelete.koplugin
+stars=13
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-06-20T10:50:52Z
+readme_url=packages/koreader/smartdelete.koplugin/README.md
+readme_hash=03a500a2aa4a00a201c0b4c6af69a8c129aa3d23
+release_notes_url=packages/koreader/smartdelete.koplugin/RELEASE_NOTES.md
+release_notes_hash=c531c4ce8727f70fc75efdfb6a2060973c197674d96f17ab2717b7405be53a5f
+releases=[{"tag_name":"v1.0.2","assets":[{"name":"smartdelete.koplugin-1.0.2.zip","url":"https://github.com/tachibana-shin/smartdelete.koplugin/releases/download/v1.0.2/smartdelete.koplugin-1.0.2.zip","size":2408,"digest":"sha256:282ac711edf29371cda55e94c4916644936087d0d9e418fa0438d64e7afee1e8"}],"name":"v1.0.2"},{"tag_name":"v1.0.1","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/tachibana-shin/smartdelete.koplugin/zipball/v1.0.1"}],"name":"v1.0.1"},{"tag_name":"v1.0.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/tachibana-shin/smartdelete.koplugin/zipball/v1.0.0"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=smartdelete.koplugin-1.0.2.zip
+size=2408

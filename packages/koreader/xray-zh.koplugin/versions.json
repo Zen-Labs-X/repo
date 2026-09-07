@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v2.0.1-zh","assets":[{"name":"xray-zh.koplugin.zip","url":"https://github.com/Kerwin75631591/xray-zh.koplugin/releases/download/v2.0.1-zh/xray-zh.koplugin.zip","size":51340,"digest":"sha256:6b58089a5910e9f63797a44eefc800b0345dfa9a6057f4e929d638ccfaa3c1af"}],"name":"v2.0.1-zh"},{"tag_name":"v2.0.0-zh","assets":[{"name":"xray-zh.koplugin.zip","url":"https://github.com/Kerwin75631591/xray-zh.koplugin/releases/download/v2.0.0-zh/xray-zh.koplugin.zip","size":50676,"digest":"sha256:b699905c0afb0ed1e2e5a6a5ed24d8caa35ea8a29f0eb32511c95f8639d4fb46"}],"name":"v2.0.0-zh"}]
+}

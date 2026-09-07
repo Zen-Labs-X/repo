@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v0.3.0","assets":[{"name":"tapless.koplugin-v0.3.0.zip","url":"https://github.com/azac/tapless.koplugin/releases/download/v0.3.0/tapless.koplugin-v0.3.0.zip","size":2005954,"digest":"sha256:cf3c5e6da907341b05f9687835a0b3e9868ae3e9ee42a7968f8a6f40dee55d86"}],"name":"Tapless 0.3.0"},{"tag_name":"v0.1.0","assets":[{"name":"tapless.koplugin-v0.1.0.zip","url":"https://github.com/azac/tapless.koplugin/releases/download/v0.1.0/tapless.koplugin-v0.1.0.zip","size":1994131,"digest":"sha256:116c0347f7141d42a9c40205646647a084bdb66de925a65570634fa010557e5f"}],"name":"Tapless 0.1.0"}]
+}

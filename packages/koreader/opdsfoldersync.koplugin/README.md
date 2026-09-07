@@ -1,0 +1,92 @@
+# OPDSfoldersync - Koreader OPDS Plugin with Per-Catalog Sync
+
+This project provides an enhanced OPDS (Open Publication Distribution System) plugin for Koreader, enabling users to browse, download, and synchronize content from OPDS catalogs. A key feature of this plugin is the ability to configure *per-catalog synchronization folders*, allowing for more organized management of downloaded books and documents.
+
+## Features
+
+*   **Automated Synchronization:** Keep your catalogs synced automatically with periodic and event-based triggers (e.g., on network connection or resume).
+*   **Per-Catalog Sync Folders:** Assign a dedicated synchronization directory for each OPDS catalog, preventing clutter and improving organization of your downloaded files. Falls back to a global sync directory if not set per-catalog.
+*   **Include/Exclude Filters:** Fine-tune your syncs by setting include or exclude filters for authors and categories on a per-catalog basis.
+
+## Installation
+
+This plugin **replaces and extends** the default OPDS plugin that comes with Koreader. To avoid conflicts, you must remove the original before installing this version.
+
+1.  **Locate your Koreader installation directory.** This is typically where your `koreader.app` or `koreader.sh` executable resides.
+2.  **Navigate to the `plugins` directory** within your Koreader installation (e.g., `/koreader/plugins/`).
+3.  **Delete the existing `opds.koplugin` directory.** This step is crucial to ensure the new plugin loads correctly.
+4.  **Copy the `opds.koplugin` folder** from this repository directly into Koreader's `plugins` directory.
+    *   Make sure you copy the entire `opds.koplugin` directory, not just its contents.
+
+Your directory structure should look something like this:
+
+```
+/koreader/
+├── plugins/
+│   ├── opds.koplugin/
+│   │   ├── _meta.lua
+│   │   ├── main.lua
+│   │   ├── opdsbrowser.lua
+│   │   ├── opdsparser.lua
+│   │   └── opdspse.lua
+│   └── (other plugins...)
+├── (other Koreader files...)
+```
+
+5.  **Restart Koreader** to load the new plugin.
+
+## Usage
+
+### Adding/Editing an OPDS Catalog
+
+1.  From the Koreader file browser, access the **"Network"** menu (usually a Wi-Fi or globe icon).
+2.  Select **"OPDS"**.
+3.  Choose **"Add new catalog"** or select an existing catalog and choose **"Edit catalog"**.
+4.  Fill in the catalog details (Name, URL, Username, Password).
+5.  **Sync Catalog:** Check this option if you want Koreader to automatically synchronize content from this catalog.
+6.  **Set Sync Folder:** A new button labeled "Set sync folder" (or "Sync folder: [path]" if already set) will allow you to choose a specific directory on your device where books from *this catalog* will be downloaded. If left unset, the global sync folder or default download directory will be used.
+7.  Tap **"Save"**.
+
+### Filtering
+
+You can control which books are synced from a catalog by setting filters for authors and categories. These filters can be accessed when adding or editing a catalog.
+
+*   **Excluded Authors/Categories:** A comma-separated list of authors or categories to exclude from synchronization.
+*   **Included Authors/Categories:** A comma-separated list of authors or categories to include in synchronization. If this is set, only items that match will be synced.
+
+**Filter Precedence:**
+
+The include and exclude filters work together to give you fine-grained control. Here's how they interact:
+
+| Included Authors/Categories | Excluded Authors/Categories | Behavior                                                                                                                              |
+| --------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Not Set                     | Not Set                     | All books from the catalog are synced.                                                                                                |
+| Not Set                     | Set                         | All books are synced, *except* those matching the excluded authors/categories.                                                        |
+| Set                         | Not Set                     | Only books matching the included authors/categories are synced.                                                                       |
+| Set                         | Set                         | Only books matching the included authors/categories are considered. From that set, any books matching the excluded list are removed. |
+
+For example, if you include the category "Science Fiction" and exclude the author "John Doe", you will get all science fiction books except for those written by John Doe.
+
+### Automated Synchronization
+
+This plugin now supports automated synchronization to keep your library up-to-date without manual intervention.
+
+*   **How it Works:** When enabled, auto-sync will periodically check for new content in your synced catalogs. By default, this check occurs every 24 hours.
+*   **Event-Based Triggers:** In addition to the periodic sync, the plugin will also trigger a sync when:
+    *   Your device connects to a network.
+    *   Your device resumes from sleep.
+*   **Configuration:** You can manage auto-sync directly from the OPDS catalog menu:
+    *   **Auto-sync: On/Off:** Toggle the automated synchronization feature. It is enabled by default.
+    *   **Last sync:** Displays the date and time of the last successful synchronization.
+
+### Synchronization
+
+*   When "Sync Catalog" is enabled for a catalog, Koreader will attempt to download new items from that catalog into its designated sync folder.
+*   The plugin prioritizes the per-catalog sync folder. If not set, it falls back to the global `sync_dir` setting (if configured in Koreader settings), and finally to Koreader's default download directory.
+
+## Configuration
+
+Global OPDS settings, such as a default synchronization directory for all catalogs, can typically be found within Koreader's general settings under "Network" or "OPDS". However, the per-catalog setting introduced by this plugin will override the global setting for specific catalogs.
+
+---
+**Note:** This plugin assumes a Koreader environment capable of running Lua plugins and accessing the file system.

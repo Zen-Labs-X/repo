@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v26.03.25","assets":[{"name":"heartbeat.koplugin.zip","url":"https://github.com/moritz-john/heartbeat.koplugin/releases/download/v26.03.25/heartbeat.koplugin.zip","size":5594,"digest":"sha256:c085f8c2a97cb130f0ab1b5dd4bd0a51fc1f27ed786c8ec6ff743af5be0ec4f2"}],"name":"v26.03.25 heartbeat.koplugin.zip"},{"tag_name":"v26.03.19","assets":[{"name":"heartbeat.koplugin.zip","url":"https://github.com/moritz-john/heartbeat.koplugin/releases/download/v26.03.19/heartbeat.koplugin.zip","size":5460,"digest":"sha256:a3c13e4e7f9c73c2ae04494d593079e80dda8e97a4a9de3b9ab190cd9a6370cb"}],"name":"v26.03.19 heartbeat.koplugin.zip"}]
+}

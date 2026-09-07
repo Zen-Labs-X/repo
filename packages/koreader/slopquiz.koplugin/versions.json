@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v0.0.1","assets":[{"name":"slopquiz.koplugin-v0.0.1.zip","url":"https://github.com/j-v/slopquiz.koplugin/releases/download/v0.0.1/slopquiz.koplugin-v0.0.1.zip","size":26290,"digest":"sha256:0bdb0a63a576678ebbcf4926dff13634ce2070d9e6637ce975a55393024a0049"}],"name":"v0.0.1"}]
+}

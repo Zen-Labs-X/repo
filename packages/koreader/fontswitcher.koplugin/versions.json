@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0","assets":[{"name":"fontswitcher-v1.0.zip","url":"https://github.com/right9code/fontswitcher.koplugin/releases/download/v1.0/fontswitcher-v1.0.zip","size":2509,"digest":"sha256:cd29287b53d2bfb4e0c787852b4b468a1534e4fe6275629cec13956b7b010634"}],"name":"FontSwitcher v1.0"}]
+}

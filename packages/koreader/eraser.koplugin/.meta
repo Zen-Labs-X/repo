@@ -1,0 +1,18 @@
+# Eraser plugin for KOReader
+# https://github.com/SimonLiu423/eraser.koplugin
+# zenpm:auto-scraped
+id=eraser
+name=Eraser
+version=source
+description=KOReader plugin that allows users to use stylus pen's eraser (Currenlty support Kobo Stylus only)
+author=SimonLiu423
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/SimonLiu423/eraser.koplugin
+stars=6
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/eraser.koplugin/README.md
+readme_hash=8e24313cddeac18fa946c2e3ce9a95a97f97ba15
+source_type=source
+source_url=https://codeload.github.com/SimonLiu423/eraser.koplugin/zip/refs/heads/main

@@ -1,0 +1,23 @@
+# Metaguiding plugin for KOReader
+# https://github.com/luizcorreia/metaguiding.koplugin
+# zenpm:auto-scraped
+id=metaguiding
+name=Metaguiding
+version=0.1
+description=
+author=luizcorreia
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/luizcorreia/metaguiding.koplugin
+stars=10
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-05-29T20:15:38Z
+readme_url=packages/koreader/metaguiding.koplugin/README.md
+readme_hash=b04b46c45bc7d4dd69e865407d20be34fd3bb90e
+release_notes_url=packages/koreader/metaguiding.koplugin/RELEASE_NOTES.md
+release_notes_hash=353005f2597e850667ad4178c2face772142dddcef3814a5ba4bfb33ae00dc7c
+releases=[{"tag_name":"v0.1","assets":[{"name":"metaguiding.koplugin-0.1.zip","url":"https://github.com/luizcorreia/metaguiding.koplugin/releases/download/v0.1/metaguiding.koplugin-0.1.zip","size":9339,"digest":"sha256:99b841ca00adb467bb734dd11e7481aa8e0ebd1c395cedafdc33cf0cdf7a68b1"}],"name":"metaguiding 0.1"}]
+source_type=release
+source_asset=metaguiding.koplugin-0.1.zip
+size=9339

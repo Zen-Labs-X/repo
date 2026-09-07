@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0","assets":[{"name":"KoStatsMulti.zip","url":"https://github.com/ThePixelPro366/KoStatsMulti-Plugin/releases/download/v1.0/KoStatsMulti.zip","size":3786,"digest":"sha256:c52f1be5d6ebb454893bd059ca5b0d3b6cb58e9b9e992d1b968001183ca263ce"}],"name":"Highlite/Annotationsync"},{"tag_name":"Beta","assets":[{"name":"kostats.koplugin.zip","url":"https://github.com/ThePixelPro366/KoStatsMulti-Plugin/releases/download/Beta/kostats.koplugin.zip","size":2897,"digest":"sha256:f00ecb6e84bf7d7240001f736b60f2f8d2c3998a9281df2938054c061b36615f"}],"name":"v.1 Early Beta"}]
+}

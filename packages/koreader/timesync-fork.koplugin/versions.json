@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"LTS","assets":[{"name":"timesync-fork.koplugin.zip","url":"https://github.com/fvelsg/timesync-fork.koplugin/releases/download/LTS/timesync-fork.koplugin.zip","size":15771,"digest":"sha256:f994fabf036e5bf00c314494b7aefbfe60c754c76c34dd8855c45649b81483d8"}],"name":"Release 1"}]
+}

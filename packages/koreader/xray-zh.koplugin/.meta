@@ -1,0 +1,23 @@
+# Xray Zh plugin for KOReader
+# https://github.com/Kerwin75631591/xray-zh.koplugin
+# zenpm:auto-scraped
+id=xray-zh
+name=Xray Zh
+version=2.0.1-zh
+description=KOReader 中文版 X-Ray 插件：AI 书籍分析（人物/本章人物/时间线/历史人物/地点/主题），内置 DeepSeek V4 与 Gemini 支持，超长书籍可分段获取。KOReader X-Ray plugin with Chinese UI, DeepSeek & segmented fetch.
+author=Kerwin75631591
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/Kerwin75631591/xray-zh.koplugin
+stars=7
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-13T17:13:00Z
+readme_url=packages/koreader/xray-zh.koplugin/README.md
+readme_hash=98125d56a67375f17df28fdd5a3fb71347123ea9
+release_notes_url=packages/koreader/xray-zh.koplugin/RELEASE_NOTES.md
+release_notes_hash=54dd151ebea0c12600477c8e7dd17f97b9da80c853761c96aa2af55527689f88
+releases=[{"tag_name":"v2.0.1-zh","assets":[{"name":"xray-zh.koplugin.zip","url":"https://github.com/Kerwin75631591/xray-zh.koplugin/releases/download/v2.0.1-zh/xray-zh.koplugin.zip","size":51340,"digest":"sha256:6b58089a5910e9f63797a44eefc800b0345dfa9a6057f4e929d638ccfaa3c1af"}],"name":"v2.0.1-zh"},{"tag_name":"v2.0.0-zh","assets":[{"name":"xray-zh.koplugin.zip","url":"https://github.com/Kerwin75631591/xray-zh.koplugin/releases/download/v2.0.0-zh/xray-zh.koplugin.zip","size":50676,"digest":"sha256:b699905c0afb0ed1e2e5a6a5ed24d8caa35ea8a29f0eb32511c95f8639d4fb46"}],"name":"v2.0.0-zh"}]
+source_type=release
+source_asset=xray-zh.koplugin.zip
+size=51340

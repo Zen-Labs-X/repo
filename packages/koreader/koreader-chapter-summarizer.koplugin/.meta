@@ -1,0 +1,18 @@
+# Koreader Chapter Summarizer plugin for KOReader
+# https://github.com/bogorad/koreader-chapter-summarizer.koplugin
+# zenpm:auto-scraped
+id=koreader-chapter-summarizer
+name=Koreader Chapter Summarizer
+version=source
+description=
+author=bogorad
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/bogorad/koreader-chapter-summarizer.koplugin
+stars=6
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/koreader-chapter-summarizer.koplugin/README.md
+readme_hash=8013d2edd229e96f2ca7e2b25c723d46476c4eb6
+source_type=source
+source_url=https://codeload.github.com/bogorad/koreader-chapter-summarizer.koplugin/zip/refs/heads/main

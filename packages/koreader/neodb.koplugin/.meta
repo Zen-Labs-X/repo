@@ -1,0 +1,23 @@
+# Neodb plugin for KOReader
+# https://github.com/neodb-social/neodb.koplugin
+# zenpm:auto-scraped
+id=neodb
+name=Neodb
+version=0.3.1
+description=sync rating / progress / notes / highlights to NeoDB from your e-reader
+author=neodb-social
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/neodb-social/neodb.koplugin
+stars=5
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-26T12:49:55Z
+readme_url=packages/koreader/neodb.koplugin/README.md
+readme_hash=9e5d599840ebd9c3a6925065fadf70de0959d35b
+release_notes_url=packages/koreader/neodb.koplugin/RELEASE_NOTES.md
+release_notes_hash=53efd4240247da9b32361e6688591db2224ca14bb95b59b41f6d967728006cbd
+releases=[{"tag_name":"0.3.1","assets":[{"name":"neodb.koplugin.zip","url":"https://github.com/neodb-social/neodb.koplugin/releases/download/0.3.1/neodb.koplugin.zip","size":90681,"digest":"sha256:8ba0d905016056e81788faa3deb1ea4cf640a6960fa919b2dd45abbaad0e7416"}],"name":"0.3.1"},{"tag_name":"0.3.0","assets":[{"name":"neodb.koplugin.zip","url":"https://github.com/neodb-social/neodb.koplugin/releases/download/0.3.0/neodb.koplugin.zip","size":85757,"digest":"sha256:6ae42667bde3f5c08287b8e8e15c696668cdb743c1b9a0497efb44fb77d7e84c"}],"name":"0.3.0"},{"tag_name":"0.2.2","assets":[{"name":"neodb.koplugin.zip","url":"https://github.com/neodb-social/neodb.koplugin/releases/download/0.2.2/neodb.koplugin.zip","size":81331,"digest":"sha256:2d67117f772b621187b97cc8a6f545a45a51b66d88b3413d509a6a017adc100f"}],"name":"0.2.2"},{"tag_name":"0.2.1","assets":[{"name":"neodb.koplugin.zip","url":"https://github.com/neodb-social/neodb.koplugin/releases/download/0.2.1/neodb.koplugin.zip","size":80937,"digest":"sha256:4fc43f15cd22934fc0d2ede7daf6c9f6b7dfaf2b5cdb449b9d51be7087c7185b"}],"name":"Improved UI to link book"},{"tag_name":"0.2","assets":[{"name":"neodb.koplugin.zip","url":"https://github.com/neodb-social/neodb.koplugin/releases/download/0.2/neodb.koplugin.zip","size":79988,"digest":"sha256:653219aaa051ce4f232cde98b49c14b789b02ffef81937781b8a675a02c6a059"}],"name":"0.2"}]
+source_type=release
+source_asset=neodb.koplugin.zip
+size=90681

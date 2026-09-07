@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.1.1","assets":[{"name":"fulltextunderline-v1.1.0-zh-CN.zip","url":"https://github.com/DRDTR001/fulltextunderline.koplugin/releases/download/v1.1.1/fulltextunderline-v1.1.0-zh-CN.zip","size":35371,"digest":"sha256:2b3c7435765c4cd6e8d3ef337b0e4eb1b817cbb4abd5a20e31dee9f3ef7092a0"},{"name":"fulltextunderline-v1.1.1.zip","url":"https://github.com/DRDTR001/fulltextunderline.koplugin/releases/download/v1.1.1/fulltextunderline-v1.1.1.zip","size":38358,"digest":"sha256:58fda95fdab016622ce0dc26c11f024c77b1b1ef7c1274754e5214d6767c2755"}],"name":"Full Text Underline v1.1.1"}]
+}

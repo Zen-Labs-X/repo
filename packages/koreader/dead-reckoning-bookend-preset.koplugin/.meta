@@ -1,0 +1,18 @@
+# Dead Reckoning Bookend Preset plugin for KOReader
+# https://github.com/VirInvictus/dead-reckoning-bookend-preset
+# zenpm:auto-scraped
+id=dead-reckoning-bookend-preset
+name=Dead Reckoning Bookend Preset
+version=source
+description=The smallest thing in the portfolio: a single-file Lua preset for KOReader's Bookends plugin, styled as a navigation cockpit for the book in progress.
+author=VirInvictus
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/VirInvictus/dead-reckoning-bookend-preset
+stars=6
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/dead-reckoning-bookend-preset.koplugin/README.md
+readme_hash=46d5b1b7f8aa1486c4f6d8c16a2d59ec20d88a70
+source_type=source
+source_url=https://codeload.github.com/VirInvictus/dead-reckoning-bookend-preset/zip/refs/heads/main

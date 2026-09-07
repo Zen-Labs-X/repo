@@ -1,3 +1,351 @@
+# v0.22.1
+
+# KOAssistant v0.22.1 Release Notes
+
+Maintenance release for v0.22.0: two small fixes and one changed default. Notes for v0.22.0 below, since they came in quick succession.
+
+## Maintenance (v0.22.1)
+
+- **New X-Rays default to the Reference preset** (characters, places, themes and terms; no timeline or argument development) instead of all categories. Builds finish noticeably faster on every model, everything you can tap on in the book is still tracked, and Recap covers what happened. Pick All categories under Settings > X-Ray > Categories for New X-Rays (or per book) to get the timeline back. Existing X-Rays keep the categories they were built with. Note: if you had picked All categories globally before this version, that pick was stored as "no preference" and now reads as Reference; pick All categories once more to restore it.
+- **Group Hub and Book Hub show real titles and authors for books you have never opened.** They used to fall back to the file name with no author until the book was opened once. The book picker's collection and folder lists do the same when KOReader's cover browser has already cached the metadata.
+- **The KOAssistant row now sits at the top of the Tools menu**, in both the reader and the file browser, instead of at the very end after "More tools".
+
+---
+
+# KOAssistant v0.22.0 Release Notes
+
+> **SHIPPED 2026-09-07** as tag `v0.22.0` (108 commits since v0.21.2). The GitHub release body is this file minus the trailer; the recipe is [release_recipe.md](release_recipe.md).
+
+> **Behavior changed in this release.** Nothing starts a book's X-Ray on its own any more, and every first build asks first. Three settings were removed with that change: "Also Start X-Rays Automatically", "First Build for New Books" and "Offer Automatic X-Ray for New Books". If you had them on, see the first two bullets below. Existing X-Rays, chats, notebooks and API keys are not affected.
+
+> **Your per-book data moved.** Chats and per-book settings now live in the book's own `.sdr` folder in plugin files instead of inside KOReader's `metadata.lua`. The move happens automatically on first start and nothing is lost; details under Storage.
+
+---
+
+## Spoiler Protection and X-Ray
+
+**Automation only continues what you started.**
+
+- **Nothing starts an X-Ray on its own.** "Automatic X-Ray (all books)" now only keeps up to date the X-Rays you have already started; a book with no X-Ray is left alone. The settings that used to start one ("Also Start X-Rays Automatically", "First Build for New Books" and its coverage question, "Offer Automatic X-Ray for New Books") are gone. Stale values are ignored, nothing needs migrating.
+- **Every first build asks first.** The two ways to start a background X-Ray are the creation form's "In checkpoints, as I read (automatic)" pick and the per-book "Automatic X-Ray: On" switch. Both now say how many background requests they need right now and wait for **Start**; **Cancel** puts the switch back the way it was and nothing runs. (When nothing needs building right now, the switch just turns on.) A book left On while it was closed gets the same question the moment the first build would start, with "Cancel (turn Automatic X-Ray off)" as the way out. Books that already have an X-Ray keep being extended silently, which is what Automatic means.
+- **Deleting an X-Ray now quiets automation for that book**, so nothing re-asks or restarts behind you after a delete.
+- The Automatic X-Ray cooldown is cleared when a build chain finishes; a completed chain used to silently decline page-turn triggers for a whole cooldown.
+
+**New: depth.**
+
+- **Depth of New X-Rays: Light / Standard / Deep.** Light is one line per entry and only recurring figures and turning points; Standard (the default, unchanged from before) is a few sentences per entry; Deep is longer entries with richer connections. Set the default in **Settings > Reading & Library > X-Ray > Depth of New X-Rays**, per book in **Book Settings > X-Ray > New X-Ray depth**, or from the creation form. It applies to creates and rebuilds; checkpoints and updates keep the depth the X-Ray was started with.
+
+**Categories.**
+
+- **Presets renamed and re-cut**: **All categories**, **Characters and story (people, timeline)**, **Reference (everything except the timeline)**, **Characters only**. The timeline turned out to be the single heaviest block of an X-Ray, so "Reference" is now the cheap pick and cost lives on the depth dial instead. The picker separates presets from picking categories one by one.
+
+**Creation form and checkpoints.**
+
+- Spacing, categories and depth sit on one small options row above the action buttons, each button showing its current value, and the categories and depth pickers open on the book tab from there and from Book Settings. On a plain extend the categories and depth buttons show what the X-Ray was started with (they are locked to it), not the current default.
+- A one-step checkpoint plan stays pickable instead of disappearing, and the 100%-covered "Rebuild X-Ray..." row opens the rebuild form directly (no more deleting first).
+- A build that only covers up to your position no longer spends a request on a separate introduction it would immediately supersede.
+- The next checkpoint starts building only after the current one installs, and builds from the live copy, so entity renames and merges you made carry forward.
+- A checkpoint installs only once you actually reach its coverage (it used to install a hair early).
+
+**Entity cards and marking.**
+
+- **Upcoming entities reveal in stages.** An entity known only from the checkpoint built ahead of you now shows name and category first, one tap adds the first sentence, and another opens the full entry behind the usual spoiler confirmation. Two new settings: **Upcoming Entity Cards** (name only / first sentence right away) and **Card Shows** (first sentence only / full entry, for entities already in your installed X-Ray). Both can be overridden per book. When the tap landed on an alias, the card stays at name only even with "first sentence right away", since the sentence would give away which entry the alias belongs to.
+- **The peek reads one checkpoint, never a later one**: the ahead card now uses the lowest built checkpoint that reaches your position, so an alias folded in at 100% cannot reveal itself on sight.
+- Tapping a marked alias opens the card on the words you tapped, not on the entry name (which gave the link away).
+- A name inside another entity's longer name now counts as the longer entity's mention everywhere: marks, mention lists, chapter appearances and counts.
+- Names whose own edge is punctuation ("D.B.", "Jr.") are marked again.
+- The first-sentence cut on cards handles initials, titles, CJK sentence ends and the Arabic question mark instead of stopping at the first period.
+- The card no longer shows the whole entry when the first sentence ends in a non-breaking space, or when the next word starts lowercase after an ordinary word (a name like "van" or "de"); only short abbreviations such as "vs." still hold the sentence open. This is why some cards were cut and others were not.
+
+**Other X-Ray.**
+
+- **One more JSON repair**: a key that arrives missing its opening quote is restored, so a long build is not lost to it (the same family of fixes as v0.21.2).
+- Artifact caches now record the request's token usage, shown on the artifact viewer's Info button.
+- Section runs of **Counterarguments** now cache and browse like the other section artifacts.
+- The X-Ray browser's root Mentions view defaults to the whole book once the book is marked Finished.
+- A typeless non-fiction X-Ray is no longer read as a fiction one (it used to render every category empty).
+
+## Book Groups and Cross-Book X-Ray (#90)
+
+The headline of this cycle: in a group, an X-Ray lookup answers from the whole group, not just the open book, and every group now has its own page and its own settings.
+
+- **Lookups reach the group.** Tapping a marked word, an exact dictionary or highlight match, an entity card, and the X-Ray browser's search all fall back, in order, to this book's carried list and then to the group's other X-Rays, nearest book first. Cards and rows name their source ("Carried from *Title*", "From *Title*'s X-Ray"), and a hit from another book offers **"Open in *Title*'s X-Ray"** and **"Add to this book's carried list"**.
+- **The browser's search results fold the group in** as "From *Title*" groups, under the carried entries, with a plain "Nothing in the earlier books either" (or "Nothing in the other books of the group either") when there is nothing anywhere. No second tap.
+- **Carried lists keep themselves up to date.** Editing a group (adding, removing, reordering, changing its kind) or writing any of its X-Rays re-seeds the members' carried lists in the background. Removing a carried entry is remembered, so it does not come back.
+- **Later volumes stay closed.** In an ordered series a lookup only looks past a book once that book is read (marked **Finished**, or read to its last page) or its own spoiler protection is off. Volume 1 unread and protected keeps volumes 2 and 3 out of reach, whatever their own settings say. Passive marking, entity cards and matching selections never reach past that chain.
+- **The reveal is one book at a time.** When something is held back, the results list and the no-results dialog carry a row naming the next volume ("Search *Title* too (may contain spoilers)..."), the confirmation names it too, and each confirmation opens exactly one more book. Nothing sticks: every search starts from the chain again.
+- Project groups share in every direction between all members; plain groups share nothing.
+- The "add this as an alias of an existing entry" offer now also appears on books that have section X-Rays (it used to fall back to a bare message there).
+- **Series suggestion sees edited metadata**: a series typed into KOReader's own Book information editor now counts like one read from the file.
+- Installing a checkpoint no longer drops carried entries and aliases that existed only in the live copy.
+- **The group jump is spoiler-safe.** From an X-Ray entry, the "→ Group" popup lists a later volume that is still behind the spoiler chain as "(later in the series)" without checking whether the entity appears in it (knowing that a character returns is already a spoiler), and opens it only after the same confirmation the search reveal uses. From an entity page, the other book's entry opens as a read-only view over the page instead of switching X-Rays. Entity cards and pages also say where else in the group the entity appears ("Also in *Title*'s X-Ray"), never naming a later volume the spoiler chain still holds back.
+
+**Group Hub and group settings.**
+
+- **Every group has a page.** Main menu > Groups opens the Groups list: one row per group with its kind icon and "Kind · N books"; tap for the group's hub, hold to move, rename, change the kind or delete it, and the title-bar menu creates groups (blank, from a folder, from a collection, or with the open book) and sorts the list by name or by kind (a one-shot sort; you can still move groups by hand). The list itself also offers "New group from series ..." when the open book carries a series tag.
+- **The Group Hub** shows a group's action rows first (Group Settings, the X-Ray fold row, and a Series/Project/Group Chat/Action row that opens the library dialog with the members pre-selected), then the members in order (tap for a book's Book Hub, hold to move, open or remove it), then the add rows. Its title-bar menu carries the add flows, Kind, Rename and Delete; the up-arrow returns to the list. The Book Hub's Group row, the artifact viewers' "→ Group" button and the Quick Actions "Group Hub" utility all land on the book's hub (a chooser when it is in several groups); the X-Ray browser's own "→ Group" keeps opening the members popup, which has a "Group hub..." row. A Book Hub opened from a group gets an up-arrow back to it.
+- **Group settings.** A group can set the same settings a book can: domain, research mode, Background, spoiler protection, automatic X-Ray, new X-Ray categories and depth, and the three languages, through the same pickers ("For this group"). Setting a value offers to apply it to every member; members then follow the group ("Follow group X (value)" on their Book Settings rows and in every picker) until they pick their own value, which the Group Settings screen lists as "not following" with "Re-apply to all". Books added to a group that sets values are asked once; leaving or deleting a group returns its books to the global settings, and a book whose group no longer exists (a groups file restored from an older backup, say) simply follows the global settings again.
+- **Collections as a source.** The book picker browses KOReader collections beside history and folders; groups can be created from a collection or filled with one, and the series scan can look in a collection.
+- A closed book's chat opened beside another open book (from a group hub, for instance) gets its own dialog again instead of the open book's actions and title.
+- Crossing the next built checkpoint installs it at any spacing; a spacing above 25% used to refuse the install (for good with automatic X-Ray off).
+
+## Chat Viewer
+
+- **Math renders as readable formulas** (#105). LaTeX in a response is shown with Greek letters, real operators, superscripts and subscripts, accents, roots, and fractions as `a/b`, with display formulas centered. Markdown view only, and display only: saved chats, copies and exports keep the original notation, which Obsidian and similar apps render fully. Toggle in **Settings > Display Settings > Rendering > Render Math Formulas** (on by default).
+- **New Window Size setting** (Standard / Expanded) in **Settings > Display Settings > Window Size** for chat, artifact, translate, dictionary and quiz windows, also on each window's gear menu. Expanded leaves only a hairline around the window; compact dictionary popups are unaffected.
+- Indented continuation lines under a list item render as part of that item instead of an empty bullet.
+- A response whose markdown is cut short mid-code-fence renders instead of falling back to plain text, and emphasis characters inside math no longer scramble the rest of the answer.
+- **Exports no longer fail on Kindle** ("Invalid argument"): filenames built from a title are cut on a character boundary.
+- **Hold Close to get back to the page.** A long press on the Close button closes the chat window, any dictionary windows under it and the highlight menu in one gesture, instead of tapping through them one at a time.
+- A reply that arrives while you have scrolled back to reread lands where you were reading, not on the last question marker (from the second reply on, the marker used to win).
+- Pressing Stop or closing the window in the moment after a streamed answer has finished, while the plugin is still reading the provider's trailing rate-limit information, no longer reports the complete answer as cancelled.
+
+## Providers and Models
+
+- **NVIDIA is a new built-in provider**: free developer program, email only, no card and no identity check. Curated model list from a live catalog probe, reasoning profile, book tools on the models where forced tool use actually worked, no web search. Models retired by the host on 2026-08-26 are pruned, response parsing (including reasoning content) is fixed, and speed tiers are placed from measured latency.
+- **Test provider** now shows the server's own error detail when a reachability check fails, instead of a bare failure.
+- **OpenCode Zen and OpenCode Go are two new providers on one account** (#107): Zen is the pay-as-you-go catalog of open-weight models, Go the subscription with its own model list. Zen's built-in list grew by nine models (GLM 5, 5.1 and 5.2, MiniMax M2.5, Kimi K2.5, Qwen 3.5 Plus and 3.6 Plus, and two experimental ids), each with its own reasoning and output profile. Each has its own key entry (the same key string under `opencode` and `opencode_go`), both send the conversation header OpenCode requires, and reasoning effort is one setting for both. GPT, Claude and Gemini through OpenCode are not supported yet (they use other endpoints).
+- **One conversation id per chat.** The id a chat is saved under is the id the wire saw, and it rides to the hosts that use one (OpenCode's session header, OpenRouter's session id, OpenAI's prompt cache key). No other host receives it.
+- **Gemini's content filter is relaxed for books by default.** Google's own filter blocks answers about violent or sexual passages, and the reply used to arrive empty and unexplained. The plugin now turns the four adjustable filter categories off for its own requests. **Settings > Advanced > Provider Settings > Gemini Content Filter** ("Relaxed for books" by default, "Google default" restores Google's), also on the Gemini model menu.
+- **When a provider cuts a response short, it says so.** A finish reason outside the normal set (a safety or content filter, a recitation block, a refusal) used to surface as "Unexpected response format" when nothing came back, or as a silently shortened answer. The reason is now named: as the error when there is no text, and as a line under a partial answer, which also keeps that answer from being cached as if it were complete. Streamed replies included.
+- **Groq is now a tested provider.** A reader's free key (the #106 report) let the maintainer's model audit run against Groq itself: the live model list, and the full capability battery on every built-in Groq model. The gpt-oss models reason by default with low, medium or high effort, answer up to 65,536 tokens and take the book tools; the compound models take no reasoning setting and no tools, and answer up to 8,192 tokens. Everything the plugin had assumed from Groq's documentation held, so Groq loses its community marker in the provider list.
+
+**Requests that fit your plan (#106).**
+
+Some providers count the answer budget a request *asks for* against a per-minute token allowance, before running anything. Since v0.21.0 the plugin asks for a large budget by default, so on Groq's free plan (8,000 tokens a minute) every request was refused, including one-word dictionary lookups, and the error text blamed book size.
+
+- The plugin now learns your plan's per-minute allowance from the provider's own rate-limit headers (Groq, Cerebras, OpenAI) and sizes the answer budget to fit it before sending. It learns on the first real answer, streamed ones included, and from "Test provider".
+- If a request is refused all the same, a refusal that names its numbers teaches the plan's allowance: one whose answer budget was the problem is sent once more at a budget those numbers allow, and every later request in that session is sized to fit the allowance. A burst refusal (your minute's allowance is already spent) is not resent, because it refills with time.
+- **One honest tip per refusal.** A burst refusal ("you used your minute") says to wait; an admission refusal explains what actually happened, and when the request itself is bigger than the allowance it names the lever for the surface you are on (scope and a new chat in a book chat, folders in the library, the artifact itself in artifact chat). A small one-word lookup refused this way no longer gets the old "lower Max Text Characters" advice, which could not have helped.
+- If the prompt alone cannot fit your plan or the model's context window, a notice says so before sending, and the request is sent anyway rather than blocked locally.
+- A background X-Ray build stopped this way now reports "request too large" instead of "unusable response", and does not retry on a 60-second timer for something deterministic. A per-minute refusal that states no numbers (Anthropic, Gemini, Cerebras) or one the bucket will admit once it refills counts as a burst: the wait tip, and the build retries once after a minute.
+- A pinned answer budget cut to fit the plan tells you it was cut.
+- The self-heal also recognizes OpenRouter's context-window wording, pre-caps the next request from it, and explains the window instead of blaming book text.
+- **The provider's own wait, as a number.** When a refusal names how long to wait (Groq's and OpenAI's "try again in 5s", Gemini's retry delay, or the retry-after header Anthropic and OpenRouter send), the wait tip says "about N seconds" instead of "wait", and a background X-Ray build waits exactly that long before its one retry instead of a fixed minute (a wait past ten minutes stops the build instead, with the resume rows).
+- **Account walls are named as such.** Used-up credits, an empty balance or a spending cap (OpenAI's insufficient_quota, Anthropic's "credit balance is too low" and monthly spend cap, DeepSeek's "Insufficient Balance", OpenRouter's "insufficient credits") get a tip that points at the account instead of "wait and try again", the error stays on screen with a Try again button for after you top up, and a background X-Ray build stops with "account credits or billing" instead of retrying. OpenRouter's "can only afford N tokens" refusal (its credit check counts the whole answer budget, so a low-credit key failed a one-line question) is resent once with that answer budget when N is worth an answer.
+- Error messages now carry the provider's own error code in parentheses, such as "(insufficient_quota)" or "(rate_limit_exceeded)", which is what tells two providers' identical sentences apart.
+- Checked on a real free Groq key (2026-09-07): the plugin learned the 8,000-token allowance from Groq's headers on the first answer and sized the next request to fit. Groq has since changed its limiter: the gpt-oss models now admit the old 32,768 budget (the photographed refusal did not reproduce), while some models carry a separate output-tokens-per-minute bucket (1,000 a minute on the preview Qwen models of that account). Both of Groq's new wordings are in the plugin's corpus: one that can never fit is resent once with a budget under the output limit, a spent bucket gets the wait tip with Groq's own seconds.
+
+**Ollama**
+
+- The plugin asks the server how big the loaded model's context window actually is before sending a prompt that will not fit, warns with the real number, and says afterwards when only part of the request reached the model (Ollama silently cuts the earliest book text to fit its window). New "Context window" row in the Ollama model menu.
+
+**API keys**
+
+- Keys are cleaned to printable characters when read, which heals a key pasted with an invisible character or an interior line break (the Kindle case where a key copied out of a wrapped text file kept returning 401). Saving a key reports how many stray characters were removed.
+
+## Storage
+
+**Per-book plugin data left KOReader's metadata.lua** (#72).
+
+- Chats now live in `<book>.sdr/koassistant_chats.lua`, and every per-book plugin setting in `<book>.sdr/koassistant_book_settings.lua`, next to the cache and notebook files the plugin already kept there.
+- **The move is automatic**: a bulk pass runs once at start-up, with catch-up passes when a book is opened or first touched, and it copies and verifies before removing anything.
+- Consequences: KOReader's **"Reset this document"** no longer wipes your chats and per-book settings, and KOReader's optional metadata archive no longer carries chats.
+- A book store now follows a mid-session change of KOReader's "Book metadata location" instead of leaving its file behind.
+
+**Backup and restore**
+
+- **Book groups are included in backups** (and per-book settings ride along as well).
+- **Restoring a backup made before the chat storage change now imports its chats** instead of restoring them where nothing reads them.
+- "Quick: Fresh start" also clears the leftover chat-import backup folder once migration is complete.
+- Deleting a notebook now also clears the book's pointer to it, so the book no longer refers to a notebook that is gone.
+
+## Other
+
+- **Console Debug is scoped to the plugin**: turning it on brings back the plugin's own tracing without raising KOReader's global log level (which used to bury it under core's per-paint output). Routine tracing is no longer written to `crash.log` when debug is off, and plugin tracing is also emitted when KOReader's own verbose logging is on. A few per-page-turn lines that Console Debug used to write at the info level moved to the debug level too, and the marking line no longer lists entity names.
+- **One long-press menu on every action button.** Holding an action in the highlight menu, the dictionary popup, Quick Actions, an input dialog or the file browser menu now opens the same small menu instead of a description on some surfaces and nothing on others: the description at the top, "Add to" or "Remove from" this menu, "Other placements..." for the rest of its menus, and "Edit...", "Duplicate as custom action..." or "Reset to default". Adding or removing takes effect where you are standing, without a trip to Settings.
+- **New `{user_input}` placeholder for custom actions.** Text typed in the input dialog can be placed inside a prompt where you want it, instead of only being appended at the end. It is in the editor's placeholder list as "Typed Input"; before this the placeholder was offered but never filled in, so the braces were sent to the model as they were.
+- **The update check reads version tags correctly.** Two-part tags (v0.22) are no longer skipped when looking for the newest release, and pre-release tags sort the way they should: rc.11 is newer than rc.9, alpha comes before beta before rc, and a final release beats its own release candidate.
+- The Domain & Research picker opens on the book tab whenever a book is open, from the input dialog's Domain chip and from holding the Quick Settings Domain tile; it used to open on Global until the book had an override of its own.
+- Settings rows that open a picker or a manager (Categories and Depth of New X-Rays, the action and domain managers, the menu ordering managers, backups, the index tools, Test Connection, Check for Updates, About) now leave the settings menu open behind them instead of closing the whole menu.
+- Section-scoped artifacts are back on the Book Hub (only the X-Ray versions group is filtered out there, since the X-Ray browser owns it).
+- **Highlight menu defaults reordered** so the two conditional rows sit last: Translate, Explain, Quick Explain, Summarize, Quick Define, Dictionary, then Look up in X-Ray and Generate Image. Existing users keep their configured list.
+- **Edited book metadata is honored everywhere**: a title or author changed in KOReader's Book information now shows and is sent in artifact and notebook pickers, groups, merge labels, the library scan, notebook filenames, backup labels and the chat history browser. The chat history index carries it and refreshes the moment you edit it.
+- The chat history browser opens without reading each book's sidecar, which is noticeably faster on a large library.
+- The per-book Quick Answer default now resolves the book the action targets, not whichever book is open.
+- Quiz generation asks for answer options of comparable length, specificity and style.
+- Text extraction reaches the document's last page (whole-document builds used to stop at the start of it), SSE `id:` and `retry:` lines from a streaming server are ignored instead of read as data, nested list bullets are drawn as filled dots at every depth instead of hollow circles and squares, and long code lines wrap in the chat viewer instead of being cut off at the right edge.
+
+## Work in Progress
+
+- **Cross-book lookups, the Group Hub and group settings** are new and touch a lot of surfaces. Device reports welcome; the group settings for chat behavior (tools, web search, effort dials, contexts) are planned for the next version.
+- **Request sizing** is verified against a local stub and, for the header path, on a real free Groq key. A live Groq refusal has not been reproduced (Groq admitted the old budget on 2026-09-07), so the refusal path stands on Groq's own wording from the report.
+- **AI Book Tools** stays off by default while retrieval quality matures.
+- **Setup Wizard v2** is still built but not switched on.
+
+## How You Can Help
+
+- **Device reports**, especially on the X-Ray first-build confirmations, cross-book lookups in a series, and the storage move.
+- **Translations**: review passes on [Weblate](https://hosted.weblate.org/engage/koassistant/).
+- **Bug reports and feature requests.**
+
+# v0.22.0
+
+# KOAssistant v0.22.0 Release Notes
+
+> **Behavior changed in this release.** Nothing starts a book's X-Ray on its own any more, and every first build asks first. Three settings were removed with that change: "Also Start X-Rays Automatically", "First Build for New Books" and "Offer Automatic X-Ray for New Books". If you had them on, see the first two bullets below. Existing X-Rays, chats, notebooks and API keys are not affected.
+
+> **Your per-book data moved.** Chats and per-book settings now live in the book's own `.sdr` folder in plugin files instead of inside KOReader's `metadata.lua`. The move happens automatically on first start and nothing is lost; details under Storage.
+
+---
+
+## Spoiler Protection and X-Ray
+
+**Automation only continues what you started.**
+
+- **Nothing starts an X-Ray on its own.** "Automatic X-Ray (all books)" now only keeps up to date the X-Rays you have already started; a book with no X-Ray is left alone. The settings that used to start one ("Also Start X-Rays Automatically", "First Build for New Books" and its coverage question, "Offer Automatic X-Ray for New Books") are gone. Stale values are ignored, nothing needs migrating.
+- **Every first build asks first.** The two ways to start a background X-Ray are the creation form's "In checkpoints, as I read (automatic)" pick and the per-book "Automatic X-Ray: On" switch. Both now say how many background requests they need right now and wait for **Start**; **Cancel** puts the switch back the way it was and nothing runs. (When nothing needs building right now, the switch just turns on.) A book left On while it was closed gets the same question the moment the first build would start, with "Cancel (turn Automatic X-Ray off)" as the way out. Books that already have an X-Ray keep being extended silently, which is what Automatic means.
+- **Deleting an X-Ray now quiets automation for that book**, so nothing re-asks or restarts behind you after a delete.
+- The Automatic X-Ray cooldown is cleared when a build chain finishes; a completed chain used to silently decline page-turn triggers for a whole cooldown.
+
+**New: depth.**
+
+- **Depth of New X-Rays: Light / Standard / Deep.** Light is one line per entry and only recurring figures and turning points; Standard (the default, unchanged from before) is a few sentences per entry; Deep is longer entries with richer connections. Set the default in **Settings > Reading & Library > X-Ray > Depth of New X-Rays**, per book in **Book Settings > X-Ray > New X-Ray depth**, or from the creation form. It applies to creates and rebuilds; checkpoints and updates keep the depth the X-Ray was started with.
+
+**Categories.**
+
+- **Presets renamed and re-cut**: **All categories**, **Characters and story (people, timeline)**, **Reference (everything except the timeline)**, **Characters only**. The timeline turned out to be the single heaviest block of an X-Ray, so "Reference" is now the cheap pick and cost lives on the depth dial instead. The picker separates presets from picking categories one by one.
+
+**Creation form and checkpoints.**
+
+- Spacing, categories and depth sit on one small options row above the action buttons, each button showing its current value, and the categories and depth pickers open on the book tab from there and from Book Settings. On a plain extend the categories and depth buttons show what the X-Ray was started with (they are locked to it), not the current default.
+- A one-step checkpoint plan stays pickable instead of disappearing, and the 100%-covered "Rebuild X-Ray..." row opens the rebuild form directly (no more deleting first).
+- A build that only covers up to your position no longer spends a request on a separate introduction it would immediately supersede.
+- The next checkpoint starts building only after the current one installs, and builds from the live copy, so entity renames and merges you made carry forward.
+- A checkpoint installs only once you actually reach its coverage (it used to install a hair early).
+
+**Entity cards and marking.**
+
+- **Upcoming entities reveal in stages.** An entity known only from the checkpoint built ahead of you now shows name and category first, one tap adds the first sentence, and another opens the full entry behind the usual spoiler confirmation. Two new settings: **Upcoming Entity Cards** (name only / first sentence right away) and **Card Shows** (first sentence only / full entry, for entities already in your installed X-Ray). Both can be overridden per book. When the tap landed on an alias, the card stays at name only even with "first sentence right away", since the sentence would give away which entry the alias belongs to.
+- **The peek reads one checkpoint, never a later one**: the ahead card now uses the lowest built checkpoint that reaches your position, so an alias folded in at 100% cannot reveal itself on sight.
+- Tapping a marked alias opens the card on the words you tapped, not on the entry name (which gave the link away).
+- A name inside another entity's longer name now counts as the longer entity's mention everywhere: marks, mention lists, chapter appearances and counts.
+- Names whose own edge is punctuation ("D.B.", "Jr.") are marked again.
+- The first-sentence cut on cards handles initials, titles, CJK sentence ends and the Arabic question mark instead of stopping at the first period.
+- The card no longer shows the whole entry when the first sentence ends in a non-breaking space, or when the next word starts lowercase after an ordinary word (a name like "van" or "de"); only short abbreviations such as "vs." still hold the sentence open. This is why some cards were cut and others were not.
+
+**Other X-Ray.**
+
+- **One more JSON repair**: a key that arrives missing its opening quote is restored, so a long build is not lost to it (the same family of fixes as v0.21.2).
+- Artifact caches now record the request's token usage, shown on the artifact viewer's Info button.
+- Section runs of **Counterarguments** now cache and browse like the other section artifacts.
+- The X-Ray browser's root Mentions view defaults to the whole book once the book is marked Finished.
+- A typeless non-fiction X-Ray is no longer read as a fiction one (it used to render every category empty).
+
+## Book Groups and Cross-Book X-Ray (#90)
+
+The headline of this cycle: in a group, an X-Ray lookup answers from the whole group, not just the open book, and every group now has its own page and its own settings.
+
+- **Lookups reach the group.** Tapping a marked word, an exact dictionary or highlight match, an entity card, and the X-Ray browser's search all fall back, in order, to this book's carried list and then to the group's other X-Rays, nearest book first. Cards and rows name their source ("Carried from *Title*", "From *Title*'s X-Ray"), and a hit from another book offers **"Open in *Title*'s X-Ray"** and **"Add to this book's carried list"**.
+- **The browser's search results fold the group in** as "From *Title*" groups, under the carried entries, with a plain "Nothing in the earlier books either" (or "Nothing in the other books of the group either") when there is nothing anywhere. No second tap.
+- **Carried lists keep themselves up to date.** Editing a group (adding, removing, reordering, changing its kind) or writing any of its X-Rays re-seeds the members' carried lists in the background. Removing a carried entry is remembered, so it does not come back.
+- **Later volumes stay closed.** In an ordered series a lookup only looks past a book once that book is read (marked **Finished**, or read to its last page) or its own spoiler protection is off. Volume 1 unread and protected keeps volumes 2 and 3 out of reach, whatever their own settings say. Passive marking, entity cards and matching selections never reach past that chain.
+- **The reveal is one book at a time.** When something is held back, the results list and the no-results dialog carry a row naming the next volume ("Search *Title* too (may contain spoilers)..."), the confirmation names it too, and each confirmation opens exactly one more book. Nothing sticks: every search starts from the chain again.
+- Project groups share in every direction between all members; plain groups share nothing.
+- The "add this as an alias of an existing entry" offer now also appears on books that have section X-Rays (it used to fall back to a bare message there).
+- **Series suggestion sees edited metadata**: a series typed into KOReader's own Book information editor now counts like one read from the file.
+- Installing a checkpoint no longer drops carried entries and aliases that existed only in the live copy.
+- **The group jump is spoiler-safe.** From an X-Ray entry, the "→ Group" popup lists a later volume that is still behind the spoiler chain as "(later in the series)" without checking whether the entity appears in it (knowing that a character returns is already a spoiler), and opens it only after the same confirmation the search reveal uses. From an entity page, the other book's entry opens as a read-only view over the page instead of switching X-Rays. Entity cards and pages also say where else in the group the entity appears ("Also in *Title*'s X-Ray"), never naming a later volume the spoiler chain still holds back.
+
+**Group Hub and group settings.**
+
+- **Every group has a page.** Main menu > Groups opens the Groups list: one row per group with its kind icon and "Kind · N books"; tap for the group's hub, hold to move, rename, change the kind or delete it, and the title-bar menu creates groups (blank, from a folder, from a collection, or with the open book) and sorts the list by name or by kind (a one-shot sort; you can still move groups by hand). The list itself also offers "New group from series ..." when the open book carries a series tag.
+- **The Group Hub** shows a group's action rows first (Group Settings, the X-Ray fold row, and a Series/Project/Group Chat/Action row that opens the library dialog with the members pre-selected), then the members in order (tap for a book's Book Hub, hold to move, open or remove it), then the add rows. Its title-bar menu carries the add flows, Kind, Rename and Delete; the up-arrow returns to the list. The Book Hub's Group row, the artifact viewers' "→ Group" button and the Quick Actions "Group Hub" utility all land on the book's hub (a chooser when it is in several groups); the X-Ray browser's own "→ Group" keeps opening the members popup, which has a "Group hub..." row. A Book Hub opened from a group gets an up-arrow back to it.
+- **Group settings.** A group can set the same settings a book can: domain, research mode, Background, spoiler protection, automatic X-Ray, new X-Ray categories and depth, and the three languages, through the same pickers ("For this group"). Setting a value offers to apply it to every member; members then follow the group ("Follow group X (value)" on their Book Settings rows and in every picker) until they pick their own value, which the Group Settings screen lists as "not following" with "Re-apply to all". Books added to a group that sets values are asked once; leaving or deleting a group returns its books to the global settings, and a book whose group no longer exists (a groups file restored from an older backup, say) simply follows the global settings again.
+- **Collections as a source.** The book picker browses KOReader collections beside history and folders; groups can be created from a collection or filled with one, and the series scan can look in a collection.
+- A closed book's chat opened beside another open book (from a group hub, for instance) gets its own dialog again instead of the open book's actions and title.
+- Crossing the next built checkpoint installs it at any spacing; a spacing above 25% used to refuse the install (for good with automatic X-Ray off).
+
+## Chat Viewer
+
+- **Math renders as readable formulas** (#105). LaTeX in a response is shown with Greek letters, real operators, superscripts and subscripts, accents, roots, and fractions as `a/b`, with display formulas centered. Markdown view only, and display only: saved chats, copies and exports keep the original notation, which Obsidian and similar apps render fully. Toggle in **Settings > Display Settings > Rendering > Render Math Formulas** (on by default).
+- **New Window Size setting** (Standard / Expanded) in **Settings > Display Settings > Window Size** for chat, artifact, translate, dictionary and quiz windows, also on each window's gear menu. Expanded leaves only a hairline around the window; compact dictionary popups are unaffected.
+- Indented continuation lines under a list item render as part of that item instead of an empty bullet.
+- A response whose markdown is cut short mid-code-fence renders instead of falling back to plain text, and emphasis characters inside math no longer scramble the rest of the answer.
+- **Exports no longer fail on Kindle** ("Invalid argument"): filenames built from a title are cut on a character boundary.
+- **Hold Close to get back to the page.** A long press on the Close button closes the chat window, any dictionary windows under it and the highlight menu in one gesture, instead of tapping through them one at a time.
+- A reply that arrives while you have scrolled back to reread lands where you were reading, not on the last question marker (from the second reply on, the marker used to win).
+- Pressing Stop or closing the window in the moment after a streamed answer has finished, while the plugin is still reading the provider's trailing rate-limit information, no longer reports the complete answer as cancelled.
+
+## Providers and Models
+
+- **NVIDIA is a new built-in provider**: free developer program, email only, no card and no identity check. Curated model list from a live catalog probe, reasoning profile, book tools on the models where forced tool use actually worked, no web search. Models retired by the host on 2026-08-26 are pruned, response parsing (including reasoning content) is fixed, and speed tiers are placed from measured latency.
+- **Test provider** now shows the server's own error detail when a reachability check fails, instead of a bare failure.
+- **OpenCode Zen and OpenCode Go are two new providers on one account** (#107): Zen is the pay-as-you-go catalog of open-weight models, Go the subscription with its own model list. Zen's built-in list grew by nine models (GLM 5, 5.1 and 5.2, MiniMax M2.5, Kimi K2.5, Qwen 3.5 Plus and 3.6 Plus, and two experimental ids), each with its own reasoning and output profile. Each has its own key entry (the same key string under `opencode` and `opencode_go`), both send the conversation header OpenCode requires, and reasoning effort is one setting for both. GPT, Claude and Gemini through OpenCode are not supported yet (they use other endpoints).
+- **One conversation id per chat.** The id a chat is saved under is the id the wire saw, and it rides to the hosts that use one (OpenCode's session header, OpenRouter's session id, OpenAI's prompt cache key). No other host receives it.
+- **Gemini's content filter is relaxed for books by default.** Google's own filter blocks answers about violent or sexual passages, and the reply used to arrive empty and unexplained. The plugin now turns the four adjustable filter categories off for its own requests. **Settings > Advanced > Provider Settings > Gemini Content Filter** ("Relaxed for books" by default, "Google default" restores Google's), also on the Gemini model menu.
+- **When a provider cuts a response short, it says so.** A finish reason outside the normal set (a safety or content filter, a recitation block, a refusal) used to surface as "Unexpected response format" when nothing came back, or as a silently shortened answer. The reason is now named: as the error when there is no text, and as a line under a partial answer, which also keeps that answer from being cached as if it were complete. Streamed replies included.
+- **Groq is now a tested provider.** A reader's free key (the #106 report) let the maintainer's model audit run against Groq itself: the live model list, and the full capability battery on every built-in Groq model. The gpt-oss models reason by default with low, medium or high effort, answer up to 65,536 tokens and take the book tools; the compound models take no reasoning setting and no tools, and answer up to 8,192 tokens. Everything the plugin had assumed from Groq's documentation held, so Groq loses its community marker in the provider list.
+
+**Requests that fit your plan (#106).**
+
+Some providers count the answer budget a request *asks for* against a per-minute token allowance, before running anything. Since v0.21.0 the plugin asks for a large budget by default, so on Groq's free plan (8,000 tokens a minute) every request was refused, including one-word dictionary lookups, and the error text blamed book size.
+
+- The plugin now learns your plan's per-minute allowance from the provider's own rate-limit headers (Groq, Cerebras, OpenAI) and sizes the answer budget to fit it before sending. It learns on the first real answer, streamed ones included, and from "Test provider".
+- If a request is refused all the same, a refusal that names its numbers teaches the plan's allowance: one whose answer budget was the problem is sent once more at a budget those numbers allow, and every later request in that session is sized to fit the allowance. A burst refusal (your minute's allowance is already spent) is not resent, because it refills with time.
+- **One honest tip per refusal.** A burst refusal ("you used your minute") says to wait; an admission refusal explains what actually happened, and when the request itself is bigger than the allowance it names the lever for the surface you are on (scope and a new chat in a book chat, folders in the library, the artifact itself in artifact chat). A small one-word lookup refused this way no longer gets the old "lower Max Text Characters" advice, which could not have helped.
+- If the prompt alone cannot fit your plan or the model's context window, a notice says so before sending, and the request is sent anyway rather than blocked locally.
+- A background X-Ray build stopped this way now reports "request too large" instead of "unusable response", and does not retry on a 60-second timer for something deterministic. A per-minute refusal that states no numbers (Anthropic, Gemini, Cerebras) or one the bucket will admit once it refills counts as a burst: the wait tip, and the build retries once after a minute.
+- A pinned answer budget cut to fit the plan tells you it was cut.
+- The self-heal also recognizes OpenRouter's context-window wording, pre-caps the next request from it, and explains the window instead of blaming book text.
+- **The provider's own wait, as a number.** When a refusal names how long to wait (Groq's and OpenAI's "try again in 5s", Gemini's retry delay, or the retry-after header Anthropic and OpenRouter send), the wait tip says "about N seconds" instead of "wait", and a background X-Ray build waits exactly that long before its one retry instead of a fixed minute (a wait past ten minutes stops the build instead, with the resume rows).
+- **Account walls are named as such.** Used-up credits, an empty balance or a spending cap (OpenAI's insufficient_quota, Anthropic's "credit balance is too low" and monthly spend cap, DeepSeek's "Insufficient Balance", OpenRouter's "insufficient credits") get a tip that points at the account instead of "wait and try again", the error stays on screen with a Try again button for after you top up, and a background X-Ray build stops with "account credits or billing" instead of retrying. OpenRouter's "can only afford N tokens" refusal (its credit check counts the whole answer budget, so a low-credit key failed a one-line question) is resent once with that answer budget when N is worth an answer.
+- Error messages now carry the provider's own error code in parentheses, such as "(insufficient_quota)" or "(rate_limit_exceeded)", which is what tells two providers' identical sentences apart.
+- Checked on a real free Groq key (2026-09-07): the plugin learned the 8,000-token allowance from Groq's headers on the first answer and sized the next request to fit. Groq has since changed its limiter: the gpt-oss models now admit the old 32,768 budget (the photographed refusal did not reproduce), while some models carry a separate output-tokens-per-minute bucket (1,000 a minute on the preview Qwen models of that account). Both of Groq's new wordings are in the plugin's corpus: one that can never fit is resent once with a budget under the output limit, a spent bucket gets the wait tip with Groq's own seconds.
+
+**Ollama**
+
+- The plugin asks the server how big the loaded model's context window actually is before sending a prompt that will not fit, warns with the real number, and says afterwards when only part of the request reached the model (Ollama silently cuts the earliest book text to fit its window). New "Context window" row in the Ollama model menu.
+
+**API keys**
+
+- Keys are cleaned to printable characters when read, which heals a key pasted with an invisible character or an interior line break (the Kindle case where a key copied out of a wrapped text file kept returning 401). Saving a key reports how many stray characters were removed.
+
+## Storage
+
+**Per-book plugin data left KOReader's metadata.lua** (#72).
+
+- Chats now live in `<book>.sdr/koassistant_chats.lua`, and every per-book plugin setting in `<book>.sdr/koassistant_book_settings.lua`, next to the cache and notebook files the plugin already kept there.
+- **The move is automatic**: a bulk pass runs once at start-up, with catch-up passes when a book is opened or first touched, and it copies and verifies before removing anything.
+- Consequences: KOReader's **"Reset this document"** no longer wipes your chats and per-book settings, and KOReader's optional metadata archive no longer carries chats.
+- A book store now follows a mid-session change of KOReader's "Book metadata location" instead of leaving its file behind.
+
+**Backup and restore**
+
+- **Book groups are included in backups** (and per-book settings ride along as well).
+- **Restoring a backup made before the chat storage change now imports its chats** instead of restoring them where nothing reads them.
+- "Quick: Fresh start" also clears the leftover chat-import backup folder once migration is complete.
+- Deleting a notebook now also clears the book's pointer to it, so the book no longer refers to a notebook that is gone.
+
+## Other
+
+- **Console Debug is scoped to the plugin**: turning it on brings back the plugin's own tracing without raising KOReader's global log level (which used to bury it under core's per-paint output). Routine tracing is no longer written to `crash.log` when debug is off, and plugin tracing is also emitted when KOReader's own verbose logging is on. A few per-page-turn lines that Console Debug used to write at the info level moved to the debug level too, and the marking line no longer lists entity names.
+- **One long-press menu on every action button.** Holding an action in the highlight menu, the dictionary popup, Quick Actions, an input dialog or the file browser menu now opens the same small menu instead of a description on some surfaces and nothing on others: the description at the top, "Add to" or "Remove from" this menu, "Other placements..." for the rest of its menus, and "Edit...", "Duplicate as custom action..." or "Reset to default". Adding or removing takes effect where you are standing, without a trip to Settings.
+- **New `{user_input}` placeholder for custom actions.** Text typed in the input dialog can be placed inside a prompt where you want it, instead of only being appended at the end. It is in the editor's placeholder list as "Typed Input"; before this the placeholder was offered but never filled in, so the braces were sent to the model as they were.
+- **The update check reads version tags correctly.** Two-part tags (v0.22) are no longer skipped when looking for the newest release, and pre-release tags sort the way they should: rc.11 is newer than rc.9, alpha comes before beta before rc, and a final release beats its own release candidate.
+- The Domain & Research picker opens on the book tab whenever a book is open, from the input dialog's Domain chip and from holding the Quick Settings Domain tile; it used to open on Global until the book had an override of its own.
+- Settings rows that open a picker or a manager (Categories and Depth of New X-Rays, the action and domain managers, the menu ordering managers, backups, the index tools, Test Connection, Check for Updates, About) now leave the settings menu open behind them instead of closing the whole menu.
+- Section-scoped artifacts are back on the Book Hub (only the X-Ray versions group is filtered out there, since the X-Ray browser owns it).
+- **Highlight menu defaults reordered** so the two conditional rows sit last: Translate, Explain, Quick Explain, Summarize, Quick Define, Dictionary, then Look up in X-Ray and Generate Image. Existing users keep their configured list.
+- **Edited book metadata is honored everywhere**: a title or author changed in KOReader's Book information now shows and is sent in artifact and notebook pickers, groups, merge labels, the library scan, notebook filenames, backup labels and the chat history browser. The chat history index carries it and refreshes the moment you edit it.
+- The chat history browser opens without reading each book's sidecar, which is noticeably faster on a large library.
+- The per-book Quick Answer default now resolves the book the action targets, not whichever book is open.
+- Quiz generation asks for answer options of comparable length, specificity and style.
+- Text extraction reaches the document's last page (whole-document builds used to stop at the start of it), SSE `id:` and `retry:` lines from a streaming server are ignored instead of read as data, nested list bullets are drawn as filled dots at every depth instead of hollow circles and squares, and long code lines wrap in the chat viewer instead of being cut off at the right edge.
+
+## Work in Progress
+
+- **Cross-book lookups, the Group Hub and group settings** are new and touch a lot of surfaces. Device reports welcome; the group settings for chat behavior (tools, web search, effort dials, contexts) are planned for the next version.
+- **Request sizing** is verified against a local stub and, for the header path, on a real free Groq key. A live Groq refusal has not been reproduced (Groq admitted the old budget on 2026-09-07), so the refusal path stands on Groq's own wording from the report.
+- **AI Book Tools** stays off by default while retrieval quality matures.
+- **Setup Wizard v2** is still built but not switched on.
+
+## How You Can Help
+
+- **Device reports**, especially on the X-Ray first-build confirmations, cross-book lookups in a series, and the storage move.
+- **Translations**: review passes on [Weblate](https://hosted.weblate.org/engage/koassistant/).
+- **Bug reports and feature requests.**
+
 # v0.21.2
 
 # KOAssistant v0.21.2 Release Notes
@@ -590,345 +938,3 @@ Setting expectations for the new surfaces:
 * @bmanturner made their first contribution in https://github.com/zeeyado/koassistant.koplugin/pull/101
 
 **Full Changelog**: https://github.com/zeeyado/koassistant.koplugin/compare/v0.20.0...v0.21.0
-
-# v0.20.0
-
-# KOAssistant v0.20.0 Release Notes
-
-> **Settings reset recommended**. After updating, go to **Settings → Backup & Reset** and reset the Quick Actions panel, Quick Settings panel, and Input Dialog actions to pick up new defaults. Custom actions, API keys, notebooks, chats, and cached artifacts are not affected. Old reasoning settings are cleared on first launch (everything starts at the new "Default" stance; re-apply per-model preferences if you had custom setups); the chapter-quiz trigger level is reset once to the new default because the option meanings changed.
-
----
-
-## Per-Book Settings
-
-A single **Book Settings** screen collects every per-book override in one place, reachable from the file-browser long-press, the Quick Actions panel, and the input-dialog gear menu.
-
-- **Per book:** domain, research mode, spoiler-free chat, book-info level (None / Title & author / + position), AI title & author (use real metadata, set a custom value, or send none), quiz behavior, and translation / dictionary / response languages.
-- **"(N customized)"** indicator and a one-tap **Reset** so you can always see and clear what's been changed.
-- Settings resolve **action > book > global**, so a book's preferences quietly override your defaults.
-
----
-
-## Interactive Chapter Quizzes
-
-Comprehension quizzes that trigger automatically at the end of each chapter, with a dedicated viewer.
-
-- **Smart trigger:** fires on finishing a chapter, with substance gates (minimum chapter length and reading time) so short front-matter and tiny sections don't interrupt you. Configurable depth; per-book "Not for this book" / "Quiz settings…" controls.
-- **Quiz viewer:** one question at a time: multiple-choice (auto-graded), short-answer and discussion (self-graded), score tracking, and a question picker. Answers persist: reopen to **Review** or **Take Again**.
-- Robust against malformed model output (JSON repair), and cached as a reusable artifact (Copy / Export / Save to Notebook).
-
----
-
-## Library & Reading Insights
-
-Recommendations grounded in your actual library and reading habits, computed on-device.
-
-- **Folder scanning:** point KOAssistant at your book folders to build a private catalog (title, author, status, series, progress). Triple-gated for privacy; raw data never leaves the device.
-- **Library actions:** *Next Read*, *Discover New*, *Analyze Library*, and *Suggest from Library* (with an optional end-of-book suggestion popup).
-- **Reading-stats engagement groups:** "deep reads", "recently finished", "stalled", and "briefly started" lists, computed locally from KOReader's statistics; only curated book lists are ever used, never raw stats.
-- **Redesigned library dialog:** opens to actions (not a book picker), with a multi-book picker that switches between reading history and folders, plus search and filters. Cross-book **Notes Analysis** across your library.
-- **File-browser actions read closed books:** actions run from the file browser can now use a book's highlights, annotations, notebook, and reading progress straight from its sidecar, no need to open the book first. The same privacy gating applies.
-
----
-
-## Spoiler-Free Mode
-
-Keep the AI from revealing anything past your current page. A global toggle plus an optional per-session checkbox; injects a spoiler-aware instruction (with your reading progress) into book/highlight chat. Also respected by the new AI Book Tools when reading the text.
-
----
-
-## Reasoning, Reworked
-
-Reasoning is now controlled **per model** instead of one global on/off switch.
-
-- **Global stance dial:** Minimal / Default / Maximum, applied to each model as far as it allows.
-- **Per-model overrides:** set effort/budget, on/off, or pin a model to its own **API default** regardless of the global stance; the per-model list shows both your setting and the effective state, and a Quick Settings chip shows the effective state at a glance.
-- The Quick Settings reasoning popup can now reach **every model** (not just the active one) via its "Other models…" browser.
-- Full support for adaptive thinking on **Claude Sonnet 5** and **Claude Opus 4.7 / 4.8** (including the sampling-parameter constraints those models require).
-- Old reasoning settings are cleared on first launch; everything starts at the new "Default" stance, so re-apply per-model preferences if you had custom setups.
-
----
-
-## AI Book Tools (Experimental)
-
-Opt-in **`enable_tool_workflows`** lets the AI call local tools (search the text, read a page, view the table of contents) to ground its answers in what the book actually says. Works on **Gemini** and **Claude**; spoiler-free mode bounds what it can read. Off by default; behavior may still change. Requires "Allow Text Extraction"; responses don't stream while tools are running.
-
----
-
-## New Provider & Model Updates
-
-- **Requesty** added as a new OpenAI-compatible provider (now **19 built-in providers**).
-- **Claude Sonnet 5** added as the new Anthropic default (Sonnet 4.6 remains available).
-- Across-the-board mid-2026 model refresh (new OpenAI, Kimi, GLM, and Gemini entries; retired deprecated models). Custom models now appear at the top of the model list.
-
----
-
-## Translations
-
-- **Four new languages: Finnish, Bengali, Urdu, and Persian (Farsi)**, bringing the total to 24.
-- Full refresh across all languages for this release's ~330 new and changed strings.
-- Fixed translations silently falling back to English for strings containing newlines or quotes.
-- As always, machine translations are marked "needs review"; corrections are very welcome on [Weblate](https://hosted.weblate.org/engage/koassistant/). Thanks to **Seruschl** (German) and **ferdinanlima** (Brazilian Portuguese) for their review contributions.
-
----
-
-## Other Improvements
-
-- **Data, Backup & Reset:** a single internal registry now tracks every file and setting the plugin owns, so resets and backups are consistent. New **"Validate Data Indexes"** tool under Backup & Reset repairs stale chat/artifact/notebook/pinned indexes on demand.
-- **Long-press any action button** (input dialog, Quick Actions, highlight menu, file browser) to see what it does.
-- **Research mode** can now be toggled manually from the Domain & Research picker (resolution: action > book > DOI auto-detection > global).
-- New **"Re-run Setup Wizard"** under Backup & Reset; fixed the wizard stalling when the language picker was dismissed.
-- **Enhanced text selection** in KOReader's dictionary and text-viewer popups (opt-in).
-- New context placeholders for custom actions: **`{page_text}`** (current visible page) and **`{page_number}`**.
-- New **"Up to current position (NN%)"** scope in the source/scope picker for whole-document actions.
-- **Dictionary popup** updated for KOReader's new button API (works on current and older KOReader).
-- Web-search controls are now shown only for providers that actually support it, with honest on/off state.
-
----
-
-## Stability & Performance
-
-- **No more UI freezes on slow/flaky Wi-Fi:** removed blocking DNS checks from every interaction; dialogs now open instantly offline, with the Wi-Fi prompt deferred to send time.
-- **Faster startup:** removed eager module loading and chat-index validation from the launch path.
-- **Lighter update checks:** the auto update check now runs at most once a day (instead of every start), fetches a much smaller payload, waits until startup rendering is done, and reports clearer errors when GitHub is unreachable.
-- Fixed **macOS** subprocess networking hangs (DNS-after-fork).
-- Fixed a **crash when deleting a book** that had KOAssistant data.
-- **Boox / Snapdragon (Adreno) devices:** worked around a GPU-driver crash on background requests. The durable fix is in recent KOReader builds; updating KOReader is recommended.
-
----
-
-## Action Changes
-
-- New built-in **News Update** action (general chat): fetches today's top stories via web search, with headlines, summaries, and links.
-- **Explain** no longer performs web search by default (#75).
-- Domain context enabled for six reading-analysis actions; the `reader_assistant` behavior override was removed from seven built-ins (they now follow your selected behavior).
-- Renames: "Library Actions" → **"Library Chat/Action"**; quiz "Essay" → **"Discussion"**.
-- Prompt-quality improvements across several built-in actions.
-
----
-
-## Bug Fixes
-
-- **Fixed a serious data-loss race** where saving a response to a note (or saving a chat) while the book was open could revert the book's highlights, annotations, and reading progress (#72).
-- Fixed library chats silently losing messages on resume, and manual library-chat saves misrouting into general storage.
-- Fixed pinned artifacts being permanently lost when a pinned result ended in a tricky bracket sequence.
-- Fixed a crash in the starred-chats browser menu.
-- **Privacy hardening:** cached artifacts now remember whether your highlights went into them and stop re-sending that data once you revoke sharing, including on incremental "Update to X%" runs; the trusted-provider bypass is now evaluated against the provider an action *actually* sends to (not the global one) when an action pins its own provider.
-- Local providers set up via Quick Setup (LM Studio, llama.cpp, …) no longer wrongly require an API key.
-- Fixed a fresh-install crash that silently disabled the plugin when `configuration.lua` had no `features` table.
-- Spoiler-free mode no longer leaks its instruction into predefined actions or artifact chats.
-- A missing or unplugged scan folder (e.g. a removed SD card) no longer crashes library actions.
-- Fixed X-Ray highlight search crashing on recent KOReader nightlies.
-- Streaming errors from local providers are now shown as errors instead of being saved into the chat as the AI's answer.
-- Fixed continue-chat sending the placeholder API key instead of your configured key (401 errors).
-- Fixed `configuration.lua` overrides not always taking effect, and added an error notice when `configuration.lua` fails to parse.
-- Fixed Groq HTTP 400/413 on X-Ray/Recap: output-token clamps for Groq models plus a clear size-limit hint when a provider rejects an oversized request (#89).
-- Fixed a crash in the trusted-providers dialog.
-- Fixed HTTP 400 when enabling reasoning on GPT-5.4 (missing temperature constraint).
-- Fixed garbled (non-JSON) API error messages on e-ink / non-macOS devices, and mid-stream error detection.
-- Fixed subprocess networking on dual-stack (IPv4/IPv6) networks.
-- API keys entered in the GUI are now trimmed of accidental whitespace.
-- Copying a book (not just moving it) now brings its KOAssistant sidecar data along.
-- Hardened X-Ray and quiz JSON parsing against malformed model output.
-- Numerous smaller fixes across chat, artifacts, and providers.
-
----
-
-## For Custom Action Users
-
-- New **`{page_text}`** / **`{page_text_section}`** and **`{page_number}`** placeholders are available in any action.
-- New library placeholders: **`{library}`** / **`{library_section}`** and the engagement groups (**`{deep_reads_section}`**, **`{recently_finished_section}`**, **`{stalled_section}`**, **`{briefly_started_section}`**), gated by the new `use_library` / `use_advanced_stats` flags; plus **`{spoiler_free_nudge}`** for spoiler-aware prompts.
-- The action-creator wizard is now **3 steps** (domain selector built in; behavior moved to Advanced); the confusing "both" compound context was removed from the wizard.
-- The new **"Up to current position"** scope works for whole-document actions in the source picker.
-
----
-
-## What's Changed
-* Library redo by @zeeyado in https://github.com/zeeyado/koassistant.koplugin/pull/60
-* Disable web search for Explain action by @LK4D4 in https://github.com/zeeyado/koassistant.koplugin/pull/75
-* Add Requesty as an OpenAI-compatible provider by @Thibaultjaigu in https://github.com/zeeyado/koassistant.koplugin/pull/88
-
-## New Contributors
-* @LK4D4 made their first contribution in https://github.com/zeeyado/koassistant.koplugin/pull/75
-* @Thibaultjaigu made their first contribution in https://github.com/zeeyado/koassistant.koplugin/pull/88
-* @schuay made their first contribution in https://github.com/zeeyado/koassistant.koplugin/issues/79
-
-**Full Changelog**: https://github.com/zeeyado/koassistant.koplugin/compare/v0.19.1...v0.20.0
-
-# v0.19.1
-
-## KOAssistant v0.19.1 Release Notes
-
-This is a maintenance and bugfix release to v0.19.0 (release notes below), addressing a long-standing issue with subprocess hanging.
-
-Fixed a bug where API requests, connection tests, and update checks could hang indefinitely on some devices. The plugin now detects subprocess completion via pipe EOF instead of relying solely on `waitpid`, which can be unreliable on certain OS kernels. Also fixed: Connection test now correctly uses API keys entered through the GUI settings.
-
-**Changelog**: https://github.com/zeeyado/koassistant.koplugin/compare/v0.19.0...v0.19.1
-
-# KOAssistant v0.19.0 Release Notes
-
-> **Settings reset recommended.** After updating, go to **Settings → Backup & Reset**
-> and reset Quick Actions panel, Quick Settings panel, and Input Dialog actions to pick up new defaults.
-> Or do a full Reset. Custom actions, API keys, notebooks, chats, and cached artifacts are not affected.
-
----
-
-## Section Artifacts & Source Selection
-
-Artifacts are no longer limited to the full document. You can now generate X-Rays, summaries, analyses, and other artifacts for specific chapters or sections.
-
-- **Section picker**: Choose any chapter or section from the book's table of contents.
-- **Source selection popup**: Before running, choose scope (full document or section) and source (full text, cached summary, or AI knowledge only). Remembers your last choice per action.
-- **Section summaries**: Generate section-specific summaries on the fly — cached and reusable by other actions.
-- **Smart X-Ray lookup**: Automatically selects the most relevant X-Ray for your current page (section > main > prompt to choose).
-- **Cross-section search**: "Look up in X-Ray" searches across all section and main X-Rays simultaneously.
-- **Artifact unification**: All artifact actions now use the same View/Update/Regenerate workflow. Previously, some cached silently in the background.
-- **→ Chat button**: Available in all artifact viewers — ask follow-up questions with the artifact as context.
-
-Applies to: X-Ray, Recap, Summary, Analysis, Analyze Notes, Key Arguments, Discussion Questions, Quiz, Extract Insights, X-Ray Simple, and Reading Guide.
-
----
-
-## Pinned Artifacts & Starred Chats
-
-- **Pin any AI response** as a named artifact (hold → "Pin to Artifacts"). Appears in Artifacts browser and popups.
-- **Star conversations** to mark important chats. Starred chats appear in a virtual "Starred" folder in Chat History.
-
----
-
-## Research Mode
-
-Automatic academic paper detection and adaptation.
-
-- **DOI detection** from document metadata and first-page text.
-- **Academic prompt tracks**: X-Ray uses research categories (Key Concepts, Methodology, Findings, Referenced Works), About becomes a structured overview, Find Similar focuses on related literature.
-- **Auto web search**: DOI-detected documents enable web search for relevant actions.
-
----
-
-## Notebook Vault Storage
-
-Notebooks can now be stored in a central folder or a custom location (e.g., an Obsidian vault), not just alongside the book.
-
-- Three save locations: alongside book (default), central folder, or custom path.
-- Vault/central modes use `Author — Title.md` filenames with YAML frontmatter.
-- Switching location auto-migrates existing notebooks with collision handling.
-- Notebook button now opens a popup: Add to Notebook / View / Edit.
-
----
-
-## Multi-Book Action Launcher
-
-Multi-book actions (Compare, Find Common Themes, Analyze Collection, Quick Summaries, Reading Order, Recommend) now use a dedicated book picker with search and filtering, instead of requiring navigation to each book. New action: **Recommend Books**.
-
----
-
-## Action Changes
-
-- **AI Wiki**: Encyclopedia-style entries from highlights or from the X-Ray browser (per-item, cached as artifacts).
-- **Reading Guide**: Spoiler-free guidance for what to watch for as you read. Adapts to genre.
-- **Grammar**: Sentence-level grammatical breakdown — word-by-word with optional constituency parse. Language-aware.
-- **Smart actions removed**: Explain/Analyze in Context Smart replaced by the source selection popup on the standard actions.
-- **Action names shortened**: "Book Info" → "About", "Analyze My Notes" → "Analyze Notes", etc.
-- **In-context trio clarified**: Explain (comprehension), Analyze (reader-focused), Thematic Connection (craft analysis) — less overlap.
-- **Deep Analysis**: Restructured for dense, scannable output.
-
----
-
-## New Providers
-
-### Z.AI
-
-17th built-in provider. GLM models (GLM-4.5-Flash free tier) with regional endpoints (international/China) and toggleable thinking for GLM-4.5+ models.
-
-### Perplexity
-
-18th built-in provider. Sonar models with always-on web search, citations as clickable footnotes, and reasoning extraction for `sonar-reasoning-pro`.
-
-Streaming `<think>` tag extraction (also benefits Groq, Together, Fireworks, SambaNova, and Ollama).
-
-### Local Provider Presets
-
-Quick setup for LM Studio, llama.cpp, Jan, vLLM, KoboldCpp, LocalAI. Pre-fills name and URL, no API key required.
-
----
-
-## Reasoning & Model Updates
-
-### Reasoning Expansion
-
-New effort-level controls for always-on reasoning providers:
-
-| Provider | Models |
-|----------|--------|
-| Groq | gpt-oss-120b, gpt-oss-20b, qwen3-32b |
-| Together | DeepSeek-R1, Qwen3-235B, Qwen3-32B |
-| Fireworks | deepseek-r1, qwen3-235b |
-| SambaNova | DeepSeek-R1, Qwen3-32B |
-
-**Gemini 2.5**: Thinking now controlled via master toggle with configurable budget (dynamic/low/medium/high/max). Previously always-on with no user control.
-
-**Mistral**: Magistral models now always think — reasoning extracted automatically.
-
-### Model Updates
-
-- **OpenAI**: GPT-5.4 (new default) and GPT-5.4 Pro added. Reasoning is gated (controlled by master toggle, same as GPT-5.1/5.2).
-- **Gemini**: Gemini 3.1 Pro Preview replaces 3 Pro Preview. Gemini 3 Flash Preview (free tier) and 3.1 Flash Lite Preview added. Gemini 2.0 models removed.
-- **Z.AI**: GLM-5 (flagship) and GLM-4.7 family added.
-
----
-
-## Other Improvements
-
-- **Text selection popup** in all KOAssistant viewers: 1 word → dictionary, 2+ words → Copy/Dictionary/Translate/Notebook popup.
-- **Recap reminder**: Optional prompt to run AI Recap when opening a book after configurable days of inactivity.
-- **KOReader storage modes**: All metadata modes now fully supported (previously only default mode was reliable).
-- **Chat viewer**: Button layout streamlined. Dictionary view mode for highlight actions. Export saves to file (Copy handles clipboard).
-- **API errors**: Now shown as readable text instead of raw JSON.
-- **Quiz**: Answer Key moved to separate section to prevent spoilers.
-- **Kobo**: No longer crashes without Wi-Fi at startup.
-- **"Use Primary" → "Follow Primary"**: Language picker wording standardized.
-
----
-
-## Bug Fixes
-
-### X-Ray & Artifacts
-
-- Fixed cross-book browser/viewer showing wrong book's data.
-- Fixed section X-Ray surfacing, scope matching, and popup labels.
-- Fixed AI Wiki placeholders, detail refresh, and cross-navigation.
-- Fixed X-Ray lookup skipping description matches.
-- Fixed TOC ghost entries in section artifact pickers.
-- Fixed XPointer hidden flows in page display.
-
-### Chat & Conversations
-
-- Fixed chat titles, section scope labels, and starred status persistence.
-- Fixed v2 chat delete and navigation gaps.
-- Fixed group popups layering and multi-book context routing.
-
-### Providers & Reasoning
-
-- Fixed Perplexity citation formatting and message merging.
-- Fixed default thinking preservation for Gemini 2.5, DeepSeek, and Z.AI when master toggle is off.
-- Fixed Anthropic 4.6 adaptive thinking not suppressed when reasoning config is "off".
-
-### Other
-
-- Fixed UTF-8 context truncation for non-ASCII text (Arabic, CJK).
-- Fixed notebook vault migration, collision handling, and export paths.
-- Fixed action flag preservation when duplicating actions.
-- Fixed "Keep English" not saving for non-English users.
-- Fixed markdown link formatting in AI responses.
-
----
-
-## For Custom Action Users
-
-- **Smart actions removed**: Recreate using standard versions with `source_selection` enabled.
-- The `source_selection` flag is available for custom actions — add it to any text-extraction action.
-
----
-
-**Full Changelog**: https://github.com/zeeyado/koassistant.koplugin/compare/v0.18.2...v0.19.0

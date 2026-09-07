@@ -1,0 +1,23 @@
+# Slopquiz plugin for KOReader
+# https://github.com/j-v/slopquiz.koplugin
+# zenpm:auto-scraped
+id=slopquiz
+name=Slopquiz
+version=0.0.1
+description=Improve your reading comprehension with AI-generated chapter quizzes
+author=j-v
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/j-v/slopquiz.koplugin
+stars=9
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-03-27T03:11:39Z
+readme_url=packages/koreader/slopquiz.koplugin/README.md
+readme_hash=ea0b5f97d50da7442b745770041eca345d5d4da8
+release_notes_url=packages/koreader/slopquiz.koplugin/RELEASE_NOTES.md
+release_notes_hash=0bd1dbd53c1ed03927f5d1cebc9226cde70525b6f70c43f3999d153367fadc12
+releases=[{"tag_name":"v0.0.1","assets":[{"name":"slopquiz.koplugin-v0.0.1.zip","url":"https://github.com/j-v/slopquiz.koplugin/releases/download/v0.0.1/slopquiz.koplugin-v0.0.1.zip","size":26290,"digest":"sha256:0bdb0a63a576678ebbcf4926dff13634ce2070d9e6637ce975a55393024a0049"}],"name":"v0.0.1"}]
+source_type=release
+source_asset=slopquiz.koplugin-v0.0.1.zip
+size=26290

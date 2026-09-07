@@ -1,0 +1,18 @@
+# Koreader Icon For Pocketbook Devices plugin for KOReader
+# https://github.com/tmfsd/KOReader-Icon-for-PocketBook-Devices
+# zenpm:auto-scraped
+id=koreader-icon-for-pocketbook-devices
+name=Koreader Icon For Pocketbook Devices
+version=source
+description=App icon for KOReader app on PocketBook Devices
+author=tmfsd
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/tmfsd/KOReader-Icon-for-PocketBook-Devices
+stars=14
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/koreader-icon-for-pocketbook-devices.koplugin/README.md
+readme_hash=aa3a2ddc5c8c63bfba62faf84b73ba12cd9d062a
+source_type=source
+source_url=https://codeload.github.com/tmfsd/KOReader-Icon-for-PocketBook-Devices/zip/refs/heads/main

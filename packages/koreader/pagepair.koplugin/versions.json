@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0-beta.1","assets":[{"name":"pagepair-v1.0.0-beta.1.zip","url":"https://github.com/GarionBracken/PagePair/releases/download/v1.0.0-beta.1/pagepair-v1.0.0-beta.1.zip","size":763037,"digest":"sha256:5c072b64ea28bcc82f226c42cd2bd7b7ec10217ab5be857dd87ded1f887ef247"}],"name":"PagePair v1.0.0-beta.1","prerelease":true}]
+}

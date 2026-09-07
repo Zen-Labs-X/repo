@@ -1,0 +1,22 @@
+# Annas Fetch plugin for KOReader
+# https://github.com/right9code/annas-fetch.koplugin
+# zenpm:auto-scraped
+id=annas-fetch
+name=Annas Fetch
+version=1.1.0
+description=Access Anna's Shadow Library on KOR
+author=right9code
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/right9code/annas-fetch.koplugin
+stars=5
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-06-27T18:27:03Z
+readme_url=packages/koreader/annas-fetch.koplugin/README.md
+readme_hash=fdeaf1dd02e45b2aadef88b7913aef21c98d074f
+release_notes_url=packages/koreader/annas-fetch.koplugin/RELEASE_NOTES.md
+release_notes_hash=cb5f3ab722ed53242077f23de66b1b83cfdb977eda9bc20f66f0519363dfd558
+releases=[{"tag_name":"v1.1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/right9code/annas-fetch.koplugin/zipball/v1.1.0"}],"name":"v1.1.0 - Custom Mirror URL, Security Hardening, Stability Fixes"},{"tag_name":"v1.0.0","assets":[{"name":"annas-fetch.koplugin-v1.0.0.zip","url":"https://github.com/right9code/annas-fetch.koplugin/releases/download/v1.0.0/annas-fetch.koplugin-v1.0.0.zip","size":2990004,"digest":"sha256:fe9804d9487e2516e74c16c6cf6676ac874057c10f1c67f223b6806261e18572"}],"name":"Initial Release"}]
+source_type=source
+source_url=https://codeload.github.com/right9code/annas-fetch.koplugin/zip/refs/heads/main

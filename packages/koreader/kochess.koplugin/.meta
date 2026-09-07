@@ -1,0 +1,23 @@
+# Kochess plugin for KOReader
+# https://github.com/coffman/kochess.koplugin
+# zenpm:auto-scraped
+id=kochess
+name=Kochess
+version=0.2.0
+description=Working Chess plugin for Koreader
+author=coffman
+category=games
+platforms=koreader
+dependencies=
+source=https://github.com/coffman/kochess.koplugin
+stars=7
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-01-09T12:47:55Z
+readme_url=packages/koreader/kochess.koplugin/README.md
+readme_hash=29dfde4ce8d58520fcc45c8b8057dee550a8b1a9
+release_notes_url=packages/koreader/kochess.koplugin/RELEASE_NOTES.md
+release_notes_hash=a4a21e09be91050f517df14bad3b7e58197c5892a41d97ab25df211f413fc67c
+releases=[{"tag_name":"v0.2.0","assets":[{"name":"kochess.koplugin.zip","url":"https://github.com/coffman/kochess.koplugin/releases/download/v0.2.0/kochess.koplugin.zip","size":1490029,"digest":"sha256:3a5e0c1dbca065a9df3a55a9f0cfe71309eaaf600bcd98d56a436b8136b7a16e"}],"name":"Kochess v0.2.0"},{"tag_name":"v0.1.0","assets":[{"name":"kochess.koplugin.zip","url":"https://github.com/coffman/kochess.koplugin/releases/download/v0.1.0/kochess.koplugin.zip","size":28848567,"digest":"sha256:634b995031829e630ad86aac6cf0506fecb1c7f5299074835209e47d19b7ffda"}],"name":"v0.1.0 — First public release"}]
+source_type=release
+source_asset=kochess.koplugin.zip
+size=1490029

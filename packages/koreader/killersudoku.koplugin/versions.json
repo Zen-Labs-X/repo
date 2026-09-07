@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"killersudoku.koplugin.zip","url":"https://github.com/TomasDiLeo/killersudoku.koplugin/releases/download/v1.0.0/killersudoku.koplugin.zip","size":4078713,"digest":"sha256:54c25cde061769a7f421ab1497adda3b504e6459c8afb025194430fcbdf2080d"}],"name":"Killer Sudoku v1.0.0"}]
+}

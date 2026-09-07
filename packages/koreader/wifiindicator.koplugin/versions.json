@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"wifiindicator.koplugin.zip","url":"https://github.com/asxelot/wifiindicator.koplugin/releases/download/v1.0.0/wifiindicator.koplugin.zip","size":24027,"digest":"sha256:db123569524a0f43797fe60698b5bf83d2fe9489e1eb524a5e3a8759972c0093"}],"name":"WifiIndicator v1.0.0"}]
+}

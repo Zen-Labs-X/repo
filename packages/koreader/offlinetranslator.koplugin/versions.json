@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"0.1.0","assets":[{"name":"offlinetranslator-android-arm64-v8a.zip","url":"https://github.com/anezih/offlinetranslator.koplugin/releases/download/0.1.0/offlinetranslator-android-arm64-v8a.zip","size":10863865,"digest":"sha256:c1ec26812f6b24cfb0fd3886db0ead743d185d98f5041df2ad807cb55cb0694d"},{"name":"offlinetranslator-linux-x86_64.zip","url":"https://github.com/anezih/offlinetranslator.koplugin/releases/download/0.1.0/offlinetranslator-linux-x86_64.zip","size":12094633,"digest":"sha256:fd6c80dbba9424a7a2e95b58dbdc6ed3d8d68a5ef5f2b2c82564dbb993bb4d37"}],"name":"0.1.0"}]
+}

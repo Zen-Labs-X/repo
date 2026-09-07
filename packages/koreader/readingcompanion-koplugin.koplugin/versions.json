@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"readingcompanion-v1.0.0-release.zip","url":"https://github.com/lines-pixel/ReadingCompanion.koplugin-/releases/download/v1.0.0/readingcompanion-v1.0.0-release.zip","size":70632,"digest":"sha256:fad6073b680ffd6d2888de654ea2b8090284260dedb20de17913da817b4a94f4"}],"name":"ReadingCompanion v1.0"}]
+}

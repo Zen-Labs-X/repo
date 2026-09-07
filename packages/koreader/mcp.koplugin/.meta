@@ -1,0 +1,22 @@
+# Mcp plugin for KOReader
+# https://github.com/laughedelic/mcp.koplugin
+# zenpm:auto-scraped
+id=mcp
+name=Mcp
+version=0.7.0
+description=MCP server for KOReader
+author=laughedelic
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/laughedelic/mcp.koplugin
+stars=6
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-02-04T04:20:26Z
+readme_url=packages/koreader/mcp.koplugin/README.md
+readme_hash=64a8671025b7e1551cb38690d10860fa33187b95
+release_notes_url=packages/koreader/mcp.koplugin/RELEASE_NOTES.md
+release_notes_hash=7a917cd9f079acdcc0974f6fff18d0dac78a222be3d6d7ca55978ed998155057
+releases=[{"tag_name":"v0.7.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/laughedelic/mcp.koplugin/zipball/v0.7.0"}],"name":"v0.7.0"},{"tag_name":"v0.6.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/laughedelic/mcp.koplugin/zipball/v0.6.0"}],"name":"v0.6.0"},{"tag_name":"v0.5.1","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/laughedelic/mcp.koplugin/zipball/v0.5.1"}],"name":"v0.5.1"},{"tag_name":"v0.5.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/laughedelic/mcp.koplugin/zipball/v0.5.0"}],"name":"v0.5.0"},{"tag_name":"v0.4.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/laughedelic/mcp.koplugin/zipball/v0.4.0"}],"name":"v0.4.0"},{"tag_name":"v0.3.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/laughedelic/mcp.koplugin/zipball/v0.3.0"}],"name":"v0.3.0"},{"tag_name":"v0.2.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/laughedelic/mcp.koplugin/zipball/v0.2.0"}],"name":"v0.2.0"},{"tag_name":"v0.1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/laughedelic/mcp.koplugin/zipball/v0.1.0"}],"name":"v0.1.0"}]
+source_type=source
+source_url=https://codeload.github.com/laughedelic/mcp.koplugin/zip/refs/heads/main

@@ -1,0 +1,18 @@
+# Koreader Wikipedia plugin for KOReader
+# https://github.com/c5e3/koreader_wikipedia
+# zenpm:auto-scraped
+id=koreader-wikipedia
+name=Koreader Wikipedia
+version=source
+description=
+author=c5e3
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/c5e3/koreader_wikipedia
+stars=7
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/koreader-wikipedia.koplugin/README.md
+readme_hash=e635b1529877154be314b2f0f3c3853c57774866
+source_type=source
+source_url=https://codeload.github.com/c5e3/koreader_wikipedia/zip/refs/heads/main

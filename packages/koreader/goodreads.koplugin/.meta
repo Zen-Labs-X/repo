@@ -1,0 +1,23 @@
+# Goodreads plugin for KOReader
+# https://github.com/advokatb/goodreads.koplugin
+# zenpm:auto-scraped
+id=goodreads
+name=Goodreads
+version=0.3.0
+description=
+author=advokatb
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/advokatb/goodreads.koplugin
+stars=9
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-09-01T17:05:50Z
+readme_url=packages/koreader/goodreads.koplugin/README.md
+readme_hash=bdf949cb6767efa87b7376f7ff93ef3178b7fe41
+release_notes_url=packages/koreader/goodreads.koplugin/RELEASE_NOTES.md
+release_notes_hash=0afbe3c85b836be174e324f7cc48b22050dc1bf2ba21c5d57747eb8748626cf7
+releases=[{"tag_name":"v0.3.0","assets":[{"name":"goodreads.koplugin-v0.3.0.zip","url":"https://github.com/advokatb/goodreads.koplugin/releases/download/v0.3.0/goodreads.koplugin-v0.3.0.zip","size":47510,"digest":"sha256:1f595af3d0df2e299a9de14bb01f37fb9ac1dccda00b0230b705892c49073c5a"}],"name":"v0.3.0"},{"tag_name":"v0.2.0","assets":[{"name":"goodreads.koplugin-v0.2.0.zip","url":"https://github.com/advokatb/goodreads.koplugin/releases/download/v0.2.0/goodreads.koplugin-v0.2.0.zip","size":47172,"digest":"sha256:dd13de1704d9b13ae22d4b0628ce5124a8ef7cc070a75b8f6436a3edc341c137"}],"name":"v0.2.0"},{"tag_name":"v0.1.0","assets":[{"name":"goodreads.koplugin-v0.1.0.zip","url":"https://github.com/advokatb/goodreads.koplugin/releases/download/v0.1.0/goodreads.koplugin-v0.1.0.zip","size":43842,"digest":"sha256:b5443484c9b8ed7fd5729f72400128479d1c90ec5f8d03655758a8d9d481292f"}],"name":"v0.1.0"}]
+source_type=release
+source_asset=goodreads.koplugin-v0.3.0.zip
+size=47510

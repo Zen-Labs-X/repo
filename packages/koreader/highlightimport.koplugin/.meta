@@ -1,0 +1,22 @@
+# Highlightimport plugin for KOReader
+# https://github.com/nojux-official/HighlightImport.koplugin
+# zenpm:auto-scraped
+id=highlightimport
+name=Highlightimport
+version=1.3
+description=A KoReader plugin allowing to import highlights from Kindle clippings file
+author=nojux-official
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/nojux-official/HighlightImport.koplugin
+stars=11
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-09-02T11:04:48Z
+readme_url=packages/koreader/highlightimport.koplugin/README.md
+readme_hash=6b12579b29d4e1e855174ef5e6fcf06af560a01e
+release_notes_url=packages/koreader/highlightimport.koplugin/RELEASE_NOTES.md
+release_notes_hash=3c9d3ef33a3034c2bc2b21d23b916490032322521d027ee0c092b47b30b25f8d
+releases=[{"tag_name":"v1.3","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/nojux-official/HighlightImport.koplugin/zipball/v1.3"}],"name":"V1.3"},{"tag_name":"v1.2","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/nojux-official/HighlightImport.koplugin/zipball/v1.2"}],"name":"V1.2"},{"tag_name":"v1.1","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/nojux-official/HighlightImport.koplugin/zipball/v1.1"}],"name":"V1.1"},{"tag_name":"v1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/nojux-official/HighlightImport.koplugin/zipball/v1.0"}],"name":"v1.0"}]
+source_type=source
+source_url=https://codeload.github.com/nojux-official/HighlightImport.koplugin/zip/refs/heads/main

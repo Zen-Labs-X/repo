@@ -1,0 +1,23 @@
+# Wireguard plugin for KOReader
+# https://github.com/wtb04/wireguard.koplugin
+# zenpm:auto-scraped
+id=wireguard
+name=Wireguard
+version=1.0.3
+description=Bring a WireGuard VPN up and down from the KOReader menu on Kobo e-readers.
+author=wtb04
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/wtb04/wireguard.koplugin
+stars=8
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-06-07T19:46:11Z
+readme_url=packages/koreader/wireguard.koplugin/README.md
+readme_hash=d763e9f9bd31480da2b94e4482666464c7fb3d00
+release_notes_url=packages/koreader/wireguard.koplugin/RELEASE_NOTES.md
+release_notes_hash=15bb0bda08f4e832ff3bf842344ad4613d120ab74ae002faaca6c7097238be63
+releases=[{"tag_name":"v1.0.3","assets":[{"name":"wireguard.koplugin-v1.0.3.zip","url":"https://github.com/wtb04/wireguard.koplugin/releases/download/v1.0.3/wireguard.koplugin-v1.0.3.zip","size":9436,"digest":"sha256:f3dd5466475ca8f9d8bc2155138aeeda155696613aad81bf6d97477d8933c25f"}],"name":"v1.0.3"},{"tag_name":"v1.0.2","assets":[{"name":"wireguard.koplugin-v1.0.2.zip","url":"https://github.com/wtb04/wireguard.koplugin/releases/download/v1.0.2/wireguard.koplugin-v1.0.2.zip","size":9213,"digest":"sha256:17a1b2ab7669ef0fbfc056b4d686488fdc11e1faebb1f2d4a4f92987add55220"}],"name":"v1.0.2"},{"tag_name":"v1.0.1","assets":[{"name":"wireguard.koplugin-v1.0.1.zip","url":"https://github.com/wtb04/wireguard.koplugin/releases/download/v1.0.1/wireguard.koplugin-v1.0.1.zip","size":7190,"digest":"sha256:cfa6ba4f391418b11ed2dd9d93637aebb8ea7cce259063a2f46cf7cd94013ec5"}],"name":"v1.0.1"},{"tag_name":"v1.0.0","assets":[{"name":"wireguard.koplugin-v1.0.0.zip","url":"https://github.com/wtb04/wireguard.koplugin/releases/download/v1.0.0/wireguard.koplugin-v1.0.0.zip","size":6980,"digest":"sha256:a6f0e050b76765dc6b14e720bf66caa9676bb6dbbe4f038e8c3a7296541d32e8"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=wireguard.koplugin-v1.0.3.zip
+size=9436

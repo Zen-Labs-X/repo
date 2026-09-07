@@ -1,0 +1,23 @@
+# Pinyinplus plugin for KOReader
+# https://github.com/finlater/pinyinplus.koplugin
+# zenpm:auto-scraped
+id=pinyinplus
+name=Pinyinplus
+version=2.0.1
+description=koreader拼音输入法增强，在输入框中显示拼音字母，在输入键盘上方显示候选词栏，可直接点击候选词就行输入。
+author=finlater
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/finlater/pinyinplus.koplugin
+stars=13
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-08T06:23:10Z
+readme_url=packages/koreader/pinyinplus.koplugin/README.md
+readme_hash=4ec1d2deff2acb74d8859934c4b80b4ffe8f34cc
+release_notes_url=packages/koreader/pinyinplus.koplugin/RELEASE_NOTES.md
+release_notes_hash=5cd409bf3bda7112cfd4141c8ff45dfef4f0fcc8b840123817e45c28abb8b9b2
+releases=[{"tag_name":"v2.0.1","assets":[{"name":"pinyinplus.koplugin.zip","url":"https://github.com/finlater/pinyinplus.koplugin/releases/download/v2.0.1/pinyinplus.koplugin.zip","size":8778,"digest":"sha256:23add7b656d1a4369699e200be8c31a54159aa19be54d25cb10008480d7fa878"}],"name":"v2.0.1"},{"tag_name":"v2.0","assets":[{"name":"pinyinplus.koplugin.zip","url":"https://github.com/finlater/pinyinplus.koplugin/releases/download/v2.0/pinyinplus.koplugin.zip","size":7931,"digest":"sha256:0c4cb3d11c2f05ad99054c0603f0a238d40e6588fa8ac52a8f3a95791c0de1ed"}],"name":"v2.0"}]
+source_type=release
+source_asset=pinyinplus.koplugin.zip
+size=8778

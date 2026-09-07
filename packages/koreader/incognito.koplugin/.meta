@@ -1,0 +1,23 @@
+# Incognito plugin for KOReader
+# https://github.com/Craftwork2720/incognito.koplugin
+# zenpm:auto-scraped
+id=incognito
+name=Incognito
+version=.1.2.0
+description=KOReader incognito plugin
+author=Craftwork2720
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/Craftwork2720/incognito.koplugin
+stars=11
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-03-20T01:07:52Z
+readme_url=packages/koreader/incognito.koplugin/README.md
+readme_hash=4037bb87e022e936be8014748ed7900de14c9dca
+release_notes_url=packages/koreader/incognito.koplugin/RELEASE_NOTES.md
+release_notes_hash=222ce8c9447e02473249f26227ba4fad392fa3545e61e9920cedfdc8d38566e1
+releases=[{"tag_name":"v.1.2.0","assets":[{"name":"incognito.koplugin.zip","url":"https://github.com/Craftwork2720/incognito.koplugin/releases/download/v.1.2.0/incognito.koplugin.zip","size":17342,"digest":"sha256:089fe17c178ecb7dc9c542387e9fdda4af41bdea6bbd93c63621d27a39d3dd96"}],"name":"v.1.2.0"},{"tag_name":"v1.1.0","assets":[{"name":"incognito.koplugin.zip","url":"https://github.com/Craftwork2720/incognito.koplugin/releases/download/v1.1.0/incognito.koplugin.zip","size":17043,"digest":"sha256:2c395e8a8bffff8d8050aad7c82a7680166221c9038d80f55966e2d4d2cf9977"}],"name":"v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"incognito.koplugin.zip","url":"https://github.com/Craftwork2720/incognito.koplugin/releases/download/v1.0.0/incognito.koplugin.zip","size":2548,"digest":"sha256:9f2d38f22ea872423db425baef78257aba970844695f00d09d2b801f01c9e921"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=incognito.koplugin.zip
+size=17342

@@ -1,0 +1,23 @@
+# Pageturner plugin for KOReader
+# https://github.com/TomasDiLeo/pageturner.koplugin
+# zenpm:auto-scraped
+id=pageturner
+name=Pageturner
+version=1.1.0
+description=A KOReader plugin that connects to an Android Companion App with remote page turning capabilities
+author=TomasDiLeo
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/TomasDiLeo/pageturner.koplugin
+stars=10
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-01-11T20:19:12Z
+readme_url=packages/koreader/pageturner.koplugin/README.md
+readme_hash=5a9df71b096204ad1bb8541e41e45e73b32d5222
+release_notes_url=packages/koreader/pageturner.koplugin/RELEASE_NOTES.md
+release_notes_hash=8c218a3df870ab55fb767c2b9d29804b16b608f63f31a75c1ef319235ffecadc
+releases=[{"tag_name":"v1.1.0","assets":[{"name":"pageturner.koplugin.zip","url":"https://github.com/TomasDiLeo/pageturner.koplugin/releases/download/v1.1.0/pageturner.koplugin.zip","size":17123,"digest":"sha256:54d1a8cdb7628f17d73430c6fdcbb54aa00ae3130a1d0b91a990700d6a4a9bbc"}],"name":"Page Turner v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"pageturner.koplugin.zip","url":"https://github.com/TomasDiLeo/pageturner.koplugin/releases/download/v1.0.0/pageturner.koplugin.zip","size":16989,"digest":"sha256:f397ef769d9c111910201ec791d7b9305cc4b9ee6c9f76409bd2291c598d9c79"}],"name":"Page Turner v1.0.0"}]
+source_type=release
+source_asset=pageturner.koplugin.zip
+size=17123

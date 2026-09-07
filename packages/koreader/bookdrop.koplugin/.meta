@@ -1,0 +1,23 @@
+# Bookdrop plugin for KOReader
+# https://github.com/codep-alt/bookdrop
+# zenpm:auto-scraped
+id=bookdrop
+name=Bookdrop
+version=1.0.0
+description=
+author=codep-alt
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/codep-alt/bookdrop
+stars=14
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-16T19:50:17Z
+readme_url=packages/koreader/bookdrop.koplugin/README.md
+readme_hash=8ccc866d7ed6fea13be0e821db2e00bcafa2045c
+release_notes_url=packages/koreader/bookdrop.koplugin/RELEASE_NOTES.md
+release_notes_hash=b37c491423342136a845757d8d514c4dda43f750c4690d5043348e9fdf82dc76
+releases=[{"tag_name":"v1.0.0","assets":[{"name":"Bookdrop-latest.zip","url":"https://github.com/codep-alt/bookdrop/releases/download/v1.0.0/Bookdrop-latest.zip","size":1463842,"digest":"sha256:dfcef10135083f1cf9d79621adaec08b92f521a6cc9657aeab4a48e9c6ff2983"}],"name":"Bookdrop v1.0.0"}]
+source_type=release
+source_asset=Bookdrop-latest.zip
+size=1463842

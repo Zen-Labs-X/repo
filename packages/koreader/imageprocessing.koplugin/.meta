@@ -1,0 +1,37 @@
+# Imageprocessing plugin for KOReader
+# https://github.com/anezih/imageprocessing.koplugin
+# zenpm:auto-scraped
+id=imageprocessing
+name=Imageprocessing
+version=0.1.0a
+description=KOReader plugin for higher-quality manga/comic image scaling with AVIR/Lanczos resampling, sharpening, text darkening, and color post-processing controls.
+author=anezih
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/anezih/imageprocessing.koplugin
+stars=7
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-05-04T23:45:55Z
+readme_url=packages/koreader/imageprocessing.koplugin/README.md
+readme_hash=61022e48efc20bfaf5eb7385efaf93aaeeb773d9
+release_notes_url=packages/koreader/imageprocessing.koplugin/RELEASE_NOTES.md
+release_notes_hash=e34a8b8b942faa5fe7833952df89691835df7bc63c91cb1606b3c4180ad56c6d
+releases=[{"tag_name":"0.1.0a","assets":[{"name":"imageprocessing.koplugin-android.zip","url":"https://github.com/anezih/imageprocessing.koplugin/releases/download/0.1.0a/imageprocessing.koplugin-android.zip","size":324274,"digest":"sha256:ef3afdfccb36ae388396dc0f2fe7c697e9c0cfa6c9d60406d942707acfee8aac"},{"name":"imageprocessing.koplugin-kindle.zip","url":"https://github.com/anezih/imageprocessing.koplugin/releases/download/0.1.0a/imageprocessing.koplugin-kindle.zip","size":310993,"digest":"sha256:5b6eab09d336f658bc3ec41df87e7fe2e05fbe891c60bc3bfc600e841300ba62"},{"name":"imageprocessing.koplugin-kobo.zip","url":"https://github.com/anezih/imageprocessing.koplugin/releases/download/0.1.0a/imageprocessing.koplugin-kobo.zip","size":90241,"digest":"sha256:10e3b329a89cb6a12bf92e4d13f675b90f790da29acc1e56521f6155447628a4"},{"name":"imageprocessing.koplugin-pocketbook.zip","url":"https://github.com/anezih/imageprocessing.koplugin/releases/download/0.1.0a/imageprocessing.koplugin-pocketbook.zip","size":90872,"digest":"sha256:b557b2de54345f0cc2f3731c3fa555e5cf78368cfc6ee02f7e02657d5e68e746"}],"name":"0.1.0"}]
+source_type=release
+assets.0.arch=any
+assets.0.asset=imageprocessing.koplugin-android.zip
+assets.0.url=https://github.com/anezih/imageprocessing.koplugin/releases/download/0.1.0a/imageprocessing.koplugin-android.zip
+assets.0.size=324274
+assets.1.arch=kindle
+assets.1.asset=imageprocessing.koplugin-kindle.zip
+assets.1.url=https://github.com/anezih/imageprocessing.koplugin/releases/download/0.1.0a/imageprocessing.koplugin-kindle.zip
+assets.1.size=310993
+assets.2.arch=kobo
+assets.2.asset=imageprocessing.koplugin-kobo.zip
+assets.2.url=https://github.com/anezih/imageprocessing.koplugin/releases/download/0.1.0a/imageprocessing.koplugin-kobo.zip
+assets.2.size=90241
+assets.3.arch=any
+assets.3.asset=imageprocessing.koplugin-pocketbook.zip
+assets.3.url=https://github.com/anezih/imageprocessing.koplugin/releases/download/0.1.0a/imageprocessing.koplugin-pocketbook.zip
+assets.3.size=90872

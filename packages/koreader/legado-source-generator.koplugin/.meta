@@ -1,0 +1,18 @@
+# Legado Source Generator plugin for KOReader
+# https://github.com/Blindexplanans182/legado-source-generator
+# zenpm:auto-scraped
+id=legado-source-generator
+name=Legado Source Generator
+version=source
+description=生成并导出 Legado 书源规则的 Chrome 扩展，支持可视化选点、CSS 选择器生成、页面调试和一键导入阅读 APP
+author=Blindexplanans182
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/Blindexplanans182/legado-source-generator
+stars=9
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/legado-source-generator.koplugin/README.md
+readme_hash=dda233186d71151e65730e5218ccfe2d95051e3a
+source_type=source
+source_url=https://codeload.github.com/Blindexplanans182/legado-source-generator/zip/refs/heads/main

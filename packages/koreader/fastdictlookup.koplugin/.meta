@@ -1,0 +1,23 @@
+# Fastdictlookup plugin for KOReader
+# https://github.com/Sirozha1337/fastdictlookup.koplugin
+# zenpm:auto-scraped
+id=fastdictlookup
+name=Fastdictlookup
+version=1.5.0
+description=KOReader plugin that mimicks Kindle default behaviour: typewriter cursor that lookups words instantly
+author=Sirozha1337
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/Sirozha1337/fastdictlookup.koplugin
+stars=13
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-07-27T10:13:02Z
+readme_url=packages/koreader/fastdictlookup.koplugin/README.md
+readme_hash=41923359e1958fa3923e85d931029a7799b262c1
+release_notes_url=packages/koreader/fastdictlookup.koplugin/RELEASE_NOTES.md
+release_notes_hash=1da7af89e32c2cee834f4b55260b350f07b9c139bf5a01edce5fb09456af0b3e
+releases=[{"tag_name":"v1.5.0","assets":[{"name":"fastdictlookup.koplugin-v1.5.0.zip","url":"https://github.com/Sirozha1337/fastdictlookup.koplugin/releases/download/v1.5.0/fastdictlookup.koplugin-v1.5.0.zip","size":19459,"digest":"sha256:a02f4c28cdf0b52708d97fb469a8fbfcf16ed55e9334c4d7b13d91704291d16c"}],"name":"v1.5.0"},{"tag_name":"v1.4.0","assets":[{"name":"fastdictlookup.koplugin-v1.4.0.zip","url":"https://github.com/Sirozha1337/fastdictlookup.koplugin/releases/download/v1.4.0/fastdictlookup.koplugin-v1.4.0.zip","size":19435,"digest":"sha256:0142d6c6caa05b3b26ce67d3b9b113611555d237b82475ab648052df5e4c7894"}],"name":"v1.4.0"},{"tag_name":"v1.3.1","assets":[{"name":"fastdictlookup.koplugin-v1.3.1.zip","url":"https://github.com/Sirozha1337/fastdictlookup.koplugin/releases/download/v1.3.1/fastdictlookup.koplugin-v1.3.1.zip","size":18905,"digest":"sha256:d06924e173cdf485f2f96203376d47ccb369985c9a257a858db1450aa7c36375"}],"name":"v1.3.1"},{"tag_name":"v1.3.0","assets":[{"name":"fastdictlookup.koplugin-v1.3.0.zip","url":"https://github.com/Sirozha1337/fastdictlookup.koplugin/releases/download/v1.3.0/fastdictlookup.koplugin-v1.3.0.zip","size":18916,"digest":"sha256:6f6dbf48284dab1fc1d7d8262faa14bfd72927d2723f9574b079173995fa390f"}],"name":"v1.3.0"},{"tag_name":"v1.2.0","assets":[{"name":"fastdictlookup.koplugin-v1.2.0.zip","url":"https://github.com/Sirozha1337/fastdictlookup.koplugin/releases/download/v1.2.0/fastdictlookup.koplugin-v1.2.0.zip","size":13761,"digest":"sha256:6fb14f727602cb403f65f4565b82e3a5d79e9ed0dcb45c1aa559f0e14bc66c80"}],"name":"v1.2.0"},{"tag_name":"v1.1.1","assets":[{"name":"fastdictlookup.koplugin.zip","url":"https://github.com/Sirozha1337/fastdictlookup.koplugin/releases/download/v1.1.1/fastdictlookup.koplugin.zip","size":14883,"digest":"sha256:597ef6e32eafa202882b086ba20be90bc73e1e0080929ff6ef42dbc4602706d3"}],"name":"v1.1.1"},{"tag_name":"v1.1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/Sirozha1337/fastdictlookup.koplugin/zipball/v1.1.0"}],"name":"v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/Sirozha1337/fastdictlookup.koplugin/zipball/v1.0.0"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=fastdictlookup.koplugin-v1.5.0.zip
+size=19459

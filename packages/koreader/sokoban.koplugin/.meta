@@ -1,0 +1,23 @@
+# Sokoban plugin for KOReader
+# https://github.com/kbarni/sokoban.koplugin
+# zenpm:auto-scraped
+id=sokoban
+name=Sokoban
+version=1.1
+description=Sokoban game for Koreader
+author=kbarni
+category=games
+platforms=koreader
+dependencies=
+source=https://github.com/kbarni/sokoban.koplugin
+stars=11
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-07-06T13:52:03Z
+readme_url=packages/koreader/sokoban.koplugin/README.md
+readme_hash=fef046c39e433eb93f700ff7d63e1c3963b7e0ac
+release_notes_url=packages/koreader/sokoban.koplugin/RELEASE_NOTES.md
+release_notes_hash=be3dee18677ab0b6f3927ddcfadeb0413f3ba02566d8c91d8b6cd7b8e7099ba8
+releases=[{"tag_name":"1.1","assets":[{"name":"sokoban.koplugin.zip","url":"https://github.com/kbarni/sokoban.koplugin/releases/download/1.1/sokoban.koplugin.zip","size":62057,"digest":"sha256:0333e96824f76fdd44ae2b890c502670d8d025ecd07b8a4dc67c865a9b620b63"}],"name":"Sokoban 1.1"},{"tag_name":"1.0","assets":[{"name":"sokoban.koplugin.zip","url":"https://github.com/kbarni/sokoban.koplugin/releases/download/1.0/sokoban.koplugin.zip","size":42311,"digest":"sha256:6c8695415d1b51fe815f73fe20031554f2f6824bd3ac1d91bf3611e6d76ca999"}],"name":"Sokoban plugin"}]
+source_type=release
+source_asset=sokoban.koplugin.zip
+size=62057

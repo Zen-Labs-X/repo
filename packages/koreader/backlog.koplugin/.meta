@@ -1,0 +1,23 @@
+# Backlog plugin for KOReader
+# https://github.com/cdrso/backlog.koplugin
+# zenpm:auto-scraped
+id=backlog
+name=Backlog
+version=1.3.0
+description=Backlog helps KOReader remember which articles you have already read inside a magazine, anthology, newsletter, or other multi-article EPUB.
+author=cdrso
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/cdrso/backlog.koplugin
+stars=14
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-06-22T14:51:42Z
+readme_url=packages/koreader/backlog.koplugin/README.md
+readme_hash=10b7f2fed00dfda3b6a7120dfbed9eae17ac622d
+release_notes_url=packages/koreader/backlog.koplugin/RELEASE_NOTES.md
+release_notes_hash=b7fee9df4c0373f0992ceed85f955ce583d1380f04da0b406615b29ca0cfe841
+releases=[{"tag_name":"v1.3.0","assets":[{"name":"backlog.koplugin-v1.3.0.zip","url":"https://github.com/cdrso/backlog.koplugin/releases/download/v1.3.0/backlog.koplugin-v1.3.0.zip","size":14018,"digest":"sha256:888611711db424a747eb338e2920340e8c8fef51498b6d607eeb0ae571326a0b"}],"name":"v1.3.0"},{"tag_name":"v1.2.0","assets":[{"name":"backlog.koplugin-v1.2.0.zip","url":"https://github.com/cdrso/backlog.koplugin/releases/download/v1.2.0/backlog.koplugin-v1.2.0.zip","size":12117,"digest":"sha256:7663c8fd43588c4d0a6017105365e4d40d923039a558da8d3a599bc1a106f16c"}],"name":"v1.2.0"},{"tag_name":"v1.1.0","assets":[{"name":"backlog.koplugin-v1.1.0.zip","url":"https://github.com/cdrso/backlog.koplugin/releases/download/v1.1.0/backlog.koplugin-v1.1.0.zip","size":11121,"digest":"sha256:a544c442f3256580c75939de18d0e381b02db2f282749b4f0b89e157f367d3a0"}],"name":"v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"backlog.koplugin-v1.0.0.zip","url":"https://github.com/cdrso/backlog.koplugin/releases/download/v1.0.0/backlog.koplugin-v1.0.0.zip","size":8969,"digest":"sha256:73f3e9fde2d78a1c22628a379dd3044ccdc82be712e98016a74fc4b2ea916429"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=backlog.koplugin-v1.3.0.zip
+size=14018

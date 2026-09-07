@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v0.1","assets":[{"name":"metaguiding.koplugin-0.1.zip","url":"https://github.com/luizcorreia/metaguiding.koplugin/releases/download/v0.1/metaguiding.koplugin-0.1.zip","size":9339,"digest":"sha256:99b841ca00adb467bb734dd11e7481aa8e0ebd1c395cedafdc33cf0cdf7a68b1"}],"name":"metaguiding 0.1"}]
+}

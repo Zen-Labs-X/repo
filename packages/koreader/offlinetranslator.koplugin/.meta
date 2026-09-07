@@ -1,0 +1,29 @@
+# Offlinetranslator plugin for KOReader
+# https://github.com/anezih/offlinetranslator.koplugin
+# zenpm:auto-scraped
+id=offlinetranslator
+name=Offlinetranslator
+version=0.1.0
+description=Offline translation and OCR bridge for KOReader.
+author=anezih
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/anezih/offlinetranslator.koplugin
+stars=6
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-05-24T19:16:52Z
+readme_url=packages/koreader/offlinetranslator.koplugin/README.md
+readme_hash=1aba181bafa8df63d89f0eda2123a10670c66b19
+release_notes_url=packages/koreader/offlinetranslator.koplugin/RELEASE_NOTES.md
+release_notes_hash=0e30aee8ff3ab7625ba90567e3e2113b159f0048c861f26cee523e147badd477
+releases=[{"tag_name":"0.1.0","assets":[{"name":"offlinetranslator-android-arm64-v8a.zip","url":"https://github.com/anezih/offlinetranslator.koplugin/releases/download/0.1.0/offlinetranslator-android-arm64-v8a.zip","size":10863865,"digest":"sha256:c1ec26812f6b24cfb0fd3886db0ead743d185d98f5041df2ad807cb55cb0694d"},{"name":"offlinetranslator-linux-x86_64.zip","url":"https://github.com/anezih/offlinetranslator.koplugin/releases/download/0.1.0/offlinetranslator-linux-x86_64.zip","size":12094633,"digest":"sha256:fd6c80dbba9424a7a2e95b58dbdc6ed3d8d68a5ef5f2b2c82564dbb993bb4d37"}],"name":"0.1.0"}]
+source_type=release
+assets.0.arch=arm64
+assets.0.asset=offlinetranslator-android-arm64-v8a.zip
+assets.0.url=https://github.com/anezih/offlinetranslator.koplugin/releases/download/0.1.0/offlinetranslator-android-arm64-v8a.zip
+assets.0.size=10863865
+assets.1.arch=x86_64
+assets.1.asset=offlinetranslator-linux-x86_64.zip
+assets.1.url=https://github.com/anezih/offlinetranslator.koplugin/releases/download/0.1.0/offlinetranslator-linux-x86_64.zip
+assets.1.size=12094633

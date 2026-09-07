@@ -1,0 +1,23 @@
+# Calendar plugin for KOReader
+# https://github.com/omer-faruq/calendar.koplugin
+# zenpm:auto-scraped
+id=calendar
+name=Calendar
+version=1.0.1
+description=View Google Calendars (via private iCal URL) on the sleep screen and in an interactive viewer on KOReader
+author=omer-faruq
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/omer-faruq/calendar.koplugin
+stars=5
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-04T16:51:17Z
+readme_url=packages/koreader/calendar.koplugin/README.md
+readme_hash=b7ebbecfc98f7ee51eb3f52a04568568ca3bf5a4
+release_notes_url=packages/koreader/calendar.koplugin/RELEASE_NOTES.md
+release_notes_hash=1dabb99e0fe77f5a968dbdda57f3f9596453914cf68ff3473e43c7b87e9eaecb
+releases=[{"tag_name":"v1.0.1","assets":[{"name":"calendar.koplugin.zip","url":"https://github.com/omer-faruq/calendar.koplugin/releases/download/v1.0.1/calendar.koplugin.zip","size":51923,"digest":"sha256:01e815de7958df18c7e1ab06dd495bde1f8d2b06bd07f8b9e3321a1f9d6f4fdd"}],"name":"v1.0.1"},{"tag_name":"v1.0.0","assets":[{"name":"calendar.koplugin.zip","url":"https://github.com/omer-faruq/calendar.koplugin/releases/download/v1.0.0/calendar.koplugin.zip","size":51785,"digest":"sha256:fb0fd713ce24cdd51783507ed842030bc1afd507ab5d7a33b3d8bdd0b809434b"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=calendar.koplugin.zip
+size=51923

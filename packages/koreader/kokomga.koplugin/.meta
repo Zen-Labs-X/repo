@@ -1,0 +1,23 @@
+# Kokomga plugin for KOReader
+# https://github.com/JimDBh/kokomga.koplugin
+# zenpm:auto-scraped
+id=kokomga
+name=Kokomga
+version=2.1.0
+description=Komga client for KOReader
+author=JimDBh
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/JimDBh/kokomga.koplugin
+stars=12
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-07-15T05:19:03Z
+readme_url=packages/koreader/kokomga.koplugin/README.md
+readme_hash=7b5cb0aa475b3a3d49e5f600b5124e9c9fdfb50f
+release_notes_url=packages/koreader/kokomga.koplugin/RELEASE_NOTES.md
+release_notes_hash=60e7d3fc3ee6dafe106e0d848dad8e462a67980ef7c455aa0727e3ad2f3f1ee6
+releases=[{"tag_name":"2.1.0","assets":[{"name":"kokomga.koplugin.zip","url":"https://github.com/JimDBh/kokomga.koplugin/releases/download/2.1.0/kokomga.koplugin.zip","size":49923,"digest":"sha256:f1c744eeaeeadd485c8ca668165b078403d2b8852b1c3ee2c8f666c41a275152"}],"name":"Release_v2.1.0"},{"tag_name":"2.0.1","assets":[{"name":"kokomga.koplugin.zip","url":"https://github.com/JimDBh/kokomga.koplugin/releases/download/2.0.1/kokomga.koplugin.zip","size":46141,"digest":"sha256:af56039f72e1cd8eb49b5b4fbc8a5744b62db15cd8e839881892886182d900f0"}],"name":"Release_v2.0.1"},{"tag_name":"2.0.0","assets":[{"name":"kokomga.koplugin.zip","url":"https://github.com/JimDBh/kokomga.koplugin/releases/download/2.0.0/kokomga.koplugin.zip","size":45554,"digest":"sha256:08e8b335b8ac573baf07e52382ef267131f2b9d27d10da69f55cc60777853de3"}],"name":"Release_v2.0.0"},{"tag_name":"1.0.0","assets":[{"name":"kokomga_v1.zip","url":"https://github.com/JimDBh/kokomga.koplugin/releases/download/1.0.0/kokomga_v1.zip","size":31627,"digest":"sha256:3efe917f5bd5330758d8adcd1214113013cdc2a746528e72525a587cb5740990"}],"name":"Release_v1.0.0"}]
+source_type=release
+source_asset=kokomga.koplugin.zip
+size=49923

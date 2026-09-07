@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.1.0","assets":[{"name":"sudokuplus.koplugin.zip","url":"https://github.com/Borisvl/sudokuplus.koplugin/releases/download/v1.1.0/sudokuplus.koplugin.zip","size":154142,"digest":"sha256:49b75e89c172897281921fa5af5657eba0eaa2e2708135e083e05d6ce4bd5f35"}],"name":"v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"sudokuplus.koplugin.zip","url":"https://github.com/Borisvl/sudokuplus.koplugin/releases/download/v1.0.0/sudokuplus.koplugin.zip","size":112981,"digest":"sha256:d87f22f55863d51731374d899337fa7430abaaffd78a9519811ba20bf25b2a28"}],"name":"v1.0.0"}]
+}

@@ -1,0 +1,26 @@
+# Kindle Koreader Custom Translator plugin for KOReader
+# https://github.com/Tokisaki-Galaxy/kindle-koreader-custom-translator
+# zenpm:auto-scraped
+id=kindle-koreader-custom-translator
+name=Kindle Koreader Custom Translator
+version=1.4
+description=
+author=Tokisaki-Galaxy
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/Tokisaki-Galaxy/kindle-koreader-custom-translator
+stars=10
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-01-04T08:19:03Z
+prerelease_version=1.3
+prerelease_published_at=2025-12-19T13:14:27Z
+readme_url=packages/koreader/kindle-koreader-custom-translator.koplugin/README.md
+readme_hash=66b8a82aa06839f5ec2c6637dd2522e3eaa2a73c
+release_notes_url=packages/koreader/kindle-koreader-custom-translator.koplugin/RELEASE_NOTES.md
+release_notes_hash=c6599177ac75c41c327d032ea03861e8edfadf6e18bde7e0e6a5244d6837f11b
+prerelease_notes_url=packages/koreader/kindle-koreader-custom-translator.koplugin/PRERELEASE_NOTES.md
+prerelease_notes_hash=ac05584e1fc393220faf6d11d9537cdf3cce12d47fa0e53f294ea6168f3b10c1
+releases=[{"tag_name":"v1.4","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/Tokisaki-Galaxy/kindle-koreader-custom-translator/zipball/v1.4"}],"name":"v1.4 删除版本信息"},{"tag_name":"v1.3","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/Tokisaki-Galaxy/kindle-koreader-custom-translator/zipball/v1.3"}],"name":"v1.3","prerelease":true},{"tag_name":"v1.2","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/Tokisaki-Galaxy/kindle-koreader-custom-translator/zipball/v1.2"}],"name":"新增状态检查"},{"tag_name":"v1.1","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/Tokisaki-Galaxy/kindle-koreader-custom-translator/zipball/v1.1"}],"name":"v1.1 支持API proxy"},{"tag_name":"v1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/Tokisaki-Galaxy/kindle-koreader-custom-translator/zipball/v1.0"}],"name":"v1.0"}]
+source_type=source
+source_url=https://codeload.github.com/Tokisaki-Galaxy/kindle-koreader-custom-translator/zip/refs/heads/master

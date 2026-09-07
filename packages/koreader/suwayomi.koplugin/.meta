@@ -1,0 +1,23 @@
+# Suwayomi plugin for KOReader
+# https://github.com/LK4D4/suwayomi.koplugin
+# zenpm:auto-scraped
+id=suwayomi
+name=Suwayomi
+version=1.0.6
+description=Suwayomi client for KOReader: browse your server, manage sources, sync read state, and download local CBZ chapters.
+author=LK4D4
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/LK4D4/suwayomi.koplugin
+stars=12
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-05-31T17:19:38Z
+readme_url=packages/koreader/suwayomi.koplugin/README.md
+readme_hash=a89275dd1f8be1bbb8b7a9e8898b21066248252c
+release_notes_url=packages/koreader/suwayomi.koplugin/RELEASE_NOTES.md
+release_notes_hash=55c5e9911714bfddcc752f5b6ff82aa63ee2f7edd5d0fd746d697d1d91862315
+releases=[{"tag_name":"v1.0.6","assets":[{"name":"suwayomi.koplugin-v1.0.6.zip","url":"https://github.com/LK4D4/suwayomi.koplugin/releases/download/v1.0.6/suwayomi.koplugin-v1.0.6.zip","size":219324,"digest":"sha256:001dc395595fd4ba502cac989ad15d817da69b8f6bb49653d5f917f3950034ac"}],"name":"v1.0.6"},{"tag_name":"v1.0.5","assets":[{"name":"suwayomi.koplugin-v1.0.5.zip","url":"https://github.com/LK4D4/suwayomi.koplugin/releases/download/v1.0.5/suwayomi.koplugin-v1.0.5.zip","size":214233,"digest":"sha256:c71823ed8daca1d8ca90b1ec5920d90b131e033e54f0090af7e9cfb4d98242fa"}],"name":"v1.0.5"},{"tag_name":"v1.0.4","assets":[{"name":"suwayomi.koplugin-v1.0.4.zip","url":"https://github.com/LK4D4/suwayomi.koplugin/releases/download/v1.0.4/suwayomi.koplugin-v1.0.4.zip","size":171992,"digest":"sha256:e261e8747c426d1cbe78f58bbcc7ef035d488b2f96b8f5ed0a7adb80f947b083"}],"name":"v1.0.4"},{"tag_name":"v1.0.3","assets":[{"name":"suwayomi.koplugin-v1.0.3.zip","url":"https://github.com/LK4D4/suwayomi.koplugin/releases/download/v1.0.3/suwayomi.koplugin-v1.0.3.zip","size":171946,"digest":"sha256:5b96875a2ac365e749ad78f4b74778818d66b9f679d97ba6baabee38a5b6accc"}],"name":"v1.0.3"},{"tag_name":"v1.0.2","assets":[{"name":"suwayomi.koplugin-v1.0.2.zip","url":"https://github.com/LK4D4/suwayomi.koplugin/releases/download/v1.0.2/suwayomi.koplugin-v1.0.2.zip","size":172031,"digest":"sha256:6171fc7a67dad2515de81627a3639ee85e577857fb8779651a8f136593583761"}],"name":"v1.0.2"},{"tag_name":"v1.0.1","assets":[{"name":"suwayomi.koplugin-v1.0.1.zip","url":"https://github.com/LK4D4/suwayomi.koplugin/releases/download/v1.0.1/suwayomi.koplugin-v1.0.1.zip","size":171755,"digest":"sha256:406714386c2f6bf627a86b5ac80137a445b53b131fd5bd297fe7765337f5a8b5"}],"name":"v1.0.1"},{"tag_name":"v1.0.0","assets":[{"name":"suwayomi.koplugin.zip","url":"https://github.com/LK4D4/suwayomi.koplugin/releases/download/v1.0.0/suwayomi.koplugin.zip","size":171734,"digest":"sha256:8269c594a7d12d2115615f4f8be7a9254a50a1e425ffaa664c6478ad2531b5b0"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=suwayomi.koplugin-v1.0.6.zip
+size=219324

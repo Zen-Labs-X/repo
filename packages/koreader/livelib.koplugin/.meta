@@ -1,0 +1,23 @@
+# Livelib plugin for KOReader
+# https://github.com/advokatb/livelib.koplugin
+# zenpm:auto-scraped
+id=livelib
+name=Livelib
+version=0.3.4
+description=A KOReader plugin that syncs reading status and ratings from the reader to your livelib.ru account
+author=advokatb
+category=media
+platforms=koreader
+dependencies=
+source=https://github.com/advokatb/livelib.koplugin
+stars=5
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-28T14:32:58Z
+readme_url=packages/koreader/livelib.koplugin/README.md
+readme_hash=c840a0f7fa77301b3ee9ed10118dde472a8cd10e
+release_notes_url=packages/koreader/livelib.koplugin/RELEASE_NOTES.md
+release_notes_hash=c33c94bd458bac9f84c139ddcb24073ff755295c63906d878c3b78c3c78bcbb6
+releases=[{"tag_name":"v0.3.4","assets":[{"name":"livelib.koplugin-v0.3.4.zip","url":"https://github.com/advokatb/livelib.koplugin/releases/download/v0.3.4/livelib.koplugin-v0.3.4.zip","size":32925,"digest":"sha256:1b84e0c2ebb94f0f22a9d463774ba06ff9458333a9b32045a43e941e2d19b75b"}],"name":"v0.3.4"},{"tag_name":"v0.3.3","assets":[{"name":"livelib.koplugin-v0.3.3.zip","url":"https://github.com/advokatb/livelib.koplugin/releases/download/v0.3.3/livelib.koplugin-v0.3.3.zip","size":32727,"digest":"sha256:180e3c8f0fbdcbcd1ccd37558a65aa6c3988c96085a0580281b5a2ebf2e164b0"}],"name":"v0.3.3"}]
+source_type=release
+source_asset=livelib.koplugin-v0.3.4.zip
+size=32925

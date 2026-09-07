@@ -1,0 +1,23 @@
+# Vocabdeck plugin for KOReader
+# https://github.com/yupmoon/vocabdeck.koplugin
+# zenpm:auto-scraped
+id=vocabdeck
+name=Vocabdeck
+version=1.2.5
+description=A vocabulary deck and flashcard plugin for KOReader. Save words while reading, enrich them with AI, and review with spaced repetition.
+author=yupmoon
+category=productivity
+platforms=koreader
+dependencies=
+source=https://github.com/yupmoon/vocabdeck.koplugin
+stars=8
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-31T21:09:01Z
+readme_url=packages/koreader/vocabdeck.koplugin/README.md
+readme_hash=04278db0146874bc930c739f4ed47543d3bc9cbf
+release_notes_url=packages/koreader/vocabdeck.koplugin/RELEASE_NOTES.md
+release_notes_hash=55ff8fedfb1b5885f57c728b519e0dc1a5d349b4fee49ffedbfdf21554ce9ae8
+releases=[{"tag_name":"v1.2.5","assets":[{"name":"vocabdeck.koplugin.zip","url":"https://github.com/yupmoon/vocabdeck.koplugin/releases/download/v1.2.5/vocabdeck.koplugin.zip","size":165493,"digest":"sha256:28d7db29d091bcdcdb66c149f2234cc17a5a0f79bbe0f3adcae64ee078122771"}],"name":"VocabDeck v1.2.5"},{"tag_name":"v1.2.4","assets":[{"name":"vocabdeck.koplugin.zip","url":"https://github.com/yupmoon/vocabdeck.koplugin/releases/download/v1.2.4/vocabdeck.koplugin.zip","size":160268,"digest":"sha256:584457dff11eabba0ea80030d006ed1e474d9eada8c87a5807d546e3ec33c64c"}],"name":"v1.2.4"},{"tag_name":"v1.2.2","assets":[{"name":"vocabdeck.koplugin.zip","url":"https://github.com/yupmoon/vocabdeck.koplugin/releases/download/v1.2.2/vocabdeck.koplugin.zip","size":158229,"digest":"sha256:bca0a599aa3710ca993a98bce15c654ecc4d71aa4203b588ca499883942f9c66"}],"name":"v1.2.2"},{"tag_name":"v1.2.1","assets":[{"name":"vocabdeck.koplugin.zip","url":"https://github.com/yupmoon/vocabdeck.koplugin/releases/download/v1.2.1/vocabdeck.koplugin.zip","size":157416,"digest":"sha256:8966ec0dc2b5464add84e1a161250d1565e789bd7067c93c881128b4ce648764"}],"name":"v1.2.1"},{"tag_name":"v1.2.0","assets":[{"name":"vocabdeck.koplugin.zip","url":"https://github.com/yupmoon/vocabdeck.koplugin/releases/download/v1.2.0/vocabdeck.koplugin.zip","size":157603,"digest":"sha256:927ce8e4783ab8e0622b7999f357b0a9d168ec46f0f3a0f146ccb5d761ed069e"}],"name":"v1.2.0"},{"tag_name":"v1.1.0","assets":[{"name":"vocabdeck.koplugin.zip","url":"https://github.com/yupmoon/vocabdeck.koplugin/releases/download/v1.1.0/vocabdeck.koplugin.zip","size":127259,"digest":"sha256:1d456c8e59c49a3ee5e1d5451b3fa868d92c1ec6a5d9ab12b841dccba19b6b40"}],"name":"v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"vocabdeck.koplugin.zip","url":"https://github.com/yupmoon/vocabdeck.koplugin/releases/download/v1.0.0/vocabdeck.koplugin.zip","size":112655,"digest":"sha256:00d8b169cc168e07a34eba3d91c548225808b9d0b7fc2af2413e148f9a71f84e"}],"name":"VocabDeck v1.0.0"}]
+source_type=release
+source_asset=vocabdeck.koplugin.zip
+size=165493

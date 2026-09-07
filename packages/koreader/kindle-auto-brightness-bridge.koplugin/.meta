@@ -1,0 +1,23 @@
+# Kindle Auto Brightness Bridge plugin for KOReader
+# https://github.com/alexferrari88/kindle-auto-brightness-bridge
+# zenpm:auto-scraped
+id=kindle-auto-brightness-bridge
+name=Kindle Auto Brightness Bridge
+version=0.2.0
+description=KOReader plugin that synchronizes frontlight state with Kindle Auto Brightness
+author=alexferrari88
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/alexferrari88/kindle-auto-brightness-bridge
+stars=11
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-27T11:19:49Z
+readme_url=packages/koreader/kindle-auto-brightness-bridge.koplugin/README.md
+readme_hash=cf624855e1c12f1567ac71156dc0dde55453d5b6
+release_notes_url=packages/koreader/kindle-auto-brightness-bridge.koplugin/RELEASE_NOTES.md
+release_notes_hash=11c2159f5ade8c91cc7af8b20a038dbdeb1fe2f53c1f1eb23aa161b7dd3c95b8
+releases=[{"tag_name":"v0.2.0","assets":[{"name":"kindle-auto-brightness-bridge-v0.2.0.zip","url":"https://github.com/alexferrari88/kindle-auto-brightness-bridge/releases/download/v0.2.0/kindle-auto-brightness-bridge-v0.2.0.zip","size":3457,"digest":"sha256:baa0e2f7a8da3a07841b391db60393c6f7d7daefcdd3244d7fca420d22a6f910"}],"name":"Kindle Auto Brightness Bridge v0.2.0"},{"tag_name":"v0.1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/alexferrari88/kindle-auto-brightness-bridge/zipball/v0.1.0"}],"name":"Kindle Auto Brightness Bridge v0.1.0"}]
+source_type=release
+source_asset=kindle-auto-brightness-bridge-v0.2.0.zip
+size=3457

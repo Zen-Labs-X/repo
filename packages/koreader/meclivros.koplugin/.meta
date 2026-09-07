@@ -1,0 +1,18 @@
+# Meclivros plugin for KOReader
+# https://github.com/luizcorreia/meclivros.koplugin
+# zenpm:auto-scraped
+id=meclivros
+name=Meclivros
+version=source
+description=
+author=luizcorreia
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/luizcorreia/meclivros.koplugin
+stars=9
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/meclivros.koplugin/README.md
+readme_hash=bb39245436dc276a487156c461cfb560e581c0f2
+source_type=source
+source_url=https://codeload.github.com/luizcorreia/meclivros.koplugin/zip/refs/heads/main

@@ -1,0 +1,22 @@
+# Myclippings plugin for KOReader
+# https://github.com/nirajkamal/myclippings.koplugin
+# zenpm:auto-scraped
+id=myclippings
+name=Myclippings
+version=1.0.6
+description=My Clippings for KoReader. Consolidates highlights scattered across your reading setup in kindle UI and koreader (tested on kindle running koreader)
+author=nirajkamal
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/nirajkamal/myclippings.koplugin
+stars=7
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-30T01:10:28Z
+readme_url=packages/koreader/myclippings.koplugin/README.md
+readme_hash=065dcf5979a93e97d5548b03c558cb6987846eb2
+release_notes_url=packages/koreader/myclippings.koplugin/RELEASE_NOTES.md
+release_notes_hash=31fea8f16ae3fe264a25b6ad993528ea6a3b57029b84a6910ce7dec1f9f9448b
+releases=[{"tag_name":"v1.0.6","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/nirajkamal/myclippings.koplugin/zipball/v1.0.6"}],"name":"v1.0.6"},{"tag_name":"v1.0.5","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/nirajkamal/myclippings.koplugin/zipball/v1.0.5"}],"name":"v1.0.5"},{"tag_name":"v1.0.4","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/nirajkamal/myclippings.koplugin/zipball/v1.0.4"}],"name":"v1.0.4 (important fix)"},{"tag_name":"v1.0.3","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/nirajkamal/myclippings.koplugin/zipball/v1.0.3"}],"name":"v1.0.3"},{"tag_name":"v1.0.2","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/nirajkamal/myclippings.koplugin/zipball/v1.0.2"}],"name":"v1.0.2"},{"tag_name":"v1.0.1","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/nirajkamal/myclippings.koplugin/zipball/v1.0.1"}],"name":"v1.0.1"},{"tag_name":"v1.0.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/nirajkamal/myclippings.koplugin/zipball/v1.0.0"}],"name":"v1.0.0"}]
+source_type=source
+source_url=https://codeload.github.com/nirajkamal/myclippings.koplugin/zip/refs/heads/main

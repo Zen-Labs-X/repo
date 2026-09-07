@@ -1,0 +1,23 @@
+# Page Turn Animation plugin for KOReader
+# https://github.com/federico1176-wq/Page_turn_animation.koplugin
+# zenpm:auto-scraped
+id=page-turn-animation
+name=Page Turn Animation
+version=.0.1
+description=
+author=federico1176-wq
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/federico1176-wq/Page_turn_animation.koplugin
+stars=6
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-07-14T01:31:41Z
+readme_url=packages/koreader/page-turn-animation.koplugin/README.md
+readme_hash=fe30a5aed302dfd9b45acabf374a19643fccb0a4
+release_notes_url=packages/koreader/page-turn-animation.koplugin/RELEASE_NOTES.md
+release_notes_hash=0ef738f49e965b79913834687da3bb7381d5d1981d297f7686150b37e7c0ccf5
+releases=[{"tag_name":"v.0.1","assets":[{"name":"page_turn_animation.koplugin.zip","url":"https://github.com/federico1176-wq/Page_turn_animation.koplugin/releases/download/v.0.1/page_turn_animation.koplugin.zip","size":6919,"digest":"sha256:3ddf552be0170cf8d90ef30d2c972ffed7bc7071680f6b71893ec7f5915de10b"}],"name":"v0.1"}]
+source_type=release
+source_asset=page_turn_animation.koplugin.zip
+size=6919

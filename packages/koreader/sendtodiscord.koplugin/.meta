@@ -1,0 +1,23 @@
+# Sendtodiscord plugin for KOReader
+# https://github.com/Intedai/sendtodiscord.koplugin
+# zenpm:auto-scraped
+id=sendtodiscord
+name=Sendtodiscord
+version=1.1.0
+description=Send highlighted text or your clipboard to Discord using webhooks!
+author=Intedai
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/Intedai/sendtodiscord.koplugin
+stars=5
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-07-29T20:53:11Z
+readme_url=packages/koreader/sendtodiscord.koplugin/README.md
+readme_hash=6e03b1a5b4880a86f80bfd546768cbfa18d8de65
+release_notes_url=packages/koreader/sendtodiscord.koplugin/RELEASE_NOTES.md
+release_notes_hash=146184867e4292354db618b84283bca9236695b04cd33917ec065b8f127038c7
+releases=[{"tag_name":"1.1.0","assets":[{"name":"sendtodiscord.koplugin.zip","url":"https://github.com/Intedai/sendtodiscord.koplugin/releases/download/1.1.0/sendtodiscord.koplugin.zip","size":6782,"digest":"sha256:6be0b7212df3b0f5c1c7515fbf48880a1b2e2b56cd4df13e4c82ea221243e0c1"}],"name":"SendToDiscord 1.1.0"},{"tag_name":"1.0.0","assets":[{"name":"sendtodiscord.koplugin.zip","url":"https://github.com/Intedai/sendtodiscord.koplugin/releases/download/1.0.0/sendtodiscord.koplugin.zip","size":6679,"digest":"sha256:a4353842f584c59b73d522a1786b3c27317e5ea42411e4cf3378c763efdc1131"}],"name":"SendToDiscord 1.0.0"}]
+source_type=release
+source_asset=sendtodiscord.koplugin.zip
+size=6782

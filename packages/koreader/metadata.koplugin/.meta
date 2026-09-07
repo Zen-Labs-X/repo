@@ -1,0 +1,18 @@
+# Metadata plugin for KOReader
+# https://github.com/ZHA30/metadata.koplugin
+# zenpm:auto-scraped
+id=metadata
+name=Metadata
+version=source
+description=KOReader plugin for searching and applying online book metadata and covers.
+author=ZHA30
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/ZHA30/metadata.koplugin
+stars=14
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/metadata.koplugin/README.md
+readme_hash=f1cb02939cfd97c1becdb6e0ede4af729532c908
+source_type=source
+source_url=https://codeload.github.com/ZHA30/metadata.koplugin/zip/refs/heads/main

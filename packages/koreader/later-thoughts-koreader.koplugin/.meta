@@ -1,0 +1,23 @@
+# Later Thoughts Koreader plugin for KOReader
+# https://github.com/somethingsomethinginternet/later-thoughts-koreader
+# zenpm:auto-scraped
+id=later-thoughts-koreader
+name=Later Thoughts Koreader
+version=0.6.1
+description=A minimal, book-independent notes plugin for KOReader.
+author=somethingsomethinginternet
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/somethingsomethinginternet/later-thoughts-koreader
+stars=5
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-19T16:34:44Z
+readme_url=packages/koreader/later-thoughts-koreader.koplugin/README.md
+readme_hash=92e0c2aaf70e670121623397b3378e3270de7b60
+release_notes_url=packages/koreader/later-thoughts-koreader.koplugin/RELEASE_NOTES.md
+release_notes_hash=38c1ddaf545aeacfd719e0974a0c73cf7a540ccd6abdbac9eade2fb5fd89b4af
+releases=[{"tag_name":"v0.6.1","assets":[{"name":"later-thoughts-v0.6.1.zip","url":"https://github.com/somethingsomethinginternet/later-thoughts-koreader/releases/download/v0.6.1/later-thoughts-v0.6.1.zip","size":4263,"digest":"sha256:659c5166b66e9075474265aff203de8a4cbf39e0e9736a49529edaf45334061c"}],"name":"Later Thoughts v0.6.1"}]
+source_type=release
+source_asset=later-thoughts-v0.6.1.zip
+size=4263

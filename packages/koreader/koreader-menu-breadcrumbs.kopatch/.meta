@@ -1,0 +1,21 @@
+# Koreader Menu Breadcrumbs patch for KOReader
+# https://github.com/Khady/koreader-menu-breadcrumbs
+# zenpm:auto-scraped
+id=koreader-menu-breadcrumbs
+name=Koreader Menu Breadcrumbs
+version=source
+description=KOReader user patch that adds menu breadcrumbs with a full-path popup
+author=Khady
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/Khady/koreader-menu-breadcrumbs
+stars=7
+updated_at=2026-09-07T18:34:13Z
+readme_url=packages/koreader/koreader-menu-breadcrumbs.kopatch/README.md
+readme_hash=b4f708b5118ea0718e257ec258e071aac2fa231d
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-menu-breadcrumbs.lua
+assets.0.url=https://raw.githubusercontent.com/Khady/koreader-menu-breadcrumbs/main/2-menu-breadcrumbs.lua
+assets.0.size=7448

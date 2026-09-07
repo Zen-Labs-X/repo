@@ -1,0 +1,18 @@
+# Englishannot plugin for KOReader
+# https://github.com/zhouwt/englishannot.koplugin
+# zenpm:auto-scraped
+id=englishannot
+name=Englishannot
+version=source
+description=KOReader 英文单词中文标注插件
+author=zhouwt
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/zhouwt/englishannot.koplugin
+stars=11
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/englishannot.koplugin/README.md
+readme_hash=b8980cc6e6ec47c903ea05eaee9d250b4e3d73f9
+source_type=source
+source_url=https://codeload.github.com/zhouwt/englishannot.koplugin/zip/refs/heads/main

@@ -1,0 +1,23 @@
+# Artgallery plugin for KOReader
+# https://github.com/ksaMask123/artgallery.koplugin
+# zenpm:auto-scraped
+id=artgallery
+name=Artgallery
+version=1.0.22
+description=KOReader 看图插件「美术馆 / ArtGallery」：抽屉预览 + 全屏沉浸式看图，支持铺满/适配/拉伸三态填充、看图同步书籍进度、缩放/平移/收藏。面向 Kindle PaperWhite 3 等墨水屏。基于 Glimpse 合并 Illustrations 的全屏看图能力。
+author=ksaMask123
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/ksaMask123/artgallery.koplugin
+stars=11
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-29T12:29:40Z
+readme_url=packages/koreader/artgallery.koplugin/README.md
+readme_hash=53e1b6bbbce3646d876dfbae05ac245585cdf49a
+release_notes_url=packages/koreader/artgallery.koplugin/RELEASE_NOTES.md
+release_notes_hash=da6b6b53ccb359c96befa00670a0cea59f61b394bdea07f9544db0a9d9af82a3
+releases=[{"tag_name":"v1.0.22","assets":[{"name":"artgallery.koplugin-v1.0.22.zip","url":"https://github.com/ksaMask123/artgallery.koplugin/releases/download/v1.0.22/artgallery.koplugin-v1.0.22.zip","size":2534972,"digest":"sha256:65314410ba1f04c0267a27cc019764f7510c86f8c3ac9de92311666d2b17e954"}],"name":"v1.0.22 — Glimpse v1.5.1 absorption + panning hotfix"},{"tag_name":"v1.0.21","assets":[{"name":"artgallery.koplugin-v1.0.21.zip","url":"https://github.com/ksaMask123/artgallery.koplugin/releases/download/v1.0.21/artgallery.koplugin-v1.0.21.zip","size":2491358,"digest":"sha256:cfd4ba73f5d1e72449c95e26c5f21b32e2969065c08245eebc512295cc436787"}],"name":"v1.0.21"},{"tag_name":"v1.0.20","assets":[{"name":"artgallery.koplugin-v1.0.20.zip","url":"https://github.com/ksaMask123/artgallery.koplugin/releases/download/v1.0.20/artgallery.koplugin-v1.0.20.zip","size":2464672,"digest":"sha256:4856004ace655512c8a393d4806a4488a2021cbd5f65557b99d1c9bcbd8d9123"}],"name":"v1.0.20 · 书签入画廊：删除/收藏/跳转全链路稳定（KPW3 实测）"},{"tag_name":"v1.0.19","assets":[{"name":"artgallery.koplugin-v1.0.19.zip","url":"https://github.com/ksaMask123/artgallery.koplugin/releases/download/v1.0.19/artgallery.koplugin-v1.0.19.zip","size":2429848,"digest":"sha256:add2f84cb18f4f3af0d2756d7de3ea65081f7d81a1234f51533d0cd5667b8b9c"}],"name":"v1.0.19 · 吸收 glimpse v1.2.5：手势独立开关 / 更聪明过滤 / 分段切换器"},{"tag_name":"v1.0.16","assets":[{"name":"artgallery.koplugin-v1.0.16.zip","url":"https://github.com/ksaMask123/artgallery.koplugin/releases/download/v1.0.16/artgallery.koplugin-v1.0.16.zip","size":204544,"digest":"sha256:8d7f181b5ec9d79f8bd28b31ace91408761a248e1c218f435423a575f36d82da"}],"name":"v1.0.16 · 最大放大倍数可配置（吸收 glimpse v1.2.2）"},{"tag_name":"v1.0.15","assets":[{"name":"artgallery.koplugin-v1.0.15.zip","url":"https://github.com/ksaMask123/artgallery.koplugin/releases/download/v1.0.15/artgallery.koplugin-v1.0.15.zip","size":202545,"digest":"sha256:0acf1a4040dbd413f15dbad72e106dbadfbc1f473e25ba0745fcb17a6975ef01"}],"name":"v1.0.15 · 验收整改（关键路径日志 + 主动内存回收）"},{"tag_name":"v1.0.14","assets":[{"name":"artgallery.koplugin-v1.0.14.zip","url":"https://github.com/ksaMask123/artgallery.koplugin/releases/download/v1.0.14/artgallery.koplugin-v1.0.14.zip","size":199154,"digest":"sha256:30efa482d631888da2789af48a27576565333ec5ec187d7daa1ebe874f4138f3"}],"name":"v1.0.14 · 关于文档菜单项配图标（含眼睛 emoji 占位）"},{"tag_name":"v1.0.12","assets":[{"name":"artgallery.koplugin-v1.0.12.zip","url":"https://github.com/ksaMask123/artgallery.koplugin/releases/download/v1.0.12/artgallery.koplugin-v1.0.12.zip","size":193745,"digest":"sha256:ba5df22749958b46f6e00f6c983e5d8103d04e669a40bb125138c8a87fea1729"}],"name":"v1.0.12 · 根治关于弹窗白闪/无弹窗（残留 tap 误关）"},{"tag_name":"v1.0.11","assets":[{"name":"artgallery.koplugin-v1.0.11.zip","url":"https://github.com/ksaMask123/artgallery.koplugin/releases/download/v1.0.11/artgallery.koplugin-v1.0.11.zip","size":192293,"digest":"sha256:ee644e4c57aa56cb8b4b2abdf4c6ece7799382975234b648bf2bf5d7849d6e39"}],"name":"v1.0.11 · 关于弹窗 show_menu=false（参考 poker24 比对）"},{"tag_name":"v1.0.1","assets":[{"name":"artgallery.koplugin-v1.0.1.zip","url":"https://github.com/ksaMask123/artgallery.koplugin/releases/download/v1.0.1/artgallery.koplugin-v1.0.1.zip","size":152253,"digest":"sha256:a1b6b25d46a47c1de2a97d983823f198ecc72966498e60b66a03f6e939ae2a85"}],"name":"v1.0.1 · 内置更新器指向本仓库 + 关于/作者信息更正"},{"tag_name":"v1.0.0","assets":[{"name":"artgallery.koplugin-v1.0.0.zip","url":"https://github.com/ksaMask123/artgallery.koplugin/releases/download/v1.0.0/artgallery.koplugin-v1.0.0.zip","size":150257,"digest":"sha256:7f78ef4d50c478ba5b7d477be9d531f9244e8011998adf829861ade5db28be3c"}],"name":"v1.0.0 · 美术馆/ArtGallery KOReader 看图插件"}]
+source_type=release
+source_asset=artgallery.koplugin-v1.0.22.zip
+size=2534972

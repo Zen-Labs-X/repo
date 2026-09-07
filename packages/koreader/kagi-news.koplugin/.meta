@@ -1,0 +1,18 @@
+# Kagi News plugin for KOReader
+# https://github.com/ysfsvm/kagi-news.koplugin
+# zenpm:auto-scraped
+id=kagi-news
+name=Kagi News
+version=source
+description=
+author=ysfsvm
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/ysfsvm/kagi-news.koplugin
+stars=5
+updated_at=2026-09-07T18:29:19Z
+readme_url=packages/koreader/kagi-news.koplugin/README.md
+readme_hash=fd892378d0f65339c7efb14ec011d7d4a9d27598
+source_type=source
+source_url=https://codeload.github.com/ysfsvm/kagi-news.koplugin/zip/refs/heads/main

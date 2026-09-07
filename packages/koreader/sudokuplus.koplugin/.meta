@@ -1,0 +1,23 @@
+# Sudokuplus plugin for KOReader
+# https://github.com/Borisvl/sudokuplus.koplugin
+# zenpm:auto-scraped
+id=sudokuplus
+name=Sudokuplus
+version=1.1.0
+description=A full-featured, logical Sudoku puzzle game and interactive tutor crafted specifically for e-ink readers running [KOReader](https://github.com/koreader/koreader) (Kobo, Kindle, PocketBook, Android).
+author=Borisvl
+category=games
+platforms=koreader
+dependencies=
+source=https://github.com/Borisvl/sudokuplus.koplugin
+stars=5
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-22T20:56:29Z
+readme_url=packages/koreader/sudokuplus.koplugin/README.md
+readme_hash=c8317750543b05478032f7180453f91deb313d4f
+release_notes_url=packages/koreader/sudokuplus.koplugin/RELEASE_NOTES.md
+release_notes_hash=3cd171ccb7ca725553725f31536930c7593b35967d378531734299c1437452a1
+releases=[{"tag_name":"v1.1.0","assets":[{"name":"sudokuplus.koplugin.zip","url":"https://github.com/Borisvl/sudokuplus.koplugin/releases/download/v1.1.0/sudokuplus.koplugin.zip","size":154142,"digest":"sha256:49b75e89c172897281921fa5af5657eba0eaa2e2708135e083e05d6ce4bd5f35"}],"name":"v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"sudokuplus.koplugin.zip","url":"https://github.com/Borisvl/sudokuplus.koplugin/releases/download/v1.0.0/sudokuplus.koplugin.zip","size":112981,"digest":"sha256:d87f22f55863d51731374d899337fa7430abaaffd78a9519811ba20bf25b2a28"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=sudokuplus.koplugin.zip
+size=154142

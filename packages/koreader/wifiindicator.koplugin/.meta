@@ -1,0 +1,23 @@
+# Wifiindicator plugin for KOReader
+# https://github.com/asxelot/wifiindicator.koplugin
+# zenpm:auto-scraped
+id=wifiindicator
+name=Wifiindicator
+version=1.0.0
+description=KOReader plugin: suppress Wi-Fi popups, show a quiet status icon in the corner and menu bar (tap to toggle Wi-Fi)
+author=asxelot
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/asxelot/wifiindicator.koplugin
+stars=9
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-07-23T08:27:44Z
+readme_url=packages/koreader/wifiindicator.koplugin/README.md
+readme_hash=760fc6340b480c6eaae490726924ccaed7a29e8b
+release_notes_url=packages/koreader/wifiindicator.koplugin/RELEASE_NOTES.md
+release_notes_hash=c160af48dd9ed94b09564912923652def2368962c05e4f060663c0ac05b9ffca
+releases=[{"tag_name":"v1.0.0","assets":[{"name":"wifiindicator.koplugin.zip","url":"https://github.com/asxelot/wifiindicator.koplugin/releases/download/v1.0.0/wifiindicator.koplugin.zip","size":24027,"digest":"sha256:db123569524a0f43797fe60698b5bf83d2fe9489e1eb524a5e3a8759972c0093"}],"name":"WifiIndicator v1.0.0"}]
+source_type=release
+source_asset=wifiindicator.koplugin.zip
+size=24027

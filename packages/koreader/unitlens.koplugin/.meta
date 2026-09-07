@@ -1,0 +1,23 @@
+# Unitlens plugin for KOReader
+# https://github.com/farengeyt451/unitlens.koplugin
+# zenpm:auto-scraped
+id=unitlens
+name=Unitlens
+version=1.1.0
+description=Unit Lens - a KOReader plugin that helps you find the equivalent of a unit in another measurement system
+author=farengeyt451
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/farengeyt451/unitlens.koplugin
+stars=5
+updated_at=2026-09-07T18:29:19Z
+published_at=2026-08-23T14:56:57Z
+readme_url=packages/koreader/unitlens.koplugin/README.md
+readme_hash=4a5db0ca05a4559b664000fdf466a00b730d2de4
+release_notes_url=packages/koreader/unitlens.koplugin/RELEASE_NOTES.md
+release_notes_hash=aed45391242026c70f433826abe899505e1cf6c512dd651e3f1d09d64c7cf72e
+releases=[{"tag_name":"v1.1.0","assets":[{"name":"unitlens.koplugin-1.1.0.zip","url":"https://github.com/farengeyt451/unitlens.koplugin/releases/download/v1.1.0/unitlens.koplugin-1.1.0.zip","size":37893,"digest":"sha256:77c4fd48b3134a45cf930c6e40be379b22a32201012f1b97e7c1eb97d63d455a"}],"name":"v1.1.0"},{"tag_name":"v1.0.0","assets":[{"name":"unitlens.koplugin-1.0.0.zip","url":"https://github.com/farengeyt451/unitlens.koplugin/releases/download/v1.0.0/unitlens.koplugin-1.0.0.zip","size":32323,"digest":"sha256:defcb0a445f81d77a3ea68473fb2abd7ebc1a95d73347626562800e70e6c2a74"}],"name":"v1.0.0"}]
+source_type=release
+source_asset=unitlens.koplugin-1.1.0.zip
+size=37893
