@@ -1,3 +1,54 @@
+# v0.5.1
+
+## 本次更新
+
+新功能：
+发布摘要支持 refactor 前缀
+关于弹窗内容更新
+
+问题修复：
+登录行点按弹账户动作面板,想法弹窗设置放回划线样式下
+移除菜单分隔线占位项
+敏感信息扫描放行自身测试夹具并覆盖未跟踪文件
+
+结构调整：
+上游式收纳——登录行合并账户,低频入设置抽屉
+菜单三段式重组,想法弹窗设置提级,命名统一
+日志收敛、弹窗基类收敛与菜单抽离
+
+# v0.5.0
+
+## 本次更新
+
+新功能：
+想法评论查看与评论数懒加载（Issue #104 / PR #22/#106）
+
+问题修复：
+发布摘要识别 PR 合并提交
+
+---
+
+## Contributors（本次更新的贡献者）
+
+- @Mr54233
+
+---
+
+## 安装
+
+1. 下载 `pickthought.koplugin.zip` 并解压
+2. 把 `pickthought.koplugin` 目录放到 KOReader 插件目录：
+`koreader/plugins/pickthought.koplugin`
+3. 完全重启 KOReader，在「工具」菜单找到「撷思」
+
+## 环境要求
+
+KOReader ≥ v2026.03（需要内建的 `ffi/archiver` 与 `lua-ljsqlite3`）。
+
+---
+
+本插件衍生自 [miuread-koreader](https://github.com/miumiupy98-art/miuread-koreader) 与 [weread.koplugin](https://github.com/finlater/weread.koplugin)，基于 AGPL-3.0 许可证发布。
+
 # v0.4.2
 
 ## 本次更新
@@ -118,71 +169,6 @@ SQLite 数据库完整性保护（PR #15）
 2. 把 `pickthought.koplugin` 目录放到 KOReader 插件目录：
    `koreader/plugins/pickthought.koplugin`
 3. 完全重启 KOReader，在“工具”菜单找到“撷思”
-
-## 环境要求
-
-KOReader ≥ v2026.03（需要内建的 `ffi/archiver` 与 `lua-ljsqlite3`）。
-
----
-
-本插件衍生自 [miuread-koreader](https://github.com/miumiupy98-art/miuread-koreader) 与 [weread.koplugin](https://github.com/finlater/weread.koplugin)，基于 AGPL-3.0 许可证发布。
-
-# v0.3.3
-
-## 本次更新
-
-新功能：
-增加同步调试模式与退出诊断
-
-问题修复：
-异步执行休眠保活避免阻塞界面
-移除设置中的重复划线样式入口
-恢复默认想法虚线样式
-
----
-
-## Contributors（本次更新的贡献者）
-
-- @Mr54233
-
----
-
-## 安装
-
-1. 下载 `pickthought.koplugin.zip` 并解压
-2. 把 `pickthought.koplugin` 目录放到 KOReader 插件目录：
-`koreader/plugins/pickthought.koplugin`
-3. 完全重启 KOReader，在「工具」菜单找到「撷思」
-
-## 环境要求
-
-KOReader ≥ v2026.03（需要内建的 `ffi/archiver` 与 `lua-ljsqlite3`）。
-
----
-
-本插件衍生自 [miuread-koreader](https://github.com/miumiupy98-art/miuread-koreader) 与 [weread.koplugin](https://github.com/finlater/weread.koplugin)，基于 AGPL-3.0 许可证发布。
-
-# v0.3.2
-
-## 本次更新
-
-新功能：
-增强更新流程与菜单入口
-
----
-
-## Contributors（本次更新的贡献者）
-
-- @Mr54233
-
----
-
-## 安装
-
-1. 下载 `pickthought.koplugin.zip` 并解压
-2. 把 `pickthought.koplugin` 目录放到 KOReader 插件目录：
-`koreader/plugins/pickthought.koplugin`
-3. 完全重启 KOReader，在「工具」菜单找到「撷思」
 
 ## 环境要求
 

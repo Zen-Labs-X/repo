@@ -1,3 +1,9 @@
+# v6.2.9
+
+**Fixed**
+
+- Removed dead code: the unused "today, all books" full-table-scan query. A bit faster book progress popup open.
+
 # v6.2.8
 
 **Changed**
@@ -20,8 +26,3 @@ The range heatmap's week-column count to a constant per months-setting instead o
 **Changed**
 
 - Prevent tap/long-press on reading goal target in goal-only mode. Prevent some unnecessary popup.
-
-# v6.2.4
-
-**Fix** 
-- On book progress popup 'Pace' and 'This book' header taps not opening the book progress calendar / book stats popup.

@@ -31,6 +31,8 @@
 
 * optimize toggling night mode ([5f45d30](https://github.com/Euphoriyy/appearance.koplugin/commit/5f45d302d35b24a0b49faea54e51de8e8aadd513))
 
+*Supported KOReader Version: **v2026.07***
+
 # v1.6.1
 
 ## [1.6.1](https://github.com/Euphoriyy/appearance.koplugin/compare/v1.6.0...v1.6.1) (2026-08-19)

@@ -1,3 +1,20 @@
+# v4.7.0
+
+- Two new colour options: the outline around the selected book, and the shadow behind covers and folder cards (#199)
+- New "Tallest cover shape" setting, so unusually tall covers can show more of themselves before being trimmed (#330)
+- New tokens: %ssh_icon while KOReader's SSH server is running, and %quote_page and %quote_chapter for the highlight %quote picked (#298, #333)
+- %page_num now works in list view lines, not only in the hero
+- The book description keeps its text size when the panel is opened by long-pressing a cover (#363)
+- Tapping a book in the expanded shelf stays on that book's page instead of jumping back to page 1 (#369)
+
+# v4.6.0
+
+- On-hold and finished books now show their badge and fade on list-view covers, following the same settings as the cover view (#365)
+- OPDS downloads use the server's filename when that option is on (#354)
+- Pinching to fit more rows fills them again, and redraws faster than before
+- The line editor no longer closes when a tap in the Tokens or Icons picker misses a row (#364)
+- Swipe to change pages in the token picker
+
 # v4.5.1
 
 - Stack folder tiles no longer show a white corner when the cover drop shadow is off (#362)
@@ -53,28 +70,3 @@ Patch for v4.4.0. See those notes for the full feature list.
 - Covers and folder stacks sit at the top of a row that is taller than the artwork, rather than floating in the middle of it
 - Folder and series stacks draw the same size covers whatever the stack holds
 - Installing a development branch by name now only installs from the Bookshelf repository
-
-# v4.4.0
-
-**Bookends token parity**
-
-- Tokens mean the same thing in Bookshelf and Bookends now, so a line copied from one reads the same in the other (#348, #62)
-- %warmth uses the device's own scale (0-24 on Kindle) and the frontlight shows OFF rather than 0, matching Bookends
-- New tokens: %highlights, %notes, %bookmarks and %annotations for a book's annotation counts; %pages_today, %time_today, %total_read_time, %books_finished and %book_pct_read for reading statistics; %avg_page_time for this book's pace; %warmth_pct and %warmth_icon
-- %<token> marks where a token's name ends, so ordinary text can follow it: %<author>s gives the author followed by an s
-
-**Status line in the reader**
-
-- The status line can sit across the top of the reader as well as the shelf, drawn by the same code so it reads the same in both: menu > Settings > Advanced > While reading > Show status line
-- If you also use Bookends, its top row and any top-anchored progress bar move down to make room
-- The in-reader launcher button settings live in that same section now
-
-- Calibre custom columns survive a wireless calibre sync on books that have a publisher, publication date or rating; before, only books with none of the three kept them
-- The Recent shelf no longer offers a page it cannot fill
-
-# v4.3.5
-
-- The hero card shows a book's description again when a two-line title left only a little room - it now fills whatever space remains, down to a single line, instead of vanishing (#349)
-- Generated covers for books without artwork no longer cut short titles off with "…" when the last word only just fit; the same fix stops uppercase hero titles doing the odd early wrap (thanks for the Reddit report)
-- Swiping between pages of an overflowing chip bar no longer leaves a ghost line from the previously selected chip (#352)
-- On a series shelf, the series filter dialog now marks the option that is actually in effect, instead of showing "standalone and books in series" as active before it was (#350)

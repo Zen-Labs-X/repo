@@ -1,3 +1,14 @@
+# 1.3.2
+
+##### Plugin
+- Add a **ShelfSync: Update progress for all linked books** gesture under KOReader's General actions, which immediately syncs the open book's current progress to every linked provider in sequence and reports each provider's result. Gesture-triggered sync now refreshes an unknown remote reading status first, instead of incorrectly treating it as a status mismatch.
+- Fable now caches the login password on the device, encrypted at rest where possible, so an expired or revoked session can silently re-authenticate without asking for the password again. Logging out clears the cached password as well as the session tokens.
+
+
+---
+
+Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#132)
+
 # 1.3.1
 
 ##### Plugin
@@ -37,7 +48,3 @@ Goodreads sessions periodically go stale from an AWS WAF bot-challenge on Goodre
 [goodreads-cookie-refresher](https://github.com/Lyfts/goodreads-cookie-refresher) is a small, self-hosted Docker setup that keeps a real logged-in browser session alive on your network and hands the plugin a fresh cookie automatically — both for first-time setup and every time the saved cookie goes stale.
 
 See [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#120) for changes in this release.
-
-# 1.1.2
-
-See [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#112) for changes in this release.

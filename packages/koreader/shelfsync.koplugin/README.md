@@ -26,6 +26,10 @@ StoryGraph, Hardcover, and Goodreads share a single config file: rename `shelfsy
 > Hardcover isn't cookie-based, so its token still needs to be pasted in by hand (see below).
 
 ### StoryGraph authentication
+Open **ShelfSync > Providers > StoryGraph > Account (Cookies & Tokens) > Log in** and enter your StoryGraph email and password. The plugin saves the session and remember-me cookies returned by StoryGraph; it does not store your password. Log in again if your session expires.
+
+If Cloudflare blocks login on your device, import browser cookies using the helper above or these manual steps:
+
 1. Log in to [thestorygraph.com](https://thestorygraph.com) in your browser.
 2. Open your browser's Developer Tools (F12) -> Application/Storage -> Cookies.
 3. Copy the value of the `_storygraph_session` cookie and paste it into the `session_cookie` field of the `storygraph` section in `shelfsync_config.lua`.
@@ -83,6 +87,9 @@ When enabled (per service), the plugin will periodically sync your progress:
 - When reaching the end of the document, the book is automatically marked as "Read"/"Finished".
 - Progress can be synced automatically based on time duration, percentage read or pages read (based on edition page count).
 - Hardcover only stores progress as a page number; if a tracking mode produces a percentage instead (e.g. no page count is known for the linked edition), it's converted to a page number automatically before syncing.
+
+### Update Progress with a Gesture
+KOReader's gesture manager includes a **ShelfSync: Update progress for all linked books** action in the **General** category. Assign it to any gesture to immediately push the open book's current progress to every provider it is linked to, without waiting for the configured time, percentage, or page interval. Gesture-triggered updates show the provider being synced and whether the update succeeded or failed; automatic interval updates remain silent. Provider authentication, enablement, and per-book tracking settings still apply.
 
 ## Settings
 
