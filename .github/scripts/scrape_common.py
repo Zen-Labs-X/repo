@@ -21,7 +21,7 @@ CATEGORY_CACHE = os.path.join(os.path.dirname(__file__), "plugin_categories.json
 SCRAPE_BLACKLIST = os.path.join(os.path.dirname(__file__), "scrape_blacklist.json")
 SCRAPED_MARKER = "zenpm:auto-scraped"
 
-MIN_STARS = 15
+MIN_STARS = 5
 MAX_INACTIVE_DAYS = 730
 
 KIND_PLUGIN = "plugin"

@@ -2,6 +2,73 @@
 
 [Add to ZenPM](zenpm://add-repo?name=ZenLabs%20Repo&url=https://xzenlabs.github.io/repo/)
 
+## Requirements for automatic inclusion
+
+KOReader plugins and user patches are discovered from GitHub every two hours.
+To get a new package added automatically, meet **all the common requirements**
+and the **plugin or patch requirements** below. No pull request to this repo is
+needed for automatic discovery. Other package types are outside this process.
+
+### Common requirements
+
+- **Public GitHub repository with at least 5 stars.** Forks are eligible too.
+- **Not archived.**
+- **Recent activity:** the scraper rejects repositories whose GitHub
+  `pushed_at` timestamp is more than 730 whole days old. It does not reject a
+  repository if that timestamp is missing or cannot be parsed.
+- **Not a duplicate:** the repository must not already be cataloged, its
+  generated package ID must not already be taken, and its normalized
+  owner/repository identity must not match an existing package. Package IDs
+  are derived from repository names, so a name collision can prevent addition
+  even when the repositories have different owners.
+
+### Plugin requirements
+
+Your repository must match **at least one** of these discovery signals:
+
+- Its **repository name contains `koplugin`**, such as `example.koplugin`.
+- Its **GitHub topics include `koplugin`, `koreader-plugin`, or
+  `koreader-plugins`**.
+
+A `.koplugin` folder inside a larger repository does **not** qualify by itself.
+
+Repository name and topic checks are case-insensitive for plugins and patches.
+
+Plugin discovery skips repositories tagged `koreader-user-patch` or whose
+name contains `KOReader.patches`; those go through patch discovery instead.
+
+**A GitHub release is not required.** The scraper uses ZIP assets from the
+newest stable release when available; otherwise it uses the default-branch
+source ZIP. Authors must still provide a layout that ZenPM can install;
+catalog discovery does not validate the plugin's archive layout or functionality.
+
+### User patch requirements
+
+Your repository must match **at least one** of these discovery signals:
+
+- Its **GitHub topics include `koreader-user-patch`**.
+- Its **repository name contains `KOReader.patches`**.
+
+It must also contain at least one file on the default branch whose filename
+**starts with a digit and ends with `.lua`**, such as `2-example.lua`.
+Subdirectories are scanned. Matching Lua files are installed directly, so
+no release or ZIP is required.
+
+Patch discovery rejects repositories containing a directory ending in
+`.koplugin`; mixed plugin/patch repositories are not supported by that scanner.
+
+### Exceptions and scan results
+
+ZenFM (`xzenlabs/zen-fm`) and ZenPM (`xzenlabs/zen-pm`) are explicitly listed in
+`EXTRA_PLUGIN_REPOS` in [scrape_koplugins.py](.github/scripts/scrape_koplugins.py).
+They bypass the star minimum and plugin name/topic requirement. The other
+eligibility checks still apply.
+
+These rules govern **new additions**. Already scraped packages continue to be
+refreshed without rechecking the star or inactivity threshold; blacklisted
+repositories are excluded from refreshes too. GitHub API failures or rate
+limits can delay discovery or addition, even when a repository qualifies.
+
 ## Key Generation
 
 Generate an ed25519 key pair:
@@ -154,29 +221,10 @@ All files are served as static content — no server-side logic required. ZenPM 
 
 ### KOReader plugins and patches
 
-KOReader packages are discovered automatically from GitHub every two hours. Newly discovered packages are added directly to the catalog.
+See [Requirements for automatic inclusion](#requirements-for-automatic-inclusion)
+for the exact rules for getting a new KOReader plugin or patch added.
 
-To be eligible, a repository must:
-
-- be hosted on GitHub and not already be represented by a package in this repo;
-- have at least 15 GitHub stars;
-- not be archived; and
-- have been pushed to within the last two years.
-
-In addition, plugins must have `koplugin` in their name or be tagged with the
-`koplugin` or `koreader-plugin` topic. Patches must be tagged with
-`koreader-user-patch` or have `KOReader.patches` in their name, and must contain
-at least one user-patch Lua file whose filename starts with a number (for
-example, `2-example.lua`).
-
-ZenPM is explicitly included in the plugin scan because its repository has
-neither of the plugin naming or topic signals. Its generated metadata is stored
-at `packages/koreader/zenpm.koplugin/.meta`.
-
-Forks are considered by default. Plugin packages use a release ZIP when one is
-available, otherwise the repository's default-branch source archive; patch
-packages install the matching Lua files directly. All generated packages use
-the shared KOReader install and uninstall scripts. During each scan, the
+During each scan, the
 repository README, the five latest stable and non-alpha prerelease notes, and up
 to 100 installable releases are cached in the repository metadata.
 `generate-manifest.sh` writes each release list to the package's `versions.json`
@@ -185,9 +233,6 @@ are included in the manifest, allowing clients to refresh only when the
 corresponding content changes. Cached releases let clients populate their
 version pickers without calling the GitHub API. When a release has no uploaded
 ZIP asset, its automatically generated GitHub source-code ZIP is cached instead.
-
-Repositories listed in `.github/scripts/scrape_blacklist.json` are excluded from
-automatic discovery and refreshes. The list is empty by default.
 
 ### Refreshing KOReader packages locally
 

@@ -9,9 +9,26 @@ from unittest import mock
 
 import scrape_common
 import scrape_koplugins
+import scrape_kopatches
 
 
 class PluginScraperTests(unittest.TestCase):
+    def test_five_star_minimum_for_plugins_and_patches(self):
+        repo = {"name": "myclippings.koplugin", "stargazers_count": 5}
+        self.assertTrue(scrape_koplugins.is_eligible_koplugin(repo, False))
+        self.assertTrue(scrape_kopatches.is_eligible_patch_repo(
+            {"name": "KOReader.patches", "stargazers_count": 5}, False
+        ))
+        self.assertFalse(scrape_koplugins.is_eligible_koplugin(repo | {"stargazers_count": 4}, False))
+        self.assertFalse(scrape_kopatches.is_eligible_patch_repo(
+            {"name": "KOReader.patches", "stargazers_count": 4}, False
+        ))
+        for fields in ({"archived": True}, {"pushed_at": "2000-01-01T00:00:00Z"}):
+            with self.subTest(fields=fields):
+                self.assertFalse(scrape_koplugins.is_eligible_koplugin(repo | fields, False))
+        self.assertTrue(scrape_koplugins.is_eligible_koplugin(repo | {"fork": True}, False))
+        self.assertFalse(scrape_koplugins.is_eligible_koplugin(repo | {"fork": True}, True))
+
     def test_koreader_plugin_topic_variants_are_discovered_and_eligible(self):
         for topic in ("koreader-plugin", "koreader-plugins"):
             with self.subTest(topic=topic):
