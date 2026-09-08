@@ -12,6 +12,8 @@ KinAMP has now an experimental **Kobo support** too - Koreader plugin only.
 
 On Kindles it is included in the **KindleTweaks KPM** repository. Read the documentation about installing it using `kpm`.
 
+**UPDATE 8. sept:** Release file fixed (added missing libraries)
+
 # 3.0beta
 
 This is a huge update of KinAMP. The main feature is the completely new Koreader plugin interface. For quick access, assign it to the lower right corner tap in the *Gesture manager*. 

@@ -1,3 +1,11 @@
+# 26.9.8
+
+- Overall better PDF support for large files, comics, manga, etc 
+- Add loading bar for downloads to indicate progress on large files
+- Add non-touch screen support
+
+**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.27...26.9.8
+
 # 26.8.27
 
 - Handle long folder names in the folder picker
@@ -41,8 +49,3 @@ This release brings some much-requested features, including early book returns, 
 - Restore toast message when downloading.
 
 **Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.21.5...26.8.21.6
-
-# 26.8.21.5
-
-- fix network bug affecting android only
-**Full Changelog**: https://github.com/ultimatejimmy/libbee/compare/26.8.21.4...26.8.21.5

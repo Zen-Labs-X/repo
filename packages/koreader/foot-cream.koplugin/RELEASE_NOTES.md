@@ -1,3 +1,9 @@
+# v1.8.3
+
+If KOReader's language was set to Russian, Ukrainian or Welsh, Footcream never appeared at all — it looked like it was not installed. That is fixed. The plugin was tripping over its own translation file for those three languages and failing to start, which is why 1.6.0 was the last version that worked for those readers.
+
+Also fixed (thank you for the flagging!): when a book already gives both units, Footcream now leaves it alone, so "12 pounds (5.5 kilograms)" no longer gains a third number. Quotation marks in web articles and code listings are no longer mistaken for inch marks, and a bid at an auction is read as money rather than weight.
+
 # v1.8.2
 
 Footcream was mistaking quotation marks for foot marks, so quoted numbers turned into measurements — `'18'` on a label became 5.5 m. That's now fixed in nearly every case, and no real measurements were lost along the way.
@@ -88,15 +94,3 @@ Cache version 59 → 64; already-scanned books rescan themselves once on open.
 - Bare **"degrees"** converts as Fahrenheit only when the surrounding sentence is about temperature; angles, proof and headings are left alone. "minus seventy degrees" now negates correctly.
 - **"twenty-three square leagues"** and hyphenated compounds like **"250,000-square-foot"** now convert as areas rather than lengths.
 - **"three-toed feet"** is no longer read as a distance
-
-# v1.6.0
-
-Convert both ways! New "Convert units to" setting (Metric / Imperial US / Imperial UK): metric books now convert to imperial in all three modes. 
-
-Also new:
-- Visual Mode picker: a sample sentence shows exactly what each mode does, in your own underline styling. Mode changes apply when you leave the menu, and declining a conversion restores your previous mode.
-- "Enable Footcream in this book": turn Footcream off for a single book (its text is restored) while every other book keeps working.
-- Long-press any menu item for a plain-language explanation.
-- Shorter dialogs and a tidier menu (Unit categories now under Advanced).
-
-Scanner improvements (from a three-novel translation corpus): gun calibers like "9mm" convert to eighth-inch fractions, tiny gram amounts never show "0 oz", square metres convert as area, counts like "two 9mm pistols" are no longer misread, and money amounts like "$50 m" are never converted. Already-converted books refresh automatically to pick up the improved converter.
