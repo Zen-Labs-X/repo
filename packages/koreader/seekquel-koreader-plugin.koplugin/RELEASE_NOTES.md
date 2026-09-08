@@ -1,3 +1,23 @@
+# v1.7.0
+
+
+### Added
+
+- **Seekquel can now show you which part of the day you read in, and your device is the
+  only thing that knows.** KOReader writes down the moment of every page turn, so the
+  add-on now reports the hours a day's reading fell in alongside the minutes it already
+  sent. Your reading stats gain a morning, afternoon, evening and night breakdown that is
+  filled in from the history already on your reader, going back as far as your statistics
+  do, rather than starting from empty on the day you update.
+
+  The hours are read on your device's own clock and shifted by the timezone offset the
+  add-on already uses for dating a day, so a chapter finished after midnight counts as
+  night rather than as the following morning.
+
+  Nothing else changes. The daily minutes, pages and chapter are the same numbers as
+  before, and a day whose hours do not add up to it is sent without them rather than
+  putting a correct total at risk.
+
 # v1.5.3
 
 ### Fixed
@@ -88,16 +108,3 @@
   be the slowest ever, kept for the life of the install, so one bad afternoon was re-sent
   unchanged on every version after it and a reader whose problem was fixed still looked
   slow.
-
-# v1.4.5
-
-### Fixed
-
-- **Switching away from KOReader now syncs properly, not just your place in the book.**
-  Closing a book has always sent everything; backgrounding the app sent only your page, so
-  reading time and highlights waited until you came back to the book. That is exactly
-  backwards: the moment you leave KOReader is the moment you open Seekquel. It now sends
-  your place, your reading time and your highlights on the way out, with a five second
-  ceiling on the whole thing and two seconds on any single request, so it cannot hold the
-  screen the way the old version did. Anything that does not fit still goes when you
-  return.
