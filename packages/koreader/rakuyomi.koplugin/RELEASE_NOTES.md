@@ -1,3 +1,12 @@
+# v1.41.8
+
+## [1.41.8](https://github.com/tachibana-shin/rakuyomi/compare/v1.41.7...v1.41.8) (2026-09-08)
+
+
+### Bug Fixes
+
+* **aidoku:** sync process_page_image on lazy boot ([#342](https://github.com/tachibana-shin/rakuyomi/issues/342)) ([82087f7](https://github.com/tachibana-shin/rakuyomi/commit/82087f74f42d88ebbb12b3df388df61f7c46874c))
+
 # v1.41.7
 
 ## [1.41.7](https://github.com/tachibana-shin/rakuyomi/compare/v1.41.6...v1.41.7) (2026-09-08)
@@ -37,12 +46,3 @@
 
 * **android:** register CbzDocument provider on Android too ([#327](https://github.com/tachibana-shin/rakuyomi/issues/327)) ([9b06ec2](https://github.com/tachibana-shin/rakuyomi/commit/9b06ec2d0cce4fa93e9f04c07e5b115a92f9fe84))
 * mmap and munmap calls to use ffi.C ([8fd5a4d](https://github.com/tachibana-shin/rakuyomi/commit/8fd5a4d90af01e1ee9481bf1d60f4c367e360804))
-
-# v1.41.3
-
-## [1.41.3](https://github.com/tachibana-shin/rakuyomi/compare/v1.41.2...v1.41.3) (2026-08-26)
-
-
-### Bug Fixes
-
-* alias `@/types/constants` lnreader ([17cc35c](https://github.com/tachibana-shin/rakuyomi/commit/17cc35c270d359f9a47fd27818765c407da7ee84)), closes [#324](https://github.com/tachibana-shin/rakuyomi/issues/324)
