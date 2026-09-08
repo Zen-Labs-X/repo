@@ -1,0 +1,23 @@
+# Eyerest plugin for KOReader
+# https://github.com/CalebLinGit/eyerest.koplugin
+# zenpm:auto-scraped
+id=eyerest
+name=Eyerest
+version=0.3.0
+description=Eye-strain break reminder for KOReader (Kindle, Kobo, e-ink) — Stretchly-style 20-20-20 mini & long breaks, paced by actual reading time, plus a reading sleep timer.
+author=CalebLinGit
+category=theme
+platforms=koreader
+dependencies=
+source=https://github.com/CalebLinGit/eyerest.koplugin
+stars=5
+updated_at=2026-09-08T13:59:06Z
+published_at=2026-06-14T22:27:23Z
+readme_url=packages/koreader/eyerest.koplugin/README.md
+readme_hash=336b803646c7ec7eef6f05f483e45a74c2a121a3
+release_notes_url=packages/koreader/eyerest.koplugin/RELEASE_NOTES.md
+release_notes_hash=12863f70dbe5a4bba6b01cebe17f5ee81245ed71498165cf9759418f064ef30a
+releases=[{"tag_name":"v0.3.0","assets":[{"name":"eyerest.koplugin.zip","url":"https://github.com/CalebLinGit/eyerest.koplugin/releases/download/v0.3.0/eyerest.koplugin.zip","size":31343,"digest":"sha256:a9369880a17b6663db281bb86e1ad427a1c04c3d2f2d44c2d0ad071d4016b09f"}],"name":"Eye Rest 0.3.0"},{"tag_name":"v0.2.0","assets":[{"name":"eyerest.koplugin.zip","url":"https://github.com/CalebLinGit/eyerest.koplugin/releases/download/v0.2.0/eyerest.koplugin.zip","size":23853,"digest":"sha256:fe770c10976568d5acf71c2f45b6df3d1e824701daf54486bf886c9aa667066a"}],"name":"Eye Rest 0.2.0"},{"tag_name":"v0.1.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/CalebLinGit/eyerest.koplugin/zipball/v0.1.0"}],"name":"Eye Rest 0.1.0"}]
+source_type=release
+source_asset=eyerest.koplugin.zip
+size=31343

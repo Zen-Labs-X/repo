@@ -1,0 +1,25 @@
+# Koreader Nonblocking Wifi patch for KOReader
+# https://github.com/asxelot/koreader-nonblocking-wifi
+# zenpm:auto-scraped
+id=koreader-nonblocking-wifi
+name=Koreader Nonblocking Wifi
+version=1.0.0
+description=Prototype KOReader user patch: non-blocking Wi-Fi connect on Kobo (keep reading while it connects)
+author=asxelot
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/asxelot/koreader-nonblocking-wifi
+stars=5
+updated_at=2026-09-08T14:05:19Z
+published_at=2026-07-23T09:49:29Z
+readme_url=packages/koreader/koreader-nonblocking-wifi.kopatch/README.md
+readme_hash=0b61445b6a1e4d45d2bdc25a6502a13802eff96b
+release_notes_url=packages/koreader/koreader-nonblocking-wifi.kopatch/RELEASE_NOTES.md
+release_notes_hash=f2488777e1aee5a6334288bdc59db94dcda58399b36530999138bad1e7996a3c
+releases=[{"tag_name":"v1.0.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/asxelot/koreader-nonblocking-wifi/zipball/v1.0.0"}],"name":"Non-blocking Wi-Fi v1.0.0"}]
+source_type=source
+assets.0.arch=any
+assets.0.asset=2-nonblocking-wifi.lua
+assets.0.url=https://raw.githubusercontent.com/asxelot/koreader-nonblocking-wifi/main/2-nonblocking-wifi.lua
+assets.0.size=23887

@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"v1.0.0","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/asxelot/koreader-nonblocking-wifi/zipball/v1.0.0"}],"name":"Non-blocking Wi-Fi v1.0.0"}]
+}
