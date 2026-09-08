@@ -74,9 +74,21 @@ The confirmation shows how many eligible chapters are captured for this batch, h
 
 Use another explicit action to reach the remaining eligible chapters; batches never continue automatically. **Download selected** asks for confirmation when its eligible selection exceeds 50. Small selected and next actions remain immediate. **Download next** continues to count additional eligible unread chapters; its confirmation also discloses the 50-new-download cap when applicable. The **Download ahead** buffer keeps its existing position-based behavior.
 
-Transient network failures are retried in the background with increasing delays. Retries resume after the device wakes; permanent failures remain visible under **Downloads** without interrupting reading. The home entry shows the terminal failure count when nonzero. Failed rows show a short summary; tap one to read the complete stored error with manga/chapter context in a scrollable viewer. **Retry** retries a current failure, and **Close** returns to the same screen. The chapter action menu's **Download error** opens the same details.
+Downloads continue through FileManager–ReaderUI and reader-to-reader navigation, including when no Suwayomi screen is open. All screens share the configured parallel-download limit. Lowering the limit lets current workers finish.
 
-Waiting retries show **Retry scheduled** and a fixed next retry date/time in device-local time. Tap the row and choose **Download error**, or use the chapter action menu, to inspect the last error, including after a restart. Queued actions still allow cancellation and opening the chapter list. **Retry** stays disabled while the automatic retry is queued. Times do not count down or cause extra screen refreshes.
+Transient network failures are retried in the background with increasing delays. Retries resume after wake or KOReader restart; permanent failures remain visible under **Downloads** without interrupting reading. The home entry shows the terminal failure count when nonzero. Failed rows show a short summary; tap one to read the complete stored error with manga/chapter context in a scrollable viewer. **Retry** retries a current transfer failure, and **Close** returns to the same screen. The chapter action menu's **Download error** opens the same details.
+
+Waiting retries show **Retry scheduled** and a fixed next retry date/time in device-local time. Tap the row and choose **Download error**, or use the chapter action menu, to inspect the last error during the running session. Queued actions still allow cancellation and opening the chapter list. **Retry** stays disabled while the automatic retry is queued. Times do not count down or cause extra screen refreshes.
+
+Waiting retries do not reserve download slots or block new chapters. Retries whose scheduled time has arrived take priority, but use the same parallel-download limit as other work. During an outage, new chapters may therefore also attempt downloading and enter their own retry schedule.
+
+After KOReader restarts, unfinished downloads automatically requeue with their retry counts and future retry times preserved. Existing final archives are validated before being adopted as complete. Canceled work is not requeued, and existing permanent failures keep their details. Canceling a download preserves any final archive; cleanup and replacement wait until a known stopping worker exits.
+
+Chapters are validated before opening through the plugin, or on **Verify download**. Validation runs in the background and checks ZIP structure, complete entry reads/checksums, and the transfer's expected page count when available. There is no whole-library validation scan. **Could not verify download** means inspection was inconclusive; try **Verify download** again. Unsupported ZIP variants, including ZIP64, encrypted, and multi-volume archives, remain unverified and are not opened through the plugin. **Download damaged; redownload** offers explicit **Redownload**, which keeps the old archive until a validated replacement is ready and preserves reading metadata. Download ahead does not initiate repairs. Clearing transfer failures does not clear archive-integrity warnings.
+
+Repair retains the existing supported archive name, including legacy names. Hash-based reading metadata is copied to document-path sidecars before replacement, with the originals retained. Conflicting metadata or failed preservation stops the repair and leaves the old archive in place.
+
+A normal KOReader restart loads an upgrade; no device reboot or directory change is required. New workers use private temporary files and publish complete archives by atomic rename. Surviving old-process workers can duplicate transfers, temporarily exceed the current process's parallel-download limit, or publish after cancellation; an older complete attempt may replace a newer one. Workers started before this upgrade do not gain its safeguards. Unknown temporary leftovers are left alone indefinitely—no boot tracking or startup sweep. Hot reload and simultaneous writable KOReader processes remain unsupported. Validation cannot prove image content correctness or guarantee durability after abrupt device failure.
 
 Downloaded files use this layout:
 
@@ -99,6 +111,7 @@ This release focuses on KOReader-local reading. It does not edit source preferen
 | Source is missing | Install or update the source from **Browse**; also check **Show NSFW sources** in Browse settings. |
 | Search times out | Try a source-specific Popular or Latest list, or retry with a narrower search term. |
 | Chapter will not download | Wait for background network retries, then open **Downloads** to inspect, retry, or clear any failed entry. |
+| Chapter reports damage or cannot be verified | Use **Verify download** to retry inspection, or **Redownload** for established damage. A generic KOReader reader error alone does not establish archive damage. |
 
 ## Development
 
@@ -108,6 +121,8 @@ Run commands from the plugin root:
 luacheck --codes spec suwayomi main.lua _meta.lua
 busted spec
 ```
+
+Native archive regression checks use Linux/WSL LuaJIT and `libarchive` (`sudo apt-get install libarchive-dev` on Ubuntu). KOReader already supplies its archive library; no extra device dependency is required.
 
 Translation catalog maintenance requires GNU gettext tools:
 

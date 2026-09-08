@@ -1,3 +1,9 @@
+# 26.9.8-beta
+
+- Fix restart button on Kobo devices
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.9.4-beta3...26.9.8-beta
+
 # 26.9.4-beta3
 
 - Store pre-releases in catalog and use that data for update checks
@@ -23,9 +29,3 @@
 - logic change for versions tab loading
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.31-beta...26.9.1-beta
-
-# 26.8.31-beta
-
-- add non-touch device support
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.27-beta2...26.8.31-beta
