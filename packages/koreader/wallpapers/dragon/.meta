@@ -1,0 +1,13 @@
+id=wallpaper-dragon
+name=Dragon
+version=1.0.0
+description=A dragon illustration.
+author=Ravenna
+category=wallpapers
+platforms=koreader
+dependencies=
+icon_url=packages/koreader/wallpapers/dragon/dragon.jpg
+assets.0.arch=any
+assets.0.asset=dragon.jpg
+assets.0.url=packages/koreader/wallpapers/dragon/dragon.jpg
+assets.0.size=347827

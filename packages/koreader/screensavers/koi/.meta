@@ -1,0 +1,13 @@
+id=screensaver-koi
+name=Koi
+version=1.0.0
+description=A koi illustration.
+author=Ravenna
+category=screensavers
+platforms=koreader
+dependencies=
+icon_url=packages/koreader/screensavers/koi/Koi.jpg
+assets.0.arch=any
+assets.0.asset=Koi.jpg
+assets.0.url=packages/koreader/screensavers/koi/Koi.jpg
+assets.0.size=125122

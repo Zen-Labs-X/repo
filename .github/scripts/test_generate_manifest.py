@@ -26,7 +26,7 @@ class GenerateManifestTests(unittest.TestCase):
                     "version=2.0.0-beta.1\n"
                     "description=Test package\n"
                     "author=Tester\n"
-                    "category=utility\n"
+                    "category=wallpapers\n"
                     "platforms=koreader\n"
                     "dependencies=\n"
                     "alpha_version=2.0.0-alpha.2\n"
@@ -48,7 +48,7 @@ class GenerateManifestTests(unittest.TestCase):
                     "version=1.0.0\n"
                     "description=Package without release history\n"
                     "author=Tester\n"
-                    "category=utility\n"
+                    "category=screensavers\n"
                     "platforms=koreader\n"
                     "dependencies=\n"
                 )
@@ -66,6 +66,7 @@ class GenerateManifestTests(unittest.TestCase):
                 empty_releases = json.load(versions)["releases"]
 
             package = packages["test"]
+            self.assertEqual(package["category"], "wallpapers")
             self.assertEqual(package["versions_url"], "packages/test/versions.json")
             self.assertEqual(package["plugin_module"], "zenos")
             self.assertEqual(package["plugin_module_aliases"], ["zen_ui"])
@@ -87,6 +88,7 @@ class GenerateManifestTests(unittest.TestCase):
             self.assertEqual(
                 packages["empty"]["versions_url"], "packages/empty/versions.json"
             )
+            self.assertEqual(packages["empty"]["category"], "screensavers")
             self.assertEqual(empty_releases, [])
 
 

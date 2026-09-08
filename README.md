@@ -171,6 +171,16 @@ Each package metadata file must include a `category` set to one of:
 - `theme`
 - `patches`
 - `fonts`
+- `wallpapers`
+- `screensavers`
+
+### Plain KOReader images
+
+Add each wallpaper under `packages/koreader/wallpapers/<slug>/` as a `.jpg`
+file, or each screensaver under `packages/koreader/screensavers/<slug>/` as a
+`.png` or `.jpg` file. Each image directory also needs a `.meta` file; copy the
+template from the category's README. Images are hosted and installed directly,
+without wrapping them in a ZIP archive.
 
 ### Optional package fields
 

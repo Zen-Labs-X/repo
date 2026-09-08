@@ -42,7 +42,7 @@ PLUGIN_IDENTITY_FIELDS = (
     "source_asset_aliases",
 )
 
-VALID_CATEGORIES = ("utility", "games", "productivity", "media", "theme", "patches", "fonts")
+VALID_CATEGORIES = ("utility", "games", "productivity", "media", "theme", "patches", "fonts", "wallpapers", "screensavers")
 DEFAULT_CATEGORY = "utility"
 PATCH_CATEGORY = "patches"
 

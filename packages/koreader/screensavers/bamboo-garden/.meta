@@ -1,0 +1,13 @@
+id=screensaver-bamboo-garden
+name=Bamboo Garden
+version=1.0.0
+description=A bamboo and stone garden.
+author=Ravenna
+category=screensavers
+platforms=koreader
+dependencies=
+icon_url=packages/koreader/screensavers/bamboo-garden/bamboo_garden.jpg
+assets.0.arch=any
+assets.0.asset=bamboo_garden.jpg
+assets.0.url=packages/koreader/screensavers/bamboo-garden/bamboo_garden.jpg
+assets.0.size=508581

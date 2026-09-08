@@ -1,0 +1,13 @@
+id=wallpaper-meditation
+name=Meditation
+version=1.0.0
+description=A meditation illustration.
+author=Ravenna
+category=wallpapers
+platforms=koreader
+dependencies=
+icon_url=packages/koreader/wallpapers/meditation/meditation.jpg
+assets.0.arch=any
+assets.0.asset=meditation.jpg
+assets.0.url=packages/koreader/wallpapers/meditation/meditation.jpg
+assets.0.size=205160

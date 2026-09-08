@@ -143,7 +143,7 @@ for meta_file in $meta_files; do
     } > "$versions_url"
 
     case "$category" in
-        utility|games|productivity|media|theme|patches|fonts) ;;
+        utility|games|productivity|media|theme|patches|fonts|wallpapers|screensavers) ;;
         *)
             echo "Invalid or missing category in $meta_file: $category" >&2
             rm -f "$tmp"

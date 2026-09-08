@@ -1,0 +1,13 @@
+id=screensaver-wanderer
+name=Wanderer
+version=1.0.0
+description=A mountain wanderer scene.
+author=Ravenna
+category=screensavers
+platforms=koreader
+dependencies=
+icon_url=packages/koreader/screensavers/wanderer/wanderer.jpg
+assets.0.arch=any
+assets.0.asset=wanderer.jpg
+assets.0.url=packages/koreader/screensavers/wanderer/wanderer.jpg
+assets.0.size=164995
