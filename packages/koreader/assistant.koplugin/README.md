@@ -10,27 +10,26 @@ A powerful plugin that lets you interact with AI language models (Claude, GPT-4,
 
 ## Features
 
-- **Multiple AI Providers**: Support for:
-  - Claude, OpenAI, Gemini, DeepSeek, etc.
-  - OpenRouter, Ollama, etc.
-  - Other OpenAI-compatible API services (Groq, NVIDIA, etc.)
+- **Multiple AI Providers**: Speaks the mainstream protocols natively — OpenAI Chat Completions, OpenAI Responses, Anthropic Messages, and Google Gemini — so most platforms work out of the box. Examples:
+  - OpenAI, DeepSeek, OpenRouter, Ollama, Groq, Mistral, NVIDIA, etc. (via OpenAI-compatible endpoints)
+  - Claude (Anthropic), Gemini, and the OpenAI Responses API
 - **Stream Mode**: Real-time responses from the API. Get the full LLM experience on e-ink devices.
 - **Multiple Providers/Models**: Select different models or AI provider platforms in the UI.
-- **Web Search Tool Calling**: LLMs search the web and improve the answer with real and updated information.
+- **UI-Based Setup**: Add providers and models entirely from the UI, with built-in model browsing and connection testing.
+- **Web Search**: Let LLMs search the web for real and up-to-date information. Supports SerpAPI, Tavily, Exa, and SearXNG, with a per-question toggle.
 - **Built-in Prompts**:
   - **Translation**: Instantly translate highlighted text to any language
   - **Quick Actions**: One-click buttons for common tasks like summarizing or explaining
   - **Dictionary**: Get synonyms, context-aware dictionary explanations, and examples for the selected word. (thanks to [plateaukao](https://github.com/plateaukao))
   - **Term X-Ray**: For single word or phrase highlights, get the meaning of it based on the previously mentioned places. (thanks to [Michael Kucek](https://github.com/michael-kucek))
-  - **Recap**: Get a quick recap of a book when you open it, for books that haven't been opened in 28 hours and are less than 95% complete. Also available via shortcut/gesture for on-demand access. Fully configurable prompts. (thanks to [jbhul](https://github.com/jbhul))
-  - **X-Ray**: Generate a spoiler-free, structured book X-Ray up to your current progress, listing key characters, locations, themes, terms, a concise timeline, and a quick re-immersion section. Fully configurable prompts; available via shortcut/gesture.
-- **Custom Prompts**: Create your own specialized AI helpers with their own quick actions and prompts. Possible for highlighted text and book-level.
-- **Smart Display**: Automatically hides long text snippets for cleaner viewing
+  - **Recap**: Catch up on a book you haven't opened for a while. (thanks to [jbhul](https://github.com/jbhul))
+  - **X-Ray**: A spoiler-free guide to characters, places, themes, and timeline up to your progress.
 - **Markdown Support**: (thanks to [David Fan](https://github.com/d-fan))
-- **"Add to Note" and "Copy to Clipboard"**: Easily add the entire response as a note to highlighted text or copy it for later use.
-- **Quick Access**: Ability to access some custom prompts directly from the main highlight menu (configurable).
-- **Gesture-Enabled Prompts**: You can assign gestures to **Ask**, **Recap**, and **X-Ray**. This enables the user to ask anything about the book without needing to highlight text first. It also enables triggering the recap at any time. Additionally, you can access these prompts through a [quick menu](https://koreader.rocks/user_guide/#L1-qmandprofiles) as well. (thanks to [Jayphen](https://github.com/Jayphen))
-- **AI Dictionary Gesture**: Override the default "Translate" long-press gesture to use the AI Dictionary directly for instant definitions and context.
+- **Notebook & Quick Notes**: Save AI conversations and quick notes as Markdown, either to the current book or a general notebook, with optional auto-save.
+- **Highlight Menu Presets**: Pin built-in prompts to the highlight popup for one-tap access (configurable).
+- **Book Insights**: Explore the whole book without highlighting — Book Summary & Recs, AI X-Ray, AI Recaps, and analysis or summaries built from your highlights and notes.
+- **Gesture Shortcuts**: Trigger Ask, Recap, and X-Ray by gesture, no highlighting needed. (thanks to [Jayphen](https://github.com/Jayphen))
+- **AI Dictionary**: Get instant, context-aware definitions, synonyms, and examples for any word.
 - **l10n Support**: Supports all languages that the KOReader project supports.
 
 ## Basic Requirements
@@ -49,9 +48,26 @@ See [Obtaining API Keys](../../wiki/Obtaining-API-Keys) from the wiki page.
 
 [Installation Guide](../../wiki/Installation)
 
-Create/modify `configuration.lua` as needed.
-
 ### 3. Configure the Plugin
+
+All setup can be done directly from the KOReader UI.
+
+#### Option A: Configure from the UI
+
+**Providers:**
+
+1. Go to `⚙ → AI Assistant → Settings → Provider API` and choose a preset (e.g. OpenAI, Gemini, Anthropic, DeepSeek, OpenRouter). For any other OpenAI-compatible endpoint, start from the `OpenAI` preset and update the URL.
+2. Fill in the dialog:
+   - **Provider Name** — the label shown in menus
+   - **Base URL** — pre-filled by the preset, editable
+   - **API Key** — your provider key
+   - **Model** — type it manually, or tap **Browse Models** to fetch the list online and pick one
+3. Tap **Test** to check the connection, then **OK** to save. The new provider becomes active right away.
+4. To switch providers later, go to `⚙ → AI Assistant → Settings → Providers and Models` and select one. Only providers added from the UI can be edited or deleted.
+
+**Web search keys (SerpAPI / Tavily / Exa / SearXNG):** available both via UI configuration (`Settings → WebSearch API`) and via the configuration file. In the Ask dialog, use the `🌐 Web Search` checkbox to enable it per question.
+
+#### Option B (Advanced): Use `configuration.lua`
 
 1. Copy `configuration.sample.lua` to `configuration.lua` (do not modify the sample file directly).
 2. Edit the `configuration.lua` file as needed.
@@ -70,6 +86,8 @@ The plugin supports any OpenAI-compatible API through a flexible naming pattern.
 - `anthropic_websearch` → uses the `anthropic` handler with web search enabled
 
 You can create multiple configurations using the same handler with different settings. The part before the first underscore determines which handler is used.
+
+In the UI, this is the same as picking the `OpenAI` preset and replacing the Base URL — use `Clear` to start from a blank URL if needed.
 
 Here's the minimum working example:
 
@@ -141,6 +159,8 @@ The Assistant plugin adds AI-powered buttons (Wikipedia, Term X-Ray, Dictionary,
 - Use **"Ask"** for specific questions about the text
 - Try the pre-made buttons for quick analysis
 - Add your own custom prompts for specialized tasks
+- **Entering API keys on e-ink**: save the key in a `.txt` file, send it to your reader, open it as a book, copy the key, then long-press the API Key field and paste.
+- **Entering very long URLs**: save the provider with a short placeholder URL first, then reopen it with **Edit** and replace it with the full URL.
 
 ## Contributors ✨
 

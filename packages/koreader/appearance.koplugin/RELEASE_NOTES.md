@@ -1,3 +1,30 @@
+# v1.8.0
+
+## [1.8.0](https://github.com/Euphoriyy/appearance.koplugin/compare/v1.7.0...v1.8.0) (2026-09-08)
+[![Github Downloads (by release)](https://img.shields.io/github/downloads/Euphoriyy/appearance.koplugin/v1.8.0/total.svg)](#)
+
+
+### Features
+
+* **book/font_color:** add dispatcher actions for toggling fixed page font color ([075f2ba](https://github.com/Euphoriyy/appearance.koplugin/commit/075f2baf0b620473a26f510b07490445bcd7ec19))
+* **book/font_color:** add dispatcher actions for toggling fixed page link color ([182be74](https://github.com/Euphoriyy/appearance.koplugin/commit/182be74f9982f4cf441bef439c452f20cf62fc26))
+* **book:** apply link color to fixed-layout docs ([96937ac](https://github.com/Euphoriyy/appearance.koplugin/commit/96937ac0bec17225b87d3a11282b98707c6f4e16)), closes [#94](https://github.com/Euphoriyy/appearance.koplugin/issues/94)
+* **ui/misc:** add miscellaneous options for squaring corners ([94b7799](https://github.com/Euphoriyy/appearance.koplugin/commit/94b7799f82039791067e40ce2de517bf64070d7f))
+
+
+### Bug Fixes
+
+* **book/link_color:** update touchmenu items on reset ([1daf127](https://github.com/Euphoriyy/appearance.koplugin/commit/1daf1276c5c8d0a3594503f738602b19878e0e35))
+* **book:** correct inversion of fixed-layout font color on Android ([1ee0793](https://github.com/Euphoriyy/appearance.koplugin/commit/1ee079375b4ee447181cf2eac88f31a6b629c3b6))
+* **book:** refresh CSS on reader ready to fix inversion after restarts ([d3fd8e0](https://github.com/Euphoriyy/appearance.koplugin/commit/d3fd8e036b17e4590460f70f8a33d65ca9a0263c))
+* **book:** refresh live changes to colors for fixed-layout docs ([63cf416](https://github.com/Euphoriyy/appearance.koplugin/commit/63cf41652b7c29a94d666c0e1777fd44ea2b8c88))
+* **book:** remove faulty recolor skipping logic ([f98084e](https://github.com/Euphoriyy/appearance.koplugin/commit/f98084e9d145a098a2c3a6d247876882fe3818e9))
+* **themes:** correct icon inversion when applying themes to "Both" ([1635526](https://github.com/Euphoriyy/appearance.koplugin/commit/16355262bc537beb6d3ce01b12ec0f05394e96aa))
+* **themes:** keep menu open on resetting to current themes ([4c5ae8c](https://github.com/Euphoriyy/appearance.koplugin/commit/4c5ae8c0065a354776f9f8a5143a5baa62ec034e))
+* **ui:** reload non-transparent icons on bg color changes ([843f08a](https://github.com/Euphoriyy/appearance.koplugin/commit/843f08a67ef7e310fc372f1157e83859559fc5a7))
+
+*Supported KOReader Version: **v2026.07***
+
 # v1.7.0
 
 ## [1.7.0](https://github.com/Euphoriyy/appearance.koplugin/compare/v1.6.1...v1.7.0) (2026-09-03)
@@ -88,37 +115,3 @@
 * **ui/transparency:** correct grammar in bottom bar transparency menu label ([f8e82e4](https://github.com/Euphoriyy/appearance.koplugin/commit/f8e82e47092d51a7b6333a87841b769d2824ca9a))
 
 *Supported KOReader Version: **v2026.03***
-
-# v1.5.0
-
-## [1.5.0](https://github.com/Euphoriyy/appearance.koplugin/compare/v1.4.0...v1.5.0) (2026-05-06)
-[![Github Downloads (by release)](https://img.shields.io/github/downloads/Euphoriyy/appearance.koplugin/v1.5.0/total.svg)](#)
-
-
-### Features
-
-* add about menu, in-plugin updater, and background update checks ([93d553b](https://github.com/Euphoriyy/appearance.koplugin/commit/93d553bb828c73d97f64e90d0a17365c956a9a8f)), closes [#41](https://github.com/Euphoriyy/appearance.koplugin/issues/41)
-* **book/highlight_colors:** add option for setting the default color ([d50be25](https://github.com/Euphoriyy/appearance.koplugin/commit/d50be253726d9fedcc520b3a07d8a7f634694df0))
-* **book:** apply background and font colors to footnote popups ([cc27611](https://github.com/Euphoriyy/appearance.koplugin/commit/cc27611d036f466297bf94c148879743f4432840)), closes [#45](https://github.com/Euphoriyy/appearance.koplugin/issues/45)
-* **main:** implement method to delete plugin settings ([d2e22b5](https://github.com/Euphoriyy/appearance.koplugin/commit/d2e22b52410761b53259817d20ca2d5e8a22989b)), closes [#48](https://github.com/Euphoriyy/appearance.koplugin/issues/48)
-* migrate plugin settings and add menu to plugin ([46319df](https://github.com/Euphoriyy/appearance.koplugin/commit/46319dfd7f42d92b264ad2f774c74f704cde8aa6)), closes [#49](https://github.com/Euphoriyy/appearance.koplugin/issues/49)
-* **themes:** add option to reset theme link color ([487e515](https://github.com/Euphoriyy/appearance.koplugin/commit/487e5153073c227be3de1da68637866743661bea))
-* **ui/background_image:** add transparency level and background color blending ([836a259](https://github.com/Euphoriyy/appearance.koplugin/commit/836a2598dd9a09235c421008eab32876a643a2d4)), closes [#42](https://github.com/Euphoriyy/appearance.koplugin/issues/42)
-* **ui/transparency:** add transparent SimpleUI bottom bar setting ([09deecc](https://github.com/Euphoriyy/appearance.koplugin/commit/09deecc071a4e762d86c78010a321aaa59e1aedb)), closes [#32](https://github.com/Euphoriyy/appearance.koplugin/issues/32)
-* **ui:** add optional system fonts support ([e9d6e97](https://github.com/Euphoriyy/appearance.koplugin/commit/e9d6e9766836fa25829de275db02f8f6187db5db))
-* **widgets/colorwheelwidget:** add border to color wheel for better visibility ([c1aecdb](https://github.com/Euphoriyy/appearance.koplugin/commit/c1aecdb9cd3626499287f42fa1ecbf484a192dde))
-
-
-### Bug Fixes
-
-* **book/background_color:** only use Android recolor paths when using the C blitter ([92bf77e](https://github.com/Euphoriyy/appearance.koplugin/commit/92bf77e2c295cae746e04876e888948717ad3c5d))
-* **book/link_color:** clear computed_hex when reverting to default link color ([7d02958](https://github.com/Euphoriyy/appearance.koplugin/commit/7d029587b12f44815f01e9bcc55957c573b2a318))
-* **book/link_color:** disable "Reset color" when no custom link color is set ([915d266](https://github.com/Euphoriyy/appearance.koplugin/commit/915d266a26ee159c89bb4e88e7fd68d31214b056))
-* **themes:** only show reset link color button when theme has a link color set ([e3e94fd](https://github.com/Euphoriyy/appearance.koplugin/commit/e3e94fdaabb4f9d464e3ad09d9a185bfc6bf6389))
-* **ui/background_color:** correct highlight background inversion for buttons ([aad9439](https://github.com/Euphoriyy/appearance.koplugin/commit/aad9439ab0ca84246b91ae035564859ce93b2bf1))
-* **ui/background_image:** restore compatibility with SimpleUI's currently reading module ([3be99bc](https://github.com/Euphoriyy/appearance.koplugin/commit/3be99bc1df114315c372438746d7985218a1c857)), closes [#51](https://github.com/Euphoriyy/appearance.koplugin/issues/51)
-
-
-### Performance Improvements
-
-* **book/background_color:** skip color application for fixed-layout docs when color is default ([f770bb8](https://github.com/Euphoriyy/appearance.koplugin/commit/f770bb800399a53f16c877194d29b5ab406dbe6e))
