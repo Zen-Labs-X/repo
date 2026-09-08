@@ -1,3 +1,13 @@
+# 1.3.3
+
+##### Plugin
+- Add StoryGraph email/password login under **Account (Cookies & Tokens) > Log in**, using the mobile app's login flow and saving the returned session cookies without storing your password. Login errors identify whether the page load or submission was blocked, and manual browser-cookie entry remains available as a fallback.
+
+
+---
+
+Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#133)
+
 # 1.3.2
 
 ##### Plugin
@@ -39,12 +49,3 @@ Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHAN
 ---
 
 Full changelog: [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#121)
-
-# 1.2.0
-
-## 🍪 Goodreads cookies can now refresh themselves (with a little help)
-Goodreads sessions periodically go stale from an AWS WAF bot-challenge on Goodreads' side - until now, that meant syncing just paused until you repasted a fresh cookie by hand. This release adds an optional way to automate that entirely.
-
-[goodreads-cookie-refresher](https://github.com/Lyfts/goodreads-cookie-refresher) is a small, self-hosted Docker setup that keeps a real logged-in browser session alive on your network and hands the plugin a fresh cookie automatically — both for first-time setup and every time the saved cookie goes stale.
-
-See [CHANGELOG.md](https://github.com/Lyfts/ShelfSync/blob/main/CHANGELOG.md#120) for changes in this release.
