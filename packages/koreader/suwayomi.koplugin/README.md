@@ -27,10 +27,14 @@ To update a manual install, replace the plugin folder with the new release and r
 ## Connect
 
 1. Open **Search > Suwayomi** in KOReader's top menu.
-2. Enter your server URL and, if required, your Basic Auth username and password. Tap **Test connection**.
+2. Enter your server URL and credentials. Select **Basic Auth**, **Simple Login**, or **UI Login** to match your server, then tap **Test connection**.
 3. Continue and choose a folder for downloaded chapters.
 
 You can repeat setup from **Suwayomi > Settings > Setup wizard**.
+
+Simple Login and UI Login reconnect automatically using saved credentials; session cookies and JWT tokens are never saved. UI Login refreshes rejected access tokens silently and logs in again if the refresh token is rejected. If authentication fails during a download, correct your login settings and retry it from **Downloads**.
+
+Use HTTPS when connecting over a network. HTTP remains supported but exposes passwords and session tokens to network observers. Suwayomi UI Login tokens can remain valid after the server password changes; changing saved credentials does not cancel already-running downloads.
 
 ## Read
 
@@ -40,6 +44,8 @@ You can repeat setup from **Suwayomi > Settings > Setup wizard**.
 - **Sync** sends pending read/unread changes to your server.
 
 Choose a manga, open its chapters, then tap a chapter to download or read it. Use **Download next** for a batch, or **Download ahead** to keep a small reading buffer. Each download action adds at most 50 new chapters.
+
+The **Download ahead** menu shows **Off** or the saved buffer size for that manga. A checkmark identifies the current choice.
 
 Downloads continue while you read. Network failures retry in the background, and unfinished downloads resume after a KOReader restart. Files are organized by source and manga in your chosen download folder.
 

@@ -4,14 +4,14 @@
 id=goodreads
 name=Goodreads
 version=0.3.0
-description=
+description=A KOReader plugin that syncs reading status, progress, and ratings from the reader to your Goodreads account.
 author=advokatb
 category=utility
 platforms=koreader
 dependencies=
 source=https://github.com/advokatb/goodreads.koplugin
 stars=9
-updated_at=2026-09-09T14:01:40Z
+updated_at=2026-09-09T18:55:32Z
 published_at=2026-09-01T17:05:50Z
 readme_url=packages/koreader/goodreads.koplugin/README.md
 readme_hash=bdf949cb6767efa87b7376f7ff93ef3178b7fe41
