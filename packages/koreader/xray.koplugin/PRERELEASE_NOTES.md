@@ -1,3 +1,9 @@
+# 26.9.9-beta
+
+- fix inline lookup bug
+
+**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.9.8-beta2...26.9.9-beta
+
 # 26.9.8-beta2
 
 ## What's Changed
@@ -29,9 +35,3 @@
 - Image menu pagination fix.
 
 **Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.9.1-beta2...26.9.2-beta
-
-# 26.9.1-beta2
-
-- image menu performance fix
-
-**Full Changelog**: https://github.com/ultimatejimmy/xray.koplugin/compare/26.9.1-beta...26.9.1-beta2

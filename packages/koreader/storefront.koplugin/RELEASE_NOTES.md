@@ -1,3 +1,15 @@
+# 26.9.9
+
+## What's Changed
+
+* **Performance and memory optimizations**: Overhauled background handling and memory usage across catalog browsing, settings, and ratings to keep things fast and prevent out-of-memory crashes on resource-constrained e-readers.
+* **Patch installation and removal fix**: Fixed a bug where installing or removing patches would fail to apply cleanly or not update status properly in the UI.
+* **Improved update checker**: Refined the update checking routine so checking for new releases is faster, smoother, and more reliable.
+* **Pre-release tracking in catalog**: The catalog now stores the latest pre-release versions so that pre-release update checks can pull accurate version data without extra lookups.
+* **Restart fix for Kobo devices**: Fixed an issue where tapping the restart button after updates or installs caused a freeze on Kobo hardware.
+
+**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.9.3...26.9.9
+
 # 26.9.3
 
 ## What's New
@@ -45,24 +57,3 @@
 - hotfix for some users with a font missing
 
 **Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.18...26.8.18.1
-
-# 26.8.18
-
-# Storefront: Screensavers
-
-This release brings screensaver/wallpaper support directly into Storefront. You can now browse, download, and manage screensavers on your device without needing to hook up a cable or manually transfer images.
-
-### What's New
-- Update tab UI to accommodate the Screensavers
-- **Screensaver Catalog**: Browse a curated list of wallpapers categorized by themes like Nature, Minimalist, Sci-Fi, Architecture, Art, and more.
-- **Direct Download & Setup**: Download screensavers directly to your device's screensaver directory with a single tap.
-- **Configure in Storefront**: You can set and configure the screensaver directly in Storefront. 
-- **Cache management**: Go to the settings menu for more granular cache management/deletion for readmes, wiki, and screensaver thumbnails.
-- **E-Reader Friendly**: All wallpapers in the catalog are formatted and optimized specifically for e-ink screens.
-- **Community Submissions**: You can now submit your own screensavers to be included in the shared catalog.
-
-Submit your own screensavers to the catalog here: https://ultimatejimmy.github.io/storefront-screensavers/
-<img width="543" height="751" alt="screensavers" src="https://github.com/user-attachments/assets/bc5b7d17-a773-4df8-9d96-8d02cd42916e" />
-
-
-**Full Changelog**: https://github.com/ultimatejimmy/storefront.koplugin/compare/26.8.9...26.8.18

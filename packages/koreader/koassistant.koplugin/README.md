@@ -41,6 +41,8 @@ Note: This README is the main documentation for now, and is being migrated to th
 
 **Status:** Active development. [issues](https://github.com/zeeyado/koassistant.koplugin/issues), [discussions](https://github.com/zeeyado/koassistant.koplugin/discussions), and [translations](https://hosted.weblate.org/engage/koassistant/) welcome. If you are somewhat technical and don't want to wait for tested releases, you can run off main branch to get the latest features. Breakage may happen. Also see [Assistant Plugin](https://github.com/omer-faruq/assistant.koplugin); both can run side by side.
 
+This plugin is developed with AI assistance using (mostly) [Claude Code](https://claude.ai).
+
 ---
 
 ## Table of Contents
@@ -4434,7 +4436,7 @@ This project was originally forked from [ASKGPT by Drew Baumann](https://github.
 
 ### AI Assistance
 
-This plugin was developed with AI assistance using [Claude Code](https://claude.ai) (Anthropic). The well-documented KOReader plugin framework and codebase made it possible for AI tools to understand the existing patterns and contribute meaningfully to development and documentation.
+This plugin is developed with AI assistance using (mostly) [Claude Code](https://claude.ai) (Anthropic). The well-documented KOReader plugin framework and codebase made it possible for AI tools to understand the existing patterns and contribute meaningfully to development and documentation.
 
 ### License
 

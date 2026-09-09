@@ -1,3 +1,11 @@
+# v1.5.0
+
+
+### Added
+- **Colors** settings submenu on colour screens (Settings → **Colors**):
+  - **Toast color** — background tint for toast notifications (default white).
+  - **Calendar fill** — fill colour for streak days in the calendar (default stock gray).
+
 # v1.4.0
 
 
@@ -28,9 +36,3 @@
 
 ### Fixed
 - Improve dateDiffDays function to use Julian day calculation
-
-# v1.3.4
-
-
-### Fixed
-- Fixed day-to-day streak calculation around daylight saving time transitions by using a DST-safe day difference method.

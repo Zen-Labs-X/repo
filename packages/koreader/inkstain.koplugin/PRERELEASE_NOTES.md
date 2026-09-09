@@ -1,3 +1,10 @@
+# v3.9.0fix2
+
+### 修bug
+
+
+**由于墨痕过于臃肿，遂开启重构计划，将会在4.0全新归来，也会加入新的功能**
+
 # v3.9.0beta1
 
 **新增设置项**：custom_output_path（自定义保存目录）、wallpaper_save_only_custom（仅用自定义路径开关）

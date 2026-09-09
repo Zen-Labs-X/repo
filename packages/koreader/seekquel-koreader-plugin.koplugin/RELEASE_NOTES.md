@@ -1,3 +1,21 @@
+# v1.7.1
+
+
+### Fixed
+
+- **Seekquel now works on older KOReader builds, where it used to be missing entirely.**
+  On any KOReader released before v2025.08, the add-on failed to load and showed nothing
+  at all: no menu, no pairing screen, and no message saying why. It loaded a part of
+  KOReader that only exists in newer builds, and KOReader skipped the whole add-on when
+  it could not find it.
+
+  Everything works on those builds now except the add-on updating itself, which needs
+  that same missing part. The menu says a new version is ready and that it needs a
+  computer to install, and tapping it explains to copy the files across rather than
+  turning on wifi and failing at the end of a download.
+
+  Found and fixed by [joelstitch](https://github.com/joelstitch).
+
 # v1.7.0
 
 
@@ -70,41 +88,3 @@
   moves without the skipped pages being added to your day. The add-on now reports how much
   of the book you crossed a page at a time, and that is the most a sync can be credited
   with, so nothing you did not read reaches your streak, your goals or your badges.
-
-# v1.5.0
-
-### Added
-
-- **Syncing now also happens on a timer, every fifteen minutes by default.** Until now the
-  only thing that brought a sitting across while you were still in the book was turning
-  twenty pages, so reading slowly, or reading a few pages and putting the book down
-  without closing it, left everything waiting. Set it to five, thirty or sixty minutes, or
-  off, under **Settings > Sync on a timer**, or from Seekquel under Settings, Integrations,
-  KOReader, like the other switches. A tick with nothing new to send does nothing, so it
-  costs you no pauses, and it follows **Sync while reading** like the page count does.
-
-### Fixed
-
-- **A highlight made and then left behind now catches up.** Two things were against it.
-  Switching away from KOReader allows five seconds for the whole send and each request
-  can take two, so with your place and your reading time ahead of it in the queue, a
-  passage was routinely the one that ran out of time. And reopening the book sent only
-  your place, so nothing tried again until twenty pages had turned, you closed the book,
-  or you tapped Sync now. Passages now go ahead of reading time on the way out, since
-  reading time is a daily total that is complete whenever it arrives, and reopening a
-  book sends anything still waiting.
-- **Sleeping the device and picking it back up now syncs.** A message that fails leaves
-  the server alone for two minutes so one unreachable server cannot cost one wait after
-  another. Sleeping a reader turns its Wi-Fi off, so the send on the way out usually
-  failed, and that failure then swallowed the catch-up send when you came back: you slept
-  the reader, woke it, and nothing had moved. Waking up and finding a network both end
-  that wait now, because both are reasons to think the answer has changed.
-- **Update status and Rate this book show which one the book is on.** Both were lists of
-  every option with no mark on the current one, so all four statuses looked equally wrong.
-- **Send status changes from this device can be set from the app.** It has been on the
-  reader since 1.4.0 and the server did not recognise it, so it was the one switch you had
-  to go and find the e-reader to change.
-- **The slowest call the add-on reports is the slowest since it last reported.** It used to
-  be the slowest ever, kept for the life of the install, so one bad afternoon was re-sent
-  unchanged on every version after it and a reader whose problem was fixed still looked
-  slow.
