@@ -1,3 +1,10 @@
+# v6.5.0
+
+### New
+- Added a hamburger menu to the top-left of the Reading Insights popup's title bar, giving quick access to the Streak, Heatmap, Records, and Achievements popups without navigating the full page.
+  - Added an Advanced settings toggle (Reading insight popup → "Hamburger menu") to show/hide it. Default: off.
+- French translation added #75 (Thanks @maxxfly) and added some missing translations for other languages.
+
 # v6.4.1
 
 ### Changed
@@ -30,9 +37,3 @@ Landscape layout for the monthly chart, Last week section, and both calendars so
 **Fixed**
 
 - Removed dead code: the unused "today, all books" full-table-scan query. A bit faster book progress popup open.
-
-# v6.2.8
-
-**Changed**
-
-Book progress calendar: start-day marker changed from a hollow flag to a ▷ triangle; projected finish-day marker changed from a solid black flag to a hollow white flag.

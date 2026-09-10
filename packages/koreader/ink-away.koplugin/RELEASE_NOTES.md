@@ -1,0 +1,3 @@
+# v1.4.0
+
+Stable 1.4.0. Highlights since 1.2: symmetry mode (vertical, horizontal, four way), a brush maker for building your own brushes, open an image as a background and draw over it, arrows (straight or curved, single or double headed), export the whole page or a chosen area, adjustable grid strength, optional ghosting cleanup, and a smoother, faster experience throughout. New in 1.4.0: the eraser leaves the background picture alone by default, with a toggle in its menu to erase the background too. Colour: your ink now shows in colour on colour screens (it was drawing in grey before), and the pen menu gains a colour wheel for picking any colour, plus saveable custom colour swatches.

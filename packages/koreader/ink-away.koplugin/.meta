@@ -1,0 +1,23 @@
+# Ink Away plugin for KOReader
+# https://github.com/EmirErtorer/ink-away.koplugin
+# zenpm:auto-scraped
+id=ink-away
+name=Ink Away
+version=1.4.0
+description=A small finger drawing canvas for KOReader, made for e-ink readers like the Kindle and Kobo.
+author=EmirErtorer
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/EmirErtorer/ink-away.koplugin
+stars=5
+updated_at=2026-09-10T08:30:17Z
+published_at=2026-09-09T23:47:47Z
+readme_url=packages/koreader/ink-away.koplugin/README.md
+readme_hash=6a9f5c418ff3636390e950993c69835649742be8
+release_notes_url=packages/koreader/ink-away.koplugin/RELEASE_NOTES.md
+release_notes_hash=a590db7f25c87563d5c5c2bf10d56e86436461e27376fb79969cce376b96f41e
+releases=[{"tag_name":"v1.4.0","assets":[{"name":"ink-away.koplugin-v1.4.0.zip","url":"https://github.com/EmirErtorer/ink-away.koplugin/releases/download/v1.4.0/ink-away.koplugin-v1.4.0.zip","size":68141,"digest":"sha256:a784134602639c5f89fef669431096d60b77093557f58f996673f80c8ebe63e9"}],"name":"Ink Away v1.4.0"}]
+source_type=release
+source_asset=ink-away.koplugin-v1.4.0.zip
+size=68141
