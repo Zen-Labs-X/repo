@@ -1,3 +1,35 @@
+# v0.2.8.1
+
+## Version 0.2.8.1
+
+### Added
+- Added dedicated **Magazine Rack** and **Audiobooks** views.
+- Magazine Rack now includes both checked-out issues and magazines followed through Libby subscriptions / Notify Me.
+- Added automatic magazine cover retrieval for subscription-only issues.
+- Added magazine frequency labels such as **Weekly** and **Monthly**.
+- Added persistent **NEW ISSUE** indicators when a subscribed magazine receives a newer issue.
+- Added library-name sections inside Magazine Rack and Audiobooks when items come from multiple libraries.
+
+### Changed
+- Replaced the old dashboard/book-card home screen with the full **Library Browser** as the main plugin interface.
+- The browser now remembers the last selected library/rack and Grid/List view, while reopening on page 1.
+- Reorganized the browser header to **Swap · Library/Rack · Holds · Refresh · Settings · Grid/List · Close**.
+- **Close** now exits Libby Dashboard directly.
+- Audiobooks now display **Listen on Libby** instead of Read on Libby.
+- Magazine list rows now show **Edition** or **Published date** instead of an `N/A` author.
+- Cleaned up the old `expanded` browser architecture and migrated existing settings automatically.
+
+### Fixed
+- Fixed Kindle and other non-touch D-pad navigation, including a key-dispatch conflict that could cause every D-pad button to activate the currently selected control.
+- Fixed initial D-pad focus so navigation begins on library items rather than becoming trapped in Settings.
+- Fixed D-pad navigation across library sections in Magazine and Audiobook racks.
+- Fixed Libby magazine subscription discovery for accounts where Notify Me stores current issue IDs instead of parent magazine IDs.
+- Fixed magazine subscription refresh so tag-based subscriptions are fetched during normal Refresh.
+- Fixed missing covers for magazines that are subscribed to but not currently checked out.
+
+### Tested on
+KOReader emulator and **Kindle 4th Generation non-touch**, including D-pad navigation, Settings, account-backup restore, Libby library restoration, and ByteBooks authorization restoration.
+
 # v0.2.8
 
 ### Version 0.2.8
@@ -207,7 +239,3 @@ The updater shipped in v0.2.6 only accepted three-part GitHub release tags (`x.y
 # v0.2.6
 
 **Full Changelog**: https://github.com/jadehawk/libby-dashboard.koplugin/compare/v0.2.5...v0.2.6
-
-# v0.2.5
-
-**Full Changelog**: https://github.com/jadehawk/libby-dashboard.koplugin/compare/v0.2.4...v0.2.5

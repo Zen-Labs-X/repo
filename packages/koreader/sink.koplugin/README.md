@@ -19,7 +19,7 @@ Pair your Kindle or KOReader device in seconds without typing passwords on an e-
 ## Repository Structure
 
 - [`backend/`](./backend) - Cloudflare Worker implementation using TypeScript, Hono, and Cloudflare D1. Includes 1-click deploy setup, pairing endpoints, and automated tests.
-- [`sink.koplugin/`](./sink.koplugin) - KOReader user plugin with seamless code pairing, non-intrusive Wi-Fi management, cross-device X-Ray data synchronization, and silent background synchronization.
+- [`sink.koplugin/`](./sink.koplugin) - KOReader user plugin with seamless code pairing, non-intrusive Wi-Fi management, and silent background synchronization.
 
 ---
 
@@ -46,11 +46,11 @@ npm run dev             # Start local development server
 1. Copy the [`sink.koplugin`](./sink.koplugin) folder to your device's `koreader/plugins/` directory.
 2. Restart KOReader.
 3. Open the top menu &rarr; **Tools** &rarr; **Sink** &rarr; **Pair Device (Phone/PC)**.
-4. Open your Worker URL on your phone or PC, enter the 6-character code, and tap **Connect E-Reader**.
+4. Open your Worker URL on your phone or PC, enter the 6-character code and choose a 4-digit PIN, and tap **Connect E-Reader**.
 5. Your device is now connected and reading progress will sync automatically!
 
 ---
 
 ## License
 
-MIT License
+GNU Affero General Public License v3.0 (AGPL-3.0). See [COPYING](./COPYING) for details.

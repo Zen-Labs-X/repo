@@ -1,3 +1,11 @@
+# v0.4.0
+
+- personalized dictionaries
+- geometric re-ranking
+- loops for repeated letters
+- capitalization
+- minor fixes
+
 # v0.3.0
 
 ## 0.3.0

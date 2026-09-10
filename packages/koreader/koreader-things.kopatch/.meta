@@ -1,0 +1,45 @@
+# Koreader.Things patch for KOReader
+# https://github.com/titandrive/koreader.things
+# zenpm:auto-scraped
+id=koreader-things
+name=Koreader.Things
+version=source
+description=
+author=titandrive
+category=patches
+platforms=koreader
+dependencies=
+source=https://github.com/titandrive/koreader.things
+stars=5
+updated_at=2026-09-10T14:02:18Z
+readme_url=packages/koreader/koreader-things.kopatch/README.md
+readme_hash=cb9f3dd4a48bbf255f878dbacfefae6000f2a438
+source_type=source
+assets.0.arch=any
+assets.0.asset=1-fullscreen.lua
+assets.0.url=https://raw.githubusercontent.com/titandrive/koreader.things/main/patches/1-fullscreen.lua
+assets.0.size=5127
+assets.1.arch=any
+assets.1.asset=2--ui-font_enhanced.lua
+assets.1.url=https://raw.githubusercontent.com/titandrive/koreader.things/main/patches/2--ui-font_enhanced.lua
+assets.1.size=4224
+assets.2.arch=any
+assets.2.asset=2-action-finder.lua
+assets.2.url=https://raw.githubusercontent.com/titandrive/koreader.things/main/patches/2-action-finder.lua
+assets.2.size=5531
+assets.3.arch=any
+assets.3.asset=2-bonus-gestures.lua
+assets.3.url=https://raw.githubusercontent.com/titandrive/koreader.things/main/patches/2-bonus-gestures.lua
+assets.3.size=10978
+assets.4.arch=any
+assets.4.asset=2-fold-8-fix.lua
+assets.4.url=https://raw.githubusercontent.com/titandrive/koreader.things/main/patches/2-fold-8-fix.lua
+assets.4.size=6602
+assets.5.arch=any
+assets.5.asset=2-menu-breadcrumbs.lua
+assets.5.url=https://raw.githubusercontent.com/titandrive/koreader.things/main/patches/2-menu-breadcrumbs.lua
+assets.5.size=8598
+assets.6.arch=any
+assets.6.asset=2-move-to-archive.lua
+assets.6.url=https://raw.githubusercontent.com/titandrive/koreader.things/main/patches/2-move-to-archive.lua
+assets.6.size=15681

@@ -1,3 +1,13 @@
+# v1.6.0
+
+
+### Added
+- Optional background check for **installed plugins** only (off by default). Runs on File Manager resume / Wi-Fi already connected, at most every 12 or 24 hours. Does not scan patches, does not turn Wi-Fi on, and yields between GitHub requests so the UI stays usable. A dialog offers **View** (existing update list) or **Later** (snooze until the next interval).
+
+### Fixed
+- Background prompt no longer snoozes if it never appeared: `last_check` is written only after the dialog is shown (or when GitHub answered and there are no updates). Failed/rate-limited runs retry. Enabling the setting clears the snooze. The dialog waits until the Tools menu is closed so it is not buried.
+- Background update prompt is no longer dismissed by a tap outside it or by a leftover tap after the Tools menu closes. Close it with **View** or **Later**.
+
 # v1.5.1
 
 
@@ -28,9 +38,3 @@
 
 ### Added
 - Added new patch and plugin repositories
-
-# v1.4.10
-
-
-### Fixed
-- Fixed crash when updating plugins on KOReader nightly: `Device:unpackArchive` was removed upstream; plugin updates now unpack via `ffi/archiver` ([#36](https://github.com/advokatb/updatesmanager.koplugin/issues/36)).
