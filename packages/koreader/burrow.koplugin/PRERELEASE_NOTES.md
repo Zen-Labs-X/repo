@@ -1,3 +1,11 @@
+# v0.4.8-beta.3
+
+## What's Changed
+* Burrow 0.4.8 beta 3: center Home pager on first render by @richbeatty in https://github.com/richbeatty/burrow.koplugin/pull/49
+
+
+**Full Changelog**: https://github.com/richbeatty/burrow.koplugin/compare/v0.4.8-beta.2...v0.4.8-beta.3
+
 # v0.4.8-beta.2
 
 ## What's Changed
@@ -29,7 +37,3 @@
 
 
 **Full Changelog**: https://github.com/richbeatty/burrow.koplugin/compare/v0.4.6...v0.4.7-beta.2
-
-# v0.4.6-beta.7
-
-**Full Changelog**: https://github.com/richbeatty/burrow.koplugin/compare/v0.4.6-beta.6...v0.4.6-beta.7

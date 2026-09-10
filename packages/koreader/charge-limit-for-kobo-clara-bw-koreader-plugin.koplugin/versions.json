@@ -1,0 +1,3 @@
+{
+  "releases": [{"tag_name":"Plugin","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/jopidovba-a11y/Charge-Limit-For-Kobo-Clara-BW-Koreader-Plugin/zipball/Plugin"}],"name":"chargelimit.koplugin"}]
+}

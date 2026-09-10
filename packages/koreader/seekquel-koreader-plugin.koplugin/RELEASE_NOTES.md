@@ -1,3 +1,17 @@
+# v1.8.0
+
+### What’s new
+
+Sync now ends with a short reading recap showing today’s minutes and pages, the chapter reached, and your current progress. Automatic syncs stay quiet. Open Today’s reading to see the recap again, or Today in Seekquel to refresh your daily targets and current streak.
+
+When Seekquel has a later place logged from a hardcover, audiobook, another edition or another app, opening the linked book now asks before moving KOReader to the closest percentage in the local file. The move is approximate and never adds pages or reading time.
+
+### Install
+
+Download the zip, extract it, copy the seekquel.koplugin folder into koreader/plugins, then restart KOReader.
+
+Existing installations can update from Tools, Seekquel. KOReader versions older than v2025.08 still require the manual file copy.
+
 # v1.7.1
 
 
@@ -71,20 +85,3 @@
   store is one tap away. It is offered before you connect a device, since you need the app
   before you have anything to pair with, and again under Settings for a second phone or
   tablet.
-
-# v1.5.1
-
-### Fixed
-
-- **Looking something up at the back of a book is no longer recorded as reading it.** Jump
-  to an index, an endnote, a glossary or an appendix and your place went with you: one
-  reader 7% into a book was recorded at 94%, that leap was counted as pages read that
-  afternoon, and it was announced to their followers as three quarters of a book. Worse,
-  it stayed the furthest point of the read, so everything they genuinely read afterwards
-  counted for nothing. Your place now only moves once you have actually read from where
-  you landed, so a look at the index is never sent at all. Skipping ahead and reading on
-  still follows you there, after a few pages.
-- **A day is only credited with the pages you turned.** Skip an introduction and your place
-  moves without the skipped pages being added to your day. The add-on now reports how much
-  of the book you crossed a page at a time, and that is the most a sync can be credited
-  with, so nothing you did not read reaches your streak, your goals or your badges.

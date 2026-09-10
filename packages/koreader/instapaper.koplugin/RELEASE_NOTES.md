@@ -1,3 +1,7 @@
+# v1.5.0
+
+- Add bidirectional reading progress sync.  Thanks to @emes81
+
 # v1.4.0
 
 - show popup on bulk download process
@@ -19,8 +23,3 @@
 # v1.3.1
 
 - fix: rendering of article listing
-
-# v1.3.0
-
-- "add to Instapaper" button in link popup
-- fix: safety controls for the custom cache folder

@@ -1,0 +1,22 @@
+# Charge Limit For Kobo Clara Bw Koreader Plugin plugin for KOReader
+# https://github.com/jopidovba-a11y/Charge-Limit-For-Kobo-Clara-BW-Koreader-Plugin
+# zenpm:auto-scraped
+id=charge-limit-for-kobo-clara-bw-koreader-plugin
+name=Charge Limit For Kobo Clara Bw Koreader Plugin
+version=Plugin
+description=Stops battery charging at a configurable percentage on a Kobo Clara BW
+author=jopidovba-a11y
+category=utility
+platforms=koreader
+dependencies=
+source=https://github.com/jopidovba-a11y/Charge-Limit-For-Kobo-Clara-BW-Koreader-Plugin
+stars=6
+updated_at=2026-09-10T20:13:10Z
+published_at=2026-08-29T00:16:21Z
+readme_url=packages/koreader/charge-limit-for-kobo-clara-bw-koreader-plugin.koplugin/README.md
+readme_hash=16644dcf34b882548d55debfe85a389e1c88e8ce
+release_notes_url=packages/koreader/charge-limit-for-kobo-clara-bw-koreader-plugin.koplugin/RELEASE_NOTES.md
+release_notes_hash=86017e295c723bb431d0c419c87b157ad997dbae01afee596f43b8d9aed693a0
+releases=[{"tag_name":"Plugin","assets":[{"name":"source-code.zip","url":"https://api.github.com/repos/jopidovba-a11y/Charge-Limit-For-Kobo-Clara-BW-Koreader-Plugin/zipball/Plugin"}],"name":"chargelimit.koplugin"}]
+source_type=source
+source_url=https://codeload.github.com/jopidovba-a11y/Charge-Limit-For-Kobo-Clara-BW-Koreader-Plugin/zip/refs/heads/main

@@ -1,3 +1,8 @@
+# v6.5.1
+
+### Added
+- "Show week numbers" option (off by default, in Advanced settings > Date & time): adds a gray week-number column to both reading calendars. #77
+
 # v6.5.0
 
 ### New
@@ -31,9 +36,3 @@
 **Fixed**
 
 Landscape layout for the monthly chart, Last week section, and both calendars so everything fits on screen.
-
-# v6.2.9
-
-**Fixed**
-
-- Removed dead code: the unused "today, all books" full-table-scan query. A bit faster book progress popup open.
