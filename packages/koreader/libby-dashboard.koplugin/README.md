@@ -2,9 +2,9 @@
 
 Libby Dashboard is a self-contained KOReader plugin for browsing and reading supported loans from libraries linked to a Libby account. It brings the loan shelf directly to the e-reader instead of requiring a separate computer for normal borrowing and fulfillment.
 
-**Libby Dashboard is a dashboard for loans you have already borrowed. It cannot browse or search your library catalog and cannot borrow new titles. New loans must be borrowed through the official Libby application before they will appear in Libby Dashboard.**
+**Libby Dashboard focuses on your current loans and holds. It cannot browse or search your library catalog or place new holds, but a hold that becomes available can be borrowed directly from the plugin. Other new titles must still be found and borrowed through the official Libby application.**
 
-Current plugin version: **0.2.7**
+Current plugin version: **0.2.8**
 
 ## Installation
 
@@ -44,6 +44,10 @@ Libby Dashboard has been successfully tested for Libby login, ByteBooks sign-in,
   <img src="assets/05-ReturnBook02.png" alt="Return book confirmation" width="350" height="750">
 </p>
 <p align="center">
+  <img src="assets/05a%20-%20Holds_Ready_Inline.png" alt="Libby Dashboard hold and loan status labels" width="350" height="750">
+  <img src="assets/05a%20-%20Ready_To_Borrow.png" alt="Libby Dashboard Book Notes and ready-to-borrow hold" width="350" height="750">
+</p>
+<p align="center">
   <img src="assets/06-Settings01.png" alt="Libby Dashboard settings" width="350" height="750">
   <img src="assets/06-Settings02.png" alt="Libby Dashboard settings" width="350" height="750">
 </p>
@@ -63,7 +67,9 @@ Libby Dashboard has been successfully tested for Libby login, ByteBooks sign-in,
 
 - Authenticates with Libby using Libby's device setup-code flow.
 - Displays all linked library cards, plus a combined **All** shelf.
-- Presents loans in a configurable cover grid with a responsive selected-book details panel and library tabs.
+- Displays current holds with queue/wait/suspension status and direct borrowing when a hold becomes available.
+- Keeps local **Book Notes** attached to a title across its hold, borrowed, downloaded, and Extended Loan lifecycle.
+- Presents loans and holds in a configurable cover grid with a responsive selected-book details panel, per-cover status labels, and library tabs.
 - Shows title, author, series information, format, lending library, and remaining loan time when available.
 - Downloads supported EPUB loans and opens the resulting book directly in KOReader. PDF fulfillment is implemented but has not yet been validated with a real Libby PDF loan.
 - Identifies unsupported loan types such as audiobooks, magazines, and MediaDo manga/comics so they can still appear on the shelf with useful cover and metadata information.

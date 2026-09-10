@@ -1,3 +1,34 @@
+# v0.2.8
+
+### Version 0.2.8
+
+**Added**
+- Added full **D-pad navigation** for library grids, lists, book details, actions, and actionable header icons.
+- Added persistent **Book Notes** for all titles. Notes remain attached to a book as it moves from Hold → Borrowed → Downloaded/Open.
+- Added direct **Borrow** support for available holds.
+- Borrowing from the plugin now automatically **downloads the newly borrowed book** when possible.
+- Added expanded Hold details including queue position, estimated wait, copies, suspension state, and availability.
+- Added the new **Swap Library** action in expanded view to cycle through individual libraries and **All Libraries**.
+
+**Changed**
+- Redesigned book detail cards with compact metadata, properly aligned covers, a dedicated Book Notes section, and cleaner action spacing.
+- Expanded-library header now uses **Swap** in place of Settings and supports D-pad focus for every actionable icon.
+- Cover labels now describe the book current state instead of the next action: loan time remaining, **Expires Today**, **Extended Loan**, **Ready to borrow**, queue position and estimated wait, **Suspended**, or **Read on Libby**.
+- Expanded List view now dynamically reserves enough space for longer status labels such as **#1000 in line · 365 days**.
+- Improved Hold and loan layouts across grid and list views.
+- Improved update/version handling in preparation for future four-part releases.
+
+**Fixed**
+- Fixed clipped Hold/status labels in expanded List view.
+- Fixed excessive whitespace and inconsistent spacing in book detail cards.
+- Fixed cover alignment and top-padding issues in Hold and non-Hold detail cards.
+- Fixed header separator artifacts introduced by D-pad focus borders.
+- Fixed several fulfillment and state-handling edge cases for EPUB/PDF downloads.
+
+**Versioning**
+- **0.2.8 is the final three-part release.**
+- Future releases will use four-part versions such as **0.2.8.0**.
+
 # v0.2.7
 
 # Libby Dashboard v0.2.7
@@ -180,7 +211,3 @@ The updater shipped in v0.2.6 only accepted three-part GitHub release tags (`x.y
 # v0.2.5
 
 **Full Changelog**: https://github.com/jadehawk/libby-dashboard.koplugin/compare/v0.2.4...v0.2.5
-
-# v0.2.4
-
-**Full Changelog**: https://github.com/jadehawk/libby-dashboard.koplugin/compare/v0.2.3...v0.2.4
