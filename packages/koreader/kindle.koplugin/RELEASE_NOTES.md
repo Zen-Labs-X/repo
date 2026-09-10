@@ -1,3 +1,19 @@
+# v0.0.7
+
+**Full Changelog**: https://github.com/kaikozlov/kindle.koplugin/compare/v0.0.5...v0.0.7
+
+This release mostly focuses on reading position sync and support for newer Kindle firmware.
+
+Reading position sync is now much more faithful to the native Kindle state. Automatic KOReader -> Kindle sync now runs when a book closes, supports exact kfx/pdoc positions, targets the correct downloaded book entry for catalog updates, and no longer stomps on Kindle's separate read/unread state. The catalog integration was also reworked to use Kindle's real locale/collation behavior while remaining self-contained and working in no framework mode.
+
+Newer Java 21-based Kindle firmware is now supported by the integrated extraction path, and the native extractor fallback has a more reliable runtime environment. The Kindle library menu is also available while reading, unsafe maintenance actions are gated while a book is open, and there's now a dispatcher action for opening the Kindle library.
+
+still very much a work in progress.
+
+python remains slow
+
+please make github issues for any problems you run into
+
 # v0.0.5
 
 **Full Changelog**: https://github.com/kaikozlov/kindle.koplugin/compare/v0.0.4...v0.0.5
