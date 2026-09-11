@@ -1,6 +1,6 @@
-# v0.0.7
+# v0.0.8
 
-**Full Changelog**: https://github.com/kaikozlov/kindle.koplugin/compare/v0.0.5...v0.0.7
+**Full Changelog**: https://github.com/kaikozlov/kindle.koplugin/compare/v0.0.5...v0.0.8
 
 This release mostly focuses on reading position sync and support for newer Kindle firmware.
 

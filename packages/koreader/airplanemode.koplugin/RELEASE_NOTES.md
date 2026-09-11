@@ -1,3 +1,11 @@
+# v1.9.9
+
+
+### Housekeeping
+
+- Fix `About` information to show the branch information if running a dev branch instead of a release
+- Housekeeping: cleaned up menu displays, reordered options section
+
 # v1.9.2
 
 
@@ -33,11 +41,5 @@
 # v1.2.2
 
 ## Version v1.2.2
-
-See [CHANGELOG.md](CHANGELOG.md) for details.
-
-# v1.2.1
-
-## Version v1.2.1
 
 See [CHANGELOG.md](CHANGELOG.md) for details.
