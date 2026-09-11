@@ -9547,7 +9547,7 @@
     {
       "id": "zenfm",
       "name": "ZenFM",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "description": "A simple remote file manager designed for E-Readers",
       "author": "ZenLabs",
       "category": "utility",
@@ -9561,41 +9561,41 @@
       "plugin_module": "zenfm",
       "source_type": "release",
       "stars": "27",
-      "updated_at": "2026-09-11T02:02:19Z",
-      "published_at": "2026-09-04T15:09:21Z",
-      "prerelease_version": "1.0.5-beta1",
-      "prerelease_published_at": "2026-09-06T04:25:42Z",
+      "updated_at": "2026-09-11T02:24:04Z",
+      "published_at": "2026-09-11T02:23:54Z",
+      "prerelease_version": "1.0.5-beta2",
+      "prerelease_published_at": "2026-09-11T02:04:30Z",
       "readme_url": "packages/koreader/zenfm.koplugin/README.md",
       "readme_hash": "f29773316fbdfa2ed3d0b98eefcbbcfdf8aef7e6",
       "release_notes_url": "packages/koreader/zenfm.koplugin/RELEASE_NOTES.md",
-      "release_notes_hash": "3a2d01eb35618474db7b0c4e6beff567e4bda08c725076fa03d4999f4b4cbac4",
+      "release_notes_hash": "396170143949af2c23e5c3817d14126bcf0f06525777ad174e3adf2df204f722",
       "prerelease_notes_url": "packages/koreader/zenfm.koplugin/PRERELEASE_NOTES.md",
-      "prerelease_notes_hash": "8ccddd5d508592e62c7b2ee9914d6b713324094d88e391ec2b76e9c332554da3",
+      "prerelease_notes_hash": "43b1ba7de18b90f9c0fb45f71353c106dbccf3af2e88249a62c13bf47fddb3bb",
       "versions_url": "packages/koreader/zenfm.koplugin/versions.json",
       "assets": [
         {
           "arch": "any",
-          "asset": "ZenFM-koreader-android-1.0.4.zip",
-          "url": "https://github.com/xZenLabs/zen-fm/releases/download/v1.0.4/ZenFM-koreader-android-1.0.4.zip",
-          "size": "141590"
+          "asset": "ZenFM-koreader-android-1.0.5.zip",
+          "url": "https://github.com/xZenLabs/zen-fm/releases/download/v1.0.5/ZenFM-koreader-android-1.0.5.zip",
+          "size": "141797"
         },
         {
           "arch": "any",
-          "asset": "ZenFM-koreader-ereader-1.0.4.zip",
-          "url": "https://github.com/xZenLabs/zen-fm/releases/download/v1.0.4/ZenFM-koreader-ereader-1.0.4.zip",
-          "size": "7942392"
+          "asset": "ZenFM-koreader-ereader-1.0.5.zip",
+          "url": "https://github.com/xZenLabs/zen-fm/releases/download/v1.0.5/ZenFM-koreader-ereader-1.0.5.zip",
+          "size": "8232306"
         },
         {
           "arch": "any",
-          "asset": "ZenFM-koreader-linux-1.0.4.zip",
-          "url": "https://github.com/xZenLabs/zen-fm/releases/download/v1.0.4/ZenFM-koreader-linux-1.0.4.zip",
-          "size": "7857046"
+          "asset": "ZenFM-koreader-linux-1.0.5.zip",
+          "url": "https://github.com/xZenLabs/zen-fm/releases/download/v1.0.5/ZenFM-koreader-linux-1.0.5.zip",
+          "size": "8149306"
         },
         {
           "arch": "any",
-          "asset": "ZenFM-koreader-macos-1.0.4.zip",
-          "url": "https://github.com/xZenLabs/zen-fm/releases/download/v1.0.4/ZenFM-koreader-macos-1.0.4.zip",
-          "size": "8034941"
+          "asset": "ZenFM-koreader-macos-1.0.5.zip",
+          "url": "https://github.com/xZenLabs/zen-fm/releases/download/v1.0.5/ZenFM-koreader-macos-1.0.5.zip",
+          "size": "8326475"
         }
       ]
     },

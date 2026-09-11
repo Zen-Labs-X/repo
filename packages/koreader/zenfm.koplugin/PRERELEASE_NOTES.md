@@ -1,3 +1,12 @@
+# v1.0.5-beta2
+
+## What's Changed
+
+- Add PWA manifest
+- Use white favicon for dark mode browser
+- Add show IP/QR code to ZenOS settings
+- Fix showing entire filesystem
+
 # v1.0.5-beta1
 
 ## What's Changed
@@ -22,13 +31,6 @@
 - Keep ZenFM icons visible in dark mode
 
 # v1.0.4-beta3
-
-## What's Changed
-
-- Keep ZenFM icons visible in dark mode
-- Keep ZenFM icons visible in dark mode
-
-# v1.0.4-beta2
 
 ## What's Changed
 

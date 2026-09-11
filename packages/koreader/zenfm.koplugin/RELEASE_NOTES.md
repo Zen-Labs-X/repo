@@ -1,3 +1,12 @@
+# v1.0.5
+
+## What's Changed
+
+- Add PWA manifest
+- Use white favicon for dark mode browser
+- Add show IP/QR code to ZenOS settings
+- Fix showing entire filesystem
+
 # v1.0.4
 
 ## What's Changed
@@ -38,13 +47,3 @@
 - Redirect http -> https if http is disabled
 - Customize inactivity timeout
 - Bug fixes
-
-# v1.0.0
-
-## What's Changed
-* 1.0 by @AnthonyGress in https://github.com/xZenLabs/zen-fm/pull/4
-
-## New Contributors
-* @AnthonyGress made their first contribution in https://github.com/xZenLabs/zen-fm/pull/4
-
-**Full Changelog**: https://github.com/xZenLabs/zen-fm/commits/v1.0.0
